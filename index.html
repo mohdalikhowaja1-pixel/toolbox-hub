@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToolBoxHub - Free Online Micro-Tools Suite</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- QR Code Library CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        .btn-3d {
+            transition: all 0.15s ease;
+            box-shadow: 0 4px 0 0 #1d4ed8, 0 8px 12px -2px rgba(0, 0, 0, 0.1);
+        }
+        .btn-3d:active {
+            transform: translateY(3px);
+            box-shadow: 0 1px 0 0 #1d4ed8, 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .card-3d-btn {
+            transition: all 0.2s ease;
+            box-shadow: 0 6px 15px -3px rgba(0, 0, 0, 0.06);
+            border: 2px solid #e2e8f0;
+        }
+        .card-3d-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -4px rgba(37, 99, 235, 0.18);
+        }
+        .card-3d-btn.active {
+            border-color: #2563eb;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-100 via-blue-50/50 to-indigo-50/30 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- Header Navbar -->
+    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3.5 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <span class="text-2xl p-2 bg-blue-100 rounded-xl shadow-inner">🛠️</span>
+                <span class="text-2xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">ToolBoxHub</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="https://mali1.pythonanywhere.com/" target="_blank" class="text-xs font-bold bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-xl shadow-md hover:opacity-90 transition">
+                    📄 Live CV Maker ↗
+                </a>
+                <span class="hidden sm:inline-block text-xs font-bold uppercase tracking-widest text-emerald-700 bg-emerald-100 px-3 py-1.5 rounded-full border border-emerald-200">100% Free Suite</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 py-8 w-full flex-grow">
+        
+        <!-- Hero Section -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl md:text-5xl font-black text-slate-900 mb-2 tracking-tight">Free Utility Web Tools</h1>
+            <p class="text-slate-600 text-sm md:text-base max-w-xl mx-auto font-medium">Fast, secure tools organized for writers, students, freelancers, and developers.</p>
+        </div>
+
+        <!-- Role Filter Tabs -->
+        <div class="flex flex-wrap justify-center gap-2 mb-8 text-xs font-bold">
+            <button onclick="filterCategory('all')" class="cat-btn bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2.5 rounded-full shadow-md">All Tools</button>
+            <button onclick="filterCategory('writer')" class="cat-btn bg-white text-blue-700 hover:bg-blue-50 px-5 py-2.5 rounded-full border border-blue-200 shadow-sm">✍️ For Writers, Students & CV</button>
+            <button onclick="filterCategory('finance')" class="cat-btn bg-white text-emerald-700 hover:bg-emerald-50 px-5 py-2.5 rounded-full border border-emerald-200 shadow-sm">💰 Finance & Freelancers</button>
+            <button onclick="filterCategory('everyday')" class="cat-btn bg-white text-purple-700 hover:bg-purple-50 px-5 py-2.5 rounded-full border border-purple-200 shadow-sm">📱 Everyday Utilities</button>
+            <button onclick="filterCategory('dev')" class="cat-btn bg-white text-amber-700 hover:bg-amber-50 px-5 py-2.5 rounded-full border border-amber-200 shadow-sm">💻 For Developers</button>
+        </div>
+
+        <!-- Categorized Tool Cards Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3.5 mb-8">
+            
+            <!-- Category 1: Writers & Students -->
+            <button id="nav1" data-cat="writer" onclick="switchTool(1)" class="card-3d-btn active bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-blue-200">
+                <div class="flex justify-between items-start"><span class="text-xl">✍️</span><span class="text-[9px] font-black uppercase tracking-wider bg-blue-100 text-blue-700 px-2 py-0.5 rounded-md">Writers</span></div>
+                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Word Counter</div><div class="text-[10px] text-slate-400">Length & Read Time</div></div>
+            </button>
+
+            <button id="nav2" data-cat="writer" onclick="switchTool(2)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-blue-200">
+                <div class="flex justify-between items-start"><span class="text-xl">🔠</span><span class="text-[9px] font-black uppercase tracking-wider bg-blue-100 text-blue-700 px-2 py-0.5 rounded-md">Writers</span></div>
+                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Case Converter</div><div class="text-[10px] text-slate-400">UPPER, lower, Title</div></div>
+            </button>
+
+            <button id="nav3" data-cat="writer" onclick="switchTool(3)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-indigo-200 bg-gradient-to-br from-white to-indigo-50/50">
+                <div class="flex justify-between items-start"><span class="text-xl">📄</span><span class="text-[9px] font-black uppercase tracking-wider bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-md">Python App</span></div>
+                <div><div class="font-bold text-indigo-950 text-xs sm:text-sm">Live CV Maker</div><div class="text-[10px] text-indigo-500">PDF & Word Generator</div></div>
+            </button>
+
+            <!-- Category 2: Finance & Freelancers -->
+            <button id="nav4" data-cat="finance" onclick="switchTool(4)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-emerald-200">
+                <div class="flex justify-between items-start"><span class="text-xl">💰</span><span class="text-[9px] font-black uppercase tracking-wider bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-md">Finance</span></div>
+                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Fee Calculator</div><div class="text-[10px] text-slate-400">PayPal, Stripe, Square</div></div>
+            </button>
+
+            <button id="nav5" data-cat="finance" onclick="switchTool(5)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-emerald-200">
+                <div class="flex justify-between items-start"><span class="text-xl">📊</span><span class="text-[9px] font-black uppercase tracking-wider bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-md">Finance</span></div>
+                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Contract Calc</div><div class="text-[10px] text-slate-400">Hourly & Earnings Breakdown</div></div>
+            </button>
+
+            <!-- Category 3: Everyday Utilities -->
+            <button id="nav6" data-cat="everyday" onclick="switchTool(6)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-purple-200">
+                <div class="flex justify-between items-start"><span class="text-xl">📱</span><span class="text-[9px] font-black uppercase tracking-wider bg-purple-100 text-purple-700 px-2 py-0.5 rounded-md">Utility</span></div>
+                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">QR Code Gen</div><div class="text-[10px] text-slate-400">Create QR Images</div></div>
+            </button>
+
+            <button id="nav7" data-cat="everyday" onclick="switchTool(7)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-purple-200">
+                <div class="flex justify-between items-start"><span class="text-xl">🔑</span><span class="text-[9px] font-black uppercase tracking-wider bg-purple-100 text-purple-700 px-2 py-0.5 rounded-md">Utility</span></div>
+                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Password Gen</div><div class="text-[10px] text-slate-400">Secure Random Keys</div></div>
+            </button>
+
+            <!-- Category 4: Developers -->
+            <button id="nav8" data-cat="dev" onclick="switchTool(8)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-amber-200">
+                <div class="flex justify-between items-start"><span class="text-xl">⚡</span><span class="text-[9px] font-black uppercase tracking-wider bg-amber-100 text-amber-700 px-2 py-0.5 rounded-md">Developer</span></div>
+                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">JSON Formatter</div><div class="text-[10px] text-slate-400">Beautify & Minify</div></div>
+            </button>
+
+            <button id="nav9" data-cat="dev" onclick="switchTool(9)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-amber-200">
+                <div class="flex justify-between items-start"><span class="text-xl">🔤</span><span class="text-[9px] font-black uppercase tracking-wider bg-amber-100 text-amber-700 px-2 py-0.5 rounded-md">Developer</span></div>
+                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Base64 Tool</div><div class="text-[10px] text-slate-400">Encode & Decode</div></div>
+            </button>
+
+            <button id="nav10" data-cat="dev" onclick="switchTool(10)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-amber-200">
+                <div class="flex justify-between items-start"><span class="text-xl">🎨</span><span class="text-[9px] font-black uppercase tracking-wider bg-amber-100 text-amber-700 px-2 py-0.5 rounded-md">Developer</span></div>
+                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Color Converter</div><div class="text-[10px] text-slate-400">HEX, RGB & Names</div></div>
+            </button>
+
+        </div>
+
+        <!-- TOOL DISPLAY PANEL -->
+        <div class="bg-white rounded-3xl shadow-2xl border border-slate-200/80 p-6 md:p-8">
+
+            <!-- TOOL 1: Word Counter -->
+            <div id="tool1">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 class="text-xl font-bold text-slate-800">✍️ Word & Character Counter</h2>
+                    <button onclick="clearTool1()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
+                </div>
+                <textarea id="textInput" rows="5" class="w-full p-4 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 bg-slate-50 mb-4" placeholder="Type or paste text here..."></textarea>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <div class="bg-blue-50/80 p-3.5 rounded-2xl text-center border border-blue-100"><div class="text-2xl font-black text-blue-600" id="wordCount">0</div><div class="text-xs font-bold text-slate-500">Words</div></div>
+                    <div class="bg-emerald-50/80 p-3.5 rounded-2xl text-center border border-emerald-100"><div class="text-2xl font-black text-emerald-600" id="charCount">0</div><div class="text-xs font-bold text-slate-500">Characters</div></div>
+                    <div class="bg-purple-50/80 p-3.5 rounded-2xl text-center border border-purple-100"><div class="text-2xl font-black text-purple-600" id="sentenceCount">0</div><div class="text-xs font-bold text-slate-500">Sentences</div></div>
+                    <div class="bg-amber-50/80 p-3.5 rounded-2xl text-center border border-amber-100"><div class="text-2xl font-black text-amber-600" id="readTime">0 sec</div><div class="text-xs font-bold text-slate-500">Read Time</div></div>
+                </div>
+            </div>
+
+            <!-- TOOL 2: Text Case Converter -->
+            <div id="tool2" class="hidden">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 class="text-xl font-bold text-slate-800">🔠 Text Case Converter</h2>
+                    <button onclick="clearTool2()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
+                </div>
+                <textarea id="caseInput" rows="4" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 mb-3" placeholder="Type or paste text here..."></textarea>
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="convertCase('upper')" class="btn-3d px-4 py-2 bg-blue-600 text-white font-bold rounded-xl text-xs">UPPERCASE</button>
+                    <button onclick="convertCase('lower')" class="btn-3d px-4 py-2 bg-slate-700 text-white font-bold rounded-xl text-xs">lowercase</button>
+                    <button onclick="convertCase('title')" class="btn-3d px-4 py-2 bg-emerald-600 text-white font-bold rounded-xl text-xs">Title Case</button>
+                </div>
+            </div>
+
+            <!-- TOOL 3: Live Python CV Maker -->
+            <div id="tool3" class="hidden">
+                <div class="flex justify-between items-center mb-3">
+                    <h2 class="text-xl font-bold text-slate-800">📄 Professional CV Maker (Python App)</h2>
+                    <a href="https://mali1.pythonanywhere.com/" target="_blank" class="text-xs font-bold text-blue-600 hover:underline">Open in Fullscreen ↗</a>
+                </div>
+                <p class="text-xs text-slate-500 mb-4">Fill out your resume details and generate formatted PDF or Word (.docx) documents instantly.</p>
+                <iframe src="https://mali1.pythonanywhere.com/" class="w-full h-[650px] rounded-2xl border border-slate-200 shadow-inner bg-white"></iframe>
+            </div>
+
+            <!-- TOOL 4: Fee Calculator -->
+            <div id="tool4" class="hidden">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 class="text-xl font-bold text-slate-800">💰 Payment Fee Calculator</h2>
+                    <button onclick="clearTool4()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
+                    <select id="platformSelect" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
+                        <option value="stripe">Stripe (2.9% + $0.30)</option>
+                        <option value="paypal_card">PayPal Card (2.99% + $0.49)</option>
+                        <option value="square">Square (2.6% + $0.10)</option>
+                    </select>
+                    <select id="currencySelect" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
+                        <option value="$">USD ($)</option>
+                        <option value="€">EUR (€)</option>
+                        <option value="£">GBP (£)</option>
+                    </select>
+                    <input type="number" id="feeInput" placeholder="Enter amount..." class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <div class="bg-rose-50/80 p-3.5 rounded-2xl text-center border border-rose-100"><div class="text-2xl font-black text-rose-600" id="feeAmount">$0.00</div><div class="text-xs font-bold text-slate-500">Total Fee</div></div>
+                    <div class="bg-emerald-50/80 p-3.5 rounded-2xl text-center border border-emerald-100"><div class="text-2xl font-black text-emerald-600" id="youReceive">$0.00</div><div class="text-xs font-bold text-slate-500">You Receive</div></div>
+                    <div class="bg-blue-50/80 p-3.5 rounded-2xl text-center border border-blue-100"><div class="text-2xl font-black text-blue-600" id="askAmount">$0.00</div><div class="text-xs font-bold text-slate-500">Charge Amount</div></div>
+                </div>
+            </div>
+
+            <!-- TOOL 5: Contract Calculator -->
+            <div id="tool5" class="hidden">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 class="text-xl font-bold text-slate-800">📊 Freelance & Contract Earnings Calculator</h2>
+                    <button onclick="clearTool5()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
+                </div>
+                <p class="text-xs text-slate-500 mb-4">Calculate recommended hourly rates, estimated annual income, or contract payouts (Weekly, Monthly, Yearly).</p>
+                
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <button onclick="setCalcMode('contract')" id="modeContractBtn" class="px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition">Contract Calculator</button>
+                    <button onclick="setCalcMode('rate')" id="modeRateBtn" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 text-slate-700 transition">Target Hourly Rate</button>
+                    <button onclick="setCalcMode('annual')" id="modeAnnualBtn" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 text-slate-700 transition">Target Annual Salary</button>
+                </div>
+
+                <div id="contractModeInputs" class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Contract Rate ($ / Hour)</label>
+                        <input type="number" id="contractRate" value="15" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Contract Hours / Week</label>
+                        <input type="number" id="contractHours" value="20" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
+                    </div>
+                </div>
+
+                <div id="rateModeInputs" class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4 hidden">
+                    <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Target Annual Income ($)</label><input type="number" id="targetIncome" value="50000" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
+                    <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Annual Expenses ($)</label><input type="number" id="annualExpenses" value="5000" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
+                    <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Billable Hours / Week</label><input type="number" id="billableHours" value="20" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
+                </div>
+
+                <div id="annualModeInputs" class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4 hidden">
+                    <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Your Hourly Rate ($)</label><input type="number" id="inputHourlyRate" value="50" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
+                    <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Hours Worked / Week</label><input type="number" id="inputHoursWeek" value="40" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
+                </div>
+
+                <div id="contractGrid" class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <div class="bg-blue-50/80 p-4 rounded-2xl border border-blue-100 text-center"><div class="text-xs font-bold text-slate-500 uppercase">Weekly Earnings</div><div class="text-2xl font-black text-blue-600 mt-1" id="weeklyPay">$300.00</div></div>
+                    <div class="bg-indigo-50/80 p-4 rounded-2xl border border-indigo-100 text-center"><div class="text-xs font-bold text-slate-500 uppercase">Monthly Earnings</div><div class="text-2xl font-black text-indigo-600 mt-1" id="monthlyPay">$1,200.00</div></div>
+                    <div class="bg-emerald-50/80 p-4 rounded-2xl border border-emerald-100 text-center"><div class="text-xs font-bold text-slate-500 uppercase">Yearly Earnings</div><div class="text-2xl font-black text-emerald-600 mt-1" id="yearlyPay">$15,000.00</div></div>
+                </div>
+
+                <div id="singleResultBox" class="bg-emerald-50 p-4 rounded-2xl border border-emerald-100 text-center hidden">
+                    <div class="text-xs font-bold text-slate-500 uppercase" id="resultLabel">Recommended Hourly Rate</div>
+                    <div class="text-4xl font-black text-emerald-600 mt-1" id="mainResult">$0.00 / hr</div>
+                </div>
+            </div>
+
+            <!-- TOOL 6: QR Code Generator -->
+            <div id="tool6" class="hidden">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 class="text-xl font-bold text-slate-800">📱 Instant QR Code Generator</h2>
+                    <button onclick="clearTool6()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
+                </div>
+                <input type="text" id="qrInput" placeholder="https://yourwebsite.com" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-medium mb-4">
+                <div class="flex flex-col items-center justify-center p-4 bg-slate-50 rounded-2xl border border-slate-200">
+                    <div id="qrcode" class="p-2 bg-white rounded-lg shadow-sm"></div>
+                </div>
+            </div>
+
+            <!-- TOOL 7: Password Generator -->
+            <div id="tool7" class="hidden">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 class="text-xl font-bold text-slate-800">🔑 Secure Password Generator</h2>
+                    <button onclick="clearTool7()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex justify-between items-center gap-4">
+                    <span id="passwordOutput" class="text-xl font-mono font-bold text-slate-800 break-all">Click Generate</span>
+                    <button onclick="generatePassword()" class="btn-3d px-6 py-3 bg-blue-600 text-white font-bold rounded-xl whitespace-nowrap">Generate</button>
+                </div>
+            </div>
+
+            <!-- TOOL 8: JSON Formatter -->
+            <div id="tool8" class="hidden">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 class="text-xl font-bold text-slate-800">⚡ JSON Formatter & Minifier</h2>
+                    <button onclick="clearTool8()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
+                </div>
+                <textarea id="jsonInput" rows="3" class="w-full p-3 border border-slate-200 rounded-xl font-mono bg-slate-50 mb-3" placeholder='{"key":"value"}'></textarea>
+                <div class="flex gap-3 mb-3">
+                    <button onclick="formatJSON()" class="btn-3d px-5 py-2.5 bg-blue-600 text-white font-bold rounded-xl text-xs">Beautify</button>
+                    <button onclick="minifyJSON()" class="btn-3d px-5 py-2.5 bg-slate-700 text-white font-bold rounded-xl text-xs">Minify</button>
+                </div>
+                <textarea id="jsonOutput" rows="3" readonly class="w-full p-3 bg-slate-100 border border-slate-200 rounded-xl font-mono" placeholder="Output..."></textarea>
+            </div>
+
+            <!-- TOOL 9: Base64 Tool -->
+            <div id="tool9" class="hidden">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 class="text-xl font-bold text-slate-800">🔤 Base64 Encoder & Decoder</h2>
+                    <button onclick="clearTool9()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
+                </div>
+                <textarea id="base64Input" rows="3" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 mb-3" placeholder="Enter text..."></textarea>
+                <div class="flex gap-3 mb-3">
+                    <button onclick="encodeBase64()" class="btn-3d px-5 py-2.5 bg-blue-600 text-white font-bold rounded-xl text-xs">Encode</button>
+                    <button onclick="decodeBase64()" class="btn-3d px-5 py-2.5 bg-slate-700 text-white font-bold rounded-xl text-xs">Decode</button>
+                </div>
+                <textarea id="base64Output" rows="3" readonly class="w-full p-3 bg-slate-100 border border-slate-200 rounded-xl font-mono" placeholder="Output..."></textarea>
+            </div>
+
+            <!-- TOOL 10: Smart Multi-Color Converter (HEX, RGB, & Color Names) -->
+            <div id="tool10" class="hidden">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 class="text-xl font-bold text-slate-800">🎨 Universal Color Code Converter</h2>
+                    <button onclick="clearTool10()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
+                </div>
+                <p class="text-xs text-slate-500 mb-4">Type a HEX code (<code>#3b82f6</code>), RGB values (<code>59, 130, 246</code>), or Color Name (<code>darkblue</code>, <code>coral</code>, <code>red</code>).</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <input type="text" id="hexInput" placeholder="e.g. darkblue, #3b82f6, or 59, 130, 246" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 font-mono font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <div id="colorPreview" class="h-12 rounded-xl border border-slate-200 bg-blue-500 transition-all flex items-center justify-center font-bold text-white shadow-inner">Preview</div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-center font-mono font-bold text-slate-800">
+                        <div class="text-[10px] text-slate-400 font-sans uppercase">HEX Code</div>
+                        <div id="hexOutputText" class="text-lg text-blue-600">#3B82F6</div>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-center font-mono font-bold text-slate-800">
+                        <div class="text-[10px] text-slate-400 font-sans uppercase">RGB Code</div>
+                        <div id="rgbOutput" class="text-lg text-emerald-600">rgb(59, 130, 246)</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs font-semibold text-slate-400">
+        <p>&copy; 2026 ToolBoxHub. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript Master Logic -->
+    <script>
+        function switchTool(toolNum) {
+            for (let i = 1; i <= 10; i++) {
+                const tElement = document.getElementById('tool' + i);
+                const nElement = document.getElementById('nav' + i);
+                if (tElement) tElement.classList.add('hidden');
+                if (nElement) nElement.classList.remove('active');
+            }
+            const activeTool = document.getElementById('tool' + toolNum);
+            const activeNav = document.getElementById('nav' + toolNum);
+            if (activeTool) activeTool.classList.remove('hidden');
+            if (activeNav) activeNav.classList.add('active');
+        }
+
+        function filterCategory(cat) {
+            for (let i = 1; i <= 10; i++) {
+                const nav = document.getElementById('nav' + i);
+                if (!nav) continue;
+                if (cat === 'all' || nav.getAttribute('data-cat') === cat) {
+                    nav.classList.remove('hidden');
+                } else {
+                    nav.classList.add('hidden');
+                }
+            }
+        }
+
+        // Clear Functions
+        function clearTool1() {
+            document.getElementById('textInput').value = '';
+            document.getElementById('wordCount').textContent = '0';
+            document.getElementById('charCount').textContent = '0';
+            document.getElementById('sentenceCount').textContent = '0';
+            document.getElementById('readTime').textContent = '0 sec';
+        }
+        function clearTool2() { document.getElementById('caseInput').value = ''; }
+        function clearTool4() {
+            document.getElementById('feeInput').value = '';
+            document.getElementById('feeAmount').textContent = '$0.00';
+            document.getElementById('youReceive').textContent = '$0.00';
+            document.getElementById('askAmount').textContent = '$0.00';
+        }
+        function clearTool5() {
+            document.getElementById('contractRate').value = '';
+            document.getElementById('contractHours').value = '';
+            document.getElementById('targetIncome').value = '';
+            document.getElementById('annualExpenses').value = '';
+            document.getElementById('billableHours').value = '';
+            document.getElementById('inputHourlyRate').value = '';
+            document.getElementById('inputHoursWeek').value = '';
+            document.getElementById('weeklyPay').textContent = '$0.00';
+            document.getElementById('monthlyPay').textContent = '$0.00';
+            document.getElementById('yearlyPay').textContent = '$0.00';
+            document.getElementById('mainResult').textContent = '$0.00 / hr';
+        }
+        function clearTool6() {
+            document.getElementById('qrInput').value = '';
+            if (qrcodeObj) { qrcodeObj.clear(); qrcodeObj.makeCode("https://yourwebsite.com"); }
+        }
+        function clearTool7() { document.getElementById('passwordOutput').textContent = 'Click Generate'; }
+        function clearTool8() {
+            document.getElementById('jsonInput').value = '';
+            document.getElementById('jsonOutput').value = '';
+        }
+        function clearTool9() {
+            document.getElementById('base64Input').value = '';
+            document.getElementById('base64Output').value = '';
+        }
+        function clearTool10() {
+            document.getElementById('hexInput').value = '';
+            document.getElementById('hexOutputText').textContent = '#3B82F6';
+            document.getElementById('rgbOutput').textContent = 'rgb(59, 130, 246)';
+            document.getElementById('colorPreview').style.backgroundColor = '#3b82f6';
+        }
+
+        // Tool 1: Word Counter
+        const textInput = document.getElementById('textInput');
+        if (textInput) {
+            textInput.addEventListener('input', () => {
+                const text = textInput.value;
+                document.getElementById('charCount').textContent = text.length;
+                const words = text.trim() === '' ? [] : text.trim().split(/\s+/);
+                document.getElementById('wordCount').textContent = words.length;
+                const sentences = text.trim() === '' ? [] : text.split(/[.!?]+/).filter(Boolean);
+                document.getElementById('sentenceCount').textContent = sentences.length;
+                const seconds = Math.ceil((words.length / 200) * 60);
+                document.getElementById('readTime').textContent = seconds < 60 ? seconds + ' sec' : (seconds / 60).toFixed(1) + ' min';
+            });
+        }
+
+        // Tool 2: Case Converter
+        function convertCase(type) {
+            const input = document.getElementById('caseInput');
+            if (!input) return;
+            if (type === 'upper') input.value = input.value.toUpperCase();
+            if (type === 'lower') input.value = input.value.toLowerCase();
+            if (type === 'title') {
+                input.value = input.value.toLowerCase().replace(/(?:^|\s)\w/g, match => match.toUpperCase());
+            }
+        }
+
+        // Tool 4: Fee Calc
+        const feeInput = document.getElementById('feeInput');
+        const platformSelect = document.getElementById('platformSelect');
+        const currencySelect = document.getElementById('currencySelect');
+
+        function calculateFee() {
+            if (!feeInput) return;
+            const val = parseFloat(feeInput.value);
+            const symbol = currencySelect ? currencySelect.value : '$';
+            const platform = platformSelect ? platformSelect.value : 'stripe';
+
+            if (isNaN(val) || val <= 0) {
+                document.getElementById('feeAmount').textContent = symbol + '0.00';
+                document.getElementById('youReceive').textContent = symbol + '0.00';
+                document.getElementById('askAmount').textContent = symbol + '0.00';
+                return;
+            }
+
+            let percentRate = 0.029, fixedFee = 0.30;
+            if (platform === 'paypal_card') { percentRate = 0.0299; fixedFee = 0.49; }
+            else if (platform === 'square') { percentRate = 0.026; fixedFee = 0.10; }
+
+            const fee = (val * percentRate) + fixedFee;
+            const receive = val - fee;
+            const ask = (val + fixedFee) / (1 - percentRate);
+
+            document.getElementById('feeAmount').textContent = symbol + fee.toFixed(2);
+            document.getElementById('youReceive').textContent = symbol + (receive > 0 ? receive.toFixed(2) : '0.00');
+            document.getElementById('askAmount').textContent = symbol + ask.toFixed(2);
+        }
+        if (feeInput) feeInput.addEventListener('input', calculateFee);
+        if (platformSelect) platformSelect.addEventListener('change', calculateFee);
+        if (currencySelect) currencySelect.addEventListener('change', calculateFee);
+
+        // Tool 5: Contract Calc
+        let calcMode = 'contract';
+        function setCalcMode(mode) {
+            calcMode = mode;
+            const contractInputs = document.getElementById('contractModeInputs');
+            const rateInputs = document.getElementById('rateModeInputs');
+            const annualInputs = document.getElementById('annualModeInputs');
+            const contractGrid = document.getElementById('contractGrid');
+            const singleResultBox = document.getElementById('singleResultBox');
+
+            const contractBtn = document.getElementById('modeContractBtn');
+            const rateBtn = document.getElementById('modeRateBtn');
+            const annualBtn = document.getElementById('modeAnnualBtn');
+
+            contractBtn.className = "px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 text-slate-700 transition";
+            rateBtn.className = "px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 text-slate-700 transition";
+            annualBtn.className = "px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 text-slate-700 transition";
+
+            if (mode === 'contract') {
+                contractInputs.classList.remove('hidden');
+                rateInputs.classList.add('hidden');
+                annualInputs.classList.add('hidden');
+                contractGrid.classList.remove('hidden');
+                singleResultBox.classList.add('hidden');
+                contractBtn.className = "px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition";
+            } else if (mode === 'rate') {
+                contractInputs.classList.add('hidden');
+                rateInputs.classList.remove('hidden');
+                annualInputs.classList.add('hidden');
+                contractGrid.classList.add('hidden');
+                singleResultBox.classList.remove('hidden');
+                rateBtn.className = "px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition";
+                document.getElementById('resultLabel').textContent = "Recommended Hourly Rate";
+            } else {
+                contractInputs.classList.add('hidden');
+                rateInputs.classList.add('hidden');
+                annualInputs.remove('hidden');
+                contractGrid.classList.add('hidden');
+                singleResultBox.classList.remove('hidden');
+                annualBtn.className = "px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition";
+                document.getElementById('resultLabel').textContent = "Estimated Annual Salary";
+            }
+            calculateDualCalc();
+        }
+
+        const contractRate = document.getElementById('contractRate');
+        const contractHours = document.getElementById('contractHours');
+        const targetIncome = document.getElementById('targetIncome');
+        const annualExpenses = document.getElementById('annualExpenses');
+        const billableHours = document.getElementById('billableHours');
+        const inputHourlyRate = document.getElementById('inputHourlyRate');
+        const inputHoursWeek = document.getElementById('inputHoursWeek');
+
+        function calculateDualCalc() {
+            if (calcMode === 'contract') {
+                const rate = parseFloat(contractRate.value) || 0;
+                const hours = parseFloat(contractHours.value) || 0;
+                const weekly = rate * hours;
+                const monthly = weekly * 4;
+                const yearly = weekly * 50;
+
+                document.getElementById('weeklyPay').textContent = '$' + weekly.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+                document.getElementById('monthlyPay').textContent = '$' + monthly.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+                document.getElementById('yearlyPay').textContent = '$' + yearly.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            } else if (calcMode === 'rate') {
+                const income = parseFloat(targetIncome.value) || 0;
+                const expenses = parseFloat(annualExpenses.value) || 0;
+                const hoursPerWeek = parseFloat(billableHours.value) || 1;
+                const totalHours = hoursPerWeek * 48;
+                const rate = totalHours > 0 ? (income + expenses) / totalHours : 0;
+                document.getElementById('mainResult').textContent = '$' + rate.toFixed(2) + ' / hr';
+            } else {
+                const rate = parseFloat(inputHourlyRate.value) || 0;
+                const hoursWeek = parseFloat(inputHoursWeek.value) || 0;
+                const annual = rate * hoursWeek * 50;
+                document.getElementById('mainResult').textContent = '$' + annual.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            }
+        }
+
+        if (contractRate) contractRate.addEventListener('input', calculateDualCalc);
+        if (contractHours) contractHours.addEventListener('input', calculateDualCalc);
+        if (targetIncome) targetIncome.addEventListener('input', calculateDualCalc);
+        if (annualExpenses) annualExpenses.addEventListener('input', calculateDualCalc);
+        if (billableHours) billableHours.addEventListener('input', calculateDualCalc);
+        if (inputHourlyRate) inputHourlyRate.addEventListener('input', calculateDualCalc);
+        if (inputHoursWeek) inputHoursWeek.addEventListener('input', calculateDualCalc);
+        calculateDualCalc();
+
+        // Tool 6: QR Code
+        let qrcodeObj = null;
+        const qrInput = document.getElementById('qrInput');
+        if (qrInput) {
+            qrcodeObj = new QRCode(document.getElementById("qrcode"), { text: "https://yourwebsite.com", width: 128, height: 128 });
+            qrInput.addEventListener('input', () => {
+                qrcodeObj.clear();
+                if (qrInput.value.trim() !== "") qrcodeObj.makeCode(qrInput.value);
+            });
+        }
+
+        // Tool 7: Password Gen
+        function generatePassword() {
+            const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%^&*!";
+            let password = "";
+            for (let i = 0; i < 16; i++) { password += chars.charAt(Math.floor(Math.random() * chars.length)); }
+            document.getElementById('passwordOutput').textContent = password;
+        }
+
+        // Tool 8: JSON Formatter
+        function formatJSON() {
+            try {
+                const parsed = JSON.parse(document.getElementById('jsonInput').value);
+                document.getElementById('jsonOutput').value = JSON.stringify(parsed, null, 4);
+            } catch (e) { document.getElementById('jsonOutput').value = "Invalid JSON syntax."; }
+        }
+        function minifyJSON() {
+            try {
+                const parsed = JSON.parse(document.getElementById('jsonInput').value);
+                document.getElementById('jsonOutput').value = JSON.stringify(parsed);
+            } catch (e) { document.getElementById('jsonOutput').value = "Invalid JSON syntax."; }
+        }
+
+        // Tool 9: Base64
+        function encodeBase64() {
+            try { document.getElementById('base64Output').value = btoa(document.getElementById('base64Input').value); }
+            catch (e) { document.getElementById('base64Output').value = "Error encoding input."; }
+        }
+        function decodeBase64() {
+            try { document.getElementById('base64Output').value = atob(document.getElementById('base64Input').value); }
+            catch (e) { document.getElementById('base64Output').value = "Invalid Base64 string."; }
+        }
+
+        // Tool 10: Universal Color Code Converter (HEX, RGB, & Color Names)
+        const hexInput = document.getElementById('hexInput');
+        if (hexInput) {
+            hexInput.addEventListener('input', () => {
+                let val = hexInput.value.trim();
+                if (!val) {
+                    document.getElementById('hexOutputText').textContent = '#3B82F6';
+                    document.getElementById('rgbOutput').textContent = 'rgb(59, 130, 246)';
+                    document.getElementById('colorPreview').style.backgroundColor = '#3b82f6';
+                    return;
+                }
+
+                // Temporary element to parse CSS color names/rgb
+                const tempEl = document.createElement('div');
+                tempEl.style.color = val;
+                document.body.appendChild(tempEl);
+                const computed = getComputedStyle(tempEl).color;
+                document.body.removeChild(tempEl);
+
+                // If RGB array parsed
+                const rgbMatch = computed.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+                if (rgbMatch) {
+                    const r = parseInt(rgbMatch[1]);
+                    const g = parseInt(rgbMatch[2]);
+                    const b = parseInt(rgbMatch[3]);
+                    const hex = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
+
+                    document.getElementById('hexOutputText').textContent = hex;
+                    document.getElementById('rgbOutput').textContent = `rgb(${r}, ${g}, ${b})`;
+                    document.getElementById('colorPreview').style.backgroundColor = hex;
+                } else {
+                    document.getElementById('hexOutputText').textContent = 'Invalid Color';
+                    document.getElementById('rgbOutput').textContent = 'Invalid Color';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
