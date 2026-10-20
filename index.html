@@ -32,6 +32,25 @@
             box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
             transform: translateY(1px);
         }
+
+        /* --- Custom 3D Metallic & Iridescent Rainbow Logo Styles --- */
+        .logo-box {
+            background: linear-gradient(135deg, #f3e7e9 0%, #e3eeff 50%, #fbc2eb 100%);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+            border: 1.5px solid rgba(255, 255, 255, 0.9);
+        }
+        .text-chrome {
+            background: linear-gradient(180deg, #ffffff 0%, #d1d5db 50%, #4b5563 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(2px 3px 2px rgba(0,0,0,0.25));
+        }
+        .text-rainbow {
+            background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 25%, #86a8e7 50%, #7f7fd5 75%, #ff758c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(2px 3px 2px rgba(0,0,0,0.2));
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-slate-100 via-blue-50/50 to-indigo-50/30 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
@@ -40,20 +59,17 @@
     <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             
-            <!-- MULTI-COLOR 3D LOGO -->
-            <div class="flex items-center space-x-3 group cursor-pointer">
-                <div class="relative flex items-center justify-center w-12 h-12 bg-gradient-to-tr from-amber-400 via-rose-500 to-indigo-600 rounded-2xl shadow-lg shadow-rose-500/25 border-2 border-white transform group-hover:scale-105 group-hover:rotate-3 transition-all duration-300">
-                    <span class="text-2xl filter drop-shadow">🧰</span>
+            <!-- 3D METALLIC & RAINBOW LOGO -->
+            <div class="flex items-center space-x-3.5 group cursor-pointer select-none">
+                <!-- 3D ToolBox Icon Box -->
+                <div class="relative flex items-center justify-center w-12 h-12 logo-box rounded-2xl transform group-hover:scale-105 transition-all duration-300">
+                    <span class="text-2xl filter drop-shadow-md">🧰</span>
                 </div>
                 
-                <span class="text-3xl font-black tracking-tight flex items-center select-none font-sans">
-                    <span class="bg-gradient-to-b from-rose-500 to-red-600 bg-clip-text text-transparent drop-shadow-[0_2px_1px_rgba(225,29,72,0.4)]">M</span>
-                    <span class="bg-gradient-to-b from-amber-400 to-orange-500 bg-clip-text text-transparent drop-shadow-[0_2px_1px_rgba(245,158,11,0.4)]">y</span>
-                    <span class="bg-gradient-to-b from-emerald-400 to-teal-600 bg-clip-text text-transparent drop-shadow-[0_2px_1px_rgba(16,185,129,0.4)] ml-0.5">T</span>
-                    <span class="bg-gradient-to-b from-cyan-400 to-blue-600 bg-clip-text text-transparent drop-shadow-[0_2px_1px_rgba(6,182,212,0.4)]">o</span>
-                    <span class="bg-gradient-to-b from-indigo-400 to-blue-700 bg-clip-text text-transparent drop-shadow-[0_2px_1px_rgba(99,102,241,0.4)]">o</span>
-                    <span class="bg-gradient-to-b from-purple-400 to-indigo-600 bg-clip-text text-transparent drop-shadow-[0_2px_1px_rgba(168,85,247,0.4)]">l</span>
-                    <span class="bg-gradient-to-b from-fuchsia-500 to-pink-600 bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(217,70,239,0.5)] text-3xl font-black">X</span>
+                <!-- 3D Typography (My = Chrome, ToolX = Rainbow) -->
+                <span class="text-3xl font-black tracking-tight flex items-center font-sans">
+                    <span class="text-chrome">My</span>
+                    <span class="text-rainbow ml-0.5">ToolX</span>
                 </span>
             </div>
 
@@ -336,11 +352,10 @@
         <p>&copy; 2026 MyToolX. All rights reserved.</p>
     </footer>
 
-    <!-- COMPLETE MASTER JAVASCRIPT LOGIC (100% WORKING) -->
+    <!-- LOCKED 100% WORKING JAVASCRIPT LOGIC -->
     <script>
         let qrcodeObj = null;
 
-        // Navigation & Tab Switching
         function switchTool(toolNum) {
             for (let i = 1; i <= 10; i++) {
                 const tElement = document.getElementById('tool' + i);
@@ -370,7 +385,6 @@
             }
         }
 
-        // Clear Functions
         function clearTool1() {
             document.getElementById('textInput').value = '';
             document.getElementById('wordCount').textContent = '0';
@@ -418,7 +432,6 @@
             document.getElementById('colorPreview').style.backgroundColor = '#3b82f6';
         }
 
-        // Tool 1: Word Counter Logic
         const textInput = document.getElementById('textInput');
         if(textInput) {
             textInput.addEventListener('input', () => {
@@ -434,7 +447,6 @@
             });
         }
 
-        // Tool 2: Case Converter Logic
         function convertCase(type) {
             const input = document.getElementById('caseInput');
             if(!input) return;
@@ -446,7 +458,6 @@
             }
         }
 
-        // Tool 4: Payment Fee Calculator Logic
         function calculateFees() {
             const amount = parseFloat(document.getElementById('feeInput').value) || 0;
             const platform = document.getElementById('platformSelect').value;
@@ -468,7 +479,6 @@
         document.getElementById('platformSelect').addEventListener('change', calculateFees);
         document.getElementById('currencySelect').addEventListener('change', calculateFees);
 
-        // Tool 5: Contract Calculator Logic
         function setCalcMode(mode) {
             document.getElementById('contractModeInputs').classList.add('hidden');
             document.getElementById('rateModeInputs').classList.add('hidden');
@@ -526,7 +536,6 @@
             if(el) el.addEventListener('input', calculateContract);
         });
 
-        // Tool 6: QR Code Logic
         function initQRCode() {
             const qrContainer = document.getElementById('qrcode');
             if(qrContainer && typeof QRCode !== 'undefined') {
@@ -547,7 +556,6 @@
             }
         });
 
-        // Tool 7: Password Generator Logic
         function generatePassword() {
             const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=";
             let pwd = "";
@@ -557,7 +565,6 @@
             document.getElementById('passwordOutput').textContent = pwd;
         }
 
-        // Tool 8: JSON Formatter Logic
         function formatJSON() {
             const inp = document.getElementById('jsonInput').value;
             try {
@@ -577,7 +584,6 @@
             }
         }
 
-        // Tool 9: Base64 Logic
         function encodeBase64() {
             const inp = document.getElementById('base64Input').value;
             try { document.getElementById('base64Output').value = btoa(inp); }
@@ -589,7 +595,6 @@
             catch(e) { document.getElementById('base64Output').value = "Invalid Base64 string!"; }
         }
 
-        // Tool 10: Color Converter Logic
         document.getElementById('hexInput').addEventListener('input', (e) => {
             const val = e.target.value.trim();
             const preview = document.getElementById('colorPreview');
