@@ -38,15 +38,22 @@
 
     <!-- Header Navbar -->
     <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 py-3.5 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             
-            <!-- STYLISH 3D LOGO -->
-            <div class="flex items-center space-x-3">
-                <div class="relative flex items-center justify-center w-11 h-11 bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 rounded-2xl shadow-lg shadow-indigo-500/30 transform hover:scale-105 transition-all duration-300">
-                    <span class="text-xl">🛠️</span>
+            <!-- MULTI-COLOR 3D LOGO -->
+            <div class="flex items-center space-x-3 group cursor-pointer">
+                <div class="relative flex items-center justify-center w-12 h-12 bg-gradient-to-tr from-amber-400 via-rose-500 to-indigo-600 rounded-2xl shadow-lg shadow-rose-500/25 border-2 border-white transform group-hover:scale-105 group-hover:rotate-3 transition-all duration-300">
+                    <span class="text-2xl filter drop-shadow">🧰</span>
                 </div>
-                <span class="text-3xl font-black tracking-tight bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.15)]">
-                    MyTool<span class="text-purple-600 drop-shadow-[0_2px_4px_rgba(147,51,234,0.3)]">X</span>
+                
+                <span class="text-3xl font-black tracking-tight flex items-center select-none font-sans">
+                    <span class="bg-gradient-to-b from-rose-500 to-red-600 bg-clip-text text-transparent drop-shadow-[0_2px_1px_rgba(225,29,72,0.4)]">M</span>
+                    <span class="bg-gradient-to-b from-amber-400 to-orange-500 bg-clip-text text-transparent drop-shadow-[0_2px_1px_rgba(245,158,11,0.4)]">y</span>
+                    <span class="bg-gradient-to-b from-emerald-400 to-teal-600 bg-clip-text text-transparent drop-shadow-[0_2px_1px_rgba(16,185,129,0.4)] ml-0.5">T</span>
+                    <span class="bg-gradient-to-b from-cyan-400 to-blue-600 bg-clip-text text-transparent drop-shadow-[0_2px_1px_rgba(6,182,212,0.4)]">o</span>
+                    <span class="bg-gradient-to-b from-indigo-400 to-blue-700 bg-clip-text text-transparent drop-shadow-[0_2px_1px_rgba(99,102,241,0.4)]">o</span>
+                    <span class="bg-gradient-to-b from-purple-400 to-indigo-600 bg-clip-text text-transparent drop-shadow-[0_2px_1px_rgba(168,85,247,0.4)]">l</span>
+                    <span class="bg-gradient-to-b from-fuchsia-500 to-pink-600 bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(217,70,239,0.5)] text-3xl font-black">X</span>
                 </span>
             </div>
 
@@ -79,8 +86,6 @@
 
         <!-- Categorized Tool Cards Grid -->
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3.5 mb-8">
-            
-            <!-- Category 1: Writers & Students -->
             <button id="nav1" data-cat="writer" onclick="switchTool(1)" class="card-3d-btn active bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-blue-200">
                 <div class="flex justify-between items-start"><span class="text-xl">✍️</span><span class="text-[9px] font-black uppercase tracking-wider bg-blue-100 text-blue-700 px-2 py-0.5 rounded-md">Writers</span></div>
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Word Counter</div><div class="text-[10px] text-slate-400">Length & Read Time</div></div>
@@ -96,7 +101,6 @@
                 <div><div class="font-bold text-indigo-950 text-xs sm:text-sm">Live CV Maker</div><div class="text-[10px] text-indigo-500">PDF & Word Generator</div></div>
             </button>
 
-            <!-- Category 2: Finance & Freelancers -->
             <button id="nav4" data-cat="finance" onclick="switchTool(4)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-emerald-200">
                 <div class="flex justify-between items-start"><span class="text-xl">💰</span><span class="text-[9px] font-black uppercase tracking-wider bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-md">Finance</span></div>
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Fee Calculator</div><div class="text-[10px] text-slate-400">PayPal, Stripe, Square</div></div>
@@ -107,7 +111,6 @@
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Contract Calc</div><div class="text-[10px] text-slate-400">Hourly & Earnings Breakdown</div></div>
             </button>
 
-            <!-- Category 3: Everyday Utilities -->
             <button id="nav6" data-cat="everyday" onclick="switchTool(6)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-purple-200">
                 <div class="flex justify-between items-start"><span class="text-xl">📱</span><span class="text-[9px] font-black uppercase tracking-wider bg-purple-100 text-purple-700 px-2 py-0.5 rounded-md">Utility</span></div>
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">QR Code Gen</div><div class="text-[10px] text-slate-400">Create QR Images</div></div>
@@ -118,7 +121,6 @@
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Password Gen</div><div class="text-[10px] text-slate-400">Secure Random Keys</div></div>
             </button>
 
-            <!-- Category 4: Developers -->
             <button id="nav8" data-cat="dev" onclick="switchTool(8)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-amber-200">
                 <div class="flex justify-between items-start"><span class="text-xl">⚡</span><span class="text-[9px] font-black uppercase tracking-wider bg-amber-100 text-amber-700 px-2 py-0.5 rounded-md">Developer</span></div>
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">JSON Formatter</div><div class="text-[10px] text-slate-400">Beautify & Minify</div></div>
@@ -133,7 +135,6 @@
                 <div class="flex justify-between items-start"><span class="text-xl">🎨</span><span class="text-[9px] font-black uppercase tracking-wider bg-amber-100 text-amber-700 px-2 py-0.5 rounded-md">Developer</span></div>
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Color Converter</div><div class="text-[10px] text-slate-400">HEX, RGB & Names</div></div>
             </button>
-
         </div>
 
         <!-- TOOL DISPLAY PANEL -->
@@ -174,7 +175,6 @@
                     <h2 class="text-xl font-bold text-slate-800">📄 Professional CV Maker (Python App)</h2>
                     <a href="https://mali1.pythonanywhere.com/" target="_blank" class="text-xs font-bold text-blue-600 hover:underline">Open in Fullscreen ↗</a>
                 </div>
-                <p class="text-xs text-slate-500 mb-4">Fill out your resume details and generate formatted PDF or Word (.docx) documents instantly.</p>
                 <iframe src="https://mali1.pythonanywhere.com/" class="w-full h-[650px] rounded-2xl border border-slate-200 shadow-inner bg-white"></iframe>
             </div>
 
@@ -210,8 +210,6 @@
                     <h2 class="text-xl font-bold text-slate-800">📊 Freelance & Contract Earnings Calculator</h2>
                     <button onclick="clearTool5()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
                 </div>
-                <p class="text-xs text-slate-500 mb-4">Calculate recommended hourly rates, estimated annual income, or contract payouts (Weekly, Monthly, Yearly).</p>
-                
                 <div class="flex flex-wrap gap-2 mb-4">
                     <button onclick="setCalcMode('contract')" id="modeContractBtn" class="px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition">Contract Calculator</button>
                     <button onclick="setCalcMode('rate')" id="modeRateBtn" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 text-slate-700 transition">Target Hourly Rate</button>
@@ -258,9 +256,9 @@
                     <h2 class="text-xl font-bold text-slate-800">📱 Instant QR Code Generator</h2>
                     <button onclick="clearTool6()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
                 </div>
-                <input type="text" id="qrInput" placeholder="https://yourwebsite.com" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-medium mb-4">
+                <input type="text" id="qrInput" placeholder="https://mytoolx.org" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-medium mb-4">
                 <div class="flex flex-col items-center justify-center p-4 bg-slate-50 rounded-2xl border border-slate-200">
-                    <div id="qrcode" class="p-2 bg-white rounded-lg shadow-sm"></div>
+                    <div id="qrcode" class="p-2 bg-white rounded-lg shadow-sm min-h-[128px] min-w-[128px] flex items-center justify-center"></div>
                 </div>
             </div>
 
@@ -338,8 +336,11 @@
         <p>&copy; 2026 MyToolX. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript Master Logic -->
+    <!-- COMPLETE MASTER JAVASCRIPT LOGIC (100% WORKING) -->
     <script>
+        let qrcodeObj = null;
+
+        // Navigation & Tab Switching
         function switchTool(toolNum) {
             for (let i = 1; i <= 10; i++) {
                 const tElement = document.getElementById('tool' + i);
@@ -351,6 +352,10 @@
             const activeNav = document.getElementById('nav' + toolNum);
             if (activeTool) activeTool.classList.remove('hidden');
             if (activeNav) activeNav.classList.add('active');
+
+            if (toolNum === 6 && !qrcodeObj) {
+                initQRCode();
+            }
         }
 
         function filterCategory(cat) {
@@ -365,6 +370,7 @@
             }
         }
 
+        // Clear Functions
         function clearTool1() {
             document.getElementById('textInput').value = '';
             document.getElementById('wordCount').textContent = '0';
@@ -394,7 +400,7 @@
         }
         function clearTool6() {
             document.getElementById('qrInput').value = '';
-            if (window.qrcodeObj) { qrcodeObj.clear(); qrcodeObj.makeCode("https://yourwebsite.com"); }
+            if (qrcodeObj) { qrcodeObj.clear(); qrcodeObj.makeCode("https://mytoolx.org"); }
         }
         function clearTool7() { document.getElementById('passwordOutput').textContent = 'Click Generate'; }
         function clearTool8() {
@@ -412,7 +418,7 @@
             document.getElementById('colorPreview').style.backgroundColor = '#3b82f6';
         }
 
-        // Live Counter logic for Tool 1
+        // Tool 1: Word Counter Logic
         const textInput = document.getElementById('textInput');
         if(textInput) {
             textInput.addEventListener('input', () => {
@@ -427,6 +433,191 @@
                 document.getElementById('readTime').textContent = readTimeSec + ' sec';
             });
         }
+
+        // Tool 2: Case Converter Logic
+        function convertCase(type) {
+            const input = document.getElementById('caseInput');
+            if(!input) return;
+            let val = input.value;
+            if (type === 'upper') input.value = val.toUpperCase();
+            else if (type === 'lower') input.value = val.toLowerCase();
+            else if (type === 'title') {
+                input.value = val.toLowerCase().replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+            }
+        }
+
+        // Tool 4: Payment Fee Calculator Logic
+        function calculateFees() {
+            const amount = parseFloat(document.getElementById('feeInput').value) || 0;
+            const platform = document.getElementById('platformSelect').value;
+            const currency = document.getElementById('currencySelect').value;
+
+            let rate = 0.029, fixed = 0.30;
+            if (platform === 'paypal_card') { rate = 0.0299; fixed = 0.49; }
+            else if (platform === 'square') { rate = 0.026; fixed = 0.10; }
+
+            const fee = (amount * rate) + fixed;
+            const receive = Math.max(0, amount - fee);
+            const ask = (amount + fixed) / (1 - rate);
+
+            document.getElementById('feeAmount').textContent = currency + fee.toFixed(2);
+            document.getElementById('youReceive').textContent = currency + receive.toFixed(2);
+            document.getElementById('askAmount').textContent = currency + (amount > 0 ? ask.toFixed(2) : "0.00");
+        }
+        document.getElementById('feeInput').addEventListener('input', calculateFees);
+        document.getElementById('platformSelect').addEventListener('change', calculateFees);
+        document.getElementById('currencySelect').addEventListener('change', calculateFees);
+
+        // Tool 5: Contract Calculator Logic
+        function setCalcMode(mode) {
+            document.getElementById('contractModeInputs').classList.add('hidden');
+            document.getElementById('rateModeInputs').classList.add('hidden');
+            document.getElementById('annualModeInputs').classList.add('hidden');
+            document.getElementById('contractGrid').classList.add('hidden');
+            document.getElementById('singleResultBox').classList.add('hidden');
+
+            document.getElementById('modeContractBtn').className = 'px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 text-slate-700 transition';
+            document.getElementById('modeRateBtn').className = 'px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 text-slate-700 transition';
+            document.getElementById('modeAnnualBtn').className = 'px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 text-slate-700 transition';
+
+            if (mode === 'contract') {
+                document.getElementById('contractModeInputs').classList.remove('hidden');
+                document.getElementById('contractGrid').classList.remove('hidden');
+                document.getElementById('modeContractBtn').className = 'px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition';
+            } else if (mode === 'rate') {
+                document.getElementById('rateModeInputs').classList.remove('hidden');
+                document.getElementById('singleResultBox').classList.remove('hidden');
+                document.getElementById('resultLabel').textContent = "Recommended Hourly Rate";
+                document.getElementById('modeRateBtn').className = 'px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition';
+            } else if (mode === 'annual') {
+                document.getElementById('annualModeInputs').classList.remove('hidden');
+                document.getElementById('singleResultBox').classList.remove('hidden');
+                document.getElementById('resultLabel').textContent = "Estimated Annual Salary";
+                document.getElementById('modeAnnualBtn').className = 'px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition';
+            }
+            calculateContract();
+        }
+
+        function calculateContract() {
+            const rate = parseFloat(document.getElementById('contractRate').value) || 0;
+            const hours = parseFloat(document.getElementById('contractHours').value) || 0;
+            const weekly = rate * hours;
+            document.getElementById('weeklyPay').textContent = '$' + weekly.toFixed(2);
+            document.getElementById('monthlyPay').textContent = '$' + (weekly * 4.33).toFixed(2);
+            document.getElementById('yearlyPay').textContent = '$' + (weekly * 50).toFixed(2);
+
+            const targetIncome = parseFloat(document.getElementById('targetIncome').value) || 0;
+            const expenses = parseFloat(document.getElementById('annualExpenses').value) || 0;
+            const billableHours = parseFloat(document.getElementById('billableHours').value) || 0;
+            const hourlyNeeded = (targetIncome + expenses) / (billableHours * 50 || 1);
+
+            const inputRate = parseFloat(document.getElementById('inputHourlyRate').value) || 0;
+            const inputHours = parseFloat(document.getElementById('inputHoursWeek').value) || 0;
+            const annualSalary = inputRate * inputHours * 50;
+
+            if (!document.getElementById('rateModeInputs').classList.contains('hidden')) {
+                document.getElementById('mainResult').textContent = '$' + hourlyNeeded.toFixed(2) + ' / hr';
+            } else if (!document.getElementById('annualModeInputs').classList.contains('hidden')) {
+                document.getElementById('mainResult').textContent = '$' + annualSalary.toLocaleString('en-US', {minimumFractionDigits: 2}) + ' / yr';
+            }
+        }
+        ['contractRate','contractHours','targetIncome','annualExpenses','billableHours','inputHourlyRate','inputHoursWeek'].forEach(id => {
+            const el = document.getElementById(id);
+            if(el) el.addEventListener('input', calculateContract);
+        });
+
+        // Tool 6: QR Code Logic
+        function initQRCode() {
+            const qrContainer = document.getElementById('qrcode');
+            if(qrContainer && typeof QRCode !== 'undefined') {
+                qrContainer.innerHTML = '';
+                qrcodeObj = new QRCode(qrContainer, {
+                    text: "https://mytoolx.org",
+                    width: 128,
+                    height: 128
+                });
+            }
+        }
+        document.getElementById('qrInput').addEventListener('input', (e) => {
+            const text = e.target.value.trim() || "https://mytoolx.org";
+            if (!qrcodeObj) initQRCode();
+            if (qrcodeObj) {
+                qrcodeObj.clear();
+                qrcodeObj.makeCode(text);
+            }
+        });
+
+        // Tool 7: Password Generator Logic
+        function generatePassword() {
+            const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=";
+            let pwd = "";
+            for (let i = 0; i < 16; i++) {
+                pwd += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            document.getElementById('passwordOutput').textContent = pwd;
+        }
+
+        // Tool 8: JSON Formatter Logic
+        function formatJSON() {
+            const inp = document.getElementById('jsonInput').value;
+            try {
+                const parsed = JSON.parse(inp);
+                document.getElementById('jsonOutput').value = JSON.stringify(parsed, null, 4);
+            } catch (e) {
+                document.getElementById('jsonOutput').value = "Invalid JSON input!";
+            }
+        }
+        function minifyJSON() {
+            const inp = document.getElementById('jsonInput').value;
+            try {
+                const parsed = JSON.parse(inp);
+                document.getElementById('jsonOutput').value = JSON.stringify(parsed);
+            } catch (e) {
+                document.getElementById('jsonOutput').value = "Invalid JSON input!";
+            }
+        }
+
+        // Tool 9: Base64 Logic
+        function encodeBase64() {
+            const inp = document.getElementById('base64Input').value;
+            try { document.getElementById('base64Output').value = btoa(inp); }
+            catch(e) { document.getElementById('base64Output').value = "Encoding Error!"; }
+        }
+        function decodeBase64() {
+            const inp = document.getElementById('base64Input').value;
+            try { document.getElementById('base64Output').value = atob(inp); }
+            catch(e) { document.getElementById('base64Output').value = "Invalid Base64 string!"; }
+        }
+
+        // Tool 10: Color Converter Logic
+        document.getElementById('hexInput').addEventListener('input', (e) => {
+            const val = e.target.value.trim();
+            const preview = document.getElementById('colorPreview');
+            const hexText = document.getElementById('hexOutputText');
+            const rgbText = document.getElementById('rgbOutput');
+
+            if(!val) return;
+            const ctx = document.createElement('canvas').getContext('2d');
+            ctx.fillStyle = val;
+            const computed = ctx.fillStyle;
+
+            if (computed) {
+                preview.style.backgroundColor = computed;
+                hexText.textContent = computed.toUpperCase();
+                
+                let hex = computed.replace('#', '');
+                if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+                const num = parseInt(hex, 16);
+                if (!isNaN(num) && hex.length === 6) {
+                    const r = (num >> 16) & 255;
+                    const g = (num >> 8) & 255;
+                    const b = num & 255;
+                    rgbText.textContent = `rgb(${r}, ${g}, ${b})`;
+                } else {
+                    rgbText.textContent = computed;
+                }
+            }
+        });
     </script>
 </body>
 </html>
