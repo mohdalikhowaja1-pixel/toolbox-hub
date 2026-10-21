@@ -15,20 +15,20 @@
         }
         .btn-3d:active {
             transform: translateY(3px);
-            box-shadow: 0 1px 0 0 #1d4ed8, 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 0 0 #1d4ed8, 0 4px 6px -1px rgba(100, 201, 72, 0.1);
         }
         .card-3d-btn {
             transition: all 0.2s ease;
             box-shadow: 0 6px 15px -3px rgba(0, 0, 0, 0.06);
-            border: 2px solid #e2e8f0;
+            border: 2px solid #d6da8a;
         }
         .card-3d-btn:hover {
             transform: translateY(-4px);
             box-shadow: 0 12px 24px -4px rgba(37, 99, 235, 0.18);
         }
         .card-3d-btn.active {
-            border-color: #2563eb;
-            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-color: #98b6c4;
+            background: linear-gradient(135deg, #7bae6c 0%, #eae7e9 100%);
             box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
             transform: translateY(1px);
         }
@@ -78,7 +78,6 @@
 
             <!-- Top CTA Buttons -->
             <div class="flex items-center gap-2.5">
-                <!-- HIGHLY HIGHLIGHTED REMOTE JOBS BUTTON -->
                 <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" class="text-xs font-black bg-gradient-to-r from-emerald-500 via-teal-600 to-cyan-600 text-white px-3.5 py-2.5 rounded-xl shadow-md hover:shadow-emerald-500/30 hover:scale-105 transition-all flex items-center gap-1.5 animate-pulse">
                     💼 Apply Remote Jobs ↗
                 </a>
@@ -96,114 +95,251 @@
         
         <!-- Hero Section -->
         <div class="text-center mb-8">
-            <h1 class="text-3xl md:text-5xl font-black text-slate-900 mb-2 tracking-tight">Free Utility Web Tools</h1>
-            <p class="text-slate-600 text-sm md:text-base max-w-xl mx-auto font-medium">Fast, secure tools organized for writers, students, freelancers, and developers.</p>
+            <h1 class="text-3xl md:text-5xl font-black text-slate-900 mb-2 tracking-tight">Free Utility & AI Web Tools</h1>
+            <p class="text-slate-600 text-sm md:text-base max-w-xl mx-auto font-medium">Fast, secure, professional tools organized for students, writers, creators, and developers.</p>
         </div>
 
-        <!-- Role Filter Tabs -->
+        <!-- Role Filter Tabs (RE-ORDERED: Writers 1st, AI 2nd, Finance 3rd, Everyday 4th, Dev 5th) -->
         <div class="flex flex-wrap justify-center gap-2 mb-8 text-xs font-bold">
-            <button onclick="filterCategory('all')" class="cat-btn bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2.5 rounded-full shadow-md">All Tools</button>
-            <button onclick="filterCategory('writer')" class="cat-btn bg-white text-blue-700 hover:bg-blue-50 px-5 py-2.5 rounded-full border border-blue-200 shadow-sm">✍️ For Writers, Students & CV</button>
-            <button onclick="filterCategory('finance')" class="cat-btn bg-white text-emerald-700 hover:bg-emerald-50 px-5 py-2.5 rounded-full border border-emerald-200 shadow-sm">💰 Finance & Freelancers</button>
-            <button onclick="filterCategory('everyday')" class="cat-btn bg-white text-purple-700 hover:bg-purple-50 px-5 py-2.5 rounded-full border border-purple-200 shadow-sm">📱 Everyday Utilities</button>
-            <button onclick="filterCategory('dev')" class="cat-btn bg-white text-amber-700 hover:bg-amber-50 px-5 py-2.5 rounded-full border border-amber-200 shadow-sm">💻 For Developers</button>
+            <button id="catBtnAll" onclick="filterCategory('all', this)" class="cat-btn bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold">All Tools</button>
+            <button id="catBtnWriter" onclick="filterCategory('writer', this)" class="cat-btn bg-white text-blue-700 hover:bg-blue-50 px-5 py-2.5 rounded-full border border-blue-200 shadow-sm font-extrabold">✍️ Writers, Students & CV</button>
+            <button id="catBtnAi" onclick="filterCategory('ai', this)" class="cat-btn text-sky-900 px-5 py-2.5 rounded-full border border-sky-200 shadow-sm font-extrabold" style="background: linear-gradient(135deg, #dee941 0%, rgba(144, 237, 173, 0.867) 50%, #0b0a0b 100%);">🤖 AI & Social Tools 🔥</button>
+            <button id="catBtnFinance" onclick="filterCategory('finance', this)" class="cat-btn bg-white text-emerald-700 hover:bg-emerald-50 px-5 py-2.5 rounded-full border border-emerald-200 shadow-sm font-extrabold">💰 Finance & Freelancers</button>
+            <button id="catBtnEveryday" onclick="filterCategory('everyday', this)" class="cat-btn bg-white text-purple-700 hover:bg-purple-50 px-5 py-2.5 rounded-full border border-purple-200 shadow-sm font-extrabold">📱 Everyday Utilities</button>
+            <button id="catBtnDev" onclick="filterCategory('dev', this)" class="cat-btn bg-white text-amber-700 hover:bg-amber-50 px-5 py-2.5 rounded-full border border-amber-200 shadow-sm font-extrabold">💻 For Developers</button>
         </div>
 
-        <!-- Categorized Tool Cards Grid -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3.5 mb-8">
+        <!-- Categorized Tool Cards Grid (RE-ORDERED & TRENDY ARRANGEMENT) -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3.5 mb-8">
             
-            <!-- HIGHLIGHTED REMOTE JOBS CARD (WRITERS & STUDENTS SECTION) -->
+            <!-- SECTION 1: WRITERS, STUDENTS & CV (FIRST) -->
             <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" data-cat="writer" class="card-3d-btn bg-gradient-to-br from-emerald-500 via-teal-600 to-emerald-700 p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-emerald-300 text-white shadow-lg hover:scale-105 transition-all cursor-pointer">
                 <div class="flex justify-between items-start">
                     <span class="text-xl">💼</span>
-                    <span class="text-[9px] font-black uppercase tracking-wider bg-white/25 text-white px-2 py-0.5 rounded-md backdrop-blur-sm">Apply Now</span>
+                    <span class="text-[9px] font-black uppercase tracking-wider bg-white/25 text-blue-700 px-2 py-0.5 rounded-md backdrop-blur-sm">Apply Now</span>
                 </div>
                 <div>
                     <div class="font-black text-white text-xs sm:text-sm">Online Remote Jobs</div>
-                    <div class="text-[10px] text-emerald-100 font-medium">Click & Apply Skills ↗</div>
+                    <div class="text-[10px] text-emerald-100 font-medium">Click & Apply Now ↗</div>
                 </div>
             </a>
 
             <button id="nav1" data-cat="writer" onclick="switchTool(1)" class="card-3d-btn active bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-blue-200">
                 <div class="flex justify-between items-start"><span class="text-xl">✍️</span><span class="text-[9px] font-black uppercase tracking-wider bg-blue-100 text-blue-700 px-2 py-0.5 rounded-md">Writers</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Word Counter</div><div class="text-[10px] text-slate-400">Length & Read Time</div></div>
-            </button>
-
-            <button id="nav2" data-cat="writer" onclick="switchTool(2)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-blue-200">
-                <div class="flex justify-between items-start"><span class="text-xl">🔠</span><span class="text-[9px] font-black uppercase tracking-wider bg-blue-100 text-blue-700 px-2 py-0.5 rounded-md">Writers</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Case Converter</div><div class="text-[10px] text-slate-400">UPPER, lower, Title</div></div>
+                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Text & Word Suite</div><div class="text-[10px] text-slate-600">Counter & Case Converter</div></div>
             </button>
 
             <button id="nav3" data-cat="writer" onclick="switchTool(3)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-indigo-200 bg-gradient-to-br from-white to-indigo-50/50">
-                <div class="flex justify-between items-start"><span class="text-xl">📄</span><span class="text-[9px] font-black uppercase tracking-wider bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-md">Python App</span></div>
-                <div><div class="font-bold text-indigo-950 text-xs sm:text-sm">Live CV Maker</div><div class="text-[10px] text-indigo-500">PDF & Word Generator</div></div>
+                <div class="flex justify-between items-start"><span class="text-xl">📄</span><span class="text-[9px] font-black uppercase tracking-wider bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-md">CV Builder</span></div>
+                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Live CV Maker</div><div class="text-[10px] text-slate-600">PDF & Word Generator</div></div>
             </button>
 
+            <!-- SECTION 2: AI & SOCIAL TOOLS (SECOND - TRENDY & VISIBLE) -->
+            <button id="nav11" data-cat="ai" onclick="switchTool(11)" class="card-3d-btn p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border border-slate-200 hover:border-blue-200">
+                <div class="flex justify-between items-start">
+                    <span class="text-xl">🤖</span>
+                    <span class="text-[9px] font-black uppercase tracking-wider bg-blue-100 text-gray-900 px-2 py-0.5 rounded-md backdrop-blur-sm">Trending</span>
+                </div>
+                <div>
+                    <div class="font-bold text-slate-800 text-xs sm:text-sm">AI Tools Suite</div>
+                    <div class="text-[10px] text-slate-800">Prompt, Humanize & Social</div>
+                </div>
+            </button>
+
+            <!-- SECTION 3: FINANCE & FREELANCERS -->
             <button id="nav4" data-cat="finance" onclick="switchTool(4)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-emerald-200">
                 <div class="flex justify-between items-start"><span class="text-xl">💰</span><span class="text-[9px] font-black uppercase tracking-wider bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-md">Finance</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Fee Calculator</div><div class="text-[10px] text-slate-400">PayPal, Stripe, Square</div></div>
+                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Finance Calculators</div><div class="text-[10px] text-slate-600">Fee & Contract Earnings</div></div>
             </button>
 
-            <button id="nav5" data-cat="finance" onclick="switchTool(5)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-emerald-200">
-                <div class="flex justify-between items-start"><span class="text-xl">📊</span><span class="text-[9px] font-black uppercase tracking-wider bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-md">Finance</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Contract Calc</div><div class="text-[10px] text-slate-400">Hourly & Earnings Breakdown</div></div>
-            </button>
-
+            <!-- SECTION 4: EVERYDAY UTILITIES -->
             <button id="nav6" data-cat="everyday" onclick="switchTool(6)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-purple-200">
                 <div class="flex justify-between items-start"><span class="text-xl">📱</span><span class="text-[9px] font-black uppercase tracking-wider bg-purple-100 text-purple-700 px-2 py-0.5 rounded-md">Utility</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">QR Code Gen</div><div class="text-[10px] text-slate-400">Create QR Images</div></div>
+                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">QR Code Gen</div><div class="text-[10px] text-slate-600">Create QR Images</div></div>
             </button>
 
             <button id="nav7" data-cat="everyday" onclick="switchTool(7)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-purple-200">
                 <div class="flex justify-between items-start"><span class="text-xl">🔑</span><span class="text-[9px] font-black uppercase tracking-wider bg-purple-100 text-purple-700 px-2 py-0.5 rounded-md">Utility</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Password Gen</div><div class="text-[10px] text-slate-400">Secure Random Keys</div></div>
+                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Password Gen</div><div class="text-[10px] text-slate-600">Secure Random Keys</div></div>
             </button>
 
+            <!-- SECTION 5: DEVELOPERS -->
             <button id="nav8" data-cat="dev" onclick="switchTool(8)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-amber-200">
                 <div class="flex justify-between items-start"><span class="text-xl">⚡</span><span class="text-[9px] font-black uppercase tracking-wider bg-amber-100 text-amber-700 px-2 py-0.5 rounded-md">Developer</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">JSON Formatter</div><div class="text-[10px] text-slate-400">Beautify & Minify</div></div>
+                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">JSON Formatter</div><div class="text-[10px] text-slate-600">Beautify & Minify</div></div>
             </button>
 
             <button id="nav9" data-cat="dev" onclick="switchTool(9)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-amber-200">
                 <div class="flex justify-between items-start"><span class="text-xl">🔤</span><span class="text-[9px] font-black uppercase tracking-wider bg-amber-100 text-amber-700 px-2 py-0.5 rounded-md">Developer</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Base64 Tool</div><div class="text-[10px] text-slate-400">Encode & Decode</div></div>
+                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Base64 Tool</div><div class="text-[10px] text-slate-600">Encode & Decode</div></div>
             </button>
 
             <button id="nav10" data-cat="dev" onclick="switchTool(10)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-amber-200">
                 <div class="flex justify-between items-start"><span class="text-xl">🎨</span><span class="text-[9px] font-black uppercase tracking-wider bg-amber-100 text-amber-700 px-2 py-0.5 rounded-md">Developer</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Color Converter</div><div class="text-[10px] text-slate-400">HEX, RGB & Names</div></div>
+                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Color Converter</div><div class="text-[10px] text-slate-600">HEX, RGB & Names</div></div>
             </button>
         </div>
 
         <!-- TOOL DISPLAY PANEL -->
         <div class="bg-white rounded-3xl shadow-2xl border border-slate-200/80 p-6 md:p-8">
 
-            <!-- TOOL 1: Word Counter -->
+            <!-- MERGED TOOL 1: Text & Word Suite -->
             <div id="tool1">
-                <div class="flex justify-between items-center mb-2">
-                    <h2 class="text-xl font-bold text-slate-800">✍️ Word & Character Counter</h2>
-                    <button onclick="clearTool1()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
+                <div class="flex flex-wrap justify-between items-center gap-3 mb-4 border-b border-slate-200 pb-3">
+                    <div class="flex gap-2">
+                        <button onclick="switchWriterTab('word')" id="writerTabWord" class="px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition">✍️ Word & Char Counter</button>
+                        <button onclick="switchWriterTab('case')" id="writerTabCase" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">🔠 Case Converter</button>
+                    </div>
+                    <button onclick="clearCurrentWriterTab()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
                 </div>
-                <textarea id="textInput" rows="5" class="w-full p-4 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 bg-slate-50 mb-4" placeholder="Type or paste text here..."></textarea>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                    <div class="bg-blue-50/80 p-3.5 rounded-2xl text-center border border-blue-100"><div class="text-2xl font-black text-blue-600" id="wordCount">0</div><div class="text-xs font-bold text-slate-500">Words</div></div>
-                    <div class="bg-emerald-50/80 p-3.5 rounded-2xl text-center border border-emerald-100"><div class="text-2xl font-black text-emerald-600" id="charCount">0</div><div class="text-xs font-bold text-slate-500">Characters</div></div>
-                    <div class="bg-purple-50/80 p-3.5 rounded-2xl text-center border border-purple-100"><div class="text-2xl font-black text-purple-600" id="sentenceCount">0</div><div class="text-xs font-bold text-slate-500">Sentences</div></div>
-                    <div class="bg-amber-50/80 p-3.5 rounded-2xl text-center border border-amber-100"><div class="text-2xl font-black text-amber-600" id="readTime">0 sec</div><div class="text-xs font-bold text-slate-500">Read Time</div></div>
+
+                <!-- SUB-TAB 1: Word Counter -->
+                <div id="writerSubWord">
+                    <textarea id="textInput" rows="5" class="w-full p-4 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 bg-slate-50 mb-4" placeholder="Type or paste text here..."></textarea>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <div class="bg-blue-50/80 p-3.5 rounded-2xl text-center border border-blue-100"><div class="text-2xl font-black text-blue-600" id="wordCount">0</div><div class="text-xs font-bold text-slate-500">Words</div></div>
+                        <div class="bg-emerald-50/80 p-3.5 rounded-2xl text-center border border-emerald-100"><div class="text-2xl font-black text-emerald-600" id="charCount">0</div><div class="text-xs font-bold text-slate-500">Characters</div></div>
+                        <div class="bg-purple-50/80 p-3.5 rounded-2xl text-center border border-purple-100"><div class="text-2xl font-black text-purple-600" id="sentenceCount">0</div><div class="text-xs font-bold text-slate-500">Sentences</div></div>
+                        <div class="bg-amber-50/80 p-3.5 rounded-2xl text-center border border-amber-100"><div class="text-2xl font-black text-amber-600" id="readTime">0 sec</div><div class="text-xs font-bold text-slate-500">Read Time</div></div>
+                    </div>
+                </div>
+
+                <!-- SUB-TAB 2: Case Converter -->
+                <div id="writerSubCase" class="hidden">
+                    <textarea id="caseInput" rows="5" class="w-full p-4 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 bg-slate-50 mb-4" placeholder="Type or paste text here to convert case..."></textarea>
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="convertCase('upper')" class="btn-3d px-5 py-2.5 bg-blue-600 text-white font-bold rounded-xl text-xs">UPPERCASE</button>
+                        <button onclick="convertCase('lower')" class="btn-3d px-5 py-2.5 bg-slate-700 text-white font-bold rounded-xl text-xs">lowercase</button>
+                        <button onclick="convertCase('title')" class="btn-3d px-5 py-2.5 bg-emerald-600 text-white font-bold rounded-xl text-xs">Title Case</button>
+                    </div>
                 </div>
             </div>
 
-            <!-- TOOL 2: Text Case Converter -->
-            <div id="tool2" class="hidden">
-                <div class="flex justify-between items-center mb-2">
-                    <h2 class="text-xl font-bold text-slate-800">🔠 Text Case Converter</h2>
-                    <button onclick="clearTool2()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
+            <!-- TOOL 11: ALL-IN-ONE AI & CREATOR SUITE (PROMPT GEN, HUMANIZER, SOCIAL MEDIA, YOUTUBE OPTIMIZER) -->
+            <div id="tool11" class="hidden">
+                <div class="flex flex-wrap justify-between items-center gap-3 mb-4 border-b border-slate-200 pb-3">
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="switchAiTab('prompt')" id="aiTabPrompt" class="px-4 py-2 rounded-xl text-xs font-black bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-sm transition">🤖 Prompt Studio</button>
+                        <button onclick="switchAiTab('humanize')" id="aiTabHumanize" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">✨ Text Humanizer</button>
+                        <button onclick="switchAiTab('social')" id="aiTabSocial" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">📲 Social Media Post & Hashtags</button>
+                        <button onclick="switchAiTab('youtube')" id="aiTabYoutube" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">▶️ YouTube Title & Tags</button>
+                    </div>
+                    <button onclick="clearCurrentAiTab()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
                 </div>
-                <textarea id="caseInput" rows="4" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 mb-3" placeholder="Type or paste text here..."></textarea>
-                <div class="flex flex-wrap gap-2">
-                    <button onclick="convertCase('upper')" class="btn-3d px-4 py-2 bg-blue-600 text-white font-bold rounded-xl text-xs">UPPERCASE</button>
-                    <button onclick="convertCase('lower')" class="btn-3d px-4 py-2 bg-slate-700 text-white font-bold rounded-xl text-xs">lowercase</button>
-                    <button onclick="convertCase('title')" class="btn-3d px-4 py-2 bg-emerald-600 text-white font-bold rounded-xl text-xs">Title Case</button>
+
+                <!-- SUB-FEATURE 1: PROMPT GENERATOR STUDIO -->
+                <div id="aiSubPrompt">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Target AI Model</label>
+                            <select id="aiModel" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold text-slate-700">
+                                <option value="chatgpt">ChatGPT / Gemini (Text & Copywriting)</option>
+                                <option value="midjourney">Midjourney / DALL-E 3 (AI Images)</option>
+                                <option value="coding">GitHub Copilot / Claude (Coding & Debugging)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Role / Persona</label>
+                            <input type="text" id="aiRole" placeholder="e.g. Senior Copywriter, Python Expert" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Tone & Style</label>
+                            <input type="text" id="aiTone" placeholder="e.g. Professional, Engaging, Minimalist" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Core Topic / Task Requirement</label>
+                        <textarea id="aiTopic" rows="3" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 font-medium" placeholder="e.g. Write a high-converting landing page email sequence for a SaaS product..."></textarea>
+                    </div>
+
+                    <div class="flex gap-3 mb-4">
+                        <button onclick="generateAIPrompt()" class="btn-3d px-6 py-3 bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-extrabold rounded-xl text-xs flex items-center gap-2">
+                            ⚡ Generate Master Prompt
+                        </button>
+                        <button onclick="copyAiOutput('aiPromptOutput', 'aiPromptCopyToast')" class="px-5 py-3 bg-slate-800 text-white font-bold rounded-xl text-xs hover:bg-slate-900 transition">
+                            📋 Copy Prompt
+                        </button>
+                    </div>
+
+                    <div class="relative">
+                        <textarea id="aiPromptOutput" rows="5" readonly class="w-full p-4 bg-slate-900 text-emerald-400 font-mono text-xs rounded-2xl border border-slate-800 shadow-inner" placeholder="Your enhanced system prompt will appear here..."></textarea>
+                        <span id="aiPromptCopyToast" class="absolute top-3 right-3 text-xs font-bold text-emerald-400 bg-slate-800 px-3 py-1 rounded-lg border border-emerald-500/30 hidden">Copied to clipboard!</span>
+                    </div>
+                </div>
+
+                <!-- SUB-FEATURE 2: AI TEXT HUMANIZER & FORMATTING PREP -->
+                <div id="aiSubHumanize" class="hidden">
+                    <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Paste Raw AI / Robot Text Here</label>
+                    <textarea id="humanizeInput" rows="4" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 font-medium mb-3" placeholder="Paste robotic or complex AI-generated paragraphs here..."></textarea>
+                    
+                    <div class="flex gap-3 mb-4">
+                        <button onclick="humanizeText()" class="btn-3d px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-extrabold rounded-xl text-xs flex items-center gap-2">
+                            ✨ Humanize & Format Text
+                        </button>
+                        <button onclick="copyAiOutput('humanizeOutput', 'humanizeCopyToast')" class="px-5 py-3 bg-slate-800 text-white font-bold rounded-xl text-xs hover:bg-slate-900 transition">
+                            📋 Copy Formatted Text
+                        </button>
+                    </div>
+
+                    <div class="relative">
+                        <textarea id="humanizeOutput" rows="6" readonly class="w-full p-4 bg-slate-900 text-blue-300 font-mono text-xs rounded-2xl border border-slate-800 shadow-inner" placeholder="Clean, human-readable bulleted output will be generated here..."></textarea>
+                        <span id="humanizeCopyToast" class="absolute top-3 right-3 text-xs font-bold text-emerald-400 bg-slate-800 px-3 py-1 rounded-lg border border-emerald-500/30 hidden">Copied to clipboard!</span>
+                    </div>
+                </div>
+
+                <!-- SUB-FEATURE 3: SOCIAL MEDIA POST & HASHTAG GENERATOR -->
+                <div id="aiSubSocial" class="hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Platform</label>
+                            <select id="socialPlatform" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold text-slate-700">
+                                <option value="linkedin">LinkedIn Professional Post</option>
+                                <option value="twitter">X / Twitter Thread Idea</option>
+                                <option value="instagram">Instagram Caption + Hashtags</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Main Topic or Product</label>
+                            <input type="text" id="socialTopic" placeholder="e.g. New Remote Job Tools, Productivity Hacks" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3 mb-4">
+                        <button onclick="generateSocialPost()" class="btn-3d px-6 py-3 bg-gradient-to-r from-pink-600 to-rose-600 text-white font-extrabold rounded-xl text-xs flex items-center gap-2">
+                            📲 Generate Caption & Viral Hashtags
+                        </button>
+                        <button onclick="copyAiOutput('socialOutput', 'socialCopyToast')" class="px-5 py-3 bg-slate-800 text-white font-bold rounded-xl text-xs hover:bg-slate-900 transition">
+                            📋 Copy Caption
+                        </button>
+                    </div>
+
+                    <div class="relative">
+                        <textarea id="socialOutput" rows="6" readonly class="w-full p-4 bg-slate-900 text-pink-300 font-mono text-xs rounded-2xl border border-slate-800 shadow-inner" placeholder="Your ready-to-post social media caption and hashtags will appear here..."></textarea>
+                        <span id="socialCopyToast" class="absolute top-3 right-3 text-xs font-bold text-emerald-400 bg-slate-800 px-3 py-1 rounded-lg border border-emerald-500/30 hidden">Copied to clipboard!</span>
+                    </div>
+                </div>
+
+                <!-- SUB-FEATURE 4: YOUTUBE TITLE & TAG OPTIMIZER -->
+                <div id="aiSubYoutube" class="hidden">
+                    <div class="mb-3">
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Video Topic / Focus Keyword</label>
+                        <input type="text" id="ytTopic" placeholder="e.g. How to make CV online, Best Free Developer Tools" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
+                    </div>
+
+                    <div class="flex gap-3 mb-4">
+                        <button onclick="generateYoutubeSEO()" class="btn-3d px-6 py-3 bg-gradient-to-r from-red-600 to-rose-600 text-white font-extrabold rounded-xl text-xs flex items-center gap-2">
+                            ▶️ Generate High-CTR Titles & Tags
+                        </button>
+                        <button onclick="copyAiOutput('ytOutput', 'ytCopyToast')" class="px-5 py-3 bg-slate-800 text-white font-bold rounded-xl text-xs hover:bg-slate-900 transition">
+                            📋 Copy Tags & Titles
+                        </button>
+                    </div>
+
+                    <div class="relative">
+                        <textarea id="ytOutput" rows="6" readonly class="w-full p-4 bg-slate-900 text-amber-300 font-mono text-xs rounded-2xl border border-slate-800 shadow-inner" placeholder="CTR Optimized Titles, YouTube Tags, and Description layout will appear here..."></textarea>
+                        <span id="ytCopyToast" class="absolute top-3 right-3 text-xs font-bold text-emerald-400 bg-slate-800 px-3 py-1 rounded-lg border border-emerald-500/30 hidden">Copied to clipboard!</span>
+                    </div>
                 </div>
             </div>
 
@@ -221,75 +357,78 @@
                 <iframe src="https://mali1.pythonanywhere.com/" class="w-full h-[650px] rounded-2xl border border-slate-200 shadow-inner bg-white"></iframe>
             </div>
 
-            <!-- TOOL 4: Fee Calculator -->
+            <!-- MERGED TOOL 4: Finance Calculators -->
             <div id="tool4" class="hidden">
-                <div class="flex justify-between items-center mb-2">
-                    <h2 class="text-xl font-bold text-slate-800">💰 Payment Fee Calculator</h2>
-                    <button onclick="clearTool4()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
-                    <select id="platformSelect" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
-                        <option value="stripe">Stripe (2.9% + $0.30)</option>
-                        <option value="paypal_card">PayPal Card (2.99% + $0.49)</option>
-                        <option value="square">Square (2.6% + $0.10)</option>
-                    </select>
-                    <select id="currencySelect" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
-                        <option value="$">USD ($)</option>
-                        <option value="€">EUR (€)</option>
-                        <option value="£">GBP (£)</option>
-                    </select>
-                    <input type="number" id="feeInput" placeholder="Enter amount..." class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                    <div class="bg-rose-50/80 p-3.5 rounded-2xl text-center border border-rose-100"><div class="text-2xl font-black text-rose-600" id="feeAmount">$0.00</div><div class="text-xs font-bold text-slate-500">Total Fee</div></div>
-                    <div class="bg-emerald-50/80 p-3.5 rounded-2xl text-center border border-emerald-100"><div class="text-2xl font-black text-emerald-600" id="youReceive">$0.00</div><div class="text-xs font-bold text-slate-500">You Receive</div></div>
-                    <div class="bg-blue-50/80 p-3.5 rounded-2xl text-center border border-blue-100"><div class="text-2xl font-black text-blue-600" id="askAmount">$0.00</div><div class="text-xs font-bold text-slate-500">Charge Amount</div></div>
-                </div>
-            </div>
-
-            <!-- TOOL 5: Contract Calculator -->
-            <div id="tool5" class="hidden">
-                <div class="flex justify-between items-center mb-2">
-                    <h2 class="text-xl font-bold text-slate-800">📊 Freelance & Contract Earnings Calculator</h2>
-                    <button onclick="clearTool5()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
-                </div>
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <button onclick="setCalcMode('contract')" id="modeContractBtn" class="px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition">Contract Calculator</button>
-                    <button onclick="setCalcMode('rate')" id="modeRateBtn" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 text-slate-700 transition">Target Hourly Rate</button>
-                    <button onclick="setCalcMode('annual')" id="modeAnnualBtn" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 text-slate-700 transition">Target Annual Salary</button>
-                </div>
-
-                <div id="contractModeInputs" class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Contract Rate ($ / Hour)</label>
-                        <input type="number" id="contractRate" value="15" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
+                <div class="flex flex-wrap justify-between items-center gap-3 mb-4 border-b border-slate-200 pb-3">
+                    <div class="flex gap-2">
+                        <button onclick="switchFinanceTab('fee')" id="financeTabFee" class="px-4 py-2 rounded-xl text-xs font-bold bg-emerald-600 text-white transition">💰 Payment Fee Calculator</button>
+                        <button onclick="switchFinanceTab('contract')" id="financeTabContract" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">📊 Contract Earnings Calculator</button>
                     </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Contract Hours / Week</label>
-                        <input type="number" id="contractHours" value="20" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
+                    <button onclick="clearCurrentFinanceTab()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
+                </div>
+
+                <!-- SUB-TAB 1: Fee Calculator -->
+                <div id="financeSubFee">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
+                        <select id="platformSelect" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
+                            <option value="stripe">Stripe (2.9% + $0.30)</option>
+                            <option value="paypal_card">PayPal Card (2.99% + $0.49)</option>
+                            <option value="square">Square (2.6% + $0.10)</option>
+                        </select>
+                        <select id="currencySelect" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
+                            <option value="$">USD ($)</option>
+                            <option value="€">EUR (€)</option>
+                            <option value="£">GBP (£)</option>
+                        </select>
+                        <input type="number" id="feeInput" placeholder="Enter amount..." class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                        <div class="bg-rose-50/80 p-3.5 rounded-2xl text-center border border-rose-100"><div class="text-2xl font-black text-rose-600" id="feeAmount">$0.00</div><div class="text-xs font-bold text-slate-500">Total Fee</div></div>
+                        <div class="bg-emerald-50/80 p-3.5 rounded-2xl text-center border border-emerald-100"><div class="text-2xl font-black text-emerald-600" id="youReceive">$0.00</div><div class="text-xs font-bold text-slate-500">You Receive</div></div>
+                        <div class="bg-blue-50/80 p-3.5 rounded-2xl text-center border border-blue-100"><div class="text-2xl font-black text-blue-600" id="askAmount">$0.00</div><div class="text-xs font-bold text-slate-500">Charge Amount</div></div>
                     </div>
                 </div>
 
-                <div id="rateModeInputs" class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4 hidden">
-                    <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Target Annual Income ($)</label><input type="number" id="targetIncome" value="50000" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                    <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Annual Expenses ($)</label><input type="number" id="annualExpenses" value="5000" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                    <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Billable Hours / Week</label><input type="number" id="billableHours" value="20" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                </div>
+                <!-- SUB-TAB 2: Contract Earnings Calculator -->
+                <div id="financeSubContract" class="hidden">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <button onclick="setCalcMode('contract')" id="modeContractBtn" class="px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition">Contract Calculator</button>
+                        <button onclick="setCalcMode('rate')" id="modeRateBtn" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 text-slate-700 transition">Target Hourly Rate</button>
+                        <button onclick="setCalcMode('annual')" id="modeAnnualBtn" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 text-slate-700 transition">Target Annual Salary</button>
+                    </div>
 
-                <div id="annualModeInputs" class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4 hidden">
-                    <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Your Hourly Rate ($)</label><input type="number" id="inputHourlyRate" value="50" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                    <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Hours Worked / Week</label><input type="number" id="inputHoursWeek" value="40" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                </div>
+                    <div id="contractModeInputs" class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Contract Rate ($ / Hour)</label>
+                            <input type="number" id="contractRate" placeholder="e.g. 15" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Contract Hours / Week</label>
+                            <input type="number" id="contractHours" placeholder="e.g. 20" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
+                        </div>
+                    </div>
 
-                <div id="contractGrid" class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                    <div class="bg-blue-50/80 p-4 rounded-2xl border border-blue-100 text-center"><div class="text-xs font-bold text-slate-500 uppercase">Weekly Earnings</div><div class="text-2xl font-black text-blue-600 mt-1" id="weeklyPay">$300.00</div></div>
-                    <div class="bg-indigo-50/80 p-4 rounded-2xl border border-indigo-100 text-center"><div class="text-xs font-bold text-slate-500 uppercase">Monthly Earnings</div><div class="text-2xl font-black text-indigo-600 mt-1" id="monthlyPay">$1,200.00</div></div>
-                    <div class="bg-emerald-50/80 p-4 rounded-2xl border border-emerald-100 text-center"><div class="text-xs font-bold text-slate-500 uppercase">Yearly Earnings</div><div class="text-2xl font-black text-emerald-600 mt-1" id="yearlyPay">$15,000.00</div></div>
-                </div>
+                    <div id="rateModeInputs" class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4 hidden">
+                        <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Target Annual Income ($)</label><input type="number" id="targetIncome" placeholder="e.g. 50000" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
+                        <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Annual Expenses ($)</label><input type="number" id="annualExpenses" placeholder="e.g. 5000" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
+                        <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Billable Hours / Week</label><input type="number" id="billableHours" placeholder="e.g. 20" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
+                    </div>
 
-                <div id="singleResultBox" class="bg-emerald-50 p-4 rounded-2xl border border-emerald-100 text-center hidden">
-                    <div class="text-xs font-bold text-slate-500 uppercase" id="resultLabel">Recommended Hourly Rate</div>
-                    <div class="text-4xl font-black text-emerald-600 mt-1" id="mainResult">$0.00 / hr</div>
+                    <div id="annualModeInputs" class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4 hidden">
+                        <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Your Hourly Rate ($)</label><input type="number" id="inputHourlyRate" placeholder="e.g. 50" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
+                        <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Hours Worked / Week</label><input type="number" id="inputHoursWeek" placeholder="e.g. 40" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
+                    </div>
+
+                    <div id="contractGrid" class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                        <div class="bg-blue-50/80 p-4 rounded-2xl border border-blue-100 text-center"><div class="text-xs font-bold text-slate-500 uppercase">Weekly Earnings</div><div class="text-2xl font-black text-blue-600 mt-1" id="weeklyPay">$0.00</div></div>
+                        <div class="bg-indigo-50/80 p-4 rounded-2xl border border-indigo-100 text-center"><div class="text-xs font-bold text-slate-500 uppercase">Monthly Earnings</div><div class="text-2xl font-black text-indigo-600 mt-1" id="monthlyPay">$0.00</div></div>
+                        <div class="bg-emerald-50/80 p-4 rounded-2xl border border-emerald-100 text-center"><div class="text-xs font-bold text-slate-500 uppercase">Yearly Earnings</div><div class="text-2xl font-black text-emerald-600 mt-1" id="yearlyPay">$0.00</div></div>
+                    </div>
+
+                    <div id="singleResultBox" class="bg-emerald-50 p-4 rounded-2xl border border-emerald-100 text-center hidden">
+                        <div class="text-xs font-bold text-slate-500 uppercase" id="resultLabel">Recommended Hourly Rate</div>
+                        <div class="text-4xl font-black text-emerald-600 mt-1" id="mainResult">$0.00 / hr</div>
+                    </div>
                 </div>
             </div>
 
@@ -299,9 +438,20 @@
                     <h2 class="text-xl font-bold text-slate-800">📱 Instant QR Code Generator</h2>
                     <button onclick="clearTool6()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
                 </div>
-                <input type="text" id="qrInput" placeholder="https://mytoolx.org" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-medium mb-4">
-                <div class="flex flex-col items-center justify-center p-4 bg-slate-50 rounded-2xl border border-slate-200">
-                    <div id="qrcode" class="p-2 bg-white rounded-lg shadow-sm min-h-[128px] min-w-[128px] flex items-center justify-center"></div>
+                <input type="text" id="qrInput" placeholder="Enter link or text (e.g. google.com or facebook.com)..." class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-medium mb-4">
+                
+                <div class="flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl border border-slate-200 gap-4">
+                    <div id="qrcode" class="p-4 bg-white rounded-2xl shadow-md min-h-[220px] min-w-[220px] flex items-center justify-center border border-slate-100"></div>
+                    
+                    <div class="flex flex-wrap justify-center gap-3 w-full max-w-md">
+                        <button onclick="downloadHDQRCode()" class="btn-3d flex-1 py-3 px-5 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-extrabold rounded-xl text-xs flex items-center justify-center gap-2 shadow-md">
+                            <span>⬇️ Download HD QR Code</span>
+                        </button>
+                        <button onclick="shareQRCode()" class="btn-3d flex-1 py-3 px-5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-extrabold rounded-xl text-xs flex items-center justify-center gap-2 shadow-md">
+                            <span>🔗 Share QR Code</span>
+                        </button>
+                    </div>
+                    <span id="shareToast" class="text-xs font-bold text-emerald-600 hidden">Copied / Shared successfully!</span>
                 </div>
             </div>
 
@@ -345,7 +495,7 @@
                 <textarea id="base64Output" rows="3" readonly class="w-full p-3 bg-slate-100 border border-slate-200 rounded-xl font-mono" placeholder="Output..."></textarea>
             </div>
 
-            <!-- TOOL 10: Smart Multi-Color Converter -->
+            <!-- TOOL 10: Color Converter -->
             <div id="tool10" class="hidden">
                 <div class="flex justify-between items-center mb-2">
                     <h2 class="text-xl font-bold text-slate-800">🎨 Universal Color Code Converter</h2>
@@ -360,11 +510,11 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-center font-mono font-bold text-slate-800">
-                        <div class="text-[10px] text-slate-400 font-sans uppercase">HEX Code</div>
+                        <div class="text-[10px] text-slate-600 font-sans uppercase">HEX Code</div>
                         <div id="hexOutputText" class="text-lg text-blue-600">#3B82F6</div>
                     </div>
                     <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-center font-mono font-bold text-slate-800">
-                        <div class="text-[10px] text-slate-400 font-sans uppercase">RGB Code</div>
+                        <div class="text-[10px] text-slate-600 font-sans uppercase">RGB Code</div>
                         <div id="rgbOutput" class="text-lg text-emerald-600">rgb(59, 130, 246)</div>
                     </div>
                 </div>
@@ -375,7 +525,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs font-semibold text-slate-400">
+    <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs font-semibold text-slate-600">
         <p>&copy; 2026 MyToolX. All rights reserved.</p>
     </footer>
 
@@ -384,12 +534,13 @@
         let qrcodeObj = null;
 
         function switchTool(toolNum) {
-            for (let i = 1; i <= 10; i++) {
+            const toolIds = [1, 3, 4, 6, 7, 8, 9, 10, 11];
+            toolIds.forEach(i => {
                 const tElement = document.getElementById('tool' + i);
                 const nElement = document.getElementById('nav' + i);
                 if (tElement) tElement.classList.add('hidden');
                 if (nElement) nElement.classList.remove('active');
-            }
+            });
             const activeTool = document.getElementById('tool' + toolNum);
             const activeNav = document.getElementById('nav' + toolNum);
             if (activeTool) activeTool.classList.remove('hidden');
@@ -400,7 +551,25 @@
             }
         }
 
-        function filterCategory(cat) {
+        /* --- HIGH CONTRAST CATEGORY FILTERING (PREVENTS TEXT WASHOUT) --- */
+        function filterCategory(cat, btnElement) {
+            // Reset all category button styles to clean default
+            const catButtons = document.querySelectorAll('.cat-btn');
+            catButtons.forEach(btn => {
+                btn.className = "cat-btn bg-white text-slate-700 hover:bg-slate-100 px-5 py-2.5 rounded-full border border-slate-200 shadow-sm font-extrabold transition-all";
+            });
+
+            // Apply vibrant, highly readable active style to clicked button
+            if (btnElement) {
+                if (cat === 'all') btnElement.className = "cat-btn bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold";
+                else if (cat === 'writer') btnElement.className = "cat-btn bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold";
+                else if (cat === 'ai') btnElement.className = "cat-btn bg-gradient-to-r from-violet-600 to-purple-700 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold";
+                else if (cat === 'finance') btnElement.className = "cat-btn bg-gradient-to-r from-emerald-600 to-teal-700 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold";
+                else if (cat === 'everyday') btnElement.className = "cat-btn bg-gradient-to-r from-purple-600 to-pink-700 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold";
+                else if (cat === 'dev') btnElement.className = "cat-btn bg-gradient-to-r from-amber-600 to-orange-700 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold";
+            }
+
+            // Show/Hide matching tool cards
             const elements = document.querySelectorAll('[data-cat]');
             elements.forEach(el => {
                 if (cat === 'all' || el.getAttribute('data-cat') === cat) {
@@ -411,33 +580,208 @@
             });
         }
 
-        function clearTool1() {
-            document.getElementById('textInput').value = '';
-            document.getElementById('wordCount').textContent = '0';
-            document.getElementById('charCount').textContent = '0';
-            document.getElementById('sentenceCount').textContent = '0';
-            document.getElementById('readTime').textContent = '0 sec';
+        /* --- TOOL 11: AI SUITE SUB-TABS LOGIC --- */
+        function switchAiTab(sub) {
+            const promptBox = document.getElementById('aiSubPrompt');
+            const humanizeBox = document.getElementById('aiSubHumanize');
+            const socialBox = document.getElementById('aiSubSocial');
+            const ytBox = document.getElementById('aiSubYoutube');
+
+            const btnPrompt = document.getElementById('aiTabPrompt');
+            const btnHumanize = document.getElementById('aiTabHumanize');
+            const btnSocial = document.getElementById('aiTabSocial');
+            const btnYt = document.getElementById('aiTabYoutube');
+
+            [promptBox, humanizeBox, socialBox, ytBox].forEach(b => b.classList.add('hidden'));
+            [btnPrompt, btnHumanize, btnSocial, btnYt].forEach(b => {
+                b.className = "px-4 py-2 rounded-xl text-xs font-extrabold bg-slate-100 text-slate-700 hover:bg-slate-200 transition";
+            });
+
+            if (sub === 'prompt') {
+                promptBox.classList.remove('hidden');
+                btnPrompt.className = "px-4 py-2 rounded-xl text-xs font-black bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-sm transition";
+            } else if (sub === 'humanize') {
+                humanizeBox.classList.remove('hidden');
+                btnHumanize.className = "px-4 py-2 rounded-xl text-xs font-black bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-sm transition";
+            } else if (sub === 'social') {
+                socialBox.classList.remove('hidden');
+                btnSocial.className = "px-4 py-2 rounded-xl text-xs font-black bg-gradient-to-r from-pink-600 to-rose-600 text-white shadow-sm transition";
+            } else if (sub === 'youtube') {
+                ytBox.classList.remove('hidden');
+                btnYt.className = "px-4 py-2 rounded-xl text-xs font-black bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-sm transition";
+            }
         }
-        function clearTool2() { document.getElementById('caseInput').value = ''; }
-        function clearTool4() {
-            document.getElementById('feeInput').value = '';
-            document.getElementById('feeAmount').textContent = '$0.00';
-            document.getElementById('youReceive').textContent = '$0.00';
-            document.getElementById('askAmount').textContent = '$0.00';
+
+        function clearCurrentAiTab() {
+            document.getElementById('aiRole').value = '';
+            document.getElementById('aiTone').value = '';
+            document.getElementById('aiTopic').value = '';
+            document.getElementById('aiPromptOutput').value = '';
+
+            document.getElementById('humanizeInput').value = '';
+            document.getElementById('humanizeOutput').value = '';
+
+            document.getElementById('socialTopic').value = '';
+            document.getElementById('socialOutput').value = '';
+
+            document.getElementById('ytTopic').value = '';
+            document.getElementById('ytOutput').value = '';
         }
-        function clearTool5() {
-            document.getElementById('contractRate').value = '';
-            document.getElementById('contractHours').value = '';
-            document.getElementById('targetIncome').value = '';
-            document.getElementById('annualExpenses').value = '';
-            document.getElementById('billableHours').value = '';
-            document.getElementById('inputHourlyRate').value = '';
-            document.getElementById('inputHoursWeek').value = '';
-            document.getElementById('weeklyPay').textContent = '$0.00';
-            document.getElementById('monthlyPay').textContent = '$0.00';
-            document.getElementById('yearlyPay').textContent = '$0.00';
-            document.getElementById('mainResult').textContent = '$0.00 / hr';
+
+        /* --- FEATURE 1: PROMPT GENERATOR --- */
+        function generateAIPrompt() {
+            const model = document.getElementById('aiModel').value;
+            const role = document.getElementById('aiRole').value.trim() || 'Expert Assistant';
+            const tone = document.getElementById('aiTone').value.trim() || 'Professional, Clear, and Direct';
+            const topic = document.getElementById('aiTopic').value.trim() || 'Provide a detailed breakdown and action plan for this task.';
+
+            let prompt = '';
+            if (model === 'midjourney') {
+                prompt = `/imagine prompt: High quality, cinematic shot of ${topic}, styled in ${tone} aesthetic, octane render, photorealistic, 8k resolution, detailed lighting --ar 16:9 --v 6.0`;
+            } else if (model === 'coding') {
+                prompt = `[ROLE]: You are a ${role}.\n[OBJECTIVE]: Write clean, efficient, production-ready code for the following task:\n"${topic}"\n\n[REQUIREMENTS]:\n1. Ensure modern best practices and error handling.\n2. Tone & Style: ${tone}.\n3. Include clear inline comments and a short explanation of the solution.`;
+            } else {
+                prompt = `[ROLE]: Act as a ${role}.\n[TONE & STYLE]: ${tone}.\n[TASK]: ${topic}\n\n[FORMATTING INSTRUCTIONS]:\n- Start with a clear executive summary.\n- Use bullet points for key takeaways.\n- End with a practical step-by-step action checklist.`;
+            }
+            document.getElementById('aiPromptOutput').value = prompt;
         }
+
+        /* --- FEATURE 2: AI TEXT HUMANIZE & FORMATTING PREP --- */
+        function humanizeText() {
+            const input = document.getElementById('humanizeInput').value.trim();
+            if (!input) {
+                document.getElementById('humanizeOutput').value = "Please enter some AI text to humanize!";
+                return;
+            }
+
+            const sentences = input.split(/(?<=[.!?])\s+/).filter(Boolean);
+            let formatted = "📌 KEY SUMMARY & HUMANIZED OVERVIEW:\n\n";
+
+            sentences.forEach((s, idx) => {
+                if (idx === 0) {
+                    formatted += `• ${s.trim()}\n`;
+                } else if (idx % 2 === 1) {
+                    formatted += `• ${s.trim()}\n`;
+                } else {
+                    formatted += `\n💡 Insight: ${s.trim()}\n`;
+                }
+            });
+
+            formatted += "\n✅ ACTIONABLE TAKEAWAY:\nReview the structured points above for quick understanding or presenting in professional reports.";
+            document.getElementById('humanizeOutput').value = formatted;
+        }
+
+        /* --- FEATURE 3: SOCIAL MEDIA POST & HASHTAG GENERATOR --- */
+        function generateSocialPost() {
+            const platform = document.getElementById('socialPlatform').value;
+            const topic = document.getElementById('socialTopic').value.trim() || 'Free Online Micro-Tools & Productivity Hacks';
+
+            let post = '';
+            if (platform === 'linkedin') {
+                post = `🚀 Exciting Update on ${topic}!\n\nIf you want to save hours every week, having the right utility tools is a complete game changer.\n\nHere are 3 key lessons learned:\n1️⃣ Efficiency starts with simple tools.\n2️⃣ AI prompts double your output speed.\n3️⃣ Automated workflows keep you organized.\n\n👉 What is your favorite productivity hack? Drop it in the comments below!\n\n#Productivity #Innovation #WorkSmart #AI #MyToolX #CareerTools`;
+            } else if (platform === 'twitter') {
+                post = `🧵 5 Quick Tips regarding ${topic}:\n\n1/ Stop overcomplicating simple tasks.\n2/ Use instant online tools for quick conversions.\n3/ Master basic prompt engineering.\n4/ Automate your daily repetitive work.\n5/ Bookmark free tools suites like MyToolX.org.\n\n🔁 Retweet if helpful & follow for more! #Tech #Tools #AI`;
+            } else {
+                post = `✨ Level up your routine with ${topic}! 💡\n\nSwipe left to discover how top creators stay ahead of the game using fast & free web utilities. 📲\n\n💬 Tag a friend who needs this!\n\n#TrendingNow #ViralPost #TechTips #CreatorEconomy #MyToolX #WorkHacks #AITools`;
+            }
+            document.getElementById('socialOutput').value = post;
+        }
+
+        /* --- FEATURE 4: YOUTUBE TITLE & TAG OPTIMIZER --- */
+        function generateYoutubeSEO() {
+            const topic = document.getElementById('ytTopic').value.trim() || 'Free Developer Tools & AI Prompt Generator';
+
+            const output = `🔴 HIGH CTR YOUTUBE TITLES:\n1. How to Master ${topic} (Step-by-Step Tutorial)\n2. Top 5 Best Secret Tools for ${topic} You Didn't Know Exist!\n3. Stop Doing This! The Ultimate ${topic} Guide\n\n🏷️ RECOMMENDED YOUTUBE TAGS (Copy & Paste):\n${topic}, ${topic} tutorial, free web tools, best AI prompt generator, online utility tools, mytoolx, how to use AI tools, productivity hacks 2026\n\n📝 VIDEO DESCRIPTION LAYOUT:\nIn this video, we explore everything about ${topic}. Learn how to save time and streamline your workflow with free online utility tools. Don't forget to Like & Subscribe!`;
+
+            document.getElementById('ytOutput').value = output;
+        }
+
+        function copyAiOutput(outputId, toastId) {
+            const output = document.getElementById(outputId);
+            if (!output || !output.value.trim()) return;
+            navigator.clipboard.writeText(output.value);
+            const toast = document.getElementById(toastId);
+            if (toast) {
+                toast.classList.remove('hidden');
+                setTimeout(() => toast.classList.add('hidden'), 2500);
+            }
+        }
+
+        /* --- MERGED WRITER TAB SWITCHER --- */
+        function switchWriterTab(sub) {
+            const wordBox = document.getElementById('writerSubWord');
+            const caseBox = document.getElementById('writerSubCase');
+            const btnWord = document.getElementById('writerTabWord');
+            const btnCase = document.getElementById('writerTabCase');
+
+            if (sub === 'word') {
+                wordBox.classList.remove('hidden');
+                caseBox.classList.add('hidden');
+                btnWord.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition';
+                btnCase.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition';
+            } else {
+                caseBox.classList.remove('hidden');
+                wordBox.classList.add('hidden');
+                btnCase.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition';
+                btnWord.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition';
+            }
+        }
+
+        function clearCurrentWriterTab() {
+            const wordBox = document.getElementById('writerSubWord');
+            if (!wordBox.classList.contains('hidden')) {
+                document.getElementById('textInput').value = '';
+                document.getElementById('wordCount').textContent = '0';
+                document.getElementById('charCount').textContent = '0';
+                document.getElementById('sentenceCount').textContent = '0';
+                document.getElementById('readTime').textContent = '0 sec';
+            } else {
+                document.getElementById('caseInput').value = '';
+            }
+        }
+
+        /* --- MERGED FINANCE TAB SWITCHER --- */
+        function switchFinanceTab(sub) {
+            const feeBox = document.getElementById('financeSubFee');
+            const contractBox = document.getElementById('financeSubContract');
+            const btnFee = document.getElementById('financeTabFee');
+            const btnContract = document.getElementById('financeTabContract');
+
+            if (sub === 'fee') {
+                feeBox.classList.remove('hidden');
+                contractBox.classList.add('hidden');
+                btnFee.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-emerald-600 text-white transition';
+                btnContract.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition';
+            } else {
+                contractBox.classList.remove('hidden');
+                feeBox.classList.add('hidden');
+                btnContract.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-emerald-600 text-white transition';
+                btnFee.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition';
+            }
+        }
+
+        function clearCurrentFinanceTab() {
+            const feeBox = document.getElementById('financeSubFee');
+            if (!feeBox.classList.contains('hidden')) {
+                document.getElementById('feeInput').value = '';
+                document.getElementById('feeAmount').textContent = '$0.00';
+                document.getElementById('youReceive').textContent = '$0.00';
+                document.getElementById('askAmount').textContent = '$0.00';
+            } else {
+                document.getElementById('contractRate').value = '';
+                document.getElementById('contractHours').value = '';
+                document.getElementById('targetIncome').value = '';
+                document.getElementById('annualExpenses').value = '';
+                document.getElementById('billableHours').value = '';
+                document.getElementById('inputHourlyRate').value = '';
+                document.getElementById('inputHoursWeek').value = '';
+                document.getElementById('weeklyPay').textContent = '$0.00';
+                document.getElementById('monthlyPay').textContent = '$0.00';
+                document.getElementById('yearlyPay').textContent = '$0.00';
+                document.getElementById('mainResult').textContent = '$0.00 / hr';
+            }
+        }
+
         function clearTool6() {
             document.getElementById('qrInput').value = '';
             if (qrcodeObj) { qrcodeObj.clear(); qrcodeObj.makeCode("https://mytoolx.org"); }
@@ -562,25 +906,121 @@
             if(el) el.addEventListener('input', calculateContract);
         });
 
+        /* --- HELPER: AUTO-PREFIX URL TO PREVENT SCANNING ERROR --- */
+        function formatQRTarget(inputStr) {
+            let str = inputStr.trim();
+            if (!str) return "https://mytoolx.org";
+            if (!/^https?:\/\//i.test(str) && /^[a-zA-Z0-9-]+\.[a-zA-Z]{2,}/i.test(str)) {
+                return "https://" + str;
+            }
+            return str;
+        }
+
+        /* --- HD QR CODE GENERATOR --- */
         function initQRCode() {
             const qrContainer = document.getElementById('qrcode');
             if(qrContainer && typeof QRCode !== 'undefined') {
                 qrContainer.innerHTML = '';
+                const targetVal = formatQRTarget(document.getElementById('qrInput').value);
                 qrcodeObj = new QRCode(qrContainer, {
-                    text: "https://mytoolx.org",
-                    width: 128,
-                    height: 128
+                    text: targetVal,
+                    width: 200,
+                    height: 200,
+                    correctLevel: QRCode.CorrectLevel.H
                 });
             }
         }
+
         document.getElementById('qrInput').addEventListener('input', (e) => {
-            const text = e.target.value.trim() || "https://mytoolx.org";
+            const text = formatQRTarget(e.target.value);
             if (!qrcodeObj) initQRCode();
             if (qrcodeObj) {
                 qrcodeObj.clear();
                 qrcodeObj.makeCode(text);
             }
         });
+
+        function generateBrandedCanvas() {
+            const qrContainer = document.getElementById('qrcode');
+            const imgOrCanvas = qrContainer.querySelector('img') || qrContainer.querySelector('canvas');
+            if (!imgOrCanvas) return null;
+
+            const finalCanvas = document.createElement('canvas');
+            const size = 500;
+            const padding = 45;
+            const headerHeight = 85;
+            const footerHeight = 65;
+            
+            finalCanvas.width = size + (padding * 2);
+            finalCanvas.height = size + headerHeight + footerHeight + (padding * 2);
+
+            const ctx = finalCanvas.getContext('2d');
+
+            ctx.fillStyle = "#ffffff";
+            ctx.fillRect(0, 0, finalCanvas.width, finalCanvas.height);
+
+            ctx.strokeStyle = "#2563eb";
+            ctx.lineWidth = 12;
+            ctx.strokeRect(12, 12, finalCanvas.width - 24, finalCanvas.height - 24);
+
+            ctx.font = "900 28px sans-serif";
+            ctx.fillStyle = "#1e293b";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText("Created on MyToolX.org", finalCanvas.width / 2, padding + 35);
+
+            ctx.drawImage(imgOrCanvas, padding, padding + headerHeight, size, size);
+
+            const rawVal = document.getElementById('qrInput').value.trim();
+            const textContent = rawVal ? formatQRTarget(rawVal) : "https://mytoolx.org";
+
+            ctx.font = "bold 22px sans-serif";
+            ctx.fillStyle = "#2563eb";
+            ctx.textBaseline = "middle";
+
+            let fontScale = 22;
+            while (ctx.measureText(textContent).width > (finalCanvas.width - 60) && fontScale > 12) {
+                fontScale -= 1;
+                ctx.font = "bold " + fontScale + "px sans-serif";
+            }
+
+            ctx.fillText(textContent, finalCanvas.width / 2, padding + headerHeight + size + 35);
+
+            return finalCanvas;
+        }
+
+        function downloadHDQRCode() {
+            const canvas = generateBrandedCanvas();
+            if (!canvas) return;
+            const a = document.createElement('a');
+            a.download = 'MyToolX-QRCode-HD.png';
+            a.href = canvas.toDataURL('image/png', 1.0);
+            a.click();
+        }
+
+        function shareQRCode() {
+            const canvas = generateBrandedCanvas();
+            if (!canvas) return;
+
+            const rawVal = document.getElementById('qrInput').value.trim();
+            const textContent = rawVal ? formatQRTarget(rawVal) : "https://mytoolx.org";
+            const toast = document.getElementById('shareToast');
+
+            canvas.toBlob(blob => {
+                if (navigator.share && navigator.canShare && navigator.canShare({ files: [new File([blob], 'qrcode.png', {type: 'image/png'})] })) {
+                    navigator.share({
+                        title: 'QR Code from MyToolX',
+                        text: 'Scan or view this QR code created on MyToolX: ' + textContent,
+                        files: [new File([blob], 'qrcode.png', {type: 'image/png'})]
+                    }).catch(() => {});
+                } else if (navigator.clipboard) {
+                    navigator.clipboard.writeText(textContent);
+                    toast.textContent = "Link copied to clipboard!";
+                    toast.classList.remove('hidden');
+                    setTimeout(() => toast.classList.add('hidden'), 3000);
+                }
+            });
+        }
 
         function generatePassword() {
             const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=";
