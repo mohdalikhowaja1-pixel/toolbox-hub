@@ -27,8 +27,8 @@
             box-shadow: 0 12px 24px -4px rgba(37, 99, 235, 0.18);
         }
         .card-3d-btn.active {
-            border-color: #98b6c4;
-            background: linear-gradient(135deg, #7bae6c 0%, #eae7e9 100%);
+            border-color: #2563eb;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
             box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
             transform: translateY(1px);
         }
@@ -78,8 +78,8 @@
 
             <!-- Top CTA Buttons -->
             <div class="flex items-center gap-2.5">
-                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" class="text-xs font-black bg-gradient-to-r from-emerald-500 via-teal-600 to-cyan-600 text-white px-3.5 py-2.5 rounded-xl shadow-md hover:shadow-emerald-500/30 hover:scale-105 transition-all flex items-center gap-1.5 animate-pulse">
-                    💼 Apply Remote Jobs ↗
+                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="text-xs font-black bg-gradient-to-r from-emerald-500 via-teal-600 to-cyan-600 text-white px-3.5 py-2.5 rounded-xl shadow-md hover:shadow-emerald-500/30 hover:scale-105 transition-all flex items-center gap-1.5 animate-pulse">
+                    💼 Sponsored Remote Jobs ↗
                 </a>
 
                 <a href="https://mali1.pythonanywhere.com/" target="_blank" class="text-xs font-bold bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-3.5 py-2.5 rounded-xl shadow-md hover:opacity-90 transition hidden sm:inline-flex">
@@ -95,35 +95,23 @@
         
         <!-- Hero Section -->
         <div class="text-center mb-8">
-            <h1 class="text-3xl md:text-5xl font-black text-slate-900 mb-2 tracking-tight">Free Utility & AI Web Tools</h1>
+            <h1 class="text-3xl md:text-5xl font-black text-slate-900 mb-2 tracking-tight">Free Utility & Web Tools</h1>
             <p class="text-slate-600 text-sm md:text-base max-w-xl mx-auto font-medium">Fast, secure, professional tools organized for students, writers, creators, and developers.</p>
         </div>
 
-        <!-- Role Filter Tabs (RE-ORDERED: Writers 1st, AI 2nd, Finance 3rd, Everyday 4th, Dev 5th) -->
+        <!-- Role Filter Tabs -->
         <div class="flex flex-wrap justify-center gap-2 mb-8 text-xs font-bold">
             <button id="catBtnAll" onclick="filterCategory('all', this)" class="cat-btn bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold">All Tools</button>
             <button id="catBtnWriter" onclick="filterCategory('writer', this)" class="cat-btn bg-white text-blue-700 hover:bg-blue-50 px-5 py-2.5 rounded-full border border-blue-200 shadow-sm font-extrabold">✍️ Writers, Students & CV</button>
-            <button id="catBtnAi" onclick="filterCategory('ai', this)" class="cat-btn text-sky-900 px-5 py-2.5 rounded-full border border-sky-200 shadow-sm font-extrabold" style="background: linear-gradient(135deg, #dee941 0%, rgba(144, 237, 173, 0.867) 50%, #0b0a0b 100%);">🤖 AI & Social Tools 🔥</button>
+            <button id="catBtnAi" onclick="filterCategory('ai', this)" class="cat-btn bg-white text-violet-700 hover:bg-violet-50 px-5 py-2.5 rounded-full border border-violet-200 shadow-sm font-extrabold">🤖 AI & Content Templates 🔥</button>
             <button id="catBtnFinance" onclick="filterCategory('finance', this)" class="cat-btn bg-white text-emerald-700 hover:bg-emerald-50 px-5 py-2.5 rounded-full border border-emerald-200 shadow-sm font-extrabold">💰 Finance & Freelancers</button>
             <button id="catBtnEveryday" onclick="filterCategory('everyday', this)" class="cat-btn bg-white text-purple-700 hover:bg-purple-50 px-5 py-2.5 rounded-full border border-purple-200 shadow-sm font-extrabold">📱 Everyday Utilities</button>
             <button id="catBtnDev" onclick="filterCategory('dev', this)" class="cat-btn bg-white text-amber-700 hover:bg-amber-50 px-5 py-2.5 rounded-full border border-amber-200 shadow-sm font-extrabold">💻 For Developers</button>
         </div>
 
-        <!-- Categorized Tool Cards Grid (RE-ORDERED & TRENDY ARRANGEMENT) -->
+        <!-- Categorized Tool Cards Grid -->
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3.5 mb-8">
             
-            <!-- SECTION 1: WRITERS, STUDENTS & CV (FIRST) -->
-            <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" data-cat="writer" class="card-3d-btn bg-gradient-to-br from-emerald-500 via-teal-600 to-emerald-700 p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-emerald-300 text-white shadow-lg hover:scale-105 transition-all cursor-pointer">
-                <div class="flex justify-between items-start">
-                    <span class="text-xl">💼</span>
-                    <span class="text-[9px] font-black uppercase tracking-wider bg-white/25 text-blue-700 px-2 py-0.5 rounded-md backdrop-blur-sm">Apply Now</span>
-                </div>
-                <div>
-                    <div class="font-black text-white text-xs sm:text-sm">Online Remote Jobs</div>
-                    <div class="text-[10px] text-emerald-100 font-medium">Click & Apply Now ↗</div>
-                </div>
-            </a>
-
             <button id="nav1" data-cat="writer" onclick="switchTool(1)" class="card-3d-btn active bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-blue-200">
                 <div class="flex justify-between items-start"><span class="text-xl">✍️</span><span class="text-[9px] font-black uppercase tracking-wider bg-blue-100 text-blue-700 px-2 py-0.5 rounded-md">Writers</span></div>
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Text & Word Suite</div><div class="text-[10px] text-slate-600">Counter & Case Converter</div></div>
@@ -134,25 +122,22 @@
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Live CV Maker</div><div class="text-[10px] text-slate-600">PDF & Word Generator</div></div>
             </button>
 
-            <!-- SECTION 2: AI & SOCIAL TOOLS (SECOND - TRENDY & VISIBLE) -->
-            <button id="nav11" data-cat="ai" onclick="switchTool(11)" class="card-3d-btn p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border border-slate-200 hover:border-blue-200">
+            <button id="nav11" data-cat="ai" onclick="switchTool(11)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-violet-200">
                 <div class="flex justify-between items-start">
                     <span class="text-xl">🤖</span>
-                    <span class="text-[9px] font-black uppercase tracking-wider bg-blue-100 text-gray-900 px-2 py-0.5 rounded-md backdrop-blur-sm">Trending</span>
+                    <span class="text-[9px] font-black uppercase tracking-wider bg-violet-100 text-violet-700 px-2 py-0.5 rounded-md">Trending</span>
                 </div>
                 <div>
-                    <div class="font-bold text-slate-800 text-xs sm:text-sm">AI Tools Suite</div>
-                    <div class="text-[10px] text-slate-800">Prompt, Humanize & Social</div>
+                    <div class="font-bold text-slate-800 text-xs sm:text-sm">AI Prompt Studio</div>
+                    <div class="text-[10px] text-slate-600">Prompt, Format & Social</div>
                 </div>
             </button>
 
-            <!-- SECTION 3: FINANCE & FREELANCERS -->
             <button id="nav4" data-cat="finance" onclick="switchTool(4)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-emerald-200">
                 <div class="flex justify-between items-start"><span class="text-xl">💰</span><span class="text-[9px] font-black uppercase tracking-wider bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-md">Finance</span></div>
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Finance Calculators</div><div class="text-[10px] text-slate-600">Fee & Contract Earnings</div></div>
             </button>
 
-            <!-- SECTION 4: EVERYDAY UTILITIES -->
             <button id="nav6" data-cat="everyday" onclick="switchTool(6)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-purple-200">
                 <div class="flex justify-between items-start"><span class="text-xl">📱</span><span class="text-[9px] font-black uppercase tracking-wider bg-purple-100 text-purple-700 px-2 py-0.5 rounded-md">Utility</span></div>
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">QR Code Gen</div><div class="text-[10px] text-slate-600">Create QR Images</div></div>
@@ -163,7 +148,7 @@
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Password Gen</div><div class="text-[10px] text-slate-600">Secure Random Keys</div></div>
             </button>
 
-            <!-- SECTION 5: DEVELOPERS -->
+            <!-- DEVELOPER TOOLS -->
             <button id="nav8" data-cat="dev" onclick="switchTool(8)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-amber-200">
                 <div class="flex justify-between items-start"><span class="text-xl">⚡</span><span class="text-[9px] font-black uppercase tracking-wider bg-amber-100 text-amber-700 px-2 py-0.5 rounded-md">Developer</span></div>
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">JSON Formatter</div><div class="text-[10px] text-slate-600">Beautify & Minify</div></div>
@@ -183,7 +168,7 @@
         <!-- TOOL DISPLAY PANEL -->
         <div class="bg-white rounded-3xl shadow-2xl border border-slate-200/80 p-6 md:p-8">
 
-            <!-- MERGED TOOL 1: Text & Word Suite -->
+            <!-- TOOL 1: Text & Word Suite -->
             <div id="tool1">
                 <div class="flex flex-wrap justify-between items-center gap-3 mb-4 border-b border-slate-200 pb-3">
                     <div class="flex gap-2">
@@ -193,8 +178,8 @@
                     <button onclick="clearCurrentWriterTab()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
                 </div>
 
-                <!-- SUB-TAB 1: Word Counter -->
                 <div id="writerSubWord">
+                    <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Input Text</label>
                     <textarea id="textInput" rows="5" class="w-full p-4 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 bg-slate-50 mb-4" placeholder="Type or paste text here..."></textarea>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
                         <div class="bg-blue-50/80 p-3.5 rounded-2xl text-center border border-blue-100"><div class="text-2xl font-black text-blue-600" id="wordCount">0</div><div class="text-xs font-bold text-slate-500">Words</div></div>
@@ -204,8 +189,8 @@
                     </div>
                 </div>
 
-                <!-- SUB-TAB 2: Case Converter -->
                 <div id="writerSubCase" class="hidden">
+                    <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Text for Case Conversion</label>
                     <textarea id="caseInput" rows="5" class="w-full p-4 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 bg-slate-50 mb-4" placeholder="Type or paste text here to convert case..."></textarea>
                     <div class="flex flex-wrap gap-2">
                         <button onclick="convertCase('upper')" class="btn-3d px-5 py-2.5 bg-blue-600 text-white font-bold rounded-xl text-xs">UPPERCASE</button>
@@ -215,19 +200,18 @@
                 </div>
             </div>
 
-            <!-- TOOL 11: ALL-IN-ONE AI & CREATOR SUITE (PROMPT GEN, HUMANIZER, SOCIAL MEDIA, YOUTUBE OPTIMIZER) -->
+            <!-- TOOL 11: AI PROMPT STUDIO -->
             <div id="tool11" class="hidden">
                 <div class="flex flex-wrap justify-between items-center gap-3 mb-4 border-b border-slate-200 pb-3">
                     <div class="flex flex-wrap gap-2">
                         <button onclick="switchAiTab('prompt')" id="aiTabPrompt" class="px-4 py-2 rounded-xl text-xs font-black bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-sm transition">🤖 Prompt Studio</button>
-                        <button onclick="switchAiTab('humanize')" id="aiTabHumanize" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">✨ Text Humanizer</button>
+                        <button onclick="switchAiTab('humanize')" id="aiTabHumanize" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">✨ Text Structurer</button>
                         <button onclick="switchAiTab('social')" id="aiTabSocial" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">📲 Social Media Post & Hashtags</button>
                         <button onclick="switchAiTab('youtube')" id="aiTabYoutube" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">▶️ YouTube Title & Tags</button>
                     </div>
                     <button onclick="clearCurrentAiTab()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
                 </div>
 
-                <!-- SUB-FEATURE 1: PROMPT GENERATOR STUDIO -->
                 <div id="aiSubPrompt">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                         <div>
@@ -263,19 +247,18 @@
                     </div>
 
                     <div class="relative">
-                        <textarea id="aiPromptOutput" rows="5" readonly class="w-full p-4 bg-slate-900 text-emerald-400 font-mono text-xs rounded-2xl border border-slate-800 shadow-inner" placeholder="Your enhanced system prompt will appear here..."></textarea>
+                        <textarea id="aiPromptOutput" rows="5" readonly class="w-full p-4 bg-slate-900 text-emerald-400 font-mono text-xs rounded-2xl border border-slate-800 shadow-inner" placeholder="Your enhanced system prompt template will appear here..."></textarea>
                         <span id="aiPromptCopyToast" class="absolute top-3 right-3 text-xs font-bold text-emerald-400 bg-slate-800 px-3 py-1 rounded-lg border border-emerald-500/30 hidden">Copied to clipboard!</span>
                     </div>
                 </div>
 
-                <!-- SUB-FEATURE 2: AI TEXT HUMANIZER & FORMATTING PREP -->
                 <div id="aiSubHumanize" class="hidden">
-                    <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Paste Raw AI / Robot Text Here</label>
+                    <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Paste Raw Text to Format & Bulletize</label>
                     <textarea id="humanizeInput" rows="4" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 font-medium mb-3" placeholder="Paste robotic or complex AI-generated paragraphs here..."></textarea>
                     
                     <div class="flex gap-3 mb-4">
                         <button onclick="humanizeText()" class="btn-3d px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-extrabold rounded-xl text-xs flex items-center gap-2">
-                            ✨ Humanize & Format Text
+                            ✨ Format & Bulletize Text
                         </button>
                         <button onclick="copyAiOutput('humanizeOutput', 'humanizeCopyToast')" class="px-5 py-3 bg-slate-800 text-white font-bold rounded-xl text-xs hover:bg-slate-900 transition">
                             📋 Copy Formatted Text
@@ -288,7 +271,6 @@
                     </div>
                 </div>
 
-                <!-- SUB-FEATURE 3: SOCIAL MEDIA POST & HASHTAG GENERATOR -->
                 <div id="aiSubSocial" class="hidden">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
                         <div>
@@ -315,12 +297,11 @@
                     </div>
 
                     <div class="relative">
-                        <textarea id="socialOutput" rows="6" readonly class="w-full p-4 bg-slate-900 text-pink-300 font-mono text-xs rounded-2xl border border-slate-800 shadow-inner" placeholder="Your ready-to-post social media caption and hashtags will appear here..."></textarea>
+                        <textarea id="socialOutput" rows="6" readonly class="w-full p-4 bg-slate-900 text-pink-300 font-mono text-xs rounded-2xl border border-slate-800 shadow-inner" placeholder="Your ready-to-post social media caption template will appear here..."></textarea>
                         <span id="socialCopyToast" class="absolute top-3 right-3 text-xs font-bold text-emerald-400 bg-slate-800 px-3 py-1 rounded-lg border border-emerald-500/30 hidden">Copied to clipboard!</span>
                     </div>
                 </div>
 
-                <!-- SUB-FEATURE 4: YOUTUBE TITLE & TAG OPTIMIZER -->
                 <div id="aiSubYoutube" class="hidden">
                     <div class="mb-3">
                         <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Video Topic / Focus Keyword</label>
@@ -346,9 +327,9 @@
             <!-- TOOL 3: Live Python CV Maker -->
             <div id="tool3" class="hidden">
                 <div class="flex justify-between items-center mb-3">
-                    <h2 class="text-xl font-bold text-slate-800">📄 Professional CV Maker (Python App)</h2>
+                    <h2 class="text-xl font-bold text-slate-800">📄 Professional CV Maker (Free Builder)</h2>
                     <div class="flex items-center gap-3">
-                        <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" class="text-xs font-black bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-3 py-1.5 rounded-lg shadow-sm hover:opacity-90 transition">
+                        <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="text-xs font-black bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-3 py-1.5 rounded-lg shadow-sm hover:opacity-90 transition">
                             💼 Apply Remote Jobs ↗
                         </a>
                         <a href="https://mali1.pythonanywhere.com/" target="_blank" class="text-xs font-bold text-blue-600 hover:underline">Open in Fullscreen ↗</a>
@@ -357,7 +338,7 @@
                 <iframe src="https://mali1.pythonanywhere.com/" class="w-full h-[650px] rounded-2xl border border-slate-200 shadow-inner bg-white"></iframe>
             </div>
 
-            <!-- MERGED TOOL 4: Finance Calculators -->
+            <!-- TOOL 4: Finance Calculators -->
             <div id="tool4" class="hidden">
                 <div class="flex flex-wrap justify-between items-center gap-3 mb-4 border-b border-slate-200 pb-3">
                     <div class="flex gap-2">
@@ -367,29 +348,36 @@
                     <button onclick="clearCurrentFinanceTab()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
                 </div>
 
-                <!-- SUB-TAB 1: Fee Calculator -->
                 <div id="financeSubFee">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
-                        <select id="platformSelect" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
-                            <option value="stripe">Stripe (2.9% + $0.30)</option>
-                            <option value="paypal_card">PayPal Card (2.99% + $0.49)</option>
-                            <option value="square">Square (2.6% + $0.10)</option>
-                        </select>
-                        <select id="currencySelect" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
-                            <option value="$">USD ($)</option>
-                            <option value="€">EUR (€)</option>
-                            <option value="£">GBP (£)</option>
-                        </select>
-                        <input type="number" id="feeInput" placeholder="Enter amount..." class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Payment Gateway</label>
+                            <select id="platformSelect" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
+                                <option value="stripe">Stripe (2.9% + $0.30)</option>
+                                <option value="paypal_card">PayPal Card (2.99% + $0.49)</option>
+                                <option value="square">Square (2.6% + $0.10)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Currency Symbol</label>
+                            <select id="currencySelect" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
+                                <option value="$">USD ($)</option>
+                                <option value="€">EUR (€)</option>
+                                <option value="£">GBP (£)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Amount</label>
+                            <input type="number" id="feeInput" placeholder="Enter amount..." class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
+                        </div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
                         <div class="bg-rose-50/80 p-3.5 rounded-2xl text-center border border-rose-100"><div class="text-2xl font-black text-rose-600" id="feeAmount">$0.00</div><div class="text-xs font-bold text-slate-500">Total Fee</div></div>
                         <div class="bg-emerald-50/80 p-3.5 rounded-2xl text-center border border-emerald-100"><div class="text-2xl font-black text-emerald-600" id="youReceive">$0.00</div><div class="text-xs font-bold text-slate-500">You Receive</div></div>
-                        <div class="bg-blue-50/80 p-3.5 rounded-2xl text-center border border-blue-100"><div class="text-2xl font-black text-blue-600" id="askAmount">$0.00</div><div class="text-xs font-bold text-slate-500">Charge Amount</div></div>
+                        <div class="bg-blue-50/80 p-3.5 rounded-2xl text-center border border-blue-100"><div class="text-2xl font-black text-blue-600" id="askAmount">$0.00</div><div class="text-xs font-bold text-slate-500">Ask / Invoice Amount</div></div>
                     </div>
                 </div>
 
-                <!-- SUB-TAB 2: Contract Earnings Calculator -->
                 <div id="financeSubContract" class="hidden">
                     <div class="flex flex-wrap gap-2 mb-4">
                         <button onclick="setCalcMode('contract')" id="modeContractBtn" class="px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition">Contract Calculator</button>
@@ -421,8 +409,8 @@
 
                     <div id="contractGrid" class="grid grid-cols-1 md:grid-cols-3 gap-3">
                         <div class="bg-blue-50/80 p-4 rounded-2xl border border-blue-100 text-center"><div class="text-xs font-bold text-slate-500 uppercase">Weekly Earnings</div><div class="text-2xl font-black text-blue-600 mt-1" id="weeklyPay">$0.00</div></div>
-                        <div class="bg-indigo-50/80 p-4 rounded-2xl border border-indigo-100 text-center"><div class="text-xs font-bold text-slate-500 uppercase">Monthly Earnings</div><div class="text-2xl font-black text-indigo-600 mt-1" id="monthlyPay">$0.00</div></div>
-                        <div class="bg-emerald-50/80 p-4 rounded-2xl border border-emerald-100 text-center"><div class="text-xs font-bold text-slate-500 uppercase">Yearly Earnings</div><div class="text-2xl font-black text-emerald-600 mt-1" id="yearlyPay">$0.00</div></div>
+                        <div class="bg-indigo-50/80 p-4 rounded-2xl border border-indigo-100 text-center"><div class="text-xs font-bold text-slate-500 uppercase">Monthly Earnings (Avg 4.33 Wks)</div><div class="text-2xl font-black text-indigo-600 mt-1" id="monthlyPay">$0.00</div></div>
+                        <div class="bg-emerald-50/80 p-4 rounded-2xl border border-emerald-100 text-center"><div class="text-xs font-bold text-slate-500 uppercase">Yearly Earnings (52 Wks)</div><div class="text-2xl font-black text-emerald-600 mt-1" id="yearlyPay">$0.00</div></div>
                     </div>
 
                     <div id="singleResultBox" class="bg-emerald-50 p-4 rounded-2xl border border-emerald-100 text-center hidden">
@@ -438,7 +426,8 @@
                     <h2 class="text-xl font-bold text-slate-800">📱 Instant QR Code Generator</h2>
                     <button onclick="clearTool6()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
                 </div>
-                <input type="text" id="qrInput" placeholder="Enter link or text (e.g. google.com or facebook.com)..." class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-medium mb-4">
+                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Target Link or Text</label>
+                <input type="text" id="qrInput" placeholder="Enter link or text (e.g. google.com)..." class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-medium mb-4">
                 
                 <div class="flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl border border-slate-200 gap-4">
                     <div id="qrcode" class="p-4 bg-white rounded-2xl shadow-md min-h-[220px] min-w-[220px] flex items-center justify-center border border-slate-100"></div>
@@ -461,61 +450,77 @@
                     <h2 class="text-xl font-bold text-slate-800">🔑 Secure Password Generator</h2>
                     <button onclick="clearTool7()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
                 </div>
-                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex justify-between items-center gap-4">
-                    <span id="passwordOutput" class="text-xl font-mono font-bold text-slate-800 break-all">Click Generate</span>
-                    <button onclick="generatePassword()" class="btn-3d px-6 py-3 bg-blue-600 text-white font-bold rounded-xl whitespace-nowrap">Generate</button>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Password Length: <span id="pwdLenVal" class="text-blue-600 font-extrabold">16</span> chars</label>
+                        <input type="range" id="pwdLength" min="8" max="32" value="16" class="w-full accent-blue-600" oninput="document.getElementById('pwdLenVal').textContent = this.value">
+                    </div>
+                    <div class="flex items-end gap-2">
+                        <button onclick="generatePassword()" class="btn-3d px-6 py-3 bg-blue-600 text-white font-bold rounded-xl w-full text-xs">⚡ Generate Password</button>
+                        <button onclick="copyPassword()" class="px-5 py-3 bg-slate-800 text-white font-bold rounded-xl text-xs hover:bg-slate-900 transition">📋 Copy</button>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-4 rounded-2xl border border-slate-800 flex justify-between items-center relative">
+                    <span id="passwordOutput" class="text-lg font-mono font-bold text-emerald-400 break-all">Click Generate</span>
+                    <span id="pwdCopyToast" class="text-xs font-bold text-emerald-400 bg-slate-800 px-3 py-1 rounded-lg border border-emerald-500/30 hidden">Copied!</span>
                 </div>
             </div>
 
-            <!-- TOOL 8: JSON Formatter -->
+            <!-- TOOL 8: JSON FORMATTER & MINIFIER (UPGRADED) -->
             <div id="tool8" class="hidden">
                 <div class="flex justify-between items-center mb-2">
                     <h2 class="text-xl font-bold text-slate-800">⚡ JSON Formatter & Minifier</h2>
                     <button onclick="clearTool8()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
                 </div>
-                <textarea id="jsonInput" rows="3" class="w-full p-3 border border-slate-200 rounded-xl font-mono bg-slate-50 mb-3" placeholder='{"key":"value"}'></textarea>
+                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Raw JSON Input</label>
+                <textarea id="jsonInput" rows="4" class="w-full p-3 border border-slate-200 rounded-xl font-mono bg-slate-50 mb-3 text-xs focus:ring-2 focus:ring-blue-500" placeholder='{"name":"MyToolX", "type":"utility"}'></textarea>
                 <div class="flex gap-3 mb-3">
-                    <button onclick="formatJSON()" class="btn-3d px-5 py-2.5 bg-blue-600 text-white font-bold rounded-xl text-xs">Beautify</button>
-                    <button onclick="minifyJSON()" class="btn-3d px-5 py-2.5 bg-slate-700 text-white font-bold rounded-xl text-xs">Minify</button>
+                    <button onclick="formatJSON()" class="btn-3d px-5 py-2.5 bg-blue-600 text-white font-bold rounded-xl text-xs">✨ Beautify JSON</button>
+                    <button onclick="minifyJSON()" class="btn-3d px-5 py-2.5 bg-slate-700 text-white font-bold rounded-xl text-xs">⚡ Minify JSON</button>
                 </div>
-                <textarea id="jsonOutput" rows="3" readonly class="w-full p-3 bg-slate-100 border border-slate-200 rounded-xl font-mono" placeholder="Output..."></textarea>
+                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Formatted Output</label>
+                <textarea id="jsonOutput" rows="5" readonly class="w-full p-3 bg-slate-900 text-emerald-400 border border-slate-800 rounded-xl font-mono text-xs" placeholder="Formatted result will appear here..."></textarea>
             </div>
 
-            <!-- TOOL 9: Base64 Tool -->
+            <!-- TOOL 9: BASE64 ENCODER & DECODER (UNICODE SAFE) -->
             <div id="tool9" class="hidden">
                 <div class="flex justify-between items-center mb-2">
-                    <h2 class="text-xl font-bold text-slate-800">🔤 Base64 Encoder & Decoder</h2>
+                    <h2 class="text-xl font-bold text-slate-800">🔤 Base64 Encoder & Decoder (Unicode Safe)</h2>
                     <button onclick="clearTool9()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
                 </div>
-                <textarea id="base64Input" rows="3" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 mb-3" placeholder="Enter text..."></textarea>
+                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Input Text / Base64 Code</label>
+                <textarea id="base64Input" rows="4" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 mb-3 text-xs focus:ring-2 focus:ring-blue-500" placeholder="Enter text (Urdu, English, Emojis, Special chars supported)..."></textarea>
                 <div class="flex gap-3 mb-3">
-                    <button onclick="encodeBase64()" class="btn-3d px-5 py-2.5 bg-blue-600 text-white font-bold rounded-xl text-xs">Encode</button>
-                    <button onclick="decodeBase64()" class="btn-3d px-5 py-2.5 bg-slate-700 text-white font-bold rounded-xl text-xs">Decode</button>
+                    <button onclick="encodeBase64()" class="btn-3d px-5 py-2.5 bg-blue-600 text-white font-bold rounded-xl text-xs">Encode to Base64</button>
+                    <button onclick="decodeBase64()" class="btn-3d px-5 py-2.5 bg-slate-700 text-white font-bold rounded-xl text-xs">Decode from Base64</button>
                 </div>
-                <textarea id="base64Output" rows="3" readonly class="w-full p-3 bg-slate-100 border border-slate-200 rounded-xl font-mono" placeholder="Output..."></textarea>
+                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Result Output</label>
+                <textarea id="base64Output" rows="4" readonly class="w-full p-3 bg-slate-900 text-blue-300 border border-slate-800 rounded-xl font-mono text-xs" placeholder="Result will appear here..."></textarea>
             </div>
 
-            <!-- TOOL 10: Color Converter -->
+            <!-- TOOL 10: COLOR CONVERTER (BULLETPROOF VALIDATION) -->
             <div id="tool10" class="hidden">
                 <div class="flex justify-between items-center mb-2">
                     <h2 class="text-xl font-bold text-slate-800">🎨 Universal Color Code Converter</h2>
                     <button onclick="clearTool10()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
                 </div>
-                <p class="text-xs text-slate-500 mb-4">Type a HEX code (<code>#3b82f6</code>), RGB values (<code>59, 130, 246</code>), or Color Name (<code>darkblue</code>, <code>coral</code>, <code>red</code>).</p>
+                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Enter HEX (#3b82f6), RGB (59, 130, 246), or Color Name (coral)</label>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                    <input type="text" id="hexInput" placeholder="e.g. darkblue, #3b82f6, or 59, 130, 246" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 font-mono font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <div id="colorPreview" class="h-12 rounded-xl border border-slate-200 bg-blue-500 transition-all flex items-center justify-center font-bold text-white shadow-inner">Preview</div>
+                    <input type="text" id="hexInput" placeholder="e.g. 59, 130, 246 or #3b82f6 or coral" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 font-mono font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                    <div id="colorPreview" class="h-12 rounded-xl border border-slate-200 bg-blue-500 transition-all flex items-center justify-center font-bold text-white shadow-inner text-xs">Preview</div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-center font-mono font-bold text-slate-800">
-                        <div class="text-[10px] text-slate-600 font-sans uppercase">HEX Code</div>
-                        <div id="hexOutputText" class="text-lg text-blue-600">#3B82F6</div>
+                    <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 text-center font-mono font-bold text-slate-800">
+                        <div class="text-[10px] text-slate-400 font-sans uppercase">HEX Code</div>
+                        <div id="hexOutputText" class="text-lg text-blue-600 mt-1">#3B82F6</div>
                     </div>
-                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-center font-mono font-bold text-slate-800">
-                        <div class="text-[10px] text-slate-600 font-sans uppercase">RGB Code</div>
-                        <div id="rgbOutput" class="text-lg text-emerald-600">rgb(59, 130, 246)</div>
+                    <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 text-center font-mono font-bold text-slate-800">
+                        <div class="text-[10px] text-slate-400 font-sans uppercase">RGB Code</div>
+                        <div id="rgbOutput" class="text-lg text-emerald-600 mt-1">rgb(59, 130, 246)</div>
                     </div>
                 </div>
             </div>
@@ -524,9 +529,22 @@
 
     </main>
 
+    <!-- Privacy & Cookie Banner -->
+    <div id="gdprBanner" class="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:max-w-md bg-slate-900 text-white p-4 rounded-2xl shadow-2xl z-50 flex flex-col sm:flex-row items-center justify-between gap-3 border border-slate-800">
+        <p class="text-xs text-slate-300 font-medium">We use essential cookies to ensure web utility performance and anonymous analytics.</p>
+        <button onclick="document.getElementById('gdprBanner').classList.add('hidden')" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs whitespace-nowrap">Got It</button>
+    </div>
+
     <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs font-semibold text-slate-600">
-        <p>&copy; 2026 MyToolX. All rights reserved.</p>
+    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs font-semibold text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-3">
+            <p>&copy; 2026 MyToolX. All tools run client-side in your browser for 100% privacy.</p>
+            <div class="flex gap-4">
+                <a href="#" class="hover:underline">Privacy Policy</a>
+                <a href="#" class="hover:underline">Terms of Service</a>
+                <a href="#" class="hover:underline">Contact</a>
+            </div>
+        </div>
     </footer>
 
     <!-- JAVASCRIPT MASTER LOGIC -->
@@ -551,36 +569,38 @@
             }
         }
 
-        /* --- HIGH CONTRAST CATEGORY FILTERING (PREVENTS TEXT WASHOUT) --- */
+        /* --- CATEGORY FILTERING & AUTO SWITCH TO VISIBLE TOOL --- */
         function filterCategory(cat, btnElement) {
-            // Reset all category button styles to clean default
             const catButtons = document.querySelectorAll('.cat-btn');
             catButtons.forEach(btn => {
-                btn.className = "cat-btn bg-white text-slate-700 hover:bg-slate-100 px-5 py-2.5 rounded-full border border-slate-200 shadow-sm font-extrabold transition-all";
+                btn.className = "cat-btn bg-white text-slate-800 hover:bg-slate-100 px-5 py-2.5 rounded-full border border-slate-200 shadow-sm font-extrabold transition-all";
             });
 
-            // Apply vibrant, highly readable active style to clicked button
             if (btnElement) {
                 if (cat === 'all') btnElement.className = "cat-btn bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold";
-                else if (cat === 'writer') btnElement.className = "cat-btn bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold";
-                else if (cat === 'ai') btnElement.className = "cat-btn bg-gradient-to-r from-violet-600 to-purple-700 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold";
-                else if (cat === 'finance') btnElement.className = "cat-btn bg-gradient-to-r from-emerald-600 to-teal-700 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold";
-                else if (cat === 'everyday') btnElement.className = "cat-btn bg-gradient-to-r from-purple-600 to-pink-700 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold";
-                else if (cat === 'dev') btnElement.className = "cat-btn bg-gradient-to-r from-amber-600 to-orange-700 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold";
+                else if (cat === 'writer') btnElement.className = "cat-btn bg-blue-600 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold";
+                else if (cat === 'ai') btnElement.className = "cat-btn bg-violet-600 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold";
+                else if (cat === 'finance') btnElement.className = "cat-btn bg-emerald-600 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold";
+                else if (cat === 'everyday') btnElement.className = "cat-btn bg-purple-600 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold";
+                else if (cat === 'dev') btnElement.className = "cat-btn bg-amber-600 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold";
             }
 
-            // Show/Hide matching tool cards
+            let firstVisibleTool = null;
             const elements = document.querySelectorAll('[data-cat]');
             elements.forEach(el => {
                 if (cat === 'all' || el.getAttribute('data-cat') === cat) {
                     el.classList.remove('hidden');
+                    if (!firstVisibleTool && el.id && el.id.startsWith('nav')) {
+                        firstVisibleTool = parseInt(el.id.replace('nav', ''));
+                    }
                 } else {
                     el.classList.add('hidden');
                 }
             });
+
+            if (firstVisibleTool) switchTool(firstVisibleTool);
         }
 
-        /* --- TOOL 11: AI SUITE SUB-TABS LOGIC --- */
         function switchAiTab(sub) {
             const promptBox = document.getElementById('aiSubPrompt');
             const humanizeBox = document.getElementById('aiSubHumanize');
@@ -628,7 +648,6 @@
             document.getElementById('ytOutput').value = '';
         }
 
-        /* --- FEATURE 1: PROMPT GENERATOR --- */
         function generateAIPrompt() {
             const model = document.getElementById('aiModel').value;
             const role = document.getElementById('aiRole').value.trim() || 'Expert Assistant';
@@ -646,16 +665,15 @@
             document.getElementById('aiPromptOutput').value = prompt;
         }
 
-        /* --- FEATURE 2: AI TEXT HUMANIZE & FORMATTING PREP --- */
         function humanizeText() {
             const input = document.getElementById('humanizeInput').value.trim();
             if (!input) {
-                document.getElementById('humanizeOutput').value = "Please enter some AI text to humanize!";
+                document.getElementById('humanizeOutput').value = "Please enter some text to format!";
                 return;
             }
 
             const sentences = input.split(/(?<=[.!?])\s+/).filter(Boolean);
-            let formatted = "📌 KEY SUMMARY & HUMANIZED OVERVIEW:\n\n";
+            let formatted = "📌 STRUCTURED SUMMARY & OVERVIEW:\n\n";
 
             sentences.forEach((s, idx) => {
                 if (idx === 0) {
@@ -663,7 +681,7 @@
                 } else if (idx % 2 === 1) {
                     formatted += `• ${s.trim()}\n`;
                 } else {
-                    formatted += `\n💡 Insight: ${s.trim()}\n`;
+                    formatted += `\n💡 Key Insight: ${s.trim()}\n`;
                 }
             });
 
@@ -671,27 +689,25 @@
             document.getElementById('humanizeOutput').value = formatted;
         }
 
-        /* --- FEATURE 3: SOCIAL MEDIA POST & HASHTAG GENERATOR --- */
         function generateSocialPost() {
             const platform = document.getElementById('socialPlatform').value;
             const topic = document.getElementById('socialTopic').value.trim() || 'Free Online Micro-Tools & Productivity Hacks';
 
             let post = '';
             if (platform === 'linkedin') {
-                post = `🚀 Exciting Update on ${topic}!\n\nIf you want to save hours every week, having the right utility tools is a complete game changer.\n\nHere are 3 key lessons learned:\n1️⃣ Efficiency starts with simple tools.\n2️⃣ AI prompts double your output speed.\n3️⃣ Automated workflows keep you organized.\n\n👉 What is your favorite productivity hack? Drop it in the comments below!\n\n#Productivity #Innovation #WorkSmart #AI #MyToolX #CareerTools`;
+                post = `🚀 Exciting Update on ${topic}!\n\nIf you want to save hours every week, having the right utility tools is a complete game changer.\n\nHere are 3 key lessons learned:\n1️⃣ Efficiency starts with simple tools.\n2️⃣ Structured prompts double your output speed.\n3️⃣ Automated workflows keep you organized.\n\n👉 What is your favorite productivity hack? Drop it in the comments below!\n\n#Productivity #Innovation #WorkSmart #MyToolX #CareerTools`;
             } else if (platform === 'twitter') {
-                post = `🧵 5 Quick Tips regarding ${topic}:\n\n1/ Stop overcomplicating simple tasks.\n2/ Use instant online tools for quick conversions.\n3/ Master basic prompt engineering.\n4/ Automate your daily repetitive work.\n5/ Bookmark free tools suites like MyToolX.org.\n\n🔁 Retweet if helpful & follow for more! #Tech #Tools #AI`;
+                post = `🧵 5 Quick Tips regarding ${topic}:\n\n1/ Stop overcomplicating simple tasks.\n2/ Use instant online tools for quick conversions.\n3/ Master basic prompt templates.\n4/ Automate your daily repetitive work.\n5/ Bookmark free tools suites like MyToolX.org.\n\n🔁 Retweet if helpful & follow for more! #Tech #Tools`;
             } else {
-                post = `✨ Level up your routine with ${topic}! 💡\n\nSwipe left to discover how top creators stay ahead of the game using fast & free web utilities. 📲\n\n💬 Tag a friend who needs this!\n\n#TrendingNow #ViralPost #TechTips #CreatorEconomy #MyToolX #WorkHacks #AITools`;
+                post = `✨ Level up your routine with ${topic}! 💡\n\nSwipe left to discover how top creators stay ahead of the game using fast & free web utilities. 📲\n\n💬 Tag a friend who needs this!\n\n#TrendingNow #ViralPost #TechTips #CreatorEconomy #MyToolX #WorkHacks`;
             }
             document.getElementById('socialOutput').value = post;
         }
 
-        /* --- FEATURE 4: YOUTUBE TITLE & TAG OPTIMIZER --- */
         function generateYoutubeSEO() {
-            const topic = document.getElementById('ytTopic').value.trim() || 'Free Developer Tools & AI Prompt Generator';
+            const topic = document.getElementById('ytTopic').value.trim() || 'Free Developer Tools & Online Resume Maker';
 
-            const output = `🔴 HIGH CTR YOUTUBE TITLES:\n1. How to Master ${topic} (Step-by-Step Tutorial)\n2. Top 5 Best Secret Tools for ${topic} You Didn't Know Exist!\n3. Stop Doing This! The Ultimate ${topic} Guide\n\n🏷️ RECOMMENDED YOUTUBE TAGS (Copy & Paste):\n${topic}, ${topic} tutorial, free web tools, best AI prompt generator, online utility tools, mytoolx, how to use AI tools, productivity hacks 2026\n\n📝 VIDEO DESCRIPTION LAYOUT:\nIn this video, we explore everything about ${topic}. Learn how to save time and streamline your workflow with free online utility tools. Don't forget to Like & Subscribe!`;
+            const output = `🔴 HIGH CTR YOUTUBE TITLES:\n1. How to Master ${topic} (Step-by-Step Guide)\n2. Top 5 Best Secret Tools for ${topic} You Didn't Know Exist!\n3. Stop Doing This! The Ultimate ${topic} Guide\n\n🏷️ RECOMMENDED YOUTUBE TAGS (Copy & Paste):\n${topic}, ${topic} tutorial, free web tools, online utility tools, mytoolx, productivity hacks 2026\n\n📝 VIDEO DESCRIPTION LAYOUT:\nIn this video, we explore everything about ${topic}. Learn how to save time and streamline your workflow with free online utility tools. Don't forget to Like & Subscribe!`;
 
             document.getElementById('ytOutput').value = output;
         }
@@ -707,7 +723,6 @@
             }
         }
 
-        /* --- MERGED WRITER TAB SWITCHER --- */
         function switchWriterTab(sub) {
             const wordBox = document.getElementById('writerSubWord');
             const caseBox = document.getElementById('writerSubCase');
@@ -740,7 +755,6 @@
             }
         }
 
-        /* --- MERGED FINANCE TAB SWITCHER --- */
         function switchFinanceTab(sub) {
             const feeBox = document.getElementById('financeSubFee');
             const contractBox = document.getElementById('financeSubContract');
@@ -787,6 +801,8 @@
             if (qrcodeObj) { qrcodeObj.clear(); qrcodeObj.makeCode("https://mytoolx.org"); }
         }
         function clearTool7() { document.getElementById('passwordOutput').textContent = 'Click Generate'; }
+        
+        /* --- CLEAR FUNCTIONS FOR DEVELOPER TOOLS --- */
         function clearTool8() {
             document.getElementById('jsonInput').value = '';
             document.getElementById('jsonOutput').value = '';
@@ -799,7 +815,9 @@
             document.getElementById('hexInput').value = '';
             document.getElementById('hexOutputText').textContent = '#3B82F6';
             document.getElementById('rgbOutput').textContent = 'rgb(59, 130, 246)';
-            document.getElementById('colorPreview').style.backgroundColor = '#3b82f6';
+            const preview = document.getElementById('colorPreview');
+            preview.style.backgroundColor = '#3b82f6';
+            preview.textContent = 'Preview';
         }
 
         const textInput = document.getElementById('textInput');
@@ -882,18 +900,21 @@
             const rate = parseFloat(document.getElementById('contractRate').value) || 0;
             const hours = parseFloat(document.getElementById('contractHours').value) || 0;
             const weekly = rate * hours;
+            const yearly = weekly * 52;
+            const monthly = yearly / 12;
+
             document.getElementById('weeklyPay').textContent = '$' + weekly.toFixed(2);
-            document.getElementById('monthlyPay').textContent = '$' + (weekly * 4.33).toFixed(2);
-            document.getElementById('yearlyPay').textContent = '$' + (weekly * 50).toFixed(2);
+            document.getElementById('monthlyPay').textContent = '$' + monthly.toFixed(2);
+            document.getElementById('yearlyPay').textContent = '$' + yearly.toFixed(2);
 
             const targetIncome = parseFloat(document.getElementById('targetIncome').value) || 0;
             const expenses = parseFloat(document.getElementById('annualExpenses').value) || 0;
             const billableHours = parseFloat(document.getElementById('billableHours').value) || 0;
-            const hourlyNeeded = (targetIncome + expenses) / (billableHours * 50 || 1);
+            const hourlyNeeded = (targetIncome + expenses) / (billableHours * 52 || 1);
 
             const inputRate = parseFloat(document.getElementById('inputHourlyRate').value) || 0;
             const inputHours = parseFloat(document.getElementById('inputHoursWeek').value) || 0;
-            const annualSalary = inputRate * inputHours * 50;
+            const annualSalary = inputRate * inputHours * 52;
 
             if (!document.getElementById('rateModeInputs').classList.contains('hidden')) {
                 document.getElementById('mainResult').textContent = '$' + hourlyNeeded.toFixed(2) + ' / hr';
@@ -906,7 +927,6 @@
             if(el) el.addEventListener('input', calculateContract);
         });
 
-        /* --- HELPER: AUTO-PREFIX URL TO PREVENT SCANNING ERROR --- */
         function formatQRTarget(inputStr) {
             let str = inputStr.trim();
             if (!str) return "https://mytoolx.org";
@@ -916,7 +936,6 @@
             return str;
         }
 
-        /* --- HD QR CODE GENERATOR --- */
         function initQRCode() {
             const qrContainer = document.getElementById('qrcode');
             if(qrContainer && typeof QRCode !== 'undefined') {
@@ -926,7 +945,7 @@
                     text: targetVal,
                     width: 200,
                     height: 200,
-                    correctLevel: QRCode.CorrectLevel.H
+                    correctLevel: QRCode.CorrectLevel.M
                 });
             }
         }
@@ -940,154 +959,217 @@
             }
         });
 
-        function generateBrandedCanvas() {
-            const qrContainer = document.getElementById('qrcode');
-            const imgOrCanvas = qrContainer.querySelector('img') || qrContainer.querySelector('canvas');
-            if (!imgOrCanvas) return null;
-
-            const finalCanvas = document.createElement('canvas');
-            const size = 500;
-            const padding = 45;
-            const headerHeight = 85;
-            const footerHeight = 65;
-            
-            finalCanvas.width = size + (padding * 2);
-            finalCanvas.height = size + headerHeight + footerHeight + (padding * 2);
-
-            const ctx = finalCanvas.getContext('2d');
-
-            ctx.fillStyle = "#ffffff";
-            ctx.fillRect(0, 0, finalCanvas.width, finalCanvas.height);
-
-            ctx.strokeStyle = "#2563eb";
-            ctx.lineWidth = 12;
-            ctx.strokeRect(12, 12, finalCanvas.width - 24, finalCanvas.height - 24);
-
-            ctx.font = "900 28px sans-serif";
-            ctx.fillStyle = "#1e293b";
-            ctx.textAlign = "center";
-            ctx.textBaseline = "middle";
-            ctx.fillText("Created on MyToolX.org", finalCanvas.width / 2, padding + 35);
-
-            ctx.drawImage(imgOrCanvas, padding, padding + headerHeight, size, size);
-
+        function downloadHDQRCode() {
             const rawVal = document.getElementById('qrInput').value.trim();
             const textContent = rawVal ? formatQRTarget(rawVal) : "https://mytoolx.org";
 
-            ctx.font = "bold 22px sans-serif";
-            ctx.fillStyle = "#2563eb";
-            ctx.textBaseline = "middle";
+            const tempDiv = document.createElement('div');
+            tempDiv.style.display = 'none';
+            document.body.appendChild(tempDiv);
 
-            let fontScale = 22;
-            while (ctx.measureText(textContent).width > (finalCanvas.width - 60) && fontScale > 12) {
-                fontScale -= 1;
-                ctx.font = "bold " + fontScale + "px sans-serif";
-            }
+            const tempQR = new QRCode(tempDiv, {
+                text: textContent,
+                width: 1000,
+                height: 1000,
+                correctLevel: QRCode.CorrectLevel.H
+            });
 
-            ctx.fillText(textContent, finalCanvas.width / 2, padding + headerHeight + size + 35);
+            setTimeout(() => {
+                const qrCanvas = tempDiv.querySelector('canvas');
+                if (qrCanvas) {
+                    const finalCanvas = document.createElement('canvas');
+                    finalCanvas.width = 1100;
+                    finalCanvas.height = 1250;
+                    const ctx = finalCanvas.getContext('2d');
 
-            return finalCanvas;
-        }
+                    ctx.fillStyle = "#ffffff";
+                    ctx.fillRect(0, 0, finalCanvas.width, finalCanvas.height);
 
-        function downloadHDQRCode() {
-            const canvas = generateBrandedCanvas();
-            if (!canvas) return;
-            const a = document.createElement('a');
-            a.download = 'MyToolX-QRCode-HD.png';
-            a.href = canvas.toDataURL('image/png', 1.0);
-            a.click();
+                    ctx.strokeStyle = "#2563eb";
+                    ctx.lineWidth = 16;
+                    ctx.strokeRect(20, 20, finalCanvas.width - 40, finalCanvas.height - 40);
+
+                    ctx.drawImage(qrCanvas, 50, 50, 1000, 1000);
+
+                    ctx.font = "bold 32px sans-serif";
+                    ctx.fillStyle = "#2563eb";
+                    ctx.textAlign = "center";
+                    ctx.fillText(textContent, finalCanvas.width / 2, 1150);
+
+                    const a = document.createElement('a');
+                    a.download = 'MyToolX-QRCode-HD.png';
+                    a.href = finalCanvas.toDataURL('image/png', 1.0);
+                    a.click();
+                }
+                document.body.removeChild(tempDiv);
+            }, 100);
         }
 
         function shareQRCode() {
-            const canvas = generateBrandedCanvas();
-            if (!canvas) return;
-
             const rawVal = document.getElementById('qrInput').value.trim();
             const textContent = rawVal ? formatQRTarget(rawVal) : "https://mytoolx.org";
-            const toast = document.getElementById('shareToast');
-
-            canvas.toBlob(blob => {
-                if (navigator.share && navigator.canShare && navigator.canShare({ files: [new File([blob], 'qrcode.png', {type: 'image/png'})] })) {
-                    navigator.share({
-                        title: 'QR Code from MyToolX',
-                        text: 'Scan or view this QR code created on MyToolX: ' + textContent,
-                        files: [new File([blob], 'qrcode.png', {type: 'image/png'})]
-                    }).catch(() => {});
-                } else if (navigator.clipboard) {
-                    navigator.clipboard.writeText(textContent);
-                    toast.textContent = "Link copied to clipboard!";
-                    toast.classList.remove('hidden');
-                    setTimeout(() => toast.classList.add('hidden'), 3000);
-                }
-            });
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(textContent);
+                const toast = document.getElementById('shareToast');
+                toast.classList.remove('hidden');
+                setTimeout(() => toast.classList.add('hidden'), 3000);
+            }
         }
 
         function generatePassword() {
+            const len = parseInt(document.getElementById('pwdLength').value) || 16;
             const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=";
+            const randomValues = new Uint32Array(len);
+            window.crypto.getRandomValues(randomValues);
+
             let pwd = "";
-            for (let i = 0; i < 16; i++) {
-                pwd += chars.charAt(Math.floor(Math.random() * chars.length));
+            for (let i = 0; i < len; i++) {
+                pwd += chars.charAt(randomValues[i] % chars.length);
             }
             document.getElementById('passwordOutput').textContent = pwd;
         }
 
+        function copyPassword() {
+            const pwd = document.getElementById('passwordOutput').textContent;
+            if (!pwd || pwd === 'Click Generate') return;
+            navigator.clipboard.writeText(pwd);
+            const toast = document.getElementById('pwdCopyToast');
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.add('hidden'), 2500);
+        }
+
+        /* --- 1. UPGRADED JSON FORMATTER & MINIFIER --- */
         function formatJSON() {
-            const inp = document.getElementById('jsonInput').value;
+            const inp = document.getElementById('jsonInput').value.trim();
+            if (!inp) {
+                document.getElementById('jsonOutput').value = "Please enter some JSON data!";
+                return;
+            }
             try {
                 const parsed = JSON.parse(inp);
                 document.getElementById('jsonOutput').value = JSON.stringify(parsed, null, 4);
             } catch (e) {
-                document.getElementById('jsonOutput').value = "Invalid JSON input!";
+                document.getElementById('jsonOutput').value = "❌ Invalid JSON Syntax:\n" + e.message;
             }
         }
+
         function minifyJSON() {
-            const inp = document.getElementById('jsonInput').value;
+            const inp = document.getElementById('jsonInput').value.trim();
+            if (!inp) {
+                document.getElementById('jsonOutput').value = "Please enter some JSON data!";
+                return;
+            }
             try {
                 const parsed = JSON.parse(inp);
                 document.getElementById('jsonOutput').value = JSON.stringify(parsed);
             } catch (e) {
-                document.getElementById('jsonOutput').value = "Invalid JSON input!";
+                document.getElementById('jsonOutput').value = "❌ Invalid JSON Syntax:\n" + e.message;
             }
         }
 
+        /* --- 2. UPGRADED UNICODE-SAFE BASE64 TOOL --- */
         function encodeBase64() {
             const inp = document.getElementById('base64Input').value;
-            try { document.getElementById('base64Output').value = btoa(inp); }
-            catch(e) { document.getElementById('base64Output').value = "Encoding Error!"; }
-        }
-        function decodeBase64() {
-            const inp = document.getElementById('base64Input').value;
-            try { document.getElementById('base64Output').value = atob(inp); }
-            catch(e) { document.getElementById('base64Output').value = "Invalid Base64 string!"; }
+            if (!inp) {
+                document.getElementById('base64Output').value = "Please enter text to encode!";
+                return;
+            }
+            try {
+                const bytes = new TextEncoder().encode(inp);
+                let bin = '';
+                bytes.forEach(b => bin += String.fromCharCode(b));
+                document.getElementById('base64Output').value = btoa(bin);
+            } catch(e) {
+                document.getElementById('base64Output').value = "❌ Encoding Error: " + e.message;
+            }
         }
 
+        function decodeBase64() {
+            const inp = document.getElementById('base64Input').value.trim();
+            if (!inp) {
+                document.getElementById('base64Output').value = "Please enter a Base64 string to decode!";
+                return;
+            }
+            try {
+                const bin = atob(inp);
+                const bytes = Uint8Array.from(bin, c => c.charCodeAt(0));
+                document.getElementById('base64Output').value = new TextDecoder().decode(bytes);
+            } catch(e) {
+                document.getElementById('base64Output').value = "❌ Invalid Base64 string! Check your input syntax.";
+            }
+        }
+
+        /* --- 3. BULLETPROOF COLOR CONVERTER (NO BLACK DEFAULT ON ERRORS) --- */
         document.getElementById('hexInput').addEventListener('input', (e) => {
-            const val = e.target.value.trim();
+            const rawVal = e.target.value.trim();
             const preview = document.getElementById('colorPreview');
             const hexText = document.getElementById('hexOutputText');
             const rgbText = document.getElementById('rgbOutput');
 
-            if(!val) return;
-            const ctx = document.createElement('canvas').getContext('2d');
-            ctx.fillStyle = val;
-            const computed = ctx.fillStyle;
+            if (!rawVal) {
+                preview.style.backgroundColor = '#3b82f6';
+                preview.textContent = 'Preview';
+                hexText.textContent = '#3B82F6';
+                rgbText.textContent = 'rgb(59, 130, 246)';
+                return;
+            }
 
-            if (computed) {
-                preview.style.backgroundColor = computed;
-                hexText.textContent = computed.toUpperCase();
-                
-                let hex = computed.replace('#', '');
-                if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
-                const num = parseInt(hex, 16);
-                if (!isNaN(num) && hex.length === 6) {
-                    const r = (num >> 16) & 255;
-                    const g = (num >> 8) & 255;
-                    const b = num & 255;
+            const str = rawVal.toLowerCase();
+
+            // 1. Check Plain RGB format (e.g. "59, 130, 246", "59 130 246", "rgb(59,130,246)")
+            const rgbMatch = str.match(/^(?:rgb\s*\(\s*)?(\d{1,3})[\s,]+(\d{1,3})[\s,]+(\d{1,3})\s*\)?$/);
+            if (rgbMatch) {
+                const r = parseInt(rgbMatch[1]), g = parseInt(rgbMatch[2]), b = parseInt(rgbMatch[3]);
+                if (r <= 255 && g <= 255 && b <= 255) {
+                    const hex = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
+                    preview.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+                    preview.textContent = 'Valid Color';
+                    hexText.textContent = hex;
                     rgbText.textContent = `rgb(${r}, ${g}, ${b})`;
-                } else {
-                    rgbText.textContent = computed;
+                    return;
                 }
             }
+
+            // 2. Check HEX Code (e.g. "#3b82f6", "3b82f6", "#abc")
+            let hexClean = str.replace('#', '');
+            if (/^[0-9a-f]{3}$/i.test(hexClean)) {
+                hexClean = hexClean.split('').map(c => c + c).join('');
+            }
+            if (/^[0-9a-f]{6}$/i.test(hexClean)) {
+                const num = parseInt(hexClean, 16);
+                const r = (num >> 16) & 255, g = (num >> 8) & 255, b = num & 255;
+                const fullHex = "#" + hexClean.toUpperCase();
+                preview.style.backgroundColor = fullHex;
+                preview.textContent = 'Valid Color';
+                hexText.textContent = fullHex;
+                rgbText.textContent = `rgb(${r}, ${g}, ${b})`;
+                return;
+            }
+
+            // 3. Check Named Colors (e.g. "coral", "red", "darkblue", "black")
+            const testCanvas = document.createElement('canvas');
+            const ctx = testCanvas.getContext('2d');
+            ctx.fillStyle = '#123456'; // set arbitrary baseline
+            ctx.fillStyle = str;
+
+            if (ctx.fillStyle !== '#123456') {
+                const computed = ctx.fillStyle; // computed hex e.g. "#ff7f50"
+                const hexCleanComp = computed.replace('#', '');
+                const numComp = parseInt(hexCleanComp, 16);
+                const r = (numComp >> 16) & 255, g = (numComp >> 8) & 255, b = numComp & 255;
+                
+                preview.style.backgroundColor = computed;
+                preview.textContent = 'Valid Color';
+                hexText.textContent = computed.toUpperCase();
+                rgbText.textContent = `rgb(${r}, ${g}, ${b})`;
+                return;
+            }
+
+            // If invalid, show clear Error state (Red banner, NO BLACK COLOR!)
+            preview.style.backgroundColor = '#ef4444'; // Red warning bg
+            preview.textContent = 'Invalid Color';
+            hexText.textContent = 'Invalid Input';
+            rgbText.textContent = 'Invalid Input';
         });
     </script>
 </body>
