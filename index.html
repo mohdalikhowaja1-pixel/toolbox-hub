@@ -33,7 +33,7 @@
             transform: translateY(1px);
         }
 
-        /* --- 100% WORKING MULTI-COLOR LOGO STYLES --- */
+        /* --- MULTI-COLOR LOGO STYLES --- */
         .logo-box-3d {
             background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #a1c4fd 100%);
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15), inset 0 2px 3px rgba(255, 255, 255, 0.8);
@@ -54,6 +54,7 @@
             font-weight: 900;
         }
     </style>
+    <!-- Google Ads Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312"
      crossorigin="anonymous"></script>
 </head>
@@ -65,23 +66,27 @@
             
             <!-- MULTI-COLOR LOGO & ICON -->
             <div class="flex items-center space-x-3 group cursor-pointer select-none">
-                <!-- 3D Rainbow Gradient Icon Box -->
                 <div class="logo-box-3d w-11 h-11 rounded-2xl flex items-center justify-center transform group-hover:scale-105 transition-all duration-300">
                     <span class="text-2xl filter drop-shadow">🧰</span>
                 </div>
                 
-                <!-- Typography ("My" = Dark Steel, "ToolX" = Multi-color Rainbow Gradient) -->
                 <span class="text-3xl font-black tracking-tight font-sans flex items-center">
                     <span class="logo-text-my">My</span>
                     <span class="logo-text-toolx ml-0.5">ToolX</span>
                 </span>
             </div>
 
-            <div class="flex items-center gap-3">
-                <a href="https://mali1.pythonanywhere.com/" target="_blank" class="text-xs font-bold bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-xl shadow-md hover:opacity-90 transition">
+            <!-- Top CTA Buttons -->
+            <div class="flex items-center gap-2.5">
+                <!-- HIGHLY HIGHLIGHTED REMOTE JOBS BUTTON -->
+                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" class="text-xs font-black bg-gradient-to-r from-emerald-500 via-teal-600 to-cyan-600 text-white px-3.5 py-2.5 rounded-xl shadow-md hover:shadow-emerald-500/30 hover:scale-105 transition-all flex items-center gap-1.5 animate-pulse">
+                    💼 Apply Remote Jobs ↗
+                </a>
+
+                <a href="https://mali1.pythonanywhere.com/" target="_blank" class="text-xs font-bold bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-3.5 py-2.5 rounded-xl shadow-md hover:opacity-90 transition hidden sm:inline-flex">
                     📄 Live CV Maker ↗
                 </a>
-                <span class="hidden sm:inline-block text-xs font-bold uppercase tracking-widest text-emerald-700 bg-emerald-100 px-3 py-1.5 rounded-full border border-emerald-200">100% Free Suite</span>
+                <span class="hidden md:inline-block text-xs font-bold uppercase tracking-widest text-emerald-700 bg-emerald-100 px-3 py-1.5 rounded-full border border-emerald-200">100% Free Suite</span>
             </div>
         </div>
     </header>
@@ -106,6 +111,19 @@
 
         <!-- Categorized Tool Cards Grid -->
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3.5 mb-8">
+            
+            <!-- HIGHLIGHTED REMOTE JOBS CARD (WRITERS & STUDENTS SECTION) -->
+            <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" data-cat="writer" class="card-3d-btn bg-gradient-to-br from-emerald-500 via-teal-600 to-emerald-700 p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-emerald-300 text-white shadow-lg hover:scale-105 transition-all cursor-pointer">
+                <div class="flex justify-between items-start">
+                    <span class="text-xl">💼</span>
+                    <span class="text-[9px] font-black uppercase tracking-wider bg-white/25 text-white px-2 py-0.5 rounded-md backdrop-blur-sm">Apply Now</span>
+                </div>
+                <div>
+                    <div class="font-black text-white text-xs sm:text-sm">Online Remote Jobs</div>
+                    <div class="text-[10px] text-emerald-100 font-medium">Click & Apply Skills ↗</div>
+                </div>
+            </a>
+
             <button id="nav1" data-cat="writer" onclick="switchTool(1)" class="card-3d-btn active bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-blue-200">
                 <div class="flex justify-between items-start"><span class="text-xl">✍️</span><span class="text-[9px] font-black uppercase tracking-wider bg-blue-100 text-blue-700 px-2 py-0.5 rounded-md">Writers</span></div>
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Word Counter</div><div class="text-[10px] text-slate-400">Length & Read Time</div></div>
@@ -193,7 +211,12 @@
             <div id="tool3" class="hidden">
                 <div class="flex justify-between items-center mb-3">
                     <h2 class="text-xl font-bold text-slate-800">📄 Professional CV Maker (Python App)</h2>
-                    <a href="https://mali1.pythonanywhere.com/" target="_blank" class="text-xs font-bold text-blue-600 hover:underline">Open in Fullscreen ↗</a>
+                    <div class="flex items-center gap-3">
+                        <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" class="text-xs font-black bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-3 py-1.5 rounded-lg shadow-sm hover:opacity-90 transition">
+                            💼 Apply Remote Jobs ↗
+                        </a>
+                        <a href="https://mali1.pythonanywhere.com/" target="_blank" class="text-xs font-bold text-blue-600 hover:underline">Open in Fullscreen ↗</a>
+                    </div>
                 </div>
                 <iframe src="https://mali1.pythonanywhere.com/" class="w-full h-[650px] rounded-2xl border border-slate-200 shadow-inner bg-white"></iframe>
             </div>
@@ -378,15 +401,14 @@
         }
 
         function filterCategory(cat) {
-            for (let i = 1; i <= 10; i++) {
-                const nav = document.getElementById('nav' + i);
-                if (!nav) continue;
-                if (cat === 'all' || nav.getAttribute('data-cat') === cat) {
-                    nav.classList.remove('hidden');
+            const elements = document.querySelectorAll('[data-cat]');
+            elements.forEach(el => {
+                if (cat === 'all' || el.getAttribute('data-cat') === cat) {
+                    el.classList.remove('hidden');
                 } else {
-                    nav.classList.add('hidden');
+                    el.classList.add('hidden');
                 }
-            }
+            });
         }
 
         function clearTool1() {
