@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Color Converter | MyToolX</title>
+    <meta name="description" content="Free online Universal Color Converter. Convert HEX, RGB, and CSS Color Names instantly with live color preview.">
+    <link rel="canonical" href="https://mytoolx.org/color-converter.html">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "MyToolX Universal Color Converter",
+          "operatingSystem": "All",
+          "applicationCategory": "DesignApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How to convert color formats?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Enter any HEX code (#3B82F6), RGB value (59, 130, 246), or named color (coral) to get live conversion."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
+    <style>
+        .logo-box-3d {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #a1c4fd 100%);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15), inset 0 2px 3px rgba(255, 255, 255, 0.8);
+            border: 2px solid #ffffff;
+        }
+        .logo-text-my {
+            background: -webkit-linear-gradient(45deg, #1e293b, #475569);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+        .logo-text-toolx {
+            background: -webkit-linear-gradient(45deg, #f97316, #ec4899, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-100 via-blue-50/50 to-indigo-50/30 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- Header Navbar -->
+    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2">
+            
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 rounded-xl text-slate-700 text-xs font-bold transition flex items-center gap-1 shrink-0">
+                    ← <span class="hidden sm:inline">All Tools</span>
+                </a>
+
+                <a href="index.html" class="flex items-center space-x-1.5 group cursor-pointer select-none shrink-0">
+                    <div class="logo-box-3d w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-all">
+                        <span class="text-base sm:text-xl filter drop-shadow">🧰</span>
+                    </div>
+                    <span class="text-lg sm:text-2xl font-black tracking-tight flex items-center">
+                        <span class="logo-text-my">My</span>
+                        <span class="logo-text-toolx ml-0.5">ToolX</span>
+                    </span>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-1.5 shrink-0">
+                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition whitespace-nowrap">
+                    💼 Remote Jobs ↗
+                </a>
+
+                <a href="https://mali1.pythonanywhere.com/" target="_blank" class="text-xs font-bold bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-3 py-1.5 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap">
+                    📄 Live CV ↗
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow">
+        
+        <nav class="text-xs font-semibold text-slate-500 mb-4 flex items-center gap-1">
+            <a href="index.html" class="hover:text-blue-600">Home</a>
+            <span>/</span>
+            <span class="text-slate-800 font-bold">Universal Color Converter</span>
+        </nav>
+
+        <!-- Tool Card Panel -->
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-200/80 p-6 sm:p-8 mb-10">
+            
+            <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
+                <h1 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
+                    🎨 Universal Color Converter
+                </h1>
+                <button onclick="clearColor()" class="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
+            </div>
+
+            <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">ENTER HEX (#3B82F6), RGB (59, 130, 246), OR COLOR NAME (CORAL)</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <input type="text" id="colorInput" value="#3b82f6" placeholder="e.g. #3b82f6" class="w-full p-4 border border-slate-200 rounded-2xl bg-slate-50/30 text-slate-800 text-sm font-medium focus:ring-2 focus:ring-blue-500 transition">
+                <button id="colorPreviewBtn" onclick="convertColor()" class="w-full px-6 py-4 bg-blue-600 hover:bg-blue-700 text-white font-extrabold rounded-2xl text-xs shadow-sm transition flex items-center justify-center gap-2">
+                    Preview
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- HEX Code Box with Copy Button -->
+                <div class="bg-slate-50/50 border border-slate-200/80 rounded-2xl p-6 text-center">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-2">HEX CODE</span>
+                    <div class="flex items-center justify-center gap-2">
+                        <span id="hexOut" class="text-xl font-black text-blue-600">#3B82F6</span>
+                        <button onclick="copyHexCode()" class="px-3 py-1.5 bg-blue-100 hover:bg-blue-200 text-blue-700 text-xs font-bold rounded-xl transition shadow-sm">📋 Copy</button>
+                    </div>
+                </div>
+
+                <!-- RGB Code Box with Copy Button -->
+                <div class="bg-slate-50/50 border border-slate-200/80 rounded-2xl p-6 text-center">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-2">RGB CODE</span>
+                    <div class="flex items-center justify-center gap-2">
+                        <span id="rgbOut" class="text-xl font-black text-emerald-600">rgb(59, 130, 246)</span>
+                        <button onclick="copyRgbCode()" class="px-3 py-1.5 bg-emerald-100 hover:bg-emerald-200 text-emerald-700 text-xs font-bold rounded-xl transition shadow-sm">📋 Copy</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SEO Article -->
+        <article class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10 text-slate-700 space-y-4">
+            <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3">Instant CSS Color Conversion</h2>
+            <p class="text-sm leading-relaxed text-slate-600">
+                Convert between web-standard HEX codes, RGB color values, and CSS color names with live visual feedback.
+            </p>
+        </article>
+
+        <!-- FAQs Section -->
+        <section class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10">
+            <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">Frequently Asked Questions (FAQs)</h2>
+            <div class="space-y-4">
+                <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
+                    <h3 class="text-sm font-bold text-slate-900 mb-1">How to convert color formats?</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Enter any HEX code (#3B82F6), RGB value (59, 130, 246), or named color (coral) to get live conversion[cite: 45].</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs font-semibold text-slate-500">
+        <p>&copy; 2026 MyToolX. All tools run client-side for 100% privacy.</p>
+    </footer>
+
+    <!-- ENGINE LOGIC -->
+    <script>
+        function convertColor() {
+            let val = document.getElementById('colorInput').value.trim();
+            if (!val) return;
+
+            const ctx = document.createElement('canvas').getContext('2d');
+            ctx.fillStyle = val;
+            let computed = ctx.fillStyle;
+
+            if (computed.startsWith('#')) {
+                document.getElementById('hexOut').textContent = computed.toUpperCase();
+                let hex = computed.slice(1);
+                let r = parseInt(hex.substring(0,2), 16);
+                let g = parseInt(hex.substring(2,4), 16);
+                let b = parseInt(hex.substring(4,6), 16);
+                document.getElementById('rgbOut').textContent = `rgb(${r}, ${g}, ${b})`;
+                document.getElementById('colorPreviewBtn').style.backgroundColor = computed;
+            }
+        }
+
+        function copyHexCode() {
+            const hexText = document.getElementById('hexOut').textContent;
+            navigator.clipboard.writeText(hexText).then(() => {
+                alert("HEX Code copied: " + hexText);
+            });
+        }
+
+        function copyRgbCode() {
+            const rgbText = document.getElementById('rgbOut').textContent;
+            navigator.clipboard.writeText(rgbText).then(() => {
+                alert("RGB Code copied: " + rgbText);
+            });
+        }
+
+        function clearColor() {
+            document.getElementById('colorInput').value = '#3b82f6';
+            convertColor();
+        }
+
+        document.getElementById('colorInput').addEventListener('input', convertColor);
+        window.onload = convertColor;
+    </script>
+</body>
+</html>

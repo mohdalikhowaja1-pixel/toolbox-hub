@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text & Word Suite | MyToolX</title>
+    <meta name="description" content="Free online Text and Word Suite. Word counter, character counter, reading time calculator, and uppercase/lowercase case converter.">
+    <link rel="canonical" href="https://mytoolx.org/text-suite.html">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "MyToolX Text & Word Suite",
+          "operatingSystem": "All",
+          "applicationCategory": "EducationalApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How does the Word & Character Counter work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Simply paste or type your text into the editor. The suite automatically counts words, characters, sentences, and estimates reading speed instantly."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What case conversion options are available?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can transform your text into UPPERCASE, lowercase, or Title Case with a single click."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
+    <style>
+        .logo-box-3d {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #a1c4fd 100%);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15), inset 0 2px 3px rgba(255, 255, 255, 0.8);
+            border: 2px solid #ffffff;
+        }
+        .logo-text-my {
+            background: -webkit-linear-gradient(45deg, #1e293b, #475569);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+        .logo-text-toolx {
+            background: -webkit-linear-gradient(45deg, #f97316, #ec4899, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-100 via-blue-50/50 to-indigo-50/30 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- Header Navbar -->
+    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2">
+            
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 rounded-xl text-slate-700 text-xs font-bold transition flex items-center gap-1 shrink-0">
+                    ← <span class="hidden sm:inline">All Tools</span>
+                </a>
+
+                <a href="index.html" class="flex items-center space-x-1.5 group cursor-pointer select-none shrink-0">
+                    <div class="logo-box-3d w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-all">
+                        <span class="text-base sm:text-xl filter drop-shadow">🧰</span>
+                    </div>
+                    <span class="text-lg sm:text-2xl font-black tracking-tight flex items-center">
+                        <span class="logo-text-my">My</span>
+                        <span class="logo-text-toolx ml-0.5">ToolX</span>
+                    </span>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-1.5 shrink-0">
+                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition whitespace-nowrap">
+                    💼 Remote Jobs ↗
+                </a>
+
+                <a href="https://mali1.pythonanywhere.com/" target="_blank" class="text-xs font-bold bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-3 py-1.5 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap">
+                    📄 Live CV ↗
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow">
+        
+        <nav class="text-xs font-semibold text-slate-500 mb-4 flex items-center gap-1">
+            <a href="index.html" class="hover:text-blue-600">Home</a>
+            <span>/</span>
+            <span class="text-slate-800 font-bold">Text & Word Suite</span>
+        </nav>
+
+        <!-- Tool Card Panel -->
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-200/80 p-6 sm:p-8 mb-10">
+            
+            <!-- Tabs Navigation Bar -->
+            <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
+                <div class="flex items-center gap-2">
+                    <button id="tabCounterBtn" onclick="switchTab('counter')" class="px-4 py-2 bg-blue-600 text-white text-xs font-bold rounded-xl shadow-sm transition flex items-center gap-1.5">
+                        ✍️ Word & Char Counter
+                    </button>
+                    <button id="tabCaseBtn" onclick="switchTab('case')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-xl transition flex items-center gap-1.5">
+                        🔤 Case Converter
+                    </button>
+                </div>
+                <button onclick="clearTextSuite()" class="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
+            </div>
+
+            <!-- TAB 1 CONTENT -->
+            <div id="contentCounter">
+                <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">INPUT TEXT</label>
+                <textarea id="suiteInput" rows="7" class="w-full p-4 border border-slate-200 rounded-2xl bg-slate-50/30 text-slate-800 text-sm font-medium focus:ring-2 focus:ring-blue-500 transition mb-6" placeholder="Type or paste text here..."></textarea>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <div class="bg-blue-50/50 border border-blue-100/80 rounded-2xl p-4 text-center">
+                        <span id="statWords" class="text-2xl font-black text-blue-600 block">0</span>
+                        <span class="text-xs font-bold text-slate-500">Words</span>
+                    </div>
+                    <div class="bg-emerald-50/50 border border-emerald-100/80 rounded-2xl p-4 text-center">
+                        <span id="statChars" class="text-2xl font-black text-emerald-600 block">0</span>
+                        <span class="text-xs font-bold text-slate-500">Characters</span>
+                    </div>
+                    <div class="bg-purple-50/50 border border-purple-100/80 rounded-2xl p-4 text-center">
+                        <span id="statSentences" class="text-2xl font-black text-purple-600 block">0</span>
+                        <span class="text-xs font-bold text-slate-500">Sentences</span>
+                    </div>
+                    <div class="bg-amber-50/50 border border-amber-100/80 rounded-2xl p-4 text-center">
+                        <span id="statReadTime" class="text-2xl font-black text-amber-600 block">0 sec</span>
+                        <span class="text-xs font-bold text-slate-500">Read Time</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2 CONTENT -->
+            <div id="contentCase" class="hidden">
+                <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">TEXT FOR CASE CONVERSION</label>
+                <textarea id="caseInput" rows="7" class="w-full p-4 border border-slate-200 rounded-2xl bg-slate-50/30 text-slate-800 text-sm font-medium focus:ring-2 focus:ring-blue-500 transition mb-6" placeholder="Type or paste text here to convert case..."></textarea>
+
+                <div class="flex flex-wrap gap-3">
+                    <button onclick="convertCase('upper')" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold shadow-sm transition">UPPERCASE</button>
+                    <button onclick="convertCase('lower')" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-900 text-white rounded-xl text-xs font-bold shadow-sm transition">lowercase</button>
+                    <button onclick="convertCase('title')" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-sm transition">Title Case</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SEO Article & Explanations -->
+        <article class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10 text-slate-700 space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <h2 class="text-xl font-bold text-slate-900">📊 Word & Character Counter Suite</h2>
+                <p class="text-sm leading-relaxed mt-2 text-slate-600">
+                    Our real-time word counter provides precise metrics for writers, students, bloggers, and SEO professionals. Instantly measure word volume, total characters, sentence counts, and estimated reading time.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-bold text-slate-900">🔤 Smart Text Case Converter</h2>
+                <p class="text-sm leading-relaxed mt-2 text-slate-600">
+                    Effortlessly adjust letter casing to fit any formatting guidelines without retyping your text:
+                </p>
+                <ul class="list-disc list-inside text-xs sm:text-sm text-slate-600 mt-2 space-y-1 font-medium">
+                    <li><strong>UPPERCASE:</strong> Converts all characters to capital letters.</li>
+                    <li><strong>lowercase:</strong> Converts all characters to small letters.</li>
+                    <li><strong>Title Case:</strong> Capitalizes the first letter of every word.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FAQs Section -->
+        <section class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10">
+            <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">Frequently Asked Questions (FAQs)</h2>
+            <div class="space-y-4">
+                <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
+                    <h3 class="text-sm font-bold text-slate-900 mb-1">Does this tool save or store my text on a server?</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">No. All word counting and case conversions take place 100% locally inside your browser to ensure complete privacy.</p>
+                </div>
+                <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
+                    <h3 class="text-sm font-bold text-slate-900 mb-1">How is the estimated reading time calculated?</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Reading time is calculated based on the standard average reading speed of 200 words per minute.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs font-semibold text-slate-500">
+        <p>&copy; 2026 MyToolX. All tools run client-side for 100% privacy.</p>
+    </footer>
+
+    <!-- INTERACTIVE LOGIC -->
+    <script>
+        const inputEl = document.getElementById('suiteInput');
+        const caseInputEl = document.getElementById('caseInput');
+
+        function switchTab(tab) {
+            const counterBtn = document.getElementById('tabCounterBtn');
+            const caseBtn = document.getElementById('tabCaseBtn');
+            const contentCounter = document.getElementById('contentCounter');
+            const contentCase = document.getElementById('contentCase');
+
+            if (tab === 'counter') {
+                counterBtn.className = "px-4 py-2 bg-blue-600 text-white text-xs font-bold rounded-xl shadow-sm transition flex items-center gap-1.5";
+                caseBtn.className = "px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-xl transition flex items-center gap-1.5";
+                contentCounter.classList.remove('hidden');
+                contentCase.classList.add('hidden');
+            } else {
+                caseBtn.className = "px-4 py-2 bg-blue-600 text-white text-xs font-bold rounded-xl shadow-sm transition flex items-center gap-1.5";
+                counterBtn.className = "px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-xl transition flex items-center gap-1.5";
+                contentCase.classList.remove('hidden');
+                contentCounter.classList.add('hidden');
+            }
+        }
+
+        function updateStats() {
+            const text = inputEl.value;
+            const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+            document.getElementById('statWords').textContent = words;
+            document.getElementById('statChars').textContent = text.length;
+            document.getElementById('statSentences').textContent = text.trim() ? text.split(/[.!?]+/).filter(Boolean).length : 0;
+            const seconds = Math.ceil((words / 200) * 60);
+            document.getElementById('statReadTime').textContent = seconds < 60 ? `${seconds} sec` : `${(seconds/60).toFixed(1)} min`;
+        }
+
+        function convertCase(type) {
+            let val = caseInputEl.value;
+            if (!val) return;
+            if (type === 'upper') val = val.toUpperCase();
+            if (type === 'lower') val = val.toLowerCase();
+            if (type === 'title') val = val.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+            caseInputEl.value = val;
+        }
+
+        function clearTextSuite() {
+            inputEl.value = '';
+            caseInputEl.value = '';
+            updateStats();
+        }
+
+        if (inputEl) {
+            inputEl.addEventListener('input', updateStats);
+        }
+    </script>
+</body>
+</html>

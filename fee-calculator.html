@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee & Contract Earnings Calculators | MyToolX</title>
+    <meta name="description" content="Free Payment Fee Calculator and Freelance Contract Earnings Calculator for Stripe, PayPal, hourly rates, and target salaries.">
+    <link rel="canonical" href="https://mytoolx.org/fee-calculator.html">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "MyToolX Fee & Contract Earnings Calculator",
+          "operatingSystem": "All",
+          "applicationCategory": "FinanceApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How does the Payment Fee Calculator work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Select your gateway (Stripe or PayPal), select currency, enter amount, and get instant breakdown of fees, net earnings, and recommended ask amount."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does the Contract Earnings Calculator help freelancers?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It helps freelancers estimate weekly, monthly, and yearly income based on hourly rates, target hourly income, or desired annual salary goals."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Ads Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
+    <style>
+        .logo-box-3d {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #a1c4fd 100%);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15), inset 0 2px 3px rgba(255, 255, 255, 0.8);
+            border: 2px solid #ffffff;
+        }
+        .logo-text-my {
+            background: -webkit-linear-gradient(45deg, #1e293b, #475569);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+        .logo-text-toolx {
+            background: -webkit-linear-gradient(45deg, #f97316, #ec4899, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-100 via-blue-50/50 to-indigo-50/30 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- Header Navbar -->
+    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2">
+            
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 rounded-xl text-slate-700 text-xs font-bold transition flex items-center gap-1 shrink-0">
+                    ← <span class="hidden sm:inline">All Tools</span>
+                </a>
+
+                <a href="index.html" class="flex items-center space-x-1.5 group cursor-pointer select-none shrink-0">
+                    <div class="logo-box-3d w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-all">
+                        <span class="text-base sm:text-xl filter drop-shadow">🧰</span>
+                    </div>
+                    <span class="text-lg sm:text-2xl font-black tracking-tight flex items-center">
+                        <span class="logo-text-my">My</span>
+                        <span class="logo-text-toolx ml-0.5">ToolX</span>
+                    </span>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-1.5 shrink-0">
+                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition whitespace-nowrap">
+                    💼 Remote Jobs ↗
+                </a>
+
+                <a href="https://mali1.pythonanywhere.com/" target="_blank" class="text-xs font-bold bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-3 py-1.5 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap">
+                    📄 Live CV ↗
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow">
+        
+        <nav class="text-xs font-semibold text-slate-500 mb-4 flex items-center gap-1">
+            <a href="index.html" class="hover:text-blue-600">Home</a>
+            <span>/</span>
+            <span class="text-slate-800 font-bold">Fee Calculators</span>
+        </nav>
+
+        <!-- Tool Card Panel -->
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-200/80 p-6 sm:p-8 mb-10">
+            
+            <!-- 2 Main Top Tabs -->
+            <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
+                <div class="flex items-center gap-2">
+                    <button id="tabFeeBtn" onclick="switchMainTab('fee')" class="px-4 py-2 bg-emerald-600 text-white text-xs font-bold rounded-xl shadow-sm transition flex items-center gap-1.5">
+                        💰 Payment Fee Calculator
+                    </button>
+                    <button id="tabContractBtn" onclick="switchMainTab('contract')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-xl transition flex items-center gap-1.5">
+                        📊 Contract Earnings Calculator
+                    </button>
+                </div>
+                <button onclick="clearFeeAll()" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
+            </div>
+
+            <!-- TAB 1: PAYMENT FEE CALCULATOR -->
+            <div id="contentFee" class="space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Payment Gateway</label>
+                        <select id="feeGateway" onchange="calcPaymentFee()" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-xs font-semibold text-slate-800">
+                            <option value="stripe">Stripe (2.9% + $0.30)</option>
+                            <option value="paypal">PayPal Commercial (3.49% + $0.49)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Currency Symbol</label>
+                        <select id="feeCurr" onchange="calcPaymentFee()" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-xs font-semibold text-slate-800">
+                            <option value="$">USD ($)</option>
+                            <option value="€">EUR (€)</option>
+                            <option value="£">GBP (£)</option>
+                            <option value="Rs">PKR (Rs)</option>
+                            <option value="₹">INR (₹)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Amount</label>
+                        <input type="number" id="feeAmount" oninput="calcPaymentFee()" placeholder="Enter amount..." class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-xs font-medium text-slate-800">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="bg-red-50/60 border border-red-100 rounded-2xl p-5 text-center">
+                        <span id="outTotalFee" class="text-2xl font-black text-red-500 block">$0.00</span>
+                        <span class="text-xs font-bold text-slate-500 uppercase">Total Fee</span>
+                    </div>
+                    <div class="bg-emerald-50/60 border border-emerald-100 rounded-2xl p-5 text-center">
+                        <span id="outYouReceive" class="text-2xl font-black text-emerald-600 block">$0.00</span>
+                        <span class="text-xs font-bold text-slate-500 uppercase">You Receive</span>
+                    </div>
+                    <div class="bg-blue-50/60 border border-blue-100 rounded-2xl p-5 text-center">
+                        <span id="outAskAmount" class="text-2xl font-black text-blue-600 block">$0.00</span>
+                        <span class="text-xs font-bold text-slate-500 uppercase">Ask / Invoice Amount</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: CONTRACT EARNINGS CALCULATOR (WITH 3 SUB-TABS) -->
+            <div id="contentContract" class="hidden space-y-6">
+                <!-- 3 Sub-Tabs Navigation -->
+                <div class="flex items-center gap-2 pb-2">
+                    <button id="subTab1" onclick="switchSubTab(1)" class="px-4 py-2 bg-blue-600 text-white text-xs font-bold rounded-xl shadow-sm transition">
+                        Contract Calculator
+                    </button>
+                    <button id="subTab2" onclick="switchSubTab(2)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-xl transition">
+                        Target Hourly Rate
+                    </button>
+                    <button id="subTab3" onclick="switchSubTab(3)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-xl transition">
+                        Target Annual Salary
+                    </button>
+                </div>
+
+                <!-- SUB-TAB 1: CONTRACT CALCULATOR -->
+                <div id="subContent1" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Contract Rate ($ / Hour)</label>
+                            <input type="number" id="cRate" oninput="calcContract1()" placeholder="e.g. 15" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-xs font-medium text-slate-800">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Contract Hours / Week</label>
+                            <input type="number" id="cHours" oninput="calcContract1()" placeholder="e.g. 20" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-xs font-medium text-slate-800">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="bg-blue-50/60 border border-blue-100 rounded-2xl p-5 text-center">
+                            <span id="c1Weekly" class="text-2xl font-black text-blue-600 block">$0.00</span>
+                            <span class="text-xs font-bold text-slate-500 uppercase">Weekly Earnings</span>
+                        </div>
+                        <div class="bg-blue-50/60 border border-blue-100 rounded-2xl p-5 text-center">
+                            <span id="c1Monthly" class="text-2xl font-black text-blue-600 block">$0.00</span>
+                            <span class="text-xs font-bold text-slate-500 uppercase">Monthly Earnings</span>
+                        </div>
+                        <div class="bg-emerald-50/60 border border-emerald-100 rounded-2xl p-5 text-center">
+                            <span id="c1Yearly" class="text-2xl font-black text-emerald-600 block">$0.00</span>
+                            <span class="text-xs font-bold text-slate-500 uppercase">Yearly Earnings</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUB-TAB 2: TARGET HOURLY RATE -->
+                <div id="subContent2" class="hidden space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Target Monthly Income ($)</label>
+                            <input type="number" id="tMonthly" oninput="calcContract2()" placeholder="e.g. 3000" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-xs font-medium text-slate-800">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Expected Hours / Week</label>
+                            <input type="number" id="tHours" oninput="calcContract2()" placeholder="e.g. 30" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-xs font-medium text-slate-800">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-blue-50/60 border border-blue-100 rounded-2xl p-5 text-center">
+                            <span id="c2Hourly" class="text-2xl font-black text-blue-600 block">$0.00</span>
+                            <span class="text-xs font-bold text-slate-500 uppercase">Required Hourly Rate</span>
+                        </div>
+                        <div class="bg-emerald-50/60 border border-emerald-100 rounded-2xl p-5 text-center">
+                            <span id="c2Annual" class="text-2xl font-black text-emerald-600 block">$0.00</span>
+                            <span class="text-xs font-bold text-slate-500 uppercase">Target Annual Income</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUB-TAB 3: TARGET ANNUAL SALARY -->
+                <div id="subContent3" class="hidden space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Target Annual Salary ($)</label>
+                            <input type="number" id="sSalary" oninput="calcContract3()" placeholder="e.g. 60000" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-xs font-medium text-slate-800">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Billable Hours / Week</label>
+                            <input type="number" id="sHours" oninput="calcContract3()" placeholder="e.g. 40" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-xs font-medium text-slate-800">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-blue-50/60 border border-blue-100 rounded-2xl p-5 text-center">
+                            <span id="c3Hourly" class="text-2xl font-black text-blue-600 block">$0.00</span>
+                            <span class="text-xs font-bold text-slate-500 uppercase">Hourly Charge Needed</span>
+                        </div>
+                        <div class="bg-emerald-50/60 border border-emerald-100 rounded-2xl p-5 text-center">
+                            <span id="c3Monthly" class="text-2xl font-black text-emerald-600 block">$0.00</span>
+                            <span class="text-xs font-bold text-slate-500 uppercase">Monthly Target Income</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- SEO Article & Explanations -->
+        <article class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10 text-slate-700 space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <h2 class="text-xl font-bold text-slate-900">💳 Payment Fee & Contract Earnings Suite</h2>
+                <p class="text-sm leading-relaxed mt-2 text-slate-600">
+                    A multi-purpose financial suite designed for freelancers, agencies, and online businesses to calculate gateway transaction fees and estimate contract earnings.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-base font-bold text-slate-900">Suite Features & Tab Breakdown:</h3>
+                <ul class="space-y-3 text-xs sm:text-sm text-slate-600 font-medium">
+                    <li class="flex items-start gap-2 bg-slate-50 p-3.5 rounded-2xl border border-slate-100">
+                        <span class="text-base shrink-0">💰</span>
+                        <div>
+                            <strong class="text-slate-900 block font-bold">1. Payment Fee Calculator:</strong>
+                            Calculates total processing fees, net take-home amount, and required invoice total for Stripe and PayPal across USD, EUR, GBP, PKR, and INR currencies.
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-2 bg-slate-50 p-3.5 rounded-2xl border border-slate-100">
+                        <span class="text-base shrink-0">📊</span>
+                        <div>
+                            <strong class="text-slate-900 block font-bold">2. Contract Earnings Calculator:</strong>
+                            Estimates weekly, monthly, and annual gross revenues based on contractual hourly rates and weekly hours.
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-2 bg-slate-50 p-3.5 rounded-2xl border border-slate-100">
+                        <span class="text-base shrink-0">🎯</span>
+                        <div>
+                            <strong class="text-slate-900 block font-bold">3. Target Hourly & Salary Planner:</strong>
+                            Reverse-engineers your desired monthly or annual income goals into precise hourly rates to charge clients.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- FAQs Section -->
+        <section class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10">
+            <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">Frequently Asked Questions (FAQs)</h2>
+            <div class="space-y-4">
+                <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
+                    <h3 class="text-sm font-bold text-slate-900 mb-1">What is 'Ask / Invoice Amount'?</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">It is the reverse fee calculation showing the total amount you must invoice so that after payment gateway deductions, you receive your exact net payout.</p>
+                </div>
+                <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
+                    <h3 class="text-sm font-bold text-slate-900 mb-1">How are contract earnings calculated?</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Calculations multiply hourly rate by weekly hours across 52 weeks in a year and 4.33 weeks per month for accurate projection.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs font-semibold text-slate-500">
+        <p>&copy; 2026 MyToolX. All tools run client-side for 100% privacy.</p>
+    </footer>
+
+    <!-- ENGINE SCRIPT -->
+    <script>
+        function switchMainTab(tab) {
+            const feeBtn = document.getElementById('tabFeeBtn');
+            const contractBtn = document.getElementById('tabContractBtn');
+            const contentFee = document.getElementById('contentFee');
+            const contentContract = document.getElementById('contentContract');
+
+            if (tab === 'fee') {
+                feeBtn.className = "px-4 py-2 bg-emerald-600 text-white text-xs font-bold rounded-xl shadow-sm transition flex items-center gap-1.5";
+                contractBtn.className = "px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-xl transition flex items-center gap-1.5";
+                contentFee.classList.remove('hidden');
+                contentContract.classList.add('hidden');
+            } else {
+                contractBtn.className = "px-4 py-2 bg-emerald-600 text-white text-xs font-bold rounded-xl shadow-sm transition flex items-center gap-1.5";
+                feeBtn.className = "px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-xl transition flex items-center gap-1.5";
+                contentContract.classList.remove('hidden');
+                contentFee.classList.add('hidden');
+            }
+        }
+
+        function switchSubTab(num) {
+            [1, 2, 3].forEach(i => {
+                document.getElementById('subTab' + i).className = (i === num)
+                    ? "px-4 py-2 bg-blue-600 text-white text-xs font-bold rounded-xl shadow-sm transition"
+                    : "px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-xl transition";
+                document.getElementById('subContent' + i).classList.toggle('hidden', i !== num);
+            });
+        }
+
+        function calcPaymentFee() {
+            const gw = document.getElementById('feeGateway').value;
+            const curr = document.getElementById('feeCurr').value;
+            const amt = parseFloat(document.getElementById('feeAmount').value) || 0;
+
+            let rate = 0.029;
+            let fixed = 0.30;
+            if (gw === 'paypal') { rate = 0.0349; fixed = 0.49; }
+
+            const fee = (amt * rate) + fixed;
+            const net = amt - fee;
+            const ask = (rate < 1) ? ((amt + fixed) / (1 - rate)) : 0;
+
+            document.getElementById('outTotalFee').textContent = `${curr}${fee > 0 ? fee.toFixed(2) : '0.00'}`;
+            document.getElementById('outYouReceive').textContent = `${curr}${net > 0 ? net.toFixed(2) : '0.00'}`;
+            document.getElementById('outAskAmount').textContent = `${curr}${ask > 0 ? ask.toFixed(2) : '0.00'}`;
+        }
+
+        function calcContract1() {
+            const rate = parseFloat(document.getElementById('cRate').value) || 0;
+            const hours = parseFloat(document.getElementById('cHours').value) || 0;
+            const weekly = rate * hours;
+            const yearly = weekly * 52;
+            const monthly = yearly / 12;
+
+            document.getElementById('c1Weekly').textContent = `$${weekly.toFixed(2)}`;
+            document.getElementById('c1Monthly').textContent = `$${monthly.toFixed(2)}`;
+            document.getElementById('c1Yearly').textContent = `$${yearly.toFixed(2)}`;
+        }
+
+        function calcContract2() {
+            const tMon = parseFloat(document.getElementById('tMonthly').value) || 0;
+            const tHrs = parseFloat(document.getElementById('tHours').value) || 0;
+            const tYr = tMon * 12;
+            const hourly = (tHrs > 0) ? (tMon / (tHrs * 4.33)) : 0;
+
+            document.getElementById('c2Hourly').textContent = `$${hourly.toFixed(2)}`;
+            document.getElementById('c2Annual').textContent = `$${tYr.toFixed(2)}`;
+        }
+
+        function calcContract3() {
+            const sSal = parseFloat(document.getElementById('sSalary').value) || 0;
+            const sHrs = parseFloat(document.getElementById('sHours').value) || 0;
+            const sMon = sSal / 12;
+            const hourly = (sHrs > 0) ? (sSal / (sHrs * 52)) : 0;
+
+            document.getElementById('c3Hourly').textContent = `$${hourly.toFixed(2)}`;
+            document.getElementById('c3Monthly').textContent = `$${sMon.toFixed(2)}`;
+        }
+
+        function clearFeeAll() {
+            ['feeAmount', 'cRate', 'cHours', 'tMonthly', 'tHours', 'sSalary', 'sHours'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.value = '';
+            });
+            calcPaymentFee();
+            calcContract1();
+            calcContract2();
+            calcContract3();
+        }
+    </script>
+</body>
+</html>

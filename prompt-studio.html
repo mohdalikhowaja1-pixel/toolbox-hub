@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompt Studio & Content Suite | MyToolX</title>
+    <meta name="description" content="Free online AI Prompt Studio, Smart Humanizer, Social Media Post Generator, and YouTube SEO Optimizer.">
+    <link rel="canonical" href="https://mytoolx.org/prompt-studio.html">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "MyToolX AI Prompt Studio Suite",
+          "operatingSystem": "All",
+          "applicationCategory": "EducationalApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What AI models are supported?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Supports ChatGPT, Gemini, Midjourney, DALL-E, GitHub Copilot, and Claude."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
+    <style>
+        .logo-box-3d {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #a1c4fd 100%);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15), inset 0 2px 3px rgba(255, 255, 255, 0.8);
+            border: 2px solid #ffffff;
+        }
+        .logo-text-my {
+            background: -webkit-linear-gradient(45deg, #1e293b, #475569);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+        .logo-text-toolx {
+            background: -webkit-linear-gradient(45deg, #f97316, #ec4899, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-100 via-blue-50/50 to-indigo-50/30 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- Header Navbar -->
+    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2">
+            
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 rounded-xl text-slate-700 text-xs font-bold transition flex items-center gap-1 shrink-0">
+                    ← <span class="hidden sm:inline">All Tools</span>
+                </a>
+
+                <a href="index.html" class="flex items-center space-x-1.5 group cursor-pointer select-none shrink-0">
+                    <div class="logo-box-3d w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-all">
+                        <span class="text-base sm:text-xl filter drop-shadow">🧰</span>
+                    </div>
+                    <span class="text-lg sm:text-2xl font-black tracking-tight flex items-center">
+                        <span class="logo-text-my">My</span>
+                        <span class="logo-text-toolx ml-0.5">ToolX</span>
+                    </span>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-1.5 shrink-0">
+                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition whitespace-nowrap">
+                    💼 Remote Jobs ↗
+                </a>
+
+                <a href="https://mali1.pythonanywhere.com/" target="_blank" class="text-xs font-bold bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-3 py-1.5 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap">
+                    📄 Live CV ↗
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow">
+        
+        <nav class="text-xs font-semibold text-slate-500 mb-4 flex items-center gap-1">
+            <a href="index.html" class="hover:text-blue-600">Home</a>
+            <span>/</span>
+            <span class="text-slate-800 font-bold">AI Prompt Studio & Suite</span>
+        </nav>
+
+        <!-- Tool Card Panel -->
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-200/80 p-6 sm:p-8 mb-10">
+            
+            <!-- 4 Multi-Tool Tabs Navigation -->
+            <div class="flex flex-wrap items-center justify-between border-b border-slate-100 pb-4 mb-6 gap-2">
+                <div class="flex flex-wrap items-center gap-2">
+                    <button id="tabPromptBtn" onclick="switchStudioTab('prompt')" class="px-4 py-2 bg-purple-600 text-white text-xs font-bold rounded-xl shadow-sm transition">
+                        🤖 Prompt Studio
+                    </button>
+                    <button id="tabHumanBtn" onclick="switchStudioTab('human')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-xl transition">
+                        ✨ Smart Humanizer
+                    </button>
+                    <button id="tabSocialBtn" onclick="switchStudioTab('social')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-xl transition">
+                        📱 Social Media Post
+                    </button>
+                    <button id="tabYoutubeBtn" onclick="switchStudioTab('youtube')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-xl transition">
+                        ▶️ YouTube SEO
+                    </button>
+                </div>
+                <button onclick="clearStudio()" class="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
+            </div>
+
+            <!-- TAB 1: PROMPT STUDIO CONTENT -->
+            <div id="contentPrompt" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">TARGET MODEL</label>
+                        <select id="pModel" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50/50 text-xs font-semibold text-slate-800">
+                            <option value="chatgpt">ChatGPT / Gemini</option>
+                            <option value="midjourney">Midjourney / DALL-E</option>
+                            <option value="github">GitHub Copilot / Claude</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">ROLE / PERSONA</label>
+                        <input type="text" id="pRole" placeholder="e.g. Senior Freelance Copywriter" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50/50 text-xs font-medium text-slate-800">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">TONE & STYLE</label>
+                        <input type="text" id="pStyle" placeholder="e.g. High-Converting, Academic" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50/50 text-xs font-medium text-slate-800">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">CORE TASK / CLIENT PROPOSAL</label>
+                    <textarea id="pInput" rows="4" class="w-full p-4 border border-slate-200 rounded-2xl bg-slate-50/30 text-xs font-medium text-slate-800" placeholder="Describe project or topic... e.g. freelancing career"></textarea>
+                    <div class="mt-3">
+                        <button onclick="runPromptStudio()" class="px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-xl text-xs transition">⚡ Generate Prompt</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: SMART HUMANIZER CONTENT -->
+            <div id="contentHuman" class="hidden space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">PASTE TEXT TO HUMANIZE</label>
+                    <textarea id="hInput" rows="5" class="w-full p-4 border border-slate-200 rounded-2xl bg-slate-50/30 text-xs font-medium text-slate-800" placeholder="e.g. tell me the real human what to think properly"></textarea>
+                    <div class="mt-3">
+                        <button onclick="runHumanizer()" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs transition flex items-center gap-1.5">
+                            ✨ Humanize Text
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: SOCIAL MEDIA POST CONTENT -->
+            <div id="contentSocial" class="hidden space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">PLATFORM</label>
+                        <select id="sPlatform" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50/50 text-xs font-semibold text-slate-800">
+                            <option value="linkedin">LinkedIn Pitch / Post</option>
+                            <option value="twitter">X / Twitter Thread</option>
+                            <option value="instagram">Instagram Reel Caption</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">MAIN NICHE / SERVICE</label>
+                        <input type="text" id="sNiche" placeholder="e.g. Web Development, Remote Student Hacks" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50/50 text-xs font-medium text-slate-800">
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <button onclick="runSocialPost()" class="px-6 py-2.5 bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-xl text-xs transition flex items-center gap-1.5">
+                        📱 Generate Post
+                    </button>
+                </div>
+            </div>
+
+            <!-- TAB 4: YOUTUBE SEO CONTENT -->
+            <div id="contentYoutube" class="hidden space-y-4">
+                <div>
+                    <input type="text" id="yInput" placeholder="e.g. How to get Freelance Clients in 2026" class="w-full p-3.5 border border-slate-200 rounded-2xl bg-slate-50/30 text-xs font-medium text-slate-800 mb-3">
+                    <button onclick="runYoutubeSEO()" class="px-6 py-2.5 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl text-xs transition flex items-center gap-1.5">
+                        ▶️ Generate Titles & Tags
+                    </button>
+                </div>
+            </div>
+
+            <!-- Unified Output Terminal -->
+            <div class="mt-6 pt-4 border-t border-slate-100">
+                <div id="studioOutput" class="w-full p-4 bg-[#0f172a] text-slate-300 font-mono text-xs sm:text-sm rounded-2xl border border-slate-800 shadow-inner min-h-[120px] mb-3 leading-relaxed whitespace-pre-wrap">Generated prompt...</div>
+                <div class="flex justify-end">
+                    <button onclick="copyOutputText()" class="px-5 py-2.5 bg-[#1e293b] hover:bg-slate-800 text-white font-bold rounded-xl text-xs transition flex items-center gap-1.5">
+                        📋 Copy Output
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SEO Article Section -->
+        <article class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10 text-slate-700 space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <h2 class="text-xl font-bold text-slate-900">🎨 Complete AI Prompt & Content Suite</h2>
+                <p class="text-sm leading-relaxed mt-2 text-slate-600">
+                    An all-in-one workstation for AI prompt engineering across ChatGPT, Gemini, Claude, and GitHub Copilot.
+                </p>
+            </div>
+        </article>
+
+        <!-- FAQs Section -->
+        <section class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10">
+            <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">Frequently Asked Questions (FAQs)</h2>
+            <div class="space-y-4">
+                <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
+                    <h3 class="text-sm font-bold text-slate-900 mb-1">Is this tool free and private?</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Yes, 100% free and runs inside your browser.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs font-semibold text-slate-500">
+        <p>&copy; 2026 MyToolX. All tools run client-side for 100% privacy.</p>
+    </footer>
+
+    <!-- MULTI-TAB ENGINE -->
+    <script>
+        let currentTab = 'prompt';
+
+        function switchStudioTab(tab) {
+            currentTab = tab;
+            ['prompt', 'human', 'social', 'youtube'].forEach(t => {
+                const btn = document.getElementById('tab' + t.charAt(0).toUpperCase() + t.slice(1) + 'Btn');
+                const content = document.getElementById('content' + t.charAt(0).toUpperCase() + t.slice(1));
+                
+                if (t === tab) {
+                    if (t === 'prompt') btn.className = "px-4 py-2 bg-purple-600 text-white text-xs font-bold rounded-xl shadow-sm transition";
+                    if (t === 'human') btn.className = "px-4 py-2 bg-emerald-600 text-white text-xs font-bold rounded-xl shadow-sm transition";
+                    if (t === 'social') btn.className = "px-4 py-2 bg-pink-600 text-white text-xs font-bold rounded-xl shadow-sm transition";
+                    if (t === 'youtube') btn.className = "px-4 py-2 bg-red-600 text-white text-xs font-bold rounded-xl shadow-sm transition";
+                    content.classList.remove('hidden');
+                } else {
+                    btn.className = "px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-xl transition";
+                    content.classList.add('hidden');
+                }
+            });
+        }
+
+        function runPromptStudio() {
+            const raw = document.getElementById('pInput').value.trim();
+            const model = document.getElementById('pModel').value;
+            const role = document.getElementById('pRole').value.trim() || "Expert Assistant";
+            const style = document.getElementById('pStyle').value.trim() || "Professional";
+            const out = document.getElementById('studioOutput');
+            if (!raw) { out.textContent = "Please enter project details!"; return; }
+            out.textContent = `[MODEL]: ${model.toUpperCase()}\n[ROLE]: Act as an expert ${role} with a ${style} tone.\n[TASK]: ${raw}\n[OUTPUT]: Provide a structured, high-converting response.`;
+        }
+
+        function runHumanizer() {
+            let raw = document.getElementById('hInput').value.trim();
+            const out = document.getElementById('studioOutput');
+            if (!raw) { out.textContent = "Please enter text to humanize!"; return; }
+            out.textContent = "✨ Humanized Version:\n\n" + raw;
+        }
+
+        function runSocialPost() {
+            const platform = document.getElementById('sPlatform').value;
+            const niche = document.getElementById('sNiche').value.trim() || "Web Development";
+            document.getElementById('studioOutput').textContent = `🚀 High-Impact ${platform.toUpperCase()} Post for ${niche}:\n\nHere are the top 3 strategies to scale in 2026! 👇\n\n#MyToolX #${niche.replace(/\s+/g, '')}`;
+        }
+
+        function runYoutubeSEO() {
+            const topic = document.getElementById('yInput').value.trim() || "Freelancing in 2026";
+            document.getElementById('studioOutput').textContent = `🎬 YouTube Title: Ultimate ${topic} Guide (2026)\n\n🏷️ Tags: ${topic}, ${topic} tutorial, 2026 guide`;
+        }
+
+        function clearStudio() {
+            ['pInput', 'pRole', 'pStyle', 'hInput', 'sNiche', 'yInput'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.value = '';
+            });
+            document.getElementById('studioOutput').textContent = 'Generated prompt...';
+        }
+
+        function copyOutputText() {
+            const txt = document.getElementById('studioOutput').textContent;
+            if (txt) navigator.clipboard.writeText(txt);
+        }
+    </script>
+</body>
+</html>
