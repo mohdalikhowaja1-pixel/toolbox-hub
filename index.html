@@ -6,46 +6,31 @@
     <title>MyToolX - Free Online Micro-Tools Suite</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- QR Code Library CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
-        .btn-3d {
-            transition: all 0.15s ease;
-            box-shadow: 0 4px 0 0 #1d4ed8, 0 8px 12px -2px rgba(0, 0, 0, 0.1);
-        }
-        .btn-3d:active {
-            transform: translateY(3px);
-            box-shadow: 0 1px 0 0 #1d4ed8, 0 4px 6px -1px rgba(100, 201, 72, 0.1);
-        }
         .card-3d-btn {
             transition: all 0.2s ease;
             box-shadow: 0 6px 15px -3px rgba(0, 0, 0, 0.06);
             border: 2px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .card-3d-btn:hover {
             transform: translateY(-4px);
             box-shadow: 0 12px 24px -4px rgba(37, 99, 235, 0.18);
-        }
-        .card-3d-btn.active {
             border-color: #2563eb;
-            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
-            transform: translateY(1px);
         }
-
         .logo-box-3d {
             background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #a1c4fd 100%);
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15), inset 0 2px 3px rgba(255, 255, 255, 0.8);
             border: 2px solid #ffffff;
         }
-
         .logo-text-my {
             background: -webkit-linear-gradient(45deg, #1e293b, #475569);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 900;
         }
-
         .logo-text-toolx {
             background: -webkit-linear-gradient(45deg, #f97316, #ec4899, #8b5cf6, #06b6d4);
             -webkit-background-clip: text;
@@ -104,12 +89,12 @@
 
         <!-- Role Filter Tabs -->
         <div id="categoryTabsContainer" class="flex flex-wrap justify-center gap-2 mb-8 text-xs font-bold">
-            <button id="catBtnAll" onclick="filterCategory('all', this)" class="cat-btn bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold">All Tools</button>
-            <button id="catBtnWriter" onclick="filterCategory('writer', this)" class="cat-btn bg-white text-blue-700 hover:bg-blue-50 px-5 py-2.5 rounded-full border border-blue-200 shadow-sm font-extrabold">✍️ Writers, Students & CV</button>
-            <button id="catBtnAi" onclick="filterCategory('ai', this)" class="cat-btn bg-white text-violet-700 hover:bg-violet-50 px-5 py-2.5 rounded-full border border-violet-200 shadow-sm font-extrabold">🤖 AI & Content Templates 🔥</button>
-            <button id="catBtnFinance" onclick="filterCategory('finance', this)" class="cat-btn bg-white text-emerald-700 hover:bg-emerald-50 px-5 py-2.5 rounded-full border border-emerald-200 shadow-sm font-extrabold">💰 Finance & Freelancers</button>
-            <button id="catBtnEveryday" onclick="filterCategory('everyday', this)" class="cat-btn bg-white text-purple-700 hover:bg-purple-50 px-5 py-2.5 rounded-full border border-purple-200 shadow-sm font-extrabold">📱 Everyday Utilities</button>
-            <button id="catBtnDev" onclick="filterCategory('dev', this)" class="cat-btn bg-white text-amber-700 hover:bg-amber-50 px-5 py-2.5 rounded-full border border-amber-200 shadow-sm font-extrabold">💻 For Developers</button>
+            <button onclick="filterCategory('all', this)" class="cat-btn bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold">All Tools</button>
+            <button onclick="filterCategory('writer', this)" class="cat-btn bg-white text-blue-700 hover:bg-blue-50 px-5 py-2.5 rounded-full border border-blue-200 shadow-sm font-extrabold">✍️ Writers, Students & CV</button>
+            <button onclick="filterCategory('ai', this)" class="cat-btn bg-white text-violet-700 hover:bg-violet-50 px-5 py-2.5 rounded-full border border-violet-200 shadow-sm font-extrabold">🤖 AI & Content Templates 🔥</button>
+            <button onclick="filterCategory('finance', this)" class="cat-btn bg-white text-emerald-700 hover:bg-emerald-50 px-5 py-2.5 rounded-full border border-emerald-200 shadow-sm font-extrabold">💰 Finance & Freelancers</button>
+            <button onclick="filterCategory('everyday', this)" class="cat-btn bg-white text-purple-700 hover:bg-purple-50 px-5 py-2.5 rounded-full border border-purple-200 shadow-sm font-extrabold">📱 Everyday Utilities</button>
+            <button onclick="filterCategory('dev', this)" class="cat-btn bg-white text-amber-700 hover:bg-amber-50 px-5 py-2.5 rounded-full border border-amber-200 shadow-sm font-extrabold">💻 For Developers</button>
         </div>
 
         <!-- INVALID SEARCH ALERT BOX (Hidden by default) -->
@@ -117,695 +102,108 @@
             <div class="text-3xl mb-2">🔍❌</div>
             <h3 class="text-sm font-extrabold text-rose-800 uppercase tracking-wider mb-1">No Matching Tool Found</h3>
             <p class="text-xs text-rose-600 font-medium mb-3">We couldn't find any tool matching your search query. Please try different keywords.</p>
-            <div class="flex flex-wrap justify-center gap-1.5">
-                <span class="text-[10px] font-bold bg-white text-rose-700 px-2.5 py-1 rounded-md border border-rose-200 cursor-pointer" onclick="quickSearch('Grammar')">Try "Grammar"</span>
-                <span class="text-[10px] font-bold bg-white text-rose-700 px-2.5 py-1 rounded-md border border-rose-200 cursor-pointer" onclick="quickSearch('SIP')">Try "SIP"</span>
-                <span class="text-[10px] font-bold bg-white text-rose-700 px-2.5 py-1 rounded-md border border-rose-200 cursor-pointer" onclick="quickSearch('QR')">Try "QR Code"</span>
-                <span class="text-[10px] font-bold bg-white text-rose-700 px-2.5 py-1 rounded-md border border-rose-200 cursor-pointer" onclick="quickSearch('JSON')">Try "JSON"</span>
-            </div>
         </div>
 
-        <!-- Categorized Tool Cards Grid (15 Cards) -->
+        <!-- Categorized Tool Cards Grid (Direct Link URLs) -->
         <div id="toolsGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3.5 mb-8">
             
-            <!-- 1. WRITERS -->
-            <button id="nav1" data-cat="writer" data-keywords="text word suite counter case converter character read time uppercase lowercase titlecase" onclick="switchTool(1)" class="card-3d-btn active bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-blue-200">
+            <!-- 1. WRITERS & CV -->
+            <a href="text-suite.html" data-cat="writer" data-keywords="text word suite counter case converter character read time uppercase lowercase titlecase" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-blue-200">
                 <div class="flex justify-between items-start"><span class="text-xl">✍️</span><span class="text-[9px] font-black uppercase tracking-wider bg-blue-100 text-blue-700 px-2 py-0.5 rounded-md">Writers</span></div>
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Text & Word Suite</div><div class="text-[10px] text-slate-600">Counter & Case Converter</div></div>
-            </button>
+            </a>
 
-            <button id="nav3" data-cat="writer" data-keywords="cv builder live cv maker pdf resume builder word generator resume jobs" onclick="switchTool(3)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-indigo-200 bg-gradient-to-br from-white to-indigo-50/50">
+            <a href="https://mali1.pythonanywhere.com/" target="_blank" data-cat="writer" data-keywords="cv builder live cv maker pdf resume builder word generator resume jobs" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-indigo-200 bg-gradient-to-br from-white to-indigo-50/50">
                 <div class="flex justify-between items-start"><span class="text-xl">📄</span><span class="text-[9px] font-black uppercase tracking-wider bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-md">CV Builder</span></div>
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Live CV Maker</div><div class="text-[10px] text-slate-600">PDF & Word Generator</div></div>
-            </button>
+            </a>
 
-            <button id="nav2" data-cat="writer" data-keywords="grammar check spelling proofreader tense punctuation fix typo corrector language engine" onclick="switchTool(2)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-blue-200">
+            <a href="grammar-checker.html" data-cat="writer" data-keywords="grammar check spelling proofreader tense punctuation fix typo corrector language engine" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-blue-200">
                 <div class="flex justify-between items-start"><span class="text-xl">📝</span><span class="text-[9px] font-black uppercase tracking-wider bg-blue-100 text-blue-700 px-2 py-0.5 rounded-md">Writers</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Grammar & Spelling Checker</div><div class="text-[10px] text-slate-600">Instant Typo & Grammar Fix</div></div>
-            </button>
+                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Grammar Checker</div><div class="text-[10px] text-slate-600">Instant Typo Fix</div></div>
+            </a>
 
             <!-- 2. AI TOOLS -->
-            <button id="nav11" data-cat="ai" data-keywords="ai prompt studio chatgpt gemini midjourney github copilot claude prompt generator humanize text" onclick="switchTool(11)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-violet-200">
+            <a href="prompt-studio.html" data-cat="ai" data-keywords="ai prompt studio chatgpt gemini midjourney github copilot claude prompt generator humanize text" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-violet-200">
                 <div class="flex justify-between items-start"><span class="text-xl">🤖</span><span class="text-[9px] font-black uppercase tracking-wider bg-violet-100 text-violet-700 px-2 py-0.5 rounded-md">AI Suite</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">AI Prompt Studio</div><div class="text-[10px] text-slate-600">Prompt, Humanize & Social</div></div>
-            </button>
+                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">AI Prompt Studio</div><div class="text-[10px] text-slate-600">Prompt & Humanizer</div></div>
+            </a>
 
-            <button id="nav12" data-cat="ai" data-keywords="ai bio generator linkedin twitter upwork instagram headline portfolio bio" onclick="switchTool(12)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-violet-200">
+            <a href="ai-bio-generator.html" data-cat="ai" data-keywords="ai bio generator linkedin twitter upwork instagram headline portfolio bio" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-violet-200">
                 <div class="flex justify-between items-start"><span class="text-xl">✨</span><span class="text-[9px] font-black uppercase tracking-wider bg-violet-100 text-violet-700 px-2 py-0.5 rounded-md">AI Suite</span></div>
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">AI Bio Generator</div><div class="text-[10px] text-slate-600">LinkedIn & Social Bios</div></div>
-            </button>
+            </a>
 
-            <button id="nav13" data-cat="ai" data-keywords="article outline generator research essay outline blog structure research paper" onclick="switchTool(13)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-violet-200">
+            <a href="article-outline.html" data-cat="ai" data-keywords="article outline generator research essay outline blog structure research paper" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-violet-200">
                 <div class="flex justify-between items-start"><span class="text-xl">📑</span><span class="text-[9px] font-black uppercase tracking-wider bg-violet-100 text-violet-700 px-2 py-0.5 rounded-md">AI Suite</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Article Outline Gen</div><div class="text-[10px] text-slate-600">Unique Research Outlines</div></div>
-            </button>
+                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Article Outline Gen</div><div class="text-[10px] text-slate-600">Research Outlines</div></div>
+            </a>
 
             <!-- 3. FINANCE -->
-            <button id="nav4" data-cat="finance" data-keywords="fee calculator stripe paypal square payment gateway fee contract rate invoice" onclick="switchTool(4)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-emerald-200">
+            <a href="fee-calculator.html" data-cat="finance" data-keywords="fee calculator stripe paypal square payment gateway fee contract rate invoice" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-emerald-200">
                 <div class="flex justify-between items-start"><span class="text-xl">💳</span><span class="text-[9px] font-black uppercase tracking-wider bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-md">Finance</span></div>
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Fee Calculators</div><div class="text-[10px] text-slate-600">Stripe & PayPal Fees</div></div>
-            </button>
+            </a>
 
-            <button id="nav5" data-cat="finance" data-keywords="sip calculator mutual fund wealth return investment growth corpus maturity" onclick="switchTool(5)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-emerald-200">
+            <a href="sip-calculator.html" data-cat="finance" data-keywords="sip calculator mutual fund wealth return investment growth corpus maturity" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-emerald-200">
                 <div class="flex justify-between items-start"><span class="text-xl">📈</span><span class="text-[9px] font-black uppercase tracking-wider bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-md">Finance</span></div>
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">SIP Calculator</div><div class="text-[10px] text-slate-600">Mutual Fund Return</div></div>
-            </button>
+            </a>
 
-            <button id="nav14" data-cat="finance" data-keywords="loan emi calculator mortgage installment interest principal bank loan" onclick="switchTool(14)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-emerald-200">
+            <a href="loan-emi.html" data-cat="finance" data-keywords="loan emi calculator mortgage installment interest principal bank loan" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-emerald-200">
                 <div class="flex justify-between items-start"><span class="text-xl">🏦</span><span class="text-[9px] font-black uppercase tracking-wider bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-md">Finance</span></div>
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Loan EMI Calc</div><div class="text-[10px] text-slate-600">Mortgage & Installments</div></div>
-            </button>
+            </a>
 
             <!-- 4. EVERYDAY UTILITIES -->
-            <button id="nav6" data-cat="everyday" data-keywords="qr code generator download qr share qr link to qr image qr" onclick="switchTool(6)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-purple-200">
+            <a href="qr-code-generator.html" data-cat="everyday" data-keywords="qr code generator download qr share qr link to qr image qr" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-purple-200">
                 <div class="flex justify-between items-start"><span class="text-xl">📱</span><span class="text-[9px] font-black uppercase tracking-wider bg-purple-100 text-purple-700 px-2 py-0.5 rounded-md">Utility</span></div>
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">QR Code Gen</div><div class="text-[10px] text-slate-600">Create QR Images</div></div>
-            </button>
+            </a>
 
-            <button id="nav7" data-cat="everyday" data-keywords="password generator secure password random key length generator copy password" onclick="switchTool(7)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-purple-200">
+            <a href="password-generator.html" data-cat="everyday" data-keywords="password generator secure password random key length generator copy password" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-purple-200">
                 <div class="flex justify-between items-start"><span class="text-xl">🔑</span><span class="text-[9px] font-black uppercase tracking-wider bg-purple-100 text-purple-700 px-2 py-0.5 rounded-md">Utility</span></div>
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Password Gen</div><div class="text-[10px] text-slate-600">Secure Random Keys</div></div>
-            </button>
+            </a>
 
-            <button id="nav15" data-cat="everyday" data-keywords="unit converter distance weight temperature kilometers miles feet meters inches cm kg lbs celsius fahrenheit" onclick="switchTool(15)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-purple-200">
+            <a href="unit-converter.html" data-cat="everyday" data-keywords="unit converter distance weight temperature kilometers miles feet meters inches cm kg lbs celsius fahrenheit" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-purple-200">
                 <div class="flex justify-between items-start"><span class="text-xl">⚖️</span><span class="text-[9px] font-black uppercase tracking-wider bg-purple-100 text-purple-700 px-2 py-0.5 rounded-md">Utility</span></div>
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Unit Converter</div><div class="text-[10px] text-slate-600">Flexible Multi Converter</div></div>
-            </button>
+            </a>
 
             <!-- 5. DEVELOPER TOOLS -->
-            <button id="nav8" data-cat="dev" data-keywords="json formatter json minifier json beautify developer code json syntax" onclick="switchTool(8)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-amber-200">
+            <a href="json-formatter.html" data-cat="dev" data-keywords="json formatter json minifier json beautify developer code json syntax" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-amber-200">
                 <div class="flex justify-between items-start"><span class="text-xl">⚡</span><span class="text-[9px] font-black uppercase tracking-wider bg-amber-100 text-amber-700 px-2 py-0.5 rounded-md">Developer</span></div>
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">JSON Formatter</div><div class="text-[10px] text-slate-600">Beautify & Minify</div></div>
-            </button>
+            </a>
 
-            <button id="nav9" data-cat="dev" data-keywords="base64 tool base64 encode base64 decode developer text encoding" onclick="switchTool(9)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-amber-200">
+            <a href="base64-tool.html" data-cat="dev" data-keywords="base64 tool base64 encode base64 decode developer text encoding" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-amber-200">
                 <div class="flex justify-between items-start"><span class="text-xl">🔤</span><span class="text-[9px] font-black uppercase tracking-wider bg-amber-100 text-amber-700 px-2 py-0.5 rounded-md">Developer</span></div>
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Base64 Tool</div><div class="text-[10px] text-slate-600">Encode & Decode</div></div>
-            </button>
+            </a>
 
-            <button id="nav10" data-cat="dev" data-keywords="color converter hex code rgb code color picker developer design" onclick="switchTool(10)" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left flex flex-col justify-between h-28 border-amber-200">
+            <a href="color-converter.html" data-cat="dev" data-keywords="color converter hex code rgb code color picker developer design" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-amber-200">
                 <div class="flex justify-between items-start"><span class="text-xl">🎨</span><span class="text-[9px] font-black uppercase tracking-wider bg-amber-100 text-amber-700 px-2 py-0.5 rounded-md">Developer</span></div>
                 <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Color Converter</div><div class="text-[10px] text-slate-600">HEX, RGB & Names</div></div>
-            </button>
-        </div>
-
-        <!-- TOOL DISPLAY PANEL -->
-        <div class="bg-white rounded-3xl shadow-2xl border border-slate-200/80 p-6 md:p-8">
-
-            <!-- TOOL 1: Text & Word Suite -->
-            <div id="tool1">
-                <div class="flex flex-wrap justify-between items-center gap-3 mb-4 border-b border-slate-200 pb-3">
-                    <div class="flex gap-2">
-                        <button onclick="switchWriterTab('word')" id="writerTabWord" class="px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition">✍️ Word & Char Counter</button>
-                        <button onclick="switchWriterTab('case')" id="writerTabCase" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">🔠 Case Converter</button>
-                    </div>
-                    <button onclick="clearCurrentWriterTab()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
-                </div>
-
-                <div id="writerSubWord">
-                    <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Input Text</label>
-                    <textarea id="textInput" rows="5" class="w-full p-4 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 bg-slate-50 mb-4" placeholder="Type or paste text here..."></textarea>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                        <div class="bg-blue-50/80 p-3.5 rounded-2xl text-center border border-blue-100"><div class="text-2xl font-black text-blue-600" id="wordCount">0</div><div class="text-xs font-bold text-slate-500">Words</div></div>
-                        <div class="bg-emerald-50/80 p-3.5 rounded-2xl text-center border border-emerald-100"><div class="text-2xl font-black text-emerald-600" id="charCount">0</div><div class="text-xs font-bold text-slate-500">Characters</div></div>
-                        <div class="bg-purple-50/80 p-3.5 rounded-2xl text-center border border-purple-100"><div class="text-2xl font-black text-purple-600" id="sentenceCount">0</div><div class="text-xs font-bold text-slate-500">Sentences</div></div>
-                        <div class="bg-amber-50/80 p-3.5 rounded-2xl text-center border border-amber-100"><div class="text-2xl font-black text-amber-600" id="readTime">0 sec</div><div class="text-xs font-bold text-slate-500">Read Time</div></div>
-                    </div>
-                </div>
-
-                <div id="writerSubCase" class="hidden">
-                    <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Text for Case Conversion</label>
-                    <textarea id="caseInput" rows="5" class="w-full p-4 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 bg-slate-50 mb-4" placeholder="Type or paste text here to convert case..."></textarea>
-                    <div class="flex flex-wrap gap-2">
-                        <button onclick="convertCase('upper')" class="btn-3d px-5 py-2.5 bg-blue-600 text-white font-bold rounded-xl text-xs">UPPERCASE</button>
-                        <button onclick="convertCase('lower')" class="btn-3d px-5 py-2.5 bg-slate-700 text-white font-bold rounded-xl text-xs">lowercase</button>
-                        <button onclick="convertCase('title')" class="btn-3d px-5 py-2.5 bg-emerald-600 text-white font-bold rounded-xl text-xs">Title Case</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TOOL 2: Clean Grammar & Spelling Checker -->
-            <div id="tool2" class="hidden">
-                <div class="flex justify-between items-center mb-3">
-                    <h2 class="text-xl font-bold text-slate-800">📝 Grammar & Spelling Checker</h2>
-                    <div class="flex items-center gap-2">
-                        <button onclick="clearGrammarTool()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
-                        <span class="text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Max 300 Words</span>
-                    </div>
-                </div>
-                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Paste text to correct spelling and grammar</label>
-                <textarea id="grammarInput" rows="5" class="w-full p-4 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 bg-slate-50 mb-2" placeholder="e.g. telll me abt your namee how is ti workk"></textarea>
-                <div class="flex justify-between items-center mb-4">
-                    <span id="grammarWordWarn" class="text-xs font-bold text-slate-500">Words: 0 / 300</span>
-                    <button onclick="fixGrammarAndRestructure()" class="btn-3d px-6 py-2.5 bg-blue-600 text-white font-extrabold rounded-xl text-xs">⚡ Correct Text</button>
-                </div>
-                
-                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Corrected Output</label>
-                <textarea id="grammarOutput" rows="5" readonly class="w-full p-4 bg-slate-900 text-emerald-400 font-mono text-xs rounded-2xl border border-slate-800 mb-2" placeholder="Corrected text will appear here..."></textarea>
-                <div class="flex justify-end">
-                    <button onclick="copyOutputText('grammarOutput', 'grammarCopyToast')" class="px-5 py-2.5 bg-slate-800 text-white font-bold rounded-xl text-xs hover:bg-slate-900 transition flex items-center gap-1.5">
-                        📋 Copy Output <span id="grammarCopyToast" class="hidden text-emerald-400 font-bold ml-1">(Copied!)</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- TOOL 3: Live Python CV Maker -->
-            <div id="tool3" class="hidden">
-                <div class="flex flex-wrap justify-between items-center gap-2 mb-3">
-                    <h2 class="text-xl font-bold text-slate-800">📄 Live CV Maker (PDF Resume Builder)</h2>
-                    <div class="flex items-center gap-3">
-                        <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="text-xs font-black bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-3 py-1.5 rounded-lg shadow-sm hover:opacity-90 transition">
-                            💼 Apply Remote Jobs ↗
-                        </a>
-                        <a href="https://mali1.pythonanywhere.com/" target="_blank" class="text-xs font-bold text-blue-600 hover:underline">Open Fullscreen ↗</a>
-                    </div>
-                </div>
-                <iframe src="https://mali1.pythonanywhere.com/" class="w-full h-[650px] rounded-2xl border border-slate-200 shadow-inner bg-white"></iframe>
-            </div>
-
-            <!-- TOOL 4: Payment Fee Calculator -->
-            <div id="tool4" class="hidden">
-                <div class="flex flex-wrap justify-between items-center gap-3 mb-4 border-b border-slate-200 pb-3">
-                    <div class="flex gap-2">
-                        <button onclick="switchFinanceTab('fee')" id="financeTabFee" class="px-4 py-2 rounded-xl text-xs font-bold bg-emerald-600 text-white transition">💰 Payment Fee Calculator</button>
-                        <button onclick="switchFinanceTab('contract')" id="financeTabContract" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">📊 Contract Earnings Calculator</button>
-                    </div>
-                    <button onclick="clearCurrentFinanceTab()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
-                </div>
-
-                <div id="financeSubFee">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Payment Gateway</label>
-                            <select id="platformSelect" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
-                                <option value="stripe">Stripe (2.9% + $0.30)</option>
-                                <option value="paypal_card">PayPal Card (2.99% + $0.49)</option>
-                                <option value="square">Square (2.6% + $0.10)</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Currency Symbol</label>
-                            <select id="currencySelect" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
-                                <option value="$">USD ($)</option>
-                                <option value="€">EUR (€)</option>
-                                <option value="£">GBP (£)</option>
-                                <option value="₹">INR (₹)</option>
-                                <option value="Rs ">PKR (Rs)</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Amount</label>
-                            <input type="number" id="feeInput" placeholder="Enter amount..." class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        <div class="bg-rose-50/80 p-3.5 rounded-2xl text-center border border-rose-100"><div class="text-2xl font-black text-rose-600" id="feeAmount">$0.00</div><div class="text-xs font-bold text-slate-500">Total Fee</div></div>
-                        <div class="bg-emerald-50/80 p-3.5 rounded-2xl text-center border border-emerald-100"><div class="text-2xl font-black text-emerald-600" id="youReceive">$0.00</div><div class="text-xs font-bold text-slate-500">You Receive</div></div>
-                        <div class="bg-blue-50/80 p-3.5 rounded-2xl text-center border border-blue-100"><div class="text-2xl font-black text-blue-600" id="askAmount">$0.00</div><div class="text-xs font-bold text-slate-500">Ask / Invoice Amount</div></div>
-                    </div>
-                </div>
-
-                <div id="financeSubContract" class="hidden">
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <button onclick="setCalcMode('contract')" id="modeContractBtn" class="px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition">Contract Calculator</button>
-                        <button onclick="setCalcMode('rate')" id="modeRateBtn" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 text-slate-700 transition">Target Hourly Rate</button>
-                        <button onclick="setCalcMode('annual')" id="modeAnnualBtn" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 text-slate-700 transition">Target Annual Salary</button>
-                    </div>
-
-                    <div id="contractModeInputs" class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
-                        <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Contract Rate ($ / Hour)</label><input type="number" id="contractRate" placeholder="e.g. 15" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                        <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Contract Hours / Week</label><input type="number" id="contractHours" placeholder="e.g. 20" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                    </div>
-
-                    <div id="rateModeInputs" class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4 hidden">
-                        <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Target Annual Income ($)</label><input type="number" id="targetIncome" placeholder="e.g. 50000" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                        <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Annual Expenses ($)</label><input type="number" id="annualExpenses" placeholder="e.g. 5000" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                        <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Billable Hours / Week</label><input type="number" id="billableHours" placeholder="e.g. 20" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                    </div>
-
-                    <div id="annualModeInputs" class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4 hidden">
-                        <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Your Hourly Rate ($)</label><input type="number" id="inputHourlyRate" placeholder="e.g. 50" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                        <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Hours Worked / Week</label><input type="number" id="inputHoursWeek" placeholder="e.g. 40" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                    </div>
-
-                    <div id="contractGrid" class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        <div class="bg-blue-50/80 p-4 rounded-2xl border border-blue-100 text-center"><div class="text-xs font-bold text-slate-500 uppercase">Weekly Earnings</div><div class="text-2xl font-black text-blue-600 mt-1" id="weeklyPay">$0.00</div></div>
-                        <div class="bg-indigo-50/80 p-4 rounded-2xl border border-indigo-100 text-center"><div class="text-xs font-bold text-slate-500 uppercase">Monthly Earnings</div><div class="text-2xl font-black text-indigo-600 mt-1" id="monthlyPay">$0.00</div></div>
-                        <div class="bg-emerald-50/80 p-4 rounded-2xl border border-emerald-100 text-center"><div class="text-xs font-bold text-slate-500 uppercase">Yearly Earnings</div><div class="text-2xl font-black text-emerald-600 mt-1" id="yearlyPay">$0.00</div></div>
-                    </div>
-
-                    <div id="singleResultBox" class="bg-emerald-50 p-4 rounded-2xl border border-emerald-100 text-center hidden">
-                        <div class="text-xs font-bold text-slate-500 uppercase" id="resultLabel">Recommended Hourly Rate</div>
-                        <div class="text-4xl font-black text-emerald-600 mt-1" id="mainResult">$0.00 / hr</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TOOL 5: SIP Mutual Fund Calculator -->
-            <div id="tool5" class="hidden">
-                <div class="flex justify-between items-center mb-3">
-                    <h2 class="text-xl font-bold text-slate-800">📈 SIP & Wealth Investment Calculator</h2>
-                    <button onclick="clearSipTool()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-4">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Currency</label>
-                        <select id="sipCurr" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
-                            <option value="$">USD ($)</option>
-                            <option value="€">EUR (€)</option>
-                            <option value="£">GBP (£)</option>
-                            <option value="₹">INR (₹)</option>
-                            <option value="Rs ">PKR (Rs)</option>
-                        </select>
-                    </div>
-                    <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Initial Advance Deposit (Optional)</label><input type="number" id="sipAdvance" placeholder="e.g. 100000" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                    <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Monthly SIP Deposit</label><input type="number" id="sipAmount" placeholder="e.g. 5000" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                    <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Expected Return (% p.a)</label><input type="number" id="sipRate" placeholder="e.g. 12" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                    <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Time Horizon (Years)</label><input type="number" id="sipYears" placeholder="e.g. 10" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                    <div class="flex items-end"><button onclick="calculateSIP()" class="btn-3d w-full py-3 bg-emerald-600 text-white font-extrabold rounded-xl text-xs">📊 Calculate Wealth Growth</button></div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                    <div class="bg-blue-50 p-4 rounded-2xl border border-blue-100 text-center"><div class="text-xs font-bold text-slate-500 uppercase">Total Out-of-Pocket Invested</div><div id="sipInvested" class="text-2xl font-black text-blue-600 mt-1">$0.00</div></div>
-                    <div class="bg-indigo-50 p-4 rounded-2xl border border-indigo-100 text-center"><div class="text-xs font-bold text-slate-500 uppercase">Estimated Wealth Gain</div><div id="sipGains" class="text-2xl font-black text-indigo-600 mt-1">$0.00</div></div>
-                    <div class="bg-emerald-50 p-4 rounded-2xl border border-emerald-100 text-center"><div class="text-xs font-bold text-slate-500 uppercase">Future Maturity Corpus</div><div id="sipTotal" class="text-2xl font-black text-emerald-600 mt-1">$0.00</div></div>
-                </div>
-            </div>
-
-            <!-- TOOL 6: QR Code Generator -->
-            <div id="tool6" class="hidden">
-                <div class="flex justify-between items-center mb-2">
-                    <h2 class="text-xl font-bold text-slate-800">📱 Instant QR Code Generator</h2>
-                    <button onclick="clearTool6()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
-                </div>
-                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Target Link or Text</label>
-                <input type="text" id="qrInput" placeholder="Enter link or text..." class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-medium mb-4">
-                
-                <div class="flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl border border-slate-200 gap-4">
-                    <div id="qrcode" class="p-4 bg-white rounded-2xl shadow-md min-h-[220px] min-w-[220px] flex items-center justify-center border border-slate-100"></div>
-                    <div class="flex flex-wrap justify-center gap-3 w-full max-w-md">
-                        <button onclick="downloadHDQRCode()" class="btn-3d flex-1 py-3 px-5 bg-emerald-600 text-white font-extrabold rounded-xl text-xs">⬇️ Download HD QR</button>
-                        <button onclick="shareQRCode()" class="btn-3d flex-1 py-3 px-5 bg-blue-600 text-white font-extrabold rounded-xl text-xs">🔗 Share QR Code</button>
-                    </div>
-                    <span id="shareToast" class="text-xs font-bold text-emerald-600 hidden">Copied / Shared successfully!</span>
-                </div>
-            </div>
-
-            <!-- TOOL 7: Password Generator -->
-            <div id="tool7" class="hidden">
-                <div class="flex justify-between items-center mb-2">
-                    <h2 class="text-xl font-bold text-slate-800">🔑 Secure Password Generator</h2>
-                    <button onclick="clearTool7()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Length: <span id="pwdLenVal" class="text-blue-600 font-extrabold">16</span> chars</label>
-                        <input type="range" id="pwdLength" min="8" max="32" value="16" class="w-full accent-blue-600" oninput="document.getElementById('pwdLenVal').textContent = this.value">
-                    </div>
-                    <div class="flex items-end gap-2">
-                        <button onclick="generatePassword()" class="btn-3d px-6 py-3 bg-blue-600 text-white font-bold rounded-xl w-full text-xs">⚡ Generate</button>
-                        <button onclick="copyPassword()" class="px-5 py-3 bg-slate-800 text-white font-bold rounded-xl text-xs hover:bg-slate-900 transition">📋 Copy</button>
-                    </div>
-                </div>
-
-                <div class="bg-slate-900 p-4 rounded-2xl border border-slate-800 flex justify-between items-center relative">
-                    <span id="passwordOutput" class="text-lg font-mono font-bold text-emerald-400 break-all">Click Generate</span>
-                    <span id="pwdCopyToast" class="text-xs font-bold text-emerald-400 bg-slate-800 px-3 py-1 rounded-lg border border-emerald-500/30 hidden">Copied!</span>
-                </div>
-            </div>
-
-            <!-- TOOL 8: JSON Formatter & Minifier -->
-            <div id="tool8" class="hidden">
-                <div class="flex justify-between items-center mb-2">
-                    <h2 class="text-xl font-bold text-slate-800">⚡ JSON Formatter & Minifier</h2>
-                    <button onclick="clearTool8()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
-                </div>
-                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Raw JSON Input</label>
-                <textarea id="jsonInput" rows="4" class="w-full p-3 border border-slate-200 rounded-xl font-mono bg-slate-50 mb-3 text-xs focus:ring-2 focus:ring-blue-500" placeholder='{"name":"MyToolX", "type":"utility"}'></textarea>
-                <div class="flex gap-3 mb-3">
-                    <button onclick="formatJSON()" class="btn-3d px-5 py-2.5 bg-blue-600 text-white font-bold rounded-xl text-xs">✨ Beautify JSON</button>
-                    <button onclick="minifyJSON()" class="btn-3d px-5 py-2.5 bg-slate-700 text-white font-bold rounded-xl text-xs">⚡ Minify JSON</button>
-                </div>
-                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Formatted Output</label>
-                <textarea id="jsonOutput" rows="5" readonly class="w-full p-3 bg-slate-900 text-emerald-400 border border-slate-800 rounded-xl font-mono text-xs mb-2" placeholder="Formatted result will appear here..."></textarea>
-                <div class="flex justify-end">
-                    <button onclick="copyOutputText('jsonOutput', 'jsonCopyToast')" class="px-5 py-2.5 bg-slate-800 text-white font-bold rounded-xl text-xs hover:bg-slate-900 transition flex items-center gap-1.5">
-                        📋 Copy Output <span id="jsonCopyToast" class="hidden text-emerald-400 font-bold ml-1">(Copied!)</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- TOOL 9: Base64 Tool -->
-            <div id="tool9" class="hidden">
-                <div class="flex justify-between items-center mb-2">
-                    <h2 class="text-xl font-bold text-slate-800">🔤 Base64 Encoder & Decoder</h2>
-                    <button onclick="clearTool9()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
-                </div>
-                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Input Text / Base64 Code</label>
-                <textarea id="base64Input" rows="4" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 mb-3 text-xs focus:ring-2 focus:ring-blue-500" placeholder="Enter text..."></textarea>
-                <div class="flex gap-3 mb-3">
-                    <button onclick="encodeBase64()" class="btn-3d px-5 py-2.5 bg-blue-600 text-white font-bold rounded-xl text-xs">Encode to Base64</button>
-                    <button onclick="decodeBase64()" class="btn-3d px-5 py-2.5 bg-slate-700 text-white font-bold rounded-xl text-xs">Decode from Base64</button>
-                </div>
-                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Result Output</label>
-                <textarea id="base64Output" rows="4" readonly class="w-full p-3 bg-slate-900 text-blue-300 border border-slate-800 rounded-xl font-mono text-xs mb-2" placeholder="Result will appear here..."></textarea>
-                <div class="flex justify-end">
-                    <button onclick="copyOutputText('base64Output', 'base64CopyToast')" class="px-5 py-2.5 bg-slate-800 text-white font-bold rounded-xl text-xs hover:bg-slate-900 transition flex items-center gap-1.5">
-                        📋 Copy Output <span id="base64CopyToast" class="hidden text-emerald-400 font-bold ml-1">(Copied!)</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- TOOL 10: Color Converter -->
-            <div id="tool10" class="hidden">
-                <div class="flex justify-between items-center mb-2">
-                    <h2 class="text-xl font-bold text-slate-800">🎨 Universal Color Converter</h2>
-                    <button onclick="clearTool10()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
-                </div>
-                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Enter HEX (#3b82f6), RGB (59, 130, 246), or Color Name (coral)</label>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                    <input type="text" id="hexInput" placeholder="e.g. #3b82f6" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 font-mono font-bold text-slate-800 text-sm">
-                    <div id="colorPreview" class="h-12 rounded-xl border border-slate-200 bg-blue-500 flex items-center justify-center font-bold text-white shadow-inner text-xs">Preview</div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 text-center font-mono font-bold text-slate-800">
-                        <div class="text-[10px] text-slate-400 uppercase">HEX Code</div>
-                        <div id="hexOutputText" class="text-lg text-blue-600 mt-1">#3B82F6</div>
-                    </div>
-                    <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 text-center font-mono font-bold text-slate-800">
-                        <div class="text-[10px] text-slate-400 uppercase">RGB Code</div>
-                        <div id="rgbOutput" class="text-lg text-emerald-600 mt-1">rgb(59, 130, 246)</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TOOL 11: AI Prompt Studio -->
-            <div id="tool11" class="hidden">
-                <div class="flex flex-wrap justify-between items-center gap-3 mb-4 border-b border-slate-200 pb-3">
-                    <div class="flex flex-wrap gap-2">
-                        <button onclick="switchAiTab('prompt')" id="aiTabPrompt" class="px-4 py-2 rounded-xl text-xs font-black bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-sm transition">🤖 Prompt Studio</button>
-                        <button onclick="switchAiTab('humanize')" id="aiTabHumanize" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">✨ Smart Humanizer</button>
-                        <button onclick="switchAiTab('social')" id="aiTabSocial" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">📲 Social Media Post</button>
-                        <button onclick="switchAiTab('youtube')" id="aiTabYoutube" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">▶️ YouTube SEO</button>
-                    </div>
-                    <button onclick="clearCurrentAiTab()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
-                </div>
-
-                <div id="aiSubPrompt">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                        <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Target Model</label><select id="aiModel" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"><option value="chatgpt">ChatGPT / Gemini</option><option value="midjourney">Midjourney / DALL-E</option><option value="coding">GitHub Copilot / Claude</option></select></div>
-                        <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Role / Persona</label><input type="text" id="aiRole" placeholder="e.g. Senior Freelance Copywriter" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                        <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Tone & Style</label><input type="text" id="aiTone" placeholder="e.g. High-Converting, Academic" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                    </div>
-                    <div class="mb-4"><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Core Task / Client Proposal</label><textarea id="aiTopic" rows="3" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 font-medium" placeholder="Describe project or topic... e.g. freelancing career"></textarea></div>
-                    <div class="flex gap-3 mb-4"><button onclick="generateAIPrompt()" class="btn-3d px-6 py-3 bg-violet-600 text-white font-extrabold rounded-xl text-xs">⚡ Generate Prompt</button></div>
-                    <textarea id="aiPromptOutput" rows="5" readonly class="w-full p-4 bg-slate-900 text-emerald-400 font-mono text-xs rounded-2xl border border-slate-800 mb-2" placeholder="Generated prompt..."></textarea>
-                    <div class="flex justify-end">
-                        <button onclick="copyOutputText('aiPromptOutput', 'aiPromptCopyToast')" class="px-5 py-2.5 bg-slate-800 text-white font-bold rounded-xl text-xs hover:bg-slate-900 transition flex items-center gap-1.5">
-                            📋 Copy Prompt <span id="aiPromptCopyToast" class="hidden text-emerald-400 font-bold ml-1">(Copied!)</span>
-                        </button>
-                    </div>
-                </div>
-
-                <div id="aiSubHumanize" class="hidden">
-                    <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Paste Text to Humanize</label>
-                    <textarea id="humanizeInput" rows="4" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 font-medium mb-3" placeholder="e.g. tell me the real human what to think properly"></textarea>
-                    <div class="flex gap-3 mb-4">
-                        <button onclick="humanizeText()" class="btn-3d px-6 py-3 bg-emerald-600 text-white font-extrabold rounded-xl text-xs">✨ Humanize Text</button>
-                    </div>
-                    <textarea id="humanizeOutput" rows="5" readonly class="w-full p-4 bg-slate-900 text-blue-300 font-mono text-xs rounded-2xl border border-slate-800 mb-2" placeholder="Humanized text output..."></textarea>
-                    <div class="flex justify-end">
-                        <button onclick="copyOutputText('humanizeOutput', 'humanizeCopyToast')" class="px-5 py-2.5 bg-slate-800 text-white font-bold rounded-xl text-xs hover:bg-slate-900 transition flex items-center gap-1.5">
-                            📋 Copy Text <span id="humanizeCopyToast" class="hidden text-emerald-400 font-bold ml-1">(Copied!)</span>
-                        </button>
-                    </div>
-                </div>
-
-                <div id="aiSubSocial" class="hidden">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
-                        <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Platform</label><select id="socialPlatform" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"><option value="linkedin">LinkedIn Pitch / Post</option><option value="twitter">X / Twitter Thread</option><option value="instagram">Instagram Reel Caption</option></select></div>
-                        <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Main Niche / Service</label><input type="text" id="socialTopic" placeholder="e.g. Web Development, Remote Student Hacks" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                    </div>
-                    <div class="flex gap-3 mb-4"><button onclick="generateSocialPost()" class="btn-3d px-6 py-3 bg-pink-600 text-white font-extrabold rounded-xl text-xs">📲 Generate Post</button></div>
-                    <textarea id="socialOutput" rows="5" readonly class="w-full p-4 bg-slate-900 text-pink-300 font-mono text-xs rounded-2xl border border-slate-800 mb-2" placeholder="Caption..."></textarea>
-                    <div class="flex justify-end">
-                        <button onclick="copyOutputText('socialOutput', 'socialCopyToast')" class="px-5 py-2.5 bg-slate-800 text-white font-bold rounded-xl text-xs hover:bg-slate-900 transition flex items-center gap-1.5">
-                            📋 Copy Post <span id="socialCopyToast" class="hidden text-emerald-400 font-bold ml-1">(Copied!)</span>
-                        </button>
-                    </div>
-                </div>
-
-                <div id="aiSubYoutube" class="hidden">
-                    <input type="text" id="ytTopic" placeholder="e.g. How to get Freelance Clients in 2026" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 font-semibold mb-3">
-                    <div class="flex gap-3 mb-4"><button onclick="generateYoutubeSEO()" class="btn-3d px-6 py-3 bg-red-600 text-white font-extrabold rounded-xl text-xs">▶️ Generate Titles & Tags</button></div>
-                    <textarea id="ytOutput" rows="5" readonly class="w-full p-4 bg-slate-900 text-amber-300 font-mono text-xs rounded-2xl border border-slate-800 mb-2" placeholder="Titles & tags..."></textarea>
-                    <div class="flex justify-end">
-                        <button onclick="copyOutputText('ytOutput', 'ytCopyToast')" class="px-5 py-2.5 bg-slate-800 text-white font-bold rounded-xl text-xs hover:bg-slate-900 transition flex items-center gap-1.5">
-                            📋 Copy Output <span id="ytCopyToast" class="hidden text-emerald-400 font-bold ml-1">(Copied!)</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TOOL 12: AI Bio Generator -->
-            <div id="tool12" class="hidden">
-                <div class="flex justify-between items-center mb-3">
-                    <h2 class="text-xl font-bold text-slate-800">✨ AI Social & Freelance Bio Generator</h2>
-                    <button onclick="clearBioTool()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                    <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Your Role / Primary Skill</label><input type="text" id="bioRole" placeholder="e.g. Fullstack Developer, Student Researcher" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                    <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Platform Style</label><select id="bioPlatform" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"><option value="linkedin">LinkedIn Headline & Bio</option><option value="twitter">X / Upwork Bio</option><option value="insta">Instagram Portfolio</option></select></div>
-                </div>
-                <button onclick="generateAIBio()" class="btn-3d px-6 py-3 bg-violet-600 text-white font-extrabold rounded-xl text-xs mb-4">⚡ Generate Bios</button>
-                <textarea id="bioOutput" rows="5" readonly class="w-full p-4 bg-slate-900 text-violet-300 font-mono text-xs rounded-2xl border border-slate-800 mb-2" placeholder="Generated bios..."></textarea>
-                <div class="flex justify-end">
-                    <button onclick="copyOutputText('bioOutput', 'bioCopyToast')" class="px-5 py-2.5 bg-slate-800 text-white font-bold rounded-xl text-xs hover:bg-slate-900 transition flex items-center gap-1.5">
-                        📋 Copy Bios <span id="bioCopyToast" class="hidden text-emerald-400 font-bold ml-1">(Copied!)</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- TOOL 13: AI Article & Essay Outline Engine -->
-            <div id="tool13" class="hidden">
-                <div class="flex justify-between items-center mb-3">
-                    <h2 class="text-xl font-bold text-slate-800">📑 AI Article Outline Generator</h2>
-                    <button onclick="clearOutlineTool()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
-                </div>
-                <input type="text" id="outlineTopic" placeholder="e.g. Freelancing in 2026, AI in Higher Education..." class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 font-semibold mb-4">
-                <button onclick="generateDynamicOutline()" class="btn-3d px-6 py-3 bg-violet-600 text-white font-extrabold rounded-xl text-xs mb-4">📑 Generate Outline</button>
-                <textarea id="outlineOutput" rows="6" readonly class="w-full p-4 bg-slate-900 text-emerald-300 font-mono text-xs rounded-2xl border border-slate-800 mb-2" placeholder="Generated outline..."></textarea>
-                <div class="flex justify-end">
-                    <button onclick="copyOutputText('outlineOutput', 'outlineCopyToast')" class="px-5 py-2.5 bg-slate-800 text-white font-bold rounded-xl text-xs hover:bg-slate-900 transition flex items-center gap-1.5">
-                        📋 Copy Outline <span id="outlineCopyToast" class="hidden text-emerald-400 font-bold ml-1">(Copied!)</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- TOOL 14: Loan EMI Calculator -->
-            <div id="tool14" class="hidden">
-                <div class="flex justify-between items-center mb-3">
-                    <h2 class="text-xl font-bold text-slate-800">🏦 Loan EMI Calculator</h2>
-                    <button onclick="clearEmiTool()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-4">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Currency</label>
-                        <select id="emiCurr" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
-                            <option value="$">USD ($)</option>
-                            <option value="€">EUR (€)</option>
-                            <option value="£">GBP (£)</option>
-                            <option value="₹">INR (₹)</option>
-                            <option value="Rs ">PKR (Rs)</option>
-                        </select>
-                    </div>
-                    <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Loan Principal Amount</label><input type="number" id="loanAmt" placeholder="e.g. 500000" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                    <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Interest Rate (% p.a)</label><input type="number" id="loanInt" placeholder="e.g. 8.5" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Tenure Type</label>
-                        <select id="loanTenureType" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold">
-                            <option value="years">Years</option>
-                            <option value="months">Months</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                    <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Tenure Duration</label><input type="number" id="loanTen" placeholder="e.g. 5" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                    <div class="flex items-end"><button onclick="calculateEMI()" class="btn-3d w-full py-3 bg-emerald-600 text-white font-extrabold rounded-xl text-xs">💵 Calculate Monthly EMI</button></div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                    <div class="bg-blue-50 p-4 rounded-2xl border border-blue-100 text-center"><div class="text-xs font-bold text-slate-500 uppercase">Monthly Installment (EMI)</div><div id="emiMonthly" class="text-2xl font-black text-blue-600 mt-1">$0.00</div></div>
-                    <div class="bg-rose-50 p-4 rounded-2xl border border-rose-100 text-center"><div class="text-xs font-bold text-slate-500 uppercase">Total Payable Interest</div><div id="emiInterest" class="text-2xl font-black text-rose-600 mt-1">$0.00</div></div>
-                    <div class="bg-emerald-50 p-4 rounded-2xl border border-emerald-100 text-center"><div class="text-xs font-bold text-slate-500 uppercase">Total Outflow (Principal + Interest)</div><div id="emiTotal" class="text-2xl font-black text-emerald-600 mt-1">$0.00</div></div>
-                </div>
-            </div>
-
-            <!-- TOOL 15: Multi-Unit Converter -->
-            <div id="tool15" class="hidden">
-                <div class="flex justify-between items-center mb-3">
-                    <h2 class="text-xl font-bold text-slate-800">⚖️ Multi-Unit Converter</h2>
-                    <button onclick="clearUnitTool()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Conversion Mode</label>
-                        <select id="unitCat" onchange="updateUnitLabels()" class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold text-xs">
-                            <optgroup label="Length & Distance">
-                                <option value="km_miles">Kilometers (km) ➔ Miles (mi)</option>
-                                <option value="miles_km">Miles (mi) ➔ Kilometers (km)</option>
-                                <option value="meters_feet">Meters (m) ➔ Feet (ft)</option>
-                                <option value="feet_meters">Feet (ft) ➔ Meters (m)</option>
-                                <option value="inches_cm">Inches (in) ➔ Centimeters (cm)</option>
-                                <option value="cm_inches">Centimeters (cm) ➔ Inches (in)</option>
-                            </optgroup>
-                            <optgroup label="Weight & Mass">
-                                <option value="kg_lbs">Kilograms (kg) ➔ Pounds (lbs)</option>
-                                <option value="lbs_kg">Pounds (lbs) ➔ Kilograms (kg)</option>
-                            </optgroup>
-                            <optgroup label="Temperature">
-                                <option value="c_f">Celsius (°C) ➔ Fahrenheit (°F)</option>
-                                <option value="f_c">Fahrenheit (°F) ➔ Celsius (°C)</option>
-                            </optgroup>
-                        </select>
-                    </div>
-                    <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1" id="unitInLabel">Input Value</label><input type="number" id="unitInput" placeholder="Enter value..." class="w-full p-3 border border-slate-200 rounded-xl bg-slate-50 font-semibold"></div>
-                    <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Converted Output</label><div id="unitOutput" class="p-3 bg-purple-50 border border-purple-200 rounded-xl font-black text-purple-700 text-lg text-center">0.00</div></div>
-                </div>
-            </div>
-
+            </a>
         </div>
 
     </main>
-
-    <!-- Privacy & Cookie Banner -->
-    <div id="gdprBanner" class="hidden fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:max-w-md bg-slate-900 text-white p-4 rounded-2xl shadow-2xl z-50 flex flex-col sm:flex-row items-center justify-between gap-3 border border-slate-800">
-        <p class="text-xs text-slate-300 font-medium">We use essential cookies to ensure web utility performance and anonymous analytics.</p>
-        <button onclick="acceptCookieConsent()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs whitespace-nowrap">Got It</button>
-    </div>
 
     <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs font-semibold text-slate-500">
         <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-3">
             <p>&copy; 2026 MyToolX. All tools run client-side in your browser for 100% privacy.</p>
             <div class="flex gap-4">
-                <a href="/privacy.html" class="hover:underline">Privacy Policy</a>
-                <a href="/terms.html" class="hover:underline">Terms of Service</a>
-                <a href="/about.html" class="hover:underline">About Us & Contact</a>
+                <a href="privacy.html" class="hover:underline">Privacy Policy</a>
+                <a href="terms.html" class="hover:underline">Terms of Service</a>
+                <a href="about.html" class="hover:underline">About Us & Contact</a>
             </div>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT MASTER LOGIC -->
+    <!-- JAVASCRIPT MASTER LOGIC FOR FILTERING & SEARCH -->
     <script>
-        let qrcodeObj = null;
-
-        /* --- GLOBAL AI SANITIZATION & AUTO-CORRECT ROUTINE --- */
-        function globalAiSanitizeText(rawInput) {
-            if (!rawInput) return "";
-
-            const replaceMap = [
-                [/\bgenrated\b/gi, "generated"],
-                [/\bdo\s*nt\b/gi, "do not"],
-                [/\bthats\b/gi, "that is"],
-                [/\btelll\b/gi, "tell"],
-                [/\babt\b/gi, "about"],
-                [/\bnamee\b/gi, "name"],
-                [/\bti\b/gi, "it"],
-                [/\bworkk\b/gi, "work"],
-                [/\bmakin\b/gi, "making"],
-                [/\bmistakk\b/gi, "mistake"],
-                [/\bgoodd\b/gi, "good"],
-                [/\bwhaat\b/gi, "what"],
-                [/\bperfct\b/gi, "perfect"],
-                [/\bcarer\b/gi, "career"],
-                [/\bereal\b/gi, "real"],
-                [/\bth\b/gi, "the"],
-                [/\bthihtis\b/gi, "this"],
-                [/\bhtis\b/gi, "this"],
-                [/\byuo\b/gi, "you"],
-                [/\bteh\b/gi, "the"],
-                [/\bmi\b/gi, "my"],
-                [/\badn\b/gi, "and"],
-                [/\bdoo\b/gi, "do"],
-                [/\bwont\b/gi, "will not"],
-                [/\bcant\b/gi, "cannot"],
-                [/\bgrammer\b/gi, "grammar"],
-                [/\bspeling\b/gi, "spelling"],
-                [/\breceve\b/gi, "receive"],
-                [/\bsepreat\b/gi, "separate"],
-                [/\bdefinately\b/gi, "definitely"]
-            ];
-
-            let text = rawInput;
-            replaceMap.forEach(([pattern, replacement]) => {
-                text = text.replace(pattern, replacement);
-            });
-
-            // Clean multiple spaces
-            text = text.replace(/\s+/g, ' ').trim();
-
-            // Format sentences cleanly
-            let sentences = text.split(/(?<=[.!?])\s+/).filter(Boolean);
-            let cleanedSentences = sentences.map(s => {
-                let trimmed = s.trim();
-                if (!trimmed) return "";
-                return trimmed.charAt(0).toUpperCase() + trimmed.slice(1);
-            });
-
-            return cleanedSentences.join(" ");
-        }
-
-        /* --- COPY OUTPUT HELPER --- */
-        function copyOutputText(outputId, toastId) {
-            const out = document.getElementById(outputId);
-            if (!out || !out.value.trim()) return;
-            navigator.clipboard.writeText(out.value);
-            const toast = document.getElementById(toastId);
-            if (toast) {
-                toast.classList.remove('hidden');
-                setTimeout(() => toast.classList.add('hidden'), 2000);
-            }
-        }
-
-        /* --- PERSISTENT COOKIE BANNER LOGIC --- */
-        function checkCookieConsent() {
-            if (!localStorage.getItem('cookieConsentAccepted')) {
-                const banner = document.getElementById('gdprBanner');
-                if (banner) banner.classList.remove('hidden');
-            }
-        }
-
-        function acceptCookieConsent() {
-            localStorage.setItem('cookieConsentAccepted', 'true');
-            const banner = document.getElementById('gdprBanner');
-            if (banner) banner.classList.add('hidden');
-        }
-
-        document.addEventListener('DOMContentLoaded', checkCookieConsent);
-
-        function switchTool(toolNum) {
-            const toolIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-            toolIds.forEach(i => {
-                const tElement = document.getElementById('tool' + i);
-                const nElement = document.getElementById('nav' + i);
-                if (tElement) tElement.classList.add('hidden');
-                if (nElement) nElement.classList.remove('active');
-            });
-            const activeTool = document.getElementById('tool' + toolNum);
-            const activeNav = document.getElementById('nav' + toolNum);
-            if (activeTool) activeTool.classList.remove('hidden');
-            if (activeNav) activeNav.classList.add('active');
-
-            if (toolNum === 6 && !qrcodeObj) {
-                initQRCode();
-            }
-        }
-
-        /* --- CATEGORY FILTERING --- */
         function filterCategory(cat, btnElement) {
             const catButtons = document.querySelectorAll('.cat-btn');
             catButtons.forEach(btn => {
@@ -825,35 +223,26 @@
             document.getElementById('searchClearBtn').classList.add('hidden');
             document.getElementById('noSearchResultsMsg').classList.add('hidden');
 
-            let firstVisibleTool = null;
-            const elements = document.querySelectorAll('[data-cat]');
+            const elements = document.querySelectorAll('#toolsGrid a[data-cat]');
             elements.forEach(el => {
                 if (cat === 'all' || el.getAttribute('data-cat') === cat) {
                     el.classList.remove('hidden');
-                    if (!firstVisibleTool && el.id && el.id.startsWith('nav')) {
-                        firstVisibleTool = parseInt(el.id.replace('nav', ''));
-                    }
                 } else {
                     el.classList.add('hidden');
                 }
             });
-
-            if (firstVisibleTool) switchTool(firstVisibleTool);
         }
 
-        /* --- GLOBAL LIVE SEARCH ENGINE --- */
         function handleGlobalSearch() {
             const query = document.getElementById('globalSearchInput').value.trim().toLowerCase();
             const clearBtn = document.getElementById('searchClearBtn');
             const alertBox = document.getElementById('noSearchResultsMsg');
-            const toolCards = document.querySelectorAll('#toolsGrid button');
+            const toolCards = document.querySelectorAll('#toolsGrid a');
 
             if (query.length > 0) clearBtn.classList.remove('hidden');
             else clearBtn.classList.add('hidden');
 
             let visibleCount = 0;
-            let firstMatchedToolNum = null;
-
             toolCards.forEach(card => {
                 const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
                 const title = card.innerText.toLowerCase();
@@ -861,9 +250,6 @@
                 if (keywords.includes(query) || title.includes(query)) {
                     card.classList.remove('hidden');
                     visibleCount++;
-                    if (!firstMatchedToolNum) {
-                        firstMatchedToolNum = parseInt(card.id.replace('nav', ''));
-                    }
                 } else {
                     card.classList.add('hidden');
                 }
@@ -873,7 +259,6 @@
                 alertBox.classList.remove('hidden');
             } else {
                 alertBox.classList.add('hidden');
-                if (firstMatchedToolNum) switchTool(firstMatchedToolNum);
             }
         }
 
@@ -881,795 +266,8 @@
             document.getElementById('globalSearchInput').value = '';
             document.getElementById('searchClearBtn').classList.add('hidden');
             document.getElementById('noSearchResultsMsg').classList.add('hidden');
-            filterCategory('all', document.getElementById('catBtnAll'));
+            filterCategory('all', document.querySelector('.cat-btn'));
         }
-
-        function quickSearch(term) {
-            document.getElementById('globalSearchInput').value = term;
-            handleGlobalSearch();
-        }
-
-        /* --- 1. GRAMMAR & SPELLING CHECKER (CLEAN PURE OUTPUT) --- */
-        const grammarInput = document.getElementById('grammarInput');
-        if (grammarInput) {
-            grammarInput.addEventListener('input', () => {
-                const words = grammarInput.value.trim() ? grammarInput.value.trim().split(/\s+/).length : 0;
-                const warn = document.getElementById('grammarWordWarn');
-                if (words > 300) {
-                    warn.textContent = `⚠️ Words: ${words} / 300 (Exceeds Limit!)`;
-                    warn.className = "text-xs font-bold text-red-600";
-                } else {
-                    warn.textContent = `Words: ${words} / 300`;
-                    warn.className = "text-xs font-bold text-slate-500";
-                }
-            });
-        }
-
-        async function fixGrammarAndRestructure() {
-            const raw = document.getElementById('grammarInput').value.trim();
-            const words = raw ? raw.split(/\s+/).length : 0;
-            const out = document.getElementById('grammarOutput');
-
-            if (!raw) {
-                out.value = "Please enter text to correct spelling and grammar!";
-                return;
-            }
-            if (words > 300) {
-                out.value = "Text exceeds the 300-word limit!";
-                return;
-            }
-
-            out.value = "Correcting text...";
-
-            let preCleaned = globalAiSanitizeText(raw);
-
-            try {
-                const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 3500);
-
-                const response = await fetch("https://api.languagetool.org/v2/check", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                    body: new URLSearchParams({ text: preCleaned, language: "en-US" }),
-                    signal: controller.signal
-                });
-                clearTimeout(timeoutId);
-
-                const data = await response.json();
-                let correctedText = preCleaned;
-
-                if (data.matches && data.matches.length > 0) {
-                    const sortedMatches = data.matches.sort((a, b) => b.offset - a.offset);
-                    sortedMatches.forEach(match => {
-                        if (match.replacements && match.replacements.length > 0) {
-                            const bestRepl = match.replacements[0].value;
-                            correctedText = correctedText.substring(0, match.offset) + bestRepl + correctedText.substring(match.offset + match.length);
-                        }
-                    });
-                }
-
-                out.value = globalAiSanitizeText(correctedText);
-
-            } catch (err) {
-                out.value = preCleaned;
-            }
-        }
-
-        function clearGrammarTool() {
-            document.getElementById('grammarInput').value = '';
-            document.getElementById('grammarOutput').value = '';
-            document.getElementById('grammarWordWarn').textContent = 'Words: 0 / 300';
-        }
-
-        /* --- 2. AI PROMPT STUDIO (CLEAN OUTPUT) --- */
-        function generateAIPrompt() {
-            const model = document.getElementById('aiModel').value;
-            const rawRole = document.getElementById('aiRole').value.trim() || 'Senior Freelance Expert';
-            const rawTone = document.getElementById('aiTone').value.trim() || 'High-Converting & Professional';
-            const rawTopic = document.getElementById('aiTopic').value.trim() || 'Provide a winning project proposal.';
-
-            const role = globalAiSanitizeText(rawRole);
-            const tone = globalAiSanitizeText(rawTone);
-            const topic = globalAiSanitizeText(rawTopic);
-
-            let prompt = '';
-            if (model === 'midjourney') {
-                prompt = `/imagine prompt: High quality shot of ${topic}, styled in ${tone} aesthetic --ar 16:9 --v 6.0`;
-            } else if (model === 'coding') {
-                prompt = `[ROLE]: ${role}\n[TASK]: ${topic}\n[REQUIREMENTS]: Write clean, production-grade code. Tone: ${tone}.`;
-            } else {
-                prompt = `[ROLE]: Act as a ${role}.\n[TONE]: ${tone}.\n[TASK]: ${topic}\n\nProvide executive summary, client pitch, bullet points, and actionable next steps.`;
-            }
-            document.getElementById('aiPromptOutput').value = prompt;
-        }
-
-        /* --- 3. SMART AI HUMANIZER (CLEAN OUTPUT) --- */
-        function humanizeText() {
-            const rawInput = document.getElementById('humanizeInput').value.trim();
-            const out = document.getElementById('humanizeOutput');
-            if (!rawInput) {
-                out.value = "Please paste text to humanize!";
-                return;
-            }
-
-            let text = globalAiSanitizeText(rawInput);
-
-            const humanizeDict = {
-                "delve": "explore", "testament": "proof", "moreover": "also",
-                "furthermore": "plus", "in conclusion": "to wrap up",
-                "it is important to note": "notably", "utilize": "use",
-                "facilitate": "help", "plethora": "lot", "comprehensive": "detailed",
-                "paradigm": "model", "synergy": "teamwork", "consequently": "so",
-                "subsequently": "then", "tapestry": "mix"
-            };
-
-            for (let [key, val] of Object.entries(humanizeDict)) {
-                let regex = new RegExp('\\b' + key + '\\b', 'gi');
-                text = text.replace(regex, val);
-            }
-
-            out.value = globalAiSanitizeText(text);
-        }
-
-        function generateSocialPost() {
-            const rawTopic = document.getElementById('socialTopic').value.trim() || 'Remote Freelancing Hacks';
-            const topic = globalAiSanitizeText(rawTopic);
-            
-            let post = `🚀 High-Impact Strategy for ${topic}:\n\n1. Always overdeliver on client briefs.\n2. Streamline daily utility tools.\n3. Build scalable assets.\n\n#Freelance #StudentGrowth #MyToolX`;
-            document.getElementById('socialOutput').value = post;
-        }
-
-        function generateYoutubeSEO() {
-            const rawTopic = document.getElementById('ytTopic').value.trim() || 'Freelance Client Hacks';
-            const topic = globalAiSanitizeText(rawTopic);
-            document.getElementById('ytOutput').value = `TITLES:\n1. Ultimate Guide: ${topic}\n2. Top Daily Tools for ${topic}\n\nTAGS:\n${topic.toLowerCase()}, freelancing, students 2026, mytoolx`;
-        }
-
-        /* --- 4. AI BIO GENERATOR (CLEAN OUTPUT) --- */
-        function generateAIBio() {
-            const rawRole = document.getElementById('bioRole').value.trim() || 'Freelance Creator';
-            const role = globalAiSanitizeText(rawRole);
-            const platform = document.getElementById('bioPlatform').value;
-            const out = document.getElementById('bioOutput');
-
-            if (platform === 'linkedin') {
-                out.value = `Option 1: ${role} | Delivering High-Impact Client Solutions 🚀\nOption 2: Helping brands scale as a top-rated ${role} | Tech & Growth\nOption 3: Driven ${role} building modern scalable workflows.`;
-            } else if (platform === 'twitter') {
-                out.value = `Option 1: ${role} 👨‍💻 | Building in public | Coffee & code ☕\nOption 2: Daily insights on ${role} & remote execution.\nOption 3: Top-rated ${role} sharing free resources.`;
-            } else {
-                out.value = `✨ ${role}\n🎯 Delivering top quality\n📍 Worldwide | DM for collabs 📩`;
-            }
-        }
-
-        function clearBioTool() {
-            document.getElementById('bioRole').value = '';
-            document.getElementById('bioOutput').value = '';
-        }
-
-        /* --- 5. ARTICLE OUTLINE GENERATOR (CLEAN OUTPUT) --- */
-        function generateDynamicOutline() {
-            const rawTopic = document.getElementById('outlineTopic').value.trim();
-            const out = document.getElementById('outlineOutput');
-
-            if (!rawTopic) {
-                out.value = "Please enter an article topic!";
-                return;
-            }
-
-            const cleanTopic = globalAiSanitizeText(rawTopic);
-
-            out.value = `OUTLINE: "${cleanTopic}"
-
-1. Executive Summary & Market Relevance
-   - High-impact introduction & target intent.
-   - Why ${cleanTopic} is vital for modern students and freelancers.
-
-2. Core Pillars & Strategy Roadmap
-   - Fundamental setup and workflow optimization.
-   - Key technical methods and practical frameworks.
-
-3. Advanced Tactical Insights
-   - Pro tips to stand out and deliver client-ready quality.
-   - Crucial mistakes to avoid.
-
-4. Actionable Takeaways & Next Steps
-   - Step-by-step checklist for instant execution.`;
-        }
-
-        function clearOutlineTool() {
-            document.getElementById('outlineTopic').value = '';
-            document.getElementById('outlineOutput').value = '';
-        }
-
-        /* --- FINANCE & UTILITY CALCULATORS --- */
-        function calculateSIP() {
-            const curr = document.getElementById('sipCurr').value;
-            const advance = parseFloat(document.getElementById('sipAdvance').value) || 0;
-            const monthly = parseFloat(document.getElementById('sipAmount').value) || 0;
-            const annualRate = parseFloat(document.getElementById('sipRate').value) || 0;
-            const years = parseFloat(document.getElementById('sipYears').value) || 0;
-
-            const i = (annualRate / 12) / 100;
-            const n = years * 12;
-
-            if (i > 0 && n > 0) {
-                const lumpsumFuture = advance * Math.pow(1 + i, n);
-                const sipFuture = monthly * ((Math.pow(1 + i, n) - 1) / i) * (1 + i);
-                const totalFuture = lumpsumFuture + sipFuture;
-                const totalInvested = advance + (monthly * n);
-                const wealthGain = Math.max(0, totalFuture - totalInvested);
-
-                document.getElementById('sipInvested').textContent = curr + totalInvested.toLocaleString('en-US', {maximumFractionDigits: 2});
-                document.getElementById('sipGains').textContent = curr + wealthGain.toLocaleString('en-US', {maximumFractionDigits: 2});
-                document.getElementById('sipTotal').textContent = curr + totalFuture.toLocaleString('en-US', {maximumFractionDigits: 2});
-            }
-        }
-
-        function clearSipTool() {
-            document.getElementById('sipAdvance').value = '';
-            document.getElementById('sipAmount').value = '';
-            document.getElementById('sipRate').value = '';
-            document.getElementById('sipYears').value = '';
-            document.getElementById('sipInvested').textContent = '$0.00';
-            document.getElementById('sipGains').textContent = '$0.00';
-            document.getElementById('sipTotal').textContent = '$0.00';
-        }
-
-        function calculateEMI() {
-            const curr = document.getElementById('emiCurr').value;
-            const P = parseFloat(document.getElementById('loanAmt').value) || 0;
-            const annualRate = parseFloat(document.getElementById('loanInt').value) || 0;
-            const tenureType = document.getElementById('loanTenureType').value;
-            const tenureVal = parseFloat(document.getElementById('loanTen').value) || 0;
-
-            const r = (annualRate / 12) / 100;
-            const n = tenureType === 'years' ? tenureVal * 12 : tenureVal;
-
-            if (P > 0 && r > 0 && n > 0) {
-                const emi = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
-                const totalPayment = emi * n;
-                const totalInterest = totalPayment - P;
-
-                document.getElementById('emiMonthly').textContent = curr + emi.toFixed(2);
-                document.getElementById('emiInterest').textContent = curr + totalInterest.toFixed(2);
-                document.getElementById('emiTotal').textContent = curr + totalPayment.toFixed(2);
-            }
-        }
-
-        function clearEmiTool() {
-            document.getElementById('loanAmt').value = '';
-            document.getElementById('loanInt').value = '';
-            document.getElementById('loanTen').value = '';
-            document.getElementById('emiMonthly').textContent = '$0.00';
-            document.getElementById('emiInterest').textContent = '$0.00';
-            document.getElementById('emiTotal').textContent = '$0.00';
-        }
-
-        function updateUnitLabels() {
-            const mode = document.getElementById('unitCat').value;
-            const label = document.getElementById('unitInLabel');
-            const labels = {
-                "km_miles": "Kilometers (km)", "miles_km": "Miles (mi)",
-                "meters_feet": "Meters (m)", "feet_meters": "Feet (ft)",
-                "inches_cm": "Inches (in)", "cm_inches": "Centimeters (cm)",
-                "kg_lbs": "Kilograms (kg)", "lbs_kg": "Pounds (lbs)",
-                "c_f": "Celsius (°C)", "f_c": "Fahrenheit (°F)"
-            };
-            label.textContent = labels[mode] || "Input Value";
-            convertUnit();
-        }
-
-        function convertUnit() {
-            const mode = document.getElementById('unitCat').value;
-            const val = parseFloat(document.getElementById('unitInput').value) || 0;
-            const out = document.getElementById('unitOutput');
-            let result = 0, unitStr = "";
-
-            switch (mode) {
-                case "km_miles": result = val * 0.621371; unitStr = " Miles"; break;
-                case "miles_km": result = val * 1.60934; unitStr = " km"; break;
-                case "meters_feet": result = val * 3.28084; unitStr = " Feet"; break;
-                case "feet_meters": result = val * 0.3048; unitStr = " Meters"; break;
-                case "inches_cm": result = val * 2.54; unitStr = " cm"; break;
-                case "cm_inches": result = val * 0.393701; unitStr = " Inches"; break;
-                case "kg_lbs": result = val * 2.20462; unitStr = " Lbs"; break;
-                case "lbs_kg": result = val * 0.453592; unitStr = " kg"; break;
-                case "c_f": result = (val * 9/5) + 32; unitStr = " °F"; break;
-                case "f_c": result = (val - 32) * 5/9; unitStr = " °C"; break;
-            }
-            out.textContent = result.toFixed(2) + unitStr;
-        }
-        document.getElementById('unitInput')?.addEventListener('input', convertUnit);
-
-        function clearUnitTool() {
-            document.getElementById('unitInput').value = '';
-            document.getElementById('unitOutput').textContent = '0.00';
-        }
-
-        function switchAiTab(sub) {
-            const promptBox = document.getElementById('aiSubPrompt');
-            const humanizeBox = document.getElementById('aiSubHumanize');
-            const socialBox = document.getElementById('aiSubSocial');
-            const ytBox = document.getElementById('aiSubYoutube');
-
-            const btnPrompt = document.getElementById('aiTabPrompt');
-            const btnHumanize = document.getElementById('aiTabHumanize');
-            const btnSocial = document.getElementById('aiTabSocial');
-            const btnYt = document.getElementById('aiTabYoutube');
-
-            [promptBox, humanizeBox, socialBox, ytBox].forEach(b => b.classList.add('hidden'));
-            [btnPrompt, btnHumanize, btnSocial, btnYt].forEach(b => {
-                b.className = "px-4 py-2 rounded-xl text-xs font-extrabold bg-slate-100 text-slate-700 hover:bg-slate-200 transition";
-            });
-
-            if (sub === 'prompt') {
-                promptBox.classList.remove('hidden');
-                btnPrompt.className = "px-4 py-2 rounded-xl text-xs font-black bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-sm transition";
-            } else if (sub === 'humanize') {
-                humanizeBox.classList.remove('hidden');
-                btnHumanize.className = "px-4 py-2 rounded-xl text-xs font-black bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-sm transition";
-            } else if (sub === 'social') {
-                socialBox.classList.remove('hidden');
-                btnSocial.className = "px-4 py-2 rounded-xl text-xs font-black bg-gradient-to-r from-pink-600 to-rose-600 text-white shadow-sm transition";
-            } else if (sub === 'youtube') {
-                ytBox.classList.remove('hidden');
-                btnYt.className = "px-4 py-2 rounded-xl text-xs font-black bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-sm transition";
-            }
-        }
-
-        function clearCurrentAiTab() {
-            document.getElementById('aiRole').value = '';
-            document.getElementById('aiTone').value = '';
-            document.getElementById('aiTopic').value = '';
-            document.getElementById('aiPromptOutput').value = '';
-
-            document.getElementById('humanizeInput').value = '';
-            document.getElementById('humanizeOutput').value = '';
-
-            document.getElementById('socialTopic').value = '';
-            document.getElementById('socialOutput').value = '';
-
-            document.getElementById('ytTopic').value = '';
-            document.getElementById('ytOutput').value = '';
-        }
-
-        function switchWriterTab(sub) {
-            const wordBox = document.getElementById('writerSubWord');
-            const caseBox = document.getElementById('writerSubCase');
-            const btnWord = document.getElementById('writerTabWord');
-            const btnCase = document.getElementById('writerTabCase');
-
-            if (sub === 'word') {
-                wordBox.classList.remove('hidden');
-                caseBox.classList.add('hidden');
-                btnWord.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition';
-                btnCase.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition';
-            } else {
-                caseBox.classList.remove('hidden');
-                wordBox.classList.add('hidden');
-                btnCase.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition';
-                btnWord.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition';
-            }
-        }
-
-        function clearCurrentWriterTab() {
-            const wordBox = document.getElementById('writerSubWord');
-            if (!wordBox.classList.contains('hidden')) {
-                document.getElementById('textInput').value = '';
-                document.getElementById('wordCount').textContent = '0';
-                document.getElementById('charCount').textContent = '0';
-                document.getElementById('sentenceCount').textContent = '0';
-                document.getElementById('readTime').textContent = '0 sec';
-            } else {
-                document.getElementById('caseInput').value = '';
-            }
-        }
-
-        function switchFinanceTab(sub) {
-            const feeBox = document.getElementById('financeSubFee');
-            const contractBox = document.getElementById('financeSubContract');
-            const btnFee = document.getElementById('financeTabFee');
-            const btnContract = document.getElementById('financeTabContract');
-
-            if (sub === 'fee') {
-                feeBox.classList.remove('hidden');
-                contractBox.classList.add('hidden');
-                btnFee.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-emerald-600 text-white transition';
-                btnContract.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition';
-            } else {
-                contractBox.classList.remove('hidden');
-                feeBox.classList.add('hidden');
-                btnContract.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-emerald-600 text-white transition';
-                btnFee.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition';
-            }
-        }
-
-        function clearCurrentFinanceTab() {
-            const feeBox = document.getElementById('financeSubFee');
-            if (!feeBox.classList.contains('hidden')) {
-                document.getElementById('feeInput').value = '';
-                document.getElementById('feeAmount').textContent = '$0.00';
-                document.getElementById('youReceive').textContent = '$0.00';
-                document.getElementById('askAmount').textContent = '$0.00';
-            } else {
-                document.getElementById('contractRate').value = '';
-                document.getElementById('contractHours').value = '';
-                document.getElementById('targetIncome').value = '';
-                document.getElementById('annualExpenses').value = '';
-                document.getElementById('billableHours').value = '';
-                document.getElementById('inputHourlyRate').value = '';
-                document.getElementById('inputHoursWeek').value = '';
-                document.getElementById('weeklyPay').textContent = '$0.00';
-                document.getElementById('monthlyPay').textContent = '$0.00';
-                document.getElementById('yearlyPay').textContent = '$0.00';
-                document.getElementById('mainResult').textContent = '$0.00 / hr';
-            }
-        }
-
-        function clearTool6() {
-            document.getElementById('qrInput').value = '';
-            if (qrcodeObj) { qrcodeObj.clear(); qrcodeObj.makeCode("https://mytoolx.org"); }
-        }
-        function clearTool7() { document.getElementById('passwordOutput').textContent = 'Click Generate'; }
-        
-        function clearTool8() {
-            document.getElementById('jsonInput').value = '';
-            document.getElementById('jsonOutput').value = '';
-        }
-        function clearTool9() {
-            document.getElementById('base64Input').value = '';
-            document.getElementById('base64Output').value = '';
-        }
-        function clearTool10() {
-            document.getElementById('hexInput').value = '';
-            document.getElementById('hexOutputText').textContent = '#3B82F6';
-            document.getElementById('rgbOutput').textContent = 'rgb(59, 130, 246)';
-            const preview = document.getElementById('colorPreview');
-            preview.style.backgroundColor = '#3b82f6';
-            preview.textContent = 'Preview';
-        }
-
-        const textInput = document.getElementById('textInput');
-        if(textInput) {
-            textInput.addEventListener('input', () => {
-                const val = textInput.value;
-                const words = val.trim() ? val.trim().split(/\s+/).length : 0;
-                const chars = val.length;
-                const sentences = val.split(/[.!?]+/).filter(Boolean).length;
-                const readTimeSec = Math.ceil(words / 3.3);
-                document.getElementById('wordCount').textContent = words;
-                document.getElementById('charCount').textContent = chars;
-                document.getElementById('sentenceCount').textContent = sentences;
-                document.getElementById('readTime').textContent = readTimeSec + ' sec';
-            });
-        }
-
-        function convertCase(type) {
-            const input = document.getElementById('caseInput');
-            if(!input) return;
-            let val = input.value;
-            if (type === 'upper') input.value = val.toUpperCase();
-            else if (type === 'lower') input.value = val.toLowerCase();
-            else if (type === 'title') {
-                input.value = val.toLowerCase().replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
-            }
-        }
-
-        function calculateFees() {
-            const amount = parseFloat(document.getElementById('feeInput').value) || 0;
-            const platform = document.getElementById('platformSelect').value;
-            const currency = document.getElementById('currencySelect').value;
-
-            let rate = 0.029, fixed = 0.30;
-            if (platform === 'paypal_card') { rate = 0.0299; fixed = 0.49; }
-            else if (platform === 'square') { rate = 0.026; fixed = 0.10; }
-
-            const fee = (amount * rate) + fixed;
-            const receive = Math.max(0, amount - fee);
-            const ask = (amount + fixed) / (1 - rate);
-
-            document.getElementById('feeAmount').textContent = currency + fee.toFixed(2);
-            document.getElementById('youReceive').textContent = currency + receive.toFixed(2);
-            document.getElementById('askAmount').textContent = currency + (amount > 0 ? ask.toFixed(2) : "0.00");
-        }
-        document.getElementById('feeInput').addEventListener('input', calculateFees);
-        document.getElementById('platformSelect').addEventListener('change', calculateFees);
-        document.getElementById('currencySelect').addEventListener('change', calculateFees);
-
-        function setCalcMode(mode) {
-            document.getElementById('contractModeInputs').classList.add('hidden');
-            document.getElementById('rateModeInputs').classList.add('hidden');
-            document.getElementById('annualModeInputs').classList.add('hidden');
-            document.getElementById('contractGrid').classList.add('hidden');
-            document.getElementById('singleResultBox').classList.add('hidden');
-
-            document.getElementById('modeContractBtn').className = 'px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 text-slate-700 transition';
-            document.getElementById('modeRateBtn').className = 'px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 text-slate-700 transition';
-            document.getElementById('modeAnnualBtn').className = 'px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 text-slate-700 transition';
-
-            if (mode === 'contract') {
-                document.getElementById('contractModeInputs').classList.remove('hidden');
-                document.getElementById('contractGrid').classList.remove('hidden');
-                document.getElementById('modeContractBtn').className = 'px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition';
-            } else if (mode === 'rate') {
-                document.getElementById('rateModeInputs').classList.remove('hidden');
-                document.getElementById('singleResultBox').classList.remove('hidden');
-                document.getElementById('resultLabel').textContent = "Recommended Hourly Rate";
-                document.getElementById('modeRateBtn').className = 'px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition';
-            } else if (mode === 'annual') {
-                document.getElementById('annualModeInputs').classList.remove('hidden');
-                document.getElementById('singleResultBox').classList.remove('hidden');
-                document.getElementById('resultLabel').textContent = "Estimated Annual Salary";
-                document.getElementById('modeAnnualBtn').className = 'px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition';
-            }
-            calculateContract();
-        }
-
-        function calculateContract() {
-            const rate = parseFloat(document.getElementById('contractRate').value) || 0;
-            const hours = parseFloat(document.getElementById('contractHours').value) || 0;
-            const weekly = rate * hours;
-            const yearly = weekly * 52;
-            const monthly = yearly / 12;
-
-            document.getElementById('weeklyPay').textContent = '$' + weekly.toFixed(2);
-            document.getElementById('monthlyPay').textContent = '$' + monthly.toFixed(2);
-            document.getElementById('yearlyPay').textContent = '$' + yearly.toFixed(2);
-
-            const targetIncome = parseFloat(document.getElementById('targetIncome').value) || 0;
-            const expenses = parseFloat(document.getElementById('annualExpenses').value) || 0;
-            const billableHours = parseFloat(document.getElementById('billableHours').value) || 0;
-            const hourlyNeeded = (targetIncome + expenses) / (billableHours * 52 || 1);
-
-            const inputRate = parseFloat(document.getElementById('inputHourlyRate').value) || 0;
-            const inputHours = parseFloat(document.getElementById('inputHoursWeek').value) || 0;
-            const annualSalary = inputRate * inputHours * 52;
-
-            if (!document.getElementById('rateModeInputs').classList.contains('hidden')) {
-                document.getElementById('mainResult').textContent = '$' + hourlyNeeded.toFixed(2) + ' / hr';
-            } else if (!document.getElementById('annualModeInputs').classList.contains('hidden')) {
-                document.getElementById('mainResult').textContent = '$' + annualSalary.toLocaleString('en-US', {minimumFractionDigits: 2}) + ' / yr';
-            }
-        }
-        ['contractRate','contractHours','targetIncome','annualExpenses','billableHours','inputHourlyRate','inputHoursWeek'].forEach(id => {
-            const el = document.getElementById(id);
-            if(el) el.addEventListener('input', calculateContract);
-        });
-
-        function formatQRTarget(inputStr) {
-            let str = inputStr.trim();
-            if (!str) return "https://mytoolx.org";
-            if (!/^https?:\/\//i.test(str) && /^[a-zA-Z0-9-]+\.[a-zA-Z]{2,}/i.test(str)) {
-                return "https://" + str;
-            }
-            return str;
-        }
-
-        function initQRCode() {
-            const qrContainer = document.getElementById('qrcode');
-            if(qrContainer && typeof QRCode !== 'undefined') {
-                qrContainer.innerHTML = '';
-                const targetVal = formatQRTarget(document.getElementById('qrInput').value);
-                qrcodeObj = new QRCode(qrContainer, {
-                    text: targetVal,
-                    width: 200,
-                    height: 200,
-                    correctLevel: QRCode.CorrectLevel.M
-                });
-            }
-        }
-
-        document.getElementById('qrInput').addEventListener('input', (e) => {
-            const text = formatQRTarget(e.target.value);
-            if (!qrcodeObj) initQRCode();
-            if (qrcodeObj) {
-                qrcodeObj.clear();
-                qrcodeObj.makeCode(text);
-            }
-        });
-
-        function downloadHDQRCode() {
-            const rawVal = document.getElementById('qrInput').value.trim();
-            const textContent = rawVal ? formatQRTarget(rawVal) : "https://mytoolx.org";
-
-            const tempDiv = document.createElement('div');
-            tempDiv.style.display = 'none';
-            document.body.appendChild(tempDiv);
-
-            const tempQR = new QRCode(tempDiv, {
-                text: textContent,
-                width: 1000,
-                height: 1000,
-                correctLevel: QRCode.CorrectLevel.H
-            });
-
-            setTimeout(() => {
-                const qrCanvas = tempDiv.querySelector('canvas');
-                if (qrCanvas) {
-                    const finalCanvas = document.createElement('canvas');
-                    finalCanvas.width = 1100;
-                    finalCanvas.height = 1250;
-                    const ctx = finalCanvas.getContext('2d');
-
-                    ctx.fillStyle = "#ffffff";
-                    ctx.fillRect(0, 0, finalCanvas.width, finalCanvas.height);
-
-                    ctx.strokeStyle = "#2563eb";
-                    ctx.lineWidth = 16;
-                    ctx.strokeRect(20, 20, finalCanvas.width - 40, finalCanvas.height - 40);
-
-                    ctx.drawImage(qrCanvas, 50, 50, 1000, 1000);
-
-                    ctx.font = "bold 32px sans-serif";
-                    ctx.fillStyle = "#2563eb";
-                    ctx.textAlign = "center";
-                    ctx.fillText(textContent, finalCanvas.width / 2, 1150);
-
-                    const a = document.createElement('a');
-                    a.download = 'MyToolX-QRCode-HD.png';
-                    a.href = finalCanvas.toDataURL('image/png', 1.0);
-                    a.click();
-                }
-                document.body.removeChild(tempDiv);
-            }, 100);
-        }
-
-        function shareQRCode() {
-            const rawVal = document.getElementById('qrInput').value.trim();
-            const textContent = rawVal ? formatQRTarget(rawVal) : "https://mytoolx.org";
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(textContent);
-                const toast = document.getElementById('shareToast');
-                toast.classList.remove('hidden');
-                setTimeout(() => toast.classList.add('hidden'), 3000);
-            }
-        }
-
-        function generatePassword() {
-            const len = parseInt(document.getElementById('pwdLength').value) || 16;
-            const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=";
-            const randomValues = new Uint32Array(len);
-            window.crypto.getRandomValues(randomValues);
-
-            let pwd = "";
-            for (let i = 0; i < len; i++) {
-                pwd += chars.charAt(randomValues[i] % chars.length);
-            }
-            document.getElementById('passwordOutput').textContent = pwd;
-        }
-
-        function copyPassword() {
-            const pwd = document.getElementById('passwordOutput').textContent;
-            if (!pwd || pwd === 'Click Generate') return;
-            navigator.clipboard.writeText(pwd);
-            const toast = document.getElementById('pwdCopyToast');
-            toast.classList.remove('hidden');
-            setTimeout(() => toast.classList.add('hidden'), 2500);
-        }
-
-        function formatJSON() {
-            const inp = document.getElementById('jsonInput').value.trim();
-            if (!inp) {
-                document.getElementById('jsonOutput').value = "Please enter some JSON data!";
-                return;
-            }
-            try {
-                const parsed = JSON.parse(inp);
-                document.getElementById('jsonOutput').value = JSON.stringify(parsed, null, 4);
-            } catch (e) {
-                document.getElementById('jsonOutput').value = "Invalid JSON Syntax:\n" + e.message;
-            }
-        }
-
-        function minifyJSON() {
-            const inp = document.getElementById('jsonInput').value.trim();
-            if (!inp) {
-                document.getElementById('jsonOutput').value = "Please enter some JSON data!";
-                return;
-            }
-            try {
-                const parsed = JSON.parse(inp);
-                document.getElementById('jsonOutput').value = JSON.stringify(parsed);
-            } catch (e) {
-                document.getElementById('jsonOutput').value = "Invalid JSON Syntax:\n" + e.message;
-            }
-        }
-
-        function encodeBase64() {
-            const inp = document.getElementById('base64Input').value;
-            if (!inp) {
-                document.getElementById('base64Output').value = "Please enter text to encode!";
-                return;
-            }
-            try {
-                const bytes = new TextEncoder().encode(inp);
-                let bin = '';
-                bytes.forEach(b => bin += String.fromCharCode(b));
-                document.getElementById('base64Output').value = btoa(bin);
-            } catch(e) {
-                document.getElementById('base64Output').value = "Encoding Error: " + e.message;
-            }
-        }
-
-        function decodeBase64() {
-            const inp = document.getElementById('base64Input').value.trim();
-            if (!inp) {
-                document.getElementById('base64Output').value = "Please enter a Base64 string to decode!";
-                return;
-            }
-            try {
-                const bin = atob(inp);
-                const bytes = Uint8Array.from(bin, c => c.charCodeAt(0));
-                document.getElementById('base64Output').value = new TextDecoder().decode(bytes);
-            } catch(e) {
-                document.getElementById('base64Output').value = "Invalid Base64 string!";
-            }
-        }
-
-        document.getElementById('hexInput').addEventListener('input', (e) => {
-            const rawVal = e.target.value.trim();
-            const preview = document.getElementById('colorPreview');
-            const hexText = document.getElementById('hexOutputText');
-            const rgbText = document.getElementById('rgbOutput');
-
-            if (!rawVal) {
-                preview.style.backgroundColor = '#3b82f6';
-                preview.textContent = 'Preview';
-                hexText.textContent = '#3B82F6';
-                rgbText.textContent = 'rgb(59, 130, 246)';
-                return;
-            }
-
-            const str = rawVal.toLowerCase();
-            const rgbMatch = str.match(/^(?:rgb\s*\(\s*)?(\d{1,3})[\s,]+(\d{1,3})[\s,]+(\d{1,3})\s*\)?$/);
-            if (rgbMatch) {
-                const r = parseInt(rgbMatch[1]), g = parseInt(rgbMatch[2]), b = parseInt(rgbMatch[3]);
-                if (r <= 255 && g <= 255 && b <= 255) {
-                    const hex = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
-                    preview.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-                    preview.textContent = 'Valid Color';
-                    hexText.textContent = hex;
-                    rgbText.textContent = `rgb(${r}, ${g}, ${b})`;
-                    return;
-                }
-            }
-
-            let hexClean = str.replace('#', '');
-            if (/^[0-9a-f]{3}$/i.test(hexClean)) hexClean = hexClean.split('').map(c => c + c).join('');
-            if (/^[0-9a-f]{6}$/i.test(hexClean)) {
-                const num = parseInt(hexClean, 16);
-                const r = (num >> 16) & 255, g = (num >> 8) & 255, b = num & 255;
-                const fullHex = "#" + hexClean.toUpperCase();
-                preview.style.backgroundColor = fullHex;
-                preview.textContent = 'Valid Color';
-                hexText.textContent = fullHex;
-                rgbText.textContent = `rgb(${r}, ${g}, ${b})`;
-                return;
-            }
-
-            const testCanvas = document.createElement('canvas');
-            const ctx = testCanvas.getContext('2d');
-            ctx.fillStyle = '#123456';
-            ctx.fillStyle = str;
-
-            if (ctx.fillStyle !== '#123456') {
-                const computed = ctx.fillStyle;
-                const hexCleanComp = computed.replace('#', '');
-                const numComp = parseInt(hexCleanComp, 16);
-                const r = (numComp >> 16) & 255, g = (numComp >> 8) & 255, b = numComp & 255;
-                
-                preview.style.backgroundColor = computed;
-                preview.textContent = 'Valid Color';
-                hexText.textContent = computed.toUpperCase();
-                rgbText.textContent = `rgb(${r}, ${g}, ${b})`;
-                return;
-            }
-
-            preview.style.backgroundColor = '#ef4444';
-            preview.textContent = 'Invalid Color';
-            hexText.textContent = 'Invalid Input';
-            rgbText.textContent = 'Invalid Input';
-        });
     </script>
 </body>
 </html>
