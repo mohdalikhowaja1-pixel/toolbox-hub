@@ -149,30 +149,92 @@
 
         </div>
 
-        <!-- SEO Article -->
-        <article class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10 text-slate-700 space-y-4">
-            <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3">Instant CSS Color Conversion</h2>
-            <p class="text-sm leading-relaxed text-slate-600">
-                Convert between web-standard HEX codes, RGB color values, and CSS color names with live visual feedback.
-            </p>
-        </article>
+        <!-- SEO Article Content (Rich & Expanded Content) -->
+<article class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10 text-slate-700 space-y-6">
+    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">Instant CSS & Web Color Space Conversion</h2>
+    
+    <p class="text-sm leading-relaxed text-slate-600">
+        In modern web development and UI/UX design, representing colors accurately across digital displays requires switching between various color notations—such as Hexadecimal (HEX), Red-Green-Blue (RGB), Hue-Saturation-Lightness (HSL), and standardized CSS color names. The MyToolX Color Converter provides instant, real-time color space translation with live visual previews directly inside your browser.
+    </p>
 
-        <!-- FAQs Section -->
-        <section class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10">
-            <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">Frequently Asked Questions (FAQs)</h2>
-            <div class="space-y-4">
-                <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-                    <h3 class="text-sm font-bold text-slate-900 mb-1">How to convert color formats?</h3>
-                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Enter any HEX code (#3B82F6), RGB value (59, 130, 246), or named color (coral) to get live conversion[cite: 45].</p>
-                </div>
-            </div>
-        </section>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+        <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-2xl">
+            <h3 class="font-bold text-slate-900 text-sm mb-1">🎨 HEX Notations</h3>
+            <p class="text-xs text-slate-600">Converts 6-digit hexadecimal web codes (e.g., <code class="bg-slate-200 px-1 py-0.5 rounded text-slate-800">#3B82F6</code>) into active RGB and HSL values.</p>
+        </div>
+        <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-2xl">
+            <h3 class="font-bold text-slate-900 text-sm mb-1">🖥️ RGB & HSL Space</h3>
+            <p class="text-xs text-slate-600">Translates standard RGB channel parameters (0-255) and cylindrical HSL coordinates into clean CSS output.</p>
+        </div>
+        <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-2xl">
+            <h3 class="font-bold text-slate-900 text-sm mb-1">👁️ Visual Live Preview</h3>
+            <p class="text-xs text-slate-600">Instantly renders the selected palette shade in a real-time visual canvas tile as you type.</p>
+        </div>
+    </div>
+
+    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">Understanding Web Color Models: HEX vs RGB vs HSL</h3>
+    <p class="text-sm leading-relaxed text-slate-600">
+        Each web color notation serves distinct advantages during frontend stylesheet authoring:
+    </p>
+    <ul class="list-disc pl-5 text-xs sm:text-sm text-slate-600 space-y-2">
+        <li><strong>Hexadecimal (HEX):</strong> A compact base-16 representation composed of three two-digit numbers representing Red, Green, and Blue intensity. It is the most commonly used format across HTML and CSS stylesheets.</li>
+        <li><strong>RGB (Red, Green, Blue):</strong> An additive color model specifying light intensity channels from 0 to 255. Modern CSS also supports <code class="bg-slate-100 px-1.5 py-0.5 rounded text-slate-800 font-mono">rgba()</code> for specifying alpha channel transparency levels.</li>
+        <li><strong>HSL (Hue, Saturation, Lightness):</strong> A human-friendly cylindrical color model. It makes adjusting color shade lightness, saturation levels, and complementary color schemes significantly easier for designers.</li>
+    </ul>
+
+    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">100% Client-Side Real-Time Execution</h3>
+    <p class="text-sm leading-relaxed text-slate-600">
+        All color space transformations and math calculations execute instantly in client-side JavaScript memory. Your brand color palettes, custom values, and design inputs are processed strictly inside your web browser without transmitting data to external servers.
+    </p>
+</article>
+
+<!-- Expanded FAQs Section -->
+<section class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10">
+    <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">Frequently Asked Questions (FAQs)</h2>
+    <div class="space-y-4">
+        
+        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
+            <h3 class="text-sm font-bold text-slate-900 mb-1">How do I convert between different color formats?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Simply enter any valid HEX code (e.g., #3B82F6), RGB value (e.g., rgb(59, 130, 246)), or CSS named color (e.g., coral) into the input box to get live instant conversions.</p>
+        </div>
+
+        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
+            <h3 class="text-sm font-bold text-slate-900 mb-1">Is this Color Converter free to use?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Yes, 100% free with no registration or usage limits required. All conversion calculations run locally inside your browser.</p>
+        </div>
+
+        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
+            <h3 class="text-sm font-bold text-slate-900 mb-1">What is the difference between HEX and RGB color formats?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">HEX uses base-16 numbers (0-9, A-F) to represent Red, Green, and Blue light values in a concise string, whereas RGB uses standard decimal values from 0 to 255 for each color channel.</p>
+        </div>
+
+        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
+            <h3 class="text-sm font-bold text-slate-900 mb-1">Why do designers prefer HSL over HEX for theme building?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">HSL makes it intuitive to create darker/lighter variations or complementary color palettes by simply tweaking the Lightness percentage while keeping Hue and Saturation constant.</p>
+        </div>
+
+        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
+            <h3 class="text-sm font-bold text-slate-900 mb-1">Are my custom color codes saved or tracked anywhere?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">No. All rendering and string conversions happen entirely on your local device via JavaScript, ensuring zero data transmission or logging.</p>
+        </div>
+
+    </div>
+</section>
 
     </main>
 
     <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs font-semibold text-slate-500">
-        <p>&copy; 2026 MyToolX. All tools run client-side for 100% privacy.</p>
-    </footer>
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p>&copy; 2026 MyToolX. All rights reserved. Tools run client-side for 100% privacy.</p>
+        <div class="flex items-center gap-4 text-slate-600 font-bold">
+            <a href="index.html" class="hover:text-blue-600">Home</a>
+            <a href="privacy.html" class="hover:text-blue-600">Privacy Policy</a>
+            <a href="terms.html" class="hover:text-blue-600">Terms of Service</a>
+            <a href="about.html" class="hover:text-blue-600">About Us</a>
+            <a href="contact.html" class="hover:text-blue-600">Contact Us</a>
+        </div>
+    </div>
+</footer>
 
     <!-- ENGINE LOGIC -->
     <script>

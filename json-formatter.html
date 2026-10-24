@@ -142,30 +142,92 @@
 
         </div>
 
-        <!-- SEO Article -->
-        <article class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10 text-slate-700 space-y-4">
-            <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3">Developer JSON Utility</h2>
-            <p class="text-sm leading-relaxed text-slate-600">
-                Format, validate, and minify API payloads and configuration files with zero server interaction.
-            </p>
-        </article>
+        <!-- SEO Article Content (Rich & Expanded Content) -->
+<article class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10 text-slate-700 space-y-6">
+    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">Developer JSON Utility & Validation Suite</h2>
+    
+    <p class="text-sm leading-relaxed text-slate-600">
+        JavaScript Object Notation (JSON) is the standard lightweight data-interchange format across modern web APIs, microservices, cloud backend configurations, and NoSQL databases. The MyToolX Developer JSON Utility provides instant formatting (pretty-printing), syntax validation, and minification for complex API payloads directly within your browser.
+    </p>
 
-        <!-- FAQs Section -->
-        <section class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10">
-            <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">Frequently Asked Questions (FAQs)</h2>
-            <div class="space-y-4">
-                <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-                    <h3 class="text-sm font-bold text-slate-900 mb-1">Does this tool validate invalid JSON?</h3>
-                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Yes, if your JSON contains syntax errors, the tool provides error messages[cite: 46].</p>
-                </div>
-            </div>
-        </section>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+        <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-2xl">
+            <h3 class="font-bold text-slate-900 text-sm mb-1">✨ Pretty-Print Formatting</h3>
+            <p class="text-xs text-slate-600">Transforms unformatted raw JSON strings into clean, indented structures for easy visual debugging.</p>
+        </div>
+        <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-2xl">
+            <h3 class="font-bold text-slate-900 text-sm mb-1">⚡ Minification Engine</h3>
+            <p class="text-xs text-slate-600">Strips unnecessary whitespace, line breaks, and indentation to compress payload transfer sizes.</p>
+        </div>
+        <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-2xl">
+            <h3 class="font-bold text-slate-900 text-sm mb-1">🔍 Real-time Syntax Checking</h3>
+            <p class="text-xs text-slate-600">Instantly pinpoints syntax errors such as trailing commas, unescaped quotes, or missing brackets.</p>
+        </div>
+    </div>
+
+    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">Common JSON Syntax Errors to Watch For</h3>
+    <p class="text-sm leading-relaxed text-slate-600">
+        When working with manual JSON edits or API responses, subtle formatting issues can break backend parsing engines:
+    </p>
+    <ul class="list-disc pl-5 text-xs sm:text-sm text-slate-600 space-y-2">
+        <li><strong>Trailing Commas:</strong> Placing a comma after the last key-value pair inside an object or array causes standard JSON parsers to throw a syntax error.</li>
+        <li><strong>Single Quotes vs Double Quotes:</strong> Standard JSON specification strictly requires double quotes (<code class="bg-slate-100 px-1.5 py-0.5 rounded text-slate-800 font-mono">"key": "value"</code>) around keys and string values.</li>
+        <li><strong>Unescaped Special Characters:</strong> Control characters and newlines within string values must be properly escaped using backslashes (<code class="bg-slate-100 px-1.5 py-0.5 rounded text-slate-800 font-mono">\n</code>, <code class="bg-slate-100 px-1.5 py-0.5 rounded text-slate-800 font-mono">\"</code>).</li>
+    </ul>
+
+    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">Zero-Server Data Isolation</h3>
+    <p class="text-sm leading-relaxed text-slate-600">
+        Developers frequently handle sensitive production payloads containing authentication tokens, API keys, or personal user records. Unlike online JSON tools that route payloads through remote web servers, MyToolX runs 100% locally using client-side JavaScript. Your confidential code never leaves your browser memory.
+    </p>
+</article>
+
+<!-- Expanded FAQs Section -->
+<section class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10">
+    <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">Frequently Asked Questions (FAQs)</h2>
+    <div class="space-y-4">
+        
+        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
+            <h3 class="text-sm font-bold text-slate-900 mb-1">Does this tool validate invalid JSON syntax?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Yes. If your JSON contains syntax errors, the built-in parser catches the exception and highlights the error message to help you fix structural mistakes quickly.</p>
+        </div>
+
+        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
+            <h3 class="text-sm font-bold text-slate-900 mb-1">Is my JSON code uploaded to any external server?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">No. All formatting, validation, and minification functions execute strictly inside your local web browser using client-side JavaScript. Nothing is transmitted or saved online.</p>
+        </div>
+
+        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
+            <h3 class="text-sm font-bold text-slate-900 mb-1">What is the benefit of minifying JSON?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Minification removes all formatting spaces, newlines, and tabs. This decreases payload byte size, resulting in faster network transmission speeds for web application APIs.</p>
+        </div>
+
+        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
+            <h3 class="text-sm font-bold text-slate-900 mb-1">Is there a maximum file size limit for formatting?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Since processing relies on your device's browser memory, it can handle large multi-megabyte JSON files without experiencing cloud server timeout limits.</p>
+        </div>
+
+        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
+            <h3 class="text-sm font-bold text-slate-900 mb-1">Can I use single quotes in standard JSON?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">No. According to official JSON specs (RFC 8259), keys and string values must be enclosed in standard double quotes (<code class="bg-slate-100 px-1 py-0.5 rounded text-slate-800 font-mono">" "</code>).</p>
+        </div>
+
+    </div>
+</section>
 
     </main>
 
     <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs font-semibold text-slate-500">
-        <p>&copy; 2026 MyToolX. All tools run client-side for 100% privacy.</p>
-    </footer>
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p>&copy; 2026 MyToolX. All rights reserved. Tools run client-side for 100% privacy.</p>
+        <div class="flex items-center gap-4 text-slate-600 font-bold">
+            <a href="index.html" class="hover:text-blue-600">Home</a>
+            <a href="privacy.html" class="hover:text-blue-600">Privacy Policy</a>
+            <a href="terms.html" class="hover:text-blue-600">Terms of Service</a>
+            <a href="about.html" class="hover:text-blue-600">About Us</a>
+            <a href="contact.html" class="hover:text-blue-600">Contact Us</a>
+        </div>
+    </div>
+</footer>
 
     <!-- ENGINE LOGIC -->
     <script>

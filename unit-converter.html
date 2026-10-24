@@ -165,34 +165,94 @@
 
         </div>
 
-        <!-- SEO Article -->
-        <article class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10 text-slate-700 space-y-4">
-            <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3">Instant Unit Conversions</h2>
-            <p class="text-sm leading-relaxed text-slate-600">
-                Effortlessly convert metric and imperial measurements in real time with high accuracy. Switch between distance, length, weight, mass, and temperature units seamlessly.
-            </p>
-        </article>
+        <!-- SEO Article Content (Rich & Expanded Content) -->
+<article class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10 text-slate-700 space-y-6">
+    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">Instant & Accurate Unit Conversions</h2>
+    
+    <p class="text-sm leading-relaxed text-slate-600">
+        Converting measurements between different regional systems—such as the International System of Units (Metric) and the Imperial System—is a daily necessity for engineers, students, travelers, fitness enthusiasts, and international trade professionals. MyToolX Unit Converter provides instant, high-precision mathematical conversions across distance, mass, and temperature parameters directly inside your browser.
+    </p>
 
-        <!-- FAQs Section -->
-        <section class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10">
-            <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">Frequently Asked Questions (FAQs)</h2>
-            <div class="space-y-4">
-                <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-                    <h3 class="text-sm font-bold text-slate-900 mb-1">What unit conversions are available?</h3>
-                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">It supports Length & Distance (km, miles, meters, feet, inches, cm), Weight & Mass (kg, lbs), and Temperature (°C, °F).</p>
-                </div>
-                <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-                    <h3 class="text-sm font-bold text-slate-900 mb-1">Are conversions calculated live?</h3>
-                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Yes, as soon as you type any number or change the unit mode, the result updates instantly without needing to click any button.</p>
-                </div>
-            </div>
-        </section>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+        <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-2xl">
+            <h3 class="font-bold text-slate-900 text-sm mb-1">📏 Length & Distance</h3>
+            <p class="text-xs text-slate-600">Convert Kilometers (km), Miles (mi), Meters (m), Feet (ft), Inches (in), and Centimeters (cm) seamlessly.</p>
+        </div>
+        <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-2xl">
+            <h3 class="font-bold text-slate-900 text-sm mb-1">⚖️ Weight & Mass</h3>
+            <p class="text-xs text-slate-600">Switch between Metric Kilograms (kg) and Imperial Pounds (lbs) with accurate decimal precision.</p>
+        </div>
+        <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-2xl">
+            <h3 class="font-bold text-slate-900 text-sm mb-1">🌡️ Temperature</h3>
+            <p class="text-xs text-slate-600">Instantly convert Celsius (°C) and Fahrenheit (°F) scales using standard scientific formulas.</p>
+        </div>
+    </div>
+
+    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">Standard Mathematical Formulas Used</h3>
+    <p class="text-sm leading-relaxed text-slate-600">
+        Our client-side conversion engine relies on standardized international scientific ratios:
+    </p>
+    <ul class="list-disc pl-5 text-xs sm:text-sm text-slate-600 space-y-2">
+        <li><strong>Kilometers to Miles:</strong> <code class="bg-slate-100 px-1.5 py-0.5 rounded text-slate-800 font-mono">1 km ≈ 0.621371 mi</code></li>
+        <li><strong>Meters to Feet:</strong> <code class="bg-slate-100 px-1.5 py-0.5 rounded text-slate-800 font-mono">1 m ≈ 3.28084 ft</code></li>
+        <li><strong>Inches to Centimeters:</strong> <code class="bg-slate-100 px-1.5 py-0.5 rounded text-slate-800 font-mono">1 in = 2.54 cm</code></li>
+        <li><strong>Kilograms to Pounds:</strong> <code class="bg-slate-100 px-1.5 py-0.5 rounded text-slate-800 font-mono">1 kg ≈ 2.20462 lbs</code></li>
+        <li><strong>Celsius to Fahrenheit:</strong> <code class="bg-slate-100 px-1.5 py-0.5 rounded text-slate-800 font-mono">°F = (°C × 9/5) + 32</code></li>
+    </ul>
+
+    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">Client-Side Speed & Privacy</h3>
+    <p class="text-sm leading-relaxed text-slate-600">
+        Unlike web apps that perform server-side calculations via API calls, all conversion algorithms run locally using JavaScript in your browser memory. This guarantees zero latency, instant real-time updates as you type, and 100% data privacy with zero server logging.
+    </p>
+</article>
+
+<!-- Expanded FAQs Section -->
+<section class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10">
+    <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">Frequently Asked Questions (FAQs)</h2>
+    <div class="space-y-4">
+        
+        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
+            <h3 class="text-sm font-bold text-slate-900 mb-1">What unit categories are supported by this converter?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">It supports Length & Distance (km, miles, meters, feet, inches, cm), Weight & Mass (kg, lbs), and Temperature (°C, °F).</p>
+        </div>
+
+        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
+            <h3 class="text-sm font-bold text-slate-900 mb-1">Are conversions calculated live without clicking a submit button?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Yes. As soon as you type any numeric value or change the unit selection mode, the converted output calculates instantly in real time.</p>
+        </div>
+
+        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
+            <h3 class="text-sm font-bold text-slate-900 mb-1">Is this tool free and private?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Yes, 100% free with no registration required. All mathematical calculations run locally inside your browser, meaning no input data is ever sent to external servers.</p>
+        </div>
+
+        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
+            <h3 class="text-sm font-bold text-slate-900 mb-1">How accurate are the conversion outputs?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Our conversion engine utilizes standard 64-bit floating-point precision ratios, providing high accuracy suitable for academic, technical, and commercial applications.</p>
+        </div>
+
+        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
+            <h3 class="text-sm font-bold text-slate-900 mb-1">Why do different countries use Imperial vs Metric systems?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">The Metric system is used globally due to its base-10 decimal simplicity, whereas the Imperial system remains standard in the United States, Myanmar, and Liberia due to historical regulatory frameworks.</p>
+        </div>
+
+    </div>
+</section>
 
     </main>
 
     <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs font-semibold text-slate-500">
-        <p>&copy; 2026 MyToolX. All tools run client-side for 100% privacy.</p>
-    </footer>
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p>&copy; 2026 MyToolX. All rights reserved. Tools run client-side for 100% privacy.</p>
+        <div class="flex items-center gap-4 text-slate-600 font-bold">
+            <a href="index.html" class="hover:text-blue-600">Home</a>
+            <a href="privacy.html" class="hover:text-blue-600">Privacy Policy</a>
+            <a href="terms.html" class="hover:text-blue-600">Terms of Service</a>
+            <a href="about.html" class="hover:text-blue-600">About Us</a>
+            <a href="contact.html" class="hover:text-blue-600">Contact Us</a>
+        </div>
+    </div>
+</footer>
 
     <!-- ENGINE LOGIC -->
     <script>

@@ -3,14 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - MyToolX</title>
+    <title>About Us | MyToolX</title>
+    <meta name="description" content="Learn about MyToolX - a free suite of client-side web tools designed for privacy, speed, and efficiency.">
+    <link rel="canonical" href="https://mytoolx.org/about.html">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .logo-box-3d {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #a1c4fd 100%);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15), inset 0 2px 3px rgba(255, 255, 255, 0.8);
+            border: 2px solid #ffffff;
+        }
+        .logo-text-my {
+            background: -webkit-linear-gradient(45deg, #1e293b, #475569);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+        .logo-text-toolx {
+            background: -webkit-linear-gradient(45deg, #f97316, #ec4899, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 p-6 md:p-12 max-w-4xl mx-auto">
-    <a href="/" class="text-blue-600 font-bold mb-6 inline-block">← Back to MyToolX</a>
-    <h1 class="text-3xl font-black mb-4">About MyToolX</h1>
-    <p class="mb-4">MyToolX is a free suite of client-side web utility tools designed for freelancers, developers, writers, and students. We focus on speed, privacy, and zero registration requirements.</p>
-    <h2 class="text-xl font-bold mt-6 mb-2">Contact Information</h2>
-    <p>Email: support@mytoolx.org</p>
+<body class="bg-gradient-to-br from-slate-100 via-blue-50/50 to-indigo-50/30 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- Header Navbar -->
+    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2">
+            
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 rounded-xl text-slate-700 text-xs font-bold transition flex items-center gap-1 shrink-0">
+                    ← <span class="hidden sm:inline">Back to MyToolX</span>
+                </a>
+
+                <a href="index.html" class="flex items-center space-x-1.5 group cursor-pointer select-none shrink-0">
+                    <div class="logo-box-3d w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-all">
+                        <span class="text-base sm:text-xl filter drop-shadow">🧰</span>
+                    </div>
+                    <span class="text-lg sm:text-2xl font-black tracking-tight flex items-center">
+                        <span class="logo-text-my">My</span>
+                        <span class="logo-text-toolx ml-0.5">ToolX</span>
+                    </span>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-1.5 shrink-0">
+                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition whitespace-nowrap">
+                    💼 Remote Jobs ↗
+                </a>
+
+                <a href="https://mali1.pythonanywhere.com/" target="_blank" class="text-xs font-bold bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-3 py-1.5 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap">
+                    📄 Live CV ↗
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-3xl mx-auto px-4 py-10 w-full flex-grow">
+        
+        <nav class="text-xs font-semibold text-slate-500 mb-6 flex items-center gap-1">
+            <a href="index.html" class="hover:text-blue-600">Home</a>
+            <span>/</span>
+            <span class="text-slate-800 font-bold">About Us</span>
+        </nav>
+
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-200/80 p-6 sm:p-10 mb-10 space-y-6">
+            <h1 class="text-2xl sm:text-3xl font-black text-slate-900 border-b border-slate-100 pb-4">
+                ℹ️ About MyToolX
+            </h1>
+
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                MyToolX is a modern, free suite of client-side web utility tools engineered for freelancers, developers, writers, students, and everyday internet users. We focus on delivering high-speed execution, seamless user experience, and 100% data privacy with zero registration required.
+            </p>
+
+            <div class="border-t border-slate-100 pt-6">
+                <h2 class="text-lg font-bold text-slate-900 mb-2">🔒 Privacy-First Architecture</h2>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Unlike standard web services that process your sensitive data on external servers, all calculations and transformations on MyToolX run locally inside your web browser. Your inputs, codes, images, and text never leave your device.
+                </p>
+            </div>
+
+            <div class="border-t border-slate-100 pt-6">
+                <h2 class="text-lg font-bold text-slate-900 mb-2">📬 Contact Information</h2>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    If you have feedback, feature requests, or technical bug reports, please reach out to us via our <a href="contact.html" class="text-blue-600 font-bold hover:underline">Official Contact Form</a>.
+                </p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs font-semibold text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 MyToolX. All rights reserved. Tools run client-side for 100% privacy.</p>
+            <div class="flex items-center gap-4 text-slate-600 font-bold">
+                <a href="index.html" class="hover:text-blue-600">Home</a>
+                <a href="privacy.html" class="hover:text-blue-600">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-blue-600">Terms of Service</a>
+                <a href="about.html" class="hover:text-blue-600 text-blue-600">About Us</a>
+                <a href="contact.html" class="hover:text-blue-600">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
