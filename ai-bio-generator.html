@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Social & Freelance Bio Generator | MyToolX</title>
-    <meta name="description" content="Free online AI Bio Generator. Create LinkedIn headlines, Upwork bios, and Instagram portfolios instantly.">
+    <title>Free Bio Generator for LinkedIn, X, Upwork & Instagram | MyToolX</title>
+    <meta name="description" content="Free bio generator for LinkedIn, X, Upwork and Instagram. Enter your role and skills to get platform-sized bios with character counts. No sign-up.">
     <link rel="canonical" href="https://mytoolx.org/ai-bio-generator.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:title" content="Free Bio Generator for LinkedIn, X, Upwork & Instagram | MyToolX">
+    <meta property="og:description" content="Turn your role and skills into platform-sized bios with character counts. Free, in your browser.">
+    <meta property="og:url" content="https://mytoolx.org/ai-bio-generator.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Free Bio Generator for LinkedIn, X, Upwork & Instagram | MyToolX">
+    <meta name="twitter:description" content="Turn your role and skills into platform-sized bios with character counts. Free, in your browser.">
+
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,32 +23,13 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "SoftwareApplication",
-          "name": "MyToolX AI Social & Freelance Bio Generator",
-          "operatingSystem": "All",
-          "applicationCategory": "EducationalApplication",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          }
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "How does the AI Bio Generator work?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Type your role or primary skill, select a platform style (LinkedIn, X/Upwork, Instagram), and click Generate Bios."
-              }
-            }
-          ]
-        }
-      ]
+      "@type": "WebApplication",
+      "name": "MyToolX Social & Freelance Bio Generator",
+      "url": "https://mytoolx.org/ai-bio-generator.html",
+      "description": "Browser-based bio generator for LinkedIn, X, Upwork and Instagram that fits character limits. Uses local rules, not an AI model.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
     }
     </script>
 
@@ -121,11 +111,11 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 <div>
-                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">YOUR ROLE / PRIMARY SKILL</label>
-                    <input type="text" id="bioRole" placeholder="e.g. Fullstack Developer, Student Researcher" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50/30 text-xs font-medium text-slate-800">
+                    <label for="bioRole" class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">YOUR ROLE / PRIMARY SKILL</label>
+                    <input type="text" id="bioRole" maxlength="200" autocomplete="off" placeholder="e.g. Fullstack Developer, Student Researcher" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50/30 text-xs font-medium text-slate-800">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">PLATFORM STYLE</label>
+                    <label for="bioStyle" class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">PLATFORM STYLE</label>
                     <select id="bioStyle" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50/50 text-xs font-semibold text-slate-800 focus:ring-2 focus:ring-purple-500">
                         <option value="linkedin">LinkedIn Headline & Bio</option>
                         <option value="upwork">X / Upwork Bio</option>
@@ -140,7 +130,7 @@
                 </button>
             </div>
 
-            <div id="bioOutput" class="w-full p-4 bg-[#0f172a] text-slate-300 font-mono text-xs sm:text-sm rounded-2xl border border-slate-800 shadow-inner min-h-[120px] mb-3 leading-relaxed whitespace-pre-wrap">Generated bios...</div>
+            <div id="bioOutput" role="status" aria-live="polite" class="w-full p-4 bg-[#0f172a] text-slate-300 font-mono text-xs sm:text-sm rounded-2xl border border-slate-800 shadow-inner min-h-[120px] mb-3 leading-relaxed whitespace-pre-wrap">Generated bios...</div>
 
             <div class="flex justify-end">
                 <button onclick="copyBioText()" class="px-5 py-2.5 bg-[#1e293b] hover:bg-slate-800 text-white font-bold rounded-xl text-xs transition flex items-center gap-1.5">
@@ -152,37 +142,42 @@
 
         <!-- SEO Article Content (Rich & Expanded Content) -->
 <article class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10 text-slate-700 space-y-6">
-    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">Craft Impactful Social & Freelance Profiles</h2>
-    
+    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">Write a Clear Bio for LinkedIn, X, Upwork and Instagram</h2>
+
     <p class="text-sm leading-relaxed text-slate-600">
-        In today's digital economy, your online profile bio serves as your personal landing page and digital business card. Whether you are pitching high-ticket clients on Upwork, building a professional personal brand on LinkedIn, or optimizing your Twitter/X and Instagram bio for engagement, having a sharp, targeted, and value-driven summary is essential to convert casual profile visitors into paying clients or followers.
+        Your bio is often the first thing a client, recruiter or follower reads. It should say who you are, what you do and how to get in touch, in the space each platform allows. This generator turns your role and skills into ready-to-edit bios for each platform and checks the character limits for you. It uses only the details you type, so nothing is made up about your experience.
     </p>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
         <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-2xl">
-            <h3 class="font-bold text-slate-900 text-sm mb-1">💼 LinkedIn & Upwork Profiles</h3>
-            <p class="text-xs text-slate-600">Emphasize your key skill stack, past accomplishments, specialized niche, and clear value proposition to attract recruiters and hiring clients.</p>
+            <h3 class="font-bold text-slate-900 text-sm mb-1">💼 LinkedIn & Upwork</h3>
+            <p class="text-xs text-slate-600">LinkedIn: two headline options (220-character limit) plus an About section. Upwork: a short overview you can build on, plus a 160-character X bio.</p>
         </div>
         <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-2xl">
-            <h3 class="font-bold text-slate-900 text-sm mb-1">📱 Twitter/X & Instagram Bios</h3>
-            <p class="text-xs text-slate-600">Generate punchy, high-impact short-form bios with emojis, relevant hashtags, and calls-to-action (CTA) fitted within strict platform character limits.</p>
+            <h3 class="font-bold text-slate-900 text-sm mb-1">📱 X & Instagram</h3>
+            <p class="text-xs text-slate-600">Short bios that fit 160 characters (X) and 150 characters (Instagram), with the character count shown for each version.</p>
         </div>
     </div>
 
-    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">Anatomy of a High-Converting Profile Summary</h3>
-    <p class="text-sm leading-relaxed text-slate-600">
-        A successful freelance or social media summary follows a proven narrative framework:
-    </p>
+    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">How to Use the Bio Generator</h3>
+    <ol class="list-decimal pl-5 text-xs sm:text-sm text-slate-600 space-y-2">
+        <li>Type your role first, then your main skills separated by commas. You can add experience too, for example: <em>Web Developer, React, Node.js, 5 years</em>.</li>
+        <li>Choose a platform style: LinkedIn, X / Upwork or Instagram. The result updates when you change the style.</li>
+        <li>Click <strong>Generate Bios</strong> (or press Enter), then <strong>Copy Bios</strong> and paste the text into your profile.</li>
+        <li>Edit the result: add one or two real results, projects or clients so your bio stands out.</li>
+    </ol>
+
+    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">What a Strong Bio Includes</h3>
     <ul class="list-disc pl-5 text-xs sm:text-sm text-slate-600 space-y-2">
-        <li><strong>The Hook & Title:</strong> Instantly states who you are and the exact problem you solve (e.g., <em>Full-Stack Developer building scalable SaaS products</em>).</li>
-        <li><strong>Core Competencies & Stack:</strong> Highlights your primary technical frameworks, languages, or specialized services.</li>
-        <li><strong>Proof & Results:</strong> Mentions key metrics, years of experience, or client achievements to build immediate authority.</li>
-        <li><strong>Call to Action (CTA):</strong> Invites potential clients to book a call, view your portfolio, or reach out directly.</li>
+        <li><strong>Who you are:</strong> your role or niche in the first few words, such as <em>Web Developer</em> rather than a vague title.</li>
+        <li><strong>What you work with:</strong> three to five skills, tools or services that clients search for.</li>
+        <li><strong>Proof:</strong> real numbers, projects or years of experience. Only claim badges, rankings or results you can show.</li>
+        <li><strong>A next step:</strong> a short invitation to connect, message you or view your portfolio.</li>
     </ul>
 
-    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">Client-Side Privacy Guarantee</h3>
+    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">Privacy</h3>
     <p class="text-sm leading-relaxed text-slate-600">
-        All bio compilations and template structuring on MyToolX happen 100% locally in your web browser. Your professional details, project stats, and personal career notes are never logged, uploaded to remote databases, or shared with third parties.
+        Your bio is generated by JavaScript in your browser. What you type is not sent to MyToolX servers and is not stored. This page loads Tailwind CSS and Google AdSense from third parties, which may set cookies as described in our <a href="privacy.html" class="text-blue-600 font-semibold hover:underline">Privacy Policy</a>.
     </p>
 </article>
 
@@ -190,32 +185,35 @@
 <section class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10">
     <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">Frequently Asked Questions (FAQs)</h2>
     <div class="space-y-4">
-        
         <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">How does the Profile Bio Generator work?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">The generator takes your input parameters (such as primary job role, key skills, tone of voice, and platform format) and structures them into optimized, high-converting professional bio templates directly within your browser.</p>
+            <h3 class="text-sm font-bold text-slate-900 mb-1">How does the Bio Generator work?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">You type your role, optionally followed by skills and years of experience separated by commas, and choose LinkedIn, X / Upwork or Instagram. The tool arranges your details into bios that fit each platform's limits using built-in rules in your browser, not an AI model.</p>
         </div>
 
         <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">Is this tool completely free to use?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Yes, 100% free with no registration, subscription fees, or account creation required. You can generate and customize unlimited profile bios instantly.</p>
+            <h3 class="text-sm font-bold text-slate-900 mb-1">Is this tool free?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Yes. It is free with no registration or subscription, and you can generate as many bios as you like.</p>
         </div>
 
         <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">What platforms are these bio templates optimized for?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">The templates cater specifically to character limits and formatting standards of Upwork summaries, LinkedIn Headlines & 'About' sections, Twitter/X bios, GitHub profile READMEs, and Instagram bio lines.</p>
+            <h3 class="text-sm font-bold text-slate-900 mb-1">What platforms does it cover?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">LinkedIn (headline and About section), X and Upwork (a short X bio and an Upwork overview) and Instagram. The character limits used are 220 for a LinkedIn headline, 160 for an X bio and 150 for an Instagram bio. Platforms can change their limits, so check the app before publishing.</p>
         </div>
 
         <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">Is my career or personal information saved anywhere?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">No. All data processing occurs client-side using JavaScript inside your web browser. Nothing is ever sent to or stored on external servers.</p>
+            <h3 class="text-sm font-bold text-slate-900 mb-1">Is my information saved anywhere?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">No. The text you type is processed in your browser and is not sent to our servers or stored. The page itself loads Tailwind CSS and Google AdSense from third parties.</p>
         </div>
 
         <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">How long should a professional Upwork or LinkedIn bio be?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">For Upwork overview proposals, aim for 150-250 words that focus heavily on client benefits. For LinkedIn, keep your headline concise (under 220 characters) and your 'About' section around 200-300 words structured with bullet points.</p>
+            <h3 class="text-sm font-bold text-slate-900 mb-1">Why is my bio so short?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">The generator only uses what you provide. Add skills and years of experience separated by commas for a fuller result, then add your own projects and results.</p>
         </div>
 
+        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
+            <h3 class="text-sm font-bold text-slate-900 mb-1">How long should an Upwork or LinkedIn bio be?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Keep a LinkedIn headline under 220 characters. For the About section and Upwork overview, a few short paragraphs or bullets that cover who you are, what you do and how to contact you usually work well. Add specific results so it reads as a real profile.</p>
+        </div>
     </div>
 </section>
 
@@ -223,7 +221,7 @@
 
     <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs font-semibold text-slate-500">
     <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p>&copy; 2026 MyToolX. All rights reserved. Tools run client-side for 100% privacy.</p>
+        <p>&copy; 2026 MyToolX. All rights reserved. Text you enter in this tool is processed in your browser.</p>
         <div class="flex items-center gap-4 text-slate-600 font-bold">
             <a href="index.html" class="hover:text-blue-600">Home</a>
             <a href="privacy.html" class="hover:text-blue-600">Privacy Policy</a>
@@ -236,29 +234,122 @@
 
     <!-- ENGINE LOGIC -->
     <script>
-        function generateBioText() {
-            const role = document.getElementById('bioRole').value.trim() || "Fullstack Developer";
-            const style = document.getElementById('bioStyle').value;
-            const out = document.getElementById('bioOutput');
+        (function () {
+            'use strict';
+            var EMPTY = 'Generated bios...';
+            var hasResult = false, copyText = '';
+            var input = document.getElementById('bioRole');
+            var styleSel = document.getElementById('bioStyle');
+            var out = document.getElementById('bioOutput');
+            var copyBtn = document.querySelector('button[onclick="copyBioText()"]');
+            var copyLabel = copyBtn ? copyBtn.innerHTML : '';
+            var copyTimer = null;
 
-            if (style === 'linkedin') {
-                out.textContent = `💼 LinkedIn Headline & Bio:\n${role} | Passionate about building modern, high-performance web applications and solving complex problems.\n\nConnecting developers, creators, and innovators! 🚀`;
-            } else if (style === 'upwork') {
-                out.textContent = `🎯 Upwork / X Bio:\nTop-Rated ${role} 🚀 | Delivering clean code, fast turnaround times, and high ROI for global clients | Let's connect & collaborate! 👇`;
-            } else if (style === 'instagram') {
-                out.textContent = `📸 Instagram Portfolio Bio:\n${role} ⚡\n✨ Turning ideas into digital reality\n💻 Web & Tech Solutions\n📩 DM for collaborations!`;
+            var clean = function (s) { return (s || '').replace(/\s+/g, ' ').trim(); };
+            var cap = function (s) { return s ? s.charAt(0).toUpperCase() + s.slice(1) : s; };
+            var len = function (s) { return Array.from(s).length; };
+            var an = function (s) { return (/^[aeiou]/i.test(s) ? 'an ' : 'a ') + s; };
+            var SMALL = /^(a|an|the|and|or|of|to|in|on|for|with|at|by)$/i;
+            function titleCase(s) { return s !== s.toLowerCase() ? s : s.split(' ').map(function (w, i) { return i && SMALL.test(w) ? w : cap(w); }).join(' '); }
+            function joinList(a) { return a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' and ' + a[a.length - 1]; }
+            function uniq(a) { var seen = {}; return a.filter(function (x) { var k = x.toLowerCase(); return k && !seen[k] && (seen[k] = 1); }); }
+            function trimTo(s, max) {
+                if (len(s) <= max) return s;
+                var chars = Array.from(s).slice(0, max - 1).join('').replace(/\s+\S*$/, '');
+                return chars.replace(/[\s,;:|\-–]+$/, '') + '…';
             }
-        }
+            /* Build the longest version that still fits the limit by dropping skills one at a time */
+            function fitSkills(max, build, skills) {
+                for (var n = skills.length; n >= 0; n--) { var t = build(skills.slice(0, n)); if (len(t) <= max) return t; }
+                return trimTo(build([]), max);
+            }
 
-        function clearBioGen() {
-            document.getElementById('bioRole').value = '';
-            document.getElementById('bioOutput').textContent = 'Generated bios...';
-        }
+            function parse(raw) {
+                var parts = raw.split(/[,;|\n]+/).map(clean).filter(Boolean), exp = '', rest = [];
+                parts.forEach(function (p, i) {
+                    var m = p.match(/^(\d{1,2})\+?\s*(?:years?|yrs?)(?:\s+of)?(?:\s+experience)?$/i);
+                    if (m && i > 0) exp = m[1]; else rest.push(p);
+                });
+                return { role: titleCase(rest[0] || ''), skills: uniq(rest.slice(1)).slice(0, 6), exp: exp };
+            }
+            function show(text, ok, forCopy) {
+                out.textContent = text; hasResult = !!ok; copyText = ok ? (forCopy || text) : '';
+                out.className = out.className.replace(/\btext-red-300\b/g, '').replace(/\s+/g, ' ');
+                if (!ok && text !== EMPTY) out.className += ' text-red-300';
+            }
+            function flashCopy(msg) {
+                if (!copyBtn) return;
+                copyBtn.textContent = msg; clearTimeout(copyTimer);
+                copyTimer = setTimeout(function () { copyBtn.innerHTML = copyLabel; }, 1800);
+            }
+            var CTA = 'DM to collaborate';
 
-        function copyBioText() {
-            const txt = document.getElementById('bioOutput').textContent;
-            if (txt && txt !== 'Generated bios...') navigator.clipboard.writeText(txt);
-        }
+            function linkedin(d) {
+                var r = d.role, e = d.exp ? d.exp + '+ years of experience' : '';
+                var h1 = fitSkills(220, function (s) { return [r].concat(s.slice(0, 3), e ? [e] : []).join(' | '); }, d.skills);
+                var h2 = fitSkills(220, function (s) { return r + (s.length ? ' working with ' + joinList(s.slice(0, 3)) : '') + (e ? ' | ' + e : ''); }, d.skills);
+                var about = ['I am ' + an(r) + (e ? ' with ' + e : '') + (d.skills.length ? ', working with ' + joinList(d.skills) : '') + '.'];
+                if (d.skills.length) about.push('What I focus on:\n' + d.skills.map(function (s) { return '• ' + cap(s); }).join('\n'));
+                about.push('Feel free to connect or send me a message.');
+                var heads = uniq([h1, h2]);
+                var body = heads.map(function (h, i) { return 'HEADLINE ' + (i + 1) + ' (' + len(h) + '/220)\n' + h; }).join('\n\n') + '\n\nABOUT SECTION\n' + about.join('\n\n');
+                return { body: body, tips: 'Tip: add one or two real results from your work (numbers, clients, projects) to the About section. Check the current LinkedIn headline limit in the app.' };
+            }
+            function upwork(d) {
+                var r = d.role, e = d.exp ? d.exp + '+ years of experience' : '', yrs = d.exp ? d.exp + '+ yrs' : '';
+                var x = fitSkills(160, function (s) { return [r].concat(s.slice(0, 3).join(', ') || [], yrs || [], CTA).join(' | '); }, d.skills);
+                var ov = ['Hi, I am ' + an(r) + (e ? ' with ' + e : '') + '.'];
+                if (d.skills.length) ov.push('I can help with:\n' + d.skills.map(function (s) { return '• ' + cap(s); }).join('\n'));
+                ov.push('To get started, send me a short description of your project, your goals and your timeline, and I will reply with questions and next steps.');
+                var o = ov.join('\n\n'), words = clean(o).split(' ').length;
+                var body = 'X BIO (' + len(x) + '/160)\n' + x + '\n\nUPWORK OVERVIEW (about ' + words + ' words)\n' + o;
+                return { body: body, tips: 'Tip: a fuller Upwork overview works better. Add your real projects, results and the type of client you work with. Do not claim badges such as Top Rated unless you have earned them.' };
+            }
+            function instagram(d) {
+                var r = d.role;
+                var a = fitSkills(150, function (s) { return [r].concat(s.length ? [s.slice(0, 3).join(' • ')] : [], ['📩 ' + CTA]).join('\n'); }, d.skills);
+                var b = fitSkills(150, function (s) { return ['✨ ' + r].concat(s.length ? ['💡 ' + s.slice(0, 3).join(', ')] : [], ['📩 ' + CTA]).join('\n'); }, d.skills);
+                var v = uniq([a, b]);
+                return { body: v.map(function (t, i) { return 'BIO ' + (i + 1) + ' (' + len(t) + '/150)\n' + t; }).join('\n\n'), tips: 'Tip: add your location or portfolio link in the link field. Check the current Instagram bio limit in the app.' };
+            }
+
+            function generate() {
+                var raw = clean(input.value);
+                if (!raw) {
+                    input.setAttribute('aria-invalid', 'true'); input.classList.add('border-red-400'); input.focus();
+                    show('Please enter your role or main skill first, for example: Web Developer, React, Node.js, 5 years', false);
+                    return;
+                }
+                input.removeAttribute('aria-invalid'); input.classList.remove('border-red-400');
+                try {
+                    var d = parse(input.value), style = styleSel.value;
+                    var r = style === 'upwork' ? upwork(d) : style === 'instagram' ? instagram(d) : linkedin(d);
+                    show(r.body + '\n\n' + r.tips, true, r.body);
+                } catch (e) { console.error(e); show('Something went wrong. Please check your input and try again.', false); }
+            }
+            window.generateBioText = generate;
+            window.clearBioGen = function () {
+                input.value = ''; input.removeAttribute('aria-invalid'); input.classList.remove('border-red-400');
+                show(EMPTY, false); if (copyBtn) copyBtn.innerHTML = copyLabel;
+            };
+            window.copyBioText = function () {
+                if (!hasResult) { flashCopy('Generate bios first'); return; }
+                var txt = copyText;
+                function fallback() {
+                    var ta = document.createElement('textarea'); ta.value = txt; ta.setAttribute('readonly', ''); ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+                    document.body.appendChild(ta); ta.select();
+                    var ok = false; try { ok = document.execCommand('copy'); } catch (e) { }
+                    document.body.removeChild(ta);
+                    if (ok) flashCopy('✅ Copied!');
+                    else { var r = document.createRange(); r.selectNodeContents(out); var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); flashCopy('Press Ctrl+C to copy'); }
+                }
+                if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(txt).then(function () { flashCopy('✅ Copied!'); }, fallback);
+                else fallback();
+            };
+            input.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); generate(); } });
+            input.addEventListener('input', function () { if (input.getAttribute('aria-invalid')) { input.removeAttribute('aria-invalid'); input.classList.remove('border-red-400'); } });
+            styleSel.addEventListener('change', function () { if (hasResult && clean(input.value)) generate(); });   /* keep the result in sync with the selector */
+        })();
     </script>
 </body>
 </html>
