@@ -1,344 +1,633 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Prompt Studio & Content Suite | MyToolX</title>
-    <meta name="description" content="Free online AI Prompt Studio, Smart Humanizer, Social Media Post Generator, and YouTube SEO Optimizer.">
-    <link rel="canonical" href="https://mytoolx.org/prompt-studio.html">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free AI Prompt Generator & Content Tools | MyToolX Prompt Studio</title>
+<meta name="description" content="Free prompt generator for ChatGPT, Gemini, Claude, Copilot and Midjourney, plus a social media post generator and YouTube metadata optimizer. Runs in your browser, no account needed.">
+<link rel="canonical" href="https://mytoolx.org/prompt-studio.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MyToolX">
+<meta property="og:title" content="Free AI Prompt Generator & Content Tools | MyToolX">
+<meta property="og:description" content="Build structured AI prompts, draft social media posts and prepare YouTube metadata. Free, in your browser.">
+<meta property="og:url" content="https://mytoolx.org/prompt-studio.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free AI Prompt Generator & Content Tools | MyToolX">
+<meta name="twitter:description" content="Build structured AI prompts, draft social media posts and prepare YouTube metadata. Free, in your browser.">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "MyToolX Prompt Studio",
+  "url": "https://mytoolx.org/prompt-studio.html",
+  "description": "Browser-based prompt builder, social media post generator and YouTube metadata optimizer. Uses local rules, not an AI model.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
 
-    <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "SoftwareApplication",
-          "name": "MyToolX AI Prompt Studio Suite",
-          "operatingSystem": "All",
-          "applicationCategory": "EducationalApplication",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          }
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What AI models are supported?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Supports ChatGPT, Gemini, Midjourney, DALL-E, GitHub Copilot, and Claude."
-              }
-            }
-          ]
-        }
-      ]
-    }
-    </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
-
-    <style>
-        .logo-box-3d {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #a1c4fd 100%);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15), inset 0 2px 3px rgba(255, 255, 255, 0.8);
-            border: 2px solid #ffffff;
-        }
-        .logo-text-my {
-            background: -webkit-linear-gradient(45deg, #1e293b, #475569);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-        }
-        .logo-text-toolx {
-            background: -webkit-linear-gradient(45deg, #f97316, #ec4899, #8b5cf6, #06b6d4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-        }
-    </style>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#1e293b;background:linear-gradient(135deg,#f1f5f9,#eff6ff 50%,#eef2ff);line-height:1.5}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:56rem;margin:0 auto;padding:2rem 1rem;width:100%;flex:1}
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.93);backdrop-filter:blur(8px);border-bottom:1px solid #e2e8f0;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+.hdr{max-width:80rem;margin:0 auto;padding:.5rem .75rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem}
+.hdr-l,.hdr-r{display:flex;align-items:center;gap:.5rem}
+.pill{padding:.4rem .7rem;border-radius:.75rem;font-size:.75rem;font-weight:700;white-space:nowrap;display:inline-flex;align-items:center;gap:.25rem}
+.pill-back{background:#f1f5f9;color:#334155}.pill-back:hover{background:#e2e8f0}
+.pill-jobs{background:#059669;color:#fff}.pill-jobs:hover{background:#047857}
+.pill-cv{background:linear-gradient(90deg,#6366f1,#9333ea);color:#fff}
+.brand{display:flex;align-items:center;gap:.4rem;font-weight:900;font-size:1.25rem;letter-spacing:-.02em}
+.logo-box{width:2.25rem;height:2.25rem;border-radius:.75rem;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#ff9a9e,#fecfef 50%,#a1c4fd);box-shadow:0 6px 16px rgba(0,0,0,.15),inset 0 2px 3px rgba(255,255,255,.8);border:2px solid #fff}
+.logo-my{background:linear-gradient(45deg,#1e293b,#475569);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.logo-toolx{background:linear-gradient(45deg,#f97316,#ec4899,#8b5cf6,#06b6d4);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-left:2px}
+@media(max-width:420px){.pill{padding:.35rem .55rem;font-size:.7rem}.brand{font-size:1.1rem}}
+.hide-sm{display:none}
+@media(min-width:640px){.hide-sm{display:inline}.brand{font-size:1.5rem}.logo-box{width:2.5rem;height:2.5rem}}
+/* page */
+.crumbs{font-size:.75rem;font-weight:600;color:#64748b;margin-bottom:.75rem;display:flex;gap:.25rem}
+.crumbs a:hover{color:#2563eb}.crumbs b{color:#1e293b}
+h1{font-size:1.6rem;line-height:1.2;margin:0 0 .5rem;font-weight:900;color:#0f172a}
+.lead{margin:0 0 1.25rem;font-size:.9rem;color:#475569}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:1.5rem;box-shadow:0 10px 25px rgba(15,23,42,.08);padding:1.25rem;margin-bottom:2rem}
+@media(min-width:640px){.card{padding:2rem}}
+.card.plain{box-shadow:0 2px 6px rgba(15,23,42,.06)}
+h2{font-size:1.2rem;margin:0 0 .75rem;font-weight:800;color:#0f172a}
+.card p{font-size:.875rem;color:#475569;margin:.5rem 0}
+.toolbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.5rem;border-bottom:1px solid #f1f5f9;padding-bottom:1rem;margin-bottom:1.25rem}
+.tabs{display:flex;flex-wrap:wrap;gap:.5rem}
+.t-prompt{--c:#7e22ce}.t-social{--c:#be185d}.t-youtube{--c:#b91c1c}
+.tab{border:0;cursor:pointer;padding:.55rem .9rem;border-radius:.75rem;font:inherit;font-size:.8rem;font-weight:700;background:#f1f5f9;color:#475569}
+.tab:hover{background:#e2e8f0}
+.tab[aria-selected="true"]{background:var(--c);color:#fff;box-shadow:0 1px 2px rgba(0,0,0,.2)}
+.btn{border:0;cursor:pointer;font:inherit;font-size:.8rem;font-weight:700;padding:.65rem 1.2rem;border-radius:.75rem;color:#fff;background:#1e293b}
+.btn:hover{filter:brightness(1.15)}
+.btn-soft{background:#f1f5f9;color:#334155;padding:.5rem .9rem}.btn-soft:hover{background:#e2e8f0;filter:none}
+.go{background:var(--c)}
+:focus-visible{outline:3px solid #6366f1;outline-offset:2px}
+/* forms */
+.grid{display:grid;grid-template-columns:1fr;gap:1rem}
+@media(min-width:640px){.grid{grid-template-columns:1fr 1fr}.wide{grid-column:1/-1}}
+.fld-wrap[hidden],.panel[hidden]{display:none}
+label{display:block;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#475569;margin-bottom:.35rem}
+input,select,textarea{width:100%;font:inherit;font-size:.875rem;padding:.65rem .8rem;border:1px solid #cbd5e1;border-radius:.75rem;background:#f8fafc;color:#0f172a}
+textarea{resize:vertical;min-height:4.5rem}
+.help{font-size:.72rem;color:#64748b;margin:.3rem 0 0}
+.err{font-size:.75rem;font-weight:700;color:#b91c1c;margin:.3rem 0 0}
+.err[hidden]{display:none}
+input[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:#dc2626;background:#fef2f2}
+details.more{border:1px solid #e2e8f0;border-radius:.75rem;padding:.75rem}
+details.more summary{font-size:.8rem;font-weight:700;color:#475569;cursor:pointer}
+details.more .grid{margin-top:1rem}
+.panel{display:flex;flex-direction:column;gap:1rem}
+/* output */
+.out-head{display:flex;justify-content:space-between;gap:.5rem;margin-bottom:.4rem;font-size:.72rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.04em}
+#studioOutput{background:#0f172a;color:#e2e8f0;border:1px solid #1e293b;border-radius:1rem;padding:1rem;min-height:8rem;max-height:32rem;overflow:auto;font:.8rem/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
+#studioOutput.empty{color:#94a3b8}
+#outStatus{min-height:1.3rem;margin:.5rem 0 0;font-size:.78rem;font-weight:600;color:#475569}
+#outStatus.ok{color:#047857}#outStatus.warn{color:#b45309}#outStatus.bad{color:#b91c1c}
+.out-actions{display:flex;justify-content:flex-end;gap:.5rem;margin-top:.5rem;flex-wrap:wrap}
+.top-rule{border-top:1px solid #f1f5f9;margin-top:1.5rem;padding-top:1rem}
+.btn:disabled{opacity:.5;cursor:not-allowed;filter:none}
+.sec{margin-bottom:1rem}.sec:last-child{margin-bottom:0}
+.sec-h{display:flex;justify-content:space-between;align-items:center;gap:.5rem;margin-bottom:.35rem;font:700 .7rem/1.3 system-ui,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#94a3b8}
+.sec-b{white-space:pre-wrap;overflow-wrap:anywhere;color:#e2e8f0}.sec.opt .sec-b{color:#94a3b8}
+.sec-copy{background:#1e293b;color:#e2e8f0;border:1px solid #334155;border-radius:.5rem;padding:.3rem .7rem;font:700 .7rem system-ui,sans-serif;cursor:pointer;min-height:2rem;flex:none}
+.sec-copy:hover{background:#334155}
+.row{display:flex;gap:.5rem;align-items:flex-start;padding:.4rem 0;border-top:1px dashed #1e293b}
+.row-t{flex:1;min-width:0;overflow-wrap:anywhere}.row-m{flex:none;color:#94a3b8;font-size:.7rem;padding-top:.35rem}
+#studioOutput.stale{opacity:.75}
+@media(max-width:640px){input,select,textarea{font-size:16px}.btn,.tab{min-height:44px}.sec-copy{min-height:44px;padding:.3rem .9rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+/* content */
+.tool-list{padding-left:1.1rem;margin:.5rem 0;font-size:.875rem;color:#475569}.tool-list li{margin:.35rem 0}
+.faq-item{border:1px solid #e2e8f0;border-radius:1rem;padding:1rem;background:#f8fafc;margin-bottom:.75rem}
+.faq-item h3{font-size:.875rem;margin:0 0 .25rem;color:#0f172a}.faq-item p{margin:0;font-size:.85rem;color:#475569}
+footer{background:#fff;border-top:1px solid #e2e8f0;padding:1.5rem 1rem;font-size:.75rem;font-weight:600;color:#64748b}
+.ftr{max-width:80rem;margin:0 auto;display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:1rem;text-align:center}
+.ftr nav{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;font-weight:700;color:#475569}.ftr a:hover{color:#2563eb}
+@media(min-width:640px){.ftr{flex-direction:row}}
+</style>
 </head>
-<body class="bg-gradient-to-br from-slate-100 via-blue-50/50 to-indigo-50/30 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
-
-    <!-- Header Navbar -->
-    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2">
-            
-            <div class="flex items-center gap-2">
-                <a href="index.html" class="px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 rounded-xl text-slate-700 text-xs font-bold transition flex items-center gap-1 shrink-0">
-                    ← <span class="hidden sm:inline">All Tools</span>
-                </a>
-
-                <a href="index.html" class="flex items-center space-x-1.5 group cursor-pointer select-none shrink-0">
-                    <div class="logo-box-3d w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-all">
-                        <span class="text-base sm:text-xl filter drop-shadow">🧰</span>
-                    </div>
-                    <span class="text-lg sm:text-2xl font-black tracking-tight flex items-center">
-                        <span class="logo-text-my">My</span>
-                        <span class="logo-text-toolx ml-0.5">ToolX</span>
-                    </span>
-                </a>
-            </div>
-
-            <div class="flex items-center gap-1.5 shrink-0">
-                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition whitespace-nowrap">
-                    💼 Remote Jobs ↗
-                </a>
-
-                <a href="https://mali1.pythonanywhere.com/" target="_blank" class="text-xs font-bold bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-3 py-1.5 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap">
-                    📄 Live CV ↗
-                </a>
-            </div>
-
-        </div>
-    </header>
-
-    <!-- Main Container -->
-    <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow">
-        
-        <nav class="text-xs font-semibold text-slate-500 mb-4 flex items-center gap-1">
-            <a href="index.html" class="hover:text-blue-600">Home</a>
-            <span>/</span>
-            <span class="text-slate-800 font-bold">AI Prompt Studio & Suite</span>
-        </nav>
-
-        <!-- Tool Card Panel -->
-        <div class="bg-white rounded-3xl shadow-xl border border-slate-200/80 p-6 sm:p-8 mb-10">
-            
-            <!-- 4 Multi-Tool Tabs Navigation -->
-            <div class="flex flex-wrap items-center justify-between border-b border-slate-100 pb-4 mb-6 gap-2">
-                <div class="flex flex-wrap items-center gap-2">
-                    <button id="tabPromptBtn" onclick="switchStudioTab('prompt')" class="px-4 py-2 bg-purple-600 text-white text-xs font-bold rounded-xl shadow-sm transition">
-                        🤖 Prompt Studio
-                    </button>
-                    <button id="tabHumanBtn" onclick="switchStudioTab('human')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-xl transition">
-                        ✨ Smart Humanizer
-                    </button>
-                    <button id="tabSocialBtn" onclick="switchStudioTab('social')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-xl transition">
-                        📱 Social Media Post
-                    </button>
-                    <button id="tabYoutubeBtn" onclick="switchStudioTab('youtube')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-xl transition">
-                        ▶️ YouTube SEO
-                    </button>
-                </div>
-                <button onclick="clearStudio()" class="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
-            </div>
-
-            <!-- TAB 1: PROMPT STUDIO CONTENT -->
-            <div id="contentPrompt" class="space-y-4">
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">TARGET MODEL</label>
-                        <select id="pModel" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50/50 text-xs font-semibold text-slate-800">
-                            <option value="chatgpt">ChatGPT / Gemini</option>
-                            <option value="midjourney">Midjourney / DALL-E</option>
-                            <option value="github">GitHub Copilot / Claude</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">ROLE / PERSONA</label>
-                        <input type="text" id="pRole" placeholder="e.g. Senior Freelance Copywriter" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50/50 text-xs font-medium text-slate-800">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">TONE & STYLE</label>
-                        <input type="text" id="pStyle" placeholder="e.g. High-Converting, Academic" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50/50 text-xs font-medium text-slate-800">
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">CORE TASK / CLIENT PROPOSAL</label>
-                    <textarea id="pInput" rows="4" class="w-full p-4 border border-slate-200 rounded-2xl bg-slate-50/30 text-xs font-medium text-slate-800" placeholder="Describe project or topic... e.g. freelancing career"></textarea>
-                    <div class="mt-3">
-                        <button onclick="runPromptStudio()" class="px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-xl text-xs transition">⚡ Generate Prompt</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB 2: SMART HUMANIZER CONTENT -->
-            <div id="contentHuman" class="hidden space-y-4">
-                <div>
-                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">PASTE TEXT TO HUMANIZE</label>
-                    <textarea id="hInput" rows="5" class="w-full p-4 border border-slate-200 rounded-2xl bg-slate-50/30 text-xs font-medium text-slate-800" placeholder="e.g. tell me the real human what to think properly"></textarea>
-                    <div class="mt-3">
-                        <button onclick="runHumanizer()" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs transition flex items-center gap-1.5">
-                            ✨ Humanize Text
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB 3: SOCIAL MEDIA POST CONTENT -->
-            <div id="contentSocial" class="hidden space-y-4">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">PLATFORM</label>
-                        <select id="sPlatform" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50/50 text-xs font-semibold text-slate-800">
-                            <option value="linkedin">LinkedIn Pitch / Post</option>
-                            <option value="twitter">X / Twitter Thread</option>
-                            <option value="instagram">Instagram Reel Caption</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">MAIN NICHE / SERVICE</label>
-                        <input type="text" id="sNiche" placeholder="e.g. Web Development, Remote Student Hacks" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50/50 text-xs font-medium text-slate-800">
-                    </div>
-                </div>
-                <div class="mt-3">
-                    <button onclick="runSocialPost()" class="px-6 py-2.5 bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-xl text-xs transition flex items-center gap-1.5">
-                        📱 Generate Post
-                    </button>
-                </div>
-            </div>
-
-            <!-- TAB 4: YOUTUBE SEO CONTENT -->
-            <div id="contentYoutube" class="hidden space-y-4">
-                <div>
-                    <input type="text" id="yInput" placeholder="e.g. How to get Freelance Clients in 2026" class="w-full p-3.5 border border-slate-200 rounded-2xl bg-slate-50/30 text-xs font-medium text-slate-800 mb-3">
-                    <button onclick="runYoutubeSEO()" class="px-6 py-2.5 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl text-xs transition flex items-center gap-1.5">
-                        ▶️ Generate Titles & Tags
-                    </button>
-                </div>
-            </div>
-
-            <!-- Unified Output Terminal -->
-            <div class="mt-6 pt-4 border-t border-slate-100">
-                <div id="studioOutput" class="w-full p-4 bg-[#0f172a] text-slate-300 font-mono text-xs sm:text-sm rounded-2xl border border-slate-800 shadow-inner min-h-[120px] mb-3 leading-relaxed whitespace-pre-wrap">Generated prompt...</div>
-                <div class="flex justify-end">
-                    <button onclick="copyOutputText()" class="px-5 py-2.5 bg-[#1e293b] hover:bg-slate-800 text-white font-bold rounded-xl text-xs transition flex items-center gap-1.5">
-                        📋 Copy Output
-                    </button>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- SEO Article Section -->
-        <article class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10 text-slate-700 space-y-6">
-            <div class="border-b border-slate-100 pb-4">
-                <h2 class="text-xl font-bold text-slate-900">🎨 Complete AI Prompt & Content Suite</h2>
-                <p class="text-sm leading-relaxed mt-2 text-slate-600">
-                    An all-in-one workstation for AI prompt engineering across ChatGPT, Gemini, Claude, and GitHub Copilot.
-                </p>
-            </div>
-        </article>
-
-        <!-- Expanded FAQs Section for Prompt Studio -->
-<section class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10">
-    <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">Frequently Asked Questions (FAQs)</h2>
-    <div class="space-y-4">
-        
-        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">Is this AI Prompt Studio tool free and private to use?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Yes, 100% free. All prompt templates, variable insertions, and text formatting are calculated locally in your browser (client-side). Your generated prompts and custom variables are never uploaded or stored on any server.</p>
-        </div>
-
-        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">Which Large Language Models (LLMs) are compatible with these prompts?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">The engineered prompts generated by MyToolX are model-agnostic. They are structured to deliver high-quality responses across all major AI systems, including OpenAI ChatGPT (GPT-4o), Google Gemini, Anthropic Claude, Meta Llama, and GitHub Copilot.</p>
-        </div>
-
-        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">What is prompt engineering and why is it important?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Prompt engineering is the practice of crafting structured instructions (role, context, constraints, and output format) to guide generative AI models. Well-structured prompts reduce AI hallucinations, improve response accuracy, and produce actionable outputs.</p>
-        </div>
-
-        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">Can I customize the generated prompt variables?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Yes. You can edit input fields like role, target audience, tone of voice, output length, and specific constraints. The studio automatically compiles these parameters into a clean, ready-to-copy master prompt.</p>
-        </div>
-
-        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">Do I need an account or API key to use Prompt Studio?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">No account, registration, or API key is required. You can generate, customize, and copy unlimited prompts directly from your browser screen.</p>
-        </div>
-
+<body>
+<header class="site-header">
+  <div class="hdr">
+    <div class="hdr-l">
+      <a href="index.html" class="pill pill-back">← <span class="hide-sm">All Tools</span></a>
+      <a href="index.html" class="brand" aria-label="MyToolX home">
+        <span class="logo-box" aria-hidden="true">🧰</span>
+        <span><span class="logo-my">My</span><span class="logo-toolx">ToolX</span></span>
+      </a>
     </div>
-</section>
-
-    </main>
-
-    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs font-semibold text-slate-500">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p>&copy; 2026 MyToolX. All rights reserved. Tools run client-side for 100% privacy.</p>
-        <div class="flex items-center gap-4 text-slate-600 font-bold">
-            <a href="index.html" class="hover:text-blue-600">Home</a>
-            <a href="privacy.html" class="hover:text-blue-600">Privacy Policy</a>
-            <a href="terms.html" class="hover:text-blue-600">Terms of Service</a>
-            <a href="about.html" class="hover:text-blue-600">About Us</a>
-            <a href="contact.html" class="hover:text-blue-600">Contact Us</a>
-        </div>
+    <div class="hdr-r">
+      <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&amp;utm_source=referral&amp;utm_medium=share&amp;utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="pill pill-jobs">💼 Remote Jobs ↗</a>
+      <a href="https://mali1.pythonanywhere.com/" target="_blank" rel="noopener" class="pill pill-cv">📄 Live CV ↗</a>
     </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><b aria-current="page">Prompt Studio</b></nav>
+  <h1>AI Prompt Studio &amp; Content Tools</h1>
+  <p class="lead">Three free tools that run in your browser: a prompt builder for AI apps, a social post generator and a YouTube metadata optimizer. They use built-in rules, not an AI model, so the results are drafts for you to review.</p>
+
+  <section class="card" aria-label="Tools">
+    <div class="toolbar">
+      <div class="tabs" role="tablist" aria-label="Choose a tool">
+        <button type="button" role="tab" id="tab-prompt" aria-controls="panel-prompt" data-tab="prompt" class="tab t-prompt">🤖 Prompt Studio</button>
+        <button type="button" role="tab" id="tab-social" aria-controls="panel-social" data-tab="social" class="tab t-social">📱 Social Post</button>
+        <button type="button" role="tab" id="tab-youtube" aria-controls="panel-youtube" data-tab="youtube" class="tab t-youtube">▶️ YouTube Metadata</button>
+      </div>
+      <button type="button" id="clearBtn" class="btn btn-soft">Clear</button>
+    </div>
+    <noscript><p class="err">These tools need JavaScript. Please enable it in your browser.</p></noscript>
+    <div id="panels"></div>
+
+    <div class="top-rule">
+      <div class="out-head"><span>Output</span><span id="outSource"></span></div>
+      <div id="studioOutput" class="empty" tabindex="0" role="region" aria-label="Generated output">Your result will appear here. Fill in a tool above and press Generate.</div>
+      <p id="outStatus" role="status" aria-live="polite"></p>
+      <div class="out-actions">
+        <button type="button" id="selBtn" class="btn btn-soft">Select all</button>
+        <button type="button" id="copyBtn" class="btn">📋 Copy output</button>
+      </div>
+    </div>
+  </section>
+
+  <article class="card plain">
+    <h2>What each tool does and how to use it</h2>
+    <ul class="tool-list">
+      <li><strong>Prompt Studio</strong> builds a structured prompt (role, task, context, requirements, output format and a final check) for the task type you choose: writing, programming, business, marketing, research, education, image generation or YouTube content. Describe what you need, add optional details, generate, then paste the prompt into your AI app. It prepares instructions; it does not answer them. For Midjourney it adds <code>--ar</code> and <code>--no</code> parameters; for other tools it uses plain wording.</li>
+      <li><strong>Social Post Generator</strong> drafts a LinkedIn post, an X post or thread, or an Instagram Reel caption from your topic, key points, audience, objective, tone and call to action. It only uses the facts you give it and never invents statistics or trends. For X it keeps the call to action and removes hashtags first when a post is too long.</li>
+      <li><strong>YouTube Metadata Optimizer</strong> drafts title options, a description, tags, hashtags, an opening hook, a pinned comment and a checklist. It does not check search volume, competition or rankings; confirm keywords in YouTube Studio or YouTube search suggestions. Chapters are created only from timestamps you enter.</li>
+    </ul>
+    <p><strong>Example:</strong> for a LinkedIn post, enter the topic "fast websites for small businesses", add two real benefits as key points, choose Educate, and keep or replace the default call to action. You get a ready-to-edit post plus alternative opening lines.</p>
+  </article>
+
+  <section class="card plain" aria-labelledby="faqh">
+    <h2 id="faqh">Frequently Asked Questions</h2>
+    <div class="faq-item"><h3>Does this tool give real AI answers?</h3><p>No. The Prompt Studio prepares prompts for apps such as ChatGPT, Gemini, Claude, GitHub Copilot, Midjourney or DALL·E. The social and YouTube tools use fixed rules and templates, not an AI model.</p></div>
+    <div class="faq-item"><h3>Is my text uploaded anywhere?</h3><p>The text you type is processed in your browser by this page's code and is not sent to MyToolX servers or any AI service, and it is not saved. The page itself loads Google AdSense, which may use cookies as described in our Privacy Policy.</p></div>
+    <div class="faq-item"><h3>Is it free? Do I need an account or API key?</h3><p>It is free, and no account, subscription or API key is needed.</p></div>
+    <div class="faq-item"><h3>Which AI apps can use the prompts?</h3><p>Text prompts work in chat assistants such as ChatGPT, Gemini and Claude, and in GitHub Copilot Chat. Image prompts are written for Midjourney or general image generators. Different models can give different results, and no outcome is guaranteed.</p></div>
+    <div class="faq-item"><h3>How does the tool shorten X posts?</h3><p>It keeps your main message and call to action, then removes hashtags first, then the optional extra point, and finally trims wording at a word boundary. The count shown is for the exact text you copy and is approximate because X counts links and emoji in its own way.</p></div>
+    <div class="faq-item"><h3>Are the YouTube suggestions based on search data?</h3><p>No. They come only from the topic, keywords and details you enter. The tool never reports search volume, competition or trends and cannot promise rankings or views.</p></div>
+    <div class="faq-item"><h3>Why do posts or metadata sometimes need editing?</h3><p>The generators only use what you provide and never invent facts, results or testimonials. The more specific your key points are, the more specific the draft will be.</p></div>
+  </section>
+</main>
+
+<footer>
+  <div class="ftr">
+    <p>&copy; 2026 MyToolX. All rights reserved. Text you enter in these tools is processed in your browser.</p>
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="about.html">About Us</a><a href="contact.html">Contact Us</a>
+    </nav>
+  </div>
 </footer>
 
-    <!-- MULTI-TAB ENGINE -->
-    <script>
-        let currentTab = 'prompt';
+<script>
+(function () {
+'use strict';
+/* ---------- shared helpers ---------- */
+const clean = s => (s || '').replace(/\s+/g, ' ').trim();
+const lines = s => (s || '').split('\n').map(clean).filter(Boolean);
+const cap = s => s ? s[0].toUpperCase() + s.slice(1) : s;
+const an = s => (/^[aeiou]/i.test(s) ? 'an ' : 'a ') + s;
+const len = s => [...s].length;
+const endp = s => /[.!?…]$/.test(s) ? s : s + '.';
+const bullets = (a, m) => a.map(x => (m || '- ') + x).join('\n');
+const SMALL = /^(a|an|the|and|or|of|to|in|on|for|with|vs|is|at|by)$/;
+const titleCase = s => clean(s).split(' ').map((w, i) => (/[A-Z]/.test(w) || (i && SMALL.test(w))) ? w : cap(w)).join(' ');
+const tag = s => '#' + clean(s).replace(/[^\p{L}\p{N}\s]/gu, '').split(' ').filter(Boolean).map(cap).join('');
+const uniq = (a, key) => { const seen = new Set(); return a.filter(x => { const k = (key ? key(x) : x).toLowerCase(); return k && !seen.has(k) && seen.add(k); }); };
+function hashtags(user, sources, n) {
+  let list = clean(user).split(/[\s,]+/).filter(Boolean).map(h => '#' + h.replace(/^#+/, ''));
+  if (!list.length) list = sources.map(clean).filter(x => x && x.split(' ').length <= 3).map(tag);
+  return uniq(list.filter(h => h.length > 1)).slice(0, n);
+}
+/* X counts every URL as 23 characters and emoji as 2; this is an approximation of that rule */
+function xLen(s) { return [...s.replace(/https?:\/\/\S+/g, 'x'.repeat(23))].reduce((n, c) => n + (/\p{Extended_Pictographic}/u.test(c) ? 2 : 1), 0); }
+function trimTo(s, max, L) {
+  L = L || len; if (L(s) <= max) return s;
+  const w = s.split(' ');
+  while (w.length > 1 && L(w.join(' ') + '…') > max) w.pop();
+  let r = w.join(' ');
+  if (L(r) < max * 0.4) r = s;   /* one huge word: cut by characters instead */
+  while (r && L(r + '…') > max) r = [...r].slice(0, -1).join('');
+  return r.replace(/[\s,;:\u2013-]+$/, '') + '…';
+}
+function chunk(t, max) {
+  const out = []; let cur = '';
+  t.split(' ').forEach(w => { const next = cur ? cur + ' ' + w : w; if (xLen(next) <= max) cur = next; else { if (cur) out.push(cur); cur = w; } });
+  if (cur) out.push(cur);
+  return out;
+}
+const parseRatio = s => { const m = (s || '').match(/^\s*(\d{1,2})\s*[:x\u00D7]\s*(\d{1,2})\s*$/); return m && +m[1] > 0 && +m[2] > 0 ? `${+m[1]}:${+m[2]}` : ''; };
+const section = (label, text, extra) => Object.assign({ label, text }, extra);
 
-        function switchStudioTab(tab) {
-            currentTab = tab;
-            ['prompt', 'human', 'social', 'youtube'].forEach(t => {
-                const btn = document.getElementById('tab' + t.charAt(0).toUpperCase() + t.slice(1) + 'Btn');
-                const content = document.getElementById('content' + t.charAt(0).toUpperCase() + t.slice(1));
-                
-                if (t === tab) {
-                    if (t === 'prompt') btn.className = "px-4 py-2 bg-purple-600 text-white text-xs font-bold rounded-xl shadow-sm transition";
-                    if (t === 'human') btn.className = "px-4 py-2 bg-emerald-600 text-white text-xs font-bold rounded-xl shadow-sm transition";
-                    if (t === 'social') btn.className = "px-4 py-2 bg-pink-600 text-white text-xs font-bold rounded-xl shadow-sm transition";
-                    if (t === 'youtube') btn.className = "px-4 py-2 bg-red-600 text-white text-xs font-bold rounded-xl shadow-sm transition";
-                    content.classList.remove('hidden');
-                } else {
-                    btn.className = "px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-xl transition";
-                    content.classList.add('hidden');
-                }
-            });
-        }
+/* ---------- 1. PROMPT STUDIO ---------- */
+const PD = {
+  writing:  { role: 'professional writer and editor', rules: ['Keep the writing clear and specific; avoid filler and repetition.'], format: 'The finished text, ready to use.' },
+  coding:   { role: 'senior software engineer', rules: ['Explain your approach briefly before the code.', 'Handle edge cases and errors explicitly.', 'Include tests or test cases that verify the expected behavior.', 'Do not use libraries or APIs unless you are sure they exist; say so when you are unsure.'], format: 'A short explanation, then complete code in fenced code blocks, then how to run or test it.' },
+  business: { role: 'experienced business consultant', rules: ['Use only the details provided; do not invent figures, clients or results.', 'Be specific and practical.'], format: 'Clear headings with short paragraphs.' },
+  marketing:{ role: 'senior marketing copywriter', rules: ['Lead with the benefit to the audience.', 'Do not make unsupported claims or invent statistics or testimonials.'], format: 'The finished copy, plus a clear call to action.' },
+  research: { role: 'careful research analyst', rules: ['Separate verified facts, assumptions and open questions.', 'Name sources only when you are confident they exist; never fabricate citations or quotations.', 'State uncertainty plainly.'], format: 'A short summary first, then findings under headings, then sources and open questions.' },
+  education:{ role: 'experienced teacher', rules: ['Explain step by step at the audience\'s level.', 'Use at least one concrete example.', 'Finish with a few practice questions and their answers unless told otherwise.'], format: 'A structured lesson: overview, explanation, example, practice.' },
+  youtube:  { role: 'YouTube content strategist and scriptwriter', rules: ['Open with a hook in the first 15 seconds.', 'Do not invent statistics, sources or personal experiences.'], format: 'Hook, section outline, script or talking points, closing call to action.' }
+};
+function imagePrompt(v) {
+  const ar = parseRatio(v.ratio), ex = clean(v.exclude).replace(/\s*[;\n]\s*/g, ', ');
+  if (v.tool === 'midjourney') {
+    return [v.task, v.setting, v.composition, v.lighting, v.style].filter(Boolean).join(', ') + (ar ? ' --ar ' + ar : '') + (ex ? ' --no ' + ex : '');
+  }
+  return [endp(cap(v.task)), v.setting && 'Setting: ' + endp(v.setting), v.composition && 'Composition and framing: ' + endp(v.composition), v.lighting && 'Lighting: ' + endp(v.lighting), v.style && 'Style: ' + endp(v.style), v.ratio && 'Aspect ratio: ' + endp(ar || v.ratio), ex && 'Avoid: ' + endp(ex)].filter(Boolean).join(' ');
+}
+function genPrompt(v) {
+  let type = v.type, note = '';
+  if (/^(midjourney|dalle)$/.test(v.tool) && type !== 'image') { type = 'image'; note = 'The chosen tool generates images, so an image prompt was created. '; }
+  let text;
+  if (type === 'image') {
+    text = imagePrompt(v);
+    note += v.tool === 'midjourney' ? 'Parameters such as --ar and --no are Midjourney syntax; check the current Midjourney docs for your version.' : 'Written as plain descriptive text for general image generators.';
+  } else {
+    const D = PD[type], S = [], add = (h, b) => { if (b && b.trim()) S.push(h + '\n' + b.trim()); };
+    add('ROLE', `You are ${an(v.role || D.role)}.` + (v.tone ? ` Write in a ${v.tone} tone.` : ''));
+    add('TASK', v.task);
+    add('CONTEXT', v.context);
+    if (type === 'coding') { add('ENVIRONMENT', v.env); add('EXPECTED BEHAVIOR', v.behavior); add('CODE OR ERROR MESSAGE', v.code && '```\n' + v.code + '\n```'); }
+    add('AUDIENCE', v.audience);
+    const rules = [...lines(v.requirements), ...D.rules];
+    if (v.tool === 'copilot' && type === 'coding') rules.push('Keep prose short and focus on code with brief comments.');
+    add('REQUIREMENTS', bullets(rules));
+    add('AVOID', bullets(lines(v.avoid)));
+    add('REFERENCE MATERIAL (use as reference only, do not copy it)', v.examples);
+    add('OUTPUT FORMAT', [v.format || D.format, v.length && 'Length: ' + v.length, v.language && 'Language: ' + v.language].filter(Boolean).join('\n'));
+    add('SUCCESS CRITERIA', v.success);
+    add('IF INFORMATION IS MISSING', type === 'coding' ? 'If the environment or requirements are unclear, ask up to 3 questions first; otherwise state your assumptions (language version, libraries) before the code. Do not invent facts.' : 'If essential information is missing, ask up to 3 clarifying questions before answering. For minor gaps, state your assumption and continue. Do not invent facts.');
+    add('FINAL CHECK', 'Before answering, verify that every requirement above is met and remove anything that was not requested.');
+    text = S.join('\n\n');
+    note += 'Paste this into your AI app. Results can differ between models and are not guaranteed.';
+  }
+  return { sections: [section('Prompt', text, { meta: len(text) + ' characters' })], copyAll: text, note: note.trim() };
+}
 
-        function runPromptStudio() {
-            const raw = document.getElementById('pInput').value.trim();
-            const model = document.getElementById('pModel').value;
-            const role = document.getElementById('pRole').value.trim() || "Expert Assistant";
-            const style = document.getElementById('pStyle').value.trim() || "Professional";
-            const out = document.getElementById('studioOutput');
-            if (!raw) { out.textContent = "Please enter project details!"; return; }
-            out.textContent = `[MODEL]: ${model.toUpperCase()}\n[ROLE]: Act as an expert ${role} with a ${style} tone.\n[TASK]: ${raw}\n[OUTPUT]: Provide a structured, high-converting response.`;
-        }
+/* ---------- 2. SOCIAL POST ---------- */
+const CTA = { educate: 'Save this for later and share it with someone who could use it.', promote: 'Send me a message to learn more.', engage: 'What is your take? Tell me in the comments.', announce: 'Follow for updates.' };
+const fa = a => a ? ' for ' + a : '';
+const HK = {
+  educate:  { professional: (T, a) => cap(T) + ': a practical overview' + fa(a), friendly: (T, a) => `Let's talk about ${T}` + fa(a), bold: (T, a) => cap(T) + fa(a) + ': start with the essentials', educational: (T, a) => 'A quick guide to ' + T + fa(a), q: (T, a) => (a ? cap(a) + ': how' : 'How') + ` much do you know about ${T}?`, d: (T, a) => cap(T) + ': the key points in one post' + fa(a) },
+  promote:  { professional: (T, a) => 'Professional support with ' + T + fa(a), friendly: (T, a) => (a ? cap(a) + ', need' : 'Need') + ` a hand with ${T}? I can help`, bold: (T, a) => cap(T) + ', done properly' + fa(a), educational: (T, a) => 'How I approach ' + T + fa(a), q: (T, a) => (a ? cap(a) + ': looking' : 'Looking') + ` for help with ${T}?`, d: (T, a) => `Here is how I can help ${a ? a + ' ' : ''}with ${T}` },
+  engage:   { professional: (T, a) => `A question for ${a || 'my network'}: what is your experience with ${T}?`, friendly: (T, a) => (a ? cap(a) + ', I' : 'I') + ` am curious: how do you handle ${T}?`, bold: T => `Let's debate ${T}. Where do you stand?`, educational: (T, a) => (a ? cap(a) + ': what' : 'What') + ` is the most useful thing you have learned about ${T}?`, q: T => `What is your take on ${T}?`, d: T => 'Share your experience with ' + T },
+  announce: { professional: (T, a) => 'Announcement: ' + T + fa(a), friendly: (T, a) => 'Some news' + fa(a) + ': ' + T, bold: (T, a) => 'Announcing ' + T + fa(a), educational: (T, a) => 'New: ' + T + fa(a) + '. Here is what to know', q: T => `Ready for ${T}?`, d: (T, a) => cap(T) + ': the details' + fa(a) }
+};
+/* Shorten a single X post. Priority: keep hook + CTA; drop hashtags first, then the extra point, then try shorter hooks, then trim wording. */
+function fitX(hooks, point, cta, tags) {
+  const join = a => a.filter(Boolean).join('\n\n'), dropped = [];
+  for (const h of hooks) for (const p of (point ? [point, ''] : [''])) for (const ts of [tags.slice(0, 2), tags.slice(0, 1), []]) {
+    const t = join([h, p, cta, ts.join(' ')]);
+    if (xLen(t) <= 280) {
+      if (h !== hooks[0]) dropped.push('used a shorter opening line');
+      if (point && !p) dropped.push('left out the extra point');
+      if (ts.length < Math.min(2, tags.length)) dropped.push('removed some hashtags');
+      return { text: t, dropped };
+    }
+  }
+  let c = cta, h = hooks[0];
+  const cut = ['shortened your wording'];
+  if (xLen(c) > 200) { c = trimTo(c, 200, xLen); cut.push('shortened the call to action'); }
+  h = trimTo(h, 280 - xLen(c) - 2, xLen);
+  return { text: join([h, c]), dropped: cut, ctaTrimmed: cut.length > 1 };
+}
+function buildThread(hook, points, cta, tags) {
+  const budget = 274, posts = [];
+  [hook, ...points].forEach(t => chunk(t, budget).forEach(c => posts.push(c)));
+  const closing = endp(cta), withTags = tags.length ? closing + ' ' + tags.join(' ') : closing;
+  if (xLen(withTags) <= budget) posts.push(withTags); else chunk(closing, budget).forEach(c => posts.push(c));
+  return posts.map((p, i) => `${i + 1}/${posts.length} ${p}`);
+}
+function genSocial(v) {
+  const T = v.topic, aud = v.audience, obj = v.objective, set = HK[obj];
+  const hook = endp(set[v.tone](T, aud));
+  const alt = uniq([endp(set.q(T, aud)), endp(set.d(T, aud))].filter(a => a !== hook), x => x);
+  const cta = v.cta || CTA[obj];
+  const pts = lines(v.points), notes = [];
+  const kws = clean(v.keywords).split(/\s*,\s*/).filter(Boolean);
+  const tags = hashtags(v.hashtags, [v.niche, ...kws, kws.length || v.niche ? '' : v.topic], v.platform === 'instagram' ? 8 : v.platform === 'twitter' ? 2 : v.length === 'long' ? 5 : 3);
+  if (!pts.length) notes.push('Add key points for a more specific post.');
+  const sections = []; let copyAll;
+  if (v.platform === 'twitter' && v.xformat === 'thread') {
+    const n = { short: 2, medium: 4, long: 6 }[v.length];
+    const posts = buildThread(hook, pts.slice(0, n), cta, tags);
+    posts.forEach((p, i) => sections.push(section(`Post ${i + 1} of ${posts.length}`, p, { meta: xLen(p) + '/280' })));
+    copyAll = posts.join('\n\n');
+    notes.push(`Thread of ${posts.length} posts. Counts are approximate (links count as 23, emoji as 2); X may count differently.`);
+  } else if (v.platform === 'twitter') {
+    const r = fitX([hook, ...alt.slice().reverse()], v.length === 'short' ? '' : pts[0] || '', cta, tags);
+    sections.push(section('Post', r.text, { meta: xLen(r.text) + '/280' })); copyAll = r.text;
+    notes.push(r.dropped.length ? 'To fit 280 characters the tool ' + uniq(r.dropped, x => x).join(' and ') + (r.ctaTrimmed ? '.' : '. The call to action was kept in full.') : 'Fits within 280 characters.');
+    notes.push('Counts are approximate (links count as 23, emoji as 2); X may count differently.');
+  } else if (v.platform === 'instagram') {
+    const text = [hook, bullets(pts.slice(0, { short: 1, medium: 3, long: 5 }[v.length]), '→ '), cta, tags.join(' ')].filter(Boolean).join('\n\n');
+    sections.push(section('Caption', text, { meta: len(text) + ' characters' })); copyAll = text;
+    sections.push(section('On-screen text for the first seconds of the Reel', alt[0] || hook, { optional: 1 }));
+    notes.push('Check current Instagram caption and hashtag limits in the app.');
+  } else {
+    const body = [hook, v.objective === 'promote' && v.niche ? `I work in ${v.niche}.` : '', bullets(pts.slice(0, { short: 1, medium: 3, long: 5 }[v.length]), '• '), cta, tags.join(' ')].filter(Boolean).join('\n\n');
+    sections.push(section('Post', body, { meta: len(body) + ' characters' })); copyAll = body;
+    notes.push('Only the first lines show before "see more" on LinkedIn, so the opening line matters most.');
+  }
+  if (alt.length && v.platform !== 'instagram' || alt.length > 1) sections.push(section('Alternative opening lines', bullets(v.platform === 'instagram' ? alt.slice(1) : alt), { optional: 1 }));
+  return { sections, copyAll, note: notes.join(' ') };
+}
 
-        function runHumanizer() {
-            let raw = document.getElementById('hInput').value.trim();
-            const out = document.getElementById('studioOutput');
-            if (!raw) { out.textContent = "Please enter text to humanize!"; return; }
-            out.textContent = "✨ Humanized Version:\n\n" + raw;
-        }
+/* ---------- 3. YOUTUBE METADATA ---------- */
+function parseTs(s) {
+  const p = s.split(':').map(Number);
+  if (p.some(n => !Number.isInteger(n))) return null;
+  if (p.length === 2) return p[1] > 59 ? null : p[0] * 60 + p[1];
+  if (p.length === 3) return p[1] > 59 || p[2] > 59 ? null : p[0] * 3600 + p[1] * 60 + p[2];
+  return null;
+}
+function parseChapters(raw) {
+  const topics = [], ch = [], issues = [];
+  lines(raw).forEach(l => {
+    const m = l.match(/^(\d{1,2}(?::\d{1,2}){1,2})\s+(.+)$/);
+    if (!m) { if (/^\d{1,2}(?::\d{1,2}){1,2}$/.test(l)) issues.push(`"${l}" has no chapter title.`); else topics.push(l); return; }
+    const sec = parseTs(m[1]);
+    if (sec === null) issues.push(`"${l}" has an invalid timestamp (minutes and seconds must be 00-59).`); else ch.push({ ts: m[1], sec, title: m[2] });
+  });
+  if (ch.length) {
+    if (ch[0].sec !== 0) issues.push('The first chapter must start at 0:00.');
+    for (let i = 1; i < ch.length; i++) {
+      if (ch[i].sec <= ch[i - 1].sec) issues.push(`${ch[i].ts} is not later than the previous chapter (${ch[i - 1].ts}).`);
+      else if (ch[i].sec - ch[i - 1].sec < 10) issues.push(`Chapters ${ch[i - 1].ts} and ${ch[i].ts} are less than 10 seconds apart.`);
+    }
+    if (ch.length < 3) issues.push('At least three chapters are needed.');
+  }
+  return { topics, ch, issues, valid: ch.length >= 3 && !issues.length };
+}
+const COMMENT = {
+  tutorial: (k, how) => (how ? `Which step of "${how}" is hardest for you?` : `Which part of ${k} is hardest for you?`) + ' Tell me in the comments.',
+  guide: k => `What would you add to this guide on ${k}? Share it in the comments.`,
+  listicle: k => `Which tip about ${k} would you add to the list? Tell me below.`,
+  review: k => `Do you agree with this take on ${k}? Share your view in the comments.`,
+  explainer: k => `Which part of ${k} is still unclear? Ask below and I will help.`,
+  case: k => `What would you do differently with ${k}? Let me know in the comments.`
+};
+function genYoutube(v) {
+  const isHow = /^how to\s+/i.test(v.topic), t = clean(v.topic).replace(/^how to\s+/i, ''), T = titleCase(t);
+  const kw = v.keyword || t, N = isHow && v.keyword ? titleCase(v.keyword) : T, aud = v.audience;
+  const noun = { tutorial: 'tutorial', guide: 'guide', listicle: 'video', review: 'review', explainer: 'explainer', case: 'walkthrough' }[v.vformat];
+  const topicPhrase = isHow ? 'how to ' + t : clean(v.topic);
+  const byFormat = { tutorial: `How to ${T}: Step-by-Step`, guide: `${T}: The Complete Practical Guide`, listicle: `Practical ${T} Tips You Can Use Today`, review: `${T}: Honest Review`, explainer: `${T} Explained Simply`, case: `${T}: A Real Walkthrough` }[v.vformat];
+  let titles = uniq([byFormat, `${N} for Beginners: Start Here`, `Common ${N} Mistakes and How to Avoid Them`, v.benefit && `${N}: ${cap(v.benefit)}`, isHow ? `Want to ${t}? Start With These Steps` : `${N}: A Clear Overview`].filter(Boolean), x => x.replace(/[^a-z0-9]/gi, '')).filter(x => len(x) <= 70);
+  if (!titles.length) titles = [trimTo(byFormat, 100)];   /* very long topics: YouTube allows up to 100 characters */
+  const rec = titles.find(x => len(x) <= 60 && x.toLowerCase().includes(kw.toLowerCase())) || titles.find(x => len(x) <= 60) || titles[0];
+  const sup = clean(v.supporting).split(/\s*,\s*/).filter(Boolean);
+  const cta = v.cta || `If this helped, subscribe for more${v.niche ? ' ' + v.niche : ''} videos.`;
+  const hs = hashtags('', [kw, ...sup], 3);
+  const hook = { Educational: `If you want a clear explanation of ${topicPhrase}, start here.`, Professional: `This video explains ${topicPhrase} in a structured, practical way.`, Casual: `Let's walk through ${topicPhrase} together.`, Entertaining: `Here is ${topicPhrase}, without the boring parts.` }[v.ctone] + (v.benefit ? ` You will see how to ${v.benefit.replace(/^to\s+/i, '')}.` : '');
+  const cp = parseChapters(v.details);
+  const opener = v.benefit ? `In this ${noun} on ${kw}: ${v.benefit}.` : `This ${noun} covers ${t}.`;
+  const desc = [opener + (aud ? ` Made for ${aud}.` : ''), cp.topics.length ? 'What is covered:\n' + bullets(cp.topics) : '', cp.valid ? 'Chapters:\n' + cp.ch.map(c => `${c.ts} ${c.title}`).join('\n') : '', cta, hs.join(' ')].filter(Boolean).join('\n\n');
+  const tags = []; let tl = 0;
+  uniq([kw, ...sup, `${kw} tutorial`, `${kw} for beginners`, `${kw} guide`, v.niche].filter(Boolean).map(x => x.replace(/[,"<>]/g, '').trim()), x => x).forEach(x => { if (tl + x.length + 2 <= 500) { tags.push(x); tl += x.length + 2; } });
+  const tagText = tags.join(', ');
+  const comment = COMMENT[v.vformat](kw, isHow ? topicPhrase : '') + (v.cta ? ' ' + v.cta : '');
+  const first2 = desc.split('\n').slice(0, 2).join(' ').toLowerCase();
+  const ok = (c, y, n) => (c ? '✓ ' : '✗ ') + (c ? y : n);
+  const check = [
+    ok(len(rec) <= 60, `Recommended title is ${len(rec)} characters (about 60 or fewer is less likely to be cut off).`, `Recommended title is ${len(rec)} characters; shorten it to about 60.`),
+    ok(rec.toLowerCase().includes(kw.toLowerCase()), 'Main keyword appears in the recommended title.', 'Main keyword is not in the recommended title.'),
+    ok(first2.includes(kw.toLowerCase()), 'Main keyword appears in the first lines of the description.', 'Main keyword is not in the first lines of the description.'),
+    cp.valid ? '✓ Chapters are valid and were added to the description.' : cp.issues.length ? '✗ Chapters were not added: ' + cp.issues.join(' ') : '• No chapters supplied (optional). Add timestamped lines to create them.',
+    ok(len(tagText) <= 500, `Tags total ${len(tagText)} of 500 characters.`, 'Tags exceed 500 characters.'),
+    ok(len(desc) <= 5000, `Description is ${len(desc)} of 5,000 characters.`, 'Description is over 5,000 characters.'),
+    hs.length ? `✓ ${hs.length} hashtag${hs.length > 1 ? 's' : ''} (YouTube shows the first three above the title).` : '• No hashtags suggested; use a shorter main keyword (three words or fewer).',
+    '• Verify keywords yourself with YouTube search suggestions and YouTube Studio; this tool does not check search data.',
+    '• Make sure the title and thumbnail match what the video actually delivers.'
+  ];
+  const sections = [
+    section('Title options', '', { rows: titles.map(x => ({ text: x, meta: len(x) + ' chars' })) }),
+    section('Recommended title', rec, { meta: len(rec) + ' characters' }),
+    section('Opening hook', hook),
+    section('Description', desc, { meta: len(desc) + '/5,000' }),
+    section('Tags', tagText, { meta: len(tagText) + '/500' }),
+    hs.length ? section('Hashtags', hs.join(' ')) : null,
+    section('Pinned comment', comment),
+    section('Metadata checklist', check.join('\n'), { nocopy: 1 })
+  ].filter(Boolean);
+  const copyAll = sections.filter(s => !s.nocopy && s.label !== 'Title options').map(s => s.label.toUpperCase() + '\n' + s.text).join('\n\n');
+  return { sections, copyAll: 'TITLE OPTIONS\n' + titles.join('\n') + '\n\n' + copyAll, note: 'Suggestions only. No search volume, competition or trend data was used, and rankings or views are never guaranteed.' };
+}
 
-        function runSocialPost() {
-            const platform = document.getElementById('sPlatform').value;
-            const niche = document.getElementById('sNiche').value.trim() || "Web Development";
-            document.getElementById('studioOutput').textContent = `🚀 High-Impact ${platform.toUpperCase()} Post for ${niche}:\n\nHere are the top 3 strategies to scale in 2026! 👇\n\n#MyToolX #${niche.replace(/\s+/g, '')}`;
-        }
+/* ---------- tool definitions ---------- */
+const notImg = ['writing', 'coding', 'business', 'marketing', 'research', 'education', 'youtube'], img = ['image'], cod = ['coding'];
+const ratioCheck = (val, all) => {
+  if (!val || parseRatio(val)) return '';
+  if (all.tool === 'midjourney' || /^\d+\s*[:x\u00D7]?\s*\d*$/.test(val) || /\d\s*[:x\u00D7]\s*\d/.test(val)) return 'Use width:height with numbers above 0, for example 16:9, 1:1 or 3:2.';
+  return '';
+};
+const TOOLS = {
+  prompt: { src: 'Prompt Studio', btn: '⚡ Generate prompt', gen: genPrompt, f: [
+    { id: 'type', l: 'Task type', t: 'sel', o: [['writing', 'Writing'], ['coding', 'Programming'], ['business', 'Business'], ['marketing', 'Marketing'], ['research', 'Research'], ['education', 'Education'], ['image', 'Image generation'], ['youtube', 'YouTube content']] },
+    { id: 'tool', l: 'Target AI app', t: 'sel', o: [['any', 'Any chat assistant'], ['chatgpt', 'ChatGPT'], ['gemini', 'Gemini'], ['claude', 'Claude'], ['copilot', 'GitHub Copilot'], ['midjourney', 'Midjourney'], ['dalle', 'DALL·E / other image generator']] },
+    { id: 'task', l: 'What do you need? (for images: the subject)', t: 'area', req: 1, w: 1, max: 2000, ph: 'e.g. Write a proposal for a small business that needs a new website', h: 'Be specific about the outcome you want.' },
+    { id: 'role', l: 'Role (optional)', ph: 'e.g. Senior copywriter', show: ['type', notImg] },
+    { id: 'tone', l: 'Tone (optional)', ph: 'e.g. Clear and persuasive', show: ['type', notImg] },
+    { id: 'env', l: 'Language, framework, environment', ph: 'e.g. React 18, Node 20', show: ['type', cod] },
+    { id: 'behavior', l: 'Expected behavior', t: 'area', w: 1, max: 1500, ph: 'What should happen when it works?', show: ['type', cod] },
+    { id: 'code', l: 'Existing code or error message', t: 'area', w: 1, max: 4000, ph: 'Paste code or the exact error', show: ['type', cod] },
+    { id: 'style', l: 'Visual style', ph: 'e.g. watercolor, cinematic photo', show: ['type', img] },
+    { id: 'setting', l: 'Environment / setting', ph: 'e.g. misty coastline at dawn', show: ['type', img] },
+    { id: 'composition', l: 'Composition / framing', ph: 'e.g. wide shot, rule of thirds', show: ['type', img] },
+    { id: 'lighting', l: 'Lighting', ph: 'e.g. soft golden light', show: ['type', img] },
+    { id: 'ratio', l: 'Aspect ratio', ph: 'e.g. 16:9, 1:1 or 3:2', show: ['type', img], validate: ratioCheck },
+    { id: 'exclude', l: 'Things to exclude', ph: 'e.g. text, watermark', show: ['type', img] },
+    { id: 'audience', l: 'Audience', opt: 1, ph: 'e.g. Non-technical business owners', show: ['type', notImg] },
+    { id: 'format', l: 'Output format', opt: 1, ph: 'e.g. Bullet list, table, email', show: ['type', notImg] },
+    { id: 'length', l: 'Length', opt: 1, t: 'sel', o: [['', 'Automatic'], ['Short', 'Short'], ['Medium', 'Medium'], ['Detailed', 'Detailed']], show: ['type', notImg] },
+    { id: 'language', l: 'Response language', opt: 1, ph: 'e.g. English', show: ['type', notImg] },
+    { id: 'context', l: 'Background and context', opt: 1, t: 'area', w: 1, max: 2000, ph: 'Situation, goals, what has been tried', show: ['type', notImg] },
+    { id: 'requirements', l: 'Must include (one per line)', opt: 1, t: 'area', w: 1, max: 1500, show: ['type', notImg] },
+    { id: 'avoid', l: 'Things to avoid (one per line)', opt: 1, t: 'area', w: 1, max: 1500, show: ['type', notImg] },
+    { id: 'examples', l: 'Examples or reference material', opt: 1, t: 'area', w: 1, max: 2500, show: ['type', notImg] },
+    { id: 'success', l: 'Success criteria', opt: 1, w: 1, ph: 'e.g. The client could approve it without edits', show: ['type', notImg] }] },
+  social: { src: 'Social Post Generator', btn: '📱 Generate post', gen: genSocial, f: [
+    { id: 'platform', l: 'Platform', t: 'sel', o: [['linkedin', 'LinkedIn post'], ['twitter', 'X / Twitter'], ['instagram', 'Instagram Reel caption']] },
+    { id: 'xformat', l: 'X format', t: 'sel', o: [['single', 'Single post'], ['thread', 'Thread']], show: ['platform', ['twitter']] },
+    { id: 'topic', l: 'Topic or announcement', req: 1, w: 1, max: 200, ph: 'e.g. fast websites for small businesses', h: 'A short phrase works best.' },
+    { id: 'objective', l: 'Objective', t: 'sel', o: [['educate', 'Educate'], ['promote', 'Promote a service'], ['engage', 'Start a discussion'], ['announce', 'Announce something']] },
+    { id: 'tone', l: 'Tone', t: 'sel', o: [['professional', 'Professional'], ['friendly', 'Friendly'], ['bold', 'Bold and direct'], ['educational', 'Educational']] },
+    { id: 'points', l: 'Key points (one per line)', t: 'area', w: 1, max: 1200, ph: 'Real benefits or facts you want in the post', h: 'The post only uses what you write here.' },
+    { id: 'audience', l: 'Target audience', ph: 'e.g. small business owners' },
+    { id: 'niche', l: 'Niche or service', ph: 'e.g. Web development' },
+    { id: 'length', l: 'Length', t: 'sel', o: [['short', 'Short'], ['medium', 'Medium'], ['long', 'Long']] },
+    { id: 'cta', l: 'Call to action', ph: 'Leave empty for a default that fits the objective' },
+    { id: 'keywords', l: 'Keywords (comma separated)', opt: 1, ph: 'speed, SEO, design', h: 'Used to build hashtags when you do not enter your own.' },
+    { id: 'hashtags', l: 'Your hashtags', opt: 1, ph: '#webdev #smallbusiness' }] },
+  youtube: { src: 'YouTube Metadata Optimizer', btn: '▶️ Generate metadata', gen: genYoutube, f: [
+    { id: 'topic', l: 'Video topic', req: 1, w: 1, max: 200, ph: 'e.g. How to get freelance clients' },
+    { id: 'vformat', l: 'Video format', t: 'sel', o: [['tutorial', 'Tutorial'], ['guide', 'Guide'], ['listicle', 'Tips / list'], ['review', 'Review'], ['explainer', 'Explainer'], ['case', 'Walkthrough']] },
+    { id: 'ctone', l: 'Tone', t: 'sel', o: [['Educational', 'Educational'], ['Professional', 'Professional'], ['Casual', 'Casual'], ['Entertaining', 'Entertaining']] },
+    { id: 'keyword', l: 'Main keyword', ph: 'e.g. freelance clients', h: 'Used naturally, not forced into every section.' },
+    { id: 'benefit', l: 'What viewers will get', ph: 'e.g. find your first three clients' },
+    { id: 'details', l: 'What the video covers (one per line)', t: 'area', w: 1, max: 2000, ph: 'Topics, or timestamped lines like "0:00 Intro"', h: 'Chapters are only created from timestamps you provide: first at 0:00, at least three, in order, at least 10 seconds apart.' },
+    { id: 'audience', l: 'Target audience', ph: 'e.g. new freelancers' },
+    { id: 'niche', l: 'Channel niche', ph: 'e.g. Freelancing' },
+    { id: 'supporting', l: 'Related keywords (comma separated)', opt: 1, w: 1, ph: 'freelancing tips, client outreach' },
+    { id: 'cta', l: 'Call to action', opt: 1, w: 1, ph: 'Leave empty for a default' }] }
+};
 
-        function runYoutubeSEO() {
-            const topic = document.getElementById('yInput').value.trim() || "Freelancing in 2026";
-            document.getElementById('studioOutput').textContent = `🎬 YouTube Title: Ultimate ${topic} Guide (2026)\n\n🏷️ Tags: ${topic}, ${topic} tutorial, 2026 guide`;
-        }
+if (typeof document === 'undefined') { globalThis.MTX = { genPrompt, genSocial, genYoutube, parseChapters, parseRatio, xLen, ratioCheck }; return; }
 
-        function clearStudio() {
-            ['pInput', 'pRole', 'pStyle', 'hInput', 'sNiche', 'yInput'].forEach(id => {
-                const el = document.getElementById(id);
-                if (el) el.value = '';
-            });
-            document.getElementById('studioOutput').textContent = 'Generated prompt...';
-        }
+/* ---------- UI ---------- */
+const $ = id => document.getElementById(id), out = $('studioOutput'), status = $('outStatus'), copyBtn = $('copyBtn'), selBtn = $('selBtn');
+const EMPTY = 'Your result will appear here. Fill in a tool above and press Generate.';
+const keys = Object.keys(TOOLS), state = {};
+let current = 'prompt';
 
-        function copyOutputText() {
-            const txt = document.getElementById('studioOutput').textContent;
-            if (txt) navigator.clipboard.writeText(txt);
-        }
-    </script>
+function makeField(key, f) {
+  const id = key + '-' + f.id, wrap = document.createElement('div');
+  wrap.className = 'fld-wrap' + (f.w ? ' wide' : ''); wrap.id = 'w-' + id;
+  const lab = document.createElement('label'); lab.htmlFor = id; lab.textContent = f.l + (f.req ? ' *' : '');
+  let el;
+  if (f.t === 'sel') { el = document.createElement('select'); f.o.forEach(([v, t]) => { const o = document.createElement('option'); o.value = v; o.textContent = t; el.appendChild(o); }); }
+  else if (f.t === 'area') { el = document.createElement('textarea'); el.rows = f.rows || 3; }
+  else { el = document.createElement('input'); el.type = 'text'; el.maxLength = 300; }
+  if (f.max) el.maxLength = f.max;
+  el.id = id; if (f.ph) el.placeholder = f.ph;
+  const desc = []; wrap.append(lab, el);
+  if (f.h) { const h = document.createElement('p'); h.className = 'help'; h.id = id + '-h'; h.textContent = f.h; desc.push(h.id); wrap.appendChild(h); }
+  const err = document.createElement('p'); err.className = 'err'; err.id = id + '-e'; err.hidden = true; err.setAttribute('role', 'alert');
+  desc.push(err.id); el.setAttribute('aria-describedby', desc.join(' ')); wrap.appendChild(err);
+  return wrap;
+}
+function applyConditions(key) {
+  TOOLS[key].f.forEach(f => { if (f.show) $('w-' + key + '-' + f.id).hidden = !f.show[1].includes($(key + '-' + f.show[0]).value); });
+  const det = document.querySelector('#panel-' + key + ' details.more');
+  if (det) det.hidden = !det.querySelector('.fld-wrap:not([hidden])');
+}
+function build() {
+  keys.forEach(key => {
+    const T = TOOLS[key], panel = document.createElement('div');
+    panel.id = 'panel-' + key; panel.className = 'panel t-' + key; panel.setAttribute('role', 'tabpanel'); panel.setAttribute('aria-labelledby', 'tab-' + key); panel.hidden = true;
+    const g = document.createElement('div'); g.className = 'grid'; T.f.filter(f => !f.opt).forEach(f => g.appendChild(makeField(key, f))); panel.appendChild(g);
+    const opts = T.f.filter(f => f.opt);
+    if (opts.length) {
+      const d = document.createElement('details'); d.className = 'more'; const s = document.createElement('summary'); s.textContent = 'More options (improve the result)';
+      const g2 = document.createElement('div'); g2.className = 'grid'; opts.forEach(f => g2.appendChild(makeField(key, f))); d.append(s, g2); panel.appendChild(d);
+    }
+    const go = document.createElement('button'); go.type = 'button'; go.id = 'go-' + key; go.className = 'btn go'; go.textContent = T.btn; go.style.alignSelf = 'flex-start';
+    go.addEventListener('click', () => run(key)); panel.appendChild(go);
+    panel.addEventListener('change', e => {
+      if (key === 'prompt' && e.target.id === 'prompt-tool' && /^(midjourney|dalle)$/.test(e.target.value)) $('prompt-type').value = 'image';
+      applyConditions(key); markStale(key);
+    });
+    panel.addEventListener('input', () => markStale(key));
+    $('panels').appendChild(panel);
+  });
+  document.querySelectorAll('[data-tab]').forEach(b => b.addEventListener('click', () => switchStudioTab(b.dataset.tab)));
+  document.querySelector('[role="tablist"]').addEventListener('keydown', e => {
+    const i = keys.indexOf(current); let n = -1;
+    if (e.key === 'ArrowRight') n = (i + 1) % keys.length; else if (e.key === 'ArrowLeft') n = (i + keys.length - 1) % keys.length; else if (e.key === 'Home') n = 0; else if (e.key === 'End') n = keys.length - 1;
+    if (n > -1) { e.preventDefault(); switchStudioTab(keys[n]); $('tab-' + keys[n]).focus(); }
+  });
+  keys.forEach(applyConditions); switchStudioTab('prompt');
+}
+function setStatus(msg, kind) { status.textContent = msg; status.className = kind || ''; }
+
+/* Each tool keeps its own result, so an output is never shown under the wrong tab. */
+function renderOutput(key) {
+  const st = state[key]; out.replaceChildren();
+  copyBtn.disabled = selBtn.disabled = !st;
+  $('outSource').textContent = st ? 'From: ' + TOOLS[key].src + (st.stale ? ' (outdated)' : '') : '';
+  if (!st) { out.className = 'empty'; out.textContent = EMPTY; return; }
+  out.className = st.stale ? 'stale' : '';
+  st.sections.forEach(sec => {
+    const box = document.createElement('div'); box.className = 'sec' + (sec.optional ? ' opt' : '');
+    const head = document.createElement('div'); head.className = 'sec-h';
+    const lab = document.createElement('span'); lab.textContent = sec.label + (sec.optional ? ' (optional)' : '') + (sec.meta ? ' · ' + sec.meta : '');
+    head.appendChild(lab);
+    if (!sec.rows && !sec.nocopy) head.appendChild(copyButton(sec.text, sec.label));
+    box.appendChild(head);
+    if (sec.rows) sec.rows.forEach((r, i) => {
+      const row = document.createElement('div'); row.className = 'row';
+      const tx = document.createElement('span'); tx.className = 'row-t'; tx.textContent = r.text;
+      const mt = document.createElement('span'); mt.className = 'row-m'; mt.textContent = r.meta;
+      row.append(tx, mt, copyButton(r.text, 'Title ' + (i + 1))); box.appendChild(row);
+    });
+    else { const b = document.createElement('div'); b.className = 'sec-b'; b.textContent = sec.text; box.appendChild(b); }
+    out.appendChild(box);
+  });
+}
+function copyButton(text, label) {
+  const b = document.createElement('button'); b.type = 'button'; b.className = 'sec-copy'; b.textContent = 'Copy';
+  b.setAttribute('aria-label', 'Copy ' + label); b.addEventListener('click', () => copyText(text, label)); return b;
+}
+function markStale(key) {
+  const st = state[key]; if (!st || st.stale) return;
+  st.stale = true; if (key === current) { renderOutput(key); setStatus('Your inputs changed after this result was created. Press Generate to refresh it.', 'warn'); }
+}
+function switchStudioTab(key) {
+  current = key;
+  keys.forEach(k => { const on = k === key, tab = $('tab-' + k); tab.setAttribute('aria-selected', on); tab.tabIndex = on ? 0 : -1; $('panel-' + k).hidden = !on; });
+  renderOutput(key);
+  const st = state[key]; setStatus(st ? (st.stale ? 'Your inputs changed after this result was created. Press Generate to refresh it.' : st.note) : '', st && st.stale ? 'warn' : '');
+}
+function run(key) {
+  const T = TOOLS[key], v = {}, errs = []; let first = null;
+  T.f.forEach(f => {
+    const w = $('w-' + key + '-' + f.id); v[f.id] = w.hidden ? '' : ($(key + '-' + f.id).value.replace(/\r/g, '').trim());
+    if (f.t !== 'area') v[f.id] = clean(v[f.id]);
+  });
+  T.f.forEach(f => {
+    const w = $('w-' + key + '-' + f.id), el = $(key + '-' + f.id), err = $(key + '-' + f.id + '-e');
+    const msg = w.hidden ? '' : (f.req && !v[f.id] ? 'Please fill in this field first.' : (f.validate ? f.validate(v[f.id], v) : ''));
+    err.textContent = msg; err.hidden = !msg; el.setAttribute('aria-invalid', !!msg);
+    if (msg) { errs.push(msg); if (!first) first = el; }
+  });
+  if (first) {
+    state[key] = null; if (key === current) renderOutput(key);   /* never leave an old result next to new, invalid input */
+    first.focus(); setStatus('Cannot generate yet: ' + errs[0], 'bad'); return;
+  }
+  try {
+    const r = T.gen(v); state[key] = { sections: r.sections, copyAll: r.copyAll, note: r.note, stale: false };
+    renderOutput(key); setStatus('Result ready. ' + r.note, '');
+  } catch (e) {
+    console.error(e); state[key] = null; renderOutput(key); setStatus('Something went wrong. Please check your input and try again.', 'bad');
+  }
+}
+function clearStudio() {
+  const key = current;
+  TOOLS[key].f.forEach(f => { const el = $(key + '-' + f.id); el.value = f.t === 'sel' ? el.options[0].value : ''; el.removeAttribute('aria-invalid'); $(key + '-' + f.id + '-e').hidden = true; });
+  applyConditions(key); state[key] = null; renderOutput(key); setStatus('', '');
+}
+function selectOut() { const r = document.createRange(); r.selectNodeContents(out); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+async function copyText(txt, label) {
+  if (!txt) { setStatus('Nothing to copy.', 'warn'); return; }
+  const done = () => setStatus('✅ Copied: ' + label + '.', 'ok');
+  try { if (!(navigator.clipboard && window.isSecureContext)) throw 0; await navigator.clipboard.writeText(txt); done(); }
+  catch (e) {
+    const ta = document.createElement('textarea'); ta.value = txt; ta.setAttribute('readonly', ''); ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0'; document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0, txt.length);
+    let ok = false; try { ok = document.execCommand('copy'); } catch (x) { }
+    document.body.removeChild(ta);
+    if (ok) done(); else { selectOut(); setStatus('Your browser blocked copying. The output is selected: press Ctrl+C (Cmd+C on Mac).', 'warn'); }
+  }
+}
+function copyOutputText() { const st = state[current]; if (st) copyText(st.copyAll, st.stale ? 'outdated output' : 'all output'); else setStatus('Nothing to copy yet. Generate a result first.', 'warn'); }
+$('clearBtn').addEventListener('click', clearStudio);
+copyBtn.addEventListener('click', copyOutputText);
+selBtn.addEventListener('click', () => { if (state[current]) { selectOut(); setStatus('Output selected.', ''); } });
+build();
+})();
+</script>
 </body>
 </html>
