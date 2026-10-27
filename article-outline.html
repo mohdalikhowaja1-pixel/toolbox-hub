@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Article Outline Generator | MyToolX</title>
-    <meta name="description" content="Free online AI Article Outline Generator tool. Instantly generate structured blog outlines, H2/H3 headings, and research frameworks.">
+    <title>Article Outline Generator: Free H1/H2/H3 Blog Outline | MyToolX</title>
+    <meta name="description" content="Free article outline generator. Enter a topic and get an H1, alternative titles, H2/H3 headings and writing notes for how-to guides, comparisons, lists and reviews.">
     <link rel="canonical" href="https://mytoolx.org/article-outline.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:title" content="Free Article Outline Generator | MyToolX">
+    <meta property="og:description" content="Enter a topic and get a ready-to-use H1/H2/H3 article outline with writing notes. Free, in your browser.">
+    <meta property="og:url" content="https://mytoolx.org/article-outline.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Free Article Outline Generator | MyToolX">
+    <meta name="twitter:description" content="Enter a topic and get a ready-to-use H1/H2/H3 article outline with writing notes. Free, in your browser.">
+
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,32 +23,13 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "SoftwareApplication",
-          "name": "MyToolX AI Article Outline Generator",
-          "operatingSystem": "All",
-          "applicationCategory": "EducationalApplication",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          }
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "How does the Article Outline Generator work?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Enter your article topic or focus keyword, click Generate Outline, and receive a structured H1/H2/H3 framework."
-              }
-            }
-          ]
-        }
-      ]
+      "@type": "WebApplication",
+      "name": "MyToolX Article Outline Generator",
+      "url": "https://mytoolx.org/article-outline.html",
+      "description": "Browser-based article outline generator that builds H1, H2 and H3 headings and writing notes from a topic. Uses local rules, not an AI model.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
     }
     </script>
 
@@ -120,7 +110,7 @@
             </div>
 
             <div class="mb-4">
-                <input type="text" id="outlineTopic" placeholder="e.g. Freelancing in 2026, AI in Higher Education..." class="w-full p-3.5 border border-slate-200 rounded-2xl bg-slate-50/30 text-xs font-medium text-slate-800">
+                <input type="text" id="outlineTopic" maxlength="150" autocomplete="off" aria-label="Article topic or focus keyword" placeholder="e.g. Freelancing in 2026, AI in Higher Education..." class="w-full p-3.5 border border-slate-200 rounded-2xl bg-slate-50/30 text-xs font-medium text-slate-800">
             </div>
 
             <div class="mb-6">
@@ -129,7 +119,7 @@
                 </button>
             </div>
 
-            <div id="outlineOutput" class="w-full p-4 bg-[#0f172a] text-slate-300 font-mono text-xs sm:text-sm rounded-2xl border border-slate-800 shadow-inner min-h-[140px] mb-3 leading-relaxed whitespace-pre-wrap">Generated outline...</div>
+            <div id="outlineOutput" role="status" aria-live="polite" class="w-full p-4 bg-[#0f172a] text-slate-300 font-mono text-xs sm:text-sm rounded-2xl border border-slate-800 shadow-inner min-h-[140px] mb-3 leading-relaxed whitespace-pre-wrap">Generated outline...</div>
 
             <div class="flex justify-end">
                 <button onclick="copyOutlineText()" class="px-5 py-2.5 bg-[#1e293b] hover:bg-slate-800 text-white font-bold rounded-xl text-xs transition flex items-center gap-1.5">
@@ -141,36 +131,49 @@
 
         <!-- SEO Article Content (Rich & Expanded Content) -->
 <article class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10 text-slate-700 space-y-6">
-    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">Structured SEO Content Planning</h2>
-    
+    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">How to Plan an Article Outline That Works</h2>
+
     <p class="text-sm leading-relaxed text-slate-600">
-        Planning a structured outline before writing a blog post or long-form article is one of the most effective strategies to improve readability, streamline search engine optimization (SEO), and maintain topical authority. A well-organized content framework helps writers break down complex subjects into logical subtopics, ensuring that key reader queries are covered comprehensively.
+        An outline is the skeleton of an article: one H1 title, H2 headings for the main sections and H3 headings for the details inside each section. Writing it first keeps you on topic, makes sure you answer the reader's real question, and saves editing time later. This generator reads your topic, recognises common article types (how-to guides, comparisons, "best of" lists, reviews, explainers and general guides) and builds a matching H1/H2/H3 structure with notes on what to write under each heading.
     </p>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
         <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-2xl">
-            <h3 class="font-bold text-slate-900 text-sm mb-1">📐 Logical Heading Hierarchy (H1, H2, H3)</h3>
-            <p class="text-xs text-slate-600">Organizes your main title (H1), core sections (H2), and detailed supporting points (H3) for better web reader scanability and search engine crawling.</p>
+            <h3 class="font-bold text-slate-900 text-sm mb-1">📐 Structure that matches your topic</h3>
+            <p class="text-xs text-slate-600">Type "How to start a podcast" and you get steps and troubleshooting. Type "WordPress vs Wix" and you get a comparison table and a "which to choose" section.</p>
         </div>
         <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-2xl">
-            <h3 class="font-bold text-slate-900 text-sm mb-1">🚀 Fast Draft Execution</h3>
-            <p class="text-xs text-slate-600">Eliminates writer's block by providing clear sub-headings, introduction hooks, key bullet points, and concluding takeaways before drafting.</p>
+            <h3 class="font-bold text-slate-900 text-sm mb-1">✍️ Notes, not filler</h3>
+            <p class="text-xs text-slate-600">Each section tells you what to cover, where to add your own examples and sources, and what to verify. It never invents facts, prices or statistics about your topic.</p>
         </div>
     </div>
 
-    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">Why Heading Structure Matters for SEO & User Experience</h3>
-    <p class="text-sm leading-relaxed text-slate-600">
-        Search engine crawlers rely on proper HTML heading tags to understand the structure and topic depth of an article:
-    </p>
+    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">How to Use the Article Outline Generator</h3>
+    <ol class="list-decimal pl-5 text-xs sm:text-sm text-slate-600 space-y-2">
+        <li>Type your topic or focus keyword in the box. A full phrase works best, for example <em>how to start a freelance career</em> or <em>best laptops for students</em>.</li>
+        <li>Click <strong>Generate Outline</strong> (or press Enter). The outline appears in the dark panel with three alternative titles and a short SEO checklist.</li>
+        <li>Click <strong>Copy Outline</strong> and paste it into your editor. Replace the notes with your own research, examples and sources.</li>
+        <li>Change the topic and generate again to try a different angle. Use <strong>Clear</strong> to start over.</li>
+    </ol>
+
+    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">What the Headings Mean</h3>
     <ul class="list-disc pl-5 text-xs sm:text-sm text-slate-600 space-y-2">
-        <li><strong>H1 Tag:</strong> Defines the main subject of your page or article. Each page should feature exactly one clear H1 tag containing the target keyword.</li>
-        <li><strong>H2 Tags:</strong> Break the article into primary conceptual blocks or main questions users want answered.</li>
-        <li><strong>H3 Tags:</strong> Offer granular sub-explanations, step-by-step instructions, or specific examples within an H2 section.</li>
+        <li><strong>H1:</strong> the title of the page. Use one H1 and include your focus keyword where it reads naturally.</li>
+        <li><strong>H2:</strong> the main sections, usually the questions a reader wants answered.</li>
+        <li><strong>H3:</strong> sub-points inside an H2, such as individual steps, pros and cons or examples. Do not skip heading levels.</li>
     </ul>
 
-    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">Client-Side Privacy Guarantee</h3>
+    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">Tips for Turning an Outline into a Strong Article</h3>
+    <ul class="list-disc pl-5 text-xs sm:text-sm text-slate-600 space-y-2">
+        <li>Answer the main question near the top, then explain the details.</li>
+        <li>Add your own experience, real examples and sources. Outlines help with structure, but original information is what makes an article useful.</li>
+        <li>Check prices, dates and product details on official sites before you publish them.</li>
+        <li>Write for readers first. Headings should describe the section clearly, not just repeat a keyword.</li>
+    </ul>
+
+    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">Privacy</h3>
     <p class="text-sm leading-relaxed text-slate-600">
-        All outline structuring and keyword-pattern generation on MyToolX run 100% locally in your web browser. Your draft article titles, content ideas, and research keywords are never saved, stored, or sent to external servers.
+        The outline is generated by JavaScript in your browser. The topic you type is not sent to MyToolX servers and is not stored. This page loads Tailwind CSS and Google AdSense from third parties, which may set cookies as described in our <a href="privacy.html" class="text-blue-600 font-semibold hover:underline">Privacy Policy</a>.
     </p>
 </article>
 
@@ -178,32 +181,35 @@
 <section class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10">
     <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">Frequently Asked Questions (FAQs)</h2>
     <div class="space-y-4">
-        
         <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
             <h3 class="text-sm font-bold text-slate-900 mb-1">How does the Article Outline Generator work?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">The generator takes your primary topic, target audience, and desired content depth, then formats a structured framework containing logical H1, H2, and H3 subheadings with key talking points directly in your browser.</p>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">You enter a topic. The tool recognises whether it is a how-to, comparison, "best" list, review, question or general topic and builds an H1, alternative titles, H2/H3 headings and writing notes to match. It uses built-in rules in your browser, not an AI model.</p>
+        </div>
+
+        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
+            <h3 class="text-sm font-bold text-slate-900 mb-1">Does it write the article for me?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">No. It creates the structure and tells you what to cover under each heading. You add the facts, examples and sources, so the final article is original and accurate.</p>
         </div>
 
         <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
             <h3 class="text-sm font-bold text-slate-900 mb-1">Is this tool free and private?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Yes, 100% free with no registration or subscription required. All processing happens locally on your device via client-side JavaScript, ensuring complete confidentiality of your article topics.</p>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Yes. It is free with no account. The topic you type is processed in your browser and is not sent to our servers or stored. The page itself loads Tailwind CSS and Google AdSense from third parties.</p>
         </div>
 
         <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">Why is an article outline important for SEO ranking?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">A clear heading structure allows search engine bots to easily index your page content while helping readers quickly find answers. Proper subheadings also improve your eligibility for Google Featured Snippets.</p>
+            <h3 class="text-sm font-bold text-slate-900 mb-1">Which topics work best?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Specific phrases work best, such as "how to start a podcast", "Notion vs Obsidian", "best budget headphones" or "what is a CRM". Very short or vague topics produce a general guide structure.</p>
         </div>
 
         <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">Can I use these outlines for different niches and industries?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Yes. The outline framework adapts to various writing formats including technology guides, financial analysis, health & wellness, product reviews, and educational tutorials.</p>
+            <h3 class="text-sm font-bold text-slate-900 mb-1">Will a good outline help my article rank?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">A clear heading structure makes an article easier to read and to understand for search engines, but it does not guarantee rankings. Original, accurate and helpful content matters most.</p>
         </div>
 
         <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">Are my article topics logged or saved on any database?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">No. Nothing is ever saved or transmitted to third-party databases or analytics servers. Once you close or refresh your browser tab, the data is completely cleared.</p>
+            <h3 class="text-sm font-bold text-slate-900 mb-1">Can I use the outlines for any niche?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Yes. The structure applies to technology, business, health, education, finance and more. For topics where accuracy matters, such as health or money, rely on qualified sources and cite them.</p>
         </div>
-
     </div>
 </section>
 
@@ -211,7 +217,7 @@
 
     <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs font-semibold text-slate-500">
     <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p>&copy; 2026 MyToolX. All rights reserved. Tools run client-side for 100% privacy.</p>
+        <p>&copy; 2026 MyToolX. All rights reserved. Text you enter in this tool is processed in your browser.</p>
         <div class="flex items-center gap-4 text-slate-600 font-bold">
             <a href="index.html" class="hover:text-blue-600">Home</a>
             <a href="privacy.html" class="hover:text-blue-600">Privacy Policy</a>
@@ -224,26 +230,170 @@
 
     <!-- ENGINE LOGIC -->
     <script>
-        function generateOutlineText() {
-            const topic = document.getElementById('outlineTopic').value.trim() || "Freelancing in 2026";
-            const out = document.getElementById('outlineOutput');
+        (function () {
+            'use strict';
+            var EMPTY = 'Generated outline...';
+            var hasResult = false;
+            var input = document.getElementById('outlineTopic');
+            var out = document.getElementById('outlineOutput');
+            var copyBtn = document.querySelector('button[onclick="copyOutlineText()"]');
+            var copyLabel = copyBtn ? copyBtn.innerHTML : '';
+            var copyTimer = null;
 
-            out.textContent = `H1: Comprehensive Guide to ${topic}\n\n` +
-                `H2: 1. Introduction & Market Overview\n  - Why ${topic} matters today.\n  - Key prerequisites and concepts.\n\n` +
-                `H2: 2. Core Execution Framework\n  - Step-by-step strategy for success.\n  - Recommended tools & workflows.\n\n` +
-                `H2: 3. Common Challenges & FAQs\n  - Avoiding typical pitfalls.\n\n` +
-                `H2: 4. Conclusion & Key Takeaways`;
-        }
+            var clean = function (s) { return (s || '').replace(/\s+/g, ' ').trim(); };
+            var cap = function (s) { return s ? s.charAt(0).toUpperCase() + s.slice(1) : s; };
+            var SMALL = /^(a|an|the|and|or|of|to|in|on|for|with|vs|vs\.|at|by|is|are)$/i;
+            function titleCase(s) {
+                if (s !== s.toLowerCase()) return s;           // respect the user's own capitalization
+                return s.split(' ').map(function (w, i) { return i && SMALL.test(w) ? w : cap(w); }).join(' ');
+            }
+            function slugify(s) {
+                return s.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60).replace(/-+$/, '');
+            }
+            function show(text, ok) {
+                out.textContent = text;
+                hasResult = !!ok;
+                out.className = out.className.replace(/\btext-red-300\b/g, '').replace(/\s+/g, ' ');
+                if (!ok && text !== EMPTY) out.className += ' text-red-300';
+            }
+            function flashCopy(msg) {
+                if (!copyBtn) return;
+                copyBtn.textContent = msg;
+                clearTimeout(copyTimer);
+                copyTimer = setTimeout(function () { copyBtn.innerHTML = copyLabel; }, 1800);
+            }
 
-        function clearOutline() {
-            document.getElementById('outlineTopic').value = '';
-            document.getElementById('outlineOutput').textContent = 'Generated outline...';
-        }
+            /* ----- topic analysis ----- */
+            function analyse(topic) {
+                var t = topic.toLowerCase(), m;
+                if ((m = topic.match(/^how (?:to|do you|can you|can i|do i)\s+(.+)$/i))) return { type: 'howto', subject: clean(m[1].replace(/\?+$/, '')) };
+                if ((m = topic.match(/^(.+?)\s+(?:vs\.?|versus)\s+(.+)$/i))) return { type: 'compare', a: clean(m[1]), b: clean(m[2].replace(/\?+$/, '')) };
+                if ((m = topic.match(/^(?:the\s+)?(?:(\d{1,2})\s+)?(?:best|top)\s+(.+)$/i))) return { type: 'list', count: m[1] ? Math.min(+m[1], 10) : 5, subject: clean(m[2]) };
+                if (/\breviews?\b/.test(t)) return { type: 'review', subject: clean(topic.replace(/\s*[:\-–]?\s*\breviews?\b\s*$/i, '')) || topic };
+                if (/^(what|why|who|when|where|is|are|does|do|can|should)\b/.test(t)) return { type: 'explainer', subject: topic.replace(/\?+$/, '') };
+                return { type: 'guide', subject: topic };
+            }
+            function sec(h2, h3s, notes) { return { h2: h2, h3: h3s || [], notes: notes || [] }; }
 
-        function copyOutlineText() {
-            const txt = document.getElementById('outlineOutput').textContent;
-            if (txt && txt !== 'Generated outline...') navigator.clipboard.writeText(txt);
-        }
+            function plan(topic) {
+                var a = analyse(topic), T = titleCase(topic.replace(/\?+$/, '')), s, i;
+                var faq = sec('FAQs', [], ['Write 3-5 questions your reader would really ask. Find them in search suggestions, forums, comments or customer emails.', 'Answer each in 2-3 sentences.']);
+                if (a.type === 'howto') {
+                    s = a.subject; var S = titleCase(s);
+                    return { title: 'How to ' + S + ': Step-by-Step Guide', alts: [S + ' for Beginners: A Practical Walkthrough', 'How to ' + S + ' (Common Mistakes and Fixes)'], secs: [
+                        sec('Introduction', [], ['Name the problem the reader has and what they will be able to do after reading.', 'Say who this guide is for and roughly how long it takes.']),
+                        sec('What you need before you start', ['Requirements and tools', 'Time and cost'], ['List only items you have verified.']),
+                        sec('Step-by-step: how to ' + s, ['Step 1: the first action', 'Step 2: the next action', 'Step 3: the next action', 'Step 4: check the result'], ['For each step: what to do, why it matters, and one common mistake.']),
+                        sec('Troubleshooting and common mistakes', [], ['List problems readers are likely to hit and how to fix each one.']),
+                        sec('Tips for better results', [], ['Add advice from your own experience.']),
+                        faq,
+                        sec('Conclusion and next step', [], ['Recap the steps in one short list.', 'Give one clear next action.'])] };
+                }
+                if (a.type === 'compare') {
+                    var A = titleCase(a.a), B = titleCase(a.b);
+                    return { title: A + ' vs ' + B + ': Key Differences and How to Choose', alts: [A + ' or ' + B + '? A Practical Comparison', 'Choosing Between ' + A + ' and ' + B], secs: [
+                        sec('Introduction', [], ['Say who is choosing between these two and what decision they face.', 'State your verdict in one sentence, or promise it at the end.']),
+                        sec('Quick comparison', [], ['A short table: the criteria that matter most, with one row per criterion.']),
+                        sec('What is ' + a.a + '?', ['Overview', 'Strengths', 'Limitations']),
+                        sec('What is ' + a.b + '?', ['Overview', 'Strengths', 'Limitations']),
+                        sec('Key differences', ['Cost', 'Ease of use', 'Features', 'Support and community'], ['Use only criteria that apply to this comparison and back claims with sources.']),
+                        sec('Which one should you choose?', ['Choose ' + a.a + ' if...', 'Choose ' + a.b + ' if...'], ['Match each option to a specific type of reader or use case.']),
+                        faq,
+                        sec('Conclusion', [], ['Repeat the verdict and point to a next step.'])] };
+                }
+                if (a.type === 'list') {
+                    var secs = [sec('Introduction', [], ['Explain who the list is for.', 'Explain honestly how you chose the items: tested them, researched them, or compared published information.']),
+                        sec('Quick summary', [], ['A short table of the picks with one line on what each is best for.'])];
+                    for (i = 1; i <= a.count; i++) secs.push(sec(i + '. Pick ' + i, ['What it is', 'Best for', 'Pros and cons', 'Price (check the current price before publishing)']));
+                    secs.push(sec('How to choose', [], ['The two or three factors that matter most for ' + a.subject + '.']), faq, sec('Conclusion', [], ['Restate your top pick and who it suits.']));
+                    return { title: (topic.match(/^(?:the\s+)?\d/i) ? T : (a.count + ' Best ' + titleCase(a.subject))) + ': Compared and Explained', alts: ['Best ' + titleCase(a.subject) + ': How to Choose the Right One', T + ' (Tested and Compared)'], secs: secs };
+                }
+                if (a.type === 'review') {
+                    var R = titleCase(a.subject);
+                    return { title: R + ' Review: Features, Pros, Cons and Verdict', alts: [R + ': Is It Worth It?', R + ' Review: Who It Is Best For'], secs: [
+                        sec('Summary and verdict', [], ['Give the short verdict first, then link to the details below.']),
+                        sec('What is ' + a.subject + '?', [], ['One short paragraph on what it is and who makes it.']),
+                        sec('Key features', [], ['Only features you have checked yourself or confirmed from official sources.']),
+                        sec('Hands-on experience', ['How you tested it', 'What worked', 'What did not'], ['Include this section only if you really used it.']),
+                        sec('Pros and cons', ['Pros', 'Cons']),
+                        sec('Pricing', [], ['Check the current price on the official site before publishing.']),
+                        sec('Alternatives', [], ['Two or three alternatives and when each is a better fit.']),
+                        sec('Who is it for?', []),
+                        faq,
+                        sec('Final verdict', [], ['Restate the verdict and the reason for it.'])] };
+                }
+                if (a.type === 'explainer') {
+                    var q = cap(a.subject) + '?';
+                    return { title: q, alts: [cap(a.subject) + ': A Clear Explanation', cap(a.subject) + ': Everything You Need to Know'], secs: [
+                        sec('The short answer', [], ['Answer the question directly in 40-60 words before anything else.']),
+                        sec('The detailed explanation', ['Background', 'How it works or why it happens', 'What it means for the reader'], ['Break the answer into the smallest logical pieces.']),
+                        sec('Examples', [], ['One or two concrete, real examples.']),
+                        sec('Common misconceptions', [], ['Correct things readers often get wrong.']),
+                        sec('Related questions', [], ['Answer the next questions a reader is likely to have.']),
+                        sec('Conclusion', [], ['Repeat the answer and suggest where to read next.'])] };
+                }
+                return { title: T + ': A Practical Guide', alts: ['What to Know About ' + T, T + ' Explained: Key Concepts and Practical Steps'], secs: [
+                    sec('Introduction', [], ['State the problem or question behind this topic.', 'Say what the reader will learn and who the article is for.']),
+                    sec('What is ' + topic + '?', ['Definition in plain words', 'Why it matters to your reader'], ['Support importance with a source or your own experience.']),
+                    sec('Key concepts', ['Concept 1', 'Concept 2', 'Concept 3'], ['One H3 per main idea, each with a short explanation and an example.']),
+                    sec('How to get started', ['Step 1', 'Step 2', 'Step 3'], ['Concrete actions in order.']),
+                    sec('Tools, resources and examples', [], ['Recommend only tools you have verified, and include one real example.']),
+                    sec('Common mistakes to avoid', []),
+                    faq,
+                    sec('Conclusion and next step', [], ['Summarise the key points and give one clear next action.'])] };
+            }
+
+            function render(topic) {
+                var p = plan(topic), slug = slugify(topic), lines = [], n = 0;
+                lines.push('H1: ' + p.title, '(Alternative titles: ' + p.alts.join(' | ') + ')', '');
+                p.secs.forEach(function (s) {
+                    var isIntro = s.h2 === 'Introduction', label = isIntro ? 'H2: Introduction' : 'H2: ' + (++n) + '. ' + s.h2;
+                    lines.push(label);
+                    s.h3.forEach(function (h) { lines.push('  H3: ' + h); });
+                    s.notes.forEach(function (x) { lines.push('  - ' + x); });
+                    lines.push('');
+                });
+                lines.push('SEO NOTES (not part of the article)');
+                lines.push('  - Use one H1. Put your focus keyword in the H1, the first 100 words and one or two H2s, only where it reads naturally.');
+                lines.push('  - Keep H3s under a related H2 and do not skip heading levels.');
+                if (slug) lines.push('  - Suggested URL slug: ' + slug);
+                lines.push('  - Write a meta description of about 150-160 characters that tells readers what they will get.');
+                lines.push('  - Add real examples, dates and sources. Titles of about 60 characters or fewer are less likely to be cut off in search results (this title: ' + p.title.length + ').');
+                return lines.join('\n').replace(/\n+$/, '');
+            }
+
+            window.generateOutlineText = function () {
+                var topic = clean(input.value);
+                if (!topic) {
+                    input.setAttribute('aria-invalid', 'true'); input.classList.add('border-red-400'); input.focus();
+                    show('Please enter your article topic or focus keyword first, for example: How to start a freelance career', false);
+                    return;
+                }
+                input.removeAttribute('aria-invalid'); input.classList.remove('border-red-400');
+                try { show(render(topic), true); }
+                catch (e) { console.error(e); show('Something went wrong. Please try a different topic.', false); }
+            };
+            window.clearOutline = function () {
+                input.value = ''; input.removeAttribute('aria-invalid'); input.classList.remove('border-red-400');
+                show(EMPTY, false); if (copyBtn) copyBtn.innerHTML = copyLabel;
+            };
+            window.copyOutlineText = function () {
+                if (!hasResult) { flashCopy('Generate an outline first'); return; }
+                var txt = out.textContent;
+                function fallback() {
+                    var ta = document.createElement('textarea'); ta.value = txt; ta.setAttribute('readonly', ''); ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+                    document.body.appendChild(ta); ta.select();
+                    var ok = false; try { ok = document.execCommand('copy'); } catch (e) { }
+                    document.body.removeChild(ta);
+                    if (ok) flashCopy('✅ Copied!');
+                    else { var r = document.createRange(); r.selectNodeContents(out); var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); flashCopy('Press Ctrl+C to copy'); }
+                }
+                if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(txt).then(function () { flashCopy('✅ Copied!'); }, fallback);
+                else fallback();
+            };
+            input.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); window.generateOutlineText(); } });
+            input.addEventListener('input', function () { if (input.getAttribute('aria-invalid')) { input.removeAttribute('aria-invalid'); input.classList.remove('border-red-400'); } });
+        })();
     </script>
 </body>
 </html>
