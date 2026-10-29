@@ -125,7 +125,7 @@
 </head>
 <body class="font-sans min-h-screen flex flex-col justify-between">
 
-        <!-- HEADER (UPDATED) -->
+    <!-- HEADER (UPDATED) -->
     <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
         <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2">
             
@@ -171,6 +171,7 @@
 
         </div>
     </header>
+
     <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow">
 
         <nav class="text-xs font-semibold mb-4 flex items-center gap-1 muted" aria-label="Breadcrumb">
@@ -182,6 +183,11 @@
         <!-- TOOL PANEL -->
         <div class="tool-panel surface rounded-3xl shadow-xl p-6 sm:p-8 mb-10 transition-shadow">
             
+            <!-- ADDED H1 TITLE FOR SEO -->
+            <h1 class="text-xl sm:text-2xl font-black flex items-center gap-2 mb-4" style="color: var(--text);">
+                🏦 Loan EMI Calculator
+            </h1>
+
             <!-- Shared currency + Clear -->
             <div class="flex items-center justify-between gap-3 flex-wrap mb-4 pb-4 border-b" style="border-color: var(--card-border);">
                 <div class="flex items-center gap-2">
@@ -220,7 +226,7 @@
                 </div>
             </div>
 
-            <!-- Output Cards (Button Removed, spacing tightened) -->
+            <!-- Output Cards -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
                 <div class="tile-indigo rounded-2xl p-5 text-center">
                     <span id="outEmi" role="status" aria-live="polite" class="num text-2xl font-black block">$0.00</span>
@@ -308,7 +314,7 @@
 
     </main>
 
-        <footer class="mega-footer py-12 mt-auto">
+    <footer class="mega-footer py-12 mt-auto">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
                 <div class="lg:col-span-5">
@@ -350,7 +356,7 @@
                         <div>
                             <h3>Legal</h3>
                             <ul class="space-y-3 text-sm">
-                                <li><a href="blog.html">Blog & Guides</a></li>
+                                <li><a href="blog.html">Blog &amp; Guides</a></li>
                                 <li><a href="privacy.html">Privacy Policy</a></li>
                                 <li><a href="terms.html">Terms of Service</a></li>
                                 <li><a href="index.html">Sitemap</a></li>
