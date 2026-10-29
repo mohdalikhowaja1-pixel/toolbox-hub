@@ -2,354 +2,487 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Bio Generator for LinkedIn, X, Upwork & Instagram | MyToolX</title>
-    <meta name="description" content="Free bio generator for LinkedIn, X, Upwork and Instagram. Enter your role and skills to get platform-sized bios with character counts. No sign-up.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AI Bio Generator — LinkedIn, X & Upwork | MyToolX</title>
+    <meta name="description" content="Free AI-powered bio generator for LinkedIn, X, Upwork and Instagram. Turn your role and skills into professional, platform-sized bios with character counts.">
     <link rel="canonical" href="https://mytoolx.org/ai-bio-generator.html">
+
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="MyToolX">
-    <meta property="og:title" content="Free Bio Generator for LinkedIn, X, Upwork & Instagram | MyToolX">
-    <meta property="og:description" content="Turn your role and skills into platform-sized bios with character counts. Free, in your browser.">
+    <meta property="og:title" content="AI Bio Generator — LinkedIn, X & Upwork | MyToolX">
+    <meta property="og:description" content="Turn your role and skills into professional, platform-sized bios with character counts. Free, in your browser.">
     <meta property="og:url" content="https://mytoolx.org/ai-bio-generator.html">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Free Bio Generator for LinkedIn, X, Upwork & Instagram | MyToolX">
-    <meta name="twitter:description" content="Turn your role and skills into platform-sized bios with character counts. Free, in your browser.">
+    <meta property="og:image" content="https://mytoolx.org/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Bio Generator — LinkedIn, X & Upwork | MyToolX">
+    <meta name="twitter:description" content="Turn your role and skills into professional, platform-sized bios with character counts. Free, in your browser.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
 
-
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "MyToolX Social & Freelance Bio Generator",
-      "url": "https://mytoolx.org/ai-bio-generator.html",
-      "description": "Browser-based bio generator for LinkedIn, X, Upwork and Instagram that fits character limits. Uses local rules, not an AI model.",
-      "applicationCategory": "UtilitiesApplication",
-      "operatingSystem": "Any",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "MyToolX AI Bio Generator",
+          "url": "https://mytoolx.org/ai-bio-generator.html",
+          "description": "Generate professional bios for LinkedIn, X, Upwork, and Instagram instantly in your browser.",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "Any",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mytoolx.org/" },
+            { "@type": "ListItem", "position": 2, "name": "AI Bio Generator", "item": "https://mytoolx.org/ai-bio-generator.html" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "How does the Bio Generator work?", "acceptedAnswer": { "@type": "Answer", "text": "You type your role and skills. The tool builds multiple bio variations that fit the character limits of LinkedIn, X, Upwork, and Instagram." } },
+            { "@type": "Question", "name": "Is this tool free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, it is 100% free with no registration required." } }
+          ]
+        }
+      ]
     }
     </script>
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
 
     <style>
-        .logo-box-3d {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #a1c4fd 100%);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15), inset 0 2px 3px rgba(255, 255, 255, 0.8);
-            border: 2px solid #ffffff;
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
         }
-        .logo-text-my {
-            background: -webkit-linear-gradient(45deg, #1e293b, #475569);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
         }
-        .logo-text-toolx {
-            background: -webkit-linear-gradient(45deg, #f97316, #ec4899, #8b5cf6, #06b6d4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-        }
+        html, body { overflow-x: hidden; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+        
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .tool-panel { border-top: 4px solid var(--primary); }
+        .tool-panel:hover { box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); }
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-accent { background: var(--accent); color: #fff; } .btn-accent:hover { background: var(--accent-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+        
+        .input-field { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
+        .input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); outline: none; }
+        
+        .panel-bg { background: #0F172A; color: #E2E8F0; }
+        html[data-theme="dark"] .panel-bg { background: #020617; border: 1px solid #1F2937; }
+        .panel-error { color: #F87171 !important; }
+        
+        .related-card { transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; background: var(--card); border: 1px solid var(--card-border); }
+        .related-card:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); border-color: var(--primary); }
+
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+        
+        #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
+        :focus-visible { outline: none; }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        ::selection { background: rgba(79,70,229,0.25); }
+        @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
     </style>
 </head>
-<body class="bg-gradient-to-br from-slate-100 via-blue-50/50 to-indigo-50/30 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+<body class="font-sans min-h-screen flex flex-col justify-between">
 
-    <!-- Header Navbar -->
-    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
         <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2">
-            
-            <div class="flex items-center gap-2">
-                <a href="index.html" class="px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 rounded-xl text-slate-700 text-xs font-bold transition flex items-center gap-1 shrink-0">
+            <div class="flex items-center gap-3 sm:gap-4">
+                <a href="index.html" class="btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold flex items-center gap-1 shrink-0">
                     ← <span class="hidden sm:inline">All Tools</span>
                 </a>
-
-                <a href="index.html" class="flex items-center space-x-1.5 group cursor-pointer select-none shrink-0">
-                    <div class="logo-box-3d w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-all">
-                        <span class="text-base sm:text-xl filter drop-shadow">🧰</span>
-                    </div>
-                    <span class="text-lg sm:text-2xl font-black tracking-tight flex items-center">
-                        <span class="logo-text-my">My</span>
-                        <span class="logo-text-toolx ml-0.5">ToolX</span>
-                    </span>
+                <a href="index.html" class="flex items-center gap-2 group cursor-pointer select-none shrink-0" aria-label="MyToolX home">
+                    <div class="logo-mark">M<span class="x">X</span></div>
+                    <span class="logo-wordmark hidden xs:block sm:block">MyTool<span class="x">X</span></span>
                 </a>
             </div>
-
             <div class="flex items-center gap-1.5 shrink-0">
-                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition whitespace-nowrap">
+                <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle dark mode" class="w-11 h-11 rounded-xl flex items-center justify-center text-base font-bold" style="background: var(--chip-bg); color: var(--chip-text);">
+                    <span id="themeIcon" aria-hidden="true">🌙</span>
+                </button>
+                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="hidden sm:inline-flex text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition whitespace-nowrap">
                     💼 Remote Jobs ↗
                 </a>
-
-                <a href="https://mali1.pythonanywhere.com/" target="_blank" class="text-xs font-bold bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-3 py-1.5 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap">
+                <a href="https://mali1.pythonanywhere.com/" target="_blank" rel="noopener" class="hidden sm:inline-flex text-xs font-bold text-white px-3 py-1.5 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
                     📄 Live CV ↗
                 </a>
             </div>
-
         </div>
     </header>
 
-    <!-- Main Container -->
     <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow">
-        
-        <nav class="text-xs font-semibold text-slate-500 mb-4 flex items-center gap-1">
-            <a href="index.html" class="hover:text-blue-600">Home</a>
+
+        <nav class="text-xs font-semibold mb-4 flex items-center gap-1 muted" aria-label="Breadcrumb">
+            <a href="index.html" class="hover:text-indigo-500">Home</a>
             <span>/</span>
-            <span class="text-slate-800 font-bold">AI Bio Generator</span>
+            <span style="color: var(--text); font-weight: 700;">AI Bio Generator</span>
         </nav>
 
-        <!-- Tool Card Panel -->
-        <div class="bg-white rounded-3xl shadow-xl border border-slate-200/80 p-6 sm:p-8 mb-10">
+        <div class="tool-panel surface rounded-3xl shadow-xl p-6 sm:p-8 mb-10 transition-shadow">
             
-            <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
-                <h1 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
+            <div class="flex items-center justify-between gap-3 flex-wrap mb-4 pb-4 border-b" style="border-color: var(--card-border);">
+                <h1 class="text-xl sm:text-2xl font-black flex items-center gap-2" style="color: var(--text);">
                     ✨ AI Social & Freelance Bio Generator
                 </h1>
-                <button onclick="clearBioGen()" class="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
+                <button onclick="clearBioGen()" class="btn-3d btn-chip px-3.5 py-2 text-xs font-bold">Clear</button>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 <div>
-                    <label for="bioRole" class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">YOUR ROLE / PRIMARY SKILL</label>
-                    <input type="text" id="bioRole" maxlength="200" autocomplete="off" placeholder="e.g. Fullstack Developer, Student Researcher" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50/30 text-xs font-medium text-slate-800">
+                    <label for="bioRole" class="block text-xs font-bold uppercase tracking-wider mb-1.5 muted">Your Role / Skills (Comma separated)</label>
+                    <input type="text" id="bioRole" maxlength="200" autocomplete="off" placeholder="e.g. Frontend Developer, React, 5 years" class="input-field w-full p-3.5 rounded-xl text-sm font-medium">
                 </div>
                 <div>
-                    <label for="bioStyle" class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">PLATFORM STYLE</label>
-                    <select id="bioStyle" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50/50 text-xs font-semibold text-slate-800 focus:ring-2 focus:ring-purple-500">
-                        <option value="linkedin">LinkedIn Headline & Bio</option>
-                        <option value="upwork">X / Upwork Bio</option>
-                        <option value="instagram">Instagram Portfolio</option>
+                    <label for="bioStyle" class="block text-xs font-bold uppercase tracking-wider mb-1.5 muted">Target Platform</label>
+                    <select id="bioStyle" class="input-field w-full p-3.5 rounded-xl text-sm font-semibold">
+                        <option value="linkedin">LinkedIn (Headlines & About)</option>
+                        <option value="upwork">Upwork (Overview)</option>
+                        <option value="x">X / Twitter (Short Bio)</option>
+                        <option value="instagram">Instagram (Visual Bio)</option>
                     </select>
                 </div>
             </div>
 
-            <div class="mb-6">
-                <button onclick="generateBioText()" class="px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-extrabold rounded-xl text-xs shadow-sm transition flex items-center gap-1.5">
-                    ⚡ Generate Bios
+            <div class="mb-6 flex gap-3">
+                <button onclick="generateBioText()" class="btn-3d btn-primary px-6 py-3 text-xs flex items-center gap-1.5 w-full sm:w-auto justify-center">
+                    ⚡ Generate Professional Bios
                 </button>
             </div>
 
-            <div id="bioOutput" role="status" aria-live="polite" class="w-full p-4 bg-[#0f172a] text-slate-300 font-mono text-xs sm:text-sm rounded-2xl border border-slate-800 shadow-inner min-h-[120px] mb-3 leading-relaxed whitespace-pre-wrap">Generated bios...</div>
+            <div class="flex justify-between items-center mb-2">
+                <label class="block text-xs font-bold uppercase tracking-wider muted">Generated Output</label>
+                <button id="copyBtn" onclick="copyBioText()" class="btn-3d btn-chip px-3 py-1.5 text-xs font-bold flex items-center gap-1.5">📋 Copy Output</button>
+            </div>
+            
+            <div id="bioOutput" role="status" aria-live="polite" class="panel-bg w-full p-5 rounded-2xl font-mono text-sm shadow-inner min-h-[150px] mb-2 leading-relaxed whitespace-pre-wrap word-break break-all">Waiting for input...</div>
 
-            <div class="flex justify-end">
-                <button onclick="copyBioText()" class="px-5 py-2.5 bg-[#1e293b] hover:bg-slate-800 text-white font-bold rounded-xl text-xs transition flex items-center gap-1.5">
-                    📋 Copy Bios
-                </button>
+        </div>
+
+        <article class="surface rounded-3xl shadow-md p-6 sm:p-8 mb-10 space-y-6">
+            <div class="pb-4 border-b" style="border-color: var(--card-border);">
+                <h2 class="text-xl font-bold">Write a Bio That Gets You Hired</h2>
+                <p class="text-sm leading-relaxed mt-2 muted">
+                    Your bio is your digital handshake. It should instantly communicate who you are, what you do, and how you can help. This tool analyses your skills and generates highly professional, platform-specific bios designed to attract clients and recruiters. No generic filler text—just optimized, ready-to-use copy.
+                </p>
             </div>
 
-        </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">💼 LinkedIn & Upwork</h3>
+                    <p class="text-xs muted">Generates 3 distinct headlines and a comprehensive "About" section formatted with clean bullet points.</p>
+                </div>
+                <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">📱 X & Instagram</h3>
+                    <p class="text-xs muted">Creates punchy, character-limited bios that fit perfectly within the 160-char (X) and 150-char (Instagram) limits.</p>
+                </div>
+            </div>
 
-        <!-- SEO Article Content (Rich & Expanded Content) -->
-<article class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10 text-slate-700 space-y-6">
-    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">Write a Clear Bio for LinkedIn, X, Upwork and Instagram</h2>
+            <div class="border-t pt-6" style="border-color: var(--card-border);">
+                <h3 class="text-lg font-bold mb-3">Related Tools</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <a href="article-outline.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">📑</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Article Outline Gen</div>
+                        <div class="text-xs muted">Research Outlines</div>
+                    </a>
+                    <a href="text-suite.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">✍️</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Text &amp; Word Counter</div>
+                        <div class="text-xs muted">Word Counter &amp; Case</div>
+                    </a>
+                    <a href="grammar-checker.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">📝</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Grammar Checker</div>
+                        <div class="text-xs muted">Instant Typo Fix</div>
+                    </a>
+                </div>
+            </div>
+        </article>
 
-    <p class="text-sm leading-relaxed text-slate-600">
-        Your bio is often the first thing a client, recruiter or follower reads. It should say who you are, what you do and how to get in touch, in the space each platform allows. This generator turns your role and skills into ready-to-edit bios for each platform and checks the character limits for you. It uses only the details you type, so nothing is made up about your experience.
-    </p>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-        <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-2xl">
-            <h3 class="font-bold text-slate-900 text-sm mb-1">💼 LinkedIn & Upwork</h3>
-            <p class="text-xs text-slate-600">LinkedIn: two headline options (220-character limit) plus an About section. Upwork: a short overview you can build on, plus a 160-character X bio.</p>
-        </div>
-        <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-2xl">
-            <h3 class="font-bold text-slate-900 text-sm mb-1">📱 X & Instagram</h3>
-            <p class="text-xs text-slate-600">Short bios that fit 160 characters (X) and 150 characters (Instagram), with the character count shown for each version.</p>
-        </div>
-    </div>
-
-    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">How to Use the Bio Generator</h3>
-    <ol class="list-decimal pl-5 text-xs sm:text-sm text-slate-600 space-y-2">
-        <li>Type your role first, then your main skills separated by commas. You can add experience too, for example: <em>Web Developer, React, Node.js, 5 years</em>.</li>
-        <li>Choose a platform style: LinkedIn, X / Upwork or Instagram. The result updates when you change the style.</li>
-        <li>Click <strong>Generate Bios</strong> (or press Enter), then <strong>Copy Bios</strong> and paste the text into your profile.</li>
-        <li>Edit the result: add one or two real results, projects or clients so your bio stands out.</li>
-    </ol>
-
-    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">What a Strong Bio Includes</h3>
-    <ul class="list-disc pl-5 text-xs sm:text-sm text-slate-600 space-y-2">
-        <li><strong>Who you are:</strong> your role or niche in the first few words, such as <em>Web Developer</em> rather than a vague title.</li>
-        <li><strong>What you work with:</strong> three to five skills, tools or services that clients search for.</li>
-        <li><strong>Proof:</strong> real numbers, projects or years of experience. Only claim badges, rankings or results you can show.</li>
-        <li><strong>A next step:</strong> a short invitation to connect, message you or view your portfolio.</li>
-    </ul>
-
-    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">Privacy</h3>
-    <p class="text-sm leading-relaxed text-slate-600">
-        Your bio is generated by JavaScript in your browser. What you type is not sent to MyToolX servers and is not stored. This page loads Tailwind CSS and Google AdSense from third parties, which may set cookies as described in our <a href="privacy.html" class="text-blue-600 font-semibold hover:underline">Privacy Policy</a>.
-    </p>
-</article>
-
-<!-- Expanded FAQs Section -->
-<section class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10">
-    <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">Frequently Asked Questions (FAQs)</h2>
-    <div class="space-y-4">
-        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">How does the Bio Generator work?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">You type your role, optionally followed by skills and years of experience separated by commas, and choose LinkedIn, X / Upwork or Instagram. The tool arranges your details into bios that fit each platform's limits using built-in rules in your browser, not an AI model.</p>
-        </div>
-
-        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">Is this tool free?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Yes. It is free with no registration or subscription, and you can generate as many bios as you like.</p>
-        </div>
-
-        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">What platforms does it cover?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">LinkedIn (headline and About section), X and Upwork (a short X bio and an Upwork overview) and Instagram. The character limits used are 220 for a LinkedIn headline, 160 for an X bio and 150 for an Instagram bio. Platforms can change their limits, so check the app before publishing.</p>
-        </div>
-
-        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">Is my information saved anywhere?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">No. The text you type is processed in your browser and is not sent to our servers or stored. The page itself loads Tailwind CSS and Google AdSense from third parties.</p>
-        </div>
-
-        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">Why is my bio so short?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">The generator only uses what you provide. Add skills and years of experience separated by commas for a fuller result, then add your own projects and results.</p>
-        </div>
-
-        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">How long should an Upwork or LinkedIn bio be?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Keep a LinkedIn headline under 220 characters. For the About section and Upwork overview, a few short paragraphs or bullets that cover who you are, what you do and how to contact you usually work well. Add specific results so it reads as a real profile.</p>
-        </div>
-    </div>
-</section>
+        <section class="surface rounded-3xl shadow-md p-6 sm:p-8 mb-10">
+            <h2 class="text-xl font-bold border-b pb-3 mb-6" style="border-color: var(--card-border);">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">How does the Bio Generator work?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">You type your role and skills. The tool builds multiple bio variations that fit the character limits of LinkedIn, X, Upwork, and Instagram.</p>
+                </div>
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">Is this tool free?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">Yes, it is 100% free with no registration required.</p>
+                </div>
+            </div>
+        </section>
 
     </main>
 
-    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs font-semibold text-slate-500">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p>&copy; 2026 MyToolX. All rights reserved. Text you enter in this tool is processed in your browser.</p>
-        <div class="flex items-center gap-4 text-slate-600 font-bold">
-            <a href="index.html" class="hover:text-blue-600">Home</a>
-            <a href="privacy.html" class="hover:text-blue-600">Privacy Policy</a>
-            <a href="terms.html" class="hover:text-blue-600">Terms of Service</a>
-            <a href="about.html" class="hover:text-blue-600">About Us</a>
-            <a href="contact.html" class="hover:text-blue-600">Contact Us</a>
+        <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+                <div class="lg:col-span-5">
+                    <a href="index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 pr-4">
+                        MyToolX is a free suite of client-side web tools for writers, freelancers and developers. No sign-up, no tracking, no data leaves your browser.
+                    </p>
+                </div>
+                <div class="lg:col-span-4">
+                    <h3>Popular Tools</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <a href="typing-test.html">Typing Speed Test</a>
+                        <a href="image-compressor.html">Image Compressor</a>
+                        <a href="prompt-studio.html">AI Prompt Studio</a>
+                        <a href="grammar-checker.html">Grammar Checker</a>
+                        <a href="text-suite.html">Text &amp; Word Suite</a>
+                        <a href="fee-calculator.html">Fee Calculator</a>
+                        <a href="sip-calculator.html">SIP Calculator</a>
+                        <a href="loan-emi.html">Loan EMI Calc</a>
+                        <a href="json-formatter.html">JSON Formatter</a>
+                        <a href="base64-tool.html">Base64 Tool</a>
+                        <a href="qr-code-generator.html">QR Code Gen</a>
+                        <a href="password-generator.html">Password Gen</a>
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Company</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Legal</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                                <li><a href="terms.html">Terms of Service</a></li>
+                                <li><a href="index.html">Sitemap</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. All rights reserved.</p>
+                <p>All tools run 100% client-side in your browser.</p>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-    <!-- ENGINE LOGIC -->
     <script>
-        (function () {
-            'use strict';
-            var EMPTY = 'Generated bios...';
-            var hasResult = false, copyText = '';
-            var input = document.getElementById('bioRole');
-            var styleSel = document.getElementById('bioStyle');
-            var out = document.getElementById('bioOutput');
-            var copyBtn = document.querySelector('button[onclick="copyBioText()"]');
-            var copyLabel = copyBtn ? copyBtn.innerHTML : '';
-            var copyTimer = null;
+    (function () {
+        'use strict';
 
-            var clean = function (s) { return (s || '').replace(/\s+/g, ' ').trim(); };
-            var cap = function (s) { return s ? s.charAt(0).toUpperCase() + s.slice(1) : s; };
-            var len = function (s) { return Array.from(s).length; };
-            var an = function (s) { return (/^[aeiou]/i.test(s) ? 'an ' : 'a ') + s; };
-            var SMALL = /^(a|an|the|and|or|of|to|in|on|for|with|at|by)$/i;
-            function titleCase(s) { return s !== s.toLowerCase() ? s : s.split(' ').map(function (w, i) { return i && SMALL.test(w) ? w : cap(w); }).join(' '); }
-            function joinList(a) { return a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' and ' + a[a.length - 1]; }
-            function uniq(a) { var seen = {}; return a.filter(function (x) { var k = x.toLowerCase(); return k && !seen[k] && (seen[k] = 1); }); }
-            function trimTo(s, max) {
-                if (len(s) <= max) return s;
-                var chars = Array.from(s).slice(0, max - 1).join('').replace(/\s+\S*$/, '');
-                return chars.replace(/[\s,;:|\-–]+$/, '') + '…';
-            }
-            /* Build the longest version that still fits the limit by dropping skills one at a time */
-            function fitSkills(max, build, skills) {
-                for (var n = skills.length; n >= 0; n--) { var t = build(skills.slice(0, n)); if (len(t) <= max) return t; }
-                return trimTo(build([]), max);
-            }
-
-            function parse(raw) {
-                var parts = raw.split(/[,;|\n]+/).map(clean).filter(Boolean), exp = '', rest = [];
-                parts.forEach(function (p, i) {
-                    var m = p.match(/^(\d{1,2})\+?\s*(?:years?|yrs?)(?:\s+of)?(?:\s+experience)?$/i);
-                    if (m && i > 0) exp = m[1]; else rest.push(p);
-                });
-                return { role: titleCase(rest[0] || ''), skills: uniq(rest.slice(1)).slice(0, 6), exp: exp };
-            }
-            function show(text, ok, forCopy) {
-                out.textContent = text; hasResult = !!ok; copyText = ok ? (forCopy || text) : '';
-                out.className = out.className.replace(/\btext-red-300\b/g, '').replace(/\s+/g, ' ');
-                if (!ok && text !== EMPTY) out.className += ' text-red-300';
-            }
-            function flashCopy(msg) {
-                if (!copyBtn) return;
-                copyBtn.textContent = msg; clearTimeout(copyTimer);
-                copyTimer = setTimeout(function () { copyBtn.innerHTML = copyLabel; }, 1800);
-            }
-            var CTA = 'DM to collaborate';
-
-            function linkedin(d) {
-                var r = d.role, e = d.exp ? d.exp + '+ years of experience' : '';
-                var h1 = fitSkills(220, function (s) { return [r].concat(s.slice(0, 3), e ? [e] : []).join(' | '); }, d.skills);
-                var h2 = fitSkills(220, function (s) { return r + (s.length ? ' working with ' + joinList(s.slice(0, 3)) : '') + (e ? ' | ' + e : ''); }, d.skills);
-                var about = ['I am ' + an(r) + (e ? ' with ' + e : '') + (d.skills.length ? ', working with ' + joinList(d.skills) : '') + '.'];
-                if (d.skills.length) about.push('What I focus on:\n' + d.skills.map(function (s) { return '• ' + cap(s); }).join('\n'));
-                about.push('Feel free to connect or send me a message.');
-                var heads = uniq([h1, h2]);
-                var body = heads.map(function (h, i) { return 'HEADLINE ' + (i + 1) + ' (' + len(h) + '/220)\n' + h; }).join('\n\n') + '\n\nABOUT SECTION\n' + about.join('\n\n');
-                return { body: body, tips: 'Tip: add one or two real results from your work (numbers, clients, projects) to the About section. Check the current LinkedIn headline limit in the app.' };
-            }
-            function upwork(d) {
-                var r = d.role, e = d.exp ? d.exp + '+ years of experience' : '', yrs = d.exp ? d.exp + '+ yrs' : '';
-                var x = fitSkills(160, function (s) { return [r].concat(s.slice(0, 3).join(', ') || [], yrs || [], CTA).join(' | '); }, d.skills);
-                var ov = ['Hi, I am ' + an(r) + (e ? ' with ' + e : '') + '.'];
-                if (d.skills.length) ov.push('I can help with:\n' + d.skills.map(function (s) { return '• ' + cap(s); }).join('\n'));
-                ov.push('To get started, send me a short description of your project, your goals and your timeline, and I will reply with questions and next steps.');
-                var o = ov.join('\n\n'), words = clean(o).split(' ').length;
-                var body = 'X BIO (' + len(x) + '/160)\n' + x + '\n\nUPWORK OVERVIEW (about ' + words + ' words)\n' + o;
-                return { body: body, tips: 'Tip: a fuller Upwork overview works better. Add your real projects, results and the type of client you work with. Do not claim badges such as Top Rated unless you have earned them.' };
-            }
-            function instagram(d) {
-                var r = d.role;
-                var a = fitSkills(150, function (s) { return [r].concat(s.length ? [s.slice(0, 3).join(' • ')] : [], ['📩 ' + CTA]).join('\n'); }, d.skills);
-                var b = fitSkills(150, function (s) { return ['✨ ' + r].concat(s.length ? ['💡 ' + s.slice(0, 3).join(', ')] : [], ['📩 ' + CTA]).join('\n'); }, d.skills);
-                var v = uniq([a, b]);
-                return { body: v.map(function (t, i) { return 'BIO ' + (i + 1) + ' (' + len(t) + '/150)\n' + t; }).join('\n\n'), tips: 'Tip: add your location or portfolio link in the link field. Check the current Instagram bio limit in the app.' };
-            }
-
-            function generate() {
-                var raw = clean(input.value);
-                if (!raw) {
-                    input.setAttribute('aria-invalid', 'true'); input.classList.add('border-red-400'); input.focus();
-                    show('Please enter your role or main skill first, for example: Web Developer, React, Node.js, 5 years', false);
-                    return;
-                }
-                input.removeAttribute('aria-invalid'); input.classList.remove('border-red-400');
-                try {
-                    var d = parse(input.value), style = styleSel.value;
-                    var r = style === 'upwork' ? upwork(d) : style === 'instagram' ? instagram(d) : linkedin(d);
-                    show(r.body + '\n\n' + r.tips, true, r.body);
-                } catch (e) { console.error(e); show('Something went wrong. Please check your input and try again.', false); }
-            }
-            window.generateBioText = generate;
-            window.clearBioGen = function () {
-                input.value = ''; input.removeAttribute('aria-invalid'); input.classList.remove('border-red-400');
-                show(EMPTY, false); if (copyBtn) copyBtn.innerHTML = copyLabel;
-            };
-            window.copyBioText = function () {
-                if (!hasResult) { flashCopy('Generate bios first'); return; }
-                var txt = copyText;
-                function fallback() {
-                    var ta = document.createElement('textarea'); ta.value = txt; ta.setAttribute('readonly', ''); ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
-                    document.body.appendChild(ta); ta.select();
-                    var ok = false; try { ok = document.execCommand('copy'); } catch (e) { }
-                    document.body.removeChild(ta);
-                    if (ok) flashCopy('✅ Copied!');
-                    else { var r = document.createRange(); r.selectNodeContents(out); var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); flashCopy('Press Ctrl+C to copy'); }
-                }
-                if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(txt).then(function () { flashCopy('✅ Copied!'); }, fallback);
-                else fallback();
-            };
-            input.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); generate(); } });
-            input.addEventListener('input', function () { if (input.getAttribute('aria-invalid')) { input.removeAttribute('aria-invalid'); input.classList.remove('border-red-400'); } });
-            styleSel.addEventListener('change', function () { if (hasResult && clean(input.value)) generate(); });   /* keep the result in sync with the selector */
+        (function initTheme() {
+            var saved = null;
+            try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = saved || (prefersDark ? 'dark' : 'light');
+            applyTheme(theme);
         })();
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            var icon = document.getElementById('themeIcon');
+            if (icon) icon.textContent = (theme === 'dark' ? '☀️' : '🌙');
+            var btn = document.getElementById('themeToggle');
+            if (btn) {
+                btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+                btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+            }
+        }
+        function toggleTheme() {
+            var cur = document.documentElement.getAttribute('data-theme') || 'light';
+            var next = cur === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('mtx-theme', next); } catch (e) {}
+        }
+        window.toggleTheme = toggleTheme;
+
+        var input = document.getElementById('bioRole');
+        var styleSel = document.getElementById('bioStyle');
+        var out = document.getElementById('bioOutput');
+        var copyBtn = document.getElementById('copyBtn');
+        var hasResult = false;
+
+        // Helper functions
+        function titleCase(s) { 
+            var small = /^(a|an|the|and|or|of|to|in|on|for|with|at|by)$/i;
+            return s.split(' ').map(function(w, i) { return i && small.test(w) ? w.toLowerCase() : w.charAt(0).toUpperCase() + w.slice(1); }).join(' '); 
+        }
+        function joinList(a) { return a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' and ' + a[a.length - 1]; }
+        function an(s) { return (/^[aeiou]/i.test(s) ? 'an ' : 'a ') + s; }
+
+        function parse(raw) {
+            var parts = raw.split(/[,;|\n]+/).map(function(s) { return s.trim(); }).filter(Boolean);
+            var exp = '', skills = [], role = '';
+            
+            parts.forEach(function(p) {
+                // Look for years of experience pattern (e.g. "5 years", "10+ yrs")
+                var m = p.match(/(\d{1,2})\+?\s*(?:years?|yrs?)/i);
+                if (m) {
+                    exp = m[1];
+                } else if (!role) {
+                    role = p;
+                } else {
+                    skills.push(p);
+                }
+            });
+
+            // If role wasn't set, default to first skill or generic
+            if (!role && skills.length > 0) role = skills.shift();
+            if (!role) role = 'Professional';
+
+            return { role: titleCase(role), skills: skills.slice(0, 5), exp: exp };
+        }
+
+        function linkedin(d) {
+            var e = d.exp ? 'with ' + d.exp + '+ years of experience' : '';
+            var sk = d.skills.length > 0 ? joinList(d.skills) : 'various projects';
+            
+            var h1 = d.role + ' | ' + (d.exp ? d.exp + '+ Years Exp' : 'Driving Results');
+            var h2 = 'Experienced ' + d.role + ' specializing in ' + (d.skills[0] || 'solutions');
+            var h3 = 'Helping businesses scale with ' + d.role + ' expertise' + (d.exp ? ' (' + d.exp + '+ yrs)' : '');
+
+            var about = 'I am ' + an(d.role) + (e ? ' ' + e : '') + '. I specialize in ' + (d.skills.length > 0 ? sk : 'delivering high-quality solutions') + '.\n\n';
+            if (d.skills.length > 0) {
+                about += 'Core competencies:\n';
+                d.skills.forEach(function(s) { about += '• ' + titleCase(s) + '\n'; });
+            }
+            about += '\nI am always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to connect or send a message.';
+
+            return 'HEADLINE OPTIONS (220 char limit)\n' +
+                   '1. ' + h1 + ' (' + h1.length + '/220)\n' +
+                   '2. ' + h2 + ' (' + h2.length + '/220)\n' +
+                   '3. ' + h3 + ' (' + h3.length + '/220)\n\n' +
+                   'ABOUT SECTION\n' + about;
+        }
+
+        function upwork(d) {
+            var e = d.exp ? 'with over ' + d.exp + ' years of experience' : '';
+            var sk = d.skills.length > 0 ? joinList(d.skills) : 'my core skills';
+            
+            var ov = 'Hi, I am ' + an(d.role) + (e ? ' ' + e : '') + '. I help clients achieve their goals by providing high-quality ' + (d.skills[0] || 'services') + ' and ' + (d.skills[1] || 'solutions') + '.\n\n';
+            if (d.skills.length > 0) {
+                ov += 'My expertise includes:\n';
+                d.skills.forEach(function(s) { ov += '• ' + titleCase(s) + '\n'; });
+                ov += '\n';
+            }
+            ov += 'I am dedicated to delivering projects on time and exceeding expectations. If you are looking for a reliable ' + d.role + ', let\'s discuss how I can help your project succeed.';
+
+            return 'UPWORK OVERVIEW\n' + ov;
+        }
+
+        function x(d) {
+            var e = d.exp ? ' | ' + d.exp + '+ yrs exp' : '';
+            var sk = d.skills.length > 0 ? ' | ' + d.skills.slice(0, 3).join(' • ') : '';
+            var bio = d.role + e + sk + '\n\nBuilding the future, one project at a time. 🚀';
+            return 'X / TWITTER BIO (160 char limit)\n' + bio + '\n\n(' + bio.length + '/160 characters)';
+        }
+
+        function instagram(d) {
+            var sk = d.skills.length > 0 ? d.skills.slice(0, 3).join(' • ') : 'Creating & Building';
+            var bio = '✨ ' + d.role + '\n💡 ' + sk + '\n📍 Working worldwide\n👇 Let\'s collaborate';
+            return 'INSTAGRAM BIO (150 char limit)\n' + bio + '\n\n(' + bio.length + '/150 characters)';
+        }
+
+        function generate() {
+            var raw = input.value.trim();
+            if (!raw) {
+                input.setAttribute('aria-invalid', 'true');
+                input.classList.add('border-red-400');
+                input.focus();
+                out.textContent = 'Please enter your role or main skill first, e.g., Web Developer, React, Node.js, 5 years';
+                out.classList.add('panel-error');
+                hasResult = false;
+                return;
+            }
+            input.removeAttribute('aria-invalid');
+            input.classList.remove('border-red-400');
+            out.classList.remove('panel-error');
+
+            try {
+                var d = parse(raw);
+                var style = styleSel.value;
+                var result = '';
+
+                if (style === 'linkedin') result = linkedin(d);
+                else if (style === 'upwork') result = upwork(d);
+                else if (style === 'x') result = x(d);
+                else if (style === 'instagram') result = instagram(d);
+
+                out.textContent = result;
+                hasResult = true;
+            } catch (e) {
+                console.error(e);
+                out.textContent = 'Something went wrong. Please check your input and try again.';
+                out.classList.add('panel-error');
+                hasResult = false;
+            }
+        }
+        window.generateBioText = generate;
+
+        input.addEventListener('input', function() {
+            if (input.getAttribute('aria-invalid')) {
+                input.removeAttribute('aria-invalid');
+                input.classList.remove('border-red-400');
+            }
+            if (hasResult) generate();
+        });
+
+        styleSel.addEventListener('change', function() {
+            if (input.value.trim()) generate();
+        });
+
+        function copyBioText() {
+            if (!hasResult) return;
+            var txt = out.textContent;
+            var original = copyBtn.innerHTML;
+            navigator.clipboard.writeText(txt).then(function() {
+                copyBtn.textContent = '✅ Copied!';
+                setTimeout(function() { copyBtn.innerHTML = original; }, 1500);
+            });
+        }
+        window.copyBioText = copyBioText;
+
+        function clearBioGen() {
+            input.value = '';
+            out.textContent = 'Waiting for input...';
+            out.classList.remove('panel-error');
+            hasResult = false;
+            input.focus();
+        }
+        window.clearBioGen = clearBioGen;
+    })();
     </script>
 </body>
 </html>

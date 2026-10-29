@@ -2,251 +2,372 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- SEO Meta Description -->
-   <meta name="description" content="Explore MyToolX for free online utility tools, AI prompt generators, professional CV builders, and remote job opportunities all in one place."> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
-    <!-- Canonical URL -->
+    <meta name="description" content="Explore MyToolX for free online utility tools, AI prompt generators, typing speed tests, image compressors, and professional CV builders. 100% free, privacy-first.">
+    
     <link rel="canonical" href="https://mytoolx.org/">
-
-    <!-- Google AdSense Account Verification -->
     <meta name="google-adsense-account" content="ca-pub-3410254230554312">
 
-    <title>MyToolX - Free Online Micro-Tools Suite & AI Utilities</title>
+    <title>MyToolX — Free Online Tools, AI Prompts & Utilities</title>
 
-    <!-- Tailwind CSS CDN -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:title" content="MyToolX — Free Online Tools, AI Prompts & Utilities">
+    <meta property="og:description" content="Explore free, privacy-first web tools for writers, developers, freelancers, and students.">
+    <meta property="og:url" content="https://mytoolx.org/">
+    <meta property="og:image" content="https://mytoolx.org/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MyToolX — Free Online Tools, AI Prompts & Utilities">
+    <meta name="twitter:description" content="Explore free, privacy-first web tools for writers, developers, freelancers, and students.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .card-3d-btn {
-            transition: all 0.2s ease;
-            box-shadow: 0 6px 15px -3px rgba(0, 0, 0, 0.06);
-            border: 2px solid #e2e8f0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .card-3d-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px -4px rgba(37, 99, 235, 0.18);
-            border-color: #2563eb;
-        }
-        .logo-box-3d {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #a1c4fd 100%);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15), inset 0 2px 3px rgba(255, 255, 255, 0.8);
-            border: 2px solid #ffffff;
-        }
-        .logo-text-my {
-            background: -webkit-linear-gradient(45deg, #1e293b, #475569);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-        }
-        .logo-text-toolx {
-            background: -webkit-linear-gradient(45deg, #f97316, #ec4899, #8b5cf6, #06b6d4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-        }
-    </style>
 
-    <!-- Google tag (gtag.js) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "MyToolX",
+          "url": "https://mytoolx.org/",
+          "description": "A free suite of client-side web tools for writers, freelancers and developers.",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://mytoolx.org/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+    </script>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-W8KM3G3BYL');
     </script>
 
-    <!-- Google Ads Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
+    <style>
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
+        }
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
+        }
+        html, body { overflow-x: hidden; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+        
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-accent { background: var(--accent); color: #fff; } .btn-accent:hover { background: var(--accent-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+
+        .input-field { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
+        .input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); outline: none; }
+
+        .card-3d-btn { transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; background: var(--card); border: 1px solid var(--card-border); }
+        .card-3d-btn:hover { transform: translateY(-4px); box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); border-color: var(--primary); }
+
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+        
+        #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
+        :focus-visible { outline: none; }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        ::selection { background: rgba(79,70,229,0.25); }
+        @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+    </style>
 </head>
-<body class="bg-gradient-to-br from-slate-100 via-blue-50/50 to-indigo-50/30 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+<body class="font-sans min-h-screen flex flex-col justify-between">
 
-    <!-- Header Navbar -->
-    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex justify-between items-center gap-2">
-            <a href="index.html" class="flex items-center space-x-1.5 sm:space-x-3 group cursor-pointer select-none shrink-0">
-                <div class="logo-box-3d w-8 h-8 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl flex items-center justify-center transform group-hover:scale-105 transition-all duration-300">
-                    <span class="text-lg sm:text-2xl filter drop-shadow">🧰</span>
-                </div>
-                <span class="text-xl sm:text-3xl font-black tracking-tight font-sans flex items-center">
-                    <span class="logo-text-my">My</span>
-                    <span class="logo-text-toolx ml-0.5">ToolX</span>
-                </span>
-            </a>
-
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-3 sm:gap-4">
+                <a href="index.html" class="flex items-center gap-2 group cursor-pointer select-none shrink-0" aria-label="MyToolX home">
+                    <div class="logo-mark">M<span class="x">X</span></div>
+                    <span class="logo-wordmark hidden xs:block sm:block">MyTool<span class="x">X</span></span>
+                </a>
+            </div>
             <div class="flex items-center gap-1.5 shrink-0">
-                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="text-[10px] sm:text-xs font-black bg-gradient-to-r from-emerald-500 via-teal-600 to-cyan-600 text-white px-2.5 sm:px-3.5 py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl shadow-md hover:shadow-emerald-500/30 transition-all flex items-center gap-1 whitespace-nowrap">
-                    💼 <span class="hidden xs:inline">Sponsored </span>Jobs ↗
+                <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle dark mode" class="w-11 h-11 rounded-xl flex items-center justify-center text-base font-bold" style="background: var(--chip-bg); color: var(--chip-text);">
+                    <span id="themeIcon" aria-hidden="true">🌙</span>
+                </button>
+                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="hidden sm:inline-flex text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition whitespace-nowrap">
+                    💼 Remote Jobs ↗
                 </a>
-
-                <a href="https://mali1.pythonanywhere.com/" target="_blank" class="text-[10px] sm:text-xs font-bold bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-2.5 sm:px-3.5 py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl shadow-md hover:opacity-90 transition whitespace-nowrap">
-                    📄 Live CV Maker ↗
+                <a href="https://mali1.pythonanywhere.com/" target="_blank" rel="noopener" class="hidden sm:inline-flex text-xs font-bold text-white px-3 py-1.5 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
+                    📄 Live CV ↗
                 </a>
-                <span class="hidden md:inline-block text-xs font-bold uppercase tracking-widest text-emerald-700 bg-emerald-100 px-3 py-1.5 rounded-full border border-emerald-200">100% Free Suite</span>
             </div>
         </div>
     </header>
 
-    <!-- Main Container -->
     <main class="max-w-7xl mx-auto px-4 py-8 w-full flex-grow">
         
-        <!-- Hero Section with Single Optimized H1 -->
-        <div class="text-center mb-6">
-            <h1 class="text-2xl sm:text-4xl md:text-5xl font-black text-slate-900 mb-2 tracking-tight">
+        <!-- Hero Section -->
+        <div class="text-center mb-10 max-w-3xl mx-auto">
+            <!-- Heading reduced from 5xl to 4xl for better framing -->
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-black mb-3 tracking-tight leading-tight" style="color: var(--text);">
                 Free Online Utility Tools, AI Prompts & CV Suite
             </h1>
-            <p class="text-slate-600 text-sm md:text-base max-w-xl mx-auto font-medium mb-6">Fast, secure, professional client-side tools organized for writers, creators, developers, and job seekers.</p>
+            <p class="text-sm md:text-base max-w-xl mx-auto font-medium mb-6 muted">
+                Fast, secure, professional client-side tools organized for writers, creators, developers, and job seekers.
+            </p>
             
             <!-- GLOBAL SMART SEARCH BAR -->
             <div class="max-w-xl mx-auto relative">
                 <div class="relative flex items-center">
-                    <span class="absolute left-4 text-slate-400 text-lg">🔍</span>
-                    <input type="text" id="globalSearchInput" onkeyup="handleGlobalSearch()" placeholder="Search tools (e.g. Grammar, SIP, Password, QR Code, JSON...)" class="w-full pl-11 pr-10 py-3.5 bg-white border border-slate-300 rounded-2xl shadow-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm font-semibold text-slate-800 transition-all">
-                    <button onclick="clearGlobalSearch()" id="searchClearBtn" class="absolute right-3 text-slate-400 hover:text-slate-600 font-bold text-sm hidden">✕</button>
+                    <span class="absolute left-4 text-lg muted">🔍</span>
+                    <input type="text" id="globalSearchInput" onkeyup="handleGlobalSearch()" placeholder="Search tools (e.g. Typing, Image, SIP, Grammar...)" class="input-field w-full pl-11 pr-10 py-3.5 rounded-2xl text-sm font-semibold transition-all">
+                    <button onclick="clearGlobalSearch()" id="searchClearBtn" class="absolute right-3 muted hover:text-red-500 font-bold text-sm hidden">✕</button>
                 </div>
             </div>
         </div>
 
         <!-- Role Filter Tabs -->
         <div id="categoryTabsContainer" class="flex flex-wrap justify-center gap-2 mb-8 text-xs font-bold">
-            <button onclick="filterCategory('all', this)" class="cat-btn bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold">All Tools</button>
-            <button onclick="filterCategory('writer', this)" class="cat-btn bg-white text-blue-700 hover:bg-blue-50 px-5 py-2.5 rounded-full border border-blue-200 shadow-sm font-extrabold">✍️ Writers, Students & CV</button>
-            <button onclick="filterCategory('ai', this)" class="cat-btn bg-white text-violet-700 hover:bg-violet-50 px-5 py-2.5 rounded-full border border-violet-200 shadow-sm font-extrabold">🤖 AI & Content Templates 🔥</button>
-            <button onclick="filterCategory('finance', this)" class="cat-btn bg-white text-emerald-700 hover:bg-emerald-50 px-5 py-2.5 rounded-full border border-emerald-200 shadow-sm font-extrabold">💰 Finance & Freelancers</button>
-            <button onclick="filterCategory('everyday', this)" class="cat-btn bg-white text-purple-700 hover:bg-purple-50 px-5 py-2.5 rounded-full border border-purple-200 shadow-sm font-extrabold">📱 Everyday Utilities</button>
-            <button onclick="filterCategory('dev', this)" class="cat-btn bg-white text-amber-700 hover:bg-amber-50 px-5 py-2.5 rounded-full border border-amber-200 shadow-sm font-extrabold">💻 For Developers</button>
+            <button onclick="filterCategory('all', this)" class="btn-3d btn-primary px-5 py-2.5 rounded-full">All Tools</button>
+            <button onclick="filterCategory('writer', this)" class="btn-3d btn-chip px-5 py-2.5 rounded-full">✍️ Writers & CV</button>
+            <button onclick="filterCategory('ai', this)" class="btn-3d btn-chip px-5 py-2.5 rounded-full">🤖 AI & Content</button>
+            <button onclick="filterCategory('finance', this)" class="btn-3d btn-chip px-5 py-2.5 rounded-full">💰 Finance</button>
+            <button onclick="filterCategory('everyday', this)" class="btn-3d btn-chip px-5 py-2.5 rounded-full">📱 Everyday Utilities</button>
+            <button onclick="filterCategory('dev', this)" class="btn-3d btn-chip px-5 py-2.5 rounded-full">💻 Developers</button>
         </div>
 
-        <!-- INVALID SEARCH ALERT BOX (Hidden by default) -->
-        <div id="noSearchResultsMsg" class="hidden max-w-xl mx-auto bg-rose-50 border border-rose-200 rounded-2xl p-6 text-center mb-8 shadow-sm">
+        <!-- INVALID SEARCH ALERT BOX -->
+        <div id="noSearchResultsMsg" class="hidden max-w-xl mx-auto rounded-2xl p-6 text-center mb-8 shadow-sm" style="background: rgba(239, 68, 68, 0.1); border: 1px solid #EF4444;">
             <div class="text-3xl mb-2">🔍❌</div>
-            <h3 class="text-sm font-extrabold text-rose-800 uppercase tracking-wider mb-1">No Matching Tool Found</h3>
-            <p class="text-xs text-rose-600 font-medium mb-3">We couldn't find any tool matching your search query. Please try different keywords.</p>
+            <h3 class="text-sm font-extrabold uppercase tracking-wider mb-1" style="color: #EF4444;">No Matching Tool Found</h3>
+            <p class="text-xs font-medium mb-3" style="color: #EF4444;">We couldn't find any tool matching your search query. Please try different keywords.</p>
         </div>
 
-        <!-- Categorized Tool Cards Grid -->
-        <div id="toolsGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3.5 mb-8">
+        <!-- ALL TOOLS GRID -->
+        <h2 class="text-xl font-bold mb-4 hidden" style="color: var(--text);" id="gridHeader">All Tools</h2>
+        <div id="toolsGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3.5 mb-8">
             
+            <!-- NEW: Typing Test -->
+            <a href="typing-test.html" data-cat="everyday" data-keywords="typing speed test wpm game keyboard accuracy typing tutor" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">⌨️</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #8B5CF6;">Game</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Typing Speed Test</div><div class="text-xs muted">3D WPM & Accuracy</div></div>
+            </a>
+
+            <!-- NEW: Image Compressor -->
+            <a href="image-compressor.html" data-cat="everyday" data-keywords="image compressor resize jpg png webp reduce file size private" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">🖼️</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #10B981;">Utility</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Image Compressor</div><div class="text-xs muted">Resize & Compress</div></div>
+            </a>
+
             <!-- 1. WRITERS & CV -->
-            <a href="text-suite.html" data-cat="writer" data-keywords="text word suite counter case converter character read time uppercase lowercase titlecase" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-blue-200">
-                <div class="flex justify-between items-start"><span class="text-xl">✍️</span><span class="text-[9px] font-black uppercase tracking-wider bg-blue-100 text-blue-700 px-2 py-0.5 rounded-md">Writers</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Text & Word Suite</div><div class="text-[10px] text-slate-600">Counter & Case Converter</div></div>
+            <a href="text-suite.html" data-cat="writer" data-keywords="text word suite counter case converter character read time uppercase lowercase titlecase" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">✍️</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #3B82F6;">Writers</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Text & Word Suite</div><div class="text-xs muted">Counter & Case Converter</div></div>
             </a>
 
-            <a href="https://mali1.pythonanywhere.com/" target="_blank" data-cat="writer" data-keywords="cv builder live cv maker pdf resume builder word generator resume jobs" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-indigo-200 bg-gradient-to-br from-white to-indigo-50/50">
-                <div class="flex justify-between items-start"><span class="text-xl">📄</span><span class="text-[9px] font-black uppercase tracking-wider bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-md">CV Builder</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Live CV Maker</div><div class="text-[10px] text-slate-600">PDF & Word Generator</div></div>
+            <a href="https://mali1.pythonanywhere.com/" target="_blank" data-cat="writer" data-keywords="cv builder live cv maker pdf resume builder word generator resume jobs" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between" style="border-color: #6366F1;">
+                <div class="flex justify-between items-start"><span class="text-2xl">📄</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #6366F1;">CV Builder</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Live CV Maker ↗</div><div class="text-xs muted">PDF & Word Generator</div></div>
             </a>
 
-            <a href="grammar-checker.html" data-cat="writer" data-keywords="grammar check spelling proofreader tense punctuation fix typo corrector language engine" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-blue-200">
-                <div class="flex justify-between items-start"><span class="text-xl">📝</span><span class="text-[9px] font-black uppercase tracking-wider bg-blue-100 text-blue-700 px-2 py-0.5 rounded-md">Writers</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Grammar Checker</div><div class="text-[10px] text-slate-600">Instant Typo Fix</div></div>
+            <a href="grammar-checker.html" data-cat="writer" data-keywords="grammar check spelling proofreader tense punctuation fix typo corrector language engine" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">📝</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #3B82F6;">Writers</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Grammar Checker</div><div class="text-xs muted">Instant Typo Fix</div></div>
             </a>
 
             <!-- 2. AI TOOLS -->
-            <a href="prompt-studio.html" data-cat="ai" data-keywords="ai prompt studio chatgpt gemini midjourney github copilot claude prompt generator humanize text" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-violet-200">
-                <div class="flex justify-between items-start"><span class="text-xl">🤖</span><span class="text-[9px] font-black uppercase tracking-wider bg-violet-100 text-violet-700 px-2 py-0.5 rounded-md">AI Suite</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">AI Prompt Studio</div><div class="text-[10px] text-slate-600">Prompt & Humanizer</div></div>
+            <a href="prompt-studio.html" data-cat="ai" data-keywords="ai prompt studio chatgpt gemini midjourney github copilot claude prompt generator humanize text" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">🤖</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #8B5CF6;">AI Suite</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">AI Prompt Studio</div><div class="text-xs muted">Prompt & Humanizer</div></div>
             </a>
 
-            <a href="ai-bio-generator.html" data-cat="ai" data-keywords="ai bio generator linkedin twitter upwork instagram headline portfolio bio" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-violet-200">
-                <div class="flex justify-between items-start"><span class="text-xl">✨</span><span class="text-[9px] font-black uppercase tracking-wider bg-violet-100 text-violet-700 px-2 py-0.5 rounded-md">AI Suite</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">AI Bio Generator</div><div class="text-[10px] text-slate-600">LinkedIn & Social Bios</div></div>
+            <a href="ai-bio-generator.html" data-cat="ai" data-keywords="ai bio generator linkedin twitter upwork instagram headline portfolio bio" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">✨</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #8B5CF6;">AI Suite</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">AI Bio Generator</div><div class="text-xs muted">LinkedIn & Social Bios</div></div>
             </a>
 
-            <a href="article-outline.html" data-cat="ai" data-keywords="article outline generator research essay outline blog structure research paper" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-violet-200">
-                <div class="flex justify-between items-start"><span class="text-xl">📑</span><span class="text-[9px] font-black uppercase tracking-wider bg-violet-100 text-violet-700 px-2 py-0.5 rounded-md">AI Suite</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Article Outline Gen</div><div class="text-[10px] text-slate-600">Research Outlines</div></div>
+            <a href="article-outline.html" data-cat="ai" data-keywords="article outline generator research essay outline blog structure research paper" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">📑</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #8B5CF6;">AI Suite</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Article Outline Gen</div><div class="text-xs muted">Research Outlines</div></div>
             </a>
 
             <!-- 3. FINANCE -->
-            <a href="fee-calculator.html" data-cat="finance" data-keywords="fee calculator stripe paypal square payment gateway fee contract rate invoice" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-emerald-200">
-                <div class="flex justify-between items-start"><span class="text-xl">💳</span><span class="text-[9px] font-black uppercase tracking-wider bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-md">Finance</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Fee Calculators</div><div class="text-[10px] text-slate-600">Stripe & PayPal Fees</div></div>
+            <a href="fee-calculator.html" data-cat="finance" data-keywords="fee calculator stripe paypal square payment gateway fee contract rate invoice" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">💳</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #10B981;">Finance</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Fee Calculators</div><div class="text-xs muted">Stripe & PayPal Fees</div></div>
             </a>
 
-            <a href="sip-calculator.html" data-cat="finance" data-keywords="sip calculator mutual fund wealth return investment growth corpus maturity" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-emerald-200">
-                <div class="flex justify-between items-start"><span class="text-xl">📈</span><span class="text-[9px] font-black uppercase tracking-wider bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-md">Finance</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">SIP Calculator</div><div class="text-[10px] text-slate-600">Mutual Fund Return</div></div>
+            <a href="sip-calculator.html" data-cat="finance" data-keywords="sip calculator mutual fund wealth return investment growth corpus maturity" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">📈</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #10B981;">Finance</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">SIP Calculator</div><div class="text-xs muted">Mutual Fund Return</div></div>
             </a>
 
-            <a href="loan-emi.html" data-cat="finance" data-keywords="loan emi calculator mortgage installment interest principal bank loan" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-emerald-200">
-                <div class="flex justify-between items-start"><span class="text-xl">🏦</span><span class="text-[9px] font-black uppercase tracking-wider bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-md">Finance</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Loan EMI Calc</div><div class="text-[10px] text-slate-600">Mortgage & Installments</div></div>
+            <a href="loan-emi.html" data-cat="finance" data-keywords="loan emi calculator mortgage installment interest principal bank loan" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">🏦</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #10B981;">Finance</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Loan EMI Calc</div><div class="text-xs muted">Mortgage & Installments</div></div>
             </a>
 
             <!-- 4. EVERYDAY UTILITIES -->
-            <a href="qr-code-generator.html" data-cat="everyday" data-keywords="qr code generator download qr share qr link to qr image qr" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-purple-200">
-                <div class="flex justify-between items-start"><span class="text-xl">📱</span><span class="text-[9px] font-black uppercase tracking-wider bg-purple-100 text-purple-700 px-2 py-0.5 rounded-md">Utility</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">QR Code Gen</div><div class="text-[10px] text-slate-600">Create QR Images</div></div>
+            <a href="qr-code-generator.html" data-cat="everyday" data-keywords="qr code generator download qr share qr link to qr image qr" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">📱</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #8B5CF6;">Utility</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">QR Code Gen</div><div class="text-xs muted">Create QR Images</div></div>
             </a>
 
-            <a href="password-generator.html" data-cat="everyday" data-keywords="password generator secure password random key length generator copy password" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-purple-200">
-                <div class="flex justify-between items-start"><span class="text-xl">🔑</span><span class="text-[9px] font-black uppercase tracking-wider bg-purple-100 text-purple-700 px-2 py-0.5 rounded-md">Utility</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Password Gen</div><div class="text-[10px] text-slate-600">Secure Random Keys</div></div>
+            <a href="password-generator.html" data-cat="everyday" data-keywords="password generator secure password random key length generator copy password" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">🔑</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #8B5CF6;">Utility</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Password Gen</div><div class="text-xs muted">Secure Random Keys</div></div>
             </a>
 
-            <a href="unit-converter.html" data-cat="everyday" data-keywords="unit converter distance weight temperature kilometers miles feet meters inches cm kg lbs celsius fahrenheit" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-purple-200">
-                <div class="flex justify-between items-start"><span class="text-xl">⚖️</span><span class="text-[9px] font-black uppercase tracking-wider bg-purple-100 text-purple-700 px-2 py-0.5 rounded-md">Utility</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Unit Converter</div><div class="text-[10px] text-slate-600">Flexible Multi Converter</div></div>
+            <a href="unit-converter.html" data-cat="everyday" data-keywords="unit converter distance weight temperature kilometers miles feet meters inches cm kg lbs celsius fahrenheit" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">⚖️</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #8B5CF6;">Utility</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Unit Converter</div><div class="text-xs muted">Flexible Multi Converter</div></div>
             </a>
 
             <!-- 5. DEVELOPER TOOLS -->
-            <a href="json-formatter.html" data-cat="dev" data-keywords="json formatter json minifier json beautify developer code json syntax" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-amber-200">
-                <div class="flex justify-between items-start"><span class="text-xl">⚡</span><span class="text-[9px] font-black uppercase tracking-wider bg-amber-100 text-amber-700 px-2 py-0.5 rounded-md">Developer</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">JSON Formatter</div><div class="text-[10px] text-slate-600">Beautify & Minify</div></div>
+            <a href="json-formatter.html" data-cat="dev" data-keywords="json formatter json minifier json beautify developer code json syntax" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">⚡</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #F59E0B;">Developer</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">JSON Formatter</div><div class="text-xs muted">Beautify & Minify</div></div>
             </a>
 
-            <a href="base64-tool.html" data-cat="dev" data-keywords="base64 tool base64 encode base64 decode developer text encoding" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-amber-200">
-                <div class="flex justify-between items-start"><span class="text-xl">🔤</span><span class="text-[9px] font-black uppercase tracking-wider bg-amber-100 text-amber-700 px-2 py-0.5 rounded-md">Developer</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Base64 Tool</div><div class="text-[10px] text-slate-600">Encode & Decode</div></div>
+            <a href="base64-tool.html" data-cat="dev" data-keywords="base64 tool base64 encode base64 decode developer text encoding" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">🔤</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #F59E0B;">Developer</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Base64 Tool</div><div class="text-xs muted">Encode & Decode</div></div>
             </a>
 
-            <a href="color-converter.html" data-cat="dev" data-keywords="color converter hex code rgb code color picker developer design" class="card-3d-btn bg-white p-3.5 rounded-2xl text-left h-28 border-amber-200">
-                <div class="flex justify-between items-start"><span class="text-xl">🎨</span><span class="text-[9px] font-black uppercase tracking-wider bg-amber-100 text-amber-700 px-2 py-0.5 rounded-md">Developer</span></div>
-                <div><div class="font-bold text-slate-800 text-xs sm:text-sm">Color Converter</div><div class="text-[10px] text-slate-600">HEX, RGB & Names</div></div>
+            <a href="color-converter.html" data-cat="dev" data-keywords="color converter hex code rgb code color picker developer design" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">🎨</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #F59E0B;">Developer</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Color Converter</div><div class="text-xs muted">HEX, RGB & Names</div></div>
             </a>
         </div>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs font-semibold text-slate-500">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-3">
-            <p>&copy; 2026 MyToolX. All tools run client-side in your browser for 100% privacy.</p>
-            <div class="flex gap-4">
-                <a href="privacy.html" class="hover:underline">Privacy Policy</a>
-                <a href="terms.html" class="hover:underline">Terms of Service</a>
-                <a href="about.html" class="hover:underline">About Us</a>
-                <a href="contact.html" class="hover:underline">Contact Us</a>
+    <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+                <div class="lg:col-span-5">
+                    <a href="index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 pr-4">
+                        MyToolX is a free suite of client-side web tools for writers, freelancers and developers. No sign-up, no tracking, no data leaves your browser.
+                    </p>
+                </div>
+                <div class="lg:col-span-4">
+                    <h3>Popular Tools</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <!-- UPDATED: Added the new tools here -->
+                        <a href="typing-test.html">Typing Speed Test</a>
+                        <a href="image-compressor.html">Image Compressor</a>
+                        <a href="prompt-studio.html">AI Prompt Studio</a>
+                        <a href="grammar-checker.html">Grammar Checker</a>
+                        <a href="text-suite.html">Text &amp; Word Suite</a>
+                        <a href="fee-calculator.html">Fee Calculator</a>
+                        <a href="sip-calculator.html">SIP Calculator</a>
+                        <a href="loan-emi.html">Loan EMI Calc</a>
+                        <a href="json-formatter.html">JSON Formatter</a>
+                        <a href="base64-tool.html">Base64 Tool</a>
+                        <a href="qr-code-generator.html">QR Code Gen</a>
+                        <a href="password-generator.html">Password Gen</a>
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Company</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Legal</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                                <li><a href="terms.html">Terms of Service</a></li>
+                                <!-- You can create a simple sitemap.html page later, or point this to index.html -->
+                                <li><a href="index.html">Sitemap</a></li> 
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. All rights reserved.</p>
+                <p>All tools run 100% client-side in your browser.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT MASTER LOGIC FOR FILTERING & SEARCH -->
     <script>
+        // Theme Logic
+        (function initTheme() {
+            var saved = null;
+            try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = saved || (prefersDark ? 'dark' : 'light');
+            applyTheme(theme);
+        })();
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            var icon = document.getElementById('themeIcon');
+            if (icon) icon.textContent = (theme === 'dark' ? '☀️' : '🌙');
+            var btn = document.getElementById('themeToggle');
+            if (btn) {
+                btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+                btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+            }
+        }
+        function toggleTheme() {
+            var cur = document.documentElement.getAttribute('data-theme') || 'light';
+            var next = cur === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('mtx-theme', next); } catch (e) {}
+        }
+        window.toggleTheme = toggleTheme;
+
+        // Search & Filter Logic
         function filterCategory(cat, btnElement) {
-            const catButtons = document.querySelectorAll('.cat-btn');
+            const catButtons = document.querySelectorAll('#categoryTabsContainer button');
             catButtons.forEach(btn => {
-                btn.className = "cat-btn bg-white text-slate-800 hover:bg-slate-100 px-5 py-2.5 rounded-full border border-slate-200 shadow-sm font-extrabold transition-all";
+                btn.className = "btn-3d btn-chip px-5 py-2.5 rounded-full";
             });
 
             if (btnElement) {
-                if (cat === 'all') btnElement.className = "cat-btn bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold";
-                else if (cat === 'writer') btnElement.className = "cat-btn bg-blue-600 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold";
-                else if (cat === 'ai') btnElement.className = "cat-btn bg-violet-600 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold";
-                else if (cat === 'finance') btnElement.className = "cat-btn bg-emerald-600 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold";
-                else if (cat === 'everyday') btnElement.className = "cat-btn bg-purple-600 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold";
-                else if (cat === 'dev') btnElement.className = "cat-btn bg-amber-600 text-white px-5 py-2.5 rounded-full shadow-md font-extrabold";
+                btnElement.className = "btn-3d btn-primary px-5 py-2.5 rounded-full";
             }
 
             document.getElementById('globalSearchInput').value = '';
             document.getElementById('searchClearBtn').classList.add('hidden');
             document.getElementById('noSearchResultsMsg').classList.add('hidden');
+            document.getElementById('gridHeader').classList.remove('hidden');
+            document.getElementById('gridHeader').textContent = cat === 'all' ? 'All Tools' : btnElement.innerText;
 
             const elements = document.querySelectorAll('#toolsGrid a[data-cat]');
             elements.forEach(el => {
@@ -263,9 +384,20 @@
             const clearBtn = document.getElementById('searchClearBtn');
             const alertBox = document.getElementById('noSearchResultsMsg');
             const toolCards = document.querySelectorAll('#toolsGrid a');
+            const gridHeader = document.getElementById('gridHeader');
 
-            if (query.length > 0) clearBtn.classList.remove('hidden');
-            else clearBtn.classList.add('hidden');
+            // Reset category tabs when searching
+            const catButtons = document.querySelectorAll('#categoryTabsContainer button');
+            catButtons.forEach(btn => { btn.className = "btn-3d btn-chip px-5 py-2.5 rounded-full"; });
+
+            if (query.length > 0) {
+                clearBtn.classList.remove('hidden');
+                gridHeader.classList.add('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+                gridHeader.classList.remove('hidden');
+                gridHeader.textContent = 'All Tools';
+            }
 
             let visibleCount = 0;
             toolCards.forEach(card => {
@@ -291,7 +423,7 @@
             document.getElementById('globalSearchInput').value = '';
             document.getElementById('searchClearBtn').classList.add('hidden');
             document.getElementById('noSearchResultsMsg').classList.add('hidden');
-            filterCategory('all', document.querySelector('.cat-btn'));
+            filterCategory('all', document.querySelector('#categoryTabsContainer button'));
         }
     </script>
 </body>

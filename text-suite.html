@@ -2,49 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text & Word Suite | MyToolX</title>
-    <meta name="description" content="Free online Text and Word Suite. Word counter, character counter, reading time calculator, and uppercase/lowercase case converter.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Text & Word Counter — Case Converter | MyToolX</title>
+    <meta name="description" content="Free online Text and Word Suite. Count words, characters, sentences, and estimate reading time. Convert text to UPPERCASE, lowercase, or Title Case instantly.">
     <link rel="canonical" href="https://mytoolx.org/text-suite.html">
 
-    <!-- Tailwind CSS -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:title" content="Text & Word Counter — Case Converter | MyToolX">
+    <meta property="og:description" content="Count words, characters, sentences, and estimate reading time. Convert text case instantly.">
+    <meta property="og:url" content="https://mytoolx.org/text-suite.html">
+    <meta property="og:image" content="https://mytoolx.org/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Text & Word Counter — Case Converter | MyToolX">
+    <meta name="twitter:description" content="Count words, characters, sentences, and estimate reading time. Convert text case instantly.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "SoftwareApplication",
+          "@type": "WebApplication",
           "name": "MyToolX Text & Word Suite",
-          "operatingSystem": "All",
+          "url": "https://mytoolx.org/text-suite.html",
+          "description": "Count words, characters, sentences, and estimate reading time. Convert text case instantly.",
           "applicationCategory": "EducationalApplication",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          }
+          "operatingSystem": "Any",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mytoolx.org/" },
+            { "@type": "ListItem", "position": 2, "name": "Text & Word Suite", "item": "https://mytoolx.org/text-suite.html" }
+          ]
         },
         {
           "@type": "FAQPage",
           "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "How does the Word & Character Counter work?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Simply paste or type your text into the editor. The suite automatically counts words, characters, sentences, and estimates reading speed instantly."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What case conversion options are available?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "You can transform your text into UPPERCASE, lowercase, or Title Case with a single click."
-              }
-            }
+            { "@type": "Question", "name": "Does this tool save or store my text on a server?", "acceptedAnswer": { "@type": "Answer", "text": "No. All word counting and case conversions take place 100% locally inside your browser to ensure complete privacy." } }
           ]
         }
       ]
@@ -54,229 +53,391 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
 
     <style>
-        .logo-box-3d {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #a1c4fd 100%);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15), inset 0 2px 3px rgba(255, 255, 255, 0.8);
-            border: 2px solid #ffffff;
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
+            --tile-indigo-bg: rgba(224,231,255,0.6); --tile-indigo-border: #C7D2FE; --tile-indigo-text: #4F46E5;
+            --tile-green-bg: rgba(209,250,229,0.6); --tile-green-border: #A7F3D0; --tile-green-text: #059669;
+            --tile-red-bg: rgba(254,226,226,0.6); --tile-red-border: #FECACA; --tile-red-text: #EF4444;
         }
-        .logo-text-my {
-            background: -webkit-linear-gradient(45deg, #1e293b, #475569);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
+            --tile-indigo-bg: rgba(49,46,129,0.30); --tile-indigo-border: #3730A3; --tile-indigo-text: #A5B4FC;
+            --tile-green-bg: rgba(6,78,59,0.30); --tile-green-border: #065F46; --tile-green-text: #34D399;
+            --tile-red-bg: rgba(127,29,29,0.25); --tile-red-border: #7F1D1D; --tile-red-text: #F87171;
         }
-        .logo-text-toolx {
-            background: -webkit-linear-gradient(45deg, #f97316, #ec4899, #8b5cf6, #06b6d4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-        }
+        html, body { overflow-x: hidden; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+        
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .tool-panel { border-top: 4px solid var(--primary); }
+        .tool-panel:hover { box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); }
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-accent { background: var(--accent); color: #fff; } .btn-accent:hover { background: var(--accent-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+        
+        .input-field { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
+        .input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); outline: none; }
+        
+        .tile-indigo { background: var(--tile-indigo-bg); border: 1px solid var(--tile-indigo-border); } .tile-indigo .num { color: var(--tile-indigo-text); }
+        .tile-green { background: var(--tile-green-bg); border: 1px solid var(--tile-green-border); } .tile-green .num { color: var(--tile-green-text); }
+        .tile-red { background: var(--tile-red-bg); border: 1px solid var(--tile-red-border); } .tile-red .num { color: var(--tile-red-text); }
+        .num { font-variant-numeric: tabular-nums; word-break: break-word; overflow-wrap: anywhere; }
+        
+        .related-card { transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; background: var(--card); border: 1px solid var(--card-border); }
+        .related-card:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); border-color: var(--primary); }
+
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+        
+        #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
+        :focus-visible { outline: none; }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        ::selection { background: rgba(79,70,229,0.25); }
+        @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
     </style>
 </head>
-<body class="bg-gradient-to-br from-slate-100 via-blue-50/50 to-indigo-50/30 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+<body class="font-sans min-h-screen flex flex-col justify-between">
 
-    <!-- Header Navbar -->
-    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
         <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2">
-            
-            <div class="flex items-center gap-2">
-                <a href="index.html" class="px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 rounded-xl text-slate-700 text-xs font-bold transition flex items-center gap-1 shrink-0">
+            <div class="flex items-center gap-3 sm:gap-4">
+                <a href="index.html" class="btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold flex items-center gap-1 shrink-0">
                     ← <span class="hidden sm:inline">All Tools</span>
                 </a>
-
-                <a href="index.html" class="flex items-center space-x-1.5 group cursor-pointer select-none shrink-0">
-                    <div class="logo-box-3d w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-all">
-                        <span class="text-base sm:text-xl filter drop-shadow">🧰</span>
-                    </div>
-                    <span class="text-lg sm:text-2xl font-black tracking-tight flex items-center">
-                        <span class="logo-text-my">My</span>
-                        <span class="logo-text-toolx ml-0.5">ToolX</span>
-                    </span>
+                <a href="index.html" class="flex items-center gap-2 group cursor-pointer select-none shrink-0" aria-label="MyToolX home">
+                    <div class="logo-mark">M<span class="x">X</span></div>
+                    <span class="logo-wordmark hidden xs:block sm:block">MyTool<span class="x">X</span></span>
                 </a>
             </div>
-
             <div class="flex items-center gap-1.5 shrink-0">
-                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition whitespace-nowrap">
+                <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle dark mode" class="w-11 h-11 rounded-xl flex items-center justify-center text-base font-bold" style="background: var(--chip-bg); color: var(--chip-text);">
+                    <span id="themeIcon" aria-hidden="true">🌙</span>
+                </button>
+                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="hidden sm:inline-flex text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition whitespace-nowrap">
                     💼 Remote Jobs ↗
                 </a>
-
-                <a href="https://mali1.pythonanywhere.com/" target="_blank" class="text-xs font-bold bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-3 py-1.5 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap">
+                <a href="https://mali1.pythonanywhere.com/" target="_blank" rel="noopener" class="hidden sm:inline-flex text-xs font-bold text-white px-3 py-1.5 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
                     📄 Live CV ↗
                 </a>
             </div>
-
         </div>
     </header>
 
-    <!-- Main Container -->
     <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow">
-        
-        <nav class="text-xs font-semibold text-slate-500 mb-4 flex items-center gap-1">
-            <a href="index.html" class="hover:text-blue-600">Home</a>
+
+        <nav class="text-xs font-semibold mb-4 flex items-center gap-1 muted" aria-label="Breadcrumb">
+            <a href="index.html" class="hover:text-indigo-500">Home</a>
             <span>/</span>
-            <span class="text-slate-800 font-bold">Text & Word Suite</span>
+            <span style="color: var(--text); font-weight: 700;">Text &amp; Word Suite</span>
         </nav>
 
-        <h1 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6">Online Text Counter & Case Converter Suite</h1>
-        <!-- Tool Card Panel -->
-        <div class="bg-white rounded-3xl shadow-xl border border-slate-200/80 p-6 sm:p-8 mb-10">
+        <div class="tool-panel surface rounded-3xl shadow-xl p-6 sm:p-8 mb-10 transition-shadow">
             
-            <!-- Tabs Navigation Bar -->
-            <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
-                <div class="flex items-center gap-2">
-                    <button id="tabCounterBtn" onclick="switchTab('counter')" class="px-4 py-2 bg-blue-600 text-white text-xs font-bold rounded-xl shadow-sm transition flex items-center gap-1.5">
-                        ✍️ Word & Char Counter
-                    </button>
-                    <button id="tabCaseBtn" onclick="switchTab('case')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-xl transition flex items-center gap-1.5">
-                        🔤 Case Converter
-                    </button>
+            <div class="flex items-center justify-between gap-3 flex-wrap mb-4 pb-4 border-b" style="border-color: var(--card-border);">
+                <div class="flex items-center gap-2" role="tablist" aria-label="Tool type">
+                    <button id="tabCounterBtn" onclick="switchTab('counter')" role="tab" aria-selected="true" aria-controls="contentCounter" class="btn-3d btn-primary px-4 py-2 text-xs font-bold flex items-center gap-1.5">✍️ Word &amp; Char Counter</button>
+                    <button id="tabCaseBtn" onclick="switchTab('case')" role="tab" aria-selected="false" aria-controls="contentCase" class="btn-3d btn-chip px-4 py-2 text-xs font-bold flex items-center gap-1.5">🔤 Case Converter</button>
                 </div>
-                <button onclick="clearTextSuite()" class="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
+                <button onclick="clearTextSuite()" class="btn-3d btn-chip px-3.5 py-2 text-xs font-bold">Clear</button>
             </div>
 
-            <!-- TAB 1 CONTENT -->
-            <div id="contentCounter">
-                <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">INPUT TEXT</label>
-                <textarea id="suiteInput" rows="7" class="w-full p-4 border border-slate-200 rounded-2xl bg-slate-50/30 text-slate-800 text-sm font-medium focus:ring-2 focus:ring-blue-500 transition mb-6" placeholder="Type or paste text here..."></textarea>
+            <!-- TAB 1: COUNTER -->
+            <div id="contentCounter" role="tabpanel" aria-labelledby="tabCounterBtn">
+                <label for="suiteInput" class="block text-xs font-bold uppercase tracking-wider mb-1.5 muted">Input Text</label>
+                <textarea id="suiteInput" rows="7" class="input-field w-full p-4 rounded-2xl text-sm font-medium transition mb-6" placeholder="Type or paste text here..."></textarea>
 
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                    <div class="bg-blue-50/50 border border-blue-100/80 rounded-2xl p-4 text-center">
-                        <span id="statWords" class="text-2xl font-black text-blue-600 block">0</span>
-                        <span class="text-xs font-bold text-slate-500">Words</span>
+                    <div class="tile-indigo rounded-2xl p-4 text-center">
+                        <span id="statWords" class="num text-2xl font-black block">0</span>
+                        <span class="text-xs font-bold uppercase muted">Words</span>
                     </div>
-                    <div class="bg-emerald-50/50 border border-emerald-100/80 rounded-2xl p-4 text-center">
-                        <span id="statChars" class="text-2xl font-black text-emerald-600 block">0</span>
-                        <span class="text-xs font-bold text-slate-500">Characters</span>
+                    <div class="tile-green rounded-2xl p-4 text-center">
+                        <span id="statChars" class="num text-2xl font-black block">0</span>
+                        <span class="text-xs font-bold uppercase muted">Characters</span>
                     </div>
-                    <div class="bg-purple-50/50 border border-purple-100/80 rounded-2xl p-4 text-center">
-                        <span id="statSentences" class="text-2xl font-black text-purple-600 block">0</span>
-                        <span class="text-xs font-bold text-slate-500">Sentences</span>
+                    <div class="tile-indigo rounded-2xl p-4 text-center">
+                        <span id="statSentences" class="num text-2xl font-black block">0</span>
+                        <span class="text-xs font-bold uppercase muted">Sentences</span>
                     </div>
-                    <div class="bg-amber-50/50 border border-amber-100/80 rounded-2xl p-4 text-center">
-                        <span id="statReadTime" class="text-2xl font-black text-amber-600 block">0 sec</span>
-                        <span class="text-xs font-bold text-slate-500">Read Time</span>
+                    <div class="tile-red rounded-2xl p-4 text-center">
+                        <span id="statReadTime" class="num text-2xl font-black block">0s</span>
+                        <span class="text-xs font-bold uppercase muted">Read Time</span>
                     </div>
                 </div>
             </div>
 
-            <!-- TAB 2 CONTENT -->
-            <div id="contentCase" class="hidden">
-                <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">TEXT FOR CASE CONVERSION</label>
-                <textarea id="caseInput" rows="7" class="w-full p-4 border border-slate-200 rounded-2xl bg-slate-50/30 text-slate-800 text-sm font-medium focus:ring-2 focus:ring-blue-500 transition mb-6" placeholder="Type or paste text here to convert case..."></textarea>
+            <!-- TAB 2: CASE CONVERTER -->
+            <div id="contentCase" role="tabpanel" aria-labelledby="tabCaseBtn" class="hidden">
+                <div class="flex justify-between items-center mb-1.5">
+                    <label for="caseInput" class="block text-xs font-bold uppercase tracking-wider muted">Text for Case Conversion</label>
+                    <button id="copyCaseBtn" onclick="copyCaseText()" class="btn-3d btn-chip px-3 py-1.5 text-xs font-bold flex items-center gap-1.5">📋 Copy</button>
+                </div>
+                <textarea id="caseInput" rows="7" class="input-field w-full p-4 rounded-2xl text-sm font-medium transition mb-6" placeholder="Type or paste text here to convert case..."></textarea>
 
                 <div class="flex flex-wrap gap-3">
-                    <button onclick="convertCase('upper')" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold shadow-sm transition">UPPERCASE</button>
-                    <button onclick="convertCase('lower')" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-900 text-white rounded-xl text-xs font-bold shadow-sm transition">lowercase</button>
-                    <button onclick="convertCase('title')" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-sm transition">Title Case</button>
+                    <button onclick="convertCase('upper')" class="btn-3d btn-primary px-5 py-2.5 text-xs">UPPERCASE</button>
+                    <button onclick="convertCase('lower')" class="btn-3d btn-accent px-5 py-2.5 text-xs">lowercase</button>
+                    <button onclick="convertCase('title')" class="btn-3d btn-primary px-5 py-2.5 text-xs">Title Case</button>
                 </div>
             </div>
 
         </div>
 
-        <!-- SEO Article & Explanations -->
-        <article class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10 text-slate-700 space-y-6">
-            <div class="border-b border-slate-100 pb-4">
-                <h2 class="text-xl font-bold text-slate-900">📊 Word & Character Counter Suite</h2>
-                <p class="text-sm leading-relaxed mt-2 text-slate-600">
+        <article class="surface rounded-3xl shadow-md p-6 sm:p-8 mb-10 space-y-6">
+            <div class="pb-4 border-b" style="border-color: var(--card-border);">
+                <h2 class="text-xl font-bold">📊 Word & Character Counter Suite</h2>
+                <p class="text-sm leading-relaxed mt-2 muted">
                     Our real-time word counter provides precise metrics for writers, students, bloggers, and SEO professionals. Instantly measure word volume, total characters, sentence counts, and estimated reading time.
                 </p>
             </div>
 
             <div>
-                <h2 class="text-xl font-bold text-slate-900">🔤 Smart Text Case Converter</h2>
-                <p class="text-sm leading-relaxed mt-2 text-slate-600">
+                <h2 class="text-xl font-bold">🔤 Smart Text Case Converter</h2>
+                <p class="text-sm leading-relaxed mt-2 muted">
                     Effortlessly adjust letter casing to fit any formatting guidelines without retyping your text:
                 </p>
-                <ul class="list-disc list-inside text-xs sm:text-sm text-slate-600 mt-2 space-y-1 font-medium">
+                <ul class="list-disc list-inside text-xs sm:text-sm muted mt-2 space-y-1">
                     <li><strong>UPPERCASE:</strong> Converts all characters to capital letters.</li>
                     <li><strong>lowercase:</strong> Converts all characters to small letters.</li>
                     <li><strong>Title Case:</strong> Capitalizes the first letter of every word.</li>
                 </ul>
             </div>
+
+            <div class="border-t pt-6" style="border-color: var(--card-border);">
+                <h3 class="text-lg font-bold mb-3">Related Tools</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <a href="grammar-checker.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">📝</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Grammar Checker</div>
+                        <div class="text-xs muted">Instant Typo Fix</div>
+                    </a>
+                    <a href="article-outline.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">📑</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Article Outline Gen</div>
+                        <div class="text-xs muted">Research Outlines</div>
+                    </a>
+                    <a href="ai-bio-generator.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">✨</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">AI Bio Generator</div>
+                        <div class="text-xs muted">LinkedIn &amp; Social Bios</div>
+                    </a>
+                </div>
+            </div>
         </article>
 
-        <!-- FAQs Section -->
-        <section class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10">
-            <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">Frequently Asked Questions (FAQs)</h2>
+        <section class="surface rounded-3xl shadow-md p-6 sm:p-8 mb-10">
+            <h2 class="text-xl font-bold border-b pb-3 mb-6" style="border-color: var(--card-border);">Frequently Asked Questions</h2>
             <div class="space-y-4">
-                <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-                    <h3 class="text-sm font-bold text-slate-900 mb-1">Does this tool save or store my text on a server?</h3>
-                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">No. All word counting and case conversions take place 100% locally inside your browser to ensure complete privacy.</p>
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">Does this tool save or store my text on a server?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">No. All word counting and case conversions take place 100% locally inside your browser to ensure complete privacy.</p>
                 </div>
-                <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-                    <h3 class="text-sm font-bold text-slate-900 mb-1">How is the estimated reading time calculated?</h3>
-                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Reading time is calculated based on the standard average reading speed of 200 words per minute.</p>
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">How is the estimated reading time calculated?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">Reading time is calculated based on the standard average reading speed of 200 words per minute.</p>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs font-semibold text-slate-500">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p>&copy; 2026 MyToolX. All rights reserved. Tools run client-side for 100% privacy.</p>
-        <div class="flex items-center gap-4 text-slate-600 font-bold">
-            <a href="index.html" class="hover:text-blue-600">Home</a>
-            <a href="privacy.html" class="hover:text-blue-600">Privacy Policy</a>
-            <a href="terms.html" class="hover:text-blue-600">Terms of Service</a>
-            <a href="about.html" class="hover:text-blue-600">About Us</a>
-            <a href="contact.html" class="hover:text-blue-600">Contact Us</a>
+        <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+                <div class="lg:col-span-5">
+                    <a href="index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 pr-4">
+                        MyToolX is a free suite of client-side web tools for writers, freelancers and developers. No sign-up, no tracking, no data leaves your browser.
+                    </p>
+                </div>
+                <div class="lg:col-span-4">
+                    <h3>Popular Tools</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <a href="typing-test.html">Typing Speed Test</a>
+                        <a href="image-compressor.html">Image Compressor</a>
+                        <a href="prompt-studio.html">AI Prompt Studio</a>
+                        <a href="grammar-checker.html">Grammar Checker</a>
+                        <a href="text-suite.html">Text &amp; Word Suite</a>
+                        <a href="fee-calculator.html">Fee Calculator</a>
+                        <a href="sip-calculator.html">SIP Calculator</a>
+                        <a href="loan-emi.html">Loan EMI Calc</a>
+                        <a href="json-formatter.html">JSON Formatter</a>
+                        <a href="base64-tool.html">Base64 Tool</a>
+                        <a href="qr-code-generator.html">QR Code Gen</a>
+                        <a href="password-generator.html">Password Gen</a>
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Company</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Legal</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                                <li><a href="terms.html">Terms of Service</a></li>
+                                <li><a href="index.html">Sitemap</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. All rights reserved.</p>
+                <p>All tools run 100% client-side in your browser.</p>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-    <!-- INTERACTIVE LOGIC -->
     <script>
-        const inputEl = document.getElementById('suiteInput');
-        const caseInputEl = document.getElementById('caseInput');
+    (function () {
+        'use strict';
+
+        (function initTheme() {
+            var saved = null;
+            try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = saved || (prefersDark ? 'dark' : 'light');
+            applyTheme(theme);
+        })();
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            var icon = document.getElementById('themeIcon');
+            if (icon) icon.textContent = (theme === 'dark' ? '☀️' : '🌙');
+            var btn = document.getElementById('themeToggle');
+            if (btn) {
+                btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+                btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+            }
+        }
+        function toggleTheme() {
+            var cur = document.documentElement.getAttribute('data-theme') || 'light';
+            var next = cur === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('mtx-theme', next); } catch (e) {}
+        }
+        window.toggleTheme = toggleTheme;
+
+        var inputEl = document.getElementById('suiteInput');
+        var caseInputEl = document.getElementById('caseInput');
+        var copyCaseBtn = document.getElementById('copyCaseBtn');
+        var lastCaseType = null;
 
         function switchTab(tab) {
-            const counterBtn = document.getElementById('tabCounterBtn');
-            const caseBtn = document.getElementById('tabCaseBtn');
-            const contentCounter = document.getElementById('contentCounter');
-            const contentCase = document.getElementById('contentCase');
+            var counterBtn = document.getElementById('tabCounterBtn');
+            var caseBtn = document.getElementById('tabCaseBtn');
+            var contentCounter = document.getElementById('contentCounter');
+            var contentCase = document.getElementById('contentCase');
 
             if (tab === 'counter') {
-                counterBtn.className = "px-4 py-2 bg-blue-600 text-white text-xs font-bold rounded-xl shadow-sm transition flex items-center gap-1.5";
-                caseBtn.className = "px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-xl transition flex items-center gap-1.5";
+                counterBtn.className = "btn-3d btn-primary px-4 py-2 text-xs font-bold flex items-center gap-1.5";
+                counterBtn.setAttribute('aria-selected', 'true');
+                caseBtn.className = "btn-3d btn-chip px-4 py-2 text-xs font-bold flex items-center gap-1.5";
+                caseBtn.setAttribute('aria-selected', 'false');
                 contentCounter.classList.remove('hidden');
                 contentCase.classList.add('hidden');
             } else {
-                caseBtn.className = "px-4 py-2 bg-blue-600 text-white text-xs font-bold rounded-xl shadow-sm transition flex items-center gap-1.5";
-                counterBtn.className = "px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-xl transition flex items-center gap-1.5";
+                caseBtn.className = "btn-3d btn-primary px-4 py-2 text-xs font-bold flex items-center gap-1.5";
+                caseBtn.setAttribute('aria-selected', 'true');
+                counterBtn.className = "btn-3d btn-chip px-4 py-2 text-xs font-bold flex items-center gap-1.5";
+                counterBtn.setAttribute('aria-selected', 'false');
                 contentCase.classList.remove('hidden');
                 contentCounter.classList.add('hidden');
             }
         }
+        window.switchTab = switchTab;
 
         function updateStats() {
-            const text = inputEl.value;
-            const words = text.trim() ? text.trim().split(/\s+/).length : 0;
-            document.getElementById('statWords').textContent = words;
-            document.getElementById('statChars').textContent = text.length;
-            document.getElementById('statSentences').textContent = text.trim() ? text.split(/[.!?]+/).filter(Boolean).length : 0;
-            const seconds = Math.ceil((words / 200) * 60);
-            document.getElementById('statReadTime').textContent = seconds < 60 ? `${seconds} sec` : `${(seconds/60).toFixed(1)} min`;
-        }
+            var text = inputEl.value;
+            var words = text.trim() ? text.trim().split(/\s+/).length : 0;
+            var chars = text.length;
+            var sentences = text.trim() ? text.split(/[.!?]+(?:\s|$)/).filter(function(s) { return s.trim().length > 0; }).length : 0;
+            
+            // Calculate reading time (200 WPM standard)
+            var seconds = Math.ceil((words / 200) * 60);
+            var timeStr = seconds < 60 ? seconds + 's' : (seconds / 60).toFixed(1) + 'm';
 
-        function convertCase(type) {
-            let val = caseInputEl.value;
+            document.getElementById('statWords').textContent = words.toLocaleString();
+            document.getElementById('statChars').textContent = chars.toLocaleString();
+            document.getElementById('statSentences').textContent = sentences.toLocaleString();
+            document.getElementById('statReadTime').textContent = timeStr;
+        }
+        window.updateStats = updateStats;
+
+        inputEl.addEventListener('input', updateStats);
+        caseInputEl.addEventListener('input', function() {
+            if (lastCaseType) convertCase(lastCaseType, true);
+        });
+
+        function convertCase(type, silent) {
+            lastCaseType = type;
+            var val = caseInputEl.value;
             if (!val) return;
+
             if (type === 'upper') val = val.toUpperCase();
             if (type === 'lower') val = val.toLowerCase();
-            if (type === 'title') val = val.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+            if (type === 'title') {
+                val = val.toLowerCase().replace(/\b\w/g, function(c) { return c.toUpperCase(); });
+            }
+
             caseInputEl.value = val;
+            
+            if (!silent && copyCaseBtn) {
+                copyCaseBtn.textContent = '✅ Converted!';
+                setTimeout(function() { copyCaseBtn.innerHTML = '📋 Copy'; }, 1500);
+            }
         }
+        window.convertCase = convertCase;
+
+        function copyCaseText() {
+            if (!caseInputEl.value) return;
+            var original = copyCaseBtn.innerHTML;
+            navigator.clipboard.writeText(caseInputEl.value).then(function() {
+                copyCaseBtn.textContent = '✅ Copied!';
+                setTimeout(function() { copyCaseBtn.innerHTML = original; }, 1500);
+            });
+        }
+        window.copyCaseText = copyCaseText;
 
         function clearTextSuite() {
             inputEl.value = '';
             caseInputEl.value = '';
+            lastCaseType = null;
             updateStats();
         }
+        window.clearTextSuite = clearTextSuite;
 
-        if (inputEl) {
-            inputEl.addEventListener('input', updateStats);
-        }
+        updateStats();
+    })();
     </script>
 </body>
 </html>

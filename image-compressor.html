@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Free Image Compressor & Resizer — 100% Private | MyToolX</title>
+    <meta name="description" content="Compress and resize JPG, PNG, and WebP images instantly in your browser. No uploads, no servers, 100% privacy. Reduce image file size for free.">
+    <link rel="canonical" href="https://mytoolx.org/image-compressor.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:title" content="Free Image Compressor & Resizer — 100% Private | MyToolX">
+    <meta property="og:description" content="Compress and resize images instantly in your browser. No uploads, no servers, 100% privacy.">
+    <meta property="og:url" content="https://mytoolx.org/image-compressor.html">
+    <meta property="og:image" content="https://mytoolx.org/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Image Compressor & Resizer — 100% Private | MyToolX">
+    <meta name="twitter:description" content="Compress and resize images instantly in your browser. No uploads, no servers, 100% privacy.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "MyToolX Image Compressor",
+          "url": "https://mytoolx.org/image-compressor.html",
+          "description": "Compress and resize images locally in your browser without uploading to a server.",
+          "applicationCategory": "MultimediaApplication",
+          "operatingSystem": "Any",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mytoolx.org/" },
+            { "@type": "ListItem", "position": 2, "name": "Image Compressor", "item": "https://mytoolx.org/image-compressor.html" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "Are my images uploaded to a server?", "acceptedAnswer": { "@type": "Answer", "text": "No. All image processing happens locally in your browser using the HTML5 Canvas API. Your files never leave your device." } }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
+    <style>
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
+            --tile-indigo-bg: rgba(224,231,255,0.6); --tile-indigo-border: #C7D2FE; --tile-indigo-text: #4F46E5;
+            --tile-green-bg: rgba(209,250,229,0.6); --tile-green-border: #A7F3D0; --tile-green-text: #059669;
+        }
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
+            --tile-indigo-bg: rgba(49,46,129,0.30); --tile-indigo-border: #3730A3; --tile-indigo-text: #A5B4FC;
+            --tile-green-bg: rgba(6,78,59,0.30); --tile-green-border: #065F46; --tile-green-text: #34D399;
+        }
+        html, body { overflow-x: hidden; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+        
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .tool-panel { border-top: 4px solid var(--primary); }
+        .tool-panel:hover { box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); }
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-accent { background: var(--accent); color: #fff; } .btn-accent:hover { background: var(--accent-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+        
+        .input-field { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
+        .input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); outline: none; }
+        
+        .panel-bg { background: #0F172A; color: #E2E8F0; }
+        html[data-theme="dark"] .panel-bg { background: #020617; border: 1px solid #1F2937; }
+        
+        .related-card { transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; background: var(--card); border: 1px solid var(--card-border); }
+        .related-card:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); border-color: var(--primary); }
+
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+        
+        #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
+        :focus-visible { outline: none; }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        ::selection { background: rgba(79,70,229,0.25); }
+        @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+        .drop-zone { border: 2px dashed var(--card-border); transition: all 0.2s; }
+        .drop-zone.dragover { border-color: var(--primary); background: rgba(79,70,229,0.05); }
+    </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col justify-between">
+
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-3 sm:gap-4">
+                <a href="index.html" class="btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold flex items-center gap-1 shrink-0">
+                    ← <span class="hidden sm:inline">All Tools</span>
+                </a>
+                <a href="index.html" class="flex items-center gap-2 group cursor-pointer select-none shrink-0" aria-label="MyToolX home">
+                    <div class="logo-mark">M<span class="x">X</span></div>
+                    <span class="logo-wordmark hidden xs:block sm:block">MyTool<span class="x">X</span></span>
+                </a>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+                <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle dark mode" class="w-11 h-11 rounded-xl flex items-center justify-center text-base font-bold" style="background: var(--chip-bg); color: var(--chip-text);">
+                    <span id="themeIcon" aria-hidden="true">🌙</span>
+                </button>
+                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="hidden sm:inline-flex text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition whitespace-nowrap">
+                    💼 Remote Jobs ↗
+                </a>
+                <a href="https://mali1.pythonanywhere.com/" target="_blank" rel="noopener" class="hidden sm:inline-flex text-xs font-bold text-white px-3 py-1.5 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
+                    📄 Live CV ↗
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow">
+
+        <nav class="text-xs font-semibold mb-4 flex items-center gap-1 muted" aria-label="Breadcrumb">
+            <a href="index.html" class="hover:text-indigo-500">Home</a>
+            <span>/</span>
+            <span style="color: var(--text); font-weight: 700;">Image Compressor</span>
+        </nav>
+
+        <div class="tool-panel surface rounded-3xl shadow-xl p-6 sm:p-8 mb-10 transition-shadow">
+            
+            <div class="flex items-center justify-between gap-3 flex-wrap mb-4 pb-4 border-b" style="border-color: var(--card-border);">
+                <h1 class="text-xl sm:text-2xl font-black flex items-center gap-2" style="color: var(--text);">
+                    🖼️ Image Compressor & Resizer
+                </h1>
+                <button onclick="clearImage()" class="btn-3d btn-chip px-3.5 py-2 text-xs font-bold">Clear</button>
+            </div>
+
+            <!-- Drop Zone / File Input -->
+            <div id="dropZone" class="drop-zone rounded-2xl p-8 text-center mb-6 cursor-pointer" onclick="document.getElementById('fileInput').click()">
+                <div class="text-4xl mb-3">📁</div>
+                <p class="font-bold text-sm mb-1" style="color: var(--text);">Click to upload or drag & drop</p>
+                <p class="text-xs muted">Supports JPG, PNG, WebP (Max 10MB)</p>
+                <input type="file" id="fileInput" accept="image/jpeg, image/png, image/webp" class="hidden">
+            </div>
+
+            <!-- Settings (Hidden until image loaded) -->
+            <div id="settingsPanel" class="hidden space-y-6 mb-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="resizeWidth" class="block text-xs font-bold uppercase tracking-wider mb-1.5 muted">Resize Width (px)</label>
+                        <input type="number" id="resizeWidth" placeholder="Original width" class="input-field w-full p-3.5 rounded-xl text-sm font-medium">
+                    </div>
+                    <div>
+                        <label for="qualitySlider" class="block text-xs font-bold uppercase tracking-wider mb-1.5 muted">Compression Quality: <span id="qualityVal">80%</span></label>
+                        <input type="range" id="qualitySlider" min="10" max="100" value="80" class="w-full accent-indigo-500 mt-2">
+                    </div>
+                </div>
+                
+                <div class="flex gap-3">
+                    <button id="compressBtn" onclick="processImage()" class="btn-3d btn-primary px-6 py-3 text-sm flex-1">⚡ Compress Image</button>
+                    <button id="downloadBtn" onclick="downloadImage()" class="btn-3d btn-accent px-6 py-3 text-sm flex-1 hidden">⬇️ Download</button>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div id="resultPanel" class="hidden">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="tile-indigo rounded-2xl p-5 text-center">
+                        <span id="origSize" class="num text-xl font-black block">- KB</span>
+                        <span class="text-xs font-bold uppercase muted">Original Size</span>
+                    </div>
+                    <div class="tile-green rounded-2xl p-5 text-center">
+                        <span id="newSize" class="num text-xl font-black block">- KB</span>
+                        <span class="text-xs font-bold uppercase muted">Compressed Size</span>
+                    </div>
+                </div>
+                <div class="mt-4 text-center">
+                    <img id="previewImg" class="max-h-48 mx-auto rounded-lg shadow-sm hidden" alt="Compressed preview">
+                </div>
+            </div>
+
+        </div>
+
+        <article class="surface rounded-3xl shadow-md p-6 sm:p-8 mb-10 space-y-6">
+            <div class="pb-4 border-b" style="border-color: var(--card-border);">
+                <h2 class="text-xl font-bold">Compress Images Without Uploading Them</h2>
+                <p class="text-sm leading-relaxed mt-2 muted">
+                    Most online image compressors require you to upload your files to their servers, wait for processing, and then download the result. This tool works differently. It uses your browser's built-in HTML5 Canvas to compress and resize images entirely on your device. This means it is faster, works offline, and guarantees 100% privacy.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">🔒 100% Private</h3>
+                    <p class="text-xs muted">Your images never leave your device. No servers, no logs.</p>
+                </div>
+                <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">⚡ Instant</h3>
+                    <p class="text-xs muted">No upload times. Processing happens in milliseconds.</p>
+                </div>
+                <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">📐 Resize & Compress</h3>
+                    <p class="text-xs muted">Control both dimensions and file size for the perfect upload.</p>
+                </div>
+            </div>
+
+            <div class="border-t pt-6" style="border-color: var(--card-border);">
+                <h3 class="text-lg font-bold mb-3">Related Tools</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <a href="qr-code-generator.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">📱</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">QR Code Generator</div>
+                        <div class="text-xs muted">Create QR Images</div>
+                    </a>
+                    <a href="base64-tool.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">🔤</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Base64 Tool</div>
+                        <div class="text-xs muted">Encode &amp; Decode</div>
+                    </a>
+                    <a href="color-converter.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">🎨</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Color Converter</div>
+                        <div class="text-xs muted">HEX, RGB &amp; Names</div>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <section class="surface rounded-3xl shadow-md p-6 sm:p-8 mb-10">
+            <h2 class="text-xl font-bold border-b pb-3 mb-6" style="border-color: var(--card-border);">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">Are my images uploaded to a server?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">No. All image processing happens locally in your browser using the HTML5 Canvas API. Your files never leave your device.</p>
+                </div>
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">What image formats are supported?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">You can upload JPG, PNG, and WebP images. The output will be in JPG format to ensure the best compression.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+        <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+                <div class="lg:col-span-5">
+                    <a href="index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 pr-4">
+                        MyToolX is a free suite of client-side web tools for writers, freelancers and developers. No sign-up, no tracking, no data leaves your browser.
+                    </p>
+                </div>
+                <div class="lg:col-span-4">
+                    <h3>Popular Tools</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <a href="typing-test.html">Typing Speed Test</a>
+                        <a href="image-compressor.html">Image Compressor</a>
+                        <a href="prompt-studio.html">AI Prompt Studio</a>
+                        <a href="grammar-checker.html">Grammar Checker</a>
+                        <a href="text-suite.html">Text &amp; Word Suite</a>
+                        <a href="fee-calculator.html">Fee Calculator</a>
+                        <a href="sip-calculator.html">SIP Calculator</a>
+                        <a href="loan-emi.html">Loan EMI Calc</a>
+                        <a href="json-formatter.html">JSON Formatter</a>
+                        <a href="base64-tool.html">Base64 Tool</a>
+                        <a href="qr-code-generator.html">QR Code Gen</a>
+                        <a href="password-generator.html">Password Gen</a>
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Company</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Legal</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                                <li><a href="terms.html">Terms of Service</a></li>
+                                <li><a href="index.html">Sitemap</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. All rights reserved.</p>
+                <p>All tools run 100% client-side in your browser.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    (function () {
+        'use strict';
+
+        // Theme Logic
+        (function initTheme() {
+            var saved = null;
+            try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = saved || (prefersDark ? 'dark' : 'light');
+            applyTheme(theme);
+        })();
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            var icon = document.getElementById('themeIcon');
+            if (icon) icon.textContent = (theme === 'dark' ? '☀️' : '🌙');
+            var btn = document.getElementById('themeToggle');
+            if (btn) {
+                btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+                btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+            }
+        }
+        function toggleTheme() {
+            var cur = document.documentElement.getAttribute('data-theme') || 'light';
+            var next = cur === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('mtx-theme', next); } catch (e) {}
+        }
+        window.toggleTheme = toggleTheme;
+
+        // File Handling
+        var fileInput = document.getElementById('fileInput');
+        var dropZone = document.getElementById('dropZone');
+        var settingsPanel = document.getElementById('settingsPanel');
+        var resultPanel = document.getElementById('resultPanel');
+        var compressBtn = document.getElementById('compressBtn');
+        var downloadBtn = document.getElementById('downloadBtn');
+        var resizeWidth = document.getElementById('resizeWidth');
+        var qualitySlider = document.getElementById('qualitySlider');
+        var qualityVal = document.getElementById('qualityVal');
+        var previewImg = document.getElementById('previewImg');
+        
+        var currentFile = null;
+        var compressedBlob = null;
+        var originalName = '';
+
+        qualitySlider.addEventListener('input', function() {
+            qualityVal.textContent = this.value + '%';
+        });
+
+        dropZone.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            dropZone.classList.add('dragover');
+        });
+        dropZone.addEventListener('dragleave', function() {
+            dropZone.classList.remove('dragover');
+        });
+        dropZone.addEventListener('drop', function(e) {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            if (e.dataTransfer.files.length) {
+                handleFile(e.dataTransfer.files[0]);
+            }
+        });
+
+        fileInput.addEventListener('change', function(e) {
+            if (e.target.files.length) {
+                handleFile(e.target.files[0]);
+            }
+        });
+
+        function handleFile(file) {
+            if (!file.type.match('image.*')) {
+                alert('Please select an image file.');
+                return;
+            }
+            if (file.size > 10 * 1024 * 1024) {
+                alert('File is too large. Max 10MB.');
+                return;
+            }
+            
+            currentFile = file;
+            originalName = file.name.split('.').slice(0, -1).join('.') || 'image';
+            
+            // Show settings
+            settingsPanel.classList.remove('hidden');
+            resultPanel.classList.add('hidden');
+            downloadBtn.classList.add('hidden');
+            compressBtn.classList.remove('hidden');
+            
+            // Read to get dimensions
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var img = new Image();
+                img.onload = function() {
+                    resizeWidth.placeholder = 'Original: ' + img.width + 'px';
+                    if (!resizeWidth.value) resizeWidth.value = img.width;
+                    
+                    document.getElementById('origSize').textContent = (file.size / 1024).toFixed(1) + ' KB';
+                    previewImg.src = e.target.result;
+                    previewImg.classList.remove('hidden');
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function processImage() {
+            if (!currentFile) return;
+            
+            compressBtn.textContent = 'Processing...';
+            compressBtn.disabled = true;
+
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var img = new Image();
+                img.onload = function() {
+                    var canvas = document.createElement('canvas');
+                    var ctx = canvas.getContext('2d');
+                    
+                    var targetWidth = parseInt(resizeWidth.value) || img.width;
+                    var targetHeight = Math.round((targetWidth / img.width) * img.height);
+                    
+                    canvas.width = targetWidth;
+                    canvas.height = targetHeight;
+                    
+                    // Draw with high quality scaling
+                    ctx.imageSmoothingEnabled = true;
+                    ctx.imageSmoothingQuality = 'high';
+                    ctx.drawImage(img, 0, 0, targetWidth, targetHeight);
+                    
+                    var quality = parseInt(qualitySlider.value) / 100;
+                    
+                    canvas.toBlob(function(blob) {
+                        compressedBlob = blob;
+                        
+                        var origKB = (currentFile.size / 1024).toFixed(1);
+                        var newKB = (blob.size / 1024).toFixed(1);
+                        
+                        document.getElementById('newSize').textContent = newKB + ' KB';
+                        document.getElementById('origSize').textContent = origKB + ' KB';
+                        
+                        // Update preview
+                        previewImg.src = URL.createObjectURL(blob);
+                        
+                        resultPanel.classList.remove('hidden');
+                        downloadBtn.classList.remove('hidden');
+                        compressBtn.classList.add('hidden');
+                        
+                        compressBtn.textContent = '⚡ Compress Image';
+                        compressBtn.disabled = false;
+                    }, 'image/jpeg', quality);
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(currentFile);
+        }
+        window.processImage = processImage;
+
+        function downloadImage() {
+            if (!compressedBlob) return;
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(compressedBlob);
+            a.download = originalName + '-compressed.jpg';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+        window.downloadImage = downloadImage;
+
+        function clearImage() {
+            currentFile = null;
+            compressedBlob = null;
+            fileInput.value = '';
+            resizeWidth.value = '';
+            qualitySlider.value = 80;
+            qualityVal.textContent = '80%';
+            
+            settingsPanel.classList.add('hidden');
+            resultPanel.classList.add('hidden');
+            previewImg.src = '';
+        }
+        window.clearImage = clearImage;
+
+    })();
+    </script>
+</body>
+</html>

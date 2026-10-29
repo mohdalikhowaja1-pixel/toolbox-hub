@@ -2,149 +2,164 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIP & Wealth Investment Calculator | MyToolX</title>
-    <meta name="description" content="Free online SIP & Wealth Investment Calculator. Calculate mutual fund returns, total out-of-pocket investment, and future maturity corpus.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>SIP Calculator — Mutual Fund & Wealth Growth Estimator | MyToolX</title>
+    <meta name="description" content="Free SIP calculator to estimate mutual fund returns. Calculate future wealth, total invested amount, and estimated gains from monthly SIPs and lump-sum advance deposits.">
     <link rel="canonical" href="https://mytoolx.org/sip-calculator.html">
 
-    <!-- Tailwind CSS -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:title" content="SIP Calculator — Mutual Fund & Wealth Growth Estimator | MyToolX">
+    <meta property="og:description" content="Estimate mutual fund returns, future maturity corpus, and wealth gains from monthly investments. Free, in your browser.">
+    <meta property="og:url" content="https://mytoolx.org/sip-calculator.html">
+    <meta property="og:image" content="https://mytoolx.org/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SIP Calculator — Mutual Fund & Wealth Growth Estimator | MyToolX">
+    <meta name="twitter:description" content="Estimate mutual fund returns, future maturity corpus, and wealth gains from monthly investments. Free, in your browser.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "SoftwareApplication",
+          "@type": "WebApplication",
           "name": "MyToolX SIP & Wealth Investment Calculator",
-          "operatingSystem": "All",
+          "url": "https://mytoolx.org/sip-calculator.html",
+          "description": "Calculate expected wealth accumulation by combining an optional upfront deposit with regular monthly SIP investments over a designated time horizon.",
           "applicationCategory": "FinanceApplication",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          }
+          "operatingSystem": "Any",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mytoolx.org/" },
+            { "@type": "ListItem", "position": 2, "name": "SIP Calculator", "item": "https://mytoolx.org/sip-calculator.html" }
+          ]
         },
         {
           "@type": "FAQPage",
           "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What is a SIP & Wealth Investment Calculator?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "It calculates expected wealth accumulation by combining an optional upfront deposit with regular monthly SIP investments over a designated time horizon."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What is the Future Maturity Corpus?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "It is the total estimated value of your investment at maturity, including your out-of-pocket deposits plus compounded wealth gains."
-              }
-            }
+            { "@type": "Question", "name": "How is SIP maturity calculated?", "acceptedAnswer": { "@type": "Answer", "text": "Monthly SIPs are compounded using the future value of an annuity formula, assuming deposits are made at the end of each month. Advance deposits are compounded as a lump sum." } },
+            { "@type": "Question", "name": "What is the difference between an advance deposit and a monthly SIP?", "acceptedAnswer": { "@type": "Answer", "text": "An advance deposit is a one-time lump sum invested upfront, while a monthly SIP is a recurring investment. Both compound over time, but the lump sum has a longer time horizon to grow." } },
+            { "@type": "Question", "name": "Why do the estimated returns differ from my mutual fund app?", "acceptedAnswer": { "@type": "Answer", "text": "This calculator assumes a constant rate of return and monthly compounding. Actual mutual fund returns fluctuate daily based on market conditions and expense ratios." } }
           ]
         }
       ]
     }
     </script>
 
-    <!-- Google Ads Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
 
     <style>
-        .btn-3d {
-            transition: all 0.15s ease;
-            box-shadow: 0 4px 0 0 #059669, 0 8px 12px -2px rgba(0, 0, 0, 0.1);
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
+            --tile-red-bg: rgba(254,226,226,0.6); --tile-red-border: #FECACA; --tile-red-text: #EF4444;
+            --tile-green-bg: rgba(209,250,229,0.6); --tile-green-border: #A7F3D0; --tile-green-text: #059669;
+            --tile-indigo-bg: rgba(224,231,255,0.6); --tile-indigo-border: #C7D2FE; --tile-indigo-text: #4F46E5;
         }
-        .btn-3d:active {
-            transform: translateY(3px);
-            box-shadow: 0 1px 0 0 #059669, 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
+            --tile-red-bg: rgba(127,29,29,0.25); --tile-red-border: #7F1D1D; --tile-red-text: #F87171;
+            --tile-green-bg: rgba(6,78,59,0.30); --tile-green-border: #065F46; --tile-green-text: #34D399;
+            --tile-indigo-bg: rgba(49,46,129,0.30); --tile-indigo-border: #3730A3; --tile-indigo-text: #A5B4FC;
         }
-        .logo-box-3d {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #a1c4fd 100%);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15), inset 0 2px 3px rgba(255, 255, 255, 0.8);
-            border: 2px solid #ffffff;
-        }
-        .logo-text-my {
-            background: -webkit-linear-gradient(45deg, #1e293b, #475569);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-        }
-        .logo-text-toolx {
-            background: -webkit-linear-gradient(45deg, #f97316, #ec4899, #8b5cf6, #06b6d4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-        }
+        html, body { overflow-x: hidden; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+        .brand { color: var(--primary); }
+        
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .tool-panel { border-top: 4px solid var(--primary); }
+        .tool-panel:hover { box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); }
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-accent { background: var(--accent); color: #fff; } .btn-accent:hover { background: var(--accent-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+        
+        .input-field { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
+        .input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); outline: none; }
+        
+        .tile-red { background: var(--tile-red-bg); border: 1px solid var(--tile-red-border); } .tile-red .num { color: var(--tile-red-text); }
+        .tile-green { background: var(--tile-green-bg); border: 1px solid var(--tile-green-border); } .tile-green .num { color: var(--tile-green-text); }
+        .tile-indigo { background: var(--tile-indigo-bg); border: 1px solid var(--tile-indigo-border); } .tile-indigo .num { color: var(--tile-indigo-text); }
+        .num { font-variant-numeric: tabular-nums; word-break: break-word; overflow-wrap: anywhere; }
+        
+        .related-card { transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; background: var(--card); border: 1px solid var(--card-border); }
+        .related-card:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); border-color: var(--primary); }
+
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+        
+        #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
+        :focus-visible { outline: none; }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        ::selection { background: rgba(79,70,229,0.25); }
+        @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+        @media (max-width: 380px) { .tile-red .num, .tile-green .num, .tile-indigo .num { font-size: 1.125rem; } }
     </style>
 </head>
-<body class="bg-gradient-to-br from-slate-100 via-blue-50/50 to-indigo-50/30 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+<body class="font-sans min-h-screen flex flex-col justify-between">
 
-    <!-- Header Navbar -->
-    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
         <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2">
-            
-            <div class="flex items-center gap-2">
-                <a href="index.html" class="px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 rounded-xl text-slate-700 text-xs font-bold transition flex items-center gap-1 shrink-0">
+            <div class="flex items-center gap-3 sm:gap-4">
+                <a href="index.html" class="btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold flex items-center gap-1 shrink-0">
                     ← <span class="hidden sm:inline">All Tools</span>
                 </a>
-
-                <a href="index.html" class="flex items-center space-x-1.5 group cursor-pointer select-none shrink-0">
-                    <div class="logo-box-3d w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-all">
-                        <span class="text-base sm:text-xl filter drop-shadow">🧰</span>
-                    </div>
-                    <span class="text-lg sm:text-2xl font-black tracking-tight flex items-center">
-                        <span class="logo-text-my">My</span>
-                        <span class="logo-text-toolx ml-0.5">ToolX</span>
-                    </span>
+                <a href="index.html" class="flex items-center gap-2 group cursor-pointer select-none shrink-0" aria-label="MyToolX home">
+                    <div class="logo-mark">M<span class="x">X</span></div>
+                    <span class="logo-wordmark hidden xs:block sm:block">MyTool<span class="x">X</span></span>
                 </a>
             </div>
-
             <div class="flex items-center gap-1.5 shrink-0">
-                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition whitespace-nowrap">
-                    💼 Jobs ↗
+                <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle dark mode" class="w-11 h-11 rounded-xl flex items-center justify-center text-base font-bold" style="background: var(--chip-bg); color: var(--chip-text);">
+                    <span id="themeIcon" aria-hidden="true">🌙</span>
+                </button>
+                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="hidden sm:inline-flex text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition whitespace-nowrap">
+                    💼 Remote Jobs ↗
                 </a>
-
-                <a href="https://mali1.pythonanywhere.com/" target="_blank" class="text-xs font-bold bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-3 py-1.5 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap">
-                    📄 Live CV Maker ↗
+                <a href="https://mali1.pythonanywhere.com/" target="_blank" rel="noopener" class="hidden sm:inline-flex text-xs font-bold text-white px-3 py-1.5 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
+                    📄 Live CV ↗
                 </a>
-
-                <span class="text-xs font-bold bg-emerald-100 text-emerald-800 px-3 py-1.5 rounded-xl">
-                    100% FREE SUITE
-                </span>
             </div>
-
         </div>
     </header>
 
-    <!-- Main Container -->
     <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow">
-        
-        <nav class="text-xs font-semibold text-slate-500 mb-4 flex items-center gap-1">
-            <a href="index.html" class="hover:text-blue-600">Home</a>
+
+        <nav class="text-xs font-semibold mb-4 flex items-center gap-1 muted" aria-label="Breadcrumb">
+            <a href="index.html" class="hover:text-indigo-500">Home</a>
             <span>/</span>
-            <span class="text-slate-800 font-bold">SIP Calculator</span>
+            <span style="color: var(--text); font-weight: 700;">SIP Calculator</span>
         </nav>
 
-        <!-- Tool Card Panel -->
-        <div class="bg-white rounded-3xl shadow-xl border border-slate-200/80 p-6 sm:p-8 mb-10">
+        <div class="tool-panel surface rounded-3xl shadow-xl p-6 sm:p-8 mb-10 transition-shadow">
             
-            <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
-                <h1 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
-                    📈 SIP & Wealth Investment Calculator
-                </h1>
-                <button onclick="clearSip()" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
-            </div>
-
-            <!-- Inputs Grid Row 1 -->
-            <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-4">
-                <div>
-                    <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Currency</label>
-                    <select id="sipCurr" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-xs font-semibold text-slate-800">
+            <div class="flex items-center justify-between gap-3 flex-wrap mb-4 pb-4 border-b" style="border-color: var(--card-border);">
+                <div class="flex items-center gap-2">
+                    <label for="sipCurr" class="text-xs font-bold uppercase tracking-wider muted">Currency</label>
+                    <select id="sipCurr" onchange="onCurrencyChange()" class="input-field px-3 py-2 rounded-xl text-xs font-semibold" aria-label="Currency for calculator">
                         <option value="$">USD ($)</option>
                         <option value="€">EUR (€)</option>
                         <option value="£">GBP (£)</option>
@@ -152,159 +167,272 @@
                         <option value="₹">INR (₹)</option>
                     </select>
                 </div>
+                <button onclick="clearSip()" class="btn-3d btn-chip px-3.5 py-2 text-xs font-bold">Clear</button>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                 <div>
-                    <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Initial Advance Deposit (Optional)</label>
-                    <input type="number" id="sipAdvance" placeholder="e.g. 100000" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-xs font-medium text-slate-800">
+                    <label for="sipAdvance" class="block text-xs font-bold uppercase tracking-wider mb-1.5 muted">Initial Advance Deposit (Optional)</label>
+                    <input type="number" id="sipAdvance" oninput="calculateWealthGrowth()" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 100000" class="input-field w-full p-3.5 rounded-xl text-xs font-medium">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Monthly SIP Deposit</label>
-                    <input type="number" id="sipMonthly" placeholder="e.g. 5000" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-xs font-medium text-slate-800">
+                    <label for="sipMonthly" class="block text-xs font-bold uppercase tracking-wider mb-1.5 muted">Monthly SIP Deposit</label>
+                    <input type="number" id="sipMonthly" oninput="calculateWealthGrowth()" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 5000" class="input-field w-full p-3.5 rounded-xl text-xs font-medium">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Expected Return (% P.A)</label>
-                    <input type="number" id="sipRate" placeholder="e.g. 12" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-xs font-medium text-slate-800">
+                    <label for="sipRate" class="block text-xs font-bold uppercase tracking-wider mb-1.5 muted">Expected Return (% P.A)</label>
+                    <input type="number" id="sipRate" oninput="calculateWealthGrowth()" min="0" step="0.1" inputmode="decimal" placeholder="e.g. 12" class="input-field w-full p-3.5 rounded-xl text-xs font-medium">
+                </div>
+                <div>
+                    <label for="sipYears" class="block text-xs font-bold uppercase tracking-wider mb-1.5 muted">Time Horizon (Years)</label>
+                    <input type="number" id="sipYears" oninput="calculateWealthGrowth()" min="0" step="0.5" inputmode="decimal" placeholder="e.g. 10" class="input-field w-full p-3.5 rounded-xl text-xs font-medium">
                 </div>
             </div>
 
-            <!-- Inputs Grid Row 2 + Action Button -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 items-end">
-                <div>
-                    <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Time Horizon (Years)</label>
-                    <input type="number" id="sipYears" placeholder="e.g. 10" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-xs font-medium text-slate-800">
-                </div>
-                <div>
-                    <button onclick="calculateWealthGrowth()" class="btn-3d w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold rounded-xl text-xs flex items-center justify-center gap-2">
-                        📊 Calculate Wealth Growth
-                    </button>
-                </div>
-            </div>
-
-            <!-- 3 Output Cards -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div class="bg-blue-50/60 border border-blue-100 rounded-2xl p-5 text-center">
-                    <span id="outInvested" class="text-2xl font-black text-blue-600 block">$0.00</span>
-                    <span class="text-xs font-bold text-slate-500 uppercase">Total Out-of-Pocket Invested</span>
+                <div class="tile-indigo rounded-2xl p-5 text-center">
+                    <span id="outInvested" role="status" aria-live="polite" class="num text-2xl font-black block">$0.00</span>
+                    <span class="text-xs font-bold uppercase muted">Total Out-of-Pocket</span>
                 </div>
-
-                <div class="bg-indigo-50/60 border border-indigo-100 rounded-2xl p-5 text-center">
-                    <span id="outGain" class="text-2xl font-black text-indigo-600 block">$0.00</span>
-                    <span class="text-xs font-bold text-slate-500 uppercase">Estimated Wealth Gain</span>
+                <div class="tile-green rounded-2xl p-5 text-center">
+                    <span id="outGain" role="status" aria-live="polite" class="num text-2xl font-black block">$0.00</span>
+                    <span class="text-xs font-bold uppercase muted">Estimated Wealth Gain</span>
                 </div>
-
-                <div class="bg-emerald-50/60 border border-emerald-100 rounded-2xl p-5 text-center">
-                    <span id="outMaturity" class="text-2xl font-black text-emerald-600 block">$0.00</span>
-                    <span class="text-xs font-bold text-slate-500 uppercase">Future Maturity Corpus</span>
+                <div class="tile-green rounded-2xl p-5 text-center">
+                    <span id="outMaturity" role="status" aria-live="polite" class="num text-2xl font-black block">$0.00</span>
+                    <span class="text-xs font-bold uppercase muted">Future Maturity Corpus</span>
                 </div>
             </div>
 
         </div>
 
-        <!-- SEO Article & Explanations -->
-        <article class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10 text-slate-700 space-y-6">
-            <div class="border-b border-slate-100 pb-4">
-                <h2 class="text-xl font-bold text-slate-900">📈 Mutual Fund SIP & Wealth Investment Calculator</h2>
-                <p class="text-sm leading-relaxed mt-2 text-slate-600">
-                    A Systematic Investment Plan (SIP) allows you to compound wealth steadily by investing fixed monthly amounts along with optional initial advance lump-sum deposits.
+        <article class="surface rounded-3xl shadow-md p-6 sm:p-8 mb-10 space-y-6">
+            <div class="pb-4 border-b" style="border-color: var(--card-border);">
+                <h2 class="text-xl font-bold">📈 Mutual Fund SIP &amp; Wealth Investment Calculator</h2>
+                <p class="text-sm leading-relaxed mt-2 muted">
+                    A Systematic Investment Plan (SIP) allows you to compound wealth steadily by investing fixed monthly amounts along with optional initial advance lump-sum deposits. This calculator projects the future value of your mutual fund investments by applying monthly compounding.
                 </p>
             </div>
 
             <div class="space-y-4">
-                <h3 class="text-base font-bold text-slate-900">Key Features & Metrics:</h3>
-                <ul class="space-y-3 text-xs sm:text-sm text-slate-600 font-medium">
-                    <li class="flex items-start gap-2 bg-slate-50 p-3.5 rounded-2xl border border-slate-100">
-                        <span class="text-base shrink-0">💵</span>
-                        <div>
-                            <strong class="text-slate-900 block font-bold">1. Out-of-Pocket Invested:</strong>
-                            Calculates the exact total cash deposited through your initial deposit plus recurring monthly SIP contributions.
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-2 bg-slate-50 p-3.5 rounded-2xl border border-slate-100">
-                        <span class="text-base shrink-0">📈</span>
-                        <div>
-                            <strong class="text-slate-900 block font-bold">2. Estimated Wealth Gain:</strong>
-                            Measures compounding interest returns generated over your selected investment time horizon.
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-2 bg-slate-50 p-3.5 rounded-2xl border border-slate-100">
-                        <span class="text-base shrink-0">🏆</span>
-                        <div>
-                            <strong class="text-slate-900 block font-bold">3. Future Maturity Corpus:</strong>
-                            Shows the net total value of your investment corpus at the end of the investment duration.
-                        </div>
-                    </li>
+                <h3 class="text-lg font-bold">How SIP Compounding Works</h3>
+                <p class="text-sm muted leading-relaxed">
+                    Unlike a standard savings account, a SIP compounds monthly. The calculator uses the standard future value of an annuity formula (assuming deposits are made at the end of each month, known as an annuity-ordinary) for the monthly contributions. It uses standard monthly compound interest for the initial advance deposit.
+                </p>
+                <ul class="space-y-2 text-sm muted">
+                    <li><strong>Out-of-Pocket Invested:</strong> This is the exact cash you deposited (Advance + [Monthly × 12 × Years]).</li>
+                    <li><strong>Estimated Wealth Gain:</strong> The total interest or market returns generated over your time horizon.</li>
+                    <li><strong>Future Maturity Corpus:</strong> The final value of your investment (Principal + Gain).</li>
                 </ul>
+            </div>
+            
+            <div class="border-t pt-6" style="border-color: var(--card-border);">
+                <h3 class="text-lg font-bold mb-3">Related Tools</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <a href="fee-calculator.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">💳</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Fee Calculator</div>
+                        <div class="text-xs muted">Stripe &amp; PayPal Fees</div>
+                    </a>
+                    <a href="loan-emi.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">🏦</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Loan EMI Calculator</div>
+                        <div class="text-xs muted">Monthly Installments</div>
+                    </a>
+                    <a href="text-suite.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">✍️</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Text &amp; Word Counter</div>
+                        <div class="text-xs muted">Words, characters, reading time</div>
+                    </a>
+                </div>
             </div>
         </article>
 
-        <!-- FAQs Section -->
-        <section class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10">
-            <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">Frequently Asked Questions (FAQs)</h2>
+        <section class="surface rounded-3xl shadow-md p-6 sm:p-8 mb-10">
+            <h2 class="text-xl font-bold border-b pb-3 mb-6" style="border-color: var(--card-border);">Frequently Asked Questions</h2>
             <div class="space-y-4">
-                <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-                    <h3 class="text-sm font-bold text-slate-900 mb-1">What is the advantage of adding an initial advance deposit?</h3>
-                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">An initial lump-sum deposit compound grows alongside your monthly SIP deposits, accelerating total returns.</p>
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">How is SIP maturity calculated?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">Monthly SIPs are compounded using the future value of an annuity formula, assuming deposits are made at the end of each month. Advance deposits are compounded as a lump sum.</p>
                 </div>
-                <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-                    <h3 class="text-sm font-bold text-slate-900 mb-1">How is compound growth calculated?</h3>
-                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">It applies standard monthly compound formulas to recurring deposits combined with annual compound interest on initial advance amounts.</p>
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">What is the difference between an advance deposit and a monthly SIP?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">An advance deposit is a one-time lump sum invested upfront, while a monthly SIP is a recurring investment. Both compound over time, but the lump sum has a longer time horizon to grow.</p>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs font-semibold text-slate-500">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p>&copy; 2026 MyToolX. All rights reserved. Tools run client-side for 100% privacy.</p>
-        <div class="flex items-center gap-4 text-slate-600 font-bold">
-            <a href="index.html" class="hover:text-blue-600">Home</a>
-            <a href="privacy.html" class="hover:text-blue-600">Privacy Policy</a>
-            <a href="terms.html" class="hover:text-blue-600">Terms of Service</a>
-            <a href="about.html" class="hover:text-blue-600">About Us</a>
-            <a href="contact.html" class="hover:text-blue-600">Contact Us</a>
+        <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+                <div class="lg:col-span-5">
+                    <a href="index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 pr-4">
+                        MyToolX is a free suite of client-side web tools for writers, freelancers and developers. No sign-up, no tracking, no data leaves your browser.
+                    </p>
+                </div>
+                <div class="lg:col-span-4">
+                    <h3>Popular Tools</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <a href="typing-test.html">Typing Speed Test</a>
+                        <a href="image-compressor.html">Image Compressor</a>
+                        <a href="prompt-studio.html">AI Prompt Studio</a>
+                        <a href="grammar-checker.html">Grammar Checker</a>
+                        <a href="text-suite.html">Text &amp; Word Suite</a>
+                        <a href="fee-calculator.html">Fee Calculator</a>
+                        <a href="sip-calculator.html">SIP Calculator</a>
+                        <a href="loan-emi.html">Loan EMI Calc</a>
+                        <a href="json-formatter.html">JSON Formatter</a>
+                        <a href="base64-tool.html">Base64 Tool</a>
+                        <a href="qr-code-generator.html">QR Code Gen</a>
+                        <a href="password-generator.html">Password Gen</a>
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Company</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Legal</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                                <li><a href="terms.html">Terms of Service</a></li>
+                                <li><a href="index.html">Sitemap</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. All rights reserved.</p>
+                <p>All tools run 100% client-side in your browser.</p>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-    <!-- SIP ENGINE -->
     <script>
+    (function () {
+        'use strict';
+
+        (function initTheme() {
+            var saved = null;
+            try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = saved || (prefersDark ? 'dark' : 'light');
+            applyTheme(theme);
+        })();
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            var icon = document.getElementById('themeIcon');
+            if (icon) icon.textContent = (theme === 'dark' ? '☀️' : '🌙');
+            var btn = document.getElementById('themeToggle');
+            if (btn) {
+                btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+                btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+            }
+        }
+        function toggleTheme() {
+            var cur = document.documentElement.getAttribute('data-theme') || 'light';
+            var next = cur === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('mtx-theme', next); } catch (e) {}
+        }
+        window.toggleTheme = toggleTheme;
+
+        // UPDATED: now includes commas
+        function money(n) {
+            if (!isFinite(n) || isNaN(n)) return '0.00';
+            return parseFloat(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+        function num(id) {
+            var v = parseFloat(document.getElementById(id).value);
+            return (isFinite(v) && v > 0) ? v : 0;
+        }
+        function fmt(sym, n) { return sym + money(n); }
+
+        function animateNumber(el, from, to, sym, decimals) {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                el.textContent = sym + money(to);
+                return;
+            }
+            var start = performance.now(), dur = 400;
+            function step(now) {
+                var p = Math.min((now - start) / dur, 1);
+                var eased = 1 - Math.pow(1 - p, 3);
+                var currentVal = from + (to - from) * eased;
+                el.textContent = sym + currentVal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                if (p < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        }
+
+        var lastValues = { invested: null, gain: null, maturity: null };
+
+        function getCurrency() { return document.getElementById('sipCurr').value || '$'; }
+
+        function onCurrencyChange() {
+            lastValues = { invested: null, gain: null, maturity: null };
+            calculateWealthGrowth();
+        }
+        window.onCurrencyChange = onCurrencyChange;
+
         function calculateWealthGrowth() {
-            const curr = document.getElementById('sipCurr').value;
-            const advance = parseFloat(document.getElementById('sipAdvance').value) || 0;
-            const monthly = parseFloat(document.getElementById('sipMonthly').value) || 0;
-            const rate = (parseFloat(document.getElementById('sipRate').value) || 0) / 100;
-            const years = parseFloat(document.getElementById('sipYears').value) || 0;
+            var sym = getCurrency();
+            var advance = num('sipAdvance');
+            var monthly = num('sipMonthly');
+            var rate = num('sipRate') / 100;
+            var years = num('sipYears');
 
-            const n = years * 12;
-            const i = rate / 12;
+            var n = years * 12;
+            var i = rate / 12;
 
-            const totalInvested = advance + (monthly * n);
+            var totalInvested = advance + (monthly * n);
+            var futureAdvance = advance * Math.pow(1 + i, n);
 
-            // Compound calculation
-            let futureAdvance = advance * Math.pow(1 + rate, years);
-            let futureSip = 0;
+            var futureSip = 0;
             if (i > 0 && n > 0) {
-                futureSip = monthly * ((Math.pow(1 + i, n) - 1) / i) * (1 + i);
+                futureSip = monthly * ((Math.pow(1 + i, n) - 1) / i);
             } else {
                 futureSip = monthly * n;
             }
 
-            const totalMaturity = futureAdvance + futureSip;
-            const wealthGain = totalMaturity - totalInvested;
+            var totalMaturity = futureAdvance + futureSip;
+            var wealthGain = totalMaturity - totalInvested;
+            if (wealthGain < 0) wealthGain = 0;
 
-            document.getElementById('outInvested').textContent = `${curr}${Math.round(totalInvested).toLocaleString()}`;
-            document.getElementById('outGain').textContent = `${curr}${Math.round(wealthGain > 0 ? wealthGain : 0).toLocaleString()}`;
-            document.getElementById('outMaturity').textContent = `${curr}${Math.round(totalMaturity > 0 ? totalMaturity : 0).toLocaleString()}`;
+            animateNumber(document.getElementById('outInvested'), lastValues.invested === null ? 0 : lastValues.invested, totalInvested, sym, 2);
+            animateNumber(document.getElementById('outGain'), lastValues.gain === null ? 0 : lastValues.gain, wealthGain, sym, 2);
+            animateNumber(document.getElementById('outMaturity'), lastValues.maturity === null ? 0 : lastValues.maturity, totalMaturity, sym, 2);
+
+            lastValues.invested = totalInvested;
+            lastValues.gain = wealthGain;
+            lastValues.maturity = totalMaturity;
         }
+        window.calculateWealthGrowth = calculateWealthGrowth;
 
         function clearSip() {
-            ['sipAdvance', 'sipMonthly', 'sipRate', 'sipYears'].forEach(id => {
-                document.getElementById(id).value = '';
+            ['sipAdvance', 'sipMonthly', 'sipRate', 'sipYears'].forEach(function (id) {
+                var el = document.getElementById(id); if (el) el.value = '';
             });
-            document.getElementById('outInvested').textContent = "$0.00";
-            document.getElementById('outGain').textContent = "$0.00";
-            document.getElementById('outMaturity').textContent = "$0.00";
+            lastValues = { invested: null, gain: null, maturity: null };
+            calculateWealthGrowth();
         }
+        window.clearSip = clearSip;
+
+        calculateWealthGrowth();
+    })();
     </script>
 </body>
 </html>

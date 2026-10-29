@@ -2,51 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instant QR Code Generator | MyToolX</title>
-    <meta name="description" content="Free online Instant QR Code Generator. Create custom QR codes for URLs, text, Wi-Fi, and contact details with HD download and instant sharing options.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>QR Code Generator — Free Custom QR Codes | MyToolX</title>
+    <meta name="description" content="Free online QR Code Generator. Create custom QR codes for URLs, text, Wi-Fi, and contact details with HD download. No sign-up required.">
     <link rel="canonical" href="https://mytoolx.org/qr-code-generator.html">
 
-    <!-- Tailwind CSS -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:title" content="QR Code Generator — Free Custom QR Codes | MyToolX">
+    <meta property="og:description" content="Create custom QR codes for URLs, text, and contact details with HD download. Free and private.">
+    <meta property="og:url" content="https://mytoolx.org/qr-code-generator.html">
+    <meta property="og:image" content="https://mytoolx.org/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="QR Code Generator — Free Custom QR Codes | MyToolX">
+    <meta name="twitter:description" content="Create custom QR codes for URLs, text, and contact details with HD download. Free and private.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- QRCode.js Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
-    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "SoftwareApplication",
+          "@type": "WebApplication",
           "name": "MyToolX Instant QR Code Generator",
-          "operatingSystem": "All",
+          "url": "https://mytoolx.org/qr-code-generator.html",
+          "description": "Create custom QR codes for URLs, text, Wi-Fi, and contact details in your browser.",
           "applicationCategory": "UtilitiesApplication",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          }
+          "operatingSystem": "Any",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mytoolx.org/" },
+            { "@type": "ListItem", "position": 2, "name": "QR Code Generator", "item": "https://mytoolx.org/qr-code-generator.html" }
+          ]
         },
         {
           "@type": "FAQPage",
           "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "How do I generate and download a QR Code?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Simply enter your text or website URL into the input box. The QR code generates live instantly. Click Download HD QR to save high quality PNG image."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Are the generated QR codes permanent?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, all static QR codes created with this tool do not expire and can be scanned indefinitely."
-              }
-            }
+            { "@type": "Question", "name": "How do I generate and download a QR Code?", "acceptedAnswer": { "@type": "Answer", "text": "Simply enter your text or website URL into the input box. The QR code generates live instantly. Click Download HD QR to save high quality PNG image." } },
+            { "@type": "Question", "name": "Are the generated QR codes permanent?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, all static QR codes created with this tool do not expire and can be scanned indefinitely." } }
           ]
         }
       ]
@@ -56,198 +55,300 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
 
     <style>
-        .logo-box-3d {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #a1c4fd 100%);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15), inset 0 2px 3px rgba(255, 255, 255, 0.8);
-            border: 2px solid #ffffff;
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
         }
-        .logo-text-my {
-            background: -webkit-linear-gradient(45deg, #1e293b, #475569);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
         }
-        .logo-text-toolx {
-            background: -webkit-linear-gradient(45deg, #f97316, #ec4899, #8b5cf6, #06b6d4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-        }
-        /* Toast Animation */
-        #toastNotification {
-            transition: all 0.3s ease;
-        }
+        html, body { overflow-x: hidden; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+        
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .tool-panel { border-top: 4px solid var(--primary); }
+        .tool-panel:hover { box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); }
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-accent { background: var(--accent); color: #fff; } .btn-accent:hover { background: var(--accent-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+        
+        .input-field { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
+        .input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); outline: none; }
+        
+        .qr-placeholder { background: var(--chip-bg); border: 2px dashed var(--card-border); color: var(--text-muted); }
+        
+        .related-card { transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; background: var(--card); border: 1px solid var(--card-border); }
+        .related-card:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); border-color: var(--primary); }
+
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+        
+        #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
+        :focus-visible { outline: none; }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        ::selection { background: rgba(79,70,229,0.25); }
+        @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
     </style>
 </head>
-<body class="bg-gradient-to-br from-slate-100 via-blue-50/50 to-indigo-50/30 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+<body class="font-sans min-h-screen flex flex-col justify-between">
 
-    <!-- Header Navbar -->
-    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
         <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2">
-            
-            <div class="flex items-center gap-2">
-                <a href="index.html" class="px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 rounded-xl text-slate-700 text-xs font-bold transition flex items-center gap-1 shrink-0">
+            <div class="flex items-center gap-3 sm:gap-4">
+                <a href="index.html" class="btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold flex items-center gap-1 shrink-0">
                     ← <span class="hidden sm:inline">All Tools</span>
                 </a>
-
-                <a href="index.html" class="flex items-center space-x-1.5 group cursor-pointer select-none shrink-0">
-                    <div class="logo-box-3d w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-all">
-                        <span class="text-base sm:text-xl filter drop-shadow">🧰</span>
-                    </div>
-                    <span class="text-lg sm:text-2xl font-black tracking-tight flex items-center">
-                        <span class="logo-text-my">My</span>
-                        <span class="logo-text-toolx ml-0.5">ToolX</span>
-                    </span>
+                <a href="index.html" class="flex items-center gap-2 group cursor-pointer select-none shrink-0" aria-label="MyToolX home">
+                    <div class="logo-mark">M<span class="x">X</span></div>
+                    <span class="logo-wordmark hidden xs:block sm:block">MyTool<span class="x">X</span></span>
                 </a>
             </div>
-
             <div class="flex items-center gap-1.5 shrink-0">
-                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition whitespace-nowrap">
+                <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle dark mode" class="w-11 h-11 rounded-xl flex items-center justify-center text-base font-bold" style="background: var(--chip-bg); color: var(--chip-text);">
+                    <span id="themeIcon" aria-hidden="true">🌙</span>
+                </button>
+                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="hidden sm:inline-flex text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition whitespace-nowrap">
                     💼 Remote Jobs ↗
                 </a>
-
-                <a href="https://mali1.pythonanywhere.com/" target="_blank" class="text-xs font-bold bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-3 py-1.5 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap">
+                <a href="https://mali1.pythonanywhere.com/" target="_blank" rel="noopener" class="hidden sm:inline-flex text-xs font-bold text-white px-3 py-1.5 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
                     📄 Live CV ↗
                 </a>
             </div>
-
         </div>
     </header>
 
-    <!-- Main Container -->
     <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow relative">
         
-        <!-- Toast Notification Popup -->
-        <div id="toastNotification" class="fixed bottom-6 right-6 bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-2xl text-xs font-bold z-50 transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2">
-            <span>✨</span> <span id="toastText">Link copied to clipboard!</span>
+        <div id="toastNotification" role="status" aria-live="polite" class="fixed bottom-6 right-6 bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-2xl text-xs font-bold z-50 transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2 pointer-events-none">
+            <span>✨</span> <span id="toastText">Link copied!</span>
         </div>
 
-        <nav class="text-xs font-semibold text-slate-500 mb-4 flex items-center gap-1">
-            <a href="index.html" class="hover:text-blue-600">Home</a>
+        <nav class="text-xs font-semibold mb-4 flex items-center gap-1 muted" aria-label="Breadcrumb">
+            <a href="index.html" class="hover:text-indigo-500">Home</a>
             <span>/</span>
-            <span class="text-slate-800 font-bold">QR Code Generator</span>
+            <span style="color: var(--text); font-weight: 700;">QR Code Generator</span>
         </nav>
 
-        <!-- Tool Card Panel -->
-        <div class="bg-white rounded-3xl shadow-xl border border-slate-200/80 p-6 sm:p-8 mb-10">
+        <div class="tool-panel surface rounded-3xl shadow-xl p-6 sm:p-8 mb-10 transition-shadow">
             
-            <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
-                <h1 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
+            <div class="flex items-center justify-between gap-3 flex-wrap mb-4 pb-4 border-b" style="border-color: var(--card-border);">
+                <h1 class="text-xl sm:text-2xl font-black flex items-center gap-2" style="color: var(--text);">
                     📱 Instant QR Code Generator
                 </h1>
-                <button onclick="clearQR()" class="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
+                <button onclick="clearQR()" class="btn-3d btn-chip px-3.5 py-2 text-xs font-bold">Clear</button>
             </div>
 
-            <label class="block text-xs font-black text-slate-600 uppercase tracking-wider mb-2">TARGET LINK OR TEXT</label>
-            <input type="text" id="qrInput" value="" placeholder="Enter link or text..." class="w-full p-4 border border-slate-300 rounded-2xl bg-white text-slate-900 text-base font-semibold focus:ring-2 focus:ring-blue-500 shadow-sm transition mb-6">
+            <label for="qrInput" class="block text-xs font-bold uppercase tracking-wider mb-1.5 muted">Target Link or Text</label>
+            <input type="text" id="qrInput" value="" placeholder="Enter link or text..." class="input-field w-full p-4 rounded-2xl text-sm font-semibold mb-6">
 
-            <div class="bg-slate-50/50 border border-slate-200/80 rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center">
-                <div id="qrcode" class="p-4 bg-white rounded-2xl shadow-md border border-slate-100 mb-6 flex justify-center"></div>
+            <div class="surface border rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center" style="border-color: var(--card-border); background: var(--bg);">
+                
+                <!-- QR Output Container -->
+                <div id="qrContainer" class="mb-6 flex justify-center items-center min-w-[220px] min-h-[220px]">
+                    <div class="qr-placeholder w-[220px] h-[220px] rounded-xl flex items-center justify-center text-sm font-semibold">Enter text to preview</div>
+                </div>
 
-                <div class="flex flex-wrap justify-center gap-3 w-full max-w-xs">
-                    <button onclick="downloadHDQR()" class="flex-1 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold rounded-xl text-xs shadow-sm transition flex items-center justify-center gap-1.5 whitespace-nowrap">
-                        ⬇️ Download HD QR
-                    </button>
-                    <button onclick="shareQR()" class="flex-1 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-extrabold rounded-xl text-xs shadow-sm transition flex items-center justify-center gap-1.5 whitespace-nowrap">
-                        🔗 Share Link
-                    </button>
+                <div class="flex flex-wrap justify-center gap-3 w-full max-w-sm">
+                    <button id="downloadBtn" onclick="downloadHDQR()" class="btn-3d btn-accent flex-1 px-5 py-2.5 text-xs flex items-center justify-center gap-1.5 whitespace-nowrap">⬇️ Download HD QR</button>
+                    <button id="shareBtn" onclick="shareQR()" class="btn-3d btn-primary flex-1 px-5 py-2.5 text-xs flex items-center justify-center gap-1.5 whitespace-nowrap">🔗 Share Link</button>
                 </div>
             </div>
 
         </div>
 
-        <!-- SEO Article Content (Rich & Expanded Content) -->
-<article class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10 text-slate-700 space-y-6">
-    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">Fast & Private QR Code Creation</h2>
-    
-    <p class="text-sm leading-relaxed text-slate-600">
-        Quick Response (QR) codes have become an essential link between the physical and digital worlds. From sharing website URLs, restaurant menus, Wi-Fi login credentials, and digital business cards (vCards) to payment links, QR codes provide instant, friction-free access for mobile users without manual typing.
-    </p>
+        <article class="surface rounded-3xl shadow-md p-6 sm:p-8 mb-10 space-y-6">
+            <div class="pb-4 border-b" style="border-color: var(--card-border);">
+                <h2 class="text-xl font-bold">Fast & Private QR Code Creation</h2>
+                <p class="text-sm leading-relaxed mt-2 muted">
+                    Quick Response (QR) codes have become an essential link between the physical and digital worlds. From sharing website URLs, restaurant menus, Wi-Fi login credentials, and digital business cards (vCards) to payment links, QR codes provide instant, friction-free access for mobile users without manual typing.
+                </p>
+            </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-        <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-2xl">
-            <h3 class="font-bold text-slate-900 text-sm mb-1">📱 High Scanability & Resolution</h3>
-            <p class="text-xs text-slate-600">Generates clean matrix codes optimized for quick camera focusing across Android and iOS smartphone devices.</p>
-        </div>
-        <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-2xl">
-            <h3 class="font-bold text-slate-900 text-sm mb-1">🔒 100% Static & Permanent</h3>
-            <p class="text-xs text-slate-600">All generated QR codes store encoded data directly in the matrix image. They never expire and contain zero tracking redirects.</p>
-        </div>
-    </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">📱 High Scanability & Resolution</h3>
+                    <p class="text-xs muted">Generates clean matrix codes optimized for quick camera focusing across Android and iOS smartphone devices.</p>
+                </div>
+                <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">🔒 100% Static & Permanent</h3>
+                    <p class="text-xs muted">All generated QR codes store encoded data directly in the matrix image. They never expire and contain zero tracking redirects.</p>
+                </div>
+            </div>
 
-    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">Best Practices for Creating High-Converting QR Codes</h3>
-    <p class="text-sm leading-relaxed text-slate-600">
-        To ensure your QR codes scan reliably across various print mediums and mobile screens, follow these essential design and technical guidelines:
-    </p>
-    <ul class="list-disc pl-5 text-xs sm:text-sm text-slate-600 space-y-2">
-        <li><strong>High Contrast Ratio:</strong> Always maintain a high contrast between the dark foreground modules and light background color for camera lens readability.</li>
-        <li><strong>Keep URLs Short:</strong> Shorter target URLs produce lower density QR matrices, which scan faster from longer distances.</li>
-        <li><strong>Test Print Sizes:</strong> For print materials like posters, flyers, or business cards, ensure the printed QR code is at least 2 cm x 2 cm (0.8 x 0.8 inches) in dimension.</li>
-    </ul>
+            <div class="border-t pt-6" style="border-color: var(--card-border);">
+                <h3 class="text-lg font-bold mb-3">Related Tools</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <a href="password-generator.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">🔑</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Password Gen</div>
+                        <div class="text-xs muted">Secure Random Keys</div>
+                    </a>
+                    <a href="unit-converter.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">⚖️</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Unit Converter</div>
+                        <div class="text-xs muted">Distance, weight, temp</div>
+                    </a>
+                    <a href="base64-tool.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">🔤</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Base64 Tool</div>
+                        <div class="text-xs muted">Encode &amp; Decode</div>
+                    </a>
+                </div>
+            </div>
+        </article>
 
-    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">Client-Side Privacy & Zero Tracking</h3>
-    <p class="text-sm leading-relaxed text-slate-600">
-        Unlike commercial QR generators that force user links through dynamic tracking redirects or charge monthly subscription fees, MyToolX generates QR codes 100% locally in your web browser. Your destination URLs, contact cards, and text payloads are never stored on intermediate servers.
-    </p>
-</article>
-
-<!-- Expanded FAQs Section -->
-<section class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10">
-    <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">Frequently Asked Questions (FAQs)</h2>
-    <div class="space-y-4">
-        
-        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">Is this QR code generator completely free?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Yes, 100% free with unlimited scans, no hidden fees, no registration, and no expiration date on any created codes.</p>
-        </div>
-
-        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">Do the generated QR codes ever expire?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">No. These are static QR codes where the destination data or URL is embedded directly inside the code matrix. As long as your destination link or text remains active, the QR code will work forever.</p>
-        </div>
-
-        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">Are my target URLs or QR inputs saved on any server?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">No. The QR matrix rendering happens entirely client-side inside your browser via JavaScript. Nothing is sent to external servers or database logs.</p>
-        </div>
-
-        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">Can I use these QR codes for commercial print materials?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Yes. You can download the generated high-resolution PNG image and use it freely on commercial products, packaging, brochures, business cards, and marketing materials.</p>
-        </div>
-
-        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">What types of data can I encode in a QR code?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">You can encode standard web URLs, plain text messages, email addresses, contact details (vCards), Wi-Fi connection keys, and phone numbers.</p>
-        </div>
-
-    </div>
-</section>
+        <section class="surface rounded-3xl shadow-md p-6 sm:p-8 mb-10">
+            <h2 class="text-xl font-bold border-b pb-3 mb-6" style="border-color: var(--card-border);">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">Is this QR code generator completely free?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">Yes, 100% free with unlimited scans, no hidden fees, no registration, and no expiration date on any created codes.</p>
+                </div>
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">Do the generated QR codes ever expire?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">No. These are static QR codes where the destination data or URL is embedded directly inside the code matrix. As long as your destination link or text remains active, the QR code will work forever.</p>
+                </div>
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">Are my target URLs or QR inputs saved on any server?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">No. The QR matrix rendering happens entirely client-side inside your browser via JavaScript. Nothing is sent to external servers or database logs.</p>
+                </div>
+            </div>
+        </section>
 
     </main>
 
-    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs font-semibold text-slate-500">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p>&copy; 2026 MyToolX. All rights reserved. Tools run client-side for 100% privacy.</p>
-        <div class="flex items-center gap-4 text-slate-600 font-bold">
-            <a href="index.html" class="hover:text-blue-600">Home</a>
-            <a href="privacy.html" class="hover:text-blue-600">Privacy Policy</a>
-            <a href="terms.html" class="hover:text-blue-600">Terms of Service</a>
-            <a href="about.html" class="hover:text-blue-600">About Us</a>
-            <a href="contact.html" class="hover:text-blue-600">Contact Us</a>
+        <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+                <div class="lg:col-span-5">
+                    <a href="index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 pr-4">
+                        MyToolX is a free suite of client-side web tools for writers, freelancers and developers. No sign-up, no tracking, no data leaves your browser.
+                    </p>
+                </div>
+                <div class="lg:col-span-4">
+                    <h3>Popular Tools</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <a href="typing-test.html">Typing Speed Test</a>
+                        <a href="image-compressor.html">Image Compressor</a>
+                        <a href="prompt-studio.html">AI Prompt Studio</a>
+                        <a href="grammar-checker.html">Grammar Checker</a>
+                        <a href="text-suite.html">Text &amp; Word Suite</a>
+                        <a href="fee-calculator.html">Fee Calculator</a>
+                        <a href="sip-calculator.html">SIP Calculator</a>
+                        <a href="loan-emi.html">Loan EMI Calc</a>
+                        <a href="json-formatter.html">JSON Formatter</a>
+                        <a href="base64-tool.html">Base64 Tool</a>
+                        <a href="qr-code-generator.html">QR Code Gen</a>
+                        <a href="password-generator.html">Password Gen</a>
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Company</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Legal</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                                <li><a href="terms.html">Terms of Service</a></li>
+                                <li><a href="index.html">Sitemap</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. All rights reserved.</p>
+                <p>All tools run 100% client-side in your browser.</p>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-    <!-- SCRIPT LOGIC -->
     <script>
-        let qrObj = null;
+    (function () {
+        'use strict';
+
+        (function initTheme() {
+            var saved = null;
+            try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = saved || (prefersDark ? 'dark' : 'light');
+            applyTheme(theme);
+        })();
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            var icon = document.getElementById('themeIcon');
+            if (icon) icon.textContent = (theme === 'dark' ? '☀️' : '🌙');
+            var btn = document.getElementById('themeToggle');
+            if (btn) {
+                btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+                btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+            }
+        }
+        function toggleTheme() {
+            var cur = document.documentElement.getAttribute('data-theme') || 'light';
+            var next = cur === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('mtx-theme', next); } catch (e) {}
+        }
+        window.toggleTheme = toggleTheme;
+
+        var qrInput = document.getElementById('qrInput');
+        var qrContainer = document.getElementById('qrContainer');
+        var downloadBtn = document.getElementById('downloadBtn');
+        var shareBtn = document.getElementById('shareBtn');
+        var qrObj = null;
 
         function renderQR() {
-            const container = document.getElementById('qrcode');
-            container.innerHTML = '';
-            const val = document.getElementById('qrInput').value.trim() || "https://mytoolx.org";
-            qrObj = new QRCode(container, {
+            var val = qrInput.value.trim();
+            
+            if (!val) {
+                qrContainer.innerHTML = '<div class="qr-placeholder w-[220px] h-[220px] rounded-xl flex items-center justify-center text-sm font-semibold">Enter text to preview</div>';
+                qrObj = null;
+                downloadBtn.style.opacity = '0.5';
+                shareBtn.style.opacity = '0.5';
+                return;
+            }
+
+            downloadBtn.style.opacity = '1';
+            shareBtn.style.opacity = '1';
+
+            qrContainer.innerHTML = '';
+            // Give the container a white background specifically for the QR code
+            var qrWrapper = document.createElement('div');
+            qrWrapper.className = 'p-4 bg-white rounded-xl shadow-md';
+            qrContainer.appendChild(qrWrapper);
+
+            qrObj = new QRCode(qrWrapper, {
                 text: val,
                 width: 220,
                 height: 220,
@@ -256,10 +357,15 @@
                 correctLevel: QRCode.CorrectLevel.H
             });
         }
+        window.renderQR = renderQR;
+
+        qrInput.addEventListener('input', renderQR);
 
         function downloadHDQR() {
-            const val = document.getElementById('qrInput').value.trim() || "https://mytoolx.org";
-            const tempDiv = document.createElement('div');
+            var val = qrInput.value.trim();
+            if (!val) return;
+
+            var tempDiv = document.createElement('div');
             new QRCode(tempDiv, {
                 text: val,
                 width: 1000,
@@ -269,47 +375,55 @@
                 correctLevel: QRCode.CorrectLevel.H
             });
 
-            setTimeout(() => {
-                const canvas = tempDiv.querySelector('canvas');
+            // Poll for canvas readiness instead of arbitrary timeout
+            var checkCanvas = setInterval(function() {
+                var canvas = tempDiv.querySelector('canvas');
                 if (canvas) {
-                    const imgURI = canvas.toDataURL("image/png");
-                    const a = document.createElement('a');
+                    clearInterval(checkCanvas);
+                    var imgURI = canvas.toDataURL("image/png");
+                    var a = document.createElement('a');
                     a.href = imgURI;
                     a.download = 'mytoolx-qrcode-hd.png';
                     document.body.appendChild(a);
                     a.click();
                     document.body.removeChild(a);
                 }
-            }, 100);
+            }, 50);
+            
+            // Safety timeout
+            setTimeout(function() { clearInterval(checkCanvas); }, 3000);
         }
+        window.downloadHDQR = downloadHDQR;
 
         function showToast(message) {
-            const toast = document.getElementById('toastNotification');
+            var toast = document.getElementById('toastNotification');
             document.getElementById('toastText').textContent = message;
             toast.classList.remove('translate-y-20', 'opacity-0');
-            setTimeout(() => {
+            setTimeout(function() {
                 toast.classList.add('translate-y-20', 'opacity-0');
             }, 2500);
         }
 
         function shareQR() {
-            const val = document.getElementById('qrInput').value.trim() || "https://mytoolx.org";
+            var val = qrInput.value.trim();
+            if (!val) return;
             
-            // Clipboard Copy Fallback to prevent invalid windows sharing redirects
-            navigator.clipboard.writeText(val).then(() => {
-                showToast("Link copied to clipboard successfully!");
-            }).catch(() => {
+            navigator.clipboard.writeText(val).then(function() {
+                showToast("Link copied to clipboard!");
+            }).catch(function() {
                 showToast("Failed to copy link.");
             });
         }
+        window.shareQR = shareQR;
 
         function clearQR() {
-            document.getElementById('qrInput').value = '';
+            qrInput.value = '';
             renderQR();
         }
+        window.clearQR = clearQR;
 
-        document.getElementById('qrInput').addEventListener('input', renderQR);
-        window.onload = renderQR;
+        renderQR();
+    })();
     </script>
 </body>
 </html>

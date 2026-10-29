@@ -2,134 +2,180 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Privacy Policy | MyToolX</title>
     <meta name="description" content="Privacy Policy for MyToolX. Read about how we handle user privacy, cookies, and client-side tool processing.">
     <link rel="canonical" href="https://mytoolx.org/privacy.html">
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-        .logo-box-3d {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #a1c4fd 100%);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15), inset 0 2px 3px rgba(255, 255, 255, 0.8);
-            border: 2px solid #ffffff;
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
         }
-        .logo-text-my {
-            background: -webkit-linear-gradient(45deg, #1e293b, #475569);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
         }
-        .logo-text-toolx {
-            background: -webkit-linear-gradient(45deg, #f97316, #ec4899, #8b5cf6, #06b6d4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-        }
+        html, body { overflow-x: hidden; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+        
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+        
+        #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
+        :focus-visible { outline: none; }
+        button:focus-visible, a:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        ::selection { background: rgba(79,70,229,0.25); }
     </style>
 </head>
-<body class="bg-gradient-to-br from-slate-100 via-blue-50/50 to-indigo-50/30 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+<body class="font-sans min-h-screen flex flex-col justify-between">
 
-    <!-- Header Navbar -->
-    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
         <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2">
-            
-            <div class="flex items-center gap-2">
-                <a href="index.html" class="px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 rounded-xl text-slate-700 text-xs font-bold transition flex items-center gap-1 shrink-0">
-                    ← <span class="hidden sm:inline">Back to MyToolX</span>
-                </a>
-
-                <a href="index.html" class="flex items-center space-x-1.5 group cursor-pointer select-none shrink-0">
-                    <div class="logo-box-3d w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-all">
-                        <span class="text-base sm:text-xl filter drop-shadow">🧰</span>
-                    </div>
-                    <span class="text-lg sm:text-2xl font-black tracking-tight flex items-center">
-                        <span class="logo-text-my">My</span>
-                        <span class="logo-text-toolx ml-0.5">ToolX</span>
-                    </span>
+            <div class="flex items-center gap-3 sm:gap-4">
+                <a href="index.html" class="btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold flex items-center gap-1 shrink-0">← <span class="hidden sm:inline">All Tools</span></a>
+                <a href="index.html" class="flex items-center gap-2 group cursor-pointer select-none shrink-0" aria-label="MyToolX home">
+                    <div class="logo-mark">M<span class="x">X</span></div>
+                    <span class="logo-wordmark hidden xs:block sm:block">MyTool<span class="x">X</span></span>
                 </a>
             </div>
-
             <div class="flex items-center gap-1.5 shrink-0">
-                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition whitespace-nowrap">
-                    💼 Remote Jobs ↗
-                </a>
-
-                <a href="https://mali1.pythonanywhere.com/" target="_blank" class="text-xs font-bold bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-3 py-1.5 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap">
-                    📄 Live CV ↗
-                </a>
+                <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle dark mode" class="w-11 h-11 rounded-xl flex items-center justify-center text-base font-bold" style="background: var(--chip-bg); color: var(--chip-text);"><span id="themeIcon" aria-hidden="true">🌙</span></button>
+                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="hidden sm:inline-flex text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition whitespace-nowrap">💼 Remote Jobs ↗</a>
+                <a href="https://mali1.pythonanywhere.com/" target="_blank" rel="noopener" class="hidden sm:inline-flex text-xs font-bold text-white px-3 py-1.5 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">📄 Live CV ↗</a>
             </div>
-
         </div>
     </header>
 
-    <!-- Main Container -->
     <main class="max-w-3xl mx-auto px-4 py-10 w-full flex-grow">
-        
-        <nav class="text-xs font-semibold text-slate-500 mb-6 flex items-center gap-1">
-            <a href="index.html" class="hover:text-blue-600">Home</a>
-            <span>/</span>
-            <span class="text-slate-800 font-bold">Privacy Policy</span>
+        <nav class="text-xs font-semibold mb-6 flex items-center gap-1 muted" aria-label="Breadcrumb">
+            <a href="index.html" class="hover:text-indigo-500">Home</a><span>/</span><span style="color: var(--text); font-weight: 700;">Privacy Policy</span>
         </nav>
 
-        <div class="bg-white rounded-3xl shadow-xl border border-slate-200/80 p-6 sm:p-10 mb-10 space-y-6">
-            <h1 class="text-2xl sm:text-3xl font-black text-slate-900 border-b border-slate-100 pb-4">
-                🛡️ Privacy Policy
-            </h1>
+        <div class="surface rounded-3xl shadow-xl p-6 sm:p-10 mb-10 space-y-6">
+            <h1 class="text-2xl sm:text-3xl font-black border-b pb-4" style="color: var(--text); border-color: var(--card-border);">🛡️ Privacy Policy</h1>
 
-            <p class="text-slate-600 text-sm leading-relaxed">
+            <p class="text-sm leading-relaxed muted">
                 At MyToolX (mytoolx.org), accessible from https://mytoolx.org, one of our main priorities is the privacy of our visitors. Most of our tools process data entirely within your browser (client-side), meaning your text, files, and inputs are never transmitted or stored on any server.
             </p>
 
-            <div class="border-t border-slate-100 pt-6">
-                <h2 class="text-lg font-bold text-slate-900 mb-2">Cookies and Google AdSense</h2>
-                <p class="text-slate-600 text-sm leading-relaxed mb-2">
+            <div class="border-t pt-6" style="border-color: var(--card-border);">
+                <h2 class="text-lg font-bold mb-2" style="color: var(--text);">Cookies and Google AdSense</h2>
+                <p class="text-sm leading-relaxed muted mb-2">
                     Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to our website or other websites on the internet. Google's use of advertising cookies enables it and its partners to serve ads to users based on their interaction with our platform.
                 </p>
-                <p class="text-slate-600 text-sm leading-relaxed">
-                    Users may opt out of personalized advertising by visiting <a href="https://adssettings.google.com" target="_blank" class="text-blue-600 font-bold hover:underline">Google Ads Settings</a> or <a href="https://www.aboutads.info" target="_blank" class="text-blue-600 font-bold hover:underline">AboutAds.info</a>.
+                <p class="text-sm leading-relaxed muted">
+                    Users may opt out of personalized advertising by visiting <a href="https://adssettings.google.com" target="_blank" class="text-indigo-500 font-bold hover:underline">Google Ads Settings</a> or <a href="https://www.aboutads.info" target="_blank" class="text-indigo-500 font-bold hover:underline">AboutAds.info</a>.
                 </p>
             </div>
 
-            <div class="border-t border-slate-100 pt-6">
-                <h2 class="text-lg font-bold text-slate-900 mb-2">Log Files & Web Analytics</h2>
-                <p class="text-slate-600 text-sm leading-relaxed">
+            <div class="border-t pt-6" style="border-color: var(--card-border);">
+                <h2 class="text-lg font-bold mb-2" style="color: var(--text);">Log Files & Web Analytics</h2>
+                <p class="text-sm leading-relaxed muted">
                     MyToolX follows standard procedures of using log files provided by web hosting services (such as GitHub Pages). The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date/time stamp, and referring/exit pages. These are not linked to any personally identifiable information.
                 </p>
             </div>
 
-            <div class="border-t border-slate-100 pt-6">
-                <h2 class="text-lg font-bold text-slate-900 mb-2">GDPR & CCPA Privacy Rights</h2>
-                <p class="text-slate-600 text-sm leading-relaxed">
+            <div class="border-t pt-6" style="border-color: var(--card-border);">
+                <h2 class="text-lg font-bold mb-2" style="color: var(--text);">GDPR & CCPA Privacy Rights</h2>
+                <p class="text-sm leading-relaxed muted">
                     Under GDPR and CCPA, users have the right to request access to, correction of, or erasure of any personal data collected. Since MyToolX does not require user accounts or store personal user inputs, we do not retain identifiable personal database records.
                 </p>
             </div>
 
-            <div class="border-t border-slate-100 pt-6">
-                <h2 class="text-lg font-bold text-slate-900 mb-2">Contact Us</h2>
-                <p class="text-slate-600 text-sm leading-relaxed">
-                    If you have questions or require more information about our Privacy Policy, feel free to submit an inquiry through our <a href="contact.html" class="text-blue-600 font-bold hover:underline">Contact Form</a>.
+            <div class="border-t pt-6" style="border-color: var(--card-border);">
+                <h2 class="text-lg font-bold mb-2" style="color: var(--text);">Contact Us</h2>
+                <p class="text-sm leading-relaxed muted">
+                    If you have questions or require more information about our Privacy Policy, feel free to submit an inquiry through our <a href="contact.html" class="text-indigo-500 font-bold hover:underline">Contact Form</a>.
                 </p>
             </div>
         </div>
-
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs font-semibold text-slate-500">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p>&copy; 2026 MyToolX. All rights reserved. Tools run client-side for 100% privacy.</p>
-            <div class="flex items-center gap-4 text-slate-600 font-bold">
-                <a href="index.html" class="hover:text-blue-600">Home</a>
-                <a href="privacy.html" class="hover:text-blue-600 text-blue-600">Privacy Policy</a>
-                <a href="terms.html" class="hover:text-blue-600">Terms of Service</a>
-                <a href="about.html" class="hover:text-blue-600">About Us</a>
-                <a href="contact.html" class="hover:text-blue-600">Contact Us</a>
+       <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+                <div class="lg:col-span-5">
+                    <a href="index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 pr-4">
+                        MyToolX is a free suite of client-side web tools for writers, freelancers and developers. No sign-up, no tracking, no data leaves your browser.
+                    </p>
+                </div>
+                <div class="lg:col-span-4">
+                    <h3>Popular Tools</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <a href="typing-test.html">Typing Speed Test</a>
+                        <a href="image-compressor.html">Image Compressor</a>
+                        <a href="prompt-studio.html">AI Prompt Studio</a>
+                        <a href="grammar-checker.html">Grammar Checker</a>
+                        <a href="text-suite.html">Text &amp; Word Suite</a>
+                        <a href="fee-calculator.html">Fee Calculator</a>
+                        <a href="sip-calculator.html">SIP Calculator</a>
+                        <a href="loan-emi.html">Loan EMI Calc</a>
+                        <a href="json-formatter.html">JSON Formatter</a>
+                        <a href="base64-tool.html">Base64 Tool</a>
+                        <a href="qr-code-generator.html">QR Code Gen</a>
+                        <a href="password-generator.html">Password Gen</a>
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Company</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Legal</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                                <li><a href="terms.html">Terms of Service</a></li>
+                                <li><a href="index.html">Sitemap</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. All rights reserved.</p>
+                <p>All tools run 100% client-side in your browser.</p>
             </div>
         </div>
     </footer>
 
+    <script>
+        (function initTheme() { var saved = null; try { saved = localStorage.getItem('mtx-theme'); } catch (e) {} var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; var theme = saved || (prefersDark ? 'dark' : 'light'); applyTheme(theme); })();
+        function applyTheme(theme) { document.documentElement.setAttribute('data-theme', theme); var icon = document.getElementById('themeIcon'); if (icon) icon.textContent = (theme === 'dark' ? '☀️' : '🌙'); var btn = document.getElementById('themeToggle'); if (btn) { btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'); btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false'); } }
+        function toggleTheme() { var cur = document.documentElement.getAttribute('data-theme') || 'light'; var next = cur === 'dark' ? 'light' : 'dark'; applyTheme(next); try { localStorage.setItem('mtx-theme', next); } catch (e) {} }
+        window.toggleTheme = toggleTheme;
+    </script>
 </body>
 </html>

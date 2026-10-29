@@ -2,41 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base64 Encoder & Decoder | MyToolX</title>
-    <meta name="description" content="Free online Base64 Encoder & Decoder. Convert plain text to Base64 format or decode Base64 strings instantly.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Base64 Encoder & Decoder — URL Safe & Unicode | MyToolX</title>
+    <meta name="description" content="Free online Base64 Encoder & Decoder. Convert plain text to Base64 or decode instantly. Supports Unicode, emojis, and URL-safe Base64. No sign-up.">
     <link rel="canonical" href="https://mytoolx.org/base64-tool.html">
 
-    <!-- Tailwind CSS -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:title" content="Base64 Encoder & Decoder — URL Safe & Unicode | MyToolX">
+    <meta property="og:description" content="Convert text to Base64 and back instantly. Supports Unicode and URL-safe encoding. Free, in your browser.">
+    <meta property="og:url" content="https://mytoolx.org/base64-tool.html">
+    <meta property="og:image" content="https://mytoolx.org/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Base64 Encoder & Decoder — URL Safe & Unicode | MyToolX">
+    <meta name="twitter:description" content="Convert text to Base64 and back instantly. Supports Unicode and URL-safe encoding. Free, in your browser.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "SoftwareApplication",
+          "@type": "WebApplication",
           "name": "MyToolX Base64 Encoder & Decoder",
-          "operatingSystem": "All",
+          "url": "https://mytoolx.org/base64-tool.html",
+          "description": "Convert plain text to Base64 and decode Base64 strings safely in your browser.",
           "applicationCategory": "DeveloperApplication",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          }
+          "operatingSystem": "Any",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mytoolx.org/" },
+            { "@type": "ListItem", "position": 2, "name": "Base64 Tool", "item": "https://mytoolx.org/base64-tool.html" }
+          ]
         },
         {
           "@type": "FAQPage",
           "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What is Base64 encoding?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Base64 is a binary-to-text encoding scheme used to transmit media or data safely over text-based protocols like HTTP and HTML."
-              }
-            }
+            { "@type": "Question", "name": "What is Base64 encoding?", "acceptedAnswer": { "@type": "Answer", "text": "Base64 is a binary-to-text encoding scheme used to transmit media or data safely over text-based protocols like HTTP and HTML." } },
+            { "@type": "Question", "name": "Is Base64 secure?", "acceptedAnswer": { "@type": "Answer", "text": "No, Base64 is not encryption and provides zero security. It is simply a way to represent binary data using ASCII characters." } },
+            { "@type": "Question", "name": "What is URL-safe Base64?", "acceptedAnswer": { "@type": "Answer", "text": "Standard Base64 uses '+' and '/', which can break URLs. URL-safe Base64 replaces these with '-' and '_'." } }
           ]
         }
       ]
@@ -46,222 +55,376 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
 
     <style>
-        .logo-box-3d {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #a1c4fd 100%);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15), inset 0 2px 3px rgba(255, 255, 255, 0.8);
-            border: 2px solid #ffffff;
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
+            --tile-red-bg: rgba(254,226,226,0.6); --tile-red-border: #FECACA; --tile-red-text: #EF4444;
+            --tile-green-bg: rgba(209,250,229,0.6); --tile-green-border: #A7F3D0; --tile-green-text: #059669;
+            --tile-indigo-bg: rgba(224,231,255,0.6); --tile-indigo-border: #C7D2FE; --tile-indigo-text: #4F46E5;
         }
-        .logo-text-my {
-            background: -webkit-linear-gradient(45deg, #1e293b, #475569);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
+            --tile-red-bg: rgba(127,29,29,0.25); --tile-red-border: #7F1D1D; --tile-red-text: #F87171;
+            --tile-green-bg: rgba(6,78,59,0.30); --tile-green-border: #065F46; --tile-green-text: #34D399;
+            --tile-indigo-bg: rgba(49,46,129,0.30); --tile-indigo-border: #3730A3; --tile-indigo-text: #A5B4FC;
         }
-        .logo-text-toolx {
-            background: -webkit-linear-gradient(45deg, #f97316, #ec4899, #8b5cf6, #06b6d4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-        }
+        html, body { overflow-x: hidden; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+        .brand { color: var(--primary); }
+        
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .tool-panel { border-top: 4px solid var(--primary); }
+        .tool-panel:hover { box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); }
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-accent { background: var(--accent); color: #fff; } .btn-accent:hover { background: var(--accent-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+        
+        .input-field { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
+        .input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); outline: none; }
+        
+        .panel-bg { background: #0F172A; color: #E2E8F0; }
+        html[data-theme="dark"] .panel-bg { background: #020617; border: 1px solid #1F2937; }
+        
+        .related-card { transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; background: var(--card); border: 1px solid var(--card-border); }
+        .related-card:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); border-color: var(--primary); }
+
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+        
+        #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
+        :focus-visible { outline: none; }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        ::selection { background: rgba(79,70,229,0.25); }
+        @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
     </style>
 </head>
-<body class="bg-gradient-to-br from-slate-100 via-blue-50/50 to-indigo-50/30 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+<body class="font-sans min-h-screen flex flex-col justify-between">
 
-    <!-- Header Navbar -->
-    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
         <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2">
-            
-            <div class="flex items-center gap-2">
-                <a href="index.html" class="px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 rounded-xl text-slate-700 text-xs font-bold transition flex items-center gap-1 shrink-0">
+            <div class="flex items-center gap-3 sm:gap-4">
+                <a href="index.html" class="btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold flex items-center gap-1 shrink-0">
                     ← <span class="hidden sm:inline">All Tools</span>
                 </a>
-
-                <a href="index.html" class="flex items-center space-x-1.5 group cursor-pointer select-none shrink-0">
-                    <div class="logo-box-3d w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-all">
-                        <span class="text-base sm:text-xl filter drop-shadow">🧰</span>
-                    </div>
-                    <span class="text-lg sm:text-2xl font-black tracking-tight flex items-center">
-                        <span class="logo-text-my">My</span>
-                        <span class="logo-text-toolx ml-0.5">ToolX</span>
-                    </span>
+                <a href="index.html" class="flex items-center gap-2 group cursor-pointer select-none shrink-0" aria-label="MyToolX home">
+                    <div class="logo-mark">M<span class="x">X</span></div>
+                    <span class="logo-wordmark hidden xs:block sm:block">MyTool<span class="x">X</span></span>
                 </a>
             </div>
-
             <div class="flex items-center gap-1.5 shrink-0">
-                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition whitespace-nowrap">
+                <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle dark mode" class="w-11 h-11 rounded-xl flex items-center justify-center text-base font-bold" style="background: var(--chip-bg); color: var(--chip-text);">
+                    <span id="themeIcon" aria-hidden="true">🌙</span>
+                </button>
+                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="hidden sm:inline-flex text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition whitespace-nowrap">
                     💼 Remote Jobs ↗
                 </a>
-
-                <a href="https://mali1.pythonanywhere.com/" target="_blank" class="text-xs font-bold bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-3 py-1.5 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap">
+                <a href="https://mali1.pythonanywhere.com/" target="_blank" rel="noopener" class="hidden sm:inline-flex text-xs font-bold text-white px-3 py-1.5 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
                     📄 Live CV ↗
                 </a>
             </div>
-
         </div>
     </header>
 
-    <!-- Main Container -->
     <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow">
-        
-        <nav class="text-xs font-semibold text-slate-500 mb-4 flex items-center gap-1">
-            <a href="index.html" class="hover:text-blue-600">Home</a>
+
+        <nav class="text-xs font-semibold mb-4 flex items-center gap-1 muted" aria-label="Breadcrumb">
+            <a href="index.html" class="hover:text-indigo-500">Home</a>
             <span>/</span>
-            <span class="text-slate-800 font-bold">Base64 Encoder & Decoder</span>
+            <span style="color: var(--text); font-weight: 700;">Base64 Tool</span>
         </nav>
 
-        <!-- Tool Card Panel -->
-        <div class="bg-white rounded-3xl shadow-xl border border-slate-200/80 p-6 sm:p-8 mb-10">
+        <div class="tool-panel surface rounded-3xl shadow-xl p-6 sm:p-8 mb-10 transition-shadow">
             
-            <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
-                <h1 class="text-xl sm:text-2xl font-black text-slate-900 flex items-center gap-2">
+            <div class="flex items-center justify-between gap-3 flex-wrap mb-4 pb-4 border-b" style="border-color: var(--card-border);">
+                <h1 class="text-xl sm:text-2xl font-black flex items-center gap-2" style="color: var(--text);">
                     🔤 Base64 Encoder & Decoder
                 </h1>
-                <button onclick="clearBase64()" class="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">Clear</button>
+                <button onclick="clearBase64()" class="btn-3d btn-chip px-3.5 py-2 text-xs font-bold">Clear</button>
             </div>
 
-            <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">INPUT TEXT / BASE64 CODE</label>
-            <textarea id="b64Input" rows="5" class="w-full p-4 border border-slate-200 rounded-2xl bg-slate-50/30 text-xs font-mono text-slate-800 transition mb-4" placeholder="Enter text..."></textarea>
-
-            <div class="flex flex-wrap gap-3 mb-6">
-                <button onclick="encodeB64()" class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs shadow-sm transition flex items-center gap-1.5">
-                    Encode to Base64
-                </button>
-                <button onclick="decodeB64()" class="px-6 py-2.5 bg-[#1e293b] hover:bg-slate-800 text-white font-bold rounded-xl text-xs shadow-sm transition flex items-center gap-1.5">
-                    Decode from Base64
-                </button>
+            <div class="flex items-center gap-4 mb-4">
+                <label class="flex items-center gap-2 text-xs font-bold cursor-pointer" style="color: var(--text);">
+                    <input type="checkbox" id="urlSafeToggle" onchange="updateBase64()" class="w-4 h-4 accent-indigo-500">
+                    URL-safe encoding (replaces +/ with -_)
+                </label>
             </div>
 
-            <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">RESULT OUTPUT</label>
-            <div id="b64Output" class="w-full p-4 bg-[#0f172a] text-slate-300 font-mono text-xs sm:text-sm rounded-2xl border border-slate-800 shadow-inner min-h-[120px] mb-3 leading-relaxed whitespace-pre-wrap">Result will appear here...</div>
+            <label for="b64Input" class="block text-xs font-bold uppercase tracking-wider mb-1.5 muted">Input Text / Base64 Code</label>
+            <textarea id="b64Input" rows="5" class="input-field w-full p-4 rounded-2xl text-sm font-mono transition mb-6" placeholder="Type or paste here..."></textarea>
 
-            <div class="flex justify-end">
-                <button onclick="copyOutputText()" class="px-5 py-2.5 bg-[#1e293b] hover:bg-slate-800 text-white font-bold rounded-xl text-xs transition flex items-center gap-1.5">
-                    📋 Copy Output
-                </button>
+            <div class="flex items-center justify-between mb-2">
+                <label class="block text-xs font-bold uppercase tracking-wider muted">Result Output</label>
+                <button id="copyBtn" onclick="copyOutputText()" class="btn-3d btn-chip px-3 py-1.5 text-xs font-bold flex items-center gap-1.5">📋 Copy Output</button>
+            </div>
+            
+            <div id="b64Output" role="status" aria-live="polite" class="panel-bg w-full p-4 rounded-2xl font-mono text-sm shadow-inner min-h-[120px] mb-2 leading-relaxed whitespace-pre-wrap word-break break-all">Result will appear here...</div>
+
+        </div>
+
+        <article class="surface rounded-3xl shadow-md p-6 sm:p-8 mb-10 space-y-6">
+            <div class="pb-4 border-b" style="border-color: var(--card-border);">
+                <h2 class="text-xl font-bold">Client-Side Base64 Conversion & Data Encoding</h2>
+                <p class="text-sm leading-relaxed mt-2 muted">
+                    Base64 is a fundamental binary-to-text encoding scheme designed to convert binary data into an ASCII string format. It is widely used across web development, database management, and network communication protocols to transmit complex media objects, raw files, or special text strings safely over text-based transport channels like HTTP, HTML, and MIME email without data corruption.
+                </p>
             </div>
 
-        </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">⚡ Fast Encoding</h3>
+                    <p class="text-xs muted">Converts plain text, ASCII strings, or JSON configurations into Base64 format instantly as you type.</p>
+                </div>
+                <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">🔓 Instant Decoding</h3>
+                    <p class="text-xs muted">Translates obfuscated Base64 strings back into original human-readable plain text format.</p>
+                </div>
+                <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">🔒 100% Client-Side Privacy</h3>
+                    <p class="text-xs muted">Processes all conversion algorithms locally inside your browser memory using native Javascript.</p>
+                </div>
+            </div>
 
-        <!-- SEO Article Content (Rich & Expanded Content) -->
-<article class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10 text-slate-700 space-y-6">
-    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">Client-Side Base64 Conversion & Data Encoding</h2>
-    
-    <p class="text-sm leading-relaxed text-slate-600">
-        Base64 is a fundamental binary-to-text encoding scheme designed to convert binary data into an ASCII string format. It is widely used across web development, database management, and network communication protocols to transmit complex media objects, raw files, or special text strings safely over text-based transport channels like HTTP, HTML, and MIME email without data corruption.
-    </p>
+            <div class="space-y-4">
+                <h3 class="text-lg font-bold">Common Use Cases for Base64 Encoding</h3>
+                <ul class="list-disc pl-5 text-sm muted space-y-2">
+                    <li><strong>Inline Data URIs in Web Development:</strong> Embed small PNG/SVG images, custom fonts, or inline CSS styles directly inside HTML files to reduce external HTTP server requests.</li>
+                    <li><strong>Email Attachments (MIME Standard):</strong> Encodes binary email attachments so they pass through legacy text-only SMTP mail servers without character stripping.</li>
+                    <li><strong>Web API Payload Safety:</strong> Transmits binary tokens, API keys, or raw configurations inside JSON and XML payloads safely across web protocols.</li>
+                </ul>
+            </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-        <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-2xl">
-            <h3 class="font-bold text-slate-900 text-sm mb-1">⚡ Fast Encoding</h3>
-            <p class="text-xs text-slate-600">Converts plain text, ASCII strings, or JSON configurations into Base64 format instantly in real time.</p>
-        </div>
-        <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-2xl">
-            <h3 class="font-bold text-slate-900 text-sm mb-1">🔓 Instant Decoding</h3>
-            <p class="text-xs text-slate-600">Translates obfuscated Base64 strings back into original human-readable plain text format.</p>
-        </div>
-        <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-2xl">
-            <h3 class="font-bold text-slate-900 text-sm mb-1">🔒 100% Client-Side Privacy</h3>
-            <p class="text-xs text-slate-600">Processes all conversion algorithms locally inside your browser memory using native Javascript.</p>
-        </div>
-    </div>
+            <div class="border-t pt-6" style="border-color: var(--card-border);">
+                <h3 class="text-lg font-bold mb-3">Related Tools</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <a href="json-formatter.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">⚡</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">JSON Formatter</div>
+                        <div class="text-xs muted">Beautify &amp; Minify</div>
+                    </a>
+                    <a href="color-converter.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">🎨</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Color Converter</div>
+                        <div class="text-xs muted">HEX, RGB &amp; Names</div>
+                    </a>
+                    <a href="unit-converter.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">⚖️</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Unit Converter</div>
+                        <div class="text-xs muted">Distance, weight, temp</div>
+                    </a>
+                </div>
+            </div>
+        </article>
 
-    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">Common Use Cases for Base64 Encoding</h3>
-    <p class="text-sm leading-relaxed text-slate-600">
-        Developers and system administrators leverage Base64 encoding across multiple technical applications:
-    </p>
-    <ul class="list-disc pl-5 text-xs sm:text-sm text-slate-600 space-y-2">
-        <li><strong>Inline Data URIs in Web Development:</strong> Embed small PNG/SVG images, custom fonts, or inline CSS styles directly inside HTML files to reduce external HTTP server requests.</li>
-        <li><strong>Email Attachments (MIME Standard):</strong> Encodes binary email attachments so they pass through legacy text-only SMTP mail servers without character stripping.</li>
-        <li><strong>Web API Payload Safety:</strong> Transmits binary tokens, API keys, or raw configurations inside JSON and XML payloads safely across web protocols.</li>
-    </ul>
-
-    <h3 class="text-lg font-bold text-slate-900 border-t border-slate-100 pt-4">Important Note: Encoding vs Encryption</h3>
-    <p class="text-sm leading-relaxed text-slate-600">
-        It is critical to distinguish between data <em>encoding</em> and data <em>encryption</em>. Base64 is strictly an encoding mechanism used for data integrity and compatibility—it offers zero security, secrecy, or cryptographic protection. Anyone can decode a Base64 string back into plain text using standard utilities.
-    </p>
-</article>
-
-<!-- Expanded FAQs Section -->
-<section class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-6 sm:p-8 mb-10">
-    <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">Frequently Asked Questions (FAQs)</h2>
-    <div class="space-y-4">
-        
-        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">What is Base64 encoding?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Base64 is a binary-to-text encoding scheme that converts binary data or text into a 64-character ASCII string format. It allows binary data to be safely transmitted over text-based network protocols like HTTP, HTML, and MIME email without character corruption.</p>
-        </div>
-
-        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">Is Base64 encoding a form of encryption?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">No, Base64 is not encryption and provides no data security or privacy. Anyone can easily decode a Base64 string back into its original form using standard online tools or browser utilities.</p>
-        </div>
-
-        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">Are my text inputs saved on your server?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">No. All Base64 encoding and decoding calculations run 100% locally in your web browser using native client-side JavaScript. Your plain text or Base64 code is never uploaded to any backend server.</p>
-        </div>
-
-        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">Why does Base64 increase data size?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Base64 converts every 3 bytes of raw binary data into 4 ASCII characters. As a result, Base64 encoded strings are roughly 33% larger in byte size than their original raw binary inputs.</p>
-        </div>
-
-        <div class="border border-slate-200/80 rounded-2xl p-4 bg-slate-50/50">
-            <h3 class="text-sm font-bold text-slate-900 mb-1">What characters make up the Base64 alphabet?</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">The Base64 index table uses 64 basic ASCII characters: uppercase letters (A-Z), lowercase letters (a-z), digits (0-9), plus signs (+), and forward slashes (/), with equals signs (=) used as padding at the end.</p>
-        </div>
-
-    </div>
-</section>
+        <section class="surface rounded-3xl shadow-md p-6 sm:p-8 mb-10">
+            <h2 class="text-xl font-bold border-b pb-3 mb-6" style="border-color: var(--card-border);">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">What is Base64 encoding?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">Base64 is a binary-to-text encoding scheme that converts binary data or text into a 64-character ASCII string format. It allows binary data to be safely transmitted over text-based network protocols like HTTP, HTML, and MIME email without character corruption.</p>
+                </div>
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">Is Base64 encoding a form of encryption?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">No, Base64 is not encryption and provides no data security or privacy. Anyone can easily decode a Base64 string back into its original form using standard online tools or browser utilities.</p>
+                </div>
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">Are my text inputs saved on your server?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">No. All Base64 encoding and decoding calculations run 100% locally in your web browser using native client-side JavaScript. Your plain text or Base64 code is never uploaded to any backend server.</p>
+                </div>
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">Why does Base64 increase data size?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">Base64 converts every 3 bytes of raw binary data into 4 ASCII characters. As a result, Base64 encoded strings are roughly 33% larger in byte size than their original raw binary inputs.</p>
+                </div>
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">What characters make up the Base64 alphabet?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">The Base64 index table uses 64 basic ASCII characters: uppercase letters (A-Z), lowercase letters (a-z), digits (0-9), plus signs (+), and forward slashes (/), with equals signs (=) used as padding at the end.</p>
+                </div>
+            </div>
+        </section>
 
     </main>
 
-    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs font-semibold text-slate-500">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p>&copy; 2026 MyToolX. All rights reserved. Tools run client-side for 100% privacy.</p>
-        <div class="flex items-center gap-4 text-slate-600 font-bold">
-            <a href="index.html" class="hover:text-blue-600">Home</a>
-            <a href="privacy.html" class="hover:text-blue-600">Privacy Policy</a>
-            <a href="terms.html" class="hover:text-blue-600">Terms of Service</a>
-            <a href="about.html" class="hover:text-blue-600">About Us</a>
-            <a href="contact.html" class="hover:text-blue-600">Contact Us</a>
+        <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+                <div class="lg:col-span-5">
+                    <a href="index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 pr-4">
+                        MyToolX is a free suite of client-side web tools for writers, freelancers and developers. No sign-up, no tracking, no data leaves your browser.
+                    </p>
+                </div>
+                <div class="lg:col-span-4">
+                    <h3>Popular Tools</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <a href="typing-test.html">Typing Speed Test</a>
+                        <a href="image-compressor.html">Image Compressor</a>
+                        <a href="prompt-studio.html">AI Prompt Studio</a>
+                        <a href="grammar-checker.html">Grammar Checker</a>
+                        <a href="text-suite.html">Text &amp; Word Suite</a>
+                        <a href="fee-calculator.html">Fee Calculator</a>
+                        <a href="sip-calculator.html">SIP Calculator</a>
+                        <a href="loan-emi.html">Loan EMI Calc</a>
+                        <a href="json-formatter.html">JSON Formatter</a>
+                        <a href="base64-tool.html">Base64 Tool</a>
+                        <a href="qr-code-generator.html">QR Code Gen</a>
+                        <a href="password-generator.html">Password Gen</a>
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Company</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Legal</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                                <li><a href="terms.html">Terms of Service</a></li>
+                                <li><a href="index.html">Sitemap</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. All rights reserved.</p>
+                <p>All tools run 100% client-side in your browser.</p>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-    <!-- ENGINE LOGIC -->
     <script>
-        function encodeB64() {
-            const raw = document.getElementById('b64Input').value;
-            const out = document.getElementById('b64Output');
-            if (!raw) return;
-            try {
-                out.textContent = btoa(unescape(encodeURIComponent(raw)));
-            } catch (e) {
-                out.textContent = "Encoding Error: " + e.message;
+    (function () {
+        'use strict';
+
+        (function initTheme() {
+            var saved = null;
+            try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = saved || (prefersDark ? 'dark' : 'light');
+            applyTheme(theme);
+        })();
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            var icon = document.getElementById('themeIcon');
+            if (icon) icon.textContent = (theme === 'dark' ? '☀️' : '🌙');
+            var btn = document.getElementById('themeToggle');
+            if (btn) {
+                btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+                btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
             }
         }
+        function toggleTheme() {
+            var cur = document.documentElement.getAttribute('data-theme') || 'light';
+            var next = cur === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('mtx-theme', next); } catch (e) {}
+        }
+        window.toggleTheme = toggleTheme;
 
-        function decodeB64() {
-            const raw = document.getElementById('b64Input').value.trim();
-            const out = document.getElementById('b64Output');
-            if (!raw) return;
-            try {
-                out.textContent = decodeURIComponent(escape(atob(raw)));
-            } catch (e) {
-                out.textContent = "Invalid Base64 String!";
+        var inputEl = document.getElementById('b64Input');
+        var outEl = document.getElementById('b64Output');
+        var copyBtn = document.getElementById('copyBtn');
+        var urlSafeEl = document.getElementById('urlSafeToggle');
+
+        function updateBase64() {
+            var raw = inputEl.value;
+            if (!raw) {
+                outEl.textContent = 'Result will appear here...';
+                return;
+            }
+
+            var isUrlSafe = urlSafeEl.checked;
+            
+            // Detect if input looks like Base64 (to decide whether to encode or decode)
+            // Base64 strings only contain A-Z, a-z, 0-9, +, /, =, -, _
+            var isB64 = /^[A-Za-z0-9+/=\-_]+$/.test(raw.replace(/\s/g, ''));
+            
+            if (isB64 && raw.length % 4 === 0) {
+                // Attempt Decode
+                try {
+                    // Normalize URL-safe back to standard for atob
+                    var normalized = raw.replace(/-/g, '+').replace(/_/g, '/');
+                    var bin = atob(normalized);
+                    var bytes = Uint8Array.from(bin, function(c) { return c.charCodeAt(0); });
+                    outEl.textContent = new TextDecoder().decode(bytes);
+                    outEl.style.color = '#34D399'; // emerald-400
+                } catch (e) {
+                    outEl.textContent = "Invalid Base64 String!";
+                    outEl.style.color = '#F87171'; // red-400
+                }
+            } else {
+                // Attempt Encode
+                try {
+                    var bytes = new TextEncoder().encode(raw);
+                    var binStr = '';
+                    bytes.forEach(function(b) { binStr += String.fromCharCode(b); });
+                    var result = btoa(binStr);
+                    
+                    if (isUrlSafe) {
+                        result = result.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+                    }
+                    
+                    outEl.textContent = result;
+                    outEl.style.color = '#E2E8F0'; // slate-200
+                } catch (e) {
+                    outEl.textContent = "Encoding Error: " + e.message;
+                    outEl.style.color = '#F87171';
+                }
             }
         }
+        window.updateBase64 = updateBase64;
 
-        function clearBase64() {
-            document.getElementById('b64Input').value = '';
-            document.getElementById('b64Output').textContent = 'Result will appear here...';
-        }
+        inputEl.addEventListener('input', updateBase64);
+        urlSafeEl.addEventListener('change', updateBase64);
 
         function copyOutputText() {
-            const txt = document.getElementById('b64Output').textContent;
-            if (txt) navigator.clipboard.writeText(txt);
+            var txt = outEl.textContent;
+            if (!txt || txt === 'Result will appear here...') return;
+            
+            var original = copyBtn.innerHTML;
+            navigator.clipboard.writeText(txt).then(function() {
+                copyBtn.textContent = '✅ Copied!';
+                setTimeout(function() { copyBtn.innerHTML = original; }, 1500);
+            });
         }
+        window.copyOutputText = copyOutputText;
+
+        function clearBase64() {
+            inputEl.value = '';
+            outEl.textContent = 'Result will appear here...';
+            outEl.style.color = '';
+        }
+        window.clearBase64 = clearBase64;
+
+        updateBase64();
+    })();
     </script>
 </body>
 </html>

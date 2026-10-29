@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Typing Speed Test — 3D WPM & Accuracy Game | MyToolX</title>
+    <meta name="description" content="Test your typing speed and accuracy with our interactive 3D keyboard. Play basic, medium, or advanced levels. Track your WPM instantly. 100% free.">
+    <link rel="canonical" href="https://mytoolx.org/typing-test.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:title" content="Typing Speed Test — 3D WPM & Accuracy Game | MyToolX">
+    <meta property="og:description" content="Test your typing speed and accuracy with our interactive 3D keyboard. Play basic, medium, or advanced levels.">
+    <meta property="og:url" content="https://mytoolx.org/typing-test.html">
+    <meta property="og:image" content="https://mytoolx.org/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Typing Speed Test — 3D WPM & Accuracy Game | MyToolX">
+    <meta name="twitter:description" content="Test your typing speed and accuracy with our interactive 3D keyboard. Play basic, medium, or advanced levels.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "MyToolX Typing Speed Test",
+          "url": "https://mytoolx.org/typing-test.html",
+          "description": "Test your typing speed and accuracy with an interactive 3D keyboard.",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Any",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mytoolx.org/" },
+            { "@type": "ListItem", "position": 2, "name": "Typing Test", "item": "https://mytoolx.org/typing-test.html" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "How is WPM calculated?", "acceptedAnswer": { "@type": "Answer", "text": "WPM (Words Per Minute) is calculated by taking the total characters typed correctly, dividing by 5 (the standard word length), and dividing by the time elapsed in minutes." } },
+            { "@type": "Question", "name": "What is a good typing speed?", "acceptedAnswer": { "@type": "Answer", "text": "The average typing speed is around 40 WPM. A speed of 60-70 WPM is considered professional, and anything above 80 WPM is highly advanced." } },
+            { "@type": "Question", "name": "Does this tool track my keystrokes?", "acceptedAnswer": { "@type": "Answer", "text": "No. All typing tests and calculations happen entirely within your browser using JavaScript. We do not track, store, or send your keystrokes to any server." } }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
+    <style>
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
+            --tile-indigo-bg: rgba(224,231,255,0.6); --tile-indigo-border: #C7D2FE; --tile-indigo-text: #4F46E5;
+            --tile-green-bg: rgba(209,250,229,0.6); --tile-green-border: #A7F3D0; --tile-green-text: #059669;
+            --tile-red-bg: rgba(254,226,226,0.6); --tile-red-border: #FECACA; --tile-red-text: #EF4444;
+            --kb-bg: #FFFFFF; --kb-border: #CBD5E1; --kb-shadow: #94A3B8; --kb-text: #334155;
+        }
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
+            --tile-indigo-bg: rgba(49,46,129,0.30); --tile-indigo-border: #3730A3; --tile-indigo-text: #A5B4FC;
+            --tile-green-bg: rgba(6,78,59,0.30); --tile-green-border: #065F46; --tile-green-text: #34D399;
+            --tile-red-bg: rgba(127,29,29,0.25); --tile-red-border: #7F1D1D; --tile-red-text: #F87171;
+            --kb-bg: #1E293B; --kb-border: #334155; --kb-shadow: #0F172A; --kb-text: #E2E8F0;
+        }
+        html, body { overflow-x: hidden; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; font-family: 'Inter', system-ui, sans-serif; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+        
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .tool-panel { border-top: 4px solid var(--primary); }
+        .tool-panel:hover { box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); }
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-accent { background: var(--accent); color: #fff; } .btn-accent:hover { background: var(--accent-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+        
+        .tile-indigo { background: var(--tile-indigo-bg); border: 1px solid var(--tile-indigo-border); } .tile-indigo .num { color: var(--tile-indigo-text); }
+        .tile-green { background: var(--tile-green-bg); border: 1px solid var(--tile-green-border); } .tile-green .num { color: var(--tile-green-text); }
+        .tile-red { background: var(--tile-red-bg); border: 1px solid var(--tile-red-border); } .tile-red .num { color: var(--tile-red-text); }
+        .num { font-variant-numeric: tabular-nums; }
+        
+        .related-card { transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; background: var(--card); border: 1px solid var(--card-border); }
+        .related-card:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); border-color: var(--primary); }
+
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+        
+        #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
+        :focus-visible { outline: none; }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        ::selection { background: rgba(79,70,229,0.25); }
+        @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+        /* --- TYPING GAME STYLES --- */
+        .typing-text { font-size: 1.5rem; line-height: 1.8; font-family: 'ui-monospace', 'SFMono-Regular', Menlo, Monaco, Consolas, monospace; letter-spacing: 0.02em; }
+        .char { position: relative; transition: all 0.1s ease; }
+        .char.correct { color: var(--accent); }
+        .char.incorrect { color: #EF4444; background-color: rgba(239, 68, 68, 0.2); border-radius: 4px; }
+        .char.active { background-color: rgba(79,70,229,0.2); border-radius: 4px; box-shadow: 0 0 0 2px var(--primary) inset; }
+        
+        /* 3D Keyboard Visualizer */
+        .kb-row { display: flex; justify-content: center; gap: 4px; margin-bottom: 4px; }
+        .key { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; border-radius: 6px; background: var(--kb-bg); border: 1px solid var(--kb-border); color: var(--kb-text); box-shadow: 0 3px 0 var(--kb-shadow); transition: all 0.05s ease; text-transform: uppercase; }
+        .key.active { transform: translateY(3px); box-shadow: 0 0 0 var(--kb-shadow); background: var(--primary); border-color: var(--primary); color: #fff; }
+        .key.space { width: 160px; }
+        
+        @media (max-width: 640px) {
+            .typing-text { font-size: 1.1rem; }
+            .key { width: 26px; height: 26px; font-size: 9px; }
+            .key.space { width: 120px; }
+        }
+    </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col justify-between">
+
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-3 sm:gap-4">
+                <a href="index.html" class="btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold flex items-center gap-1 shrink-0">
+                    ← <span class="hidden sm:inline">All Tools</span>
+                </a>
+                <a href="index.html" class="flex items-center gap-2 group cursor-pointer select-none shrink-0" aria-label="MyToolX home">
+                    <div class="logo-mark">M<span class="x">X</span></div>
+                    <span class="logo-wordmark hidden xs:block sm:block">MyTool<span class="x">X</span></span>
+                </a>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+                <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle dark mode" class="w-11 h-11 rounded-xl flex items-center justify-center text-base font-bold" style="background: var(--chip-bg); color: var(--chip-text);">
+                    <span id="themeIcon" aria-hidden="true">🌙</span>
+                </button>
+                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="hidden sm:inline-flex text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition whitespace-nowrap">
+                    💼 Remote Jobs ↗
+                </a>
+                <a href="https://mali1.pythonanywhere.com/" target="_blank" rel="noopener" class="hidden sm:inline-flex text-xs font-bold text-white px-3 py-1.5 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
+                    📄 Live CV ↗
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow">
+
+        <nav class="text-xs font-semibold mb-4 flex items-center gap-1 muted" aria-label="Breadcrumb">
+            <a href="index.html" class="hover:text-indigo-500">Home</a>
+            <span>/</span>
+            <span style="color: var(--text); font-weight: 700;">Typing Test</span>
+        </nav>
+
+        <div class="tool-panel surface rounded-3xl shadow-xl p-6 sm:p-8 mb-10 transition-shadow">
+            
+            <div class="flex items-center justify-between gap-3 flex-wrap mb-6 pb-4 border-b" style="border-color: var(--card-border);">
+                <h1 class="text-xl sm:text-2xl font-black flex items-center gap-2" style="color: var(--text);">
+                    ⌨️ 3D Typing Speed Test
+                </h1>
+                <div class="flex gap-2 items-center">
+                    <div id="levelTabs" class="flex gap-2 mr-2">
+                        <button onclick="changeLevel('basic')" class="btn-3d btn-primary px-3 py-1.5 text-xs font-bold" data-level="basic">Basic</button>
+                        <button onclick="changeLevel('medium')" class="btn-3d btn-chip px-3 py-1.5 text-xs font-bold" data-level="medium">Medium</button>
+                        <button onclick="changeLevel('advanced')" class="btn-3d btn-chip px-3 py-1.5 text-xs font-bold" data-level="advanced">Advanced</button>
+                    </div>
+                    <button onclick="resetTest()" class="btn-3d btn-chip px-3 py-1.5 text-xs font-bold text-red-500 hover:text-red-600 border-red-200" style="border-color: #FECACA;">Clear</button>
+                </div>
+            </div>
+
+            <!-- Live Stats -->
+            <div class="grid grid-cols-3 gap-3 mb-6">
+                <div class="tile-indigo rounded-2xl p-4 text-center">
+                    <span id="wpmDisplay" class="num text-3xl font-black block">0</span>
+                    <span class="text-[10px] font-bold uppercase muted">WPM</span>
+                </div>
+                <div class="tile-green rounded-2xl p-4 text-center">
+                    <span id="accDisplay" class="num text-3xl font-black block">100%</span>
+                    <span class="text-[10px] font-bold uppercase muted">Accuracy</span>
+                </div>
+                <div class="tile-red rounded-2xl p-4 text-center">
+                    <span id="timeDisplay" class="num text-3xl font-black block">0s</span>
+                    <span class="text-[10px] font-bold uppercase muted">Time</span>
+                </div>
+            </div>
+
+            <!-- Typing Area -->
+            <div class="relative mb-6">
+                <div id="textDisplay" class="typing-text p-6 rounded-2xl border-2" style="background: var(--input-bg); border-color: var(--card-border); color: var(--text-muted); user-select: none; min-height: 120px;">
+                    <!-- Generated spans go here -->
+                </div>
+                <!-- Hidden input to capture keystrokes -->
+                <input type="text" id="hiddenInput" class="absolute inset-0 opacity-0 cursor-default" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0">
+                
+                <!-- Start Overlay -->
+                <div id="startOverlay" class="absolute inset-0 flex items-center justify-center rounded-2xl z-10" style="background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(4px);">
+                    <button onclick="startTest()" class="btn-3d btn-primary px-8 py-4 text-lg font-black tracking-wide flex items-center gap-2 shadow-2xl">
+                        ▶️ Start Typing Test
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Stop Button (Hidden initially) -->
+            <div id="stopBtnWrap" class="hidden text-center mb-6">
+                <button onclick="stopTest()" class="btn-3d btn-chip px-6 py-2 text-xs font-bold text-red-500 border-red-200" style="border-color: #FECACA;">⏹ Stop Test</button>
+            </div>
+
+            <!-- 3D Keyboard Visualizer (Hidden on Mobile) -->
+            <div id="keyboardVisualizer" class="hidden sm:flex flex-col items-center py-4 mb-4 select-none opacity-80 pointer-events-none">
+                <div class="kb-row"><div class="key" data-key="q">q</div><div class="key" data-key="w">w</div><div class="key" data-key="e">e</div><div class="key" data-key="r">r</div><div class="key" data-key="t">t</div><div class="key" data-key="y">y</div><div class="key" data-key="u">u</div><div class="key" data-key="i">i</div><div class="key" data-key="o">o</div><div class="key" data-key="p">p</div></div>
+                <div class="kb-row"><div class="key" data-key="a">a</div><div class="key" data-key="s">s</div><div class="key" data-key="d">d</div><div class="key" data-key="f">f</div><div class="key" data-key="g">g</div><div class="key" data-key="h">h</div><div class="key" data-key="j">j</div><div class="key" data-key="k">k</div><div class="key" data-key="l">l</div></div>
+                <div class="kb-row"><div class="key" data-key="z">z</div><div class="key" data-key="x">x</div><div class="key" data-key="c">c</div><div class="key" data-key="v">v</div><div class="key" data-key="b">b</div><div class="key" data-key="n">n</div><div class="key" data-key="m">m</div></div>
+                <div class="kb-row mt-1"><div class="key space" data-key=" ">space</div></div>
+            </div>
+
+            <!-- Results Modal -->
+            <div id="resultsModal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+                <div class="surface rounded-3xl p-8 max-w-md w-full text-center shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-indigo-500 to-emerald-500"></div>
+                    <h2 class="text-2xl font-black mb-2" style="color: var(--text);">Test Complete!</h2>
+                    <p class="text-sm muted mb-6">Here is your typing score.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="tile-indigo rounded-2xl p-4 text-center">
+                            <span id="finalWpm" class="num text-4xl font-black block">0</span>
+                            <span class="text-xs font-bold uppercase muted">WPM</span>
+                        </div>
+                        <div class="tile-green rounded-2xl p-4 text-center">
+                            <span id="finalAcc" class="num text-4xl font-black block">0%</span>
+                            <span class="text-xs font-bold uppercase muted">Accuracy</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-3">
+                        <button onclick="closeResults()" class="btn-3d btn-primary flex-1 py-3 text-sm">Try Again</button>
+                        <button onclick="shareScore()" class="btn-3d btn-chip flex-1 py-3 text-sm">Share Score</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <article class="surface rounded-3xl shadow-md p-6 sm:p-8 mb-10 space-y-6">
+            <div class="pb-4 border-b" style="border-color: var(--card-border);">
+                <h2 class="text-xl font-bold">Why Test Your Typing Speed?</h2>
+                <p class="text-sm leading-relaxed mt-2 muted">
+                    Typing speed is one of the most valuable skills in the digital age. Whether you are a programmer, a writer, a student, or an office worker, being able to type fast and accurately saves you hours every week. Our 3D typing test helps you measure your Words Per Minute (WPM) and accuracy in real-time, while providing visual feedback via our interactive keyboard.
+                </p>
+                <p class="text-sm leading-relaxed mt-2 muted">
+                    With multiple templates across Basic, Medium, and Advanced levels, you can gradually push your limits. The advanced mode features long, complex paragraphs that test your sustained focus and muscle memory. Stop guessing your speed—measure it accurately and privately.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">🎯 Improve Accuracy</h3>
+                    <p class="text-xs muted">Missed letters turn red instantly, so you can correct your muscle memory on the fly.</p>
+                </div>
+                <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">📈 Track Progress</h3>
+                    <p class="text-xs muted">Use the Basic, Medium, and Advanced levels to gradually push your speed higher.</p>
+                </div>
+                <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">🔒 100% Private</h3>
+                    <p class="text-xs muted">Your keystrokes never leave your browser. No tracking, no logging.</p>
+                </div>
+            </div>
+
+            <div class="border-t pt-6" style="border-color: var(--card-border);">
+                <h3 class="text-lg font-bold mb-3">Related Tools</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <a href="text-suite.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">✍️</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Text &amp; Word Counter</div>
+                        <div class="text-xs muted">Word Counter &amp; Case</div>
+                    </a>
+                    <a href="password-generator.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">🔑</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Password Gen</div>
+                        <div class="text-xs muted">Secure Random Keys</div>
+                    </a>
+                    <a href="grammar-checker.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">📝</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Grammar Checker</div>
+                        <div class="text-xs muted">Instant Typo Fix</div>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <section class="surface rounded-3xl shadow-md p-6 sm:p-8 mb-10">
+            <h2 class="text-xl font-bold border-b pb-3 mb-6" style="border-color: var(--card-border);">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">How is WPM calculated?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">WPM (Words Per Minute) is calculated by taking the total characters typed correctly, dividing by 5 (the standard word length), and dividing by the time elapsed in minutes.</p>
+                </div>
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">What is a good typing speed?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">The average typing speed is around 40 WPM. A speed of 60-70 WPM is considered professional, and anything above 80 WPM is highly advanced.</p>
+                </div>
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">Does this tool track my keystrokes?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">No. All typing tests and calculations happen entirely within your browser using JavaScript. We do not track, store, or send your keystrokes to any server.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+        <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+                <div class="lg:col-span-5">
+                    <a href="index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 pr-4">
+                        MyToolX is a free suite of client-side web tools for writers, freelancers and developers. No sign-up, no tracking, no data leaves your browser.
+                    </p>
+                </div>
+                <div class="lg:col-span-4">
+                    <h3>Popular Tools</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <a href="typing-test.html">Typing Speed Test</a>
+                        <a href="image-compressor.html">Image Compressor</a>
+                        <a href="prompt-studio.html">AI Prompt Studio</a>
+                        <a href="grammar-checker.html">Grammar Checker</a>
+                        <a href="text-suite.html">Text &amp; Word Suite</a>
+                        <a href="fee-calculator.html">Fee Calculator</a>
+                        <a href="sip-calculator.html">SIP Calculator</a>
+                        <a href="loan-emi.html">Loan EMI Calc</a>
+                        <a href="json-formatter.html">JSON Formatter</a>
+                        <a href="base64-tool.html">Base64 Tool</a>
+                        <a href="qr-code-generator.html">QR Code Gen</a>
+                        <a href="password-generator.html">Password Gen</a>
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Company</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Legal</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                                <li><a href="terms.html">Terms of Service</a></li>
+                                <li><a href="index.html">Sitemap</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. All rights reserved.</p>
+                <p>All tools run 100% client-side in your browser.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    (function () {
+        'use strict';
+
+        // Theme Logic
+        (function initTheme() {
+            var saved = null;
+            try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = saved || (prefersDark ? 'dark' : 'light');
+            applyTheme(theme);
+        })();
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            var icon = document.getElementById('themeIcon');
+            if (icon) icon.textContent = (theme === 'dark' ? '☀️' : '🌙');
+            var btn = document.getElementById('themeToggle');
+            if (btn) {
+                btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+                btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+            }
+        }
+        function toggleTheme() {
+            var cur = document.documentElement.getAttribute('data-theme') || 'light';
+            var next = cur === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('mtx-theme', next); } catch (e) {}
+        }
+        window.toggleTheme = toggleTheme;
+
+        // --- TYPING GAME LOGIC ---
+        var texts = {
+            basic: [
+                "The quick brown fox jumps over the lazy dog. This is a simple sentence to test your basic typing speed.",
+                "Practice makes perfect. Keep your fingers on the home row and focus on hitting the right keys.",
+                "A journey of a thousand miles begins with a single step. Start slow and build your muscle memory."
+            ],
+            medium: [
+                "Learning to type fast is a skill that requires patience and practice. Focus on accuracy first, and the speed will naturally follow.",
+                "The keyboard is your main tool for digital communication. Improving your typing speed can drastically increase your daily productivity.",
+                "Do not look down at your hands while typing. Trust your fingers to find the keys and keep your eyes on the screen."
+            ],
+            advanced: [
+                "The rapid advancement of artificial intelligence is fundamentally reshaping industries across the globe, from healthcare to finance. As algorithms become more sophisticated, they are automating routine tasks, analyzing massive datasets, and providing unprecedented insights that were previously impossible for humans to achieve alone.",
+                "Space exploration has entered a new era of commercialization and innovation. Private companies are now competing with government agencies to develop reusable rockets, lower the cost of satellite deployment, and ultimately pave the way for human colonization of Mars and beyond.",
+                "Climate change represents one of the most complex challenges facing humanity in the twenty-first century. Rising global temperatures are causing extreme weather events, shifting agricultural zones, and threatening biodiversity, requiring immediate and coordinated international action to mitigate the effects."
+            ]
+        };
+
+        var currentLevel = 'basic';
+        var currentIndex = 0; // To rotate through the 3 texts
+        var timer = null;
+        var startTime = null;
+        var isTyping = false;
+        var textToType = "";
+        var textArray = [];
+        var charIndex = 0;
+        var errors = 0;
+        var totalTyped = 0;
+
+        var display = document.getElementById('textDisplay');
+        var input = document.getElementById('hiddenInput');
+        var overlay = document.getElementById('startOverlay');
+        var wpmDisplay = document.getElementById('wpmDisplay');
+        var accDisplay = document.getElementById('accDisplay');
+        var timeDisplay = document.getElementById('timeDisplay');
+        var resultsModal = document.getElementById('resultsModal');
+        var stopBtnWrap = document.getElementById('stopBtnWrap');
+        var keys = document.querySelectorAll('.key');
+
+        function changeLevel(level) {
+            currentLevel = level;
+            currentIndex = 0; // Reset rotation on level change
+            document.querySelectorAll('#levelTabs button').forEach(function(btn) {
+                if (btn.dataset.level === level) {
+                    btn.className = 'btn-3d btn-primary px-3 py-1.5 text-xs font-bold';
+                } else {
+                    btn.className = 'btn-3d btn-chip px-3 py-1.5 text-xs font-bold';
+                }
+            });
+            resetTest();
+        }
+        window.changeLevel = changeLevel;
+
+        function resetTest() {
+            clearInterval(timer);
+            isTyping = false;
+            startTime = null;
+            charIndex = 0;
+            errors = 0;
+            totalTyped = 0;
+            
+            // Rotate the text array
+            var levelTexts = texts[currentLevel];
+            textToType = levelTexts[currentIndex];
+            currentIndex = (currentIndex + 1) % levelTexts.length;
+            
+            textArray = textToType.split('');
+            
+            wpmDisplay.textContent = '0';
+            accDisplay.textContent = '100%';
+            timeDisplay.textContent = '0s';
+            
+            overlay.classList.remove('hidden');
+            stopBtnWrap.classList.add('hidden');
+            resultsModal.classList.add('hidden');
+            input.value = '';
+            
+            renderText();
+        }
+        window.resetTest = resetTest;
+
+        function renderText() {
+            display.innerHTML = '';
+            textArray.forEach(function(char, index) {
+                var span = document.createElement('span');
+                span.className = 'char';
+                if (index === 0) span.classList.add('active');
+                span.textContent = char;
+                display.appendChild(span);
+            });
+        }
+
+        function startTest() {
+            overlay.classList.add('hidden');
+            stopBtnWrap.classList.remove('hidden');
+            input.focus();
+            isTyping = true;
+            startTime = new Date().getTime();
+            
+            timer = setInterval(function() {
+                var timeElapsed = (new Date().getTime() - startTime) / 1000;
+                timeDisplay.textContent = Math.floor(timeElapsed) + 's';
+                updateStats(timeElapsed);
+            }, 1000);
+        }
+        window.startTest = startTest;
+
+        function stopTest() {
+            clearInterval(timer);
+            isTyping = false;
+            input.blur();
+            overlay.classList.remove('hidden');
+            stopBtnWrap.classList.add('hidden');
+        }
+        window.stopTest = stopTest;
+
+        // Keyboard visualizer animation
+        document.addEventListener('keydown', function(e) {
+            var keyStr = e.key.toLowerCase();
+            if (keyStr === ' ') keyStr = ' ';
+            keys.forEach(function(k) {
+                if (k.dataset.key === keyStr) {
+                    k.classList.add('active');
+                }
+            });
+        });
+        document.addEventListener('keyup', function(e) {
+            var keyStr = e.key.toLowerCase();
+            if (keyStr === ' ') keyStr = ' ';
+            keys.forEach(function(k) {
+                if (k.dataset.key === keyStr) {
+                    k.classList.remove('active');
+                }
+            });
+        });
+
+        input.addEventListener('input', function(e) {
+            if (!isTyping) return;
+            
+            var typedChar = e.target.value.slice(-1);
+            var targetChar = textArray[charIndex];
+            
+            // Prevent breaking the input
+            if (e.target.value.length > charIndex + 1) {
+                e.target.value = e.target.value.slice(0, charIndex + 1);
+            }
+            
+            if (typedChar) {
+                var spans = display.querySelectorAll('.char');
+                
+                if (typedChar === targetChar) {
+                    spans[charIndex].classList.add('correct');
+                } else {
+                    spans[charIndex].classList.add('incorrect');
+                    errors++;
+                }
+                
+                spans[charIndex].classList.remove('active');
+                charIndex++;
+                
+                if (charIndex < textArray.length) {
+                    spans[charIndex].classList.add('active');
+                } else {
+                    endTest();
+                }
+            } else {
+                // User pressed backspace
+                if (charIndex > 0) {
+                    charIndex--;
+                    var spans = display.querySelectorAll('.char');
+                    spans[charIndex].classList.remove('correct', 'incorrect');
+                    spans[charIndex].classList.add('active');
+                    if (spans[charIndex].classList.contains('incorrect')) {
+                        errors--;
+                    }
+                }
+            }
+        });
+
+        function updateStats(timeElapsed) {
+            var wordsTyped = charIndex / 5;
+            var minutes = timeElapsed / 60;
+            var wpm = Math.round(wordsTyped / minutes);
+            if (!isFinite(wpm)) wpm = 0;
+            
+            var accuracy = charIndex > 0 ? Math.round(((charIndex - errors) / charIndex) * 100) : 100;
+            if (accuracy < 0) accuracy = 0;
+            
+            wpmDisplay.textContent = wpm;
+            accDisplay.textContent = accuracy + '%';
+        }
+
+        function endTest() {
+            isTyping = false;
+            clearInterval(timer);
+            stopBtnWrap.classList.add('hidden');
+            input.blur();
+            
+            var timeElapsed = (new Date().getTime() - startTime) / 1000;
+            var wordsTyped = charIndex / 5;
+            var minutes = timeElapsed / 60;
+            var wpm = Math.round(wordsTyped / minutes);
+            var accuracy = Math.round(((charIndex - errors) / charIndex) * 100);
+            
+            document.getElementById('finalWpm').textContent = wpm;
+            document.getElementById('finalAcc').textContent = accuracy + '%';
+            
+            resultsModal.classList.remove('hidden');
+        }
+
+        function closeResults() {
+            resultsModal.classList.add('hidden');
+            resetTest(); // This will automatically load the next text
+        }
+        window.closeResults = closeResults;
+
+        function shareScore() {
+            var wpm = document.getElementById('finalWpm').textContent;
+            var acc = document.getElementById('finalAcc').textContent;
+            var text = 'I just scored ' + wpm + ' WPM with ' + acc + ' accuracy on the MyToolX Typing Test! 🚀 Test your speed here:';
+            var url = 'https://mytoolx.org/typing-test.html';
+            
+            if (navigator.share) {
+                navigator.share({ title: 'Typing Score', text: text, url: url }).catch(function() {});
+            } else {
+                navigator.clipboard.writeText(text + ' ' + url).then(function() {
+                    alert('Score copied to clipboard!');
+                });
+            }
+        }
+        window.shareScore = shareScore;
+
+        // Init
+        resetTest();
+
+    })();
+    </script>
+</body>
+</html>
