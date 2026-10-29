@@ -52,20 +52,50 @@
 </head>
 <body class="font-sans min-h-screen flex flex-col justify-between">
 
+      <!-- HEADER (UPDATED) -->
     <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
-        <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-2">
-            <div class="flex items-center gap-3 sm:gap-4">
-                <a href="index.html" class="btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold flex items-center gap-1 shrink-0">← <span class="hidden sm:inline">All Tools</span></a>
-                <a href="index.html" class="flex items-center gap-2 group cursor-pointer select-none shrink-0" aria-label="MyToolX home">
-                    <div class="logo-mark">M<span class="x">X</span></div>
-                    <span class="logo-wordmark hidden xs:block sm:block">MyTool<span class="x">X</span></span>
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2">
+            
+            <!-- TOP ROW: Logo + Back Button + Right Buttons -->
+            <div class="flex items-center justify-between gap-2 sm:gap-4">
+                
+                <!-- LEFT SIDE: Logo & Desktop Back Button -->
+                <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+                    <!-- Desktop Back Button (Hidden on Mobile) -->
+                    <a href="index.html" class="hidden sm:flex btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold items-center gap-1">
+                        ← All Tools
+                    </a>
+                    
+                    <!-- Logo -->
+                    <a href="index.html" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
+                        <div class="logo-mark w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base flex items-center justify-center">M<span class="x">X</span></div>
+                        <span class="logo-wordmark text-base sm:text-xl block">MyTool<span class="x">X</span></span>
+                    </a>
+                </div>
+
+                <!-- RIGHT SIDE: Dark Mode + Jobs + CV -->
+                <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                    <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle dark mode" class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center text-xs sm:text-base font-bold" style="background: var(--chip-bg); color: var(--chip-text);">
+                        <span id="themeIcon" aria-hidden="true">🌙</span>
+                    </button>
+                    
+                    <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
+                        💼 Remote Jobs ↗
+                    </a>
+
+                    <a href="https://mali1.pythonanywhere.com/" target="_blank" rel="noopener" class="hidden md:inline-flex text-xs font-bold text-white px-3 py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
+                        📄 Live CV ↗
+                    </a>
+                </div>
+            </div>
+
+            <!-- BOTTOM ROW: Mobile Back Button (Only shows on Mobile) -->
+            <div class="mt-2 sm:hidden">
+                <a href="index.html" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">
+                    ← Back to All Tools
                 </a>
             </div>
-            <div class="flex items-center gap-1.5 shrink-0">
-                <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle dark mode" class="w-11 h-11 rounded-xl flex items-center justify-center text-base font-bold" style="background: var(--chip-bg); color: var(--chip-text);"><span id="themeIcon" aria-hidden="true">🌙</span></button>
-                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="hidden sm:inline-flex text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition whitespace-nowrap">💼 Remote Jobs ↗</a>
-                <a href="https://mali1.pythonanywhere.com/" target="_blank" rel="noopener" class="hidden sm:inline-flex text-xs font-bold text-white px-3 py-1.5 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">📄 Live CV ↗</a>
-            </div>
+
         </div>
     </header>
 
