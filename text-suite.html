@@ -117,52 +117,35 @@
 </head>
 <body class="font-sans min-h-screen flex flex-col justify-between">
 
-       <!-- HEADER (UPDATED) -->
+    <!-- HEADER -->
     <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
         <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2">
-            
-            <!-- TOP ROW: Logo + Back Button + Right Buttons -->
             <div class="flex items-center justify-between gap-2 sm:gap-4">
-                
-                <!-- LEFT SIDE: Logo & Desktop Back Button -->
                 <div class="flex items-center gap-2 sm:gap-4 shrink-0">
-                    <!-- Desktop Back Button (Hidden on Mobile) -->
-                    <a href="index.html" class="hidden sm:flex btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold items-center gap-1">
-                        ← All Tools
-                    </a>
-                    
-                    <!-- Logo -->
+                    <a href="index.html" class="hidden sm:flex btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold items-center gap-1">← All Tools</a>
                     <a href="index.html" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
                         <div class="logo-mark w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base flex items-center justify-center">M<span class="x">X</span></div>
                         <span class="logo-wordmark text-base sm:text-xl block">MyTool<span class="x">X</span></span>
                     </a>
                 </div>
-
-                <!-- RIGHT SIDE: Dark Mode + Jobs + CV -->
                 <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
                     <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle dark mode" class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center text-xs sm:text-base font-bold" style="background: var(--chip-bg); color: var(--chip-text);">
                         <span id="themeIcon" aria-hidden="true">🌙</span>
                     </button>
-                    
                     <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
                         💼 Remote Jobs ↗
                     </a>
-
                     <a href="https://mali1.pythonanywhere.com/" target="_blank" rel="noopener" class="hidden md:inline-flex text-xs font-bold text-white px-3 py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
                         📄 Live CV ↗
                     </a>
                 </div>
             </div>
-
-            <!-- BOTTOM ROW: Mobile Back Button (Only shows on Mobile) -->
             <div class="mt-2 sm:hidden">
-                <a href="index.html" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">
-                    ← Back to All Tools
-                </a>
+                <a href="index.html" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">← Back to All Tools</a>
             </div>
-
         </div>
     </header>
+
     <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow">
 
         <nav class="text-xs font-semibold mb-4 flex items-center gap-1 muted" aria-label="Breadcrumb">
@@ -173,6 +156,11 @@
 
         <div class="tool-panel surface rounded-3xl shadow-xl p-6 sm:p-8 mb-10 transition-shadow">
             
+            <!-- ADDED H1 TITLE FOR SEO -->
+            <h1 class="text-xl sm:text-2xl font-black flex items-center gap-2 mb-4" style="color: var(--text);">
+                ✍️ Text & Word Counter Suite
+            </h1>
+
             <div class="flex items-center justify-between gap-3 flex-wrap mb-4 pb-4 border-b" style="border-color: var(--card-border);">
                 <div class="flex items-center gap-2" role="tablist" aria-label="Tool type">
                     <button id="tabCounterBtn" onclick="switchTab('counter')" role="tab" aria-selected="true" aria-controls="contentCounter" class="btn-3d btn-primary px-4 py-2 text-xs font-bold flex items-center gap-1.5">✍️ Word &amp; Char Counter</button>
@@ -281,7 +269,7 @@
 
     </main>
 
-        <footer class="mega-footer py-12 mt-auto">
+    <footer class="mega-footer py-12 mt-auto">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
                 <div class="lg:col-span-5">
@@ -323,7 +311,7 @@
                         <div>
                             <h3>Legal</h3>
                             <ul class="space-y-3 text-sm">
-                                <li><a href="blog.html">Blog & Guides</a></li>
+                                <li><a href="blog.html">Blog &amp; Guides</a></li>
                                 <li><a href="privacy.html">Privacy Policy</a></li>
                                 <li><a href="terms.html">Terms of Service</a></li>
                                 <li><a href="index.html">Sitemap</a></li>
