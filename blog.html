@@ -11,40 +11,7 @@
 
     <title>Guides & Articles — How to Use Our Tools | MyToolX Blog</title>
 
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="MyToolX">
-    <meta property="og:title" content="Guides & Articles — How to Use Our Tools | MyToolX Blog">
-    <meta property="og:description" content="Learn how to improve typing speed, compress images, write better AI prompts, and calculate freelance fees.">
-    <meta property="og:url" content="https://mytoolx.org/blog.html">
-    <meta property="og:image" content="https://mytoolx.org/og-image.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Guides & Articles — How to Use Our Tools | MyToolX Blog">
-    <meta name="twitter:description" content="Learn how to improve typing speed, compress images, write better AI prompts, and calculate freelance fees.">
-    <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
-
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Blog",
-          "name": "MyToolX Blog",
-          "url": "https://mytoolx.org/blog.html",
-          "description": "Guides and articles on how to use MyToolX tools for productivity and freelancing.",
-          "publisher": { "@type": "Organization", "name": "MyToolX" }
-        },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mytoolx.org/" },
-            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mytoolx.org/blog.html" }
-          ]
-        }
-      ]
-    }
-    </script>
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
 
@@ -78,6 +45,9 @@
         .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
         .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
         .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+        
+        .input-field { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
+        .input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); outline: none; }
 
         .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
         .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
@@ -86,15 +56,13 @@
         
         #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
         :focus-visible { outline: none; }
-        button:focus-visible, a:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
         ::selection { background: rgba(79,70,229,0.25); }
         
         /* Blog Specific Styles */
         .blog-content h2 { font-size: 1.5rem; font-weight: 800; margin-top: 2rem; margin-bottom: 1rem; color: var(--text); border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; }
         .blog-content h3 { font-size: 1.25rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--text); }
         .blog-content p { margin-bottom: 1rem; line-height: 1.7; color: var(--text-muted); }
-        .blog-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-muted); }
-        .blog-content li { margin-bottom: 0.5rem; }
         .blog-content a { color: var(--primary); font-weight: 600; text-decoration: underline; }
         .blog-content a:hover { color: var(--primary-hover); }
         
@@ -140,7 +108,7 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
             
-            <!-- Sidebar / Table of Contents -->
+            <!-- DESKTOP SIDEBAR -->
             <aside class="lg:col-span-4 hidden lg:block">
                 <div class="surface rounded-3xl p-6 shadow-md sticky-sidebar">
                     <h2 class="text-lg font-black mb-4" style="color: var(--text);">Table of Contents</h2>
@@ -154,7 +122,7 @@
                             </ul>
                         </div>
                         <div>
-                            <p class="text-xs uppercase tracking-wider muted mb-2">2. AI & Content Creation</p>
+                            <p class="text-xs uppercase tracking-wider muted mb-2">2. AI & Content</p>
                             <ul class="space-y-1 pl-2 border-l-2" style="border-color: #8B5CF6;">
                                 <li><a href="#ai-guide" class="hover:text-indigo-500 block py-1">🤖 AI Prompt Studio</a></li>
                                 <li><a href="#bio-guide" class="hover:text-indigo-500 block py-1">✨ AI Bio Generator</a></li>
@@ -169,7 +137,7 @@
                             </ul>
                         </div>
                         <div>
-                            <p class="text-xs uppercase tracking-wider muted mb-2">4. Finance & Freelancing</p>
+                            <p class="text-xs uppercase tracking-wider muted mb-2">4. Finance</p>
                             <ul class="space-y-1 pl-2 border-l-2" style="border-color: #10B981;">
                                 <li><a href="#finance-guide" class="hover:text-indigo-500 block py-1">💰 Fee Calculator</a></li>
                                 <li><a href="#sip-guide" class="hover:text-indigo-500 block py-1">📈 SIP Calculator</a></li>
@@ -177,32 +145,60 @@
                             </ul>
                         </div>
                         <div>
-                            <p class="text-xs uppercase tracking-wider muted mb-2">5. Developer Utilities</p>
+                            <p class="text-xs uppercase tracking-wider muted mb-2">5. Developer</p>
                             <ul class="space-y-1 pl-2 border-l-2" style="border-color: #F59E0B;">
                                 <li><a href="#json-guide" class="hover:text-indigo-500 block py-1">⚡ JSON Formatter</a></li>
                                 <li><a href="#base64-guide" class="hover:text-indigo-500 block py-1">🔤 Base64 Tool</a></li>
                                 <li><a href="#color-guide" class="hover:text-indigo-500 block py-1">🎨 Color Converter</a></li>
                             </ul>
                         </div>
-                        <div>
-                            <p class="text-xs uppercase tracking-wider muted mb-2">6. Everyday Utilities</p>
-                            <ul class="space-y-1 pl-2 border-l-2" style="border-color: #6B7280;">
-                                <li><a href="#qr-guide" class="hover:text-indigo-500 block py-1">📱 QR Code Gen</a></li>
-                                <li><a href="#password-guide" class="hover:text-indigo-500 block py-1">🔑 Password Gen</a></li>
-                                <li><a href="#unit-guide" class="hover:text-indigo-500 block py-1">⚖️ Unit Converter</a></li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </aside>
 
-            <!-- Main Blog Content -->
+            <!-- MAIN CONTENT -->
             <div class="lg:col-span-8">
                 <div class="surface rounded-3xl shadow-xl p-6 sm:p-10 mb-10">
                     <h1 class="text-3xl sm:text-4xl font-black mb-4" style="color: var(--text);">MyToolX Guides & Articles</h1>
                     <p class="text-base muted leading-relaxed mb-8">
-                        Welcome to the MyToolX blog. Here, we share practical guides on how to use our tools to boost your productivity, improve your writing, and manage your freelance business. Everything is 100% free and designed to help you work smarter.
+                        Welcome to the MyToolX blog. Here, we share practical guides on how to use our tools to boost your productivity, improve your writing, and manage your freelance business.
                     </p>
+
+                    <!-- MOBILE DROPDOWN MENU (Only shows on small screens) -->
+                    <div class="block lg:hidden mb-8">
+                        <label for="mobileToc" class="block text-xs font-bold uppercase tracking-wider mb-2" style="color: var(--text);">Jump to a Guide:</label>
+                        <select id="mobileToc" class="input-field w-full p-4 rounded-xl text-sm font-semibold" onchange="if(this.value) { window.location.hash = this.value; }">
+                            <option value="">-- Select an Article --</option>
+                            <optgroup label="Typing & Visuals">
+                                <option value="typing-guide">⌨️ Typing Speed Test</option>
+                                <option value="image-guide">🖼️ Image Compressor</option>
+                            </optgroup>
+                            <optgroup label="AI & Content Creation">
+                                <option value="ai-guide">🤖 AI Prompt Studio</option>
+                                <option value="bio-guide">✨ AI Bio Generator</option>
+                                <option value="outline-guide">📑 Article Outline Gen</option>
+                            </optgroup>
+                            <optgroup label="Writing & CV">
+                                <option value="grammar-guide">📝 Grammar Checker</option>
+                                <option value="text-guide">✍️ Text & Word Suite</option>
+                            </optgroup>
+                            <optgroup label="Finance & Freelancing">
+                                <option value="finance-guide">💰 Fee Calculator</option>
+                                <option value="sip-guide">📈 SIP Calculator</option>
+                                <option value="loan-guide">🏦 Loan EMI Calc</option>
+                            </optgroup>
+                            <optgroup label="Developer Utilities">
+                                <option value="json-guide">⚡ JSON Formatter</option>
+                                <option value="base64-guide">🔤 Base64 Tool</option>
+                                <option value="color-guide">🎨 Color Converter</option>
+                            </optgroup>
+                            <optgroup label="Everyday Utilities">
+                                <option value="qr-guide">📱 QR Code Gen</option>
+                                <option value="password-guide">🔑 Password Gen</option>
+                                <option value="unit-guide">⚖️ Unit Converter</option>
+                            </optgroup>
+                        </select>
+                    </div>
 
                     <div class="blog-content space-y-12">
                         
@@ -214,13 +210,12 @@
                                 <h3 class="text-xl font-bold mb-2" style="color: var(--text);">⌨️ How to Improve Your Typing Speed (and Why It Matters)</h3>
                                 <p>In the digital age, your keyboard is your primary tool. Whether you are a programmer, a writer, or a student, the speed at which you type directly impacts your daily productivity. The average person types at about 40 Words Per Minute (WPM). However, professionals often hit 60-80 WPM.</p>
                                 <p><strong>Focus on Accuracy First:</strong> It is tempting to rush, but hitting the wrong keys constantly will slow you down. If you make a mistake, force yourself to correct it. Muscle memory is built on repetition. Use our <a href="typing-test.html">3D Typing Speed Test</a> to track your accuracy. Aim for 95% or higher before trying to go faster.</p>
-                                <p><strong>Keep Your Fingers on the Home Row:</strong> The "Home Row" is the middle row of your keyboard (A, S, D, F, J, K, L). From this position, every other key is reachable with minimal movement. If you are "hunting and pecking" with two fingers, you will never break past 30 WPM.</p>
                             </article>
 
                             <article id="image-guide" class="scroll-mt-24">
                                 <h3 class="text-xl font-bold mb-2" style="color: var(--text);">🖼️ Why Compressing Images is Crucial for Web Performance</h3>
                                 <p>If you run a website or an online store, page speed is everything. Google uses "Core Web Vitals" as a ranking factor, and one of the biggest culprits for slow websites is unoptimized images. A single photo from a modern smartphone can be 5MB or larger.</p>
-                                <p><strong>The Problem with Uploading:</strong> Most online compressors require you to upload your photos to their server, which raises privacy concerns. With our <a href="image-compressor.html">Image Compressor</a>, your images are never uploaded. The tool uses HTML5 Canvas to process the image locally in your browser. Reducing a 5MB image to 200KB can cut your page load time in half.</p>
+                                <p><strong>The Problem with Uploading:</strong> Most online compressors require you to upload your photos to their server, which raises privacy concerns. With our <a href="image-compressor.html">Image Compressor</a>, your images are never uploaded. The tool uses HTML5 Canvas to process the image locally in your browser.</p>
                             </article>
                         </div>
 
@@ -230,18 +225,18 @@
                             
                             <article id="ai-guide" class="scroll-mt-24 mb-8">
                                 <h3 class="text-xl font-bold mb-2" style="color: var(--text);">🤖 How to Write Better AI Prompts</h3>
-                                <p>AI language models are incredibly powerful, but they are only as good as the instructions you give them. If you type "write a blog post," you will get a generic result. To get professional output, you need a structured prompt.</p>
-                                <p>A great prompt includes: <strong>Role</strong> (Tell the AI who it is), <strong>Task</strong> (what you want), <strong>Context</strong> (background info), and <strong>Format</strong> (how to structure the output). Instead of memorizing this, use our <a href="prompt-studio.html">AI Prompt Studio</a>. It asks you a series of questions and generates a perfectly structured prompt for ChatGPT, Gemini, or Midjourney.</p>
+                                <p>AI language models are only as good as the instructions you give them. If you type "write a blog post," you will get a generic result. To get professional output, you need a structured prompt.</p>
+                                <p>A great prompt includes: <strong>Role</strong>, <strong>Task</strong>, <strong>Context</strong>, and <strong>Format</strong>. Instead of memorizing this, use our <a href="prompt-studio.html">AI Prompt Studio</a>. It asks you a series of questions and generates a perfectly structured prompt for ChatGPT, Gemini, or Midjourney.</p>
                             </article>
 
                             <article id="bio-guide" class="scroll-mt-24 mb-8">
                                 <h3 class="text-xl font-bold mb-2" style="color: var(--text);">✨ Writing a Professional Social Media Bio</h3>
-                                <p>Your bio is often the first thing a client or recruiter reads. It needs to instantly communicate who you are and what you do, while staying within strict character limits (like 220 for LinkedIn or 160 for X). Our <a href="ai-bio-generator.html">AI Bio Generator</a> analyzes your skills and generates highly professional, platform-specific bios. It ensures you never run out of space or miss a crucial detail.</p>
+                                <p>Your bio is often the first thing a client or recruiter reads. It needs to instantly communicate who you are and what you do, while staying within strict character limits. Our <a href="ai-bio-generator.html">AI Bio Generator</a> analyzes your skills and generates highly professional bios for LinkedIn, X, and Instagram.</p>
                             </article>
 
                             <article id="outline-guide" class="scroll-mt-24">
                                 <h3 class="text-xl font-bold mb-2" style="color: var(--text);">📑 Planning an Article Outline That Works</h3>
-                                <p>An outline is the skeleton of an article. Writing it first keeps you on topic and saves editing time later. Our <a href="article-outline.html">Article Outline Generator</a> reads your topic and builds a matching H1/H2/H3 structure. It provides notes on what to write under each heading, ensuring you never stare at a blank page again.</p>
+                                <p>An outline is the skeleton of an article. Writing it first keeps you on topic and saves editing time later. Our <a href="article-outline.html">Article Outline Generator</a> reads your topic and builds a matching H1/H2/H3 structure, ensuring you never stare at a blank page again.</p>
                             </article>
                         </div>
 
@@ -251,12 +246,12 @@
 
                             <article id="grammar-guide" class="scroll-mt-24 mb-8">
                                 <h3 class="text-xl font-bold mb-2" style="color: var(--text);">📝 Why You Need a Grammar Checker</h3>
-                                <p>Writing clear, error-free content is essential for professional communication. Our <a href="grammar-checker.html">Grammar & Spelling Checker</a> detects spelling mistakes, missing commas, wrong capitalization, and spacing problems. It runs mostly client-side, ensuring your text remains private while giving you instant corrections.</p>
+                                <p>Writing clear, error-free content is essential for professional communication. Our <a href="grammar-checker.html">Grammar & Spelling Checker</a> detects spelling mistakes, missing commas, and spacing problems. It runs mostly client-side, ensuring your text remains private while giving you instant corrections.</p>
                             </article>
 
                             <article id="text-guide" class="scroll-mt-24">
                                 <h3 class="text-xl font-bold mb-2" style="color: var(--text);">✍️ The Power of Word Counting</h3>
-                                <p>Whether you are writing a tweet, a college essay, or an SEO article, character and word counts matter. Our <a href="text-suite.html">Text & Word Suite</a> instantly measures word volume, character count, and estimated reading time. It also includes a Case Converter to instantly change text to UPPERCASE or title case.</p>
+                                <p>Whether you are writing a tweet or an SEO article, character and word counts matter. Our <a href="text-suite.html">Text & Word Suite</a> instantly measures word volume and estimated reading time. It also includes a Case Converter to instantly change text to UPPERCASE or title case.</p>
                             </article>
                         </div>
 
@@ -266,17 +261,17 @@
 
                             <article id="finance-guide" class="scroll-mt-24 mb-8">
                                 <h3 class="text-xl font-bold mb-2" style="color: var(--text);">💰 Understanding Freelance Fees</h3>
-                                <p>As a freelancer, the price you quote is not what you take home. Between Stripe (2.9%) and PayPal (3.49%), your profit margin shrinks fast. Use our <a href="fee-calculator.html">Fee Calculator</a> to see exactly what a gateway will take. It also features a "gross-up" calculator, which tells you exactly what you need to invoice so that after fees, you receive your exact target amount.</p>
+                                <p>As a freelancer, the price you quote is not what you take home. Between Stripe and PayPal, your profit margin shrinks fast. Use our <a href="fee-calculator.html">Fee Calculator</a> to see exactly what a gateway will take. It also features a "gross-up" calculator to ensure you receive your exact target amount.</p>
                             </article>
 
                             <article id="sip-guide" class="scroll-mt-24 mb-8">
                                 <h3 class="text-xl font-bold mb-2" style="color: var(--text);">📈 Building Wealth with SIPs</h3>
-                                <p>A Systematic Investment Plan (SIP) allows you to compound wealth steadily by investing fixed monthly amounts. Our <a href="sip-calculator.html">SIP Calculator</a> projects the future value of your investments by applying monthly compounding. It helps you understand how small, consistent investments can grow into a massive corpus over 10 or 20 years.</p>
+                                <p>A Systematic Investment Plan (SIP) allows you to compound wealth steadily. Our <a href="sip-calculator.html">SIP Calculator</a> projects the future value of your investments by applying monthly compounding, helping you understand how small investments grow over 10 or 20 years.</p>
                             </article>
 
                             <article id="loan-guide" class="scroll-mt-24">
                                 <h3 class="text-xl font-bold mb-2" style="color: var(--text);">🏦 Demystifying Loan EMIs</h3>
-                                <p>An Equated Monthly Installment (EMI) is the fixed amount you pay a lender every month. Before taking a mortgage or auto loan, you must know your exact EMI. Our <a href="loan-emi.html">Loan EMI Calculator</a> provides an exact breakdown of your monthly installment, total interest, and overall outflow.</p>
+                                <p>An Equated Monthly Installment (EMI) is the fixed amount you pay a lender every month. Before taking a mortgage, you must know your exact EMI. Our <a href="loan-emi.html">Loan EMI Calculator</a> provides an exact breakdown of your monthly installment, total interest, and overall outflow.</p>
                             </article>
                         </div>
 
@@ -286,17 +281,17 @@
 
                             <article id="json-guide" class="scroll-mt-24 mb-8">
                                 <h3 class="text-xl font-bold mb-2" style="color: var(--text);">⚡ Formatting JSON Safely</h3>
-                                <p>JSON is the standard format for web APIs. When debugging complex payloads, minified JSON is impossible to read. Our <a href="json-formatter.html">JSON Formatter</a> beautifies your code with proper indentation. Crucially, it runs 100% in your browser, so you can safely format sensitive API keys without sending them to a third-party server.</p>
+                                <p>JSON is the standard format for web APIs. Our <a href="json-formatter.html">JSON Formatter</a> beautifies your code with proper indentation. Crucially, it runs 100% in your browser, so you can safely format sensitive API keys without sending them to a third-party server.</p>
                             </article>
 
                             <article id="base64-guide" class="scroll-mt-24 mb-8">
                                 <h3 class="text-xl font-bold mb-2" style="color: var(--text);">🔤 Base64 Encoding & Decoding</h3>
-                                <p>Base64 is used to transmit binary data over text-based protocols (like embedding images in HTML). Our <a href="base64-tool.html">Base64 Tool</a> converts text to Base64 and decodes it instantly. It supports Unicode and URL-safe encoding, making it perfect for developers working with API tokens.</p>
+                                <p>Base64 is used to transmit binary data over text-based protocols. Our <a href="base64-tool.html">Base64 Tool</a> converts text to Base64 and decodes it instantly. It supports Unicode and URL-safe encoding, making it perfect for developers working with API tokens.</p>
                             </article>
 
                             <article id="color-guide" class="scroll-mt-24">
                                 <h3 class="text-xl font-bold mb-2" style="color: var(--text);">🎨 Converting Web Colors</h3>
-                                <p>Designers constantly switch between HEX, RGB, and CSS color names. Our <a href="color-converter.html">Color Converter</a> provides instant color space translation. It even includes a dropdown of all 140+ standard CSS colors, allowing you to instantly find the code for colors like "Coral" or "RebeccaPurple."</p>
+                                <p>Designers constantly switch between HEX, RGB, and CSS color names. Our <a href="color-converter.html">Color Converter</a> provides instant color space translation. It even includes a dropdown of all 140+ standard CSS colors.</p>
                             </article>
                         </div>
 
@@ -306,17 +301,17 @@
 
                             <article id="qr-guide" class="scroll-mt-24 mb-8">
                                 <h3 class="text-xl font-bold mb-2" style="color: var(--text);">📱 Creating QR Codes</h3>
-                                <p>QR codes bridge the physical and digital worlds. Our <a href="qr-code-generator.html">QR Code Generator</a> creates high-resolution, static QR codes for URLs or text. They never expire and contain zero tracking redirects, ensuring your printed materials always work.</p>
+                                <p>QR codes bridge the physical and digital worlds. Our <a href="qr-code-generator.html">QR Code Generator</a> creates high-resolution, static QR codes. They never expire and contain zero tracking redirects, ensuring your printed materials always work.</p>
                             </article>
 
                             <article id="password-guide" class="scroll-mt-24 mb-8">
                                 <h3 class="text-xl font-bold mb-2" style="color: var(--text);">🔑 Generating Secure Passwords</h3>
-                                <p>Weak passwords are the leading vector for security breaches. Our <a href="password-generator.html">Password Generator</a> uses your browser's native Web Crypto API to create cryptographically strong passwords. It guarantees 100% local generation, meaning your passwords are never sent over the internet.</p>
+                                <p>Weak passwords are the leading vector for security breaches. Our <a href="password-generator.html">Password Generator</a> uses your browser's native Web Crypto API to create cryptographically strong passwords, entirely offline.</p>
                             </article>
 
                             <article id="unit-guide" class="scroll-mt-24">
                                 <h3 class="text-xl font-bold mb-2" style="color: var(--text);">⚖️ Instant Unit Conversion</h3>
-                                <p>Converting between Metric and Imperial systems is a daily necessity for students and professionals. Our <a href="unit-converter.html">Unit Converter</a> provides instant, high-precision conversions for distance, mass, and temperature, entirely offline.</p>
+                                <p>Converting between Metric and Imperial systems is a daily necessity. Our <a href="unit-converter.html">Unit Converter</a> provides instant, high-precision conversions for distance, mass, and temperature, entirely offline.</p>
                             </article>
                         </div>
 
