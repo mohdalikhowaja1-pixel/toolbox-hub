@@ -68,6 +68,12 @@
         
         /* Sidebar Sticky */
         .sticky-sidebar { position: sticky; top: 100px; max-height: calc(100vh - 120px); overflow-y: auto; }
+        
+        /* Custom Mobile Menu */
+        .mobile-menu-btn { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
+        .mobile-menu-list { background: var(--card); border: 1px solid var(--card-border); box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); }
+        .mobile-menu-list a { color: var(--text); transition: background 0.15s; }
+        .mobile-menu-list a:hover { background: var(--chip-bg); }
     </style>
 </head>
 <body class="font-sans min-h-screen flex flex-col justify-between">
@@ -164,40 +170,37 @@
                         Welcome to the MyToolX blog. Here, we share practical guides on how to use our tools to boost your productivity, improve your writing, and manage your freelance business.
                     </p>
 
-                    <!-- MOBILE DROPDOWN MENU (Only shows on small screens) -->
-                    <div class="block lg:hidden mb-8">
-                        <label for="mobileToc" class="block text-xs font-bold uppercase tracking-wider mb-2" style="color: var(--text);">Jump to a Guide:</label>
-                        <select id="mobileToc" class="input-field w-full p-4 rounded-xl text-sm font-semibold" onchange="if(this.value) { window.location.hash = this.value; }">
-                            <option value="">-- Select an Article --</option>
-                            <optgroup label="Typing & Visuals">
-                                <option value="typing-guide">⌨️ Typing Speed Test</option>
-                                <option value="image-guide">🖼️ Image Compressor</option>
-                            </optgroup>
-                            <optgroup label="AI & Content Creation">
-                                <option value="ai-guide">🤖 AI Prompt Studio</option>
-                                <option value="bio-guide">✨ AI Bio Generator</option>
-                                <option value="outline-guide">📑 Article Outline Gen</option>
-                            </optgroup>
-                            <optgroup label="Writing & CV">
-                                <option value="grammar-guide">📝 Grammar Checker</option>
-                                <option value="text-guide">✍️ Text & Word Suite</option>
-                            </optgroup>
-                            <optgroup label="Finance & Freelancing">
-                                <option value="finance-guide">💰 Fee Calculator</option>
-                                <option value="sip-guide">📈 SIP Calculator</option>
-                                <option value="loan-guide">🏦 Loan EMI Calc</option>
-                            </optgroup>
-                            <optgroup label="Developer Utilities">
-                                <option value="json-guide">⚡ JSON Formatter</option>
-                                <option value="base64-guide">🔤 Base64 Tool</option>
-                                <option value="color-guide">🎨 Color Converter</option>
-                            </optgroup>
-                            <optgroup label="Everyday Utilities">
-                                <option value="qr-guide">📱 QR Code Gen</option>
-                                <option value="password-guide">🔑 Password Gen</option>
-                                <option value="unit-guide">⚖️ Unit Converter</option>
-                            </optgroup>
-                        </select>
+                    <!-- CUSTOM MOBILE DROPDOWN (Only shows on small screens) -->
+                    <div class="block lg:hidden mb-8 relative">
+                        <label class="block text-xs font-bold uppercase tracking-wider mb-2" style="color: var(--text);">Jump to a Guide:</label>
+                        
+                        <!-- Trigger Button -->
+                        <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="w-full flex items-center justify-between p-4 rounded-xl text-sm font-semibold mobile-menu-btn shadow-sm">
+                            <span id="mobileMenuLabel">-- Select an Article --</span>
+                            <span id="mobileMenuIcon">▼</span>
+                        </button>
+                        
+                        <!-- Dropdown List -->
+                        <div id="mobileMenuList" class="hidden absolute top-full left-0 right-0 mt-2 rounded-xl z-50 overflow-hidden mobile-menu-list">
+                            <div class="max-h-60 overflow-y-auto">
+                                <a href="#typing-guide" onclick="closeMobileMenu('⌨️ Typing Speed Test')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">⌨️ Typing Speed Test</a>
+                                <a href="#image-guide" onclick="closeMobileMenu('🖼️ Image Compressor')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">🖼️ Image Compressor</a>
+                                <a href="#ai-guide" onclick="closeMobileMenu('🤖 AI Prompt Studio')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">🤖 AI Prompt Studio</a>
+                                <a href="#bio-guide" onclick="closeMobileMenu('✨ AI Bio Generator')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">✨ AI Bio Generator</a>
+                                <a href="#outline-guide" onclick="closeMobileMenu('📑 Article Outline Gen')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">📑 Article Outline Gen</a>
+                                <a href="#grammar-guide" onclick="closeMobileMenu('📝 Grammar Checker')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">📝 Grammar Checker</a>
+                                <a href="#text-guide" onclick="closeMobileMenu('✍️ Text & Word Suite')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">✍️ Text & Word Suite</a>
+                                <a href="#finance-guide" onclick="closeMobileMenu('💰 Fee Calculator')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">💰 Fee Calculator</a>
+                                <a href="#sip-guide" onclick="closeMobileMenu('📈 SIP Calculator')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">📈 SIP Calculator</a>
+                                <a href="#loan-guide" onclick="closeMobileMenu('🏦 Loan EMI Calc')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">🏦 Loan EMI Calc</a>
+                                <a href="#json-guide" onclick="closeMobileMenu('⚡ JSON Formatter')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">⚡ JSON Formatter</a>
+                                <a href="#base64-guide" onclick="closeMobileMenu('🔑 Base64 Tool')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">🔤 Base64 Tool</a>
+                                <a href="#color-guide" onclick="closeMobileMenu('🎨 Color Converter')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">🎨 Color Converter</a>
+                                <a href="#qr-guide" onclick="closeMobileMenu('📱 QR Code Gen')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">📱 QR Code Gen</a>
+                                <a href="#password-guide" onclick="closeMobileMenu('🔑 Password Gen')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">🔑 Password Gen</a>
+                                <a href="#unit-guide" onclick="closeMobileMenu('⚖️ Unit Converter')" class="block px-4 py-3 text-sm">⚖️ Unit Converter</a>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="blog-content space-y-12">
@@ -405,6 +408,37 @@
             try { localStorage.setItem('mtx-theme', next); } catch (e) {} 
         }
         window.toggleTheme = toggleTheme;
+
+        // Custom Mobile Menu Logic
+        function toggleMobileMenu() {
+            var list = document.getElementById('mobileMenuList');
+            var icon = document.getElementById('mobileMenuIcon');
+            if (list.classList.contains('hidden')) {
+                list.classList.remove('hidden');
+                icon.textContent = '▲';
+            } else {
+                list.classList.add('hidden');
+                icon.textContent = '▼';
+            }
+        }
+        window.toggleMobileMenu = toggleMobileMenu;
+
+        function closeMobileMenu(label) {
+            document.getElementById('mobileMenuLabel').textContent = label;
+            document.getElementById('mobileMenuList').classList.add('hidden');
+            document.getElementById('mobileMenuIcon').textContent = '▼';
+        }
+        window.closeMobileMenu = closeMobileMenu;
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            var menuBtn = document.getElementById('mobileMenuBtn');
+            var menuList = document.getElementById('mobileMenuList');
+            if (menuBtn && menuList && !menuBtn.contains(event.target) && !menuList.contains(event.target)) {
+                menuList.classList.add('hidden');
+                document.getElementById('mobileMenuIcon').textContent = '▼';
+            }
+        });
     </script>
 </body>
 </html>
