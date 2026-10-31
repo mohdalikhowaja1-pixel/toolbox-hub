@@ -147,41 +147,60 @@
         ::selection { background: rgba(79,70,229,0.25); }
         @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
 
-        /* --- CV PREVIEW STYLES (NATURAL FIT / NO EXTRA PAGES) --- */
-        .cv-paper {
-            background: #FFFFFF; color: #1E293B;
-            width: 100%; max-width: 850px; margin: 0 auto; border-radius: 4px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            overflow: hidden;
-            height: auto; /* Shrinks/grows naturally with content */
-        }
-        .layout-modern { 
-            display: grid; 
-            grid-template-columns: 35% 65%; 
-            font-family: 'Inter', system-ui, -apple-system, sans-serif; 
-            height: auto;
-        }
-        .modern-sidebar { 
-            background-color: #334155; color: #F8FAFC; padding: 40px 30px; word-break: break-word; 
-            height: 100%;
-        }
-        .modern-sidebar h1 { font-size: 26px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; text-transform: capitalize; color: #FFFFFF; }
+        /* --- CV PREVIEW STYLES (PAGINATED A4 PAGES) --- */
+        .cv-preview-col { min-width: 0; }
+        .cv-preview-bar { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+        .cv-page-info { font-size: 12px; font-weight: 700; color: var(--text-muted); }
+        .cv-bar-actions { display: flex; gap: 6px; }
+        .cv-bar-btn { background: var(--chip-bg); color: var(--chip-text); border: 1px solid var(--card-border); border-radius: 10px; padding: 0 10px; min-height: 34px; min-width: 34px; font-size: 12px; font-weight: 700; cursor: pointer; }
+        .cv-bar-btn:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+        .cv-bar-btn:disabled { opacity: 0.45; cursor: default; }
+        .cv-bar-btn[aria-pressed="true"] { background: var(--primary); border-color: var(--primary); color: #fff; }
+        .cv-viewport { background: rgba(148,163,184,0.18); border-radius: 16px; padding: 12px; overflow: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+        .cv-scaler { margin: 0 auto; }
+        .cv-pages { display: flex; flex-direction: column; gap: 16px; width: 210mm; transform-origin: 0 0; }
+        .cv-page { width: 210mm; height: 296.8mm; flex: none; overflow: hidden; scroll-margin-top: 96px; }
+        .cv-paper { background: #FFFFFF; color: #1E293B; border-radius: 2px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .layout-modern { display: grid; grid-template-columns: minmax(0, 35%) minmax(0, 65%); font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+        .cv-probe { height: auto; overflow: visible; box-shadow: none; align-items: start; }
+
+        .modern-sidebar { background-color: #334155; color: #F8FAFC; padding: 40px 30px; word-break: break-word; overflow-wrap: anywhere; }
+        .modern-sidebar .cv-name { font-size: 26px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; text-transform: capitalize; color: #FFFFFF; }
         .modern-sidebar .cv-title { font-size: 14px; font-weight: 600; color: #C7D2FE; margin-bottom: 30px; line-height: 1.3; }
-        .modern-sidebar h3 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-top: 25px; margin-bottom: 10px; color: #C7D2FE; border-bottom: 1px solid #475569; padding-bottom: 5px; }
-        .modern-sidebar p, .modern-sidebar li { font-size: 12px; line-height: 1.6; margin-bottom: 8px; color: #E2E8F0; }
-        
-        .modern-main { 
-            background-color: #FFFFFF; padding: 40px; 
-            height: 100%;
-        }
-        .modern-main h2 { font-size: 15px; font-weight: 800; border-bottom: 2px solid #4F46E5; padding-bottom: 5px; margin-top: 25px; margin-bottom: 15px; text-transform: uppercase; color: #0F172A; letter-spacing: 1px; }
-        .modern-main h2:first-child { margin-top: 0; }
+        .modern-sidebar .cv-h { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-top: 25px; margin-bottom: 10px; color: #C7D2FE; border-bottom: 1px solid #475569; padding-bottom: 5px; line-height: 1.4; }
+        .modern-sidebar .cv-h:first-child { margin-top: 0; }
+        .modern-sidebar p { font-size: 12px; line-height: 1.6; margin-bottom: 8px; color: #E2E8F0; }
+        .modern-sidebar > :last-child { margin-bottom: 0; }
+
+        .modern-main { background-color: #FFFFFF; padding: 40px; overflow-wrap: anywhere; }
+        .modern-main .cv-sec { font-size: 15px; font-weight: 800; border-bottom: 2px solid #4F46E5; padding-bottom: 5px; margin-top: 25px; margin-bottom: 15px; text-transform: uppercase; color: #0F172A; letter-spacing: 1px; line-height: 1.4; }
+        .modern-main .cv-sec:first-child { margin-top: 0; }
         .modern-main p { font-size: 13px; line-height: 1.6; color: #475569; margin-bottom: 10px; }
-        .modern-main .cv-job { margin-bottom: 20px; page-break-inside: avoid; break-inside: avoid; }
-        .modern-main .cv-job-title { font-weight: 800; font-size: 14px; color: #0F172A; display: flex; justify-content: space-between; }
+        .modern-main .cv-job { margin-bottom: 20px; }
+        .modern-main .cv-job-title { font-weight: 800; font-size: 14px; color: #0F172A; display: flex; justify-content: space-between; gap: 12px; }
+        .modern-main .cv-job-title span:last-child { white-space: nowrap; text-align: right; }
         .modern-main .cv-job-company { font-weight: 600; font-size: 13px; color: #4F46E5; margin-bottom: 6px; }
         .modern-main ul { list-style-type: disc; padding-left: 20px; font-size: 13px; color: #334155; margin-bottom: 10px; }
         .modern-main li { margin-bottom: 4px; line-height: 1.5; }
+        .modern-main li.cont { list-style: none; }
+        .modern-main .cv-job > :last-child { margin-bottom: 0; }
+        .modern-main > :last-child { margin-bottom: 0; }
+
+        @media (min-width: 1024px) {
+            .cv-preview-col { position: relative; will-change: transform; display: flex; flex-direction: column; max-height: calc(100vh - 104px); }
+            .cv-viewport { flex: 1 1 auto; min-height: 0; }
+            .cv-page { scroll-margin-top: 12px; }
+        }
+
+        .cv-jump { display: inline-flex; align-items: center; }
+        .cv-preview-col { scroll-margin-top: 12px; }
+        @media (min-width: 1024px) { .cv-jump { display: none; } }
+
+        /* Toast (AI Fix feedback) */
+        .cv-toast { position: fixed; left: 50%; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 60; max-width: calc(100vw - 24px); display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; background: #0F172A; color: #F8FAFC; font-size: 13px; font-weight: 600; box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+        .cv-toast[hidden] { display: none; }
+        .cv-toast.is-error { background: #B91C1C; }
+        .cv-toast button { background: rgba(255,255,255,0.15); color: #fff; border: 0; border-radius: 8px; padding: 4px 10px; font-size: 12px; font-weight: 700; cursor: pointer; }
 
         /* SEO Content Article Styling */
         .seo-article h2 { font-size: 1.5rem; font-weight: 800; margin-top: 2rem; margin-bottom: 1rem; color: var(--text); border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; }
@@ -207,18 +226,26 @@
             line-height: 1.5;
         }
 
+        /* --- PRINT: only the CV pages are printed (A4, no browser margins => no URL/date headers) --- */
         @media print {
-            @page { size: A4 portrait; margin: 10mm; }
-            body * { visibility: hidden; }
-            #cvPreview, #cvPreview * { visibility: visible; }
-            #cvPreview { 
-                position: absolute; left: 0; top: 0; width: 100% !important; height: auto !important;
-                box-shadow: none; margin: 0; padding: 0; border-radius: 0; 
-                -webkit-print-color-adjust: exact; print-color-adjust: exact; 
-            }
-            .layout-modern { display: grid; grid-template-columns: 35% 65%; height: auto; }
-            .modern-sidebar { background-color: #334155 !important; color: #F8FAFC !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-            .cv-job { page-break-inside: avoid; break-inside: avoid; }
+            @page { size: A4 portrait; margin: 0; }
+            html, body { background: #fff !important; margin: 0 !important; padding: 0 !important; display: block !important; height: auto !important; min-height: 0 !important; max-width: none !important; overflow: visible !important; }
+            body > *:not(main) { display: none !important; }
+            main { display: block !important; padding: 0 !important; margin: 0 !important; max-width: none !important; width: auto !important; }
+            main > *:not(.tool-panel) { display: none !important; }
+            .tool-panel { display: block !important; border: 0 !important; box-shadow: none !important; background: transparent !important; padding: 0 !important; margin: 0 !important; border-radius: 0 !important; }
+            .tool-panel > *:not(.cv-workspace) { display: none !important; }
+            .cv-workspace { display: block !important; margin: 0 !important; }
+            .cv-workspace > *:not(.cv-preview-col) { display: none !important; }
+            .cv-preview-col { display: block !important; position: static !important; transform: none !important; max-height: none !important; padding: 0 !important; margin: 0 !important; }
+            .cv-preview-bar { display: none !important; }
+            .cv-viewport { display: block !important; overflow: visible !important; max-height: none !important; padding: 0 !important; margin: 0 !important; background: none !important; border-radius: 0 !important; }
+            .cv-scaler { width: 210mm !important; height: auto !important; margin: 0 !important; }
+            .cv-pages { display: block !important; transform: none !important; width: 210mm !important; gap: 0 !important; }
+            .cv-page { margin: 0 !important; box-shadow: none !important; border-radius: 0 !important; break-after: page; page-break-after: always; break-inside: avoid; page-break-inside: avoid; }
+            .cv-page:last-child { break-after: auto; page-break-after: auto; }
+            .cv-page, .cv-page * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .modern-sidebar { background-color: #334155 !important; color: #F8FAFC !important; }
         }
     </style>
 </head>
@@ -258,7 +285,7 @@
             <a href="index.html" class="hover:text-indigo-500">Home</a><span>/</span><a href="blog.html#cv-guide" class="hover:text-indigo-500">Guides</a><span>/</span><span style="color: var(--text); font-weight: 700;">Resume Builder</span>
         </nav>
 
-        <div class="tool-panel surface rounded-3xl shadow-xl p-6 sm:p-8 mb-10 transition-shadow">
+        <div class="tool-panel surface rounded-3xl shadow-xl p-4 sm:p-6 lg:p-8 mb-10 transition-shadow">
             
             <div class="flex items-center justify-between gap-3 flex-wrap mb-6 pb-4 border-b" style="border-color: var(--card-border);">
                 <div>
@@ -268,44 +295,46 @@
                     <p class="text-xs muted mt-1">100% private · No sign-up · ATS-friendly PDF</p>
                 </div>
                 <div class="flex gap-2 items-center flex-wrap">
-                    <button onclick="clearForm()" class="btn-3d btn-chip px-3 py-2 text-xs font-bold text-red-500 border-red-200">Clear</button>
-                    <button onclick="printCV()" class="btn-3d btn-primary px-4 py-2 text-xs font-bold flex items-center gap-2">🖨️ Save PDF</button>
+                    <a href="#cvPreviewCol" class="cv-jump btn-3d btn-chip px-3 py-2 text-xs font-bold">Preview ↓</a>
+                    <button type="button" onclick="clearForm()" class="btn-3d btn-chip px-3 py-2 text-xs font-bold text-red-500 border-red-200">Clear</button>
+                    <button type="button" onclick="printCV()" class="btn-3d btn-chip px-3 py-2 text-xs font-bold" aria-label="Print resume">Print</button>
+                    <button type="button" onclick="printCV()" class="btn-3d btn-primary px-4 py-2 text-xs font-bold flex items-center gap-2" aria-label="Save resume as PDF">🖨️ Save PDF</button>
                 </div>
             </div>
 
             <div class="print-tip" role="note">
-                <strong>💡 Tip for a clean PDF:</strong> When the print dialog opens, choose <strong>"Save as PDF"</strong>, then <strong>uncheck "Headers and footers"</strong> in the settings. This removes the browser's top date and bottom URL link, giving you a perfectly clean CV.
+                <strong>💡 Tip for a clean PDF:</strong> When the print dialog opens, choose <strong>"Save as PDF"</strong>, paper size <strong>A4</strong> and scale <strong>100%</strong>. The page margins are already set so the browser's date and URL lines are normally left out; if your browser still shows them, uncheck <strong>"Headers and footers"</strong> in the settings.
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            <div class="cv-workspace grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                 
                 <!-- LEFT: FORM -->
-                <div class="space-y-6">
+                <div class="cv-editor space-y-6 min-w-0">
                     <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
                         <h2 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">1. Personal Details</h2>
                         <div class="space-y-3">
-                            <input type="text" id="inpName" oninput="updateCV()" placeholder="Full Name" class="input-field w-full p-3 rounded-xl text-sm font-bold" autocomplete="name">
-                            <input type="text" id="inpTitle" oninput="updateCV()" placeholder="Professional Title (e.g. Senior Accountant)" class="input-field w-full p-3 rounded-xl text-sm" autocomplete="organization-title">
+                            <input type="text" id="inpName" oninput="updateCV()" aria-label="Full name" placeholder="Full Name" class="input-field w-full p-3 rounded-xl text-sm font-bold" autocomplete="name">
+                            <input type="text" id="inpTitle" oninput="updateCV()" aria-label="Professional title" placeholder="Professional Title (e.g. Senior Accountant)" class="input-field w-full p-3 rounded-xl text-sm" autocomplete="organization-title">
                             <div class="grid grid-cols-2 gap-3">
-                                <input type="email" id="inpEmail" oninput="updateCV()" placeholder="Email" class="input-field w-full p-3 rounded-xl text-sm" autocomplete="email">
-                                <input type="tel" id="inpPhone" oninput="updateCV()" placeholder="Phone" class="input-field w-full p-3 rounded-xl text-sm" autocomplete="tel">
+                                <input type="email" id="inpEmail" oninput="updateCV()" aria-label="Email address" placeholder="Email" class="input-field w-full p-3 rounded-xl text-sm" autocomplete="email">
+                                <input type="tel" id="inpPhone" oninput="updateCV()" aria-label="Phone number" placeholder="Phone" class="input-field w-full p-3 rounded-xl text-sm" autocomplete="tel">
                             </div>
-                            <input type="text" id="inpLocation" oninput="updateCV()" placeholder="City, Country" class="input-field w-full p-3 rounded-xl text-sm" autocomplete="address-level2">
+                            <input type="text" id="inpLocation" oninput="updateCV()" aria-label="City and country" placeholder="City, Country" class="input-field w-full p-3 rounded-xl text-sm" autocomplete="address-level2">
                         </div>
                     </div>
 
                     <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
                         <div class="flex justify-between items-center mb-3">
                             <h2 class="text-sm font-bold uppercase tracking-wider" style="color: var(--primary);">2. Summary</h2>
-                            <button onclick="fixWithAI('inpSummary')" class="text-[10px] font-bold text-indigo-500 hover:text-indigo-700 bg-indigo-50 px-2 py-1 rounded-md border border-indigo-100 flex items-center gap-1">✨ AI Fix</button>
+                            <button type="button" data-fix-for="inpSummary" onclick="fixWithAI('inpSummary', this)" class="text-[10px] font-bold text-indigo-500 hover:text-indigo-700 bg-indigo-50 px-2 py-1 rounded-md border border-indigo-100 flex items-center gap-1">✨ AI Fix</button>
                         </div>
-                        <textarea id="inpSummary" oninput="updateCV()" rows="3" placeholder="Brief overview of your experience..." class="input-field w-full p-3 rounded-xl text-sm" autocomplete="section-profile summary"></textarea>
+                        <textarea id="inpSummary" oninput="updateCV()" rows="3" aria-label="Professional summary" placeholder="Brief overview of your experience..." class="input-field w-full p-3 rounded-xl text-sm" autocomplete="off"></textarea>
                     </div>
 
                     <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
                         <div class="flex justify-between items-center mb-3">
                             <h2 class="text-sm font-bold uppercase tracking-wider" style="color: var(--primary);">3. Experience</h2>
-                            <button onclick="addExperience()" class="btn-3d btn-chip px-2 py-1 text-[10px] font-bold">+ Add</button>
+                            <button type="button" aria-label="Add experience entry" onclick="addExperience()" class="btn-3d btn-chip px-2 py-1 text-[10px] font-bold">+ Add</button>
                         </div>
                         <div id="experienceContainer" class="space-y-4"></div>
                     </div>
@@ -313,36 +342,53 @@
                     <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
                         <div class="flex justify-between items-center mb-3">
                             <h2 class="text-sm font-bold uppercase tracking-wider" style="color: var(--primary);">4. Education</h2>
-                            <button onclick="addEducation()" class="btn-3d btn-chip px-2 py-1 text-[10px] font-bold">+ Add</button>
+                            <button type="button" aria-label="Add education entry" onclick="addEducation()" class="btn-3d btn-chip px-2 py-1 text-[10px] font-bold">+ Add</button>
                         </div>
                         <div id="educationContainer" class="space-y-4"></div>
                     </div>
 
                     <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
                         <h2 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">5. Skills</h2>
-                        <textarea id="inpSkills" oninput="updateCV()" rows="2" placeholder="e.g. Project Management, Data Analysis, Python" class="input-field w-full p-3 rounded-xl text-sm"></textarea>
+                        <textarea id="inpSkills" oninput="updateCV()" rows="2" aria-label="Skills, separated by commas" placeholder="e.g. Project Management, Data Analysis, Python" class="input-field w-full p-3 rounded-xl text-sm"></textarea>
                     </div>
 
                     <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
                         <h2 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">6. Certifications</h2>
-                        <textarea id="inpCerts" oninput="updateCV()" rows="2" placeholder="e.g. PMP Certification (2022)" class="input-field w-full p-3 rounded-xl text-sm"></textarea>
+                        <textarea id="inpCerts" oninput="updateCV()" rows="2" aria-label="Certifications, separated by commas or new lines" placeholder="e.g. PMP Certification (2022)" class="input-field w-full p-3 rounded-xl text-sm"></textarea>
                     </div>
 
                     <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
                         <h2 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">7. Languages</h2>
-                        <input type="text" id="inpLangs" oninput="updateCV()" placeholder="e.g. English (Native), Spanish (Fluent)" class="input-field w-full p-3 rounded-xl text-sm">
+                        <input type="text" id="inpLangs" oninput="updateCV()" aria-label="Languages, separated by commas" placeholder="e.g. English (Native), Spanish (Fluent)" class="input-field w-full p-3 rounded-xl text-sm">
                     </div>
 
                     <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
                         <h2 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">8. References</h2>
-                        <textarea id="inpRefs" oninput="updateCV()" rows="2" placeholder="e.g. Available upon request" class="input-field w-full p-3 rounded-xl text-sm"></textarea>
+                        <textarea id="inpRefs" oninput="updateCV()" rows="2" aria-label="References" placeholder="e.g. Available upon request" class="input-field w-full p-3 rounded-xl text-sm"></textarea>
                     </div>
                 </div>
 
                 <!-- RIGHT: PREVIEW -->
-                <div class="bg-slate-200/50 rounded-2xl p-4 sm:p-8 flex justify-center overflow-x-auto">
-                    <div id="cvPreview" class="cv-paper layout-modern"></div>
+                <div id="cvPreviewCol" class="cv-preview-col">
+                    <div class="cv-preview-bar" role="toolbar" aria-label="Preview controls">
+                        <span id="cvPageInfo" class="cv-page-info" aria-live="polite">1 page · A4</span>
+                        <div class="cv-bar-actions">
+                            <button type="button" id="cvPrev" class="cv-bar-btn" aria-label="Previous page" disabled>‹</button>
+                            <button type="button" id="cvNext" class="cv-bar-btn" aria-label="Next page" disabled>›</button>
+                            <button type="button" id="cvZoom" class="cv-bar-btn" aria-pressed="false">🔍 Actual size</button>
+                        </div>
+                    </div>
+                    <div id="cvViewport" class="cv-viewport" role="region" aria-label="Live resume preview" tabindex="0">
+                        <div id="cvScaler" class="cv-scaler">
+                            <div id="cvPreview" class="cv-pages"></div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+
+            <div id="cvToast" class="cv-toast" role="status" aria-live="polite" hidden>
+                <span id="cvToastMsg"></span>
+                <button type="button" id="cvToastUndo" hidden>Undo</button>
             </div>
 
         </div>
@@ -563,204 +609,600 @@
         }
         window.toggleTheme = toggleTheme;
 
-        // --- DYNAMIC FORM LOGIC ---
-        let expCount = 0;
-        let eduCount = 0;
+        // --- SMALL HELPERS ---
+        function escapeHTML(str) {
+            return String(str == null ? '' : str).replace(/[&<>"']/g, function (m) {
+                return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[m];
+            });
+        }
+        function el(id) { return document.getElementById(id); }
+        function val(id) { var e = el(id); return e ? e.value.trim() : ''; }
+        function splitLines(s) { return s.split(/\r?\n/).map(function (t) { return t.trim(); }).filter(Boolean); }
+        function splitList(s) { return s.split(/[,\n]+/).map(function (t) { return t.trim(); }).filter(Boolean); }
 
-        function addExperience(data = {}) {
+        // --- DYNAMIC FORM LOGIC ---
+        var expCount = 0;
+        var eduCount = 0;
+
+        function removeBlock(id) {
+            var node = el(id);
+            if (node) node.remove();
+            scheduleUpdate();
+        }
+        window.removeBlock = removeBlock;
+
+        function addExperience(data) {
+            data = data || {};
             expCount++;
             var id = 'exp' + expCount;
-            var container = document.getElementById('experienceContainer');
+            var container = el('experienceContainer');
             var div = document.createElement('div');
             div.className = 'p-3 border rounded-xl relative';
             div.style.borderColor = 'var(--input-border)';
             div.style.background = 'var(--input-bg)';
             div.id = id;
             div.innerHTML = `
-                <button onclick="document.getElementById('${id}').remove(); updateCV();" class="absolute top-2 right-2 text-red-500 font-bold text-xs hover:underline">Remove</button>
+                <button type="button" onclick="removeBlock('${id}')" aria-label="Remove this experience entry" class="absolute top-2 right-2 text-red-500 font-bold text-xs hover:underline">Remove</button>
                 <div class="space-y-2 mt-2">
-                    <input type="text" class="exp-title input-field w-full p-2 rounded-lg text-xs font-bold" placeholder="Job Title" value="${data.title || ''}" oninput="updateCV()" autocomplete="organization-title">
-                    <input type="text" class="exp-company input-field w-full p-2 rounded-lg text-xs" placeholder="Company Name" value="${data.company || ''}" oninput="updateCV()" autocomplete="organization">
-                    <input type="text" class="exp-dates input-field w-full p-2 rounded-lg text-xs" placeholder="Dates (e.g. Jan 2020 - Present)" value="${data.dates || ''}" oninput="updateCV()">
+                    <input type="text" class="exp-title input-field w-full p-2 rounded-lg text-xs font-bold" placeholder="Job Title" aria-label="Job title" value="${escapeHTML(data.title)}" oninput="updateCV()" autocomplete="organization-title">
+                    <input type="text" class="exp-company input-field w-full p-2 rounded-lg text-xs" placeholder="Company Name" aria-label="Company name" value="${escapeHTML(data.company)}" oninput="updateCV()" autocomplete="organization">
+                    <input type="text" class="exp-dates input-field w-full p-2 rounded-lg text-xs" placeholder="Dates (e.g. Jan 2020 - Present)" aria-label="Employment dates" value="${escapeHTML(data.dates)}" oninput="updateCV()">
                     <div class="relative">
-                        <textarea class="exp-desc input-field w-full p-2 rounded-lg text-xs" rows="2" placeholder="Describe your achievements..." oninput="updateCV()">${data.desc || ''}</textarea>
-                        <button onclick="fixWithAI(null, this)" class="absolute bottom-2 right-2 text-[9px] font-bold text-indigo-500 bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-100">✨ AI Fix</button>
+                        <textarea class="exp-desc input-field w-full p-2 rounded-lg text-xs" rows="2" placeholder="Describe your achievements (one per line)..." aria-label="Job achievements, one per line" oninput="updateCV()">${escapeHTML(data.desc)}</textarea>
+                        <button type="button" onclick="fixWithAI(null, this)" class="absolute bottom-2 right-2 text-[9px] font-bold text-indigo-500 bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-100">✨ AI Fix</button>
                     </div>
                 </div>
             `;
             container.appendChild(div);
-            updateCV();
+            scheduleUpdate();
         }
         window.addExperience = addExperience;
 
-        function addEducation(data = {}) {
+        function addEducation(data) {
+            data = data || {};
             eduCount++;
             var id = 'edu' + eduCount;
-            var container = document.getElementById('educationContainer');
+            var container = el('educationContainer');
             var div = document.createElement('div');
             div.className = 'p-3 border rounded-xl relative';
             div.style.borderColor = 'var(--input-border)';
             div.style.background = 'var(--input-bg)';
             div.id = id;
             div.innerHTML = `
-                <button onclick="document.getElementById('${id}').remove(); updateCV();" class="absolute top-2 right-2 text-red-500 font-bold text-xs hover:underline">Remove</button>
+                <button type="button" onclick="removeBlock('${id}')" aria-label="Remove this education entry" class="absolute top-2 right-2 text-red-500 font-bold text-xs hover:underline">Remove</button>
                 <div class="space-y-2 mt-2">
-                    <input type="text" class="edu-degree input-field w-full p-2 rounded-lg text-xs font-bold" placeholder="Degree (e.g. B.Sc Computer Science)" value="${data.degree || ''}" oninput="updateCV()">
-                    <input type="text" class="edu-school input-field w-full p-2 rounded-lg text-xs" placeholder="University / School" value="${data.school || ''}" oninput="updateCV()">
-                    <input type="text" class="edu-year input-field w-full p-2 rounded-lg text-xs" placeholder="Graduation Year" value="${data.year || ''}" oninput="updateCV()">
+                    <input type="text" class="edu-degree input-field w-full p-2 rounded-lg text-xs font-bold" placeholder="Degree (e.g. B.Sc Computer Science)" aria-label="Degree" value="${escapeHTML(data.degree)}" oninput="updateCV()">
+                    <input type="text" class="edu-school input-field w-full p-2 rounded-lg text-xs" placeholder="University / School" aria-label="University or school" value="${escapeHTML(data.school)}" oninput="updateCV()">
+                    <input type="text" class="edu-year input-field w-full p-2 rounded-lg text-xs" placeholder="Graduation Year" aria-label="Graduation year" value="${escapeHTML(data.year)}" oninput="updateCV()">
                 </div>
             `;
             container.appendChild(div);
-            updateCV();
+            scheduleUpdate();
         }
         window.addEducation = addEducation;
 
         // --- CLEAR FORM ---
         function clearForm() {
-            if(!confirm("Are you sure you want to clear all resume data?")) return;
-            
-            ['inpName', 'inpTitle', 'inpEmail', 'inpPhone', 'inpLocation', 'inpSummary', 'inpSkills', 'inpCerts', 'inpLangs', 'inpRefs'].forEach(function(id) {
-                var el = document.getElementById(id);
-                if (el) el.value = '';
+            if (!confirm("Are you sure you want to clear all resume data?")) return;
+
+            ['inpName', 'inpTitle', 'inpEmail', 'inpPhone', 'inpLocation', 'inpSummary', 'inpSkills', 'inpCerts', 'inpLangs', 'inpRefs'].forEach(function (id) {
+                var e = el(id);
+                if (e) e.value = '';
             });
 
-            document.getElementById('experienceContainer').innerHTML = '';
-            document.getElementById('educationContainer').innerHTML = '';
+            el('experienceContainer').innerHTML = '';
+            el('educationContainer').innerHTML = '';
             expCount = 0;
             eduCount = 0;
-            addExperience(); 
+            lastFix = null;
+            hideToast();
+            addExperience();
             addEducation();
-            updateCV();
+            renderNow();
         }
         window.clearForm = clearForm;
 
-        // --- LIVE PREVIEW LOGIC ---
-        function escapeHTML(str) {
-            return (str || '').replace(/[&<>"']/g, function (m) {
-                return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[m];
-            });
+        // =====================================================================
+        // PAGINATION ENGINE
+        // The CV is turned into small "atoms" (heading, job header, bullet, line).
+        // Atoms are placed one by one into a hidden A4 page that uses the SAME
+        // markup/CSS as the visible pages; if the real rendered height exceeds
+        // the printable height the atom moves to the next page. Page count is
+        // therefore decided by real content, never by a fixed template.
+        // =====================================================================
+        var probe = null;     // { side, main, ruler }
+        var lastSig = null;
+        var pageCount = 1;
+        var currentPage = 1;
+        var zoomFull = false;
+        var updTimer = null;
+
+        function ensureProbe() {
+            if (probe) return probe;
+            var holder = document.createElement('div');
+            holder.id = 'cvMeasure';
+            holder.setAttribute('aria-hidden', 'true');
+            holder.style.cssText = 'position:absolute;left:-10000px;top:0;width:210mm;visibility:hidden;pointer-events:none;';
+            holder.innerHTML = '<div class="cv-paper cv-page layout-modern cv-probe"><div class="modern-sidebar"></div><div class="modern-main"></div></div><div class="cv-ruler" style="height:296.8mm;width:1px;"></div>';
+            document.body.appendChild(holder);
+            probe = {
+                side: holder.querySelector('.modern-sidebar'),
+                main: holder.querySelector('.modern-main'),
+                ruler: holder.querySelector('.cv-ruler')
+            };
+            return probe;
         }
-        function nl2br(str) {
-            return escapeHTML(str).replace(/\n/g, '<br>');
+        function vPad(node) {
+            var cs = getComputedStyle(node);
+            return (parseFloat(cs.paddingTop) || 0) + (parseFloat(cs.paddingBottom) || 0);
         }
 
-        function updateCV() {
-            var name = document.getElementById('inpName').value.trim() || 'Your Name';
-            var title = document.getElementById('inpTitle').value.trim() || '';
-            var email = document.getElementById('inpEmail').value.trim() || '';
-            var phone = document.getElementById('inpPhone').value.trim() || '';
-            var loc = document.getElementById('inpLocation').value.trim() || '';
-            
-            var summary = document.getElementById('inpSummary').value.trim();
-            var skills = document.getElementById('inpSkills').value.trim();
-            var certs = document.getElementById('inpCerts').value.trim();
-            var langs = document.getElementById('inpLangs').value.trim();
-            var refs = document.getElementById('inpRefs').value.trim();
+        function headHTML(b) {
+            var out = '';
+            if (b.ti || b.d) out += '<div class="cv-job-title"><span>' + escapeHTML(b.ti) + '</span><span>' + escapeHTML(b.d) + '</span></div>';
+            if (b.c) out += '<div class="cv-job-company">' + escapeHTML(b.c) + '</div>';
+            return out;
+        }
 
-            // Collect Experience
-            var expHTML = '';
-            document.querySelectorAll('#experienceContainer > div').forEach(function(block) {
-                var t = block.querySelector('.exp-title').value.trim();
-                var c = block.querySelector('.exp-company').value.trim();
-                var d = block.querySelector('.exp-dates').value.trim();
-                var desc = block.querySelector('.exp-desc').value.trim();
-                if (t || c) {
-                    expHTML += `
-                        <div class="cv-job">
-                            <div class="cv-job-title"><span>${escapeHTML(t)}</span><span>${escapeHTML(d)}</span></div>
-                            <div class="cv-job-company">${escapeHTML(c)}</div>
-                            <ul>${desc.split('\n').filter(Boolean).map(line => `<li>${escapeHTML(line)}</li>`).join('')}</ul>
-                        </div>
-                    `;
+        function renderAtoms(list) {
+            var out = '', i = 0, n = list.length;
+            while (i < n) {
+                var a = list[i], j;
+                if (a.t === 'hdr') {
+                    out += '<div class="cv-name">' + escapeHTML(a.n) + '</div><div class="cv-title">' + escapeHTML(a.ti) + '</div>';
+                    i++;
+                } else if (a.t === 'h') {
+                    out += '<div class="cv-h">' + escapeHTML(a.x) + '</div>';
+                    i++;
+                } else if (a.t === 'sec') {
+                    out += '<div class="cv-sec">' + escapeHTML(a.x) + '</div>';
+                    i++;
+                } else if (a.t === 'ln') {
+                    var parts = [];
+                    j = i;
+                    while (j < n && list[j].t === 'ln' && list[j].g === a.g) { parts.push(escapeHTML(list[j].x)); j++; }
+                    out += '<p>' + parts.join('<br>') + '</p>';
+                    i = j;
+                } else {
+                    var inner = '', lis = '';
+                    j = i;
+                    while (j < n && list[j].g === a.g && list[j].t !== 'ln') {
+                        var b = list[j];
+                        if (b.t === 'li') {
+                            lis += '<li' + (b.cont ? ' class="cont"' : '') + '>' + escapeHTML(b.x) + '</li>';
+                        } else {
+                            if (lis) { inner += '<ul>' + lis + '</ul>'; lis = ''; }
+                            inner += headHTML(b);
+                        }
+                        j++;
+                    }
+                    if (lis) inner += '<ul>' + lis + '</ul>';
+                    out += '<div class="cv-job">' + inner + '</div>';
+                    i = j;
                 }
-            });
-
-            // Collect Education
-            var eduHTML = '';
-            document.querySelectorAll('#educationContainer > div').forEach(function(block) {
-                var deg = block.querySelector('.edu-degree').value.trim();
-                var sch = block.querySelector('.edu-school').value.trim();
-                var yr = block.querySelector('.edu-year').value.trim();
-                if (deg || sch) {
-                    eduHTML += `
-                        <div class="cv-job">
-                            <div class="cv-job-title"><span>${escapeHTML(deg)}</span><span>${escapeHTML(yr)}</span></div>
-                            <div class="cv-job-company">${escapeHTML(sch)}</div>
-                        </div>
-                    `;
-                }
-            });
-
-            // Build Preview (Modern Layout Locked)
-            var preview = document.getElementById('cvPreview');
-            preview.innerHTML = `
-                <div class="modern-sidebar">
-                    <h1>${escapeHTML(name)}</h1>
-                    <div class="cv-title">${escapeHTML(title)}</div>
-                    
-                    <h3>Contact</h3>
-                    ${email ? `<p>${escapeHTML(email)}</p>` : ''}
-                    ${phone ? `<p>${escapeHTML(phone)}</p>` : ''}
-                    ${loc ? `<p>${escapeHTML(loc)}</p>` : ''}
-                    
-                    ${skills ? `<h3>Skills</h3><p>${nl2br(skills).replace(/,/g, '<br>')}</p>` : ''}
-                    ${langs ? `<h3>Languages</h3><p>${nl2br(langs).replace(/,/g, '<br>')}</p>` : ''}
-                    ${certs ? `<h3>Certifications</h3><p>${nl2br(certs).replace(/,/g, '<br>')}</p>` : ''}
-                    ${refs ? `<h3>References</h3><p>${nl2br(refs)}</p>` : ''}
-                </div>
-                <div class="modern-main">
-                    ${summary ? `<h2>Profile</h2><p>${nl2br(summary)}</p>` : ''}
-                    ${expHTML ? `<h2>Experience</h2>${expHTML}` : ''}
-                    ${eduHTML ? `<h2>Education</h2>${eduHTML}` : ''}
-                </div>
-            `;
+            }
+            return out;
         }
-        window.updateCV = updateCV;
 
-        // --- PRINT LOGIC ---
+        // Mark atoms of one unit so a page break cannot strand a heading/header
+        // or leave a single orphan bullet. "whole" keeps the entire unit together.
+        function setKeep(arr, whole) {
+            var n = arr.length;
+            for (var i = 0; i < n - 1; i++) {
+                if (whole || i <= 1 || i === n - 2) arr[i].k = true;
+            }
+        }
+
+        function splitToFit(atom, page, measure, limit) {
+            if (atom.t !== 'li' && atom.t !== 'ln') return null;
+            var words = atom.x.split(/\s+/);
+            if (words.length < 2) return null;
+            var lo = 1, hi = words.length - 1, best = 0;
+            while (lo <= hi) {
+                var mid = (lo + hi) >> 1;
+                var test = page.concat([Object.assign({}, atom, { x: words.slice(0, mid).join(' '), k: false })]);
+                if (measure(test) <= limit) { best = mid; lo = mid + 1; } else { hi = mid - 1; }
+            }
+            if (!best) return null;
+            return [
+                Object.assign({}, atom, { x: words.slice(0, best).join(' '), k: false }),
+                Object.assign({}, atom, { x: words.slice(best).join(' '), cont: true })
+            ];
+        }
+
+        function paginate(atoms, measure, limit) {
+            var pages = [[]], queue = atoms.slice(), guard = 0;
+            while (queue.length && guard++ < 20000) {
+                var page = pages[pages.length - 1];
+                var a = queue.shift();
+                if (measure(page.concat([a])) <= limit) { page.push(a); continue; }
+                if (page.length === 0) {
+                    // Atom taller than an empty page: split long text, otherwise force it in.
+                    var parts = splitToFit(a, page, measure, limit);
+                    if (parts) { page.push(parts[0]); queue.unshift(parts[1]); }
+                    else { page.push(a); }
+                    pages.push([]);
+                    continue;
+                }
+                // Text too tall for any page: start it right here instead of stranding the heading above it.
+                if ((a.t === 'li' || a.t === 'ln') && measure([a]) > limit) {
+                    var fit = splitToFit(a, page, measure, limit);
+                    if (fit) { page.push(fit[0]); queue.unshift(fit[1]); pages.push([]); continue; }
+                }
+                // Move trailing "keep with next" atoms (headings, job headers) together with the new atom.
+                var cut = page.length;
+                while (cut > 0 && page[cut - 1].k) cut--;
+                if (cut === 0) cut = page.length; // chain fills the whole page: break anyway
+                var moved = page.splice(cut);
+                queue = moved.concat([a], queue);
+                pages.push([]);
+            }
+            while (pages.length > 1 && pages[pages.length - 1].length === 0) pages.pop();
+            return pages;
+        }
+
+        function readForm() {
+            var d = {
+                name: val('inpName'), title: val('inpTitle'), email: val('inpEmail'), phone: val('inpPhone'),
+                loc: val('inpLocation'), summary: val('inpSummary'), skills: val('inpSkills'),
+                certs: val('inpCerts'), langs: val('inpLangs'), refs: val('inpRefs'), jobs: [], edus: []
+            };
+            document.querySelectorAll('#experienceContainer > div').forEach(function (b) {
+                d.jobs.push({
+                    t: b.querySelector('.exp-title').value.trim(), c: b.querySelector('.exp-company').value.trim(),
+                    d: b.querySelector('.exp-dates').value.trim(), desc: b.querySelector('.exp-desc').value.trim()
+                });
+            });
+            document.querySelectorAll('#educationContainer > div').forEach(function (b) {
+                d.edus.push({
+                    deg: b.querySelector('.edu-degree').value.trim(), sch: b.querySelector('.edu-school').value.trim(),
+                    yr: b.querySelector('.edu-year').value.trim()
+                });
+            });
+            return d;
+        }
+
+        function layoutPages(d) {
+            var p = ensureProbe();
+            var pageH = p.ruler.getBoundingClientRect().height;
+            var padS = vPad(p.side), padM = vPad(p.main);
+            var limS = pageH - padS - 1, limM = pageH - padM - 1;
+            var measureS = function (l) { p.side.innerHTML = renderAtoms(l); return p.side.getBoundingClientRect().height - padS; };
+            var measureM = function (l) { p.main.innerHTML = renderAtoms(l); return p.main.getBoundingClientRect().height - padM; };
+
+            // Sidebar atoms
+            var side = [{ t: 'hdr', n: d.name || 'Your Name', ti: d.title }];
+            function sideSection(title, lines, gid, uniq) {
+                if (!lines.length) return;
+                var arr = [{ t: 'h', x: title }];
+                lines.forEach(function (l, i) { arr.push({ t: 'ln', g: uniq ? gid + i : gid, x: l }); });
+                setKeep(arr, lines.length <= 8);
+                side = side.concat(arr);
+            }
+            sideSection('Contact', [d.email, d.phone, d.loc].filter(Boolean), 'c', true);
+            sideSection('Skills', splitList(d.skills), 'sk');
+            sideSection('Languages', splitList(d.langs), 'lg');
+            sideSection('Certifications', splitList(d.certs), 'ct');
+            sideSection('References', splitLines(d.refs), 'rf');
+
+            // Main column atoms
+            var main = [];
+            if (d.summary) {
+                var sa = [{ t: 'sec', x: 'Profile' }];
+                splitLines(d.summary).forEach(function (l) { sa.push({ t: 'ln', g: 'sm', x: l }); });
+                setKeep(sa, false);
+                main = main.concat(sa);
+            }
+            var expAtoms = [];
+            d.jobs.forEach(function (j, i) {
+                var g = 'j' + i, arr = [];
+                if (j.t || j.c || j.d) arr.push({ t: 'jh', g: g, ti: j.t, c: j.c, d: j.d });
+                splitLines(j.desc).forEach(function (l) { arr.push({ t: 'li', g: g, x: l }); });
+                if (!arr.length) return;
+                setKeep(arr, measureM(arr) <= 0.3 * limM);
+                expAtoms = expAtoms.concat(arr);
+            });
+            if (expAtoms.length) main = main.concat([{ t: 'sec', x: 'Experience', k: true }], expAtoms);
+            var eduAtoms = [];
+            d.edus.forEach(function (e, i) {
+                if (e.deg || e.sch || e.yr) eduAtoms.push({ t: 'edu', g: 'e' + i, ti: e.deg, c: e.sch, d: e.yr });
+            });
+            if (eduAtoms.length) main = main.concat([{ t: 'sec', x: 'Education', k: true }], eduAtoms);
+
+            var sidePages = paginate(side, measureS, limS);
+            var mainPages = paginate(main, measureM, limM);
+            var total = Math.max(sidePages.length, mainPages.length, 1);
+
+            var html = '';
+            for (var i = 0; i < total; i++) {
+                html += '<section class="cv-paper cv-page layout-modern" data-page="' + (i + 1) + '" aria-label="Page ' + (i + 1) + ' of ' + total + '">' +
+                    '<div class="modern-sidebar">' + renderAtoms(sidePages[i] || []) + '</div>' +
+                    '<div class="modern-main">' + renderAtoms(mainPages[i] || []) + '</div></section>';
+            }
+            p.side.innerHTML = '';
+            p.main.innerHTML = '';
+            return { html: html, total: total };
+        }
+
+        // --- RENDER / SCHEDULING ---
+        function renderNow() {
+            clearTimeout(updTimer);
+            updTimer = null;
+            var preview = el('cvPreview');
+            if (!preview) return;
+            var d = readForm();
+            var sig = JSON.stringify(d);
+            if (sig === lastSig) return;
+            lastSig = sig;
+            var res = layoutPages(d);
+            preview.innerHTML = res.html;
+            pageCount = res.total;
+            if (currentPage > pageCount) currentPage = pageCount;
+            rescale();
+            observePages();
+            updatePageInfo();
+            queuePin();
+        }
+        function scheduleUpdate() {
+            clearTimeout(updTimer);
+            updTimer = setTimeout(renderNow, 100);
+        }
+        window.updateCV = scheduleUpdate;
+
+        // --- PREVIEW SCALING & NAVIGATION ---
+        function rescale() {
+            var vp = el('cvViewport'), st = el('cvPreview'), sc = el('cvScaler');
+            if (!vp || !st || !sc) return;
+            var w = st.offsetWidth, h = st.offsetHeight;
+            if (!w) return;
+            var cs = getComputedStyle(vp);
+            var avail = vp.clientWidth - (parseFloat(cs.paddingLeft) || 0) - (parseFloat(cs.paddingRight) || 0);
+            var s = zoomFull ? 1 : Math.min(1, avail / w);
+            if (!(s > 0)) s = 1;
+            st.style.transform = s === 1 ? 'none' : 'scale(' + s + ')';
+            sc.style.width = (w * s) + 'px';
+            sc.style.height = (h * s) + 'px';
+        }
+
+        // Keeps the preview in view while the (long) form scrolls on desktop.
+        // CSS sticky cannot be used here: the page's global `html, body {overflow-x:hidden}`
+        // makes <body> a scroll container, so sticky never engages. This is a passive,
+        // rAF-throttled translateY that never changes layout.
+        var pinQueued = false, desktopMQ = window.matchMedia ? window.matchMedia('(min-width: 1024px)') : null;
+        function pinPreview() {
+            pinQueued = false;
+            var col = el('cvPreviewCol');
+            if (!col) return;
+            if (!desktopMQ || !desktopMQ.matches) { col.style.transform = ''; return; }
+            var ws = col.parentElement, hdr = document.querySelector('body > header');
+            var gap = 12 + (hdr ? Math.max(0, hdr.getBoundingClientRect().bottom) : 0);
+            var push = Math.max(0, gap - ws.getBoundingClientRect().top);
+            var room = Math.max(0, ws.clientHeight - col.offsetHeight);
+            col.style.transform = push > 0 ? 'translateY(' + Math.round(Math.min(push, room)) + 'px)' : '';
+        }
+        function queuePin() {
+            if (pinQueued) return;
+            pinQueued = true;
+            requestAnimationFrame(pinPreview);
+        }
+
+        var pageObserver = null, ratios = {};
+        function observePages() {
+            if (pageObserver) pageObserver.disconnect();
+            ratios = {};
+            if (!('IntersectionObserver' in window)) return;
+            pageObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) { ratios[e.target.getAttribute('data-page')] = e.intersectionRatio; });
+                var best = currentPage, bv = -1;
+                Object.keys(ratios).forEach(function (k) { if (ratios[k] > bv) { bv = ratios[k]; best = +k; } });
+                if (best !== currentPage) { currentPage = best; updatePageInfo(); }
+            }, { threshold: [0, 0.25, 0.5, 0.75, 1] });
+            document.querySelectorAll('#cvPreview .cv-page').forEach(function (pg) { pageObserver.observe(pg); });
+        }
+        function updatePageInfo() {
+            var info = el('cvPageInfo');
+            if (info) info.textContent = pageCount === 1 ? '1 page · A4' : 'Page ' + currentPage + ' of ' + pageCount + ' · A4';
+            var prev = el('cvPrev'), next = el('cvNext');
+            if (prev) prev.disabled = currentPage <= 1;
+            if (next) next.disabled = currentPage >= pageCount;
+        }
+        function goPage(n) {
+            n = Math.max(1, Math.min(pageCount, n));
+            var pg = document.querySelector('#cvPreview .cv-page[data-page="' + n + '"]');
+            if (pg) pg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            currentPage = n;
+            updatePageInfo();
+        }
+
+        // --- PRINT / SAVE AS PDF (browser-native: real selectable text, vector output) ---
+        var savedTitle = null, titleTimer = null;
+        function restoreTitle() {
+            clearTimeout(titleTimer);
+            if (savedTitle !== null) { document.title = savedTitle; savedTitle = null; }
+        }
         function printCV() {
+            renderNow();
+            var nm = val('inpName');
+            if (nm && savedTitle === null) {
+                savedTitle = document.title;
+                document.title = nm + ' - Resume';
+                titleTimer = setTimeout(restoreTitle, 30000);
+            }
             window.print();
         }
         window.printCV = printCV;
 
-        // --- AI GRAMMAR & REWRITE HELPER ---
-        async function fixWithAI(targetId, btnElement) {
-            var textarea = targetId ? document.getElementById(targetId) : btnElement.parentElement.querySelector('textarea');
-            var originalText = textarea.value.trim();
-            if (!originalText) return;
+        // =====================================================================
+        // AI FIX (honest implementation)
+        // The original button never called any AI service: it ran a timer and
+        // collapsed all whitespace (merging every bullet into one line). This
+        // version is a local, rule-based proofreader: it works offline, sends
+        // nothing anywhere, keeps line breaks, and offers Undo.
+        // =====================================================================
+        var TYPOS = {
+            teh: 'the', recieve: 'receive', recieved: 'received', recieving: 'receiving', adress: 'address',
+            occured: 'occurred', occurence: 'occurrence', seperate: 'separate', seperately: 'separately',
+            definately: 'definitely', definitly: 'definitely', managment: 'management', enviroment: 'environment',
+            accomodate: 'accommodate', acheive: 'achieve', acheived: 'achieved', achivement: 'achievement',
+            acheivement: 'achievement', experiance: 'experience', responsibilty: 'responsibility',
+            sucessful: 'successful', sucessfully: 'successfully', succesful: 'successful', succesfully: 'successfully',
+            knowlege: 'knowledge', profesional: 'professional', proffesional: 'professional',
+            comunication: 'communication', comunicate: 'communicate', developement: 'development',
+            maintainance: 'maintenance', begining: 'beginning', wich: 'which', becuase: 'because', beacuse: 'because',
+            thier: 'their', untill: 'until', alot: 'a lot', dont: "don't", didnt: "didn't", cant: "can't",
+            wasnt: "wasn't", bussiness: 'business', buisness: 'business', inovative: 'innovative',
+            efficent: 'efficient', effecient: 'efficient', tecnical: 'technical', techincal: 'technical',
+            implimented: 'implemented', impliment: 'implement', anaylsis: 'analysis', resposible: 'responsible',
+            collaberate: 'collaborate', collaberation: 'collaboration'
+        };
+        var CASING = {
+            javascript: 'JavaScript', typescript: 'TypeScript', linkedin: 'LinkedIn', github: 'GitHub',
+            powerpoint: 'PowerPoint', wordpress: 'WordPress', mysql: 'MySQL', postgresql: 'PostgreSQL',
+            html: 'HTML', css: 'CSS', sql: 'SQL', seo: 'SEO', api: 'API', apis: 'APIs', aws: 'AWS', ui: 'UI', ux: 'UX'
+        };
+        var ABBREV = { etc: 1, inc: 1, ltd: 1, vs: 1, approx: 1, dept: 1, corp: 1, est: 1, mrs: 1, prof: 1, avg: 1, min: 1, max: 1 };
+        var KEEP_DOUBLE = { had: 1, that: 1 };
 
-            var btn = targetId ? document.querySelector(`button[onclick="fixWithAI('${targetId}')"]`) : btnElement;
-            var originalBtnText = btn.innerHTML;
-            
-            btn.innerHTML = '✨ Fixing...';
-            btn.disabled = true;
+        function matchCase(orig, rep) {
+            if (orig === orig.toLowerCase()) return rep;
+            if (orig === orig.toUpperCase() && orig.length > 1) return rep.toUpperCase();
+            if (orig.charAt(0) === orig.charAt(0).toUpperCase()) return rep.charAt(0).toUpperCase() + rep.slice(1);
+            return rep;
+        }
 
-            setTimeout(function() {
+        function fixLine(line) {
+            var s = line.replace(/[ \t\u00A0]+/g, ' ').trim();
+            if (!s) return '';
+            // Misspellings and tech-term casing (skips file names, emails, hashtags)
+            s = s.replace(/[A-Za-z]+(?:['\u2019][A-Za-z]+)?/g, function (w, off, str) {
+                var prev = str.charAt(off - 1), low = w.toLowerCase();
+                if (prev === '.' || prev === '/' || prev === '@' || prev === '-' || prev === '#' || prev === '_') return w;
+                if (str.charAt(off + w.length) === '.' && /[A-Za-z]/.test(str.charAt(off + w.length + 1))) return w;
+                if (Object.prototype.hasOwnProperty.call(TYPOS, low)) return matchCase(w, TYPOS[low]);
+                if (Object.prototype.hasOwnProperty.call(CASING, low) && w === low) return CASING[low];
+                return w;
+            });
+            // Accidentally repeated words ("the the")
+            s = s.replace(/\b([A-Za-z]{2,})\s+\1\b/gi, function (m, w) { return KEEP_DOUBLE[w.toLowerCase()] ? m : w; });
+            // Spacing around punctuation (leaves 1,000 / 10:30 / .NET / URLs alone)
+            s = s.replace(/\s+([,;:!?])/g, '$1').replace(/\s+\.(?=\s|$)/g, '.');
+            s = s.replace(/([,;])(?=[A-Za-z])/g, '$1 ');
+            s = s.replace(/([a-z]{2,}[.!?])(?=[A-Z][a-z]{3,})/g, '$1 ');
+            // Pronoun "i" -> "I"
+            s = s.replace(/\bi\b(?=['\u2019](?:m|ve|ll|d)\b|[\s,;:!?]|$)/g, 'I');
+            // Capital letter after a sentence end (not after abbreviations)
+            s = s.replace(/([A-Za-z]{3,})([.!?])(\s+)([a-z])/g, function (m, w, p, sp, c) {
+                return ABBREV[w.toLowerCase()] ? m : w + p + sp + c.toUpperCase();
+            });
+            // Capital letter at line start (not for brand names like iOS / eBay)
+            s = s.replace(/^([-\u2022*\u2013]\s*)?([a-z])/, function (m, mark, c) {
+                return /^[a-z]+[A-Z]/.test(s.replace(/^[-\u2022*\u2013]\s*/, '')) ? m : (mark || '') + c.toUpperCase();
+            });
+            return s;
+        }
+
+        function fixText(text, sentenceMode) {
+            var src = text.split(/\r?\n/);
+            var out = src.map(fixLine);
+            var filled = out.filter(Boolean);
+            var ends = filled.filter(function (l) { return /[.!?\u2026]$/.test(l); }).length;
+            var addStop = sentenceMode || (filled.length >= 2 && ends / filled.length >= 0.5);
+            if (addStop) {
+                out = out.map(function (l) { return l && !/[.!?\u2026:]$/.test(l) ? l + '.' : l; });
+            }
+            var changed = 0;
+            for (var i = 0; i < src.length; i++) if (src[i] !== out[i]) changed++;
+            return { text: out.join('\n'), changed: changed };
+        }
+
+        // --- Toast + Undo ---
+        var toastTimer = null, lastFix = null;
+        function hideToast() {
+            var t = el('cvToast');
+            if (t) t.hidden = true;
+            clearTimeout(toastTimer);
+        }
+        function showToast(msg, isError, undoable) {
+            var t = el('cvToast');
+            if (!t) return;
+            clearTimeout(toastTimer);
+            t.className = 'cv-toast' + (isError ? ' is-error' : '');
+            el('cvToastMsg').textContent = msg;
+            el('cvToastUndo').hidden = !undoable;
+            t.hidden = false;
+            toastTimer = setTimeout(hideToast, undoable ? 9000 : 4500);
+        }
+
+        function fixWithAI(targetId, btnElement) {
+            var textarea = targetId ? el(targetId) : (btnElement && btnElement.parentElement ? btnElement.parentElement.querySelector('textarea') : null);
+            var btn = btnElement || (targetId ? document.querySelector('[data-fix-for="' + targetId + '"]') : null);
+            if (!textarea) { showToast('Could not find the text field to fix.', true); return; }
+            if (btn && btn.getAttribute('data-busy') === '1') return;      // ignore repeated clicks
+            var original = textarea.value;
+            if (!original.trim()) { showToast('Nothing to fix yet - type some text first.', false); return; }
+
+            var label = btn ? btn.innerHTML : '';
+            if (btn) { btn.setAttribute('data-busy', '1'); btn.disabled = true; btn.innerHTML = '✨ Fixing...'; }
+            function finish(text) {
+                if (!btn) return;
+                btn.innerHTML = text;
+                setTimeout(function () { btn.innerHTML = label; btn.disabled = false; btn.removeAttribute('data-busy'); }, 1200);
+            }
+            // Let the browser paint the loading state before doing the work.
+            setTimeout(function () {
                 try {
-                    let corrected = originalText.replace(/\s+/g, ' ').trim();
-                    if (corrected.length > 0) {
-                        corrected = corrected.charAt(0).toUpperCase() + corrected.slice(1);
-                        if (!/[.!?]$/.test(corrected)) {
-                            corrected += '.';
-                        }
+                    var res = fixText(original, textarea.id === 'inpSummary');
+                    if (res.text === original) {
+                        showToast('Looks good - no changes needed.', false);
+                        finish('✓ Looks good');
+                    } else {
+                        textarea.value = res.text;
+                        lastFix = { node: textarea, prev: original };
+                        scheduleUpdate();
+                        showToast('Improved ' + res.changed + (res.changed === 1 ? ' line.' : ' lines.'), false, true);
+                        finish('✅ Fixed!');
                     }
-                    textarea.value = corrected;
-                    updateCV();
-
-                    btn.innerHTML = '✅ Fixed!';
-                    setTimeout(function() { btn.innerHTML = originalBtnText; btn.disabled = false; }, 1500);
-                } catch (e) {
-                    btn.innerHTML = '❌ Failed';
-                    setTimeout(function() { btn.innerHTML = originalBtnText; btn.disabled = false; }, 1500);
+                } catch (err) {
+                    showToast('AI Fix failed. Your text was not changed.', true);
+                    finish('❌ Failed');
                 }
-            }, 500);
+            }, 40);
         }
         window.fixWithAI = fixWithAI;
 
-        // Initialize
-        addExperience();
-        addEducation();
-        updateCV();
+        // --- INIT (listeners are registered exactly once) ---
+        function init() {
+            el('cvPrev').addEventListener('click', function () { goPage(currentPage - 1); });
+            el('cvNext').addEventListener('click', function () { goPage(currentPage + 1); });
+            el('cvZoom').addEventListener('click', function () {
+                zoomFull = !zoomFull;
+                this.setAttribute('aria-pressed', zoomFull ? 'true' : 'false');
+                this.textContent = zoomFull ? '🔍 Fit to width' : '🔍 Actual size';
+                rescale();
+            });
+            el('cvToastUndo').addEventListener('click', function () {
+                if (lastFix && lastFix.node) { lastFix.node.value = lastFix.prev; scheduleUpdate(); }
+                lastFix = null;
+                hideToast();
+            });
+            if ('ResizeObserver' in window) {
+                var raf = 0;
+                new ResizeObserver(function () { cancelAnimationFrame(raf); raf = requestAnimationFrame(rescale); }).observe(el('cvViewport'));
+            } else {
+                window.addEventListener('resize', rescale);
+            }
+            window.addEventListener('scroll', queuePin, { passive: true });
+            window.addEventListener('resize', queuePin);
+            window.addEventListener('beforeprint', function () { var c = el('cvPreviewCol'); if (c) c.style.transform = ''; renderNow(); });
+            window.addEventListener('afterprint', restoreTitle);
+            if (document.fonts && document.fonts.ready) {
+                document.fonts.ready.then(function () { lastSig = null; renderNow(); });
+            }
+            addExperience();
+            addEducation();
+            renderNow();
+        }
+        init();
 
     })();
     </script>
