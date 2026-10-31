@@ -30,7 +30,7 @@
             --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
             --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
         }
-        html, body { overflow-x: hidden; max-width: 100vw; scroll-behavior: smooth; }
+        html, body { overflow-x: clip; max-width: 100vw; scroll-behavior: smooth; }
         body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
         header { padding-top: env(safe-area-inset-top, 0); }
         .surface { background: var(--card); border: 1px solid var(--card-border); }
@@ -121,7 +121,7 @@
             <div class="border-t pt-6" style="border-color: var(--card-border);">
                 <h2 class="text-lg font-bold mb-2" style="color: var(--text);">Cookies and Google AdSense</h2>
                 <p class="text-sm leading-relaxed muted mb-2">
-                    Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to our website or other websites on the internet. Google's use of advertising cookies enables it and its partners to serve ads to users based on their interaction with our platform.
+                     While our tools never transmit your inputs to any server, third-party vendors, including Google, do use cookies to serve ads based on your prior visits to this website or other websites on the internet. Google's use of advertising cookies enables it and its partners to serve ads to you based on your interaction with our platform.
                 </p>
                 <p class="text-sm leading-relaxed muted">
                     Users may opt out of personalized advertising by visiting <a href="https://adssettings.google.com" target="_blank" class="text-indigo-500 font-bold hover:underline">Google Ads Settings</a> or <a href="https://www.aboutads.info" target="_blank" class="text-indigo-500 font-bold hover:underline">AboutAds.info</a>.

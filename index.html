@@ -69,7 +69,7 @@
             --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
             --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
         }
-        html, body { overflow-x: hidden; max-width: 100vw; scroll-behavior: smooth; }
+        html, body { overflow-x: clip; max-width: 100vw; scroll-behavior: smooth; }
         body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
         header { padding-top: env(safe-area-inset-top, 0); }
         .surface { background: var(--card); border: 1px solid var(--card-border); }
@@ -159,10 +159,12 @@
             <h1 class="text-3xl sm:text-4xl md:text-5xl font-black mb-3 tracking-tight leading-tight" style="color: var(--text);">
                 Free Online Utility Tools, AI Prompts & CV Suite
             </h1>
+
             <p class="text-sm md:text-base max-w-xl mx-auto font-medium mb-6 muted">
                 Fast, secure, professional client-side tools organized for writers, creators, developers, and job seekers.
             </p>
-            
+
+                        
             <!-- GLOBAL SMART SEARCH BAR -->
             <div class="max-w-xl mx-auto relative">
                 <div class="relative flex items-center">
@@ -287,6 +289,16 @@
                 <div><div class="font-bold text-sm" style="color: var(--text);">Color Converter</div><div class="text-xs muted">HEX, RGB & Names</div></div>
             </a>
         </div>
+
+        <!-- PRIVACY / ABOUT SECTION (Moved to bottom) -->
+        <div class="max-w-3xl mx-auto mt-16 mb-8 p-6 sm:p-8 rounded-3xl text-center" style="background: var(--chip-bg); border: 1px solid var(--card-border);">
+            <h3 class="text-lg font-bold mb-3" style="color: var(--text);">🔒 Why We Built MyToolX</h3>
+            <p class="text-sm sm:text-base leading-relaxed muted">
+                Every tool on this site runs entirely in your browser. Your resume, your images, your text, and your financial data never touch a server. We built these tools because we were tired of uploading sensitive files to websites that stored them, logged them, or sold them. You can use everything here offline, and nothing is ever saved.
+            </p>
+        </div>
+
+    </main>
 
     </main>
 

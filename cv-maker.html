@@ -47,12 +47,12 @@
       "description": "Free, privacy-first resume builder that generates professional PDF CVs entirely in your browser. No sign-up, no tracking, no data uploads.",
       "featureList": [
         "Live A4 PDF preview",
-        "Modern two-column resume layout",
-        "AI-powered grammar and spelling correction",
-        "100% client-side processing",
-        "No sign-up required",
-        "ATS-friendly formatting"
-      ]
+  "Modern two-column resume layout",
+  "Built-in quick proofreading for grammar and spelling",
+  "100% client-side processing",
+  "No sign-up required",
+  "ATS-conscious formatting"
+]
     }
     </script>
     <script type="application/ld+json">
@@ -77,8 +77,8 @@
         },
         {
           "@type": "Question",
-          "name": "Is the resume ATS-friendly?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The modern two-column layout uses clean semantic text with no images, icons, or tables in the content area, ensuring maximum ATS compatibility." }
+  "name": "Is the resume ATS-friendly?",
+  "acceptedAnswer": { "@type": "Answer", "text": "The layout is designed with ATS best practices in mind: clean semantic text, no images, icons, or tables in the content area. Because ATS platforms differ, we recommend testing your finished PDF with your target employer's system or a free ATS checker before applying." }
         },
         {
           "@type": "Question",
@@ -113,7 +113,7 @@
             --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
             --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
         }
-        html, body { overflow-x: hidden; max-width: 100vw; scroll-behavior: smooth; }
+        html, body { overflow-x: clip; max-width: 100vw; scroll-behavior: smooth; }
         body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
         header { padding-top: env(safe-area-inset-top, 0); }
         .surface { background: var(--card); border: 1px solid var(--card-border); }
@@ -326,7 +326,7 @@
                     <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
                         <div class="flex justify-between items-center mb-3">
                             <h2 class="text-sm font-bold uppercase tracking-wider" style="color: var(--primary);">2. Summary</h2>
-                            <button type="button" data-fix-for="inpSummary" onclick="fixWithAI('inpSummary', this)" class="text-[10px] font-bold text-indigo-500 hover:text-indigo-700 bg-indigo-50 px-2 py-1 rounded-md border border-indigo-100 flex items-center gap-1">✨ AI Fix</button>
+                            <button type="button" data-fix-for="inpSummary" onclick="fixWithAI('inpSummary', this)" class="text-[10px] font-bold text-indigo-500 hover:text-indigo-700 bg-indigo-50 px-2 py-1 rounded-md border border-indigo-100 flex items-center gap-1">✨ Quick Proofread</button>
                         </div>
                         <textarea id="inpSummary" oninput="updateCV()" rows="3" aria-label="Professional summary" placeholder="Brief overview of your experience..." class="input-field w-full p-3 rounded-xl text-sm" autocomplete="off"></textarea>
                     </div>
@@ -408,11 +408,11 @@
             </header>
 
             <p>
-                Your resume is often the first impression a recruiter gets of you — and in a market where a single job posting can receive 250+ applications, the quality of your CV determines whether you land the interview or get silently filtered out by an Applicant Tracking System (ATS). The <strong>MyToolX Resume Builder</strong> is a free, browser-based <strong>CV maker</strong> that lets you create a polished, recruiter-ready resume in minutes — no sign-up, no subscription, and no data ever uploaded to a server.
+                Your resume is often the first impression a recruiter gets of you and in a market where a single job posting can receive 250+ applications, the quality of your CV determines whether you land the interview or get silently filtered out by an Applicant Tracking System (ATS). The <strong>MyToolX Resume Builder</strong> is a free, browser-based <strong>CV maker</strong> that lets you create a polished, recruiter-ready resume in minutes - no sign-up, no subscription, and no data ever uploaded to a server.
             </p>
 
             <p>
-                Whether you're a fresh graduate writing your first <strong>entry-level resume</strong>, a mid-career professional updating your <strong>LinkedIn CV</strong>, or a freelancer pitching for international clients, this tool gives you a modern two-column layout, live PDF preview, and one-click AI-powered grammar correction — all inside your browser.
+                Whether you're a fresh graduate writing your first <strong>entry-level resume</strong>, a mid-career professional updating your <strong>LinkedIn CV</strong>, or a freelancer pitching for international clients, this tool gives you a modern two-column layout, live PDF preview, and one-click AI-powered grammar correction - all inside your browser.
             </p>
 
             <h2>Why Use MyToolX Resume Builder?</h2>
@@ -420,15 +420,15 @@
                 <li><strong>100% free, no hidden paywalls.</strong> Unlike Canva, Zety, or Resume.io, MyToolX never asks for a credit card, and there are no premium templates locked behind a paywall.</li>
                 <li><strong>Complete privacy.</strong> Every keystroke stays in your browser's memory. Your name, address, phone number, and work history are <em>never</em> transmitted to any server — perfect for privacy-conscious job seekers.</li>
                 <li><strong>Live A4 PDF preview.</strong> See exactly how your resume will print in real time, with page-break protection so your experience blocks never split awkwardly.</li>
-                <li><strong>AI-powered grammar fix.</strong> A built-in "AI Fix" button rewrites your summary and bullet points using LanguageTool, eliminating typos and awkward phrasing.</li>
-                <li><strong>ATS-friendly formatting.</strong> The clean two-column layout uses semantic text, no images, no text boxes, and no tables in the content area — maximizing compatibility with Workday, Greenhouse, Taleo, Lever, and iCIMS.</li>
+                <li><strong>Built-in quick proofreading.</strong> A one-click "Quick Proofread" button cleans up common typos, repeated words, punctuation spacing, and capitalization in your summary and bullet points — entirely offline in your browser.</li>
+                <li><strong>ATS-conscious formatting.</strong> The clean two-column layout uses semantic text, no images, no text boxes, and no tables in the content area — designed with parsers like Workday, Greenhouse, Taleo, Lever, and iCIMS in mind. Always test your final PDF with your target system.</li>
                 <li><strong>No sign-up required.</strong> Just fill in the form and click Save PDF. That's it.</li>
             </ul>
 
             <h2>How to Use the Resume Builder (Step-by-Step)</h2>
             <ol>
                 <li><strong>Enter your personal details.</strong> Start with your full name, a clear professional title (e.g., "Senior Accountant" or "Full-Stack Developer"), email, phone, and city.</li>
-                <li><strong>Write a punchy summary.</strong> Use 2–3 sentences to highlight your years of experience, core expertise, and biggest achievement. Click <em>✨ AI Fix</em> to polish your grammar instantly.</li>
+                <li><strong>Write a punchy summary.</strong> Use 2–3 sentences to highlight your years of experience, core expertise, and biggest achievement. Click <em>✨ Quick Proofread</em> to polish your grammar instantly.</li>
                 <li><strong>Add your work experience.</strong> For each role, include the job title, company name, dates, and 2–4 achievement-focused bullet points (not responsibilities).</li>
                 <li><strong>List your education.</strong> Include your degree, university/school name, and graduation year. Recent graduates can list education before experience.</li>
                 <li><strong>Add skills, certifications, and languages.</strong> Keep skills relevant to the job — a hiring manager scanning your CV should see the keywords from the job description within 3 seconds.</li>
@@ -473,7 +473,7 @@
 
             <h3>5. Proofread before sending</h3>
             <p>
-                A single typo can cost you the interview. Use the built-in <em>AI Fix</em> button, or paste your final text into our <a href="text-suite.html">Word Counter</a> to check length and readability, and double-check that every date, job title, and company name matches your LinkedIn profile.
+                A single typo can cost you the interview. Use the built-in <em>Quick Proofread</em> button, or paste your final text into our <a href="text-suite.html">Word Counter</a> to check length and readability, and double-check that every date, job title, and company name matches your LinkedIn profile.
             </p>
 
             <h2>Frequently Asked Questions</h2>
@@ -494,9 +494,9 @@
             </div>
 
             <div class="faq-item">
-                <p class="faq-q">Is the resume ATS-friendly?</p>
-                <p>Yes. The modern two-column layout uses clean semantic text with no images, icons, or tables in the content area, ensuring maximum ATS compatibility with platforms like Workday, Greenhouse, Taleo, Lever, and iCIMS.</p>
-            </div>
+    <p class="faq-q">Is the resume ATS-friendly?</p>
+    <p>The layout is designed with ATS best practices in mind: clean semantic text, no images, icons, or tables in the content area. That said, ATS platforms differ (Workday, Greenhouse, Taleo, Lever, iCIMS all parse differently), so we recommend testing your finished PDF with your target employer's system or a free ATS checker before you apply.</p>
+</div>
 
             <div class="faq-item">
                 <p class="faq-q">Do I need to create an account to save my resume?</p>
@@ -649,7 +649,7 @@
                     <input type="text" class="exp-dates input-field w-full p-2 rounded-lg text-xs" placeholder="Dates (e.g. Jan 2020 - Present)" aria-label="Employment dates" value="${escapeHTML(data.dates)}" oninput="updateCV()">
                     <div class="relative">
                         <textarea class="exp-desc input-field w-full p-2 rounded-lg text-xs" rows="2" placeholder="Describe your achievements (one per line)..." aria-label="Job achievements, one per line" oninput="updateCV()">${escapeHTML(data.desc)}</textarea>
-                        <button type="button" onclick="fixWithAI(null, this)" class="absolute bottom-2 right-2 text-[9px] font-bold text-indigo-500 bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-100">✨ AI Fix</button>
+                        <button type="button" onclick="fixWithAI(null, this)" class="absolute bottom-2 right-2 text-[9px] font-bold text-indigo-500 bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-100">✨ Quick Proofread</button>
                     </div>
                 </div>
             `;
@@ -1033,11 +1033,7 @@
         window.printCV = printCV;
 
         // =====================================================================
-        // AI FIX (honest implementation)
-        // The original button never called any AI service: it ran a timer and
-        // collapsed all whitespace (merging every bullet into one line). This
-        // version is a local, rule-based proofreader: it works offline, sends
-        // nothing anywhere, keeps line breaks, and offers Undo.
+                // --- Quick Proofread (Local Rule-Based) ---: 
         // =====================================================================
         var TYPOS = {
             teh: 'the', recieve: 'receive', recieved: 'received', recieving: 'receiving', adress: 'address',
