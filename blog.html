@@ -99,6 +99,7 @@
         /* Blog Specific Styles */
         .blog-content h2 { font-size: 1.5rem; font-weight: 800; margin-top: 2rem; margin-bottom: 1rem; color: var(--text); border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; }
         .blog-content h3 { font-size: 1.25rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--text); }
+        .blog-content h4 { font-size: 1.1rem; font-weight: 700; margin-top: 1.25rem; margin-bottom: 0.5rem; color: var(--text); }
         .blog-content p { margin-bottom: 1rem; line-height: 1.7; color: var(--text-muted); }
         .blog-content ul, .blog-content ol { margin: 0 0 1rem 1.5rem; line-height: 1.7; color: var(--text-muted); font-size: 0.95rem; }
         .blog-content li { margin-bottom: 0.4rem; list-style: disc; }
@@ -106,6 +107,9 @@
         .blog-content a { color: var(--primary); font-weight: 600; text-decoration: underline; }
         .blog-content a:hover { color: var(--primary-hover); }
         .blog-content strong { color: var(--text); }
+        /* Prevents links inside blog text from underlining the whole block */
+        .blog-content p a { text-decoration: underline; }
+        .blog-content p { text-decoration: none; } 
         
         /* Sidebar Sticky */
         .sticky-sidebar { position: sticky; top: 100px; max-height: calc(100vh - 120px); overflow-y: auto; }
@@ -174,6 +178,7 @@
                                 <li><a href="#ai-guide" class="hover:text-indigo-500 block py-1">🤖 AI Prompt Studio</a></li>
                                 <li><a href="#bio-guide" class="hover:text-indigo-500 block py-1">✨ AI Bio Generator</a></li>
                                 <li><a href="#outline-guide" class="hover:text-indigo-500 block py-1">📑 Article Outline Gen</a></li>
+                                <li><a href="#love-guide" class="hover:text-indigo-500 block py-1">❤️ Love Calculator</a></li>
                             </ul>
                         </div>
                         <div>
@@ -207,7 +212,7 @@
             <!-- MAIN CONTENT -->
             <div class="lg:col-span-8">
                 <div class="surface rounded-3xl shadow-xl p-6 sm:p-10 mb-10">
-                                        <h1 class="text-3xl sm:text-4xl font-black mb-4" style="color: var(--text);">MyToolX Guides & Articles</h1>
+                    <h1 class="text-3xl sm:text-4xl font-black mb-4" style="color: var(--text);">MyToolX Guides & Articles</h1>
                     <p class="text-base muted leading-relaxed mb-4">
                         Welcome to the MyToolX blog. Here, we share practical guides on how to use our tools to boost your productivity, improve your writing, and manage your freelance business.
                     </p>
@@ -233,6 +238,7 @@
                                 <a href="#ai-guide" onclick="closeMobileMenu('🤖 AI Prompt Studio')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">🤖 AI Prompt Studio</a>
                                 <a href="#bio-guide" onclick="closeMobileMenu('✨ AI Bio Generator')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">✨ AI Bio Generator</a>
                                 <a href="#outline-guide" onclick="closeMobileMenu('📑 Article Outline Gen')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">📑 Article Outline Gen</a>
+                                <a href="#love-guide" onclick="closeMobileMenu('❤️ Love Calculator')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">❤️ Love Calculator</a>
                                 <a href="#cv-guide" onclick="closeMobileMenu('📄 CV Writing Guide & Builder')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">📄 CV Writing Guide & Builder</a>
                                 <a href="#grammar-guide" onclick="closeMobileMenu('📝 Grammar Checker')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">📝 Grammar Checker</a>
                                 <a href="#text-guide" onclick="closeMobileMenu('✍️ Text & Word Suite')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">✍️ Text & Word Suite</a>
@@ -283,9 +289,42 @@
                                 <p>Your bio is often the first thing a client or recruiter reads. It needs to instantly communicate who you are and what you do, while staying within strict character limits. Our <a href="ai-bio-generator.html">AI Bio Generator</a> analyzes your skills and generates highly professional bios for LinkedIn, X, and Instagram.</p>
                             </article>
 
-                            <article id="outline-guide" class="scroll-mt-24">
+                            <article id="outline-guide" class="scroll-mt-24 mb-8">
                                 <h3 class="text-xl font-bold mb-2" style="color: var(--text);">📑 Planning an Article Outline That Works</h3>
                                 <p>An outline is the skeleton of an article. Writing it first keeps you on topic and saves editing time later. Our <a href="article-outline.html">Article Outline Generator</a> reads your topic and builds a matching H1/H2/H3 structure, ensuring you never stare at a blank page again.</p>
+                            </article>
+
+                            <article id="love-guide" class="scroll-mt-24">
+                                <h3 class="text-xl font-bold mb-2" style="color: var(--text);">❤️ The Science of Love: How Numerology Compatibility Works</h3>
+                                <p class="text-xs muted mb-4">Last updated: 2026 · Reading time: ~4 minutes</p>
+                                
+                                <p>Have you ever met someone and instantly felt a spark, as if you had known them for years? Or the opposite, where you clash on every little thing? While psychologists study attachment styles and shared values, numerologists believe the answer lies in the letters of your names.</p>
+                                
+                                <p>Our <a href="love-calculator.html">Love Compatibility Calculator</a> uses Pythagorean numerology to analyze the vibrational frequencies of your names. It is a fun, entertaining way to look at relationship dynamics, and it takes just seconds to try.</p>
+
+                                <h4 class="font-bold text-base mt-4 mb-2" style="color: var(--text);">What is Pythagorean Numerology?</h4>
+                                <p>Pythagoras, the ancient Greek philosopher and mathematician, believed that everything in the universe could be reduced to numbers. In numerology, every letter of the alphabet corresponds to a number from 1 to 9. When your name is written, it creates a unique mathematical sequence.</p>
+                                <p>By comparing the sequence of your name with your partner's name, our tool calculates two main numbers:</p>
+                                <ul>
+                                    <li><strong>The Expression Number:</strong> Derived from the consonants in your name. It represents your outer personality and how you approach the world.</li>
+                                    <li><strong>The Soul Urge Number:</strong> Derived from the vowels. It represents your inner desires, emotional needs, and what truly motivates you.</li>
+                                </ul>
+                                <p>When two people have names that create harmonious numbers, numerology suggests they are naturally aligned. If the numbers clash, the relationship might require more conscious effort and communication.</p>
+
+                                <h4 class="font-bold text-base mt-4 mb-2" style="color: var(--text);">Should You Base Your Relationship on a Score?</h4>
+                                <p>Absolutely not. A 99% match does not guarantee a perfect marriage, and a 60% match does not mean a relationship is doomed. A love calculator is meant to be a fun conversation starter. It gives you a playful way to talk about your relationship, your strengths, and the areas where you might grow together.</p>
+                                
+                                <p>Real love is built on trust, patience, mutual respect, and healthy communication. But there is nothing wrong with seeing what the stars (and the numbers) have to say! Try our <a href="love-calculator.html">Free Love Calculator</a> and see if you and your partner are a "Soulmate" match.</p>
+
+                                <div class="faq-item" style="border-bottom: 1px solid var(--card-border); padding: 0.75rem 0;">
+                                    <p class="font-bold">Is the Love Calculator accurate?</p>
+                                    <p>It uses real Pythagorean numerology math to calculate your compatibility based on your names. However, it is designed for entertainment and fun, not as a professional relationship assessment.</p>
+                                </div>
+                                
+                                <div class="faq-item" style="padding: 0.75rem 0;">
+                                    <p class="font-bold">Do I need to enter my date of birth?</p>
+                                    <p>No. Our calculator relies purely on the vibrational frequency of your names, which makes it incredibly fast and easy to use without needing personal data.</p>
+                                </div>
                             </article>
                         </div>
 
@@ -296,36 +335,30 @@
                             <article id="cv-guide" class="scroll-mt-24 mb-8">
                                 <h3 class="text-xl font-bold mb-2" style="color: var(--text);">📄 How to Build a Professional Resume in 2026 (Free ATS-Friendly CV Maker)</h3>
                                 <p class="text-xs muted mb-4">Last updated: 2026 · Reading time: ~8 minutes</p>
-<p><strong>Use the live tool here:</strong> <a href="cv-maker.html">build a free resume with a live PDF preview</a>.</p>
+                                <p><strong>Use the live tool here:</strong> <a href="cv-maker.html">build a free resume with a live PDF preview</a>.</p>
 
+                                <p>In today's competitive job market, your resume is your most important asset. With 75% of resumes rejected by Applicant Tracking Systems (ATS) before a human ever sees them, you need a CV that is both beautifully designed and technically optimized. The <a href="cv-maker.html">MyToolX free resume builder</a> solves this by providing a privacy-first platform to generate clean PDFs.</p>
 
-                                <p>In today's competitive job market, your resume is your most important asset. With 75% of resumes rejected by Applicant Tracking Systems (ATS) before a human ever sees them, you need a CV that is both beautifully designed and technically optimized. The <a href="cv-maker.html">MyToolX free resume builder</a> solves this by providing a privacy-first platform to generate clean PDFs.
+ <h3 class="text-xl font-bold mt-6 mb-3" style="color: var(--text);">What makes an ATS-Friendly Resume?</h3>
+                                <p>Applicant Tracking Systems are software used by recruiters to filter applications. They scan for keywords, standard headings, and clean formatting. To pass the ATS, your resume must avoid complex tables, images, and creative fonts. Our builder uses a clean, semantic text layout with standard headings such as Experience, Education, and Skills. It is designed with ATS best practices in mind, but because platforms like Workday and Greenhouse parse differently, we recommend testing your finished PDF with your target employer's system before you apply.</p>
 
-                                <h3>What makes an ATS-Friendly Resume?</h3>
-                                <p>
-Applicant Tracking Systems are software used by recruiters to filter applications. They scan for keywords, standard headings, and clean formatting. To pass the ATS, your resume must avoid complex tables, images, and creative fonts. Our builder uses a clean, semantic text layout with standard headings such as Experience, Education, and Skills. It is designed with ATS best practices in mind, but because platforms like Workday and Greenhouse parse differently, we recommend testing your finished PDF with your target employer's system before you apply.
-</p>
+<h3 class="text-xl font-bold mt-6 mb-3" style="color: var(--text);">Why use a Client-Side CV Maker?</h3>
+                                <p>Most online resume builders require you to create an account and store your personal data (phone number, address, employment history) on their servers. MyToolX is different. Our tool runs entirely in your browser using JavaScript. Your data <strong>never leaves your device</strong>, making it the most private way to build a CV.</p>
 
-                               <h3>Why use a Client-Side CV Maker?</h3>
-                               <p>Most online resume builders require you to create an account and store your personal data (phone number, address, employment history) on their servers. MyToolX is different. Our tool runs entirely in your browser using JavaScript. Your data <strong>never leaves your device</strong>, making it the most private way to build a CV.</p>
-
-                                <h3>Why Use MyToolX Resume Builder?</h3>
-                                <ul>
+                                <h3 class="text-xl font-bold mt-6 mb-3" style="color: var(--text);">Why Use MyToolX Resume Builder?</h3>
+                                <ul class="list-disc pl-5 mb-4 space-y-2">
                                     <li><strong>100% free, no hidden paywalls.</strong> Unlike Canva, Zety, or Resume.io, MyToolX never asks for a credit card, and there are no premium templates locked behind a paywall.</li>
                                     <li><strong>Complete privacy.</strong> Every keystroke stays in your browser's memory. Your name, address, phone number, and work history are <em>never</em> transmitted to any server — perfect for privacy-conscious job seekers.</li>
                                     <li><strong>Live A4 PDF preview.</strong> See exactly how your resume will print in real time, with page-break protection so your experience blocks never split awkwardly.</li>
                                     <li><strong>Built-in quick proofreading.</strong> A one click Quick Proofread button cleans up common typos, repeated words, punctuation spacing, and capitalization in your summary and bullet points. It runs entirely offline in your browser and never sends your text anywhere.</li>
-
                                     <li><strong>ATS conscious formatting.</strong> The clean two column layout uses semantic text, no images, no text boxes, and no tables in the content area. It is designed with parsers like Workday, Greenhouse, Taleo, Lever, and iCIMS in mind. Always test your final PDF with your target system before you apply.</li>
-
                                     <li><strong>No sign-up required.</strong> Just fill in the form and click Save PDF. That's it.</li>
                                 </ul>
 
-                                <h3>How to Use the Resume Builder (Step-by-Step)</h3>
-                                <ol>
+                                <h3 class="text-xl font-bold mt-6 mb-3" style="color: var(--text);">How to Use the Resume Builder (Step-by-Step)</h3>
+                                <ol class="list-decimal pl-5 mb-4 space-y-2">
                                     <li><strong>Enter your personal details.</strong> Start with your full name, a clear professional title (e.g., "Senior Accountant" or "Full-Stack Developer"), email, phone, and city.</li>
                                     <li><strong>Write a punchy summary.</strong> Use 2 to 3 sentences to highlight your years of experience, core expertise, and biggest achievement. Click <em>✨ Quick Proofread</em> to polish your grammar instantly.</li>
-
                                     <li><strong>Add your work experience.</strong> For each role, include the job title, company name, dates, and 2–4 achievement-focused bullet points (not responsibilities).</li>
                                     <li><strong>List your education.</strong> Include your degree, university/school name, and graduation year. Recent graduates can list education before experience.</li>
                                     <li><strong>Add skills, certifications, and languages.</strong> Keep skills relevant to the job — a hiring manager scanning your CV should see the keywords from the job description within 3 seconds.</li>
@@ -333,11 +366,9 @@ Applicant Tracking Systems are software used by recruiters to filter application
                                     <li><strong>Download as PDF.</strong> Click <em>🖨️ Save PDF</em>, then choose "Save as PDF" in the print dialog. You'll get a high-resolution, ATS-parseable file ready to submit.</li>
                                 </ol>
 
-                                <h3>How to Make Your Resume ATS-Friendly</h3>
-                                <p>
-                                    Applicant Tracking Systems are the first readers of every CV. If your resume isn't ATS-friendly, it may be rejected before a human ever sees it. Follow these rules:
-                                </p>
-                                <ul>
+                                <h3 class="text-xl font-bold mt-6 mb-3" style="color: var(--text);">How to Make Your Resume ATS-Friendly</h3>
+                                <p>Applicant Tracking Systems are the first readers of every CV. If your resume isn't ATS-friendly, it may be rejected before a human ever sees it. Follow these rules:</p>
+                                <ul class="list-disc pl-5 mb-4 space-y-2">
                                     <li><strong>Use a clean, single-flow layout.</strong> Our builder's two-column design keeps the main content in a single text flow, which most modern ATS parsers handle well.</li>
                                     <li><strong>Avoid graphics, icons, and photos.</strong> ATS software cannot read images — keep your resume image-free.</li>
                                     <li><strong>Use standard section headings.</strong> "Experience," "Education," and "Skills" are recognized universally. Avoid creative names like "My Journey" or "Career Story."</li>
@@ -345,35 +376,26 @@ Applicant Tracking Systems are software used by recruiters to filter application
                                     <li><strong>Save as PDF (not DOCX).</strong> PDF preserves your formatting and is now the preferred format for 80%+ of ATS platforms.</li>
                                 </ul>
 
-                                <h3>Resume Writing Tips That Get You Interviews</h3>
-                                <h4>1. Lead with achievements, not duties</h4>
-                                <p>
-                                    Weak: <em>"Responsible for managing social media accounts."</em><br>
-                                    Strong: <em>"Grew Instagram following by 45% in 6 months by launching a weekly video series."</em><br>
-                                    The second bullet uses a number and a result — exactly what recruiters want to see.
-                                </p>
+                                <h3 class="text-xl font-bold mt-6 mb-3" style="color: var(--text);">Resume Writing Tips That Get You Interviews</h3>
+                                
+                                <h4 class="font-bold text-base mt-4 mb-2" style="color: var(--text);">1. Lead with achievements, not duties</h4>
+                                <p>Weak: <em>"Responsible for managing social media accounts."</em><br>
+                                Strong: <em>"Grew Instagram following by 45% in 6 months by launching a weekly video series."</em><br>
+                                The second bullet uses a number and a result — exactly what recruiters want to see.</p>
 
-                                <h4>2. Quantify everything you can</h4>
-                                <p>
-                                    "Improved sales" is forgettable. But if you managed a team of five, say so. If you cut a process from three days to one, say that. The number matters less than the fact that you measured something real. Even if you do not have exact figures, approximate numbers and clear scope significantly strengthen bullet points. The goal is not to invent impressive statistics. The goal is to show scale and impact using whatever real numbers you actually have.
-                                </p>
+                                <h4 class="font-bold text-base mt-4 mb-2" style="color: var(--text);">2. Quantify everything you can</h4>
+                                <p>"Improved sales" is forgettable. But if you managed a team of five, say so. If you cut a process from three days to one, say that. The number matters less than the fact that you measured something real. Even if you do not have exact figures, approximate numbers and clear scope significantly strengthen bullet points. The goal is not to invent impressive statistics. The goal is to show scale and impact using whatever real numbers you actually have.</p>
 
-                                <h4>3. Tailor your resume to every job</h4>
-                                <p>
-                                    Recruiters can tell when a resume is generic. Spend 5 minutes reordering your bullet points and skills for each application, and you'll roughly double your response rate.
-                                </p>
+                                <h4 class="font-bold text-base mt-4 mb-2" style="color: var(--text);">3. Tailor your resume to every job</h4>
+                                <p>Recruiters can tell when a resume is generic. Spend 5 minutes reordering your bullet points and skills for each application, and you'll roughly double your response rate.</p>
 
-                                <h4>4. Keep it to one or two pages</h4>
-                                <p>
-                                    Unless you have 10+ years of experience, one page is ideal. If you must go to two pages, ensure the second page is at least 50% full.
-                                </p>
+                                <h4 class="font-bold text-base mt-4 mb-2" style="color: var(--text);">4. Keep it to one or two pages</h4>
+                                <p>Unless you have 10+ years of experience, one page is ideal. If you must go to two pages, ensure the second page is at least 50% full.</p>
 
-                                <h4>5. Proofread before sending</h4>
-                                <p>
-                                    A single typo can cost you the interview. Use the built in <em>Quick Proofread</em> button, or paste your final text into our <a href="text-suite.html">Word Counter</a> to check length and readability. Then double check that every date, job title, and company name matches your LinkedIn profile.
-                                </p>
+                                <h4 class="font-bold text-base mt-4 mb-2" style="color: var(--text);">5. Proofread before sending</h4>
+                                <p>A single typo can cost you the interview. Use the built in <em>Quick Proofread</em> button, or paste your final text into our <a href="text-suite.html">Word Counter</a> to check length and readability. Then double check that every date, job title, and company name matches your LinkedIn profile.</p>
 
-                                <h3>Frequently Asked Questions</h3>
+                                <h3 class="text-xl font-bold mt-6 mb-3" style="color: var(--text);">Frequently Asked Questions</h3>
 
                                 <div class="faq-item" style="border-bottom: 1px solid var(--card-border); padding: 0.75rem 0;">
                                     <p class="font-bold">Is this resume builder really free?</p>
@@ -509,7 +531,8 @@ Applicant Tracking Systems are software used by recruiters to filter application
                         <a href="ai-bio-generator.html">AI Bio Generator</a>
                         <a href="article-outline.html">Article Outline</a>
                         <a href="cv-maker.html">Resume Builder</a>
-
+                        <a href="love-calculator.html">Love Calculator</a>
+                        <a href="color-converter.html">Color Converter</a>
                     </div>
                 </div>
                 <div class="lg:col-span-3">

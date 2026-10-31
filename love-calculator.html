@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Love Compatibility Calculator — Numerology Match | MyToolX</title>
+    <meta name="description" content="Calculate your love compatibility score using our free name numerology calculator. Discover your relationship strengths, flaws, and compatibility insights instantly.">
+    <link rel="canonical" href="https://mytoolx.org/love-calculator.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:title" content="Love Compatibility Calculator | MyToolX">
+    <meta property="og:description" content="Calculate your love compatibility score using numerology.">
+    <meta property="og:url" content="https://mytoolx.org/love-calculator.html">
+    <meta property="og:image" content="https://mytoolx.org/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Love Compatibility Calculator",
+      "url": "https://mytoolx.org/love-calculator.html",
+      "applicationCategory": "EntertainmentApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "Calculate love compatibility using Pythagorean numerology based on names.",
+      "featureList": [
+        "Numerology name matching",
+        "Instant compatibility score",
+        "100% client-side processing"
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
+        }
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
+        }
+        html, body { overflow-x: clip; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+        
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .tool-panel { border-top: 4px solid var(--primary); }
+        .tool-panel:hover { box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); }
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+        
+        .input-field { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
+        .input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); outline: none; }
+        
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+        
+        #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
+        :focus-visible { outline: none; }
+        button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        ::selection { background: rgba(79,70,229,0.25); }
+
+        .btn-love-glow { background: linear-gradient(135deg, #EC4899 0%, #E11D48 50%, var(--primary) 100%); background-size: 200% 200%; animation: gradientShift 6s ease infinite; box-shadow: 0 10px 25px -5px rgba(225, 29, 72, 0.4); color: #fff; }
+        .btn-love-glow:hover { box-shadow: 0 15px 30px -5px rgba(225, 29, 72, 0.6); transform: translateY(-2px); color: #fff; }
+        @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        .circle-progress { transition: stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1); }
+    </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- FIREWORKS CANVAS -->
+    <canvas id="fireworksCanvas" class="fixed inset-0 pointer-events-none z-[100] hidden"></canvas>
+
+    <!-- HEADER -->
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2">
+            <div class="flex items-center justify-between gap-2 sm:gap-4">
+                <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+                    <a href="index.html" class="hidden sm:flex btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold items-center gap-1">← All Tools</a>
+                    <a href="index.html" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
+                        <div class="logo-mark w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base flex items-center justify-center">M<span class="x">X</span></div>
+                        <span class="logo-wordmark text-base sm:text-xl block">MyTool<span class="x">X</span></span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                    <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle dark mode" class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center text-xs sm:text-base font-bold" style="background: var(--chip-bg); color: var(--chip-text);">
+                        <span id="themeIcon" aria-hidden="true">🌙</span>
+                    </button>
+                    <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
+                        💼 Remote Jobs ↗
+                    </a>
+                    <a href="cv-maker.html" class="hidden md:inline-flex text-xs font-bold text-white px-3 py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
+                        📄 Live CV
+                    </a>
+                </div>
+            </div>
+            <div class="mt-2 sm:hidden">
+                <a href="index.html" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">← Back to All Tools</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow relative">
+        
+        <nav class="text-xs font-semibold mb-6 flex items-center gap-1 muted" aria-label="Breadcrumb">
+            <a href="index.html" class="hover:text-indigo-500">Home</a>
+            <span>/</span>
+            <span style="color: var(--text); font-weight: 700;">Love Calculator</span>
+        </nav>
+
+        <div class="tool-panel surface rounded-3xl shadow-xl p-6 sm:p-10 mb-10 transition-shadow relative overflow-hidden">
+            
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-64 bg-gradient-to-r from-rose-500/10 via-purple-500/10 to-indigo-500/10 blur-3xl pointer-events-none rounded-full"></div>
+
+            <div class="relative z-10 text-center mb-8">
+                <h1 class="text-2xl sm:text-4xl font-black mb-2" style="color: var(--text);">
+                    ❤️ Love Compatibility Calculator
+                </h1>
+                <p class="text-sm muted">Enter both names to uncover your relationship vibration based on Pythagorean numerology.</p>
+            </div>
+
+            <form id="loveForm" class="relative z-10 space-y-6" onsubmit="calculateLoveMatch(event)">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+                    
+                    <!-- Person 1 -->
+                    <div class="p-5 rounded-2xl space-y-4" style="background: var(--chip-bg);">
+                        <div class="flex items-center gap-2 font-bold text-rose-500">
+                            <span>First Person</span>
+                        </div>
+                        <div>
+                            <label for="p1Name" class="block text-xs font-bold uppercase tracking-wider muted mb-1.5">Full Name</label>
+                            <input type="text" id="p1Name" required placeholder="e.g. Alex" class="input-field w-full p-3 rounded-xl text-sm">
+                        </div>
+                    </div>
+
+                    <!-- Person 2 -->
+                    <div class="p-5 rounded-2xl space-y-4" style="background: var(--chip-bg);">
+                        <div class="flex items-center gap-2 font-bold text-indigo-500">
+                            <span>Second Person</span>
+                        </div>
+                        <div>
+                            <label for="p2Name" class="block text-xs font-bold uppercase tracking-wider muted mb-1.5">Full Name</label>
+                            <input type="text" id="p2Name" required placeholder="e.g. Taylor" class="input-field w-full p-3 rounded-xl text-sm">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="text-center pt-4">
+                    <button type="submit" class="btn-3d btn-love-glow w-full sm:w-auto px-10 py-4 rounded-xl font-bold text-sm mx-auto flex items-center justify-center gap-2">
+                        Calculate Love Match ❤️
+                    </button>
+                    <p class="mt-4 text-[11px] muted max-w-xl mx-auto leading-relaxed">
+                        ⚠️ <strong>Disclaimer:</strong> This calculator uses numerology for entertainment purposes only. It is not a substitute for professional relationship advice.
+                    </p>
+                </div>
+            </form>
+
+            <!-- Loading State -->
+            <div id="loadingArea" class="hidden py-12 text-center space-y-4 relative z-10">
+                <div class="inline-block relative">
+                    <div class="w-16 h-16 border-4 border-rose-200 border-t-rose-500 rounded-full animate-spin"></div>
+                </div>
+                <p id="loadingMsg" class="text-sm font-bold text-rose-500 animate-pulse">Reading the stars...</p>
+            </div>
+
+            <!-- Result Area -->
+            <div id="resultArea" class="hidden mt-8 pt-8 border-t relative z-10" style="border-color: var(--card-border);">
+                
+                                <div class="text-center mb-8">
+                    <h2 class="text-xl font-bold mb-1" style="color: var(--text);">Compatibility Analysis</h2>
+                    <p class="font-extrabold text-lg flex items-center justify-center gap-2">
+                        <span id="resP1" class="text-blue-600 dark:text-blue-400">--</span> 
+                        <span class="text-rose-500 text-xl">❤️</span> 
+                        <span id="resP2" class="text-pink-600 dark:text-pink-400">--</span>
+                    </p>
+                </div>
+
+                <div class="flex flex-col items-center justify-center mb-8">
+                    <div class="relative w-40 h-40">
+                        <svg class="w-full h-full -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="42" stroke="currentColor" stroke-width="8" style="color: var(--card-border);" fill="transparent" />
+                            <circle id="scoreRing" cx="50" cy="50" r="42" stroke="url(#scoreGradient)" stroke-width="8" stroke-dasharray="263.89" stroke-dashoffset="263.89" stroke-linecap="round" class="circle-progress" fill="transparent" />
+                            <defs>
+                                <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#EC4899" />
+                                    <stop offset="100%" stop-color="#6366F1" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center">
+                            <span id="scoreText" class="text-4xl font-black" style="color: var(--text);">0%</span>
+                        </div>
+                    </div>
+                    <div id="tierBadge" class="mt-4 px-4 py-1.5 rounded-full text-xs font-bold text-white shadow-sm">--</div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-5 rounded-2xl bg-emerald-500/10 border border-emerald-500/20">
+                        <h3 class="font-bold text-sm mb-2 text-emerald-600">Why You Match</h3>
+                        <p id="matchReason" class="text-xs muted leading-relaxed">--</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-amber-500/10 border border-amber-500/20">
+                        <h3 class="font-bold text-sm mb-2 text-amber-600">Growth Area</h3>
+                        <p id="matchFlaw" class="text-xs muted leading-relaxed">--</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-8">
+                    <button onclick="recalculate()" class="btn-3d btn-chip px-6 py-2.5 rounded-xl text-xs font-bold">
+                        Test Another Couple
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Content -->
+        <article class="surface rounded-3xl shadow-md p-6 sm:p-10 mb-10 space-y-6">
+            <h2 class="text-xl sm:text-2xl font-bold border-b pb-3" style="color: var(--text); border-color: var(--card-border);">Understanding Love Compatibility & Numerology</h2>
+            <p class="text-sm muted leading-relaxed">
+                Throughout history, humans have sought ways to understand the subtle energetic dynamics between romantic partners. From ancient Chaldean numerology to modern psychometrics, analyzing name vibrations provides fascinating insights into interpersonal chemistry.
+            </p>
+            <h3 class="text-lg font-bold mt-4" style="color: var(--text);">How Name Vibrations Work</h3>
+            <p class="text-sm muted leading-relaxed">
+                In Pythagorean numerology, every letter corresponds to a unique numerical frequency. When two names are brought together in a relationship, their numerical values create either constructive or frictional energy. Our calculator processes these letter vibrations deterministically to evaluate natural harmony.
+            </p>
+        </article>
+
+    </main>
+
+     <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+                <div class="lg:col-span-5">
+                    <a href="index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 pr-4">
+                        MyToolX is a free suite of client-side web tools for writers, freelancers and developers. No sign-up, no tracking, no data leaves your browser.
+                    </p>
+                </div>
+                <div class="lg:col-span-4">
+                    <h3>Popular Tools</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <a href="typing-test.html">Typing Speed Test</a>
+                        <a href="image-compressor.html">Image Compressor</a>
+                        <a href="prompt-studio.html">AI Prompt Studio</a>
+                        <a href="grammar-checker.html">Grammar Checker</a>
+                        <a href="text-suite.html">Text &amp; Word Suite</a>
+                        <a href="fee-calculator.html">Fee Calculator</a>
+                        <a href="sip-calculator.html">SIP Calculator</a>
+                        <a href="loan-emi.html">Loan EMI Calc</a>
+                        <a href="json-formatter.html">JSON Formatter</a>
+                        <a href="base64-tool.html">Base64 Tool</a>
+                        <a href="qr-code-generator.html">QR Code Gen</a>
+                        <a href="password-generator.html">Password Gen</a>
+                        <a href="unit-converter.html">Unit Converter</a>
+                        <a href="ai-bio-generator.html">AI Bio Generator</a>
+                        <a href="article-outline.html">Article Outline</a>
+                        <a href="cv-maker.html">Resume Builder</a>
+                        <a href="love-calculator.html">Love Calculator</a>
+                        <a href="color-converter.html">Color Converter</a>
+
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Company</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Legal</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="blog.html">Blog & Guides</a></li>
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                                <li><a href="terms.html">Terms of Service</a></li>
+                                <li><a href="index.html">Sitemap</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. All rights reserved.</p>
+                <p>All tools run 100% client-side in your browser.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // THEME LOGIC
+        (function initTheme() {
+            var saved = null;
+            try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = saved || (prefersDark ? 'dark' : 'light');
+            applyTheme(theme);
+        })();
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            var icon = document.getElementById('themeIcon');
+            if (icon) icon.textContent = (theme === 'dark' ? '☀️' : '🌙');
+            var btn = document.getElementById('themeToggle');
+            if (btn) {
+                btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+                btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+            }
+        }
+        function toggleTheme() {
+            var cur = document.documentElement.getAttribute('data-theme') || 'light';
+            var next = cur === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('mtx-theme', next); } catch (e) {}
+        }
+        window.toggleTheme = toggleTheme;
+
+        // NUMEROLOGY MATH
+        function computeDeterministicScore(name1, name2) {
+            function getNumerologyData(name) {
+                const clean = name.toUpperCase().replace(/[^A-Z]/g, '');
+                const vowels = 'AEIOU';
+                let totalSum = 0, vowelSum = 0, consonantSum = 0;
+                
+                for (let i = 0; i < clean.length; i++) {
+                    const char = clean[i];
+                    let val = (char.charCodeAt(0) - 64) % 9;
+                    if (val === 0) val = 9; 
+                    
+                    totalSum += val;
+                    if (vowels.includes(char)) vowelSum += val;
+                    else consonantSum += val;
+                }
+
+                const reduce = (num) => {
+                    if (num === 0) return 0;
+                    while (num > 9) {
+                        if (num === 11 || num === 22 || num === 33) return num;
+                        num = String(num).split('').reduce((a, b) => a + parseInt(b), 0);
+                    }
+                    return num;
+                };
+
+                return { total: reduce(totalSum), soulUrge: reduce(vowelSum), expression: reduce(consonantSum) };
+            }
+
+            const p1 = getNumerologyData(name1);
+            const p2 = getNumerologyData(name2);
+
+            let rawScore = 70; 
+            if (p1.expression === p2.expression) rawScore += 20;
+            else if (p1.expression + p2.expression === 10) rawScore += 15;
+            if (p1.soulUrge === p2.soulUrge) rawScore += 8;
+            
+            let nameHash = 0;
+            for (let i = 0; i < name1.length; i++) nameHash += name1.charCodeAt(i) * (i + 1);
+            for (let i = 0; i < name2.length; i++) nameHash += name2.charCodeAt(i) * (i + 1);
+            
+            rawScore += (nameHash % 11); 
+            let score = Math.min(rawScore, 99);
+            
+            return { score, p1, p2 };
+        }
+
+        function getCompatibilityDetails(score, p1, p2) {
+            let tierTitle = ""; let tierClass = ""; let reason = "";
+
+            if (score >= 80) {
+                tierTitle = "✨ Soulmates"; tierClass = "bg-rose-500";
+                reason = "Your numerological paths align seamlessly! The acoustic frequencies of your names suggest profound emotional intimacy, natural trust, and a rare telepathic understanding.";
+            } else if (score >= 60) {
+                tierTitle = "💖 Strong Connection"; tierClass = "bg-pink-500";
+                reason = "You possess a solid foundation of mutual respect and high energy synergy. While you maintain individual distinctiveness, your core life values resonate warmly with each other.";
+            } else if (score >= 40) {
+                tierTitle = "☯️ Balanced Match"; tierClass = "bg-indigo-600";
+                reason = "A balanced relationship dynamic where opposites pull together. You bring contrasting approaches to life, which provides great opportunity for growth and personal balance when nurtured with patience.";
+            } else {
+                tierTitle = "🔥 Dynamic Opposites"; tierClass = "bg-amber-500";
+                reason = "You represent distinctly different energetic paths. This match often sparks intense initial curiosity, requiring intentional communication and continuous mutual understanding to build long-term stability.";
+            }
+
+            const flaws = [
+                "Communication Styles: One partner tends to process feelings internally while the other prefers immediate verbal discussion.",
+                "Stubbornness & Control: Both individuals share strong convictions, requiring conscious willingness to compromise during disagreements.",
+                "Financial Expectations: Distinct philosophies regarding spending vs saving might require clear early boundary-setting.",
+                "Emotional Vulnerability: Building deep trust may take extra time, as one partner protects their emotional core cautiously.",
+                "Social Energy Alignment: One partner thrives in vibrant social crowds, while the other recharges in quiet personal spaces."
+            ];
+            const flaw = flaws[Math.abs(p1.expression + p2.expression) % flaws.length];
+
+            return { tierTitle, tierClass, reason, flaw };
+        }
+
+        function calculateLoveMatch(e) {
+            e.preventDefault();
+
+            const p1Name = document.getElementById('p1Name').value;
+            const p2Name = document.getElementById('p2Name').value;
+
+            if (!p1Name || !p2Name) return;
+
+            const form = document.getElementById('loveForm');
+            const loadingArea = document.getElementById('loadingArea');
+            const resultArea = document.getElementById('resultArea');
+            const loadingMsg = document.getElementById('loadingMsg');
+
+            resultArea.classList.add('hidden');
+            form.classList.add('hidden');
+            loadingArea.classList.remove('hidden');
+
+            const loadingSteps = ["Reading the stars...", "Analyzing numerology...", "Harmonizing life path numbers...", "Calculating heart sync..."];
+            let stepIndex = 0;
+            const interval = setInterval(() => {
+                stepIndex++;
+                if (stepIndex < loadingSteps.length) loadingMsg.textContent = loadingSteps[stepIndex];
+            }, 350);
+
+            const { score, p1, p2 } = computeDeterministicScore(p1Name, p2Name);
+            const details = getCompatibilityDetails(score, p1, p2);
+
+            setTimeout(() => {
+                clearInterval(interval);
+                loadingArea.classList.add('hidden');
+
+                document.getElementById('resP1').textContent = p1Name;
+                document.getElementById('resP2').textContent = p2Name;
+
+                const tierBadge = document.getElementById('tierBadge');
+                tierBadge.textContent = details.tierTitle;
+                tierBadge.className = `mt-4 px-4 py-1.5 rounded-full text-xs font-bold text-white shadow-sm ${details.tierClass}`;
+
+                document.getElementById('matchReason').textContent = details.reason;
+                document.getElementById('matchFlaw').textContent = details.flaw;
+
+                resultArea.classList.remove('hidden');
+                animateScore(score);
+                resultArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                // Trigger Fireworks if score is 80 or above
+                if (score >= 80) {
+                    startFireworks();
+                }
+
+            }, 1500);
+        }
+        window.calculateLoveMatch = calculateLoveMatch;
+
+        function animateScore(finalScore) {
+            const scoreText = document.getElementById('scoreText');
+            const scoreRing = document.getElementById('scoreRing');
+            const maxOffset = 263.89;
+            const targetOffset = maxOffset - (maxOffset * (finalScore / 100));
+
+            scoreRing.style.strokeDashoffset = maxOffset;
+            setTimeout(() => { scoreRing.style.strokeDashoffset = targetOffset; }, 50);
+
+            let current = 0;
+            const stepTime = Math.max(Math.floor(1500 / finalScore), 15);
+            const counter = setInterval(() => {
+                current++;
+                scoreText.textContent = current + "%";
+                if (current >= finalScore) clearInterval(counter);
+            }, stepTime);
+        }
+
+        function recalculate() {
+            document.getElementById('resultArea').classList.add('hidden');
+            document.getElementById('loveForm').reset();
+            document.getElementById('loveForm').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Stop fireworks if running
+            const canvas = document.getElementById('fireworksCanvas');
+            canvas.classList.add('hidden');
+            clearInterval(fireworksInterval);
+        }
+        window.recalculate = recalculate;
+
+        // FIREWORKS ANIMATION CODE
+        let fireworksInterval;
+        function startFireworks() {
+            const canvas = document.getElementById('fireworksCanvas');
+            const ctx = canvas.getContext('2d');
+            canvas.classList.remove('hidden');
+
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            let particles = [];
+            const colors = ['#FF1461', '#18FF92', '#5A87FF', '#FBF38C', '#EC4899', '#6366F1'];
+
+            function createParticle(x, y) {
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const angle = Math.random() * Math.PI * 2;
+                const speed = Math.random() * 6 + 2;
+                return {
+                    x: x, y: y,
+                    vx: Math.cos(angle) * speed,
+                    vy: Math.sin(angle) * speed,
+                    life: 1,
+                    color: color,
+                    size: Math.random() * 3 + 1
+                };
+            }
+
+            function createExplosion() {
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * (canvas.height * 0.7);
+                for (let i = 0; i < 80; i++) {
+                    particles.push(createParticle(x, y));
+                }
+            }
+
+            // Loop to spawn new explosions
+            fireworksInterval = setInterval(createExplosion, 400);
+            createExplosion(); // First boom
+
+            function animate() {
+                if (canvas.classList.contains('hidden')) return;
+                
+                requestAnimationFrame(animate);
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.globalCompositeOperation = 'lighter';
+
+                for (let i = 0; i < particles.length; i++) {
+                    const p = particles[i];
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.vy += 0.05; // Gravity
+                    p.vx *= 0.98; // Friction
+                    p.vy *= 0.98;
+                    p.life -= 0.015;
+
+                    if (p.life > 0) {
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                        ctx.fillStyle = p.color;
+                        ctx.fill();
+                    } else {
+                        particles.splice(i, 1);
+                        i--;
+                    }
+                }
+            }
+
+            animate();
+
+            // Resize canvas on window resize
+            window.addEventListener('resize', () => {
+                if (!canvas.classList.contains('hidden')) {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                }
+            });
+        }
+    </script>
+</body>
+</html>
