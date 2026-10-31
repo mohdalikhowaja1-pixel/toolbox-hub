@@ -17,10 +17,13 @@
     <meta property="og:description" content="Explore free, privacy-first web tools for writers, developers, freelancers, and students.">
     <meta property="og:url" content="https://mytoolx.org/">
     <meta property="og:image" content="https://mytoolx.org/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MyToolX — Free Online Tools, AI Prompts & Utilities">
     <meta name="twitter:description" content="Explore free, privacy-first web tools for writers, developers, freelancers, and students.">
     <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
+    
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -89,7 +92,12 @@
         .input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); outline: none; }
 
         .card-3d-btn { transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; background: var(--card); border: 1px solid var(--card-border); }
-        .card-3d-btn:hover { transform: translateY(-4px); box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); border-color: var(--primary); }
+                .card-3d-btn:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 20px 25px -5px rgba(79,70,229,0.15), 0 8px 10px -6px rgba(79,70,229,0.1); 
+            border-color: var(--primary); 
+            background: var(--card);
+        }
 
         .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
         .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
@@ -100,6 +108,12 @@
         :focus-visible { outline: none; }
         button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
         ::selection { background: rgba(79,70,229,0.25); }
+        /* Mobile Adjustments for 320px screens */
+        @media (max-width: 360px) {
+            .logo-wordmark { font-size: 1rem !important; } /* Slightly smaller logo text */
+            .inline-flex.items-center.text-\[10px\] { padding-left: 0.4rem !important; padding-right: 0.4rem !important; font-size: 9px !important; } /* Shrink remote jobs button text */
+            #globalSearchInput { padding-left: 2.5rem !important; font-size: 13px !important; } /* Give search text more room */
+        }
         @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
     </style>
 </head>
@@ -125,14 +139,14 @@
                     <span id="themeIcon" aria-hidden="true">🌙</span>
                 </button>
                 
-                <!-- Remote Jobs (Visible on Mobile, tighter padding) -->
+                <!-- Remote Jobs -->
                 <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
                     💼 Remote Jobs ↗
                 </a>
 
-                <!-- Live CV (Hidden on Mobile, Visible on Desktop) -->
-                <a href="https://mali1.pythonanywhere.com/" target="_blank" rel="noopener" class="hidden md:inline-flex text-xs font-bold text-white px-3 py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
-                    📄 Live CV ↗
+                <!-- Live CV (Updated to local cv-maker.html) -->
+                <a href="cv-maker.html" class="hidden md:inline-flex text-xs font-bold text-white px-3 py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
+                    📄 Live CV
                 </a>
             </div>
         </div>
@@ -198,9 +212,10 @@
                 <div><div class="font-bold text-sm" style="color: var(--text);">Text & Word Suite</div><div class="text-xs muted">Counter & Case Converter</div></div>
             </a>
 
-            <a href="https://mali1.pythonanywhere.com/" target="_blank" data-cat="writer" data-keywords="cv builder live cv maker pdf resume builder word generator resume jobs" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between" style="border-color: #6366F1;">
+            <!-- UPDATED: Local CV Maker Link -->
+            <a href="cv-maker.html" data-cat="writer" data-keywords="cv builder live cv maker pdf resume builder ats resume jobs curriculum vitae" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between" style="border-color: #6366F1;">
                 <div class="flex justify-between items-start"><span class="text-2xl">📄</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #6366F1;">CV Builder</span></div>
-                <div><div class="font-bold text-sm" style="color: var(--text);">Live CV Maker ↗</div><div class="text-xs muted">PDF & Word Generator</div></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Live CV Maker</div><div class="text-xs muted">HD PDF Resume Generator</div></div>
             </a>
 
             <a href="grammar-checker.html" data-cat="writer" data-keywords="grammar check spelling proofreader tense punctuation fix typo corrector language engine" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
@@ -302,6 +317,10 @@
                         <a href="base64-tool.html">Base64 Tool</a>
                         <a href="qr-code-generator.html">QR Code Gen</a>
                         <a href="password-generator.html">Password Gen</a>
+                        <a href="unit-converter.html">Unit Converter</a>
+                        <a href="ai-bio-generator.html">AI Bio Generator</a>
+                        <a href="article-outline.html">Article Outline</a>
+                        <a href="cv-maker.html">Resume Builder</a>
                     </div>
                 </div>
                 <div class="lg:col-span-3">

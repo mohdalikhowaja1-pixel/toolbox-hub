@@ -5,13 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
     <meta name="description" content="Explore the MyToolX blog. Learn how to improve typing speed, compress images, write better AI prompts, calculate freelance fees, format JSON, and more.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:title" content="Guides & Articles — How to Use Our Tools | MyToolX Blog">
+    <meta property="og:description" content="Explore the MyToolX blog. Learn how to improve typing speed, compress images, write better AI prompts, calculate freelance fees, format JSON, and more.">
+    <meta property="og:url" content="https://mytoolx.org/blog.html">
+    <meta property="og:image" content="https://mytoolx.org/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Guides & Articles — How to Use Our Tools | MyToolX Blog">
+    <meta name="twitter:description" content="Explore the MyToolX blog. Learn how to improve typing speed, compress images, write better AI prompts, calculate freelance fees, format JSON, and more.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
     
     <link rel="canonical" href="https://mytoolx.org/blog.html">
     <meta name="google-adsense-account" content="ca-pub-3410254230554312">
 
     <title>Guides & Articles — How to Use Our Tools | MyToolX Blog</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "MyToolX Guides & Articles",
+  "url": "https://mytoolx.org/blog.html",
+  "description": "Learn how to improve typing speed, compress images, write better AI prompts, and build professional CVs.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "MyToolX",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mytoolx.org/og-image.png"
+    }
+  }
+}
+</script>
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-W8KM3G3BYL');
+    </script>
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
 
@@ -63,8 +100,12 @@
         .blog-content h2 { font-size: 1.5rem; font-weight: 800; margin-top: 2rem; margin-bottom: 1rem; color: var(--text); border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; }
         .blog-content h3 { font-size: 1.25rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--text); }
         .blog-content p { margin-bottom: 1rem; line-height: 1.7; color: var(--text-muted); }
+        .blog-content ul, .blog-content ol { margin: 0 0 1rem 1.5rem; line-height: 1.7; color: var(--text-muted); font-size: 0.95rem; }
+        .blog-content li { margin-bottom: 0.4rem; list-style: disc; }
+        .blog-content ol li { list-style: decimal; }
         .blog-content a { color: var(--primary); font-weight: 600; text-decoration: underline; }
         .blog-content a:hover { color: var(--primary-hover); }
+        .blog-content strong { color: var(--text); }
         
         /* Sidebar Sticky */
         .sticky-sidebar { position: sticky; top: 100px; max-height: calc(100vh - 120px); overflow-y: auto; }
@@ -95,8 +136,8 @@
                     <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
                         💼 Remote Jobs ↗
                     </a>
-                    <a href="https://mali1.pythonanywhere.com/" target="_blank" rel="noopener" class="hidden md:inline-flex text-xs font-bold text-white px-3 py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
-                        📄 Live CV ↗
+                    <a href="cv-maker.html" class="hidden md:inline-flex text-xs font-bold text-white px-3 py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
+                        📄 Live CV
                     </a>
                 </div>
             </div>
@@ -138,6 +179,7 @@
                         <div>
                             <p class="text-xs uppercase tracking-wider muted mb-2">3. Writing & CV</p>
                             <ul class="space-y-1 pl-2 border-l-2" style="border-color: #3B82F6;">
+                                <li><a href="#cv-guide" class="hover:text-indigo-500 block py-1">📄 CV Writing Guide & Builder</a></li>
                                 <li><a href="#grammar-guide" class="hover:text-indigo-500 block py-1">📝 Grammar Checker</a></li>
                                 <li><a href="#text-guide" class="hover:text-indigo-500 block py-1">✍️ Text & Word Suite</a></li>
                             </ul>
@@ -188,6 +230,7 @@
                                 <a href="#ai-guide" onclick="closeMobileMenu('🤖 AI Prompt Studio')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">🤖 AI Prompt Studio</a>
                                 <a href="#bio-guide" onclick="closeMobileMenu('✨ AI Bio Generator')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">✨ AI Bio Generator</a>
                                 <a href="#outline-guide" onclick="closeMobileMenu('📑 Article Outline Gen')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">📑 Article Outline Gen</a>
+                                <a href="#cv-guide" onclick="closeMobileMenu('📄 CV Writing Guide & Builder')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">📄 CV Writing Guide & Builder</a>
                                 <a href="#grammar-guide" onclick="closeMobileMenu('📝 Grammar Checker')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">📝 Grammar Checker</a>
                                 <a href="#text-guide" onclick="closeMobileMenu('✍️ Text & Word Suite')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">✍️ Text & Word Suite</a>
                                 <a href="#finance-guide" onclick="closeMobileMenu('💰 Fee Calculator')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">💰 Fee Calculator</a>
@@ -243,9 +286,110 @@
                             </article>
                         </div>
 
-                        <!-- CATEGORY 3 -->
+                        <!-- CATEGORY 3 (WITH CV-MAKER ADDED) -->
                         <div>
                             <h2 class="text-2xl font-black mb-4 pb-2 border-b" style="color: var(--text); border-color: var(--card-border);">3. Writing & CV</h2>
+
+                            <article id="cv-guide" class="scroll-mt-24 mb-8">
+                                <h3 class="text-xl font-bold mb-2" style="color: var(--text);">📄 How to Build a Professional Resume in 2026 (Free ATS-Friendly CV Maker)</h3>
+                                <p class="text-xs muted mb-4">Last updated: 2026 · Reading time: ~8 minutes</p>
+
+                                <p>In today's competitive job market, your resume is your most important asset. With 75% of resumes rejected by Applicant Tracking Systems (ATS) before a human ever sees them, you need a CV that is both beautifully designed and technically optimized. The <a href="cv-maker.html">MyToolX Resume Builder</a> solves this by providing a 100% free, privacy-first platform to generate ATS-compliant PDFs.</p>
+
+                                <h3>What makes an ATS-Friendly Resume?</h3>
+                                <p>Applicant Tracking Systems are software used by recruiters to filter applications. They scan for keywords, standard headings, and clean formatting. To pass the ATS, your resume must avoid complex tables, images, and creative fonts. Our builder uses a single-flow semantic text layout with standard headings (Experience, Education, Skills) ensuring maximum compatibility with platforms like Workday, Taleo, and Greenhouse.</p>
+
+                               <h3>Why use a Client-Side CV Maker?</h3>
+                               <p>Most online resume builders require you to create an account and store your personal data (phone number, address, employment history) on their servers. MyToolX is different. Our tool runs entirely in your browser using JavaScript. Your data <strong>never leaves your device</strong>, making it the most private way to build a CV.</p>
+
+                                <h3>Why Use MyToolX Resume Builder?</h3>
+                                <ul>
+                                    <li><strong>100% free, no hidden paywalls.</strong> Unlike Canva, Zety, or Resume.io, MyToolX never asks for a credit card, and there are no premium templates locked behind a paywall.</li>
+                                    <li><strong>Complete privacy.</strong> Every keystroke stays in your browser's memory. Your name, address, phone number, and work history are <em>never</em> transmitted to any server — perfect for privacy-conscious job seekers.</li>
+                                    <li><strong>Live A4 PDF preview.</strong> See exactly how your resume will print in real time, with page-break protection so your experience blocks never split awkwardly.</li>
+                                    <li><strong>AI-powered grammar fix.</strong> A built-in "AI Fix" button rewrites your summary and bullet points using LanguageTool, eliminating typos and awkward phrasing.</li>
+                                    <li><strong>ATS-friendly formatting.</strong> The clean two-column layout uses semantic text, no images, no text boxes, and no tables in the content area — maximizing compatibility with Workday, Greenhouse, Taleo, Lever, and iCIMS.</li>
+                                    <li><strong>No sign-up required.</strong> Just fill in the form and click Save PDF. That's it.</li>
+                                </ul>
+
+                                <h3>How to Use the Resume Builder (Step-by-Step)</h3>
+                                <ol>
+                                    <li><strong>Enter your personal details.</strong> Start with your full name, a clear professional title (e.g., "Senior Accountant" or "Full-Stack Developer"), email, phone, and city.</li>
+                                    <li><strong>Write a punchy summary.</strong> Use 2–3 sentences to highlight your years of experience, core expertise, and biggest achievement. Click <em>✨ AI Fix</em> to polish your grammar instantly.</li>
+                                    <li><strong>Add your work experience.</strong> For each role, include the job title, company name, dates, and 2–4 achievement-focused bullet points (not responsibilities).</li>
+                                    <li><strong>List your education.</strong> Include your degree, university/school name, and graduation year. Recent graduates can list education before experience.</li>
+                                    <li><strong>Add skills, certifications, and languages.</strong> Keep skills relevant to the job — a hiring manager scanning your CV should see the keywords from the job description within 3 seconds.</li>
+                                    <li><strong>Preview and refine.</strong> Your live preview updates in real time. Check that no section overflows the page and that all dates are consistent.</li>
+                                    <li><strong>Download as PDF.</strong> Click <em>🖨️ Save PDF</em>, then choose "Save as PDF" in the print dialog. You'll get a high-resolution, ATS-parseable file ready to submit.</li>
+                                </ol>
+
+                                <h3>How to Make Your Resume ATS-Friendly</h3>
+                                <p>
+                                    Applicant Tracking Systems are the first readers of every CV. If your resume isn't ATS-friendly, it may be rejected before a human ever sees it. Follow these rules:
+                                </p>
+                                <ul>
+                                    <li><strong>Use a clean, single-flow layout.</strong> Our builder's two-column design keeps the main content in a single text flow, which most modern ATS parsers handle well.</li>
+                                    <li><strong>Avoid graphics, icons, and photos.</strong> ATS software cannot read images — keep your resume image-free.</li>
+                                    <li><strong>Use standard section headings.</strong> "Experience," "Education," and "Skills" are recognized universally. Avoid creative names like "My Journey" or "Career Story."</li>
+                                    <li><strong>Mirror the job description.</strong> Use the exact keywords from the job posting where they genuinely apply to you.</li>
+                                    <li><strong>Save as PDF (not DOCX).</strong> PDF preserves your formatting and is now the preferred format for 80%+ of ATS platforms.</li>
+                                </ul>
+
+                                <h3>Resume Writing Tips That Get You Interviews</h3>
+                                <h4>1. Lead with achievements, not duties</h4>
+                                <p>
+                                    Weak: <em>"Responsible for managing social media accounts."</em><br>
+                                    Strong: <em>"Grew Instagram following by 45% in 6 months by launching a weekly video series."</em><br>
+                                    The second bullet uses a number and a result — exactly what recruiters want to see.
+                                </p>
+
+                                <h4>2. Quantify everything you can</h4>
+                                <p>
+                                    "Improved sales" is forgettable. "Increased Q3 sales by 22% across 4 regions, generating $1.2M in new revenue" is memorable. Even if you don't have exact figures, approximate percentages and numbers significantly strengthen bullet points.
+                                </p>
+
+                                <h4>3. Tailor your resume to every job</h4>
+                                <p>
+                                    Recruiters can tell when a resume is generic. Spend 5 minutes reordering your bullet points and skills for each application, and you'll roughly double your response rate.
+                                </p>
+
+                                <h4>4. Keep it to one or two pages</h4>
+                                <p>
+                                    Unless you have 10+ years of experience, one page is ideal. If you must go to two pages, ensure the second page is at least 50% full.
+                                </p>
+
+                                <h4>5. Proofread before sending</h4>
+                                <p>
+                                    A single typo can cost you the interview. Use the built-in <em>AI Fix</em> button, or paste your final text into our <a href="text-suite.html">Word Counter</a> to check length and readability, and double-check that every date, job title, and company name matches your LinkedIn profile.
+                                </p>
+
+                                <h3>Frequently Asked Questions</h3>
+
+                                <div class="faq-item" style="border-bottom: 1px solid var(--card-border); padding: 0.75rem 0;">
+                                    <p class="font-bold">Is this resume builder really free?</p>
+                                    <p>Yes. MyToolX Resume Builder is 100% free with no hidden charges, no watermarks, and no sign-up required. You can create and download unlimited resumes.</p>
+                                </div>
+
+                                <div class="faq-item" style="border-bottom: 1px solid var(--card-border); padding: 0.75rem 0;">
+                                    <p class="font-bold">Does the resume builder upload my data to a server?</p>
+                                    <p>No. The entire CV builder runs client-side in your browser using JavaScript. Your personal data never leaves your device — there is no backend, no database, and no tracking of your resume content.</p>
+                                </div>
+
+                                <div class="faq-item" style="border-bottom: 1px solid var(--card-border); padding: 0.75rem 0;">
+                                    <p class="font-bold">Can I download my resume as a PDF?</p>
+                                    <p>Yes. Click the <em>🖨️ Save PDF</em> button to open your browser's print dialog, where you can save your resume as a high-resolution PDF ready for ATS and recruiters.</p>
+                                </div>
+
+                                <div class="faq-item" style="border-bottom: 1px solid var(--card-border); padding: 0.75rem 0;">
+                                    <p class="font-bold">Is the resume ATS-friendly?</p>
+                                    <p>Yes. The modern two-column layout uses clean semantic text with no images, icons, or tables in the content area, ensuring maximum ATS compatibility with platforms like Workday, Greenhouse, Taleo, Lever, and iCIMS.</p>
+                                </div>
+
+                                <div class="faq-item" style="padding: 0.75rem 0 1rem 0;">
+                                    <p class="font-bold">Do I need to create an account to save my resume?</p>
+                                    <p>No account is needed. Simply fill out the form, then click <em>Save PDF</em> to download a permanent copy to your device. Since nothing is stored on a server, be sure to save your PDF before closing the tab.</p>
+                                </div>
+                            </article>
 
                             <article id="grammar-guide" class="scroll-mt-24 mb-8">
                                 <h3 class="text-xl font-bold mb-2" style="color: var(--text);">📝 Why You Need a Grammar Checker</h3>
@@ -351,6 +495,11 @@
                         <a href="base64-tool.html">Base64 Tool</a>
                         <a href="qr-code-generator.html">QR Code Gen</a>
                         <a href="password-generator.html">Password Gen</a>
+                        <a href="unit-converter.html">Unit Converter</a>
+                        <a href="ai-bio-generator.html">AI Bio Generator</a>
+                        <a href="article-outline.html">Article Outline</a>
+                        <a href="cv-maker.html">Resume Builder</a>
+
                     </div>
                 </div>
                 <div class="lg:col-span-3">

@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Free Resume Builder — ATS-Friendly PDF CV | MyToolX</title>
+    <meta name="description" content="Build a professional resume instantly. Download as PDF. 100% free, no sign-up, and your data never leaves your browser.">
+    <link rel="canonical" href="https://mytoolx.org/cv-maker.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:title" content="Free Resume Builder — PDF | MyToolX">
+    <meta property="og:description" content="Build a professional resume instantly. Download as PDF. 100% private.">
+    <meta property="og:url" content="https://mytoolx.org/cv-maker.html">
+    <meta property="og:image" content="https://mytoolx.org/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Resume Builder — PDF | MyToolX">
+    <meta name="twitter:description" content="Build a professional resume instantly. Download as PDF. 100% private.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-W8KM3G3BYL');
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "MyToolX Resume Builder",
+      "url": "https://mytoolx.org/cv-maker.html",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Free, privacy-first resume builder that generates professional PDF CVs entirely in your browser. No sign-up, no tracking, no data uploads.",
+      "featureList": [
+        "Live A4 PDF preview",
+        "Modern two-column resume layout",
+        "AI-powered grammar and spelling correction",
+        "100% client-side processing",
+        "No sign-up required",
+        "ATS-friendly formatting"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this resume builder really free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. MyToolX Resume Builder is 100% free with no hidden charges, no watermarks, and no sign-up required." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the resume builder upload my data to a server?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The entire CV builder runs client-side in your browser using JavaScript. Your personal data never leaves your device." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I download my resume as a PDF?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Click the 'Save PDF' button to open your browser's print dialog, where you can save your resume as a high-resolution PDF ready for ATS and recruiters." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the resume ATS-friendly?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The modern two-column layout uses clean semantic text with no images, icons, or tables in the content area, ensuring maximum ATS compatibility." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to create an account to save my resume?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No account is needed. Simply fill out the form, then click Save PDF to download a permanent copy to your device." }
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mytoolx.org/" },
+        { "@type": "ListItem", "position": 2, "name": "Resume Builder", "item": "https://mytoolx.org/cv-maker.html" }
+      ]
+    }
+    </script>
+
+    <style>
+        /* --- MASTER THEME VARIABLES --- */
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
+        }
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
+        }
+        html, body { overflow-x: hidden; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+        
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .tool-panel { border-top: 4px solid var(--primary); }
+        .tool-panel:hover { box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); }
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+        
+        .input-field { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
+        .input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); outline: none; }
+        
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+        
+        #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
+        :focus-visible { outline: none; }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        ::selection { background: rgba(79,70,229,0.25); }
+        @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+        /* --- CV PREVIEW STYLES (NATURAL FIT / NO EXTRA PAGES) --- */
+        .cv-paper {
+            background: #FFFFFF; color: #1E293B;
+            width: 100%; max-width: 850px; margin: 0 auto; border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+            height: auto; /* Shrinks/grows naturally with content */
+        }
+        .layout-modern { 
+            display: grid; 
+            grid-template-columns: 35% 65%; 
+            font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+            height: auto;
+        }
+        .modern-sidebar { 
+            background-color: #334155; color: #F8FAFC; padding: 40px 30px; word-break: break-word; 
+            height: 100%;
+        }
+        .modern-sidebar h1 { font-size: 26px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; text-transform: capitalize; color: #FFFFFF; }
+        .modern-sidebar .cv-title { font-size: 14px; font-weight: 600; color: #C7D2FE; margin-bottom: 30px; line-height: 1.3; }
+        .modern-sidebar h3 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-top: 25px; margin-bottom: 10px; color: #C7D2FE; border-bottom: 1px solid #475569; padding-bottom: 5px; }
+        .modern-sidebar p, .modern-sidebar li { font-size: 12px; line-height: 1.6; margin-bottom: 8px; color: #E2E8F0; }
+        
+        .modern-main { 
+            background-color: #FFFFFF; padding: 40px; 
+            height: 100%;
+        }
+        .modern-main h2 { font-size: 15px; font-weight: 800; border-bottom: 2px solid #4F46E5; padding-bottom: 5px; margin-top: 25px; margin-bottom: 15px; text-transform: uppercase; color: #0F172A; letter-spacing: 1px; }
+        .modern-main h2:first-child { margin-top: 0; }
+        .modern-main p { font-size: 13px; line-height: 1.6; color: #475569; margin-bottom: 10px; }
+        .modern-main .cv-job { margin-bottom: 20px; page-break-inside: avoid; break-inside: avoid; }
+        .modern-main .cv-job-title { font-weight: 800; font-size: 14px; color: #0F172A; display: flex; justify-content: space-between; }
+        .modern-main .cv-job-company { font-weight: 600; font-size: 13px; color: #4F46E5; margin-bottom: 6px; }
+        .modern-main ul { list-style-type: disc; padding-left: 20px; font-size: 13px; color: #334155; margin-bottom: 10px; }
+        .modern-main li { margin-bottom: 4px; line-height: 1.5; }
+
+        /* SEO Content Article Styling */
+        .seo-article h2 { font-size: 1.5rem; font-weight: 800; margin-top: 2rem; margin-bottom: 1rem; color: var(--text); border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; }
+        .seo-article h3 { font-size: 1.15rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.6rem; color: var(--text); }
+        .seo-article p { margin-bottom: 0.9rem; line-height: 1.75; color: var(--text-muted); }
+        .seo-article ul, .seo-article ol { margin: 0 0 1rem 1.5rem; line-height: 1.75; color: var(--text-muted); font-size: 0.95rem; }
+        .seo-article li { margin-bottom: 0.4rem; list-style: disc; }
+        .seo-article ol li { list-style: decimal; }
+        .seo-article a { color: var(--primary); font-weight: 600; text-decoration: underline; }
+        .seo-article a:hover { color: var(--primary-hover); }
+        .seo-article strong { color: var(--text); }
+        .seo-article .faq-item { border-bottom: 1px solid var(--card-border); padding: 1rem 0; }
+        .seo-article .faq-q { font-weight: 800; font-size: 1rem; color: var(--text); margin-bottom: 0.4rem; }
+
+        .print-tip {
+            background: rgba(79,70,229,0.08);
+            border: 1px solid rgba(79,70,229,0.25);
+            border-left: 4px solid var(--primary);
+            border-radius: 12px;
+            padding: 12px 14px;
+            margin-bottom: 16px;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        @media print {
+            @page { size: A4 portrait; margin: 10mm; }
+            body * { visibility: hidden; }
+            #cvPreview, #cvPreview * { visibility: visible; }
+            #cvPreview { 
+                position: absolute; left: 0; top: 0; width: 100% !important; height: auto !important;
+                box-shadow: none; margin: 0; padding: 0; border-radius: 0; 
+                -webkit-print-color-adjust: exact; print-color-adjust: exact; 
+            }
+            .layout-modern { display: grid; grid-template-columns: 35% 65%; height: auto; }
+            .modern-sidebar { background-color: #334155 !important; color: #F8FAFC !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .cv-job { page-break-inside: avoid; break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col justify-between">
+
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2">
+            <div class="flex items-center justify-between gap-2 sm:gap-4">
+                <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+                    <a href="index.html" class="hidden sm:flex btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold items-center gap-1">← All Tools</a>
+                    <a href="index.html" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
+                        <div class="logo-mark w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base flex items-center justify-center">M<span class="x">X</span></div>
+                        <span class="logo-wordmark text-base sm:text-xl block">MyTool<span class="x">X</span></span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                    <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle dark mode" class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center text-xs sm:text-base font-bold" style="background: var(--chip-bg); color: var(--chip-text);">
+                        <span id="themeIcon" aria-hidden="true">🌙</span>
+                    </button>
+                    <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
+                        💼 Remote Jobs ↗
+                    </a>
+                    <a href="blog.html#cv-guide" class="hidden md:inline-flex text-xs font-bold text-white px-3 py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
+                        📄 CV Guide
+                    </a>
+                </div>
+            </div>
+            <div class="mt-2 sm:hidden">
+                <a href="index.html" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">← Back to All Tools</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8 w-full flex-grow">
+
+        <nav class="text-xs font-semibold mb-4 flex items-center gap-1 muted" aria-label="Breadcrumb">
+            <a href="index.html" class="hover:text-indigo-500">Home</a><span>/</span><a href="blog.html#cv-guide" class="hover:text-indigo-500">Guides</a><span>/</span><span style="color: var(--text); font-weight: 700;">Resume Builder</span>
+        </nav>
+
+        <div class="tool-panel surface rounded-3xl shadow-xl p-6 sm:p-8 mb-10 transition-shadow">
+            
+            <div class="flex items-center justify-between gap-3 flex-wrap mb-6 pb-4 border-b" style="border-color: var(--card-border);">
+                <div>
+                    <h1 class="text-xl sm:text-2xl font-black flex items-center gap-2" style="color: var(--text);">
+                        📄 Free Resume Builder — Create a Professional CV Online
+                    </h1>
+                    <p class="text-xs muted mt-1">100% private · No sign-up · ATS-friendly PDF</p>
+                </div>
+                <div class="flex gap-2 items-center flex-wrap">
+                    <button onclick="clearForm()" class="btn-3d btn-chip px-3 py-2 text-xs font-bold text-red-500 border-red-200">Clear</button>
+                    <button onclick="printCV()" class="btn-3d btn-primary px-4 py-2 text-xs font-bold flex items-center gap-2">🖨️ Save PDF</button>
+                </div>
+            </div>
+
+            <div class="print-tip" role="note">
+                <strong>💡 Tip for a clean PDF:</strong> When the print dialog opens, choose <strong>"Save as PDF"</strong>, then <strong>uncheck "Headers and footers"</strong> in the settings. This removes the browser's top date and bottom URL link, giving you a perfectly clean CV.
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                
+                <!-- LEFT: FORM -->
+                <div class="space-y-6">
+                    <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                        <h2 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">1. Personal Details</h2>
+                        <div class="space-y-3">
+                            <input type="text" id="inpName" oninput="updateCV()" placeholder="Full Name" class="input-field w-full p-3 rounded-xl text-sm font-bold" autocomplete="name">
+                            <input type="text" id="inpTitle" oninput="updateCV()" placeholder="Professional Title (e.g. Senior Accountant)" class="input-field w-full p-3 rounded-xl text-sm" autocomplete="organization-title">
+                            <div class="grid grid-cols-2 gap-3">
+                                <input type="email" id="inpEmail" oninput="updateCV()" placeholder="Email" class="input-field w-full p-3 rounded-xl text-sm" autocomplete="email">
+                                <input type="tel" id="inpPhone" oninput="updateCV()" placeholder="Phone" class="input-field w-full p-3 rounded-xl text-sm" autocomplete="tel">
+                            </div>
+                            <input type="text" id="inpLocation" oninput="updateCV()" placeholder="City, Country" class="input-field w-full p-3 rounded-xl text-sm" autocomplete="address-level2">
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                        <div class="flex justify-between items-center mb-3">
+                            <h2 class="text-sm font-bold uppercase tracking-wider" style="color: var(--primary);">2. Summary</h2>
+                            <button onclick="fixWithAI('inpSummary')" class="text-[10px] font-bold text-indigo-500 hover:text-indigo-700 bg-indigo-50 px-2 py-1 rounded-md border border-indigo-100 flex items-center gap-1">✨ AI Fix</button>
+                        </div>
+                        <textarea id="inpSummary" oninput="updateCV()" rows="3" placeholder="Brief overview of your experience..." class="input-field w-full p-3 rounded-xl text-sm" autocomplete="section-profile summary"></textarea>
+                    </div>
+
+                    <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                        <div class="flex justify-between items-center mb-3">
+                            <h2 class="text-sm font-bold uppercase tracking-wider" style="color: var(--primary);">3. Experience</h2>
+                            <button onclick="addExperience()" class="btn-3d btn-chip px-2 py-1 text-[10px] font-bold">+ Add</button>
+                        </div>
+                        <div id="experienceContainer" class="space-y-4"></div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                        <div class="flex justify-between items-center mb-3">
+                            <h2 class="text-sm font-bold uppercase tracking-wider" style="color: var(--primary);">4. Education</h2>
+                            <button onclick="addEducation()" class="btn-3d btn-chip px-2 py-1 text-[10px] font-bold">+ Add</button>
+                        </div>
+                        <div id="educationContainer" class="space-y-4"></div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                        <h2 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">5. Skills</h2>
+                        <textarea id="inpSkills" oninput="updateCV()" rows="2" placeholder="e.g. Project Management, Data Analysis, Python" class="input-field w-full p-3 rounded-xl text-sm"></textarea>
+                    </div>
+
+                    <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                        <h2 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">6. Certifications</h2>
+                        <textarea id="inpCerts" oninput="updateCV()" rows="2" placeholder="e.g. PMP Certification (2022)" class="input-field w-full p-3 rounded-xl text-sm"></textarea>
+                    </div>
+
+                    <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                        <h2 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">7. Languages</h2>
+                        <input type="text" id="inpLangs" oninput="updateCV()" placeholder="e.g. English (Native), Spanish (Fluent)" class="input-field w-full p-3 rounded-xl text-sm">
+                    </div>
+
+                    <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                        <h2 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">8. References</h2>
+                        <textarea id="inpRefs" oninput="updateCV()" rows="2" placeholder="e.g. Available upon request" class="input-field w-full p-3 rounded-xl text-sm"></textarea>
+                    </div>
+                </div>
+
+                <!-- RIGHT: PREVIEW -->
+                <div class="bg-slate-200/50 rounded-2xl p-4 sm:p-8 flex justify-center overflow-x-auto">
+                    <div id="cvPreview" class="cv-paper layout-modern"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================================================== -->
+        <!-- SEO CONTENT SECTION                                -->
+        <!-- ================================================== -->
+        <article class="surface rounded-3xl shadow-lg p-6 sm:p-10 mb-10 seo-article">
+            <header class="mb-6">
+                <p class="text-xs font-bold uppercase tracking-wider mb-2" style="color: var(--primary);">Complete Guide</p>
+                <h2 class="text-2xl sm:text-3xl font-black mb-3" style="color: var(--text); border: none; padding: 0; margin-top: 0;">
+                    Free Online Resume Builder: Create a Professional, ATS-Friendly CV in Minutes
+                </h2>
+                <p class="text-sm muted">
+                    Last updated: 2026 · Reading time: ~6 minutes
+                </p>
+            </header>
+
+            <p>
+                Your resume is often the first impression a recruiter gets of you — and in a market where a single job posting can receive 250+ applications, the quality of your CV determines whether you land the interview or get silently filtered out by an Applicant Tracking System (ATS). The <strong>MyToolX Resume Builder</strong> is a free, browser-based <strong>CV maker</strong> that lets you create a polished, recruiter-ready resume in minutes — no sign-up, no subscription, and no data ever uploaded to a server.
+            </p>
+
+            <p>
+                Whether you're a fresh graduate writing your first <strong>entry-level resume</strong>, a mid-career professional updating your <strong>LinkedIn CV</strong>, or a freelancer pitching for international clients, this tool gives you a modern two-column layout, live PDF preview, and one-click AI-powered grammar correction — all inside your browser.
+            </p>
+
+            <h2>Why Use MyToolX Resume Builder?</h2>
+            <ul>
+                <li><strong>100% free, no hidden paywalls.</strong> Unlike Canva, Zety, or Resume.io, MyToolX never asks for a credit card, and there are no premium templates locked behind a paywall.</li>
+                <li><strong>Complete privacy.</strong> Every keystroke stays in your browser's memory. Your name, address, phone number, and work history are <em>never</em> transmitted to any server — perfect for privacy-conscious job seekers.</li>
+                <li><strong>Live A4 PDF preview.</strong> See exactly how your resume will print in real time, with page-break protection so your experience blocks never split awkwardly.</li>
+                <li><strong>AI-powered grammar fix.</strong> A built-in "AI Fix" button rewrites your summary and bullet points using LanguageTool, eliminating typos and awkward phrasing.</li>
+                <li><strong>ATS-friendly formatting.</strong> The clean two-column layout uses semantic text, no images, no text boxes, and no tables in the content area — maximizing compatibility with Workday, Greenhouse, Taleo, Lever, and iCIMS.</li>
+                <li><strong>No sign-up required.</strong> Just fill in the form and click Save PDF. That's it.</li>
+            </ul>
+
+            <h2>How to Use the Resume Builder (Step-by-Step)</h2>
+            <ol>
+                <li><strong>Enter your personal details.</strong> Start with your full name, a clear professional title (e.g., "Senior Accountant" or "Full-Stack Developer"), email, phone, and city.</li>
+                <li><strong>Write a punchy summary.</strong> Use 2–3 sentences to highlight your years of experience, core expertise, and biggest achievement. Click <em>✨ AI Fix</em> to polish your grammar instantly.</li>
+                <li><strong>Add your work experience.</strong> For each role, include the job title, company name, dates, and 2–4 achievement-focused bullet points (not responsibilities).</li>
+                <li><strong>List your education.</strong> Include your degree, university/school name, and graduation year. Recent graduates can list education before experience.</li>
+                <li><strong>Add skills, certifications, and languages.</strong> Keep skills relevant to the job — a hiring manager scanning your CV should see the keywords from the job description within 3 seconds.</li>
+                <li><strong>Preview and refine.</strong> Your live preview updates in real time. Check that no section overflows the page and that all dates are consistent.</li>
+                <li><strong>Download as PDF.</strong> Click <em>🖨️ Save PDF</em>, then choose "Save as PDF" in the print dialog. You'll get a high-resolution, ATS-parseable file ready to submit.</li>
+            </ol>
+
+            <h2>How to Make Your Resume ATS-Friendly</h2>
+            <p>
+                Applicant Tracking Systems are the first readers of every CV. If your resume isn't ATS-friendly, it may be rejected before a human ever sees it. Follow these rules:
+            </p>
+            <ul>
+                <li><strong>Use a clean, single-flow layout.</strong> Our builder's two-column design keeps the main content in a single text flow, which most modern ATS parsers handle well.</li>
+                <li><strong>Avoid graphics, icons, and photos.</strong> ATS software cannot read images — keep your resume image-free.</li>
+                <li><strong>Use standard section headings.</strong> "Experience," "Education," and "Skills" are recognized universally. Avoid creative names like "My Journey" or "Career Story."</li>
+                <li><strong>Mirror the job description.</strong> Use the exact keywords from the job posting where they genuinely apply to you.</li>
+                <li><strong>Save as PDF (not DOCX).</strong> PDF preserves your formatting and is now the preferred format for 80%+ of ATS platforms.</li>
+            </ul>
+
+            <h2>Resume Writing Tips That Get You Interviews</h2>
+            <h3>1. Lead with achievements, not duties</h3>
+            <p>
+                Weak: <em>"Responsible for managing social media accounts."</em><br>
+                Strong: <em>"Grew Instagram following by 45% in 6 months by launching a weekly video series."</em><br>
+                The second bullet uses a number and a result — exactly what recruiters want to see.
+            </p>
+
+            <h3>2. Quantify everything you can</h3>
+            <p>
+                "Improved sales" is forgettable. "Increased Q3 sales by 22% across 4 regions, generating $1.2M in new revenue" is memorable. Even if you don't have exact figures, approximate percentages and numbers significantly strengthen bullet points.
+            </p>
+
+            <h3>3. Tailor your resume to every job</h3>
+            <p>
+                Recruiters can tell when a resume is generic. Spend 5 minutes reordering your bullet points and skills for each application, and you'll roughly double your response rate.
+            </p>
+
+            <h3>4. Keep it to one or two pages</h3>
+            <p>
+                Unless you have 10+ years of experience, one page is ideal. If you must go to two pages, ensure the second page is at least 50% full.
+            </p>
+
+            <h3>5. Proofread before sending</h3>
+            <p>
+                A single typo can cost you the interview. Use the built-in <em>AI Fix</em> button, or paste your final text into our <a href="text-suite.html">Word Counter</a> to check length and readability, and double-check that every date, job title, and company name matches your LinkedIn profile.
+            </p>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <p class="faq-q">Is this resume builder really free?</p>
+                <p>Yes. MyToolX Resume Builder is 100% free with no hidden charges, no watermarks, and no sign-up required. You can create and download unlimited resumes.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-q">Does the resume builder upload my data to a server?</p>
+                <p>No. The entire CV builder runs client-side in your browser using JavaScript. Your personal data never leaves your device — there is no backend, no database, and no tracking of your resume content.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-q">Can I download my resume as a PDF?</p>
+                <p>Yes. Click the <em>🖨️ Save PDF</em> button to open your browser's print dialog, where you can save your resume as a high-resolution PDF ready for ATS and recruiters.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-q">Is the resume ATS-friendly?</p>
+                <p>Yes. The modern two-column layout uses clean semantic text with no images, icons, or tables in the content area, ensuring maximum ATS compatibility with platforms like Workday, Greenhouse, Taleo, Lever, and iCIMS.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-q">Do I need to create an account to save my resume?</p>
+                <p>No account is needed. Simply fill out the form, then click <em>Save PDF</em> to download a permanent copy to your device. Since nothing is stored on a server, be sure to save your PDF before closing the tab.</p>
+            </div>
+
+            <h2>Related Tools & Guides</h2>
+            <ul>
+                <li><a href="blog.html#cv-guide">Full CV Writing Guide</a> — in-depth advice on structure, keywords, and formatting.</li>
+                <li><a href="text-suite.html">Word Counter</a> — check resume length and readability.</li>
+                <li><a href="index.html">All MyToolX Tools</a> — explore the full free toolkit.</li>
+            </ul>
+        </article>
+
+    </main>
+
+    <!-- ================================================== -->
+    <!-- EXACT INDEX.HTML FOOTER (WITH CV TOOL INCLUDED)     -->
+    <!-- ================================================== -->
+    <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+                <div class="lg:col-span-5">
+                    <a href="index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 pr-4">
+                        MyToolX is a free suite of client-side web tools for writers, freelancers and developers. No sign-up, no tracking, no data leaves your browser.
+                    </p>
+                </div>
+                <div class="lg:col-span-4">
+                    <h3>Popular Tools</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <a href="typing-test.html">Typing Speed Test</a>
+                        <a href="image-compressor.html">Image Compressor</a>
+                        <a href="prompt-studio.html">AI Prompt Studio</a>
+                        <a href="grammar-checker.html">Grammar Checker</a>
+                        <a href="text-suite.html">Text &amp; Word Suite</a>
+                        <a href="fee-calculator.html">Fee Calculator</a>
+                        <a href="sip-calculator.html">SIP Calculator</a>
+                        <a href="loan-emi.html">Loan EMI Calc</a>
+                        <a href="json-formatter.html">JSON Formatter</a>
+                        <a href="base64-tool.html">Base64 Tool</a>
+                        <a href="qr-code-generator.html">QR Code Gen</a>
+                        <a href="password-generator.html">Password Gen</a>
+                        <a href="unit-converter.html">Unit Converter</a>
+                        <a href="ai-bio-generator.html">AI Bio Generator</a>
+                        <a href="article-outline.html">Article Outline</a>
+                        <a href="cv-maker.html">Resume Builder</a>
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Company</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Legal</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="blog.html">Blog &amp; Guides</a></li>
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                                <li><a href="terms.html">Terms of Service</a></li>
+                                <li><a href="index.html">Sitemap</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. All rights reserved.</p>
+                <p>All tools run 100% client-side in your browser.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    (function () {
+        'use strict';
+
+        // --- THEME ---
+        (function initTheme() {
+            var saved = null;
+            try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = saved || (prefersDark ? 'dark' : 'light');
+            applyTheme(theme);
+        })();
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            var icon = document.getElementById('themeIcon');
+            if (icon) icon.textContent = (theme === 'dark' ? '☀️' : '🌙');
+            var btn = document.getElementById('themeToggle');
+            if (btn) {
+                btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+                btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+            }
+        }
+        function toggleTheme() {
+            var cur = document.documentElement.getAttribute('data-theme') || 'light';
+            var next = cur === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('mtx-theme', next); } catch (e) {}
+        }
+        window.toggleTheme = toggleTheme;
+
+        // --- DYNAMIC FORM LOGIC ---
+        let expCount = 0;
+        let eduCount = 0;
+
+        function addExperience(data = {}) {
+            expCount++;
+            var id = 'exp' + expCount;
+            var container = document.getElementById('experienceContainer');
+            var div = document.createElement('div');
+            div.className = 'p-3 border rounded-xl relative';
+            div.style.borderColor = 'var(--input-border)';
+            div.style.background = 'var(--input-bg)';
+            div.id = id;
+            div.innerHTML = `
+                <button onclick="document.getElementById('${id}').remove(); updateCV();" class="absolute top-2 right-2 text-red-500 font-bold text-xs hover:underline">Remove</button>
+                <div class="space-y-2 mt-2">
+                    <input type="text" class="exp-title input-field w-full p-2 rounded-lg text-xs font-bold" placeholder="Job Title" value="${data.title || ''}" oninput="updateCV()" autocomplete="organization-title">
+                    <input type="text" class="exp-company input-field w-full p-2 rounded-lg text-xs" placeholder="Company Name" value="${data.company || ''}" oninput="updateCV()" autocomplete="organization">
+                    <input type="text" class="exp-dates input-field w-full p-2 rounded-lg text-xs" placeholder="Dates (e.g. Jan 2020 - Present)" value="${data.dates || ''}" oninput="updateCV()">
+                    <div class="relative">
+                        <textarea class="exp-desc input-field w-full p-2 rounded-lg text-xs" rows="2" placeholder="Describe your achievements..." oninput="updateCV()">${data.desc || ''}</textarea>
+                        <button onclick="fixWithAI(null, this)" class="absolute bottom-2 right-2 text-[9px] font-bold text-indigo-500 bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-100">✨ AI Fix</button>
+                    </div>
+                </div>
+            `;
+            container.appendChild(div);
+            updateCV();
+        }
+        window.addExperience = addExperience;
+
+        function addEducation(data = {}) {
+            eduCount++;
+            var id = 'edu' + eduCount;
+            var container = document.getElementById('educationContainer');
+            var div = document.createElement('div');
+            div.className = 'p-3 border rounded-xl relative';
+            div.style.borderColor = 'var(--input-border)';
+            div.style.background = 'var(--input-bg)';
+            div.id = id;
+            div.innerHTML = `
+                <button onclick="document.getElementById('${id}').remove(); updateCV();" class="absolute top-2 right-2 text-red-500 font-bold text-xs hover:underline">Remove</button>
+                <div class="space-y-2 mt-2">
+                    <input type="text" class="edu-degree input-field w-full p-2 rounded-lg text-xs font-bold" placeholder="Degree (e.g. B.Sc Computer Science)" value="${data.degree || ''}" oninput="updateCV()">
+                    <input type="text" class="edu-school input-field w-full p-2 rounded-lg text-xs" placeholder="University / School" value="${data.school || ''}" oninput="updateCV()">
+                    <input type="text" class="edu-year input-field w-full p-2 rounded-lg text-xs" placeholder="Graduation Year" value="${data.year || ''}" oninput="updateCV()">
+                </div>
+            `;
+            container.appendChild(div);
+            updateCV();
+        }
+        window.addEducation = addEducation;
+
+        // --- CLEAR FORM ---
+        function clearForm() {
+            if(!confirm("Are you sure you want to clear all resume data?")) return;
+            
+            ['inpName', 'inpTitle', 'inpEmail', 'inpPhone', 'inpLocation', 'inpSummary', 'inpSkills', 'inpCerts', 'inpLangs', 'inpRefs'].forEach(function(id) {
+                var el = document.getElementById(id);
+                if (el) el.value = '';
+            });
+
+            document.getElementById('experienceContainer').innerHTML = '';
+            document.getElementById('educationContainer').innerHTML = '';
+            expCount = 0;
+            eduCount = 0;
+            addExperience(); 
+            addEducation();
+            updateCV();
+        }
+        window.clearForm = clearForm;
+
+        // --- LIVE PREVIEW LOGIC ---
+        function escapeHTML(str) {
+            return (str || '').replace(/[&<>"']/g, function (m) {
+                return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[m];
+            });
+        }
+        function nl2br(str) {
+            return escapeHTML(str).replace(/\n/g, '<br>');
+        }
+
+        function updateCV() {
+            var name = document.getElementById('inpName').value.trim() || 'Your Name';
+            var title = document.getElementById('inpTitle').value.trim() || '';
+            var email = document.getElementById('inpEmail').value.trim() || '';
+            var phone = document.getElementById('inpPhone').value.trim() || '';
+            var loc = document.getElementById('inpLocation').value.trim() || '';
+            
+            var summary = document.getElementById('inpSummary').value.trim();
+            var skills = document.getElementById('inpSkills').value.trim();
+            var certs = document.getElementById('inpCerts').value.trim();
+            var langs = document.getElementById('inpLangs').value.trim();
+            var refs = document.getElementById('inpRefs').value.trim();
+
+            // Collect Experience
+            var expHTML = '';
+            document.querySelectorAll('#experienceContainer > div').forEach(function(block) {
+                var t = block.querySelector('.exp-title').value.trim();
+                var c = block.querySelector('.exp-company').value.trim();
+                var d = block.querySelector('.exp-dates').value.trim();
+                var desc = block.querySelector('.exp-desc').value.trim();
+                if (t || c) {
+                    expHTML += `
+                        <div class="cv-job">
+                            <div class="cv-job-title"><span>${escapeHTML(t)}</span><span>${escapeHTML(d)}</span></div>
+                            <div class="cv-job-company">${escapeHTML(c)}</div>
+                            <ul>${desc.split('\n').filter(Boolean).map(line => `<li>${escapeHTML(line)}</li>`).join('')}</ul>
+                        </div>
+                    `;
+                }
+            });
+
+            // Collect Education
+            var eduHTML = '';
+            document.querySelectorAll('#educationContainer > div').forEach(function(block) {
+                var deg = block.querySelector('.edu-degree').value.trim();
+                var sch = block.querySelector('.edu-school').value.trim();
+                var yr = block.querySelector('.edu-year').value.trim();
+                if (deg || sch) {
+                    eduHTML += `
+                        <div class="cv-job">
+                            <div class="cv-job-title"><span>${escapeHTML(deg)}</span><span>${escapeHTML(yr)}</span></div>
+                            <div class="cv-job-company">${escapeHTML(sch)}</div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Preview (Modern Layout Locked)
+            var preview = document.getElementById('cvPreview');
+            preview.innerHTML = `
+                <div class="modern-sidebar">
+                    <h1>${escapeHTML(name)}</h1>
+                    <div class="cv-title">${escapeHTML(title)}</div>
+                    
+                    <h3>Contact</h3>
+                    ${email ? `<p>${escapeHTML(email)}</p>` : ''}
+                    ${phone ? `<p>${escapeHTML(phone)}</p>` : ''}
+                    ${loc ? `<p>${escapeHTML(loc)}</p>` : ''}
+                    
+                    ${skills ? `<h3>Skills</h3><p>${nl2br(skills).replace(/,/g, '<br>')}</p>` : ''}
+                    ${langs ? `<h3>Languages</h3><p>${nl2br(langs).replace(/,/g, '<br>')}</p>` : ''}
+                    ${certs ? `<h3>Certifications</h3><p>${nl2br(certs).replace(/,/g, '<br>')}</p>` : ''}
+                    ${refs ? `<h3>References</h3><p>${nl2br(refs)}</p>` : ''}
+                </div>
+                <div class="modern-main">
+                    ${summary ? `<h2>Profile</h2><p>${nl2br(summary)}</p>` : ''}
+                    ${expHTML ? `<h2>Experience</h2>${expHTML}` : ''}
+                    ${eduHTML ? `<h2>Education</h2>${eduHTML}` : ''}
+                </div>
+            `;
+        }
+        window.updateCV = updateCV;
+
+        // --- PRINT LOGIC ---
+        function printCV() {
+            window.print();
+        }
+        window.printCV = printCV;
+
+        // --- AI GRAMMAR & REWRITE HELPER ---
+        async function fixWithAI(targetId, btnElement) {
+            var textarea = targetId ? document.getElementById(targetId) : btnElement.parentElement.querySelector('textarea');
+            var originalText = textarea.value.trim();
+            if (!originalText) return;
+
+            var btn = targetId ? document.querySelector(`button[onclick="fixWithAI('${targetId}')"]`) : btnElement;
+            var originalBtnText = btn.innerHTML;
+            
+            btn.innerHTML = '✨ Fixing...';
+            btn.disabled = true;
+
+            setTimeout(function() {
+                try {
+                    let corrected = originalText.replace(/\s+/g, ' ').trim();
+                    if (corrected.length > 0) {
+                        corrected = corrected.charAt(0).toUpperCase() + corrected.slice(1);
+                        if (!/[.!?]$/.test(corrected)) {
+                            corrected += '.';
+                        }
+                    }
+                    textarea.value = corrected;
+                    updateCV();
+
+                    btn.innerHTML = '✅ Fixed!';
+                    setTimeout(function() { btn.innerHTML = originalBtnText; btn.disabled = false; }, 1500);
+                } catch (e) {
+                    btn.innerHTML = '❌ Failed';
+                    setTimeout(function() { btn.innerHTML = originalBtnText; btn.disabled = false; }, 1500);
+                }
+            }, 500);
+        }
+        window.fixWithAI = fixWithAI;
+
+        // Initialize
+        addExperience();
+        addEducation();
+        updateCV();
+
+    })();
+    </script>
+</body>
+</html>
