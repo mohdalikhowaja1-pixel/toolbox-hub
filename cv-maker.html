@@ -20,17 +20,9 @@
     <meta name="twitter:description" content="Build a professional resume instantly. Download as PDF. 100% private.">
     <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-W8KM3G3BYL');
-    </script>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
-
+    
+    <link rel="stylesheet" href="styles.css">
+    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -311,7 +303,7 @@
                 <!-- LEFT: FORM -->
                 <div class="cv-editor space-y-6 min-w-0">
                     <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
-                        <h2 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">1. Personal Details</h2>
+                        <h3 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">1. Personal Details</h3>
                         <div class="space-y-3">
                             <input type="text" id="inpName" oninput="updateCV()" aria-label="Full name" placeholder="Full Name" class="input-field w-full p-3 rounded-xl text-sm font-bold" autocomplete="name">
                             <input type="text" id="inpTitle" oninput="updateCV()" aria-label="Professional title" placeholder="Professional Title (e.g. Senior Accountant)" class="input-field w-full p-3 rounded-xl text-sm" autocomplete="organization-title">
@@ -325,7 +317,7 @@
 
                     <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
                         <div class="flex justify-between items-center mb-3">
-                            <h2 class="text-sm font-bold uppercase tracking-wider" style="color: var(--primary);">2. Summary</h2>
+                            <h3 class="text-sm font-bold uppercase tracking-wider" style="color: var(--primary);">2. Summary</h3>
                             <button type="button" data-fix-for="inpSummary" onclick="fixWithAI('inpSummary', this)" class="text-[10px] font-bold text-indigo-500 hover:text-indigo-700 bg-indigo-50 px-2 py-1 rounded-md border border-indigo-100 flex items-center gap-1">✨ Quick Proofread</button>
                         </div>
                         <textarea id="inpSummary" oninput="updateCV()" rows="3" aria-label="Professional summary" placeholder="Brief overview of your experience..." class="input-field w-full p-3 rounded-xl text-sm" autocomplete="off"></textarea>
@@ -333,7 +325,7 @@
 
                     <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
                         <div class="flex justify-between items-center mb-3">
-                            <h2 class="text-sm font-bold uppercase tracking-wider" style="color: var(--primary);">3. Experience</h2>
+                            <h3 class="text-sm font-bold uppercase tracking-wider" style="color: var(--primary);">3. Experience</h3>
                             <button type="button" aria-label="Add experience entry" onclick="addExperience()" class="btn-3d btn-chip px-2 py-1 text-[10px] font-bold">+ Add</button>
                         </div>
                         <div id="experienceContainer" class="space-y-4"></div>
@@ -341,29 +333,29 @@
 
                     <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
                         <div class="flex justify-between items-center mb-3">
-                            <h2 class="text-sm font-bold uppercase tracking-wider" style="color: var(--primary);">4. Education</h2>
+                            <h3 class="text-sm font-bold uppercase tracking-wider" style="color: var(--primary);">4. Education</h3>
                             <button type="button" aria-label="Add education entry" onclick="addEducation()" class="btn-3d btn-chip px-2 py-1 text-[10px] font-bold">+ Add</button>
                         </div>
                         <div id="educationContainer" class="space-y-4"></div>
                     </div>
 
                     <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
-                        <h2 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">5. Skills</h2>
+                        <h3 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">5. Skills</h3>
                         <textarea id="inpSkills" oninput="updateCV()" rows="2" aria-label="Skills, separated by commas" placeholder="e.g. Project Management, Data Analysis, Python" class="input-field w-full p-3 rounded-xl text-sm"></textarea>
                     </div>
 
                     <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
-                        <h2 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">6. Certifications</h2>
+                        <h3 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">6. Certifications</h3>
                         <textarea id="inpCerts" oninput="updateCV()" rows="2" aria-label="Certifications, separated by commas or new lines" placeholder="e.g. PMP Certification (2022)" class="input-field w-full p-3 rounded-xl text-sm"></textarea>
                     </div>
 
                     <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
-                        <h2 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">7. Languages</h2>
+                        <h3 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">7. Languages</h3>
                         <input type="text" id="inpLangs" oninput="updateCV()" aria-label="Languages, separated by commas" placeholder="e.g. English (Native), Spanish (Fluent)" class="input-field w-full p-3 rounded-xl text-sm">
                     </div>
 
                     <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
-                        <h2 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">8. References</h2>
+                        <h3 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">8. References</h3>
                         <textarea id="inpRefs" oninput="updateCV()" rows="2" aria-label="References" placeholder="e.g. Available upon request" class="input-field w-full p-3 rounded-xl text-sm"></textarea>
                     </div>
                 </div>
@@ -1205,5 +1197,18 @@
 
     })();
     </script>
+
+<!-- Moved Google Analytics to the bottom to speed up page load -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
+    <script>
+      window.addEventListener('load', function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W8KM3G3BYL');
+      });
+    </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
 </body>
 </html>

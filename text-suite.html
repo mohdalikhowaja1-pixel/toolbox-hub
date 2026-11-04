@@ -20,14 +20,7 @@
     <meta name="twitter:description" content="Count words, characters, sentences, and estimate reading time. Convert text case instantly.">
     <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-W8KM3G3BYL');
-    </script>
+    <link rel="stylesheet" href="styles.css">
 
     <script type="application/ld+json">
     {
@@ -58,8 +51,6 @@
       ]
     }
     </script>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
 
     <style>
         :root {
@@ -466,5 +457,18 @@
         updateStats();
     })();
     </script>
+
+<!-- Moved Google Analytics to the bottom to speed up page load -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
+    <script>
+      window.addEventListener('load', function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W8KM3G3BYL');
+      });
+    </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
 </body>
 </html>

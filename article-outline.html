@@ -20,14 +20,8 @@
     <meta name="twitter:description" content="Enter a topic and get a ready-to-use H1/H2/H3 article outline with writing notes. Free, in your browser.">
     <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-W8KM3G3BYL');
-    </script>
+   <link rel="stylesheet" href="styles.css">
+    
 
     <script type="application/ld+json">
     {
@@ -59,7 +53,6 @@
     }
     </script>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
 
     <style>
         :root {
@@ -538,5 +531,18 @@
         window.clearOutline = clearOutline;
     })();
     </script>
+
+<!-- Moved Google Analytics to the bottom to speed up page load -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
+    <script>
+      window.addEventListener('load', function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W8KM3G3BYL');
+      });
+    </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
 </body>
 </html>

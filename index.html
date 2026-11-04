@@ -25,7 +25,7 @@
     <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
     
 
-    <script src="https://cdn.tailwindcss.com"></script>
+   <link rel="stylesheet" href="styles.css">
 
     <script type="application/ld+json">
     {
@@ -46,16 +46,7 @@
     }
     </script>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-W8KM3G3BYL');
-    </script>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
-<script defer src="https://cloud.umami.is/script.js" data-website-id="07e07ab9-15b2-4b04-8483-98cb58911963"></script>
     <style>
         :root {
             --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
@@ -114,6 +105,14 @@
             .inline-flex.items-center.text-\[10px\] { padding-left: 0.4rem !important; padding-right: 0.4rem !important; font-size: 9px !important; } /* Shrink remote jobs button text */
             #globalSearchInput { padding-left: 2.5rem !important; font-size: 13px !important; } /* Give search text more room */
         }
+
+                /* Restore the bright colors for Dark Mode */
+        html[data-theme="dark"] .card-3d-btn span[style*="color: #6D28D9;"] { color: #A78BFA !important; }
+        html[data-theme="dark"] .card-3d-btn span[style*="color: #1D4ED8;"] { color: #60A5FA !important; }
+        html[data-theme="dark"] .card-3d-btn span[style*="color: #7F1D1D;"] { color: #F87171 !important; }
+        html[data-theme="dark"] .card-3d-btn span[style*="color: #047857;"] { color: #34D399 !important; }
+        html[data-theme="dark"] .card-3d-btn span[style*="color: #B45309;"] { color: #FBBF24 !important; }
+
         @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
     </style>
 </head>
@@ -189,7 +188,7 @@
         <div id="noSearchResultsMsg" class="hidden max-w-xl mx-auto rounded-2xl p-6 text-center mb-8 shadow-sm" style="background: rgba(239, 68, 68, 0.1); border: 1px solid #EF4444;">
             <div class="text-3xl mb-2">🔍❌</div>
             <h3 class="text-sm font-extrabold uppercase tracking-wider mb-1" style="color: #EF4444;">No Matching Tool Found</h3>
-            <p class="text-xs font-medium mb-3" style="color: #EF4444;">We couldn't find any tool matching your search query. Please try different keywords.</p>
+            <p class="text-xs font-medium mb-3" style="color: #B91C1C;">We couldn't find any tool matching your search query. Please try different keywords.</p>
         </div>
 
         <!-- ALL TOOLS GRID -->
@@ -198,7 +197,7 @@
             
             <!-- NEW: Typing Test -->
             <a href="typing-test.html" data-cat="everyday" data-keywords="typing speed test wpm game keyboard accuracy typing tutor" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
-                <div class="flex justify-between items-start"><span class="text-2xl">⌨️</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #8B5CF6;">Game</span></div>
+                <div class="flex justify-between items-start"><span class="text-2xl">⌨️</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #6D28D9;">Game</span></div>
                 <div><div class="font-bold text-sm" style="color: var(--text);">Typing Speed Test</div><div class="text-xs muted">3D WPM & Accuracy</div></div>
             </a>
 
@@ -206,7 +205,7 @@
             <a href="love-calculator.html" data-cat="everyday" data-keywords="love calculator compatibility match numerology relationship love birds marriage test fun" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
                 <div class="flex justify-between items-start">
                     <span class="text-2xl">❤️</span>
-                    <span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #8B5CF6;">Fun</span>
+                    <span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #6D28D9;">Fun</span>
                 </div>
                 <div>
                     <div class="font-bold text-sm" style="color: var(--text);">Love Calculator</div>
@@ -216,101 +215,99 @@
 
             <!-- NEW: Image Compressor -->
             <a href="image-compressor.html" data-cat="everyday" data-keywords="image compressor resize jpg png webp reduce file size private" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
-                <div class="flex justify-between items-start"><span class="text-2xl">🖼️</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #8B5CF6;">Utility</span></div>
+                <div class="flex justify-between items-start"><span class="text-2xl">🖼️</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #6D28D9;">Utility</span></div>
                 <div><div class="font-bold text-sm" style="color: var(--text);">Image Compressor</div><div class="text-xs muted">Resize & Compress</div></div>
             </a>
 
             <!-- 1. WRITERS & CV -->
             <a href="text-suite.html" data-cat="writer" data-keywords="text word suite counter case converter character read time uppercase lowercase titlecase" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
-                <div class="flex justify-between items-start"><span class="text-2xl">✍️</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #3B82F6;">Writers</span></div>
+                <div class="flex justify-between items-start"><span class="text-2xl">✍️</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #1D4ED8;">Writers</span></div>
                 <div><div class="font-bold text-sm" style="color: var(--text);">Text & Word Suite</div><div class="text-xs muted">Counter & Case Converter</div></div>
             </a>
 
             <!-- UPDATED: Local CV Maker Link -->
             <a href="cv-maker.html" data-cat="writer" data-keywords="cv builder live cv maker pdf resume builder ats resume jobs curriculum vitae" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between" style="border-color: #6366F1;">
-                <div class="flex justify-between items-start"><span class="text-2xl">📄</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #3B82F6;">CV Builder</span></div>
+                <div class="flex justify-between items-start"><span class="text-2xl">📄</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #1D4ED8;">CV Builder</span></div>
                 <div><div class="font-bold text-sm" style="color: var(--text);">Live CV Maker</div><div class="text-xs muted">HD PDF Resume Generator</div></div>
             </a>
 
             <a href="grammar-checker.html" data-cat="writer" data-keywords="grammar check spelling proofreader tense punctuation fix typo corrector language engine" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
-                <div class="flex justify-between items-start"><span class="text-2xl">📝</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #3B82F6;">Writers</span></div>
+                <div class="flex justify-between items-start"><span class="text-2xl">📝</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #1D4ED8;">Writers</span></div>
                 <div><div class="font-bold text-sm" style="color: var(--text);">Grammar Checker</div><div class="text-xs muted">Instant Typo Fix</div></div>
             </a>
 
             <!-- 2. AI TOOLS -->
             <a href="prompt-studio.html" data-cat="ai" data-keywords="ai prompt studio chatgpt gemini midjourney github copilot claude prompt generator humanize text" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
-                <div class="flex justify-between items-start"><span class="text-2xl">🤖</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #A52A2A;">AI Suite</span></div>
+                <div class="flex justify-between items-start"><span class="text-2xl">🤖</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #7F1D1D;">AI Suite</span></div>
                 <div><div class="font-bold text-sm" style="color: var(--text);">AI Prompt Studio</div><div class="text-xs muted">Prompt & Humanizer</div></div>
             </a>
 
             <a href="ai-bio-generator.html" data-cat="ai" data-keywords="ai bio generator linkedin twitter upwork instagram headline portfolio bio" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
-                <div class="flex justify-between items-start"><span class="text-2xl">✨</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #A52A2A;">AI Suite</span></div>
+                <div class="flex justify-between items-start"><span class="text-2xl">✨</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #7F1D1D;">AI Suite</span></div>
                 <div><div class="font-bold text-sm" style="color: var(--text);">AI Bio Generator</div><div class="text-xs muted">LinkedIn & Social Bios</div></div>
             </a>
 
             <a href="article-outline.html" data-cat="ai" data-keywords="article outline generator research essay outline blog structure research paper" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
-                <div class="flex justify-between items-start"><span class="text-2xl">📑</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #A52A2A;">AI Suite</span></div>
+                <div class="flex justify-between items-start"><span class="text-2xl">📑</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #7F1D1D;">AI Suite</span></div>
                 <div><div class="font-bold text-sm" style="color: var(--text);">Article Outline Gen</div><div class="text-xs muted">Research Outlines</div></div>
             </a>
 
             <!-- 3. FINANCE -->
             <a href="fee-calculator.html" data-cat="finance" data-keywords="fee calculator stripe paypal square payment gateway fee contract rate invoice" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
-                <div class="flex justify-between items-start"><span class="text-2xl">💳</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #10B981;">Finance</span></div>
+                <div class="flex justify-between items-start"><span class="text-2xl">💳</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #047857;">Finance</span></div>
                 <div><div class="font-bold text-sm" style="color: var(--text);">Fee Calculators</div><div class="text-xs muted">Stripe & PayPal Fees</div></div>
             </a>
 
             <a href="sip-calculator.html" data-cat="finance" data-keywords="sip calculator mutual fund wealth return investment growth corpus maturity" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
-                <div class="flex justify-between items-start"><span class="text-2xl">📈</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #10B981;">Finance</span></div>
+                <div class="flex justify-between items-start"><span class="text-2xl">📈</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #047857;">Finance</span></div>
                 <div><div class="font-bold text-sm" style="color: var(--text);">SIP Calculator</div><div class="text-xs muted">Mutual Fund Return</div></div>
             </a>
 
             <a href="loan-emi.html" data-cat="finance" data-keywords="loan emi calculator mortgage installment interest principal bank loan" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
-                <div class="flex justify-between items-start"><span class="text-2xl">🏦</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #10B981;">Finance</span></div>
+                <div class="flex justify-between items-start"><span class="text-2xl">🏦</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #047857;">Finance</span></div>
                 <div><div class="font-bold text-sm" style="color: var(--text);">Loan EMI Calc</div><div class="text-xs muted">Mortgage & Installments</div></div>
             </a>
 
             <!-- 4. EVERYDAY UTILITIES -->
             <a href="qr-code-generator.html" data-cat="everyday" data-keywords="qr code generator download qr share qr link to qr image qr" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
-                <div class="flex justify-between items-start"><span class="text-2xl">📱</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #8B5CF6;">Utility</span></div>
+                <div class="flex justify-between items-start"><span class="text-2xl">📱</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #6D28D9;">Utility</span></div>
                 <div><div class="font-bold text-sm" style="color: var(--text);">QR Code Gen</div><div class="text-xs muted">Create QR Images</div></div>
             </a>
 
             <a href="password-generator.html" data-cat="everyday" data-keywords="password generator secure password random key length generator copy password" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
-                <div class="flex justify-between items-start"><span class="text-2xl">🔑</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #8B5CF6;">Utility</span></div>
+                <div class="flex justify-between items-start"><span class="text-2xl">🔑</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #6D28D9;">Utility</span></div>
                 <div><div class="font-bold text-sm" style="color: var(--text);">Password Gen</div><div class="text-xs muted">Secure Random Keys</div></div>
             </a>
 
             <a href="unit-converter.html" data-cat="everyday" data-keywords="unit converter distance weight temperature kilometers miles feet meters inches cm kg lbs celsius fahrenheit" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
-                <div class="flex justify-between items-start"><span class="text-2xl">⚖️</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #8B5CF6;">Utility</span></div>
+                <div class="flex justify-between items-start"><span class="text-2xl">⚖️</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #6D28D9;">Utility</span></div>
                 <div><div class="font-bold text-sm" style="color: var(--text);">Unit Converter</div><div class="text-xs muted">Flexible Multi Converter</div></div>
             </a>
 
             <!-- 5. DEVELOPER TOOLS -->
             <a href="json-formatter.html" data-cat="dev" data-keywords="json formatter json minifier json beautify developer code json syntax" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
-                <div class="flex justify-between items-start"><span class="text-2xl">⚡</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #F59E0B;">Developer</span></div>
+                <div class="flex justify-between items-start"><span class="text-2xl">⚡</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #B45309;">Developer</span></div>
                 <div><div class="font-bold text-sm" style="color: var(--text);">JSON Formatter</div><div class="text-xs muted">Beautify & Minify</div></div>
             </a>
 
             <a href="base64-tool.html" data-cat="dev" data-keywords="base64 tool base64 encode base64 decode developer text encoding" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
-                <div class="flex justify-between items-start"><span class="text-2xl">🔤</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #F59E0B;">Developer</span></div>
+                <div class="flex justify-between items-start"><span class="text-2xl">🔤</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #B45309;">Developer</span></div>
                 <div><div class="font-bold text-sm" style="color: var(--text);">Base64 Tool</div><div class="text-xs muted">Encode & Decode</div></div>
             </a>
 
             <a href="color-converter.html" data-cat="dev" data-keywords="color converter hex code rgb code color picker developer design" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
-                <div class="flex justify-between items-start"><span class="text-2xl">🎨</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #F59E0B;">Developer</span></div>
+                <div class="flex justify-between items-start"><span class="text-2xl">🎨</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #B45309;">Developer</span></div>
                 <div><div class="font-bold text-sm" style="color: var(--text);">Color Converter</div><div class="text-xs muted">HEX, RGB & Names</div></div>
             </a>
         </div>
 
         <!-- PRIVACY / ABOUT SECTION (Moved to bottom) -->
         <div class="max-w-3xl mx-auto mt-16 mb-8 p-6 sm:p-8 rounded-3xl text-center" style="background: var(--chip-bg); border: 1px solid var(--card-border);">
-            <h3 class="text-lg font-bold mb-3" style="color: var(--text);">🔒 Why We Built MyToolX</h3>
+            <h2 class="text-lg font-bold mb-3" style="color: var(--text);">🔒 Why We Built MyToolX</h2>
             <p class="text-sm sm:text-base leading-relaxed muted">
                 Every tool on this site runs entirely in your browser. Your resume, your images, your text, and your financial data never touch a server. We built these tools because we were tired of uploading sensitive files to websites that stored them, logged them, or sold them. You can use everything here offline, and nothing is ever saved.
             </p>
         </div>
-
-    </main>
 
     </main>
 
@@ -481,5 +478,18 @@
             filterCategory('all', document.querySelector('#categoryTabsContainer button'));
         }
     </script>
+
+  <!-- Moved Google Analytics to the bottom to speed up page load -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
+    <script>
+      window.addEventListener('load', function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W8KM3G3BYL');
+      });
+    </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
 </body>
 </html>

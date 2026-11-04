@@ -7,15 +7,8 @@
     <meta name="description" content="Get in touch with the MyToolX team. Send us your feedback, bug reports, or feature requests for our free online tools.">
     <link rel="canonical" href="https://mytoolx.org/contact.html">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-W8KM3G3BYL');
-    </script>
-
+    <link rel="stylesheet" href="styles.css">
+   
     <style>
         :root {
             --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
@@ -247,5 +240,18 @@
         }
         window.toggleTheme = toggleTheme;
     </script>
+
+<!-- Moved Google Analytics to the bottom to speed up page load -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
+    <script>
+      window.addEventListener('load', function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W8KM3G3BYL');
+      });
+    </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
 </body>
 </html>

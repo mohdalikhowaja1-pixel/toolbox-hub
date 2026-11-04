@@ -20,15 +20,8 @@
     <meta name="twitter:description" content="Fix typos, commas, and capitalization instantly in your browser. Supports 30+ languages.">
     <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-W8KM3G3BYL');
-    </script>
-
+    <link rel="stylesheet" href="styles.css">
+    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -230,7 +223,7 @@
 
             <!-- Fix list -->
             <div id="fixesWrap" class="hidden mt-4 pt-4 border-t" style="border-color: var(--card-border);">
-                <h2 class="text-sm font-bold mb-3" style="color: var(--text);">What was changed <span id="fixCount" class="ml-1 px-2 py-0.5 rounded-md text-xs" style="background: var(--chip-bg); color: var(--primary);"></span></h2>
+                <h3 class="text-sm font-bold mb-3" style="color: var(--text);">What was changed <span id="fixCount" class="ml-1 px-2 py-0.5 rounded-md text-xs" style="background: var(--chip-bg); color: var(--primary);"></span></h3>
                 <ul id="fixesList" class="space-y-2 max-h-64 overflow-auto pr-1"></ul>
             </div>
 
@@ -657,5 +650,18 @@
         updateCount();
     })();
     </script>
+
+<!-- Moved Google Analytics to the bottom to speed up page load -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
+    <script>
+      window.addEventListener('load', function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W8KM3G3BYL');
+      });
+    </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
 </body>
 </html>
