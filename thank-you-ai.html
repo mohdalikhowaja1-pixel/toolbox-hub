@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Thank You For Your Purchase! | MyToolX</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://mytoolx.org/thank-you-ai.html">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --chip-bg: #F1F5F9; --chip-text: #334155; --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-link: #475569;
+        }
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --chip-bg: #1F2937; --chip-text: #CBD5E1; --footer-bg: #0B1220; --footer-border: #1F2937; --footer-link: #94A3B8;
+        }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+    </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col justify-between">
+    <header class="surface border-b" style="border-color: var(--card-border);">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-center">
+            <a href="index.html" class="flex items-center gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
+                <div class="logo-mark w-9 h-9 text-base flex items-center justify-center">M<span class="x">X</span></div>
+                <span class="logo-wordmark text-xl block">MyTool<span class="x">X</span></span>
+            </a>
+        </div>
+    </header>
+    <main class="flex-grow flex items-center justify-center p-4 relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg h-64 bg-emerald-500/10 blur-3xl pointer-events-none rounded-full"></div>
+        <div class="surface rounded-3xl shadow-xl p-8 sm:p-12 max-w-lg w-full text-center relative z-10 border-2" style="border-color: var(--accent);">
+            <div class="w-20 h-20 bg-emerald-500/20 text-emerald-500 rounded-full flex items-center justify-center text-4xl mx-auto mb-6">🎉</div>
+            <h1 class="text-2xl sm:text-3xl font-black mb-3" style="color: var(--text);">Thank You for Your Order!</h1>
+            <p class="text-sm muted mb-6 leading-relaxed">Your payment for the <strong>The Ultimate AI Prompt Vault</strong> was successful! Click below to download your files.</p>
+            
+            <div class="bg-amber-500/10 border border-amber-500/20 p-4 rounded-xl text-left mb-8">
+                <p class="text-xs font-bold text-amber-600 dark:text-amber-400 mb-1">📬 Important Next Step:</p>
+                <p class="text-xs muted leading-relaxed">Click the download button below. If you have any issues, please contact our support.</p>
+            </div>
+
+            <!-- CHANGE THIS LINK TO YOUR AI VAULT GOOGLE DRIVE LINK -->
+            <a href="https://drive.google.com/file/d/1-2QasAmF2WHAnUwgc7JwHlxOsBvk74Z0/view?usp=drive_link" target="_blank" rel="noopener" class="btn-3d bg-emerald-600 hover:bg-emerald-700 text-white inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl text-sm font-bold shadow-lg mb-4">
+                ⬇️ Download AI Prompt Vault ZIP
+            </a>
+            <a href="index.html" class="btn-3d btn-primary inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl text-sm font-bold">
+                ← Return to All Tools
+            </a>
+        </div>
+    </main>
+    <footer class="py-6 text-center text-xs muted">
+        <p>&copy; 2026 MyToolX. All rights reserved.</p>
+    </footer>
+    <script>
+        (function initTheme() {
+            var saved = null; try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = saved || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</body>
+</html>

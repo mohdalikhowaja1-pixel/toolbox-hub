@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <meta name="description" content="Premium digital bundles for freelancers and job seekers. ATS Resume Packs, Excel toolkits, and contract templates.">
+    
+    <link rel="canonical" href="https://mytoolx.org/premium.html">
+    <meta name="google-adsense-account" content="ca-pub-3410254230554312">
+
+    <title>Premium Digital Bundles — MyToolX</title>
+
+    <!-- YOUR MAIN STYLESHEET -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Same theme & CSS variables as index.html -->
+    <style>
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
+        }
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
+        }
+        html, body { overflow-x: clip; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+        
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-accent { background: var(--accent); color: #fff; } .btn-accent:hover { background: var(--accent-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+        
+        #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
+        :focus-visible { outline: none; }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        ::selection { background: rgba(79,70,229,0.25); }
+    </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- HEADER (Exactly the same as index.html) -->
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2 flex items-center justify-between gap-1.5 sm:gap-2">
+            
+             <!-- LOGO & BACK BUTTON -->
+            <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+                
+                <!-- The Styled Back Button -->
+                <a href="index.html" class="inline-flex items-center justify-center gap-1.5 text-[11px] sm:text-sm font-bold px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl transition-all hover:opacity-80 active:scale-95 shadow-sm whitespace-nowrap" style="background: var(--chip-bg); color: var(--text);" aria-label="Back to All Tools">
+                    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                    </svg>
+                    <span>All Tools</span>
+                </a>
+                
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
+                    <div class="logo-mark w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base flex items-center justify-center">M<span class="x">X</span></div>
+                    <span class="logo-wordmark text-base sm:text-xl block">MyTool<span class="x">X</span></span>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle dark mode" class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center text-xs sm:text-base font-bold" style="background: var(--chip-bg); color: var(--chip-text);">
+                    <span id="themeIcon" aria-hidden="true">🌙</span>
+                </button>
+                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
+                    💼 Remote Jobs ↗
+                </a>
+                <a href="cv-maker.html" class="hidden md:inline-flex text-xs font-bold text-white px-3 py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
+                    📄 Live CV
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8 w-full flex-grow">
+
+        <!-- Page hero -->
+        <div class="text-center max-w-3xl mx-auto mb-10">
+            <span class="text-xs font-black uppercase tracking-wider text-amber-500 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
+                ⭐ Premium Store
+            </span>
+            <h1 class="text-3xl sm:text-4xl font-black mt-4 mb-3" style="color: var(--text);">
+                Digital Bundles for Freelancers &amp; Job Seekers
+            </h1>
+            <p class="text-sm sm:text-base muted max-w-xl mx-auto">
+                Instant downloads. One-time payment. No subscriptions. All files work offline.
+            </p>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                        <!-- PRODUCT 1: ATS RESUME PACK -->
+            <article class="surface rounded-3xl shadow-xl overflow-hidden border-2 flex flex-col" style="border-color: #B45309;">
+                
+                <!-- COVER IMAGE SECTION -->
+                <div class="relative w-full h-48 sm:h-56 bg-gray-100 dark:bg-gray-800">
+                    <span class="absolute top-3 left-3 bg-amber-500 text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-full z-10 shadow-md">Best Seller</span>
+                    <!-- YOUR CV IMAGE -->
+                    <img src="cv-bundle-cover.webp" alt="The Ultimate ATS Resume Pack Cover" loading="lazy" width="400" height="225" class="w-full h-full object-cover object-center">
+                </div>
+
+                <div class="p-6 flex flex-col flex-grow">
+                    <h2 class="text-lg font-black mb-2" style="color: var(--text);">The Ultimate ATS Resume Pack</h2>
+                    <p class="text-xs muted leading-relaxed mb-4">3 editable templates (Tech, Marketing, Graduate), 50+ power verbs, 20 fill-in formulas, and the 2026 ATS Cheat Sheet.</p>
+                    <ul class="text-xs muted space-y-1 mb-6 font-semibold">
+                        <li>✅ Instant digital download</li>
+                        <li>✅ 100% editable in Word</li>
+                        <li>✅ Passes ATS parsers</li>
+                    </ul>
+                    
+                    <!-- PRICE, TAG, & BUTTON SECTION -->
+                    <div class="mt-auto flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+                        
+                        <!-- Left Side: Price & Gold Tag -->
+                        <div class="flex flex-col">
+                            <div class="flex items-baseline">
+                                <span class="text-2xl font-black" style="color: var(--text);">$2.99</span>
+                                <span class="text-xs muted line-through ml-2">$9.99</span>
+                            </div>
+                            <span class="text-[9px] font-black uppercase tracking-wider text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded-md mt-1.5 border border-amber-500/20 w-max shadow-sm">
+                                ⚡ Exclusive for limited time
+                            </span>
+                        </div>
+
+                        <!-- Right Side: Buy Button (Perfectly Centered) -->
+                        <button onclick="openBankModal('ATS Resume Pack')" class="btn-3d bg-amber-500 hover:bg-amber-600 text-white px-6 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap self-start sm:self-center flex items-center justify-center text-center shrink-0 shadow-md">
+    <span>🛒 Buy Now</span>
+</button>
+                        </a>
+                        
+                    </div>
+                </div>
+            </article>
+
+                        <!-- PRODUCT 2: EXCEL BUNDLE -->
+            <article class="surface rounded-3xl shadow-xl overflow-hidden border-2 flex flex-col" style="border-color: #10B981;">
+                
+                <!-- COVER IMAGE SECTION -->
+                <div class="relative w-full h-48 sm:h-56 bg-gray-100 dark:bg-gray-800">
+                    <span class="absolute top-3 left-3 bg-emerald-500 text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-full z-10 shadow-md">New</span>
+                    <!-- ADD YOUR IMAGE HERE -->
+                    <img src="excel-bundle-cover.webp" alt="Freelancer & Small Business Excel Bundle Cover" loading="lazy" width="400" height="225" class="w-full h-full object-cover object-center">
+                </div>
+
+                <div class="p-6 flex flex-col flex-grow">
+                    <h2 class="text-lg font-black mb-2" style="color: var(--text);">Freelancer &amp; Small Business Excel Bundle</h2>
+                    <p class="text-xs muted leading-relaxed mb-4">Manage finances, track clients, and automate invoicing — all in one spreadsheet bundle.</p>
+                    <ul class="text-xs muted space-y-1 mb-6 font-semibold">
+                        <li>✅ Client &amp; Invoice Tracker</li>
+                        <li>✅ Income / Expense Dashboard</li>
+                        <li>✅ Project Budget &amp; Time Log</li>
+                        <li>✅ Excel &amp; Google Sheets</li>
+                        <li>✅ PDF &amp; How to Use Formula Guide</li>
+                    </ul>
+                    
+                    <!-- PRICE, TAG, & BUTTON SECTION -->
+                    <div class="mt-auto flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+                        
+                        <!-- Left Side: Price & Gold Tag -->
+                        <div class="flex flex-col">
+                            <div class="flex items-baseline">
+                                <span class="text-2xl font-black" style="color: var(--text);">$4.99</span>
+                                <span class="text-xs muted line-through ml-2">$19.99</span>
+                            </div>
+                            <span class="text-[9px] font-black uppercase tracking-wider text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded-md mt-1.5 border border-amber-500/20 w-max shadow-sm">
+                                ⚡ Exclusive for limited time
+                            </span>
+                        </div>
+
+                        <!-- Right Side: Buy Button (Perfectly Centered) -->
+                        <button onclick="openBankModal('Excel Bundle')" class="btn-3d bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap self-start sm:self-center flex items-center justify-center text-center shrink-0 shadow-md">
+    <span>🛒 Buy Now</span>
+</button>
+
+                        </a>
+                        
+                    </div>
+                </div>
+            </article>
+          
+
+                        <!-- PRODUCT 3: FREELANCE CONTRACT KIT -->
+            <article class="surface rounded-3xl shadow-xl overflow-hidden border-2 flex flex-col" style="border-color: #6366F1;">
+                
+                <!-- COVER IMAGE SECTION -->
+                <div class="relative w-full h-48 sm:h-56 bg-gray-100 dark:bg-gray-800">
+                    <span class="absolute top-3 left-3 bg-indigo-500 text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-full z-10 shadow-md">Essential</span>
+                    <!-- YOUR IMAGE -->
+                    <img src="freelancer-kit-thumbnail.webp" alt="Freelance Contract Kit - Legal Templates Thumbnail" loading="lazy" width="400" height="225" class="w-full h-full object-cover object-center">
+                </div>
+
+                <div class="p-6 flex flex-col flex-grow">
+                    <h2 class="text-lg font-black mb-2" style="color: var(--text);">Freelance Contract Kit</h2>
+                    <p class="text-xs muted leading-relaxed mb-4">Lawyer-approved contract templates to protect your business, establish boundaries, and guarantee you get paid.</p>
+                    <ul class="text-xs muted space-y-1 mb-6 font-semibold">
+                        <li>✅ Mutual NDA + Service Agreement</li>
+                        <li>✅ Payment Terms &amp; Late Fee Addendum</li>
+                        <li>✅ Editable Word + Ready-to-Sign PDF</li>
+                        <li>✅ Step-by-Step ReadMe Guide</li>
+                    </ul>
+                    
+                    <!-- PRICE, TAG, & BUTTON SECTION -->
+                    <div class="mt-auto flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+                        
+                        <!-- Left Side: Price & Gold Tag -->
+                        <div class="flex flex-col">
+                            <div class="flex items-baseline">
+                                <span class="text-2xl font-black" style="color: var(--text);">$2.99</span>
+                                <span class="text-xs muted line-through ml-2">$11.99</span>
+                            </div>
+                            <span class="text-[9px] font-black uppercase tracking-wider text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded-md mt-1.5 border border-amber-500/20 w-max shadow-sm">
+                                ⚡ Exclusive for limited time
+                            </span>
+                        </div>
+
+                        <!-- Right Side: Buy Button (Perfectly Centered) -->
+                       <button onclick="openBankModal('Contract Kit')" class="btn-3d bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap self-start sm:self-center flex items-center justify-center text-center shrink-0 shadow-md">
+    <span>🛒 Buy Now</span>
+</button>
+
+                        </a>
+                        
+                    </div>
+                </div>
+            </article>
+
+                                   <!-- PRODUCT 4: AI PROMPT VAULT -->
+            <article class="surface rounded-3xl shadow-xl overflow-hidden border-2 flex flex-col" style="border-color: #8B5CF6;">
+                
+                <!-- COVER IMAGE SECTION -->
+                <div class="relative w-full h-48 sm:h-56 bg-gray-100 dark:bg-gray-800">
+                    <span class="absolute top-3 left-3 bg-purple-600 text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-full z-10 shadow-md">New Drop</span>
+                    <img src="ai-vault-cover.webp" alt="The Ultimate AI Prompt Vault Cover" loading="lazy" width="400" height="225" class="w-full h-full object-cover object-center">
+                </div>
+
+                <div class="p-6 flex flex-col flex-grow">
+                    <h2 class="text-lg font-black mb-2" style="color: var(--text);">The Ultimate AI Prompt Vault</h2>
+                    <p class="text-xs muted leading-relaxed mb-4">100 battle-tested, copy-and-paste AI prompts to write high-converting cold emails, Upwork proposals, and objection-handling scripts in seconds.</p>
+                    <ul class="text-xs muted space-y-1 mb-6 font-semibold">
+                        <li>✅ 100 Unique Client Acquisition Prompts</li>
+                        <li>✅ Clickable Table of Contents (Word &amp; PDF)</li>
+                        <li>✅ Works with ChatGPT, Claude &amp; DeepSeek</li>
+                        <li>✅ Step-by-Step ReadMe Guide</li>
+                    </ul>
+                    
+                    <!-- PRICE, TAG, & BUTTON SECTION -->
+                    <div class="mt-auto flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+                        
+                        <!-- Left Side: Price & Gold Tag -->
+                        <div class="flex flex-col">
+                            <div class="flex items-baseline">
+                                <span class="text-2xl font-black" style="color: var(--text);">$1.99</span>
+                                <span class="text-xs muted line-through ml-2">$9.99</span>
+                            </div>
+                            <span class="text-[9px] font-black uppercase tracking-wider text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded-md mt-1.5 border border-amber-500/20 w-max shadow-sm">
+                                ⚡ Exclusive for limited time
+                            </span>
+                        </div>
+
+                        <!-- Right Side: Buy Button (FIXED) -->
+                        <button onclick="openBankModal('AI Prompt Vault')" class="btn-3d px-6 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap self-start sm:self-center flex items-center justify-center text-center shrink-0 shadow-md transition-transform hover:-translate-y-0.5" style="background-color: #7C3AED !important; color: #FFFFFF !important;">
+    <span>🛒 Buy Now</span>
+</button>
+                        </a>
+                        
+                    </div>
+                </div>
+            </article>
+
+            
+                                                           <!-- PRODUCT 5: CUSTOM SERVICE (HIRE ME) -->
+            <article class="surface rounded-3xl shadow-xl overflow-hidden border-2 flex flex-col" style="border-color: #F59E0B;">
+                
+                <!-- PREMIUM GOLD/BLACK BANNER -->
+                <div class="relative w-full h-48 flex flex-col items-center justify-center overflow-hidden" style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #B45309 100%);">
+                    
+                    <!-- Decorative background shapes -->
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500 opacity-20 rounded-full blur-2xl transform translate-x-10 -translate-y-10"></div>
+                    <div class="absolute bottom-0 left-0 w-24 h-24 bg-amber-500 opacity-20 rounded-full blur-xl transform -translate-x-5 translate-y-5"></div>
+
+                    <div class="relative flex flex-col items-center gap-2 z-10 text-center text-white w-full">
+                        <div class="text-4xl drop-shadow-lg mb-1">🤝</div>
+                        <span class="bg-amber-500 text-black border border-amber-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-[0_0_15px_rgba(245,158,11,0.5)]">
+                            Hire Me
+                        </span>
+                        <h3 class="font-black text-2xl tracking-wide text-white drop-shadow-md mt-1">Let's Build Together</h3>
+                    </div>
+                </div>
+
+                <div class="p-6 flex flex-col flex-grow">
+                    <h2 class="text-lg font-black mb-2" style="color: var(--text);">Tailor-Made Digital Solutions</h2>
+                    <p class="text-xs muted leading-relaxed mb-4">From smart automation scripts to revenue-driven web design, I craft custom tools built specifically around your workflow.</p>
+                    
+                    <ul class="text-xs muted space-y-1.5 mb-6 font-semibold">
+                        <li class="flex items-center gap-2"><span class="text-amber-500">⚡</span> Python Scripts & Task Automation</li>
+                        <li class="flex items-center gap-2"><span class="text-amber-500">📊</span> Bespoke Excel & Google Sheets Dashboards</li>
+                        <li class="flex items-center gap-2"><span class="text-amber-500">🎯</span> High-Converting Landing Page Design</li>
+                        <li class="flex items-center gap-2"><span class="text-amber-500">🧠</span> Advanced AI Prompt Engineering</li>
+                    </ul>
+                    
+                    <!-- DIRECT EMAIL BUTTON -->
+                    <div class="mt-auto pt-2">
+                        <a href="mailto:mohdali.khowaja1@gmail.com?subject=Custom%20Project%20Request%20-%20MyToolX&body=Hi%20Muhammad%20Ali,%0D%0A%0D%0AI%20am%20interested%20in%20your%20custom%20services.%0D%0A%0D%0AProject%20Type:%20%0D%0AProject%20Details:%20%0D%0ATarget%20Deadline:%20%0D%0A%0D%0AThanks!" class="btn-3d text-black w-full py-3 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center text-center shadow-lg" style="background-color: #F59E0B !important; box-shadow: 0 4px 14px 0 rgba(245,158,11,0.39) !important;">
+                            <span>📩 Discuss Your Project via Email</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+<!-- DIRECT BANK TRANSFER POPUP -->
+<div id="bankTransferModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] hidden items-center justify-center p-4">
+    <div class="surface rounded-3xl p-6 sm:p-8 max-w-lg w-full relative border-2 shadow-2xl" style="border-color: #10B981; background: var(--card);">
+        
+        <!-- Close Button -->
+        <button onclick="closeBankModal()" class="absolute top-4 right-4 muted hover:text-red-500 font-bold text-xl">✕</button>
+        
+        <div class="text-center mb-6">
+            <div class="w-16 h-16 bg-emerald-500/20 text-emerald-500 rounded-full flex items-center justify-center text-3xl mx-auto mb-3">
+                🏦
+            </div>
+            <h2 class="text-xl font-black mb-1" style="color: var(--text);">Direct Bank Transfer</h2>
+            <p class="text-xs muted">Secure payment via ACH Transfer</p>
+        </div>
+
+        <!-- FIXED: Bank Details Box -->
+        <div class="p-4 rounded-xl mb-6 border" style="background-color: var(--chip-bg); border-color: var(--card-border);">
+            
+            <div class="mb-3">
+                <p class="text-[10px] font-bold uppercase tracking-wider" style="color: var(--text-muted);">Account Name</p>
+                <p class="text-sm font-bold" style="color: var(--text);">Muhammad Ali Khowaja</p>
+            </div>
+            
+            <div class="mb-3">
+                <p class="text-[10px] font-bold uppercase tracking-wider" style="color: var(--text-muted);">Bank Name</p>
+                <p class="text-sm font-bold" style="color: var(--text);">Merchant Commercial Bank</p>
+            </div>
+            
+            <div class="mb-3">
+                <p class="text-[10px] font-bold uppercase tracking-wider" style="color: var(--text-muted);">Account Type</p>
+                <p class="text-sm font-bold" style="color: var(--text);">Checking</p>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4 mt-3 pt-3 border-t" style="border-color: var(--card-border);">
+                <div>
+                    <p class="text-[10px] font-bold uppercase tracking-wider" style="color: var(--text-muted);">Routing Number</p>
+                    <p class="text-sm font-mono font-bold" style="color: var(--text);">021606742</p>
+                </div>
+                <div>
+                    <p class="text-[10px] font-bold uppercase tracking-wider" style="color: var(--text-muted);">Account Number</p>
+                    <p class="text-sm font-mono font-bold" style="color: var(--text);">900100078425</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-4 rounded-xl mb-6 border" style="background-color: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.2);">
+            <p class="text-xs font-bold mb-1" style="color: #F59E0B;">📬 Important Next Step:</p>
+            <p class="text-xs leading-relaxed" style="color: var(--text);">Once you have transferred the funds, please click the button below to email me the receipt. I will reply immediately with your download link.</p>
+        </div>
+
+        <!-- Email Receipt Button -->
+        <a id="emailReceiptBtn" href="#" class="btn-3d bg-emerald-600 hover:bg-emerald-700 text-white w-full py-3.5 rounded-xl text-sm font-bold flex items-center justify-center shadow-lg" style="color: #FFFFFF !important;">
+            ✉️ Email Payment Receipt
+        </a>
+    </div>
+</div>
+
+
+<!-- SCRIPT TO HANDLE POPUP AND EMAIL -->
+<script>
+    function openBankModal(productName) {
+        // Show the modal
+        var modal = document.getElementById('bankTransferModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+
+        // Update the email link with the specific product name
+        var emailBtn = document.getElementById('emailReceiptBtn');
+        var email = "mohdali.khowaja1@gmail.com"; // Make sure this is your correct email
+        var subject = encodeURIComponent("Payment Receipt for " + productName);
+        var body = encodeURIComponent("Hi Muhammad Ali,\n\nI have transferred the payment for the " + productName + ".\n\nI have attached the receipt/screenshot to this email.\n\nPlease send me the download link.\n\nThanks!");
+        
+        emailBtn.href = "mailto:" + email + "?subject=" + subject + "&body=" + body;
+    }
+
+    function closeBankModal() {
+        var modal = document.getElementById('bankTransferModal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    }
+</script>                      
+
+    </main>
+
+        <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+                
+                <!-- COLUMN 1: Logo & Description -->
+                <div class="lg:col-span-5">
+                    <a href="index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 pr-4">
+                        MyToolX is a free suite of client-side web tools for writers, freelancers and developers. No sign-up, no tracking, no data leaves your browser.
+                    </p>
+                </div>
+
+                 
+		<!-- COLUMN 2: Popular Tools & Premium Link -->
+                <div class="lg:col-span-4">
+                    <h3>Popular Tools</h3>
+                    
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <!-- Row 1 -->
+                        <a href="typing-test.html">Typing Speed Test</a>
+                        
+                        <!-- THE PREMIUM BUTTON (Replaces Image Compressor) -->
+                        <div class="flex items-start mt-0.5"> 
+                            <a href="premium.html" class="link-premium-gold" aria-label="Visit the Premium Store">
+                                <span class="star-icon">⭐</span> Premium
+                            </a>
+                        </div>
+
+                        <!-- Row 2 -->
+                        <a href="prompt-studio.html">AI Prompt Studio</a>
+                        <a href="image-compressor.html">Image Compressor</a>
+                        
+                        <!-- Row 3 -->
+                        <a href="text-suite.html">Text &amp; Word Suite</a>
+                        <a href="grammar-checker.html">Grammar Checker</a>
+                        
+                        <!-- Row 4 -->
+                        <a href="sip-calculator.html">SIP Calculator</a>
+                        <a href="fee-calculator.html">Fee Calculator</a>
+                        
+                        <!-- Row 5 -->
+                        <a href="json-formatter.html">JSON Formatter</a>
+                        <a href="loan-emi.html">Loan EMI Calc</a>
+                        
+                        <!-- Row 6 -->
+                        <a href="qr-code-generator.html">QR Code Gen</a>
+                        <a href="base64-tool.html">Base64 Tool</a>
+                        
+                        <!-- Row 7 -->
+                        <a href="unit-converter.html">Unit Converter</a>
+                        <a href="password-generator.html">Password Gen</a>
+                        
+                        <!-- Row 8 -->
+                        <a href="article-outline.html">Article Outline</a>
+                        <a href="ai-bio-generator.html">AI Bio Generator</a>
+                        
+                        <!-- Row 9 -->
+                        <a href="love-calculator.html">Love Calculator</a>
+                        <a href="cv-maker.html">Resume Builder</a>
+                        
+                        <!-- Row 10 (Extra space filled) -->
+                        <span></span>
+                        <a href="color-converter.html">Color Converter</a>
+                    </div>
+                </div>
+
+                <!-- COLUMN 3: Company & Legal Links -->
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Company</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Legal</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="blog.html">Blog &amp; Guides</a></li>
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                                <li><a href="terms.html">Terms of Service</a></li>
+                                <li><a href="index.html">Sitemap</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div> <!-- END OF GRID -->
+
+            <!-- Bottom Copyright Bar -->
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. All rights reserved.</p>
+                <p>All tools run 100% client-side in your browser.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- THEME SCRIPT -->
+    <script>
+        (function initTheme() {
+            var saved = null;
+            try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = saved || (prefersDark ? 'dark' : 'light');
+            applyTheme(theme);
+        })();
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            var icon = document.getElementById('themeIcon');
+            if (icon) icon.textContent = (theme === 'dark' ? '☀️' : '🌙');
+            var btn = document.getElementById('themeToggle');
+            if (btn) {
+                btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+                btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+            }
+        }
+        function toggleTheme() {
+            var cur = document.documentElement.getAttribute('data-theme') || 'light';
+            var next = cur === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('mtx-theme', next); } catch (e) {}
+        }
+    </script>
+
+
+</body>
+</html>
