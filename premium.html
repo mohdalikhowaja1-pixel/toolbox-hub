@@ -61,38 +61,50 @@
 <body class="font-sans min-h-screen flex flex-col justify-between">
 
     <!-- HEADER (Exactly the same as index.html) -->
+       <!-- HEADER (Exactly the same as other tool pages) -->
     <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
-        <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2 flex items-center justify-between gap-1.5 sm:gap-2">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2">
             
-             <!-- LOGO & BACK BUTTON -->
-            <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+            <!-- TOP ROW: Logo + Back Button + Right Buttons -->
+            <div class="flex items-center justify-between gap-2 sm:gap-4">
                 
-                <!-- The Styled Back Button -->
-                <a href="index.html" class="inline-flex items-center justify-center gap-1.5 text-[11px] sm:text-sm font-bold px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl transition-all hover:opacity-80 active:scale-95 shadow-sm whitespace-nowrap" style="background: var(--chip-bg); color: var(--text);" aria-label="Back to All Tools">
-                    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-                    </svg>
-                    <span>All Tools</span>
-                </a>
-                
-                <!-- Logo -->
-                <a href="index.html" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
-                    <div class="logo-mark w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base flex items-center justify-center">M<span class="x">X</span></div>
-                    <span class="logo-wordmark text-base sm:text-xl block">MyTool<span class="x">X</span></span>
+                <!-- LEFT SIDE: Logo & Desktop Back Button -->
+                <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+                    <!-- Desktop Back Button (Hidden on Mobile) -->
+                    <a href="index.html" class="hidden sm:flex btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold items-center gap-1">
+                        ← All Tools
+                    </a>
+                    
+                    <!-- Logo -->
+                    <a href="index.html" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
+                        <div class="logo-mark w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base flex items-center justify-center">M<span class="x">X</span></div>
+                        <span class="logo-wordmark text-base sm:text-xl block">MyTool<span class="x">X</span></span>
+                    </a>
+                </div>
+
+                <!-- RIGHT SIDE: Dark Mode + Jobs + CV -->
+                <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                    <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle dark mode" class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center text-xs sm:text-base font-bold" style="background: var(--chip-bg); color: var(--chip-text);">
+                        <span id="themeIcon" aria-hidden="true">🌙</span>
+                    </button>
+                    
+                    <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
+                        💼 Remote Jobs ↗
+                    </a>
+
+                    <a href="cv-maker.html" class="hidden md:inline-flex text-xs font-bold text-white px-3 py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
+                        📄 Live CV
+                    </a>
+                </div>
+            </div>
+
+            <!-- BOTTOM ROW: Mobile Back Button (Only shows on Mobile) -->
+            <div class="mt-2 sm:hidden">
+                <a href="index.html" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">
+                    ← Back to All Tools
                 </a>
             </div>
 
-            <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
-                <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle dark mode" class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center text-xs sm:text-base font-bold" style="background: var(--chip-bg); color: var(--chip-text);">
-                    <span id="themeIcon" aria-hidden="true">🌙</span>
-                </button>
-                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
-                    💼 Remote Jobs ↗
-                </a>
-                <a href="cv-maker.html" class="hidden md:inline-flex text-xs font-bold text-white px-3 py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
-                    📄 Live CV
-                </a>
-            </div>
         </div>
     </header>
 
@@ -333,6 +345,7 @@
             </article>
 
 <!-- DIRECT BANK TRANSFER POPUP -->
+<!-- DIRECT BANK TRANSFER POPUP -->
 <div id="bankTransferModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] hidden items-center justify-center p-4">
     <div class="surface rounded-3xl p-6 sm:p-8 max-w-lg w-full relative border-2 shadow-2xl" style="border-color: #10B981; background: var(--card);">
         
@@ -347,7 +360,7 @@
             <p class="text-xs muted">Secure payment via ACH Transfer</p>
         </div>
 
-        <!-- FIXED: Bank Details Box -->
+        <!-- Bank Details Box -->
         <div class="p-4 rounded-xl mb-6 border" style="background-color: var(--chip-bg); border-color: var(--card-border);">
             
             <div class="mb-3">
@@ -365,14 +378,22 @@
                 <p class="text-sm font-bold" style="color: var(--text);">Checking</p>
             </div>
             
-            <div class="grid grid-cols-2 gap-4 mt-3 pt-3 border-t" style="border-color: var(--card-border);">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-3 pt-3 border-t" style="border-color: var(--card-border);">
+                <!-- Routing Number -->
                 <div>
-                    <p class="text-[10px] font-bold uppercase tracking-wider" style="color: var(--text-muted);">Routing Number</p>
-                    <p class="text-sm font-mono font-bold" style="color: var(--text);">021606742</p>
+                    <p class="text-[10px] font-bold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Routing Number</p>
+                    <div class="flex items-center gap-2">
+                        <p class="text-sm font-mono font-bold" style="color: var(--text);">021606742</p>
+                        <button onclick="copyToClipboard('021606742', 'btn-route')" id="btn-route" class="text-[10px] font-bold px-2 py-1 rounded transition-colors" style="background-color: var(--card); color: var(--primary); border: 1px solid var(--card-border);">📋 Copy</button>
+                    </div>
                 </div>
+                <!-- Account Number -->
                 <div>
-                    <p class="text-[10px] font-bold uppercase tracking-wider" style="color: var(--text-muted);">Account Number</p>
-                    <p class="text-sm font-mono font-bold" style="color: var(--text);">900100078425</p>
+                    <p class="text-[10px] font-bold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Account Number</p>
+                    <div class="flex items-center gap-2">
+                        <p class="text-sm font-mono font-bold" style="color: var(--text);">900100078425</p>
+                        <button onclick="copyToClipboard('9000100078425', 'btn-acc')" id="btn-acc" class="text-[10px] font-bold px-2 py-1 rounded transition-colors" style="background-color: var(--card); color: var(--primary); border: 1px solid var(--card-border);">📋 Copy</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -389,16 +410,14 @@
     </div>
 </div>
 
-
 <!-- SCRIPT TO HANDLE POPUP AND EMAIL -->
 <script>
+    // --- POPUP LOGIC ---
     function openBankModal(productName) {
-        // Show the modal
         var modal = document.getElementById('bankTransferModal');
         modal.classList.remove('hidden');
         modal.classList.add('flex');
 
-        // Update the email link with the specific product name
         var emailBtn = document.getElementById('emailReceiptBtn');
         var email = "mohdali.khowaja1@gmail.com"; // Make sure this is your correct email
         var subject = encodeURIComponent("Payment Receipt for " + productName);
@@ -412,8 +431,30 @@
         modal.classList.add('hidden');
         modal.classList.remove('flex');
     }
-</script>                      
 
+    // --- COPY TO CLIPBOARD LOGIC ---
+    function copyToClipboard(text, btnId) {
+        navigator.clipboard.writeText(text).then(function() {
+            var btn = document.getElementById(btnId);
+            var originalText = btn.innerHTML;
+            
+            // Change to success state
+            btn.innerHTML = '✅ Copied!';
+            btn.style.color = '#10B981'; // Green color
+            btn.style.borderColor = '#10B981';
+            
+            // Revert back after 2 seconds
+            setTimeout(function() {
+                btn.innerHTML = originalText;
+                btn.style.color = 'var(--primary)';
+                btn.style.borderColor = 'var(--card-border)';
+            }, 2000);
+        }).catch(function(err) {
+            console.error('Failed to copy: ', err);
+            alert('Failed to copy. Please select and copy manually.');
+        });
+    }
+</script>
     </main>
 
         <footer class="mega-footer py-12 mt-auto">
