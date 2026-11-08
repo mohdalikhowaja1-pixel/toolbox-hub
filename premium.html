@@ -340,69 +340,94 @@
                 </div>
             </article>
 
-<!-- DIRECT BANK TRANSFER POPUP -->
-<!-- DIRECT BANK TRANSFER POPUP -->
-<div id="bankTransferModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] hidden items-center justify-center p-4">
-    <div class="surface rounded-3xl p-6 sm:p-8 max-w-lg w-full relative border-2 shadow-2xl" style="border-color: #10B981; background: var(--card);">
-        
-        <!-- Close Button -->
-        <button onclick="closeBankModal()" class="absolute top-4 right-4 muted hover:text-red-500 font-bold text-xl">✕</button>
-        
-        <div class="text-center mb-6">
-            <div class="w-16 h-16 bg-emerald-500/20 text-emerald-500 rounded-full flex items-center justify-center text-3xl mx-auto mb-3">
-                🏦
-            </div>
-            <h2 class="text-xl font-black mb-1" style="color: var(--text);">Direct Bank Transfer</h2>
-            <p class="text-xs muted">Secure payment via ACH Transfer</p>
-        </div>
 
-        <!-- Bank Details Box -->
-        <div class="p-4 rounded-xl mb-6 border" style="background-color: var(--chip-bg); border-color: var(--card-border);">
+<!-- DIRECT BANK TRANSFER POPUP -->
+<div id="bankTransferModal" onclick="if(event.target === this) closeBankModal()" style="display: none; position: fixed; inset: 0; z-index: 100; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(4px); padding: 16px; overflow-y: auto;">
+    
+    <!-- Flex Wrapper to Center -->
+    <div style="display: flex; min-height: 100%; align-items: center; justify-content: center;">
+        
+        <!-- Modal Box -->
+        <div class="surface" style="position: relative; width: 100%; max-width: 400px; background-color: var(--card); border: 2px solid #10B981; border-radius: 16px; display: flex; flex-direction: column; max-height: 85vh; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);">
             
-            <div class="mb-3">
-                <p class="text-[10px] font-bold uppercase tracking-wider" style="color: var(--text-muted);">Account Name</p>
-                <p class="text-sm font-bold" style="color: var(--text);">Muhammad Ali Khowaja</p>
-            </div>
-            
-            <div class="mb-3">
-                <p class="text-[10px] font-bold uppercase tracking-wider" style="color: var(--text-muted);">Bank Name</p>
-                <p class="text-sm font-bold" style="color: var(--text);">Merchant Commercial Bank</p>
-            </div>
-            
-            <div class="mb-3">
-                <p class="text-[10px] font-bold uppercase tracking-wider" style="color: var(--text-muted);">Account Type</p>
-                <p class="text-sm font-bold" style="color: var(--text);">Checking</p>
-            </div>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-3 pt-3 border-t" style="border-color: var(--card-border);">
-                <!-- Routing Number -->
+            <!-- Header (Fixed) -->
+            <div style="padding: 12px 16px; border-bottom: 1px solid var(--card-border); display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;">
                 <div>
-                    <p class="text-[10px] font-bold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Routing Number</p>
-                    <div class="flex items-center gap-2">
-                        <p class="text-sm font-mono font-bold" style="color: var(--text);">021606742</p>
-                        <button onclick="copyToClipboard('021606742', 'btn-route')" id="btn-route" class="text-[10px] font-bold px-2 py-1 rounded transition-colors" style="background-color: var(--card); color: var(--primary); border: 1px solid var(--card-border);">📋 Copy</button>
+                    <h2 style="font-size: 16px; font-weight: 900; color: var(--text); margin: 0;">Direct Bank Transfer</h2>
+                    <p style="font-size: 10px; color: var(--text-muted); margin: 0;">ACH Transfer Only</p>
+                </div>
+                <button onclick="closeBankModal()" style="background: rgba(0,0,0,0.1); border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 20px; font-weight: bold; cursor: pointer; color: var(--text); display: flex; align-items: center; justify-content: center;">&times;</button>
+            </div>
+
+            <!-- Scrollable Body -->
+            <div style="padding: 16px; overflow-y: auto; flex-grow: 1;">
+                
+                <!-- Warning -->
+                <div style="background-color: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px; padding: 8px; margin-bottom: 12px; text-align: center;">
+                    <p style="font-size: 10px; font-weight: bold; color: #EF4444; margin: 0;">⚠️ ONLY ACH transfers. No Wire/SWIFT.</p>
+                </div>
+
+                <!-- Bank Details -->
+                <div style="background-color: var(--chip-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 12px; margin-bottom: 12px;">
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--card-border); padding-bottom: 8px; margin-bottom: 8px;">
+                        <div>
+                            <p style="font-size: 9px; text-transform: uppercase; color: var(--text-muted); margin: 0 0 2px 0;">Account Name</p>
+                            <p style="font-size: 12px; font-weight: bold; color: var(--text); margin: 0;">Muhammad Ali Khowaja</p>
+                        </div>
+                        <button onclick="copyToClipboard('Muhammad Ali Khowaja', 'btn-name')" id="btn-name" style="font-size: 10px; padding: 4px 8px; border-radius: 4px; background: var(--card); color: var(--primary); border: 1px solid var(--card-border); cursor: pointer; font-weight: bold;">📋 Copy</button>
+                    </div>
+                    
+                    <div style="border-bottom: 1px solid var(--card-border); padding-bottom: 8px; margin-bottom: 8px;">
+                        <p style="font-size: 9px; text-transform: uppercase; color: var(--text-muted); margin: 0 0 2px 0;">Bank Name</p>
+                        <p style="font-size: 12px; font-weight: bold; color: var(--text); margin: 0;">Merchants Commercial Bank (Checking)</p>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <div>
+                            <p style="font-size: 9px; text-transform: uppercase; color: var(--text-muted); margin: 0 0 2px 0;">Routing Number</p>
+                            <p style="font-size: 13px; font-family: monospace; font-weight: bold; color: var(--text); margin: 0;">021606742</p>
+                        </div>
+                        <button onclick="copyToClipboard('021606742', 'btn-route')" id="btn-route" style="font-size: 10px; padding: 4px 8px; border-radius: 4px; background: var(--card); color: var(--primary); border: 1px solid var(--card-border); cursor: pointer; font-weight: bold;">📋 Copy</button>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <p style="font-size: 9px; text-transform: uppercase; color: var(--text-muted); margin: 0 0 2px 0;">Account Number</p>
+                            <p style="font-size: 13px; font-family: monospace; font-weight: bold; color: var(--text); margin: 0;">900100078425</p>
+                        </div>
+                        <button onclick="copyToClipboard('9000100078425', 'btn-acc')" id="btn-acc" style="font-size: 10px; padding: 4px 8px; border-radius: 4px; background: var(--card); color: var(--primary); border: 1px solid var(--card-border); cursor: pointer; font-weight: bold;">📋 Copy</button>
                     </div>
                 </div>
-                <!-- Account Number -->
-                <div>
-                    <p class="text-[10px] font-bold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Account Number</p>
-                    <div class="flex items-center gap-2">
-                        <p class="text-sm font-mono font-bold" style="color: var(--text);">900100078425</p>
-                        <button onclick="copyToClipboard('9000100078425', 'btn-acc')" id="btn-acc" class="text-[10px] font-bold px-2 py-1 rounded transition-colors" style="background-color: var(--card); color: var(--primary); border: 1px solid var(--card-border);">📋 Copy</button>
+
+                <!-- Tag Details -->
+                <div style="background-color: var(--chip-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 12px; margin-bottom: 12px;">
+                    <p style="font-size: 9px; text-transform: uppercase; color: var(--text-muted); margin: 0 0 4px 0;">Elevate User? Send via Tag</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <p style="font-size: 13px; font-family: monospace; font-weight: bold; color: #10B981; margin: 0;">@muhamm.khowaj1</p>
+                        <button onclick="copyToClipboard('@muhamm.khowaj1', 'btn-tag')" id="btn-tag" style="font-size: 10px; padding: 4px 8px; border-radius: 4px; background: var(--card); color: var(--primary); border: 1px solid var(--card-border); cursor: pointer; font-weight: bold;">📋 Copy</button>
                     </div>
                 </div>
+
+                <!-- Note -->
+                <div style="background-color: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 12px; padding: 10px; margin-bottom: 12px;">
+                    <p style="font-size: 10px; color: var(--text); margin: 0;"><strong style="color: #F59E0B;">Important:</strong> After transferring, email the receipt. I will reply with your download link.</p>
+                </div>
+
+                <!-- CTA Button -->
+                <a id="emailReceiptBtn" href="#" class="btn-3d bg-emerald-600 hover:bg-emerald-700" style="display: flex; justify-content: center; align-items: center; width: 100%; padding: 12px; border-radius: 8px; color: white !important; font-size: 12px; font-weight: bold; text-decoration: none; margin-bottom: 12px;">✉️ Email Receipt</a>
+
+                <!-- Referral -->
+                <div style="border-top: 1px solid var(--card-border); padding-top: 12px; text-align: center;">
+                    <p style="font-size: 9px; color: var(--text-muted); margin: 0 0 6px 0;">For Virtual Bank Account - Join Elevate Pay using my link:</p>
+                    <div style="display: flex; gap: 6px;">
+                        <input type="text" readonly value="https://elevatepay.co/ref?r=muhkho4" style="width: 100%; padding: 6px; border-radius: 6px; background: var(--chip-bg); color: var(--text-muted); border: 1px solid var(--card-border); font-size: 10px; font-family: monospace; text-align: center;">
+                        <button onclick="copyToClipboard('https://elevatepay.co/ref?r=muhkho4', 'btn-ref')" id="btn-ref" style="padding: 6px 10px; border-radius: 6px; background: #4F46E5; color: white; border: none; font-size: 10px; font-weight: bold; cursor: pointer;">Copy</button>
+                    </div>
+                </div>
+
             </div>
         </div>
-
-        <div class="p-4 rounded-xl mb-6 border" style="background-color: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.2);">
-            <p class="text-xs font-bold mb-1" style="color: #F59E0B;">📬 Important Next Step:</p>
-            <p class="text-xs leading-relaxed" style="color: var(--text);">Once you have transferred the funds, please click the button below to email me the receipt. I will reply immediately with your download link.</p>
-        </div>
-
-        <!-- Email Receipt Button -->
-        <a id="emailReceiptBtn" href="#" class="btn-3d bg-emerald-600 hover:bg-emerald-700 text-white w-full py-3.5 rounded-xl text-sm font-bold flex items-center justify-center shadow-lg" style="color: #FFFFFF !important;">
-            ✉️ Email Payment Receipt
-        </a>
     </div>
 </div>
 
@@ -415,7 +440,7 @@
         modal.classList.add('flex');
 
         var emailBtn = document.getElementById('emailReceiptBtn');
-        var email = "mohdali.khowaja1@gmail.com"; // Make sure this is your correct email
+        var email = "mohdali.khowaja1@gmail.com";
         var subject = encodeURIComponent("Payment Receipt for " + productName);
         var body = encodeURIComponent("Hi Muhammad Ali,\n\nI have transferred the payment for the " + productName + ".\n\nI have attached the receipt/screenshot to this email.\n\nPlease send me the download link.\n\nThanks!");
         
@@ -428,7 +453,7 @@
         modal.classList.remove('flex');
     }
 
-    // --- COPY TO CLIPBOARD LOGIC ---
+    // --- COPY TO CLIPBOARD LOGIC (Works for all buttons) ---
     function copyToClipboard(text, btnId) {
         navigator.clipboard.writeText(text).then(function() {
             var btn = document.getElementById(btnId);
@@ -436,22 +461,27 @@
             
             // Change to success state
             btn.innerHTML = '✅ Copied!';
-            btn.style.color = '#10B981'; // Green color
+            btn.style.color = '#10B981';
             btn.style.borderColor = '#10B981';
+            if(btn.classList.contains('bg-indigo-600')) {
+                btn.style.backgroundColor = '#10B981';
+                btn.style.borderColor = '#10B981';
+            }
             
             // Revert back after 2 seconds
             setTimeout(function() {
                 btn.innerHTML = originalText;
                 btn.style.color = 'var(--primary)';
                 btn.style.borderColor = 'var(--card-border)';
+                if(btn.classList.contains('bg-indigo-600')) {
+                    btn.style.backgroundColor = '#4F46E5'; // reset to indigo
+                }
             }, 2000);
         }).catch(function(err) {
-            console.error('Failed to copy: ', err);
             alert('Failed to copy. Please select and copy manually.');
         });
     }
-</script>
-    </main>
+</script>    </main>
 
         <footer class="mega-footer py-12 mt-auto">
         <div class="max-w-7xl mx-auto px-4">
@@ -585,6 +615,45 @@
         }
     </script>
 
+<script>
+    function openBankModal(productName) {
+        var modal = document.getElementById('bankTransferModal');
+        modal.style.display = 'block'; // Show modal
+        document.body.style.overflow = 'hidden'; // Stop background scrolling
+
+        var emailBtn = document.getElementById('emailReceiptBtn');
+        var email = "mohdali.khowaja1@gmail.com"; 
+        var subject = encodeURIComponent("Payment Receipt for " + productName);
+        var body = encodeURIComponent("Hi Muhammad Ali,\n\nI have transferred the payment for the " + productName + ".\n\nI have attached the receipt/screenshot to this email.\n\nPlease send me the download link.\n\nThanks!");
+        
+        emailBtn.href = "mailto:" + email + "?subject=" + subject + "&body=" + body;
+    }
+
+    function closeBankModal() {
+        var modal = document.getElementById('bankTransferModal');
+        modal.style.display = 'none'; // Hide modal
+        document.body.style.overflow = 'auto'; // Restore background scrolling
+    }
+
+    function copyToClipboard(text, btnId) {
+        navigator.clipboard.writeText(text).then(function() {
+            var btn = document.getElementById(btnId);
+            var originalText = btn.innerHTML;
+            
+            btn.innerHTML = '✅ Copied!';
+            btn.style.color = '#10B981';
+            btn.style.borderColor = '#10B981';
+            
+            setTimeout(function() {
+                btn.innerHTML = originalText;
+                btn.style.color = 'var(--primary)';
+                btn.style.borderColor = 'var(--card-border)';
+            }, 2000);
+        }).catch(function(err) {
+            console.error('Failed to copy: ', err);
+        });
+    }
+</script>
 
 </body>
 </html>
