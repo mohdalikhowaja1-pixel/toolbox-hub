@@ -403,7 +403,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div>
                                 <p style="font-size: 9px; text-transform: uppercase; color: var(--text-muted); margin: 0 0 2px 0;">Account Number</p>
-                                <p style="font-size: 13px; font-family: monospace; font-weight: bold; color: var(--text); margin: 0;">9000100078425</p>
+                                <p style="font-size: 13px; font-family: monospace; font-weight: bold; color: var(--text); margin: 0;">900100078425</p>
                             </div>
                             <button onclick="copyToClipboard('9000100078425', 'btn-acc')" id="btn-acc" style="font-size: 10px; padding: 4px 8px; border-radius: 4px; background: var(--card); color: var(--primary); border: 1px solid var(--card-border); cursor: pointer; font-weight: bold;">📋 Copy</button>
                         </div>
@@ -659,7 +659,7 @@
         var emailBtn = document.getElementById('emailReceiptBtn');
         var email = "mytoolx0@gmail.com"; // Your new professional email
         var subject = encodeURIComponent("Payment Receipt for " + productName);
-        var body = encodeURIComponent("Hi Muhammad Ali,\n\nI have transferred the payment for the " + productName + ".\n\nI have attached the receipt/screenshot to this email.\n\nPlease send me the download link.\n\nThanks!");
+        var body = encodeURIComponent("Hi MyToolx Team,\n\nI have transferred the payment for the " + productName + ".\n\nI have attached the receipt/screenshot to this email.\n\nPlease send me the download link.\n\nThanks!");
         
         emailBtn.href = "mailto:" + email + "?subject=" + subject + "&body=" + body;
     }
