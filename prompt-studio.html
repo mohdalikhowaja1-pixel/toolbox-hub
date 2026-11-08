@@ -137,9 +137,10 @@
 
                 <!-- RIGHT SIDE: Dark Mode + Jobs + CV -->
                 <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
-                    <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle dark mode" class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center text-xs sm:text-base font-bold" style="background: var(--chip-bg); color: var(--chip-text);">
-                        <span id="themeIcon" aria-hidden="true">🌙</span>
-                    </button>
+                    <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch theme" title="Toggle Light/Dark Mode" class="h-8 sm:h-10 px-2 sm:px-3 rounded-xl flex items-center justify-center gap-1.5 text-[10px] sm:text-xs font-bold transition-all hover:opacity-80" style="background: var(--chip-bg); color: var(--chip-text);">
+    <span id="themeIcon" aria-hidden="true">🌙</span>
+    <span id="themeText" class="hidden sm:block">Dark Mode</span>
+</button>
                     
                     <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
                         💼 Remote Jobs ↗
@@ -374,15 +375,26 @@
         })();
 
         function applyTheme(theme) {
-            document.documentElement.setAttribute('data-theme', theme);
-            var icon = document.getElementById('themeIcon');
-            if (icon) icon.textContent = (theme === 'dark' ? '☀️' : '🌙');
-            var btn = document.getElementById('themeToggle');
-            if (btn) {
-                btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-                btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
-            }
+    document.documentElement.setAttribute('data-theme', theme);
+    var icon = document.getElementById('themeIcon');
+    var text = document.getElementById('themeText');
+    
+    if (icon && text) {
+        if (theme === 'dark') {
+            icon.textContent = '🌙';
+            text.textContent = 'Dark Mode';
+        } else {
+            icon.textContent = '☀️';
+            text.textContent = 'Light Mode';
         }
+    }
+    
+    var btn = document.getElementById('themeToggle');
+    if (btn) {
+        btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+        btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+    }
+}
         function toggleTheme() {
             var cur = document.documentElement.getAttribute('data-theme') || 'light';
             var next = cur === 'dark' ? 'light' : 'dark';
