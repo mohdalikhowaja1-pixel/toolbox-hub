@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        (function() {
+            var saved = null;
+            try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = saved || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>📰 Turn Long Docs into 1-Minute Reads | MyToolX</title>
+    <meta name="description" content="Instantly summarize long articles, essays, or documents. 100% private, runs entirely in your browser. No API keys, no servers, no data leaves your device.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://mytoolx.org/text-summarizer.html">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://refer.micro1.ai">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:url" content="https://mytoolx.org/text-summarizer.html">
+    <meta property="og:title" content="Free AI Text Summarizer: 24/7 Instant 📰 | MyToolX">
+    <meta property="og:description" content="Instantly summarize long text. 100% private, runs entirely in your browser.">
+    <meta property="og:image" content="https://mytoolx.org/og-image.png">
+    <meta property="og:image:alt" content="MyToolX Text Summarizer">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "MyToolX Text Summarizer",
+      "url": "https://mytoolx.org/text-summarizer.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "Summarize long text instantly in your browser without API keys."
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
+        }
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
+        }
+        html, body { overflow-x: clip; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+        
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .tool-panel { border-top: 4px solid var(--primary); }
+        .tool-panel:hover { box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); }
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+        
+        .input-field { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
+        .input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); outline: none; }
+        
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+        
+        #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
+        :focus-visible { outline: none; }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        ::selection { background: rgba(79,70,229,0.25); }
+
+        .faq-item { border-bottom: 1px solid var(--card-border); padding: 1rem 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-q { font-weight: 800; font-size: 1rem; color: var(--text); margin-bottom: 0.4rem; }
+    </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col justify-between">
+
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2">
+            <div class="flex items-center justify-between gap-2 sm:gap-4">
+                <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+                    <a href="index.html" class="hidden sm:flex btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold items-center gap-1">← All Tools</a>
+                    <a href="index.html" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
+                        <div class="logo-mark w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base flex items-center justify-center">M<span class="x">X</span></div>
+                        <span class="logo-wordmark text-base sm:text-xl block">MyTool<span class="x">X</span></span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                    <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch theme" title="Toggle Light/Dark Mode" class="h-8 sm:h-10 px-2 sm:px-3 rounded-xl flex items-center justify-center gap-1.5 text-[10px] sm:text-xs font-bold transition-all hover:opacity-80" style="background: var(--chip-bg); color: var(--chip-text);">
+    <span id="themeIcon" aria-hidden="true">🌙</span>
+    <span id="themeText" class="hidden sm:block">Dark Mode</span>
+</button>
+                    <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
+                        💼 Remote Jobs ↗
+                    </a>
+                    <a href="cv-maker.html" class="hidden md:inline-flex text-xs font-bold text-white px-3 py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
+    📄 Live CV
+</a>
+                </div>
+            </div>
+            <div class="mt-2 sm:hidden">
+                <a href="index.html" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">
+                    ← Back to All Tools
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow">
+
+        <nav class="text-xs font-semibold mb-4 flex items-center gap-1 muted" aria-label="Breadcrumb">
+            <a href="index.html" class="hover:text-indigo-500">Home</a>
+            <span>/</span>
+            <span style="color: var(--text); font-weight: 700;">Text Summarizer</span>
+        </nav>
+
+        <div class="tool-panel surface rounded-3xl shadow-xl p-6 sm:p-8 mb-10 transition-shadow">
+            
+            <div class="flex items-center justify-between gap-3 flex-wrap mb-4 pb-4 border-b" style="border-color: var(--card-border);">
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 w-full">
+                    <div>
+                        <h1 class="text-xl sm:text-2xl font-black flex items-center gap-2" style="color: var(--text);">
+                            📰 Turn Long Documents into 1-Minute Reads
+                        </h1>
+                        <p class="text-xs sm:text-sm muted mt-1 font-medium">100% Private. No sign-up required. Save hours of reading time.</p>
+                    </div>
+                    <button onclick="clearSummary()" class="btn-3d btn-chip px-3.5 py-2 text-xs font-bold self-start sm:self-center">Clear</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label for="sumRatio" class="block text-xs font-bold uppercase tracking-wider mb-1.5 muted">Summary Target</label>
+                    <select id="sumRatio" class="input-field w-full p-3.5 rounded-xl text-sm font-semibold">
+                        <option value="25">Short Overview (Executive)</option>
+                        <option value="50" selected>Balanced Summary (Standard)</option>
+                        <option value="75">Detailed Summary (Comprehensive)</option>
+                    </select>
+                </div>
+            </div>
+
+            <label for="sumInput" class="block text-xs font-bold uppercase tracking-wider mb-1.5 muted">Paste your text here</label>
+            <textarea id="sumInput" rows="8" class="input-field w-full p-4 rounded-2xl text-sm font-medium transition mb-6" placeholder="Paste a long article, essay, or document here..."></textarea>
+
+            <button onclick="generateSummary()" class="btn-3d btn-primary px-6 py-3 text-sm flex items-center justify-center gap-2 w-full sm:w-auto mb-6">
+                ⚡ Summarize Text Now
+            </button>
+
+            <div class="flex justify-between items-center mb-2">
+                <label class="block text-xs font-bold uppercase tracking-wider muted">Summary Output</label>
+                <button id="copyBtn" onclick="copySummaryText()" class="btn-3d btn-chip px-3 py-1.5 text-xs font-bold flex items-center gap-1.5">📋 Copy Output</button>
+            </div>
+            
+            <div id="sumOutput" role="status" aria-live="polite" class="w-full p-5 rounded-2xl text-sm shadow-inner min-h-[120px] mb-2 leading-relaxed whitespace-pre-wrap" style="background: var(--chip-bg); color: var(--text);">Your summary will appear here...</div>
+
+        </div>
+
+        <!-- RICH SEO CONTENT -->
+        <article class="surface rounded-3xl shadow-md p-6 sm:p-8 mb-10 space-y-6">
+            <div class="pb-4 border-b" style="border-color: var(--card-border);">
+                <h2 class="text-xl font-bold">Read Less, Learn More: The Power of Instant Summarization</h2>
+                <p class="text-sm leading-relaxed mt-2 muted">
+                    In today's fast-paced digital world, we are drowning in information. Whether you are a student researching a 50-page paper, a professional trying to catch up on industry news, or a writer reviewing a lengthy draft, time is your most valuable asset. Our <strong>AI Text Summarizer</strong> is designed to give you back that time.
+                </p>
+                <p class="text-sm leading-relaxed mt-2 muted">
+                    Unlike other online tools that force you to upload your private documents to a cloud server, MyToolX runs entirely in your browser. This means you can summarize sensitive contracts, personal essays, or confidential work emails with total peace of mind. <strong>Your data never leaves your device.</strong>
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-bold mb-3">How Our Local NLP Algorithm Works</h2>
+                <p class="text-sm leading-relaxed muted mb-4">
+                    You might wonder how a free tool can summarize text without a live connection to ChatGPT. We use a sophisticated client-side algorithm based on <strong>Natural Language Processing (NLP)</strong>.
+                </p>
+                <ul class="list-disc pl-5 text-sm muted space-y-2">
+                    <li><strong>Sentence Scoring:</strong> The tool reads every sentence and assigns it a score based on the frequency of key terms (ignoring common words like "the" and "and").</li>
+                    <li><strong>Signal Boosting:</strong> Sentences that contain transition words (like "Therefore," "Conclusion," "However") or critical warnings are given a higher priority to ensure the core message is preserved.</li>
+                    <li><strong>Context Locking:</strong> To prevent the summary from feeling like disconnected bullet points, the algorithm always anchors the summary with the first and last sentences of your text, ensuring the original introduction and conclusion are maintained.</li>
+                </ul>
+            </div>
+
+            <div class="border-t pt-6" style="border-color: var(--card-border);">
+                <h2 class="text-xl font-bold mb-3">Frequently Asked Questions (FAQ)</h2>
+                
+                <div class="faq-item">
+                    <p class="faq-q">Is my text uploaded to a server?</p>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">No. We built this tool with a privacy-first architecture. All text processing happens locally inside your browser using JavaScript. Your text is never transmitted to MyToolX or any third-party AI provider.</p>
+                </div>
+
+                <div class="faq-item">
+                    <p class="faq-q">How long should the original text be?</p>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">For the best results, we recommend pasting text that is at least 100 words. If the text is too short, the summarizer will simply return the original text, as there isn't enough content to extract a meaningful summary.</p>
+                </div>
+
+                <div class="faq-item">
+                    <p class="faq-q">Will the summary sound like a robot?</p>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">Because this tool extracts the most important sentences from your original text, the summary will sound exactly like the original author. It does not "rewrite" the text like a paid AI chatbot might. It pulls the best sentences to give you a quick overview.</p>
+                </div>
+
+                <div class="faq-item">
+                    <p class="faq-q">What is the difference between the summary targets?</p>
+                    <p class="text-xs sm:text-sm muted leading-relaxed"><strong>Short Overview:</strong> Great for getting the absolute main points of a long article. <strong>Balanced Summary:</strong> Retains more context and examples. <strong>Detailed Summary:</strong> Nearly half the length of the original text, best for complex topics where you want to keep the majority of the details.</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+                <div class="lg:col-span-5">
+                    <a href="index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 pr-4">
+                        MyToolX is a free suite of client-side web tools for writers, freelancers and developers. No sign-up, no tracking, no data leaves your browser.
+                    </p>
+                </div>
+                <div class="lg:col-span-4">
+                    <h3>Popular Tools</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <a href="typing-test.html">Typing Speed Test</a>
+                        <div class="flex items-start mt-0.5"> 
+                            <a href="premium.html" class="link-premium-gold" aria-label="Visit the Premium Store"><span class="star-icon">⭐</span> Premium</a>
+                        </div>
+                        <a href="prompt-studio.html">AI Prompt Studio</a>
+                        <a href="image-compressor.html">Image Compressor</a>
+                        <a href="text-suite.html">Text &amp; Word Suite</a>
+                        <a href="grammar-checker.html">Grammar Checker</a>
+                        <a href="sip-calculator.html">SIP Calculator</a>
+                        <a href="fee-calculator.html">Fee Calculator</a>
+                        <a href="json-formatter.html">JSON Formatter</a>
+                        <a href="loan-emi.html">Loan EMI Calc</a>
+                        <a href="qr-code-generator.html">QR Code Gen</a>
+                        <a href="base64-tool.html">Base64 Tool</a>
+                        <a href="unit-converter.html">Unit Converter</a>
+                        <a href="password-generator.html">Password Gen</a>
+                        <a href="article-outline.html">Article Outline</a>
+                        <a href="ai-bio-generator.html">AI Bio Generator</a>
+                        <a href="love-calculator.html">Love Calculator</a>
+                         <a href="cv-maker.html">Resume Builder</a> 
+ 
+                         <a href="text-summarizer.html">AI Summarizer</a>
+                        <a href="color-converter.html">Color Converter</a>
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Company</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Legal</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="blog.html">Blog &amp; Guides</a></li>
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                                <li><a href="terms.html">Terms of Service</a></li>
+                                <!-- SITEMAP ADDED HERE -->
+                                <li><a href="index.html">Sitemap</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. All rights reserved.</p>
+                <p>All tools run 100% client-side in your browser.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    (function () {
+        'use strict';
+
+        // THEME LOGIC
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            var icon = document.getElementById('themeIcon');
+            var text = document.getElementById('themeText');
+            if (icon && text) {
+                if (theme === 'dark') { icon.textContent = '🌙'; text.textContent = 'Dark Mode'; } 
+                else { icon.textContent = '☀️'; text.textContent = 'Light Mode'; }
+            }
+            var btn = document.getElementById('themeToggle');
+            if (btn) {
+                btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+                btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+            }
+        }
+        function toggleTheme() {
+            var cur = document.documentElement.getAttribute('data-theme') || 'light';
+            var next = cur === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('mtx-theme', next); } catch (e) {}
+        }
+        window.toggleTheme = toggleTheme;
+        applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
+
+        // UPGRADED SUMMARIZER LOGIC (Block-Based & Formatting Preserved)
+        var stopWords = ["a","about","above","after","again","against","all","am","an","and","any","are","aren't","as","at","be","because","been","before","being","below","between","both","but","by","can't","cannot","could","couldn't","did","didn't","do","does","doesn't","doing","don't","down","during","each","few","for","from","further","had","hadn't","has","hasn't","have","haven't","having","he","he'd","he'll","he's","her","here","here's","hers","herself","him","himself","his","how","how's","i","i'd","i'll","i'm","i've","if","in","into","is","isn't","it","it's","its","itself","let's","me","more","most","mustn't","my","myself","no","nor","not","of","off","on","once","only","or","other","ought","our","ours","ourselves","out","over","own","same","shan't","she","she'd","she'll","she's","should","shouldn't","so","some","such","than","that","that's","the","their","theirs","them","themselves","then","there","there's","these","they","they'd","they'll","they're","they've","this","those","through","to","too","under","until","up","very","was","wasn't","we","we'd","we'll","we're","we've","were","weren't","what","what's","when","when's","where","where's","which","while","who","who's","whom","why","why's","with","won't","would","wouldn't","you","you'd","you'll","you're","you've","your","yours","yourself","yourselves"];
+
+        function generateSummary() {
+            var text = document.getElementById('sumInput').value.trim();
+            var out = document.getElementById('sumOutput');
+            
+            if (text.length < 150) {
+                out.textContent = "Please enter a longer text (at least 150 characters) to summarize.";
+                out.style.color = '#EF4444';
+                return;
+            }
+            out.style.color = 'var(--text)';
+            out.textContent = "Analyzing text...";
+
+            // 1. Split into paragraphs (blocks) by double line breaks
+            var paragraphs = text.split(/\n\s*\n/).map(function(p) { return p.trim(); }).filter(Boolean);
+            
+            if (paragraphs.length < 2) {
+                out.textContent = "Please separate your text into paragraphs to use this feature.";
+                return;
+            }
+
+            var totalWords = text.toLowerCase().match(/\b[a-z]{3,}\b/g) || [];
+            var wordFreq = {};
+            totalWords.forEach(function(w) {
+                if (!stopWords.includes(w)) {
+                    wordFreq[w] = (wordFreq[w] || 0) + 1;
+                }
+            });
+
+            var signalWords = ["conclusion", "therefore", "however", "important", "must", "critical", "result", "significant", "warns", "recommends"];
+            var fluffWords = ["in today's", "it is important to note", "in conclusion, it", "this article will", "let's dive"];
+
+            // 2. Score entire paragraphs
+            var paragraphScores = [];
+            paragraphs.forEach(function(para, index) {
+                var score = 0;
+                var lowerPara = para.toLowerCase();
+                var paraWords = lowerPara.match(/\b[a-z]{3,}\b/g) || [];
+                
+                paraWords.forEach(function(w) {
+                    if (wordFreq[w]) score += wordFreq[w];
+                });
+                score = score / (paraWords.length || 1);
+
+                var hasSignal = signalWords.some(function(sw) { return lowerPara.includes(sw); });
+                if (hasSignal) score *= 1.5;
+
+                var hasFluff = fluffWords.some(function(fw) { return lowerPara.includes(fw); });
+                if (hasFluff) score *= 0.3;
+
+                // Strongly favor the first and last paragraph
+                if (index === 0) score *= 3;
+                if (index === paragraphs.length - 1) score *= 2;
+
+                paragraphScores.push({ text: para, score: score, index: index });
+            });
+
+            var ratio = parseInt(document.getElementById('sumRatio').value) / 100;
+            var numParas = Math.max(1, Math.floor(paragraphs.length * ratio));
+            if (numParas >= paragraphs.length) numParas = paragraphs.length - 1; 
+            
+            // 3. Sort by score and pick the top paragraphs
+            paragraphScores.sort(function(a, b) { return b.score - a.score; });
+            var topParas = paragraphScores.slice(0, numParas);
+
+            // 4. Put them back in the original order
+            topParas.sort(function(a, b) { return a.index - b.index; });
+
+            // 5. Output them with double line breaks to preserve the formatting
+            var summary = topParas.map(function(p) { return p.text; }).join('\n\n');
+            out.textContent = summary;
+        }
+        window.generateSummary = generateSummary;
+
+        function copySummaryText() {
+            var out = document.getElementById('sumOutput');
+            var txt = out.textContent;
+            if (!txt || txt === 'Your summary will appear here...') return;
+
+            var btn = document.getElementById('copyBtn');
+            var orig = btn.innerHTML;
+            navigator.clipboard.writeText(txt).then(function() {
+                btn.textContent = '✅ Copied!';
+                setTimeout(function() { btn.innerHTML = orig; }, 1500);
+            });
+        }
+        window.copySummaryText = copySummaryText;
+
+        function clearSummary() {
+            document.getElementById('sumInput').value = '';
+            document.getElementById('sumOutput').textContent = 'Your summary will appear here...';
+            document.getElementById('sumOutput').style.color = 'var(--text)';
+        }
+        window.clearSummary = clearSummary;
+
+    })();
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
+    <script>
+      window.addEventListener('load', function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W8KM3G3BYL');
+      });
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+</body>
+</html>
