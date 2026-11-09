@@ -10,15 +10,6 @@
         document.documentElement.setAttribute('data-theme', theme);
     })();
 </script>
-<script>
-        (function() {
-            var saved = null;
-            try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
-            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            var theme = saved || (prefersDark ? 'dark' : 'light');
-            document.documentElement.setAttribute('data-theme', theme);
-        })();
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
@@ -82,9 +73,9 @@
         {
           "@type": "ItemList",
           "name": "Free Online Tools by MyToolX",
-          "description": "A curated list of 18 free, privacy-first online tools for writers, developers, and freelancers.",
+          "description": "A curated list of 19 free, privacy-first online tools for writers, developers, and freelancers.",
           "url": "https://mytoolx.org/",
-          "numberOfItems": 18,
+          "numberOfItems": 19,
           "itemListOrder": "https://schema.org/ItemListOrderAscending",
           "itemListElement": [
             {"@type":"ListItem","position":1,"name":"Free Resume Builder","url":"https://mytoolx.org/cv-maker.html"},
@@ -104,7 +95,8 @@
             {"@type":"ListItem","position":15,"name":"Color Converter","url":"https://mytoolx.org/color-converter.html"},
             {"@type":"ListItem","position":16,"name":"QR Code Generator","url":"https://mytoolx.org/qr-code-generator.html"},
             {"@type":"ListItem","position":17,"name":"Password Generator","url":"https://mytoolx.org/password-generator.html"},
-            {"@type":"ListItem","position":18,"name":"Unit Converter","url":"https://mytoolx.org/unit-converter.html"}
+            {"@type":"ListItem","position":18,"name":"Unit Converter","url":"https://mytoolx.org/unit-converter.html"},
+	    {"@type":"ListItem","position":19,"name":"AI Text Summarizer","url":"https://mytoolx.org/text-summarizer.html"}
           ]
         }
       ]
@@ -220,10 +212,10 @@
         
         <!-- Hero Section -->
         <div class="text-center mb-10 max-w-3xl mx-auto">
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-black mb-3 tracking-tight leading-tight" style="color: var(--text);">
+            <<h1 class="text-3xl sm:text-4xl md:text-5xl font-black mb-3 tracking-tight leading-tight" style="color: var(--text);">
     Free Online Utility Tools &amp; AI Prompts
-    <span class="block text-lg sm:text-xl md:text-2xl font-bold mt-2 muted">No Sign-Up Required 🚀</span>
 </h1>
+<h2 class="block text-lg sm:text-xl md:text-2xl font-bold mb-6 muted">No Sign-Up Required 🚀</h2>
 
             <p class="text-sm md:text-base max-w-xl mx-auto font-medium mb-6 muted">
                 Fast, secure, professional client-side tools organized for writers, creators, developers, and job seekers.
@@ -317,6 +309,19 @@
                 <div class="flex justify-between items-start"><span class="text-2xl">📑</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #7F1D1D;">AI Suite</span></div>
                 <div><div class="font-bold text-sm" style="color: var(--text);">Article Outline Gen</div><div class="text-xs muted">Research Outlines</div></div>
             </a>
+
+            <!-- NEW: Text Summarizer -->
+            <a href="text-summarizer.html" data-cat="ai" data-keywords="ai summarizer summary text summarizer summarize essay document tldr summary" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start">
+                    <span class="text-2xl">📰</span>
+                    <span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #7F1D1D;">AI Suite</span>
+                </div>
+                <div>
+                    <div class="font-bold text-sm" style="color: var(--text);">AI Text Summarizer</div>
+                    <div class="text-xs muted">Summarize Long Text</div>
+                </div>
+            </a>
+
 
             <!-- 3. FINANCE -->
             <a href="fee-calculator.html" data-cat="finance" data-keywords="fee calculator stripe paypal square payment gateway fee contract rate invoice" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
@@ -523,11 +528,13 @@
                         
                         <!-- Row 9 -->
                         <a href="love-calculator.html">Love Calculator</a>
-                        <a href="cv-maker.html">Resume Builder</a>
+                         <a href="cv-maker.html">Resume Builder</a> 
+                         
                         
                         <!-- Row 10 (Extra space filled) -->
-                        <span></span>
+                         <a href="text-summarizer.html">AI Summarizer</a>
                         <a href="color-converter.html">Color Converter</a>
+			 
                     </div>
                 </div>
 

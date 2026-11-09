@@ -10,15 +10,6 @@
         document.documentElement.setAttribute('data-theme', theme);
     })();
 </script>
-<script>
-        (function() {
-            var saved = null;
-            try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
-            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            var theme = saved || (prefersDark ? 'dark' : 'light');
-            document.documentElement.setAttribute('data-theme', theme);
-        })();
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>📚 MyToolX Blog | Free Tools Guides & Articles</title>
@@ -366,6 +357,17 @@
                 <div class="read-more text-xs font-bold text-indigo-500">Read the Guide →</div>
             </a>
 
+            <!-- Card 20: Text Summarizer -->
+            <a href="blog-text-summarizer.html" class="surface rounded-3xl p-6 sm:p-8 blog-card shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl mb-4">📝</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">How to Summarize Long Text Fast</h3>
+                    <p class="text-sm muted leading-relaxed">Stop reading 10 page documents. Learn how to instantly summarize long text, essays, and reports locally in your browser with 100% privacy.</p>
+                </div>
+                <div class="read-more text-xs font-bold text-indigo-500">Read the Guide →</div>
+            </a>
+
+
         </div>
     </main>
 
@@ -407,8 +409,9 @@
                         <a href="article-outline.html">Article Outline</a>
                         <a href="ai-bio-generator.html">AI Bio Generator</a>
                         <a href="love-calculator.html">Love Calculator</a>
-                        <a href="cv-maker.html">Resume Builder</a>
-                        <span></span>
+                         <a href="cv-maker.html">Resume Builder</a> 
+ 
+                         <a href="text-summarizer.html">AI Summarizer</a>
                         <a href="color-converter.html">Color Converter</a>
                     </div>
                 </div>
@@ -527,7 +530,8 @@
             { "@type": "Article", "url": "https://mytoolx.org/blog-color-tools.html" },
             { "@type": "Article", "url": "https://mytoolx.org/blog-linkedin-bio.html" },
             { "@type": "Article", "url": "https://mytoolx.org/blog-content-outline.html" },
-            { "@type": "Article", "url": "https://mytoolx.org/blog-text-suite.html" }
+            { "@type": "Article", "url": "https://mytoolx.org/blog-text-suite.html" },
+	    { "@type": "Article", "url": "https://mytoolx.org/blog-text-summarizer.html" }
           ]
         },
         {

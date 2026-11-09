@@ -10,15 +10,6 @@
         document.documentElement.setAttribute('data-theme', theme);
     })();
 </script>
-<script>
-    (function() {
-        var saved = null;
-        try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
-        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var theme = saved || (prefersDark ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', theme);
-    })();
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>ℹ️ About MyToolX | Free Tools, Private by Design</title>
@@ -234,9 +225,10 @@
                         <a href="ai-bio-generator.html">AI Bio Generator</a>
                         
                         <a href="love-calculator.html">Love Calculator</a>
-                        <a href="cv-maker.html">Resume Builder</a>
+                         <a href="cv-maker.html">Resume Builder</a> 
+ 
                         
-                        <span></span>
+                         <a href="text-summarizer.html">AI Summarizer</a>
                         <a href="color-converter.html">Color Converter</a>
                     </div>
                 </div>
