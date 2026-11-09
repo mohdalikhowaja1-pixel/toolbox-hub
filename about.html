@@ -3,12 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>About Us | MyToolX</title>
-    <meta name="description" content="Learn about MyToolX - a free suite of client-side web tools designed for privacy, speed, and efficiency for writers, developers, and freelancers.">
+    <title>ℹ️ About MyToolX | Free Tools, Private by Design</title>
+    <meta name="description" content="MyToolX is a friendly suite of free browser tools that never send your data anywhere. Some premium templates are also available, paid by bank transfer today and by card worldwide soon.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://mytoolx.org/about.html">
 
+    <!-- Favicon (inline SVG, zero HTTP requests) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>ℹ️</text></svg>">
+
+    <!-- DNS Prefetch (3rd party) -->
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://refer.micro1.ai">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:url" content="https://mytoolx.org/about.html">
+    <meta property="og:title" content="ℹ️ About MyToolX | Free Tools, Private by Design">
+    <meta property="og:description" content="Free browser tools that never send your data anywhere. Premium templates available. Bank transfer today, cards worldwide soon.">
+    <meta property="og:image" content="https://mytoolx.org/og-image.png">
+    <meta property="og:image:alt" content="MyToolX, free and private web tools">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mytoolx.org/about.html">
+    <meta name="twitter:title" content="ℹ️ About MyToolX | Free Tools, Private by Design">
+    <meta name="twitter:description" content="Free browser tools that never send your data anywhere. Premium templates available. Bank transfer today, cards worldwide soon.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
+    <meta name="twitter:image:alt" content="MyToolX, free and private web tools">
+
     <link rel="stylesheet" href="styles.css">
-    
 
     <style>
         :root {
@@ -53,28 +82,23 @@
 </head>
 <body class="font-sans min-h-screen flex flex-col justify-between">
 
-        <!-- HEADER (UPDATED) -->
+        <!-- HEADER (UNCHANGED) -->
     <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
         <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2">
             
-            <!-- TOP ROW: Logo + Back Button + Right Buttons -->
             <div class="flex items-center justify-between gap-2 sm:gap-4">
                 
-                <!-- LEFT SIDE: Logo & Desktop Back Button -->
                 <div class="flex items-center gap-2 sm:gap-4 shrink-0">
-                    <!-- Desktop Back Button (Hidden on Mobile) -->
                     <a href="index.html" class="hidden sm:flex btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold items-center gap-1">
                         ← All Tools
                     </a>
                     
-                    <!-- Logo -->
                     <a href="index.html" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
                         <div class="logo-mark w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base flex items-center justify-center">M<span class="x">X</span></div>
                         <span class="logo-wordmark text-base sm:text-xl block">MyTool<span class="x">X</span></span>
                     </a>
                 </div>
 
-                <!-- RIGHT SIDE: Dark Mode + Jobs + CV -->
                 <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
                     <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch theme" title="Toggle Light/Dark Mode" class="h-8 sm:h-10 px-2 sm:px-3 rounded-xl flex items-center justify-center gap-1.5 text-[10px] sm:text-xs font-bold transition-all hover:opacity-80" style="background: var(--chip-bg); color: var(--chip-text);">
     <span id="themeIcon" aria-hidden="true">🌙</span>
@@ -91,7 +115,6 @@
                 </div>
             </div>
 
-            <!-- BOTTOM ROW: Mobile Back Button (Only shows on Mobile) -->
             <div class="mt-2 sm:hidden">
                 <a href="index.html" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">
                     ← Back to All Tools
@@ -107,32 +130,41 @@
         </nav>
 
         <div class="surface rounded-3xl shadow-xl p-6 sm:p-10 mb-10 space-y-6">
-            <h1 class="text-2xl sm:text-3xl font-black border-b pb-4" style="color: var(--text); border-color: var(--card-border);">ℹ️ About MyToolX</h1>
+
+            <h1 class="text-2xl sm:text-3xl font-black border-b pb-4" style="color: var(--text); border-color: var(--card-border);">ℹ️ About MyToolX: Free Tools, Honest Pricing, Privacy First</h1>
 
             <p class="text-sm sm:text-base leading-relaxed muted">
-                MyToolX is a modern, privacy-first suite of web utility tools engineered for freelancers, developers, writers, and everyday internet users. We offer a growing library of <strong>free, client-side tools</strong> alongside <strong>premium digital bundles</strong> designed to accelerate your workflow.
+                MyToolX is a small, friendly project with one simple idea. Give people useful tools they can open in a browser and use right away, without making an account, without watching an ad wall, and without sending their data anywhere. Most of what you see here is free and always will be. A few premium templates and custom services also exist, so the lights can stay on and the free tools can keep improving.
             </p>
 
             <div class="border-t pt-6" style="border-color: var(--card-border);">
-                <h2 class="text-lg font-bold mb-2" style="color: var(--text);">🔒 Our Privacy-First Architecture</h2>
+                <h2 class="text-lg font-bold mb-2" style="color: var(--text);">🔒 What "Private" Actually Means Here</h2>
                 <p class="text-sm leading-relaxed muted">
-                    Unlike standard web services that process your sensitive data on external servers, all calculations and transformations in our <strong>free tools</strong> run locally inside your web browser. Your inputs, codes, images, and text never leave your device. This is made possible by modern web APIs like HTML5 Canvas and Web Crypto. No registration, no tracking, just speed.
+                    When you use one of our free tools, the work happens inside your own browser. Your text stays in your browser. Your image stays in your browser. Your passwords, your JSON, your CV, your calculations, all of it stays on your device. We cannot see any of it, because nothing is sent to a server. There is no account to create, no dashboard on our end, and no database collecting your files. The only thing we ever receive is anonymous page traffic through Google Analytics, so we know which tools people actually use and which ones need work.
                 </p>
             </div>
 
             <div class="border-t pt-6" style="border-color: var(--card-border);">
-                <h2 class="text-lg font-bold mb-2" style="color: var(--text);">🛍️ Premium Digital Products</h2>
+                <h2 class="text-lg font-bold mb-2" style="color: var(--text);">🛍️ Premium Templates and How Payment Works</h2>
                 <p class="text-sm leading-relaxed muted">
-                    To support the ongoing development and hosting of these free tools, we also offer a curated selection of <strong>Premium digital products</strong> (such as ATS resume packs, Excel toolkits, and contract templates) and <strong>Custom Development Services</strong>. These paid products are handled via secure payment processing and manual delivery. You can explore our premium offerings in the <a href="premium.html" class="text-indigo-500 font-bold hover:underline">Premium Store</a>.
+                    Some of our work is premium. Think of ATS ready resume packs, Excel toolkits for freelancers, contract templates, and small custom builds. These are optional extras, and they are priced fairly with no subscription traps. Today you can pay by direct bank transfer. Once our card processor approvals finish with Lemon Squeezy and Whop, card payments will open up worldwide as well, so you will be able to choose whichever method suits you. Either way, delivery is manual and personal. You pay, we confirm, you receive your files. No middleman holds your purchase. You can see what is available in the <a href="premium.html" class="text-indigo-500 font-bold hover:underline">Premium Store</a>.
                 </p>
             </div>
 
             <div class="border-t pt-6" style="border-color: var(--card-border);">
-                <h2 class="text-lg font-bold mb-2" style="color: var(--text);">📬 Contact Information</h2>
+                <h2 class="text-lg font-bold mb-2" style="color: var(--text);">💬 Talk to a Real Person</h2>
                 <p class="text-sm leading-relaxed muted">
-                    If you have feedback, feature requests, technical bug reports, or custom project inquiries, please reach out to us via our <a href="contact.html" class="text-indigo-500 font-bold hover:underline">Official Contact Form</a>.
+                    If something breaks, if a tool needs a feature, if you want a custom template built for your team, or if you just want to say hello, use our <a href="contact.html" class="text-indigo-500 font-bold hover:underline">contact form</a>. A real human reads every message and replies quickly. We are a small team, and that is on purpose. You are not talking to a support queue.
                 </p>
             </div>
+
+            <div class="border-t pt-6" style="border-color: var(--card-border);">
+                <h2 class="text-lg font-bold mb-2" style="color: var(--text);">🌱 Why We Keep Going</h2>
+                <p class="text-sm leading-relaxed muted">
+                    The web has become loud. Pop ups, cookie banners, forced sign ups, ten step wizards just to compress a photo. We think it can be quieter than that. So we build tools that respect your time and your files, and we hope that if they help you, you will tell one other person about them. That is the whole business model.
+                </p>
+            </div>
+
         </div>
     </main>
 
@@ -140,72 +172,57 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
                 
-                <!-- COLUMN 1: Logo & Description -->
                 <div class="lg:col-span-5">
                     <a href="index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
                         <div class="logo-mark">M<span class="x">X</span></div>
                         <span class="logo-wordmark">MyTool<span class="x">X</span></span>
                     </a>
                     <p class="text-sm leading-relaxed mb-6 pr-4">
-                        MyToolX is a free suite of client-side web tools for writers, freelancers and developers. No sign-up, no tracking, no data leaves your browser.
+                        MyToolX is a free suite of client side web tools for writers, freelancers and developers. No sign up, no tracking, no data leaves your browser.
                     </p>
                 </div>
 
-                 
-		<!-- COLUMN 2: Popular Tools & Premium Link -->
                 <div class="lg:col-span-4">
                     <h3>Popular Tools</h3>
                     
                     <div class="grid grid-cols-2 gap-3 text-sm">
-                        <!-- Row 1 -->
                         <a href="typing-test.html">Typing Speed Test</a>
                         
-                        <!-- THE PREMIUM BUTTON (Replaces Image Compressor) -->
                         <div class="flex items-start mt-0.5"> 
                             <a href="premium.html" class="link-premium-gold" aria-label="Visit the Premium Store">
                                 <span class="star-icon">⭐</span> Premium
                             </a>
                         </div>
 
-                        <!-- Row 2 -->
                         <a href="prompt-studio.html">AI Prompt Studio</a>
                         <a href="image-compressor.html">Image Compressor</a>
                         
-                        <!-- Row 3 -->
                         <a href="text-suite.html">Text &amp; Word Suite</a>
                         <a href="grammar-checker.html">Grammar Checker</a>
                         
-                        <!-- Row 4 -->
                         <a href="sip-calculator.html">SIP Calculator</a>
                         <a href="fee-calculator.html">Fee Calculator</a>
                         
-                        <!-- Row 5 -->
                         <a href="json-formatter.html">JSON Formatter</a>
                         <a href="loan-emi.html">Loan EMI Calc</a>
                         
-                        <!-- Row 6 -->
                         <a href="qr-code-generator.html">QR Code Gen</a>
                         <a href="base64-tool.html">Base64 Tool</a>
                         
-                        <!-- Row 7 -->
                         <a href="unit-converter.html">Unit Converter</a>
                         <a href="password-generator.html">Password Gen</a>
                         
-                        <!-- Row 8 -->
                         <a href="article-outline.html">Article Outline</a>
                         <a href="ai-bio-generator.html">AI Bio Generator</a>
                         
-                        <!-- Row 9 -->
                         <a href="love-calculator.html">Love Calculator</a>
                         <a href="cv-maker.html">Resume Builder</a>
                         
-                        <!-- Row 10 (Extra space filled) -->
                         <span></span>
                         <a href="color-converter.html">Color Converter</a>
                     </div>
                 </div>
 
-                <!-- COLUMN 3: Company & Legal Links -->
                 <div class="lg:col-span-3">
                     <div class="grid grid-cols-2 gap-8">
                         <div>
@@ -228,12 +245,11 @@
                     </div>
                 </div>
                 
-            </div> <!-- END OF GRID -->
+            </div>
 
-            <!-- Bottom Copyright Bar -->
             <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
                 <p>&copy; 2026 MyToolX. All rights reserved.</p>
-                <p>All tools run 100% client-side in your browser.</p>
+                <p>All tools run 100% client side in your browser.</p>
             </div>
         </div>
     </footer>
@@ -266,7 +282,6 @@
         window.toggleTheme = toggleTheme;
     </script>
 
-<!-- Moved Google Analytics to the bottom to speed up page load -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
     <script>
       window.addEventListener('load', function() {
@@ -277,6 +292,58 @@
       });
     </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://mytoolx.org/#organization",
+      "name": "MyToolX",
+      "url": "https://mytoolx.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://mytoolx.org/og-image.png",
+        "width": 1200,
+        "height": 630
+      },
+      "description": "Friendly suite of free browser tools plus optional premium templates. Bank transfer today, cards worldwide once Lemon Squeezy and Whop approvals finish.",
+      "sameAs": []
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://mytoolx.org/#website",
+      "url": "https://mytoolx.org/",
+      "name": "MyToolX",
+      "publisher": { "@id": "https://mytoolx.org/#organization" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "AboutPage",
+      "@id": "https://mytoolx.org/about.html#aboutpage",
+      "url": "https://mytoolx.org/about.html",
+      "name": "About MyToolX",
+      "isPartOf": { "@id": "https://mytoolx.org/#website" },
+      "about": { "@id": "https://mytoolx.org/#organization" },
+      "inLanguage": "en",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://mytoolx.org/og-image.png"
+      },
+      "description": "Free browser tools that keep your data on your device, plus premium templates paid by bank transfer today and by card worldwide soon."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://mytoolx.org/about.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mytoolx.org/" },
+        { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://mytoolx.org/about.html" }
+      ]
+    }
+  ]
+}
+</script>
 
 </body>
 </html>

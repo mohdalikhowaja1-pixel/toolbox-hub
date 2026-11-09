@@ -3,46 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    
-    <meta name="description" content="Explore the MyToolX blog. Learn how to improve typing speed, compress images, write better AI prompts, build an ATS-friendly resume, calculate freelance fees, format JSON, and more.">
-
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="MyToolX">
-    <meta property="og:title" content="Guides & Articles — How to Use Our Tools | MyToolX Blog">
-    <meta property="og:description" content="Explore the MyToolX blog. Learn how to improve typing speed, compress images, write better AI prompts, calculate freelance fees, format JSON, and more.">
-    <meta property="og:url" content="https://mytoolx.org/blog.html">
-    <meta property="og:image" content="https://mytoolx.org/og-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Guides & Articles — How to Use Our Tools | MyToolX Blog">
-    <meta name="twitter:description" content="Explore the MyToolX blog. Learn how to improve typing speed, compress images, write better AI prompts, calculate freelance fees, format JSON, and more.">
-    <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
-    
+    <title>📚 MyToolX Blog | Free Tools Guides & Articles</title>
+    <meta name="description" content="Explore the MyToolX blog hub. Learn how to improve typing speed, compress images without losing quality, build an ATS friendly resume, calculate freelance fees, and more.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://mytoolx.org/blog.html">
     <meta name="google-adsense-account" content="ca-pub-3410254230554312">
 
-    <title>Guides & Articles — How to Use Our Tools | MyToolX Blog</title>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  "name": "MyToolX Guides & Articles",
-  "url": "https://mytoolx.org/blog.html",
-  "description": "Learn how to improve typing speed, compress images, write better AI prompts, and build professional CVs.",
-  "publisher": {
-    "@type": "Organization",
-    "name": "MyToolX",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://mytoolx.org/og-image.png"
-    }
-  }
-}
-</script>
+    <!-- Favicon (inline SVG) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://refer.micro1.ai">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:url" content="https://mytoolx.org/blog.html">
+    <meta property="og:title" content="📚 MyToolX Blog | Free Tools Guides & Articles">
+    <meta property="og:description" content="Explore the MyToolX blog hub. Learn how to improve typing speed, compress images without losing quality, build an ATS friendly resume, calculate freelance fees, and more.">
+    <meta property="og:image" content="https://mytoolx.org/og-image.png">
+    <meta property="og:image:alt" content="MyToolX Blog & Guides">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mytoolx.org/blog.html">
+    <meta name="twitter:title" content="📚 MyToolX Blog | Free Tools Guides & Articles">
+    <meta name="twitter:description" content="Explore the MyToolX blog hub. Learn how to improve typing speed, compress images without losing quality, build an ATS friendly resume, and more.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
+    <meta name="twitter:image:alt" content="MyToolX Blog & Guides">
 
     <link rel="stylesheet" href="styles.css">
-   
 
     <style>
         :root {
@@ -74,9 +70,6 @@
         .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
         .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
         .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
-        
-        .input-field { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
-        .input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); outline: none; }
 
         .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
         .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
@@ -85,32 +78,35 @@
         
         #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
         :focus-visible { outline: none; }
-        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        button:focus-visible, a:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
         ::selection { background: rgba(79,70,229,0.25); }
-        
-        /* Blog Specific Styles */
-        .blog-content h2 { font-size: 1.5rem; font-weight: 800; margin-top: 2rem; margin-bottom: 1rem; color: var(--text); border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; }
-        .blog-content h3 { font-size: 1.25rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--text); }
-        .blog-content h4 { font-size: 1.1rem; font-weight: 700; margin-top: 1.25rem; margin-bottom: 0.5rem; color: var(--text); }
-        .blog-content p { margin-bottom: 1rem; line-height: 1.7; color: var(--text-muted); }
-        .blog-content ul, .blog-content ol { margin: 0 0 1rem 1.5rem; line-height: 1.7; color: var(--text-muted); font-size: 0.95rem; }
-        .blog-content li { margin-bottom: 0.4rem; list-style: disc; }
-        .blog-content ol li { list-style: decimal; }
-        .blog-content a { color: var(--primary); font-weight: 600; text-decoration: underline; }
-        .blog-content a:hover { color: var(--primary-hover); }
-        .blog-content strong { color: var(--text); }
-        /* Prevents links inside blog text from underlining the whole block */
-        .blog-content p a { text-decoration: underline; }
-        .blog-content p { text-decoration: none; } 
-        
-        /* Sidebar Sticky */
-        .sticky-sidebar { position: sticky; top: 100px; max-height: calc(100vh - 120px); overflow-y: auto; }
-        
-        /* Custom Mobile Menu */
-        .mobile-menu-btn { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
-        .mobile-menu-list { background: var(--card); border: 1px solid var(--card-border); box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); }
-        .mobile-menu-list a { color: var(--text); transition: background 0.15s; }
-        .mobile-menu-list a:hover { background: var(--chip-bg); }
+
+                     /* Blog Card Grid Styles */
+        .blog-card { 
+            transition: transform 0.2s ease, box-shadow 0.2s ease; 
+            display: flex; 
+            flex-direction: column; 
+            height: 100%; 
+            padding: 2rem !important; 
+            gap: 1rem !important;
+            width: 100%; /* Fills the column naturally */
+        }
+        .blog-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); }
+        .blog-card h3 { transition: color 0.15s ease; }
+        .blog-card:hover h3 { color: var(--primary); }
+
+        /* Make sure the text doesn't touch the edges and the link stays at the bottom */
+        .blog-card p {
+            margin-bottom: 0.5rem !important;
+            line-height: 1.5 !important;
+        }
+                /* Simple, guaranteed space between text and the button */
+        .blog-card .read-more {
+            margin-top: 1.5rem !important;
+            padding-top: 1rem !important;
+            border-top: 1px solid var(--card-border); /* Adds a subtle line for a professional look */
+        }
+        .blog-card:hover h3 { color: var(--primary); }
     </style>
 </head>
 <body class="font-sans min-h-screen flex flex-col justify-between">
@@ -144,465 +140,261 @@
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 py-10 w-full flex-grow">
+        <main class="max-w-7xl mx-auto px-4 py-12 w-full flex-grow">
         
-        <nav class="text-xs font-semibold mb-6 flex items-center gap-1 muted" aria-label="Breadcrumb">
+        <nav class="text-xs font-semibold mb-8 flex items-center gap-1 muted" aria-label="Breadcrumb">
             <a href="index.html" class="hover:text-indigo-500">Home</a><span>/</span><span style="color: var(--text); font-weight: 700;">Blog & Guides</span>
         </nav>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 sm:mb-6" style="color: var(--text);">MyToolX Guides & Articles</h1>
+            <p class="text-base sm:text-lg muted leading-relaxed px-2 mb-4">
+                Welcome to our knowledge hub. Here, we share practical guides on how to use our tools to boost your productivity, improve your writing, and manage your freelance business. No fluff, just actionable advice.                                                                                                                                                                  
+                                                                           
+                                                                              
+            </p>
+        </div>
+
+        <!-- BLOG GRID -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             
-            <!-- DESKTOP SIDEBAR -->
-            <aside class="lg:col-span-4 hidden lg:block">
-                <div class="surface rounded-3xl p-6 shadow-md sticky-sidebar">
-                    <h2 class="text-lg font-black mb-4" style="color: var(--text);">Table of Contents</h2>
-                    
-                    <div class="space-y-4 text-sm font-semibold">
-                        
-<div>
-                            <p class="text-xs uppercase tracking-wider muted mb-2">⭐ Premium Store</p>
-                            <ul class="space-y-1 pl-2 border-l-2" style="border-color: #F59E0B;">
-                                <li><a href="#premium-guide" class="hover:text-amber-500 block py-1 text-amber-500 font-bold">⭐ Digital Bundles Guide</a></li>
-                            </ul>
-                        </div>
-<div>
-                            <p class="text-xs uppercase tracking-wider muted mb-2">1. Typing & Visuals</p>
-                            <ul class="space-y-1 pl-2 border-l-2" style="border-color: var(--primary);">
-                                <li><a href="#typing-guide" class="hover:text-indigo-500 block py-1">⌨️ Typing Speed Test</a></li>
-                                <li><a href="#image-guide" class="hover:text-indigo-500 block py-1">🖼️ Image Compressor</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p class="text-xs uppercase tracking-wider muted mb-2">2. AI & Content</p>
-                            <ul class="space-y-1 pl-2 border-l-2" style="border-color: #8B5CF6;">
-                                <li><a href="#ai-guide" class="hover:text-indigo-500 block py-1">🤖 AI Prompt Studio</a></li>
-                                <li><a href="#bio-guide" class="hover:text-indigo-500 block py-1">✨ AI Bio Generator</a></li>
-                                <li><a href="#outline-guide" class="hover:text-indigo-500 block py-1">📑 Article Outline Gen</a></li>
-                                <li><a href="#love-guide" class="hover:text-indigo-500 block py-1">❤️ Love Calculator</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p class="text-xs uppercase tracking-wider muted mb-2">3. Writing & CV</p>
-                            <ul class="space-y-1 pl-2 border-l-2" style="border-color: #3B82F6;">
-                                <li><a href="#cv-guide" class="hover:text-indigo-500 block py-1">📄 CV Writing Guide & Builder</a></li>
-                                <li><a href="#grammar-guide" class="hover:text-indigo-500 block py-1">📝 Grammar Checker</a></li>
-                                <li><a href="#text-guide" class="hover:text-indigo-500 block py-1">✍️ Text & Word Suite</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p class="text-xs uppercase tracking-wider muted mb-2">4. Finance</p>
-                            <ul class="space-y-1 pl-2 border-l-2" style="border-color: #10B981;">
-                                <li><a href="#finance-guide" class="hover:text-indigo-500 block py-1">💰 Fee Calculator</a></li>
-                                <li><a href="#sip-guide" class="hover:text-indigo-500 block py-1">📈 SIP Calculator</a></li>
-                                <li><a href="#loan-guide" class="hover:text-indigo-500 block py-1">🏦 Loan EMI Calc</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p class="text-xs uppercase tracking-wider muted mb-2">5. Developer</p>
-                            <ul class="space-y-1 pl-2 border-l-2" style="border-color: #F59E0B;">
-                                <li><a href="#json-guide" class="hover:text-indigo-500 block py-1">⚡ JSON Formatter</a></li>
-                                <li><a href="#base64-guide" class="hover:text-indigo-500 block py-1">🔤 Base64 Tool</a></li>
-                                <li><a href="#color-guide" class="hover:text-indigo-500 block py-1">🎨 Color Converter</a></li>
-                            </ul>
-                        </div>
-                    </div>
+            <!-- Card 1: Premium Guide -->
+            <a href="blog-premium-bundles.html" class="surface rounded-3xl p-6 sm:p-8 blog-card shadow-sm border-t-4 flex flex-col justify-between" style="border-top-color: #F59E0B;">
+                <div>
+                    <div class="text-4xl mb-4">⭐</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">The Ultimate Guide to Our Premium Bundles</h3>
+                    <p class="text-sm muted leading-relaxed">Why buy templates? Discover how our ATS resumes, Excel toolkits, and contract kits can save you hours of work and help you land better clients.</p>
                 </div>
-            </aside>
+                <div class="mt-6 text-xs font-bold text-amber-500">Read the Guide →</div>
+            </a>
 
-            <!-- MAIN CONTENT -->
-            <div class="lg:col-span-8">
-                <div class="surface rounded-3xl shadow-xl p-6 sm:p-10 mb-10">
-                                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
-                        <h1 class="text-3xl sm:text-4xl font-black" style="color: var(--text);">MyToolX Guides & Articles</h1>
-                        <a href="premium.html" class="mt-4 sm:mt-0 btn-3d bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap shadow-md">
-                            ⭐ Explore Premium Bundles
-                        </a>
-                    </div>
-                    <p class="text-base muted leading-relaxed mb-4">
-                        Welcome to the MyToolX blog. Here, we share practical guides on how to use our tools to boost your productivity, improve your writing, and manage your freelance business.
-                    </p>
-                    <p class="text-xs font-bold muted mb-8 pb-6 border-b" style="border-color: var(--card-border);">
-                        ✍️ Written and maintained by the <a href="about.html" class="text-indigo-500 hover:underline">MyToolX team</a>. Questions or corrections? <a href="contact.html" class="text-indigo-500 hover:underline">Contact us</a>.
-                    </p>
-
-                    <!-- CUSTOM MOBILE DROPDOWN (Only shows on small screens) -->
-                    <div class="block lg:hidden mb-8 relative">
-                        <label class="block text-xs font-bold uppercase tracking-wider mb-2" style="color: var(--text);">Jump to a Guide:</label>
-                        
-                        <!-- Trigger Button -->
-                        <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="w-full flex items-center justify-between p-4 rounded-xl text-sm font-semibold mobile-menu-btn shadow-sm">
-                            <span id="mobileMenuLabel">-- Select an Article --</span>
-                            <span id="mobileMenuIcon">▼</span>
-                        </button>
-                        
-                        <!-- Dropdown List -->
-
-                        <div id="mobileMenuList" class="hidden absolute top-full left-0 right-0 mt-2 rounded-xl z-50 overflow-hidden mobile-menu-list">
-                            <div class="max-h-60 overflow-y-auto">
-                                <a href="#premium-guide" onclick="closeMobileMenu('⭐ Premium Digital Bundles')" class="block px-4 py-3 text-sm font-bold border-b" style="border-color: var(--card-border); color: #F59E0B;">⭐ Premium Digital Bundles</a>
-                                <a href="#typing-guide" onclick="closeMobileMenu('⌨️ Typing Speed Test')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">⌨️ Typing Speed Test</a>
-                                <a href="#image-guide" onclick="closeMobileMenu('🖼️ Image Compressor')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">🖼️ Image Compressor</a>
-                                <a href="#ai-guide" onclick="closeMobileMenu('🤖 AI Prompt Studio')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">🤖 AI Prompt Studio</a>
-                                <a href="#bio-guide" onclick="closeMobileMenu('✨ AI Bio Generator')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">✨ AI Bio Generator</a>
-                                <a href="#outline-guide" onclick="closeMobileMenu('📑 Article Outline Gen')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">📑 Article Outline Gen</a>
-                                <a href="#love-guide" onclick="closeMobileMenu('❤️ Love Calculator')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">❤️ Love Calculator</a>
-                                <a href="#cv-guide" onclick="closeMobileMenu('📄 CV Writing Guide & Builder')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">📄 CV Writing Guide & Builder</a>
-                                <a href="#grammar-guide" onclick="closeMobileMenu('📝 Grammar Checker')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">📝 Grammar Checker</a>
-                                <a href="#text-guide" onclick="closeMobileMenu('✍️ Text & Word Suite')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">✍️ Text & Word Suite</a>
-                                <a href="#finance-guide" onclick="closeMobileMenu('💰 Fee Calculator')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">💰 Fee Calculator</a>
-                                <a href="#sip-guide" onclick="closeMobileMenu('📈 SIP Calculator')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">📈 SIP Calculator</a>
-                                <a href="#loan-guide" onclick="closeMobileMenu('🏦 Loan EMI Calc')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">🏦 Loan EMI Calc</a>
-                                <a href="#json-guide" onclick="closeMobileMenu('⚡ JSON Formatter')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">⚡ JSON Formatter</a>
-                                <a href="#base64-guide" onclick="closeMobileMenu('🔑 Base64 Tool')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">🔤 Base64 Tool</a>
-                                <a href="#color-guide" onclick="closeMobileMenu('🎨 Color Converter')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">🎨 Color Converter</a>
-                                <a href="#qr-guide" onclick="closeMobileMenu('📱 QR Code Gen')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">📱 QR Code Gen</a>
-                                <a href="#password-guide" onclick="closeMobileMenu('🔑 Password Gen')" class="block px-4 py-3 text-sm border-b" style="border-color: var(--card-border);">🔑 Password Gen</a>
-                                <a href="#unit-guide" onclick="closeMobileMenu('⚖️ Unit Converter')" class="block px-4 py-3 text-sm">⚖️ Unit Converter</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="blog-content space-y-12">
-                        
-                        <!-- CATEGORY 0: PREMIUM STORE -->
-                        <div>
-                            <h2 class="text-2xl font-black mb-4 pb-2 border-b text-amber-500" style="border-color: var(--card-border);">⭐ Premium Digital Bundles</h2>
-                            
-                            <article id="premium-guide" class="scroll-mt-24">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text);">🚀 Level Up Your Career: Why You Need Our Premium Bundles</h3>
-                                <p class="text-xs muted mb-4">Last updated: 2026 · Reading time: ~3 minutes</p>
-                                
-                                <p>While MyToolX provides incredible free utilities, sometimes you need a professional shortcut to get ahead. Our <a href="premium.html">Premium Store</a> is packed with ready-to-use templates designed to save you hours of manual work and help you land better clients or jobs.</p>
-                                
-                                <h4 class="font-bold text-base mt-4 mb-2" style="color: var(--text);">What is inside the Premium Store?</h4>
-                                <ul>
-                                    <li><strong>The Ultimate ATS Resume Pack:</strong> Stop getting filtered out by bots. This pack includes 3 editable templates (Tech, Marketing, Graduate) designed to pass Applicant Tracking Systems, plus a cheat sheet to beat the algorithms.</li>
-                                    <li><strong>Freelancer & Small Business Excel Bundle:</strong> Manage your entire business in one place. Track clients, automate invoices, monitor your income/expenses, and plan your monthly budget without buying expensive software.</li>
-                                    <li><strong>Freelance Contract Kit:</strong> Protect yourself legally. Includes a Mutual NDA, Service Agreement, and Payment Terms Addendum. Perfect for freelancers who are tired of chasing late payments.</li>
-                                    <li><strong>The Ultimate AI Prompt Vault:</strong> Get 100 battle-tested prompts for ChatGPT, Claude, and DeepSeek to write high-converting cold emails, Upwork proposals, and social media content in seconds.</li>
-                                </ul>
-
-                                <div class="p-4 rounded-xl my-6 border-2" style="border-color: #F59E0B; background: rgba(245, 158, 11, 0.05);">
-                                    <p class="font-bold text-sm mb-2" style="color: #F59E0B;">💡 Why buy from MyToolX?</p>
-                                    <p class="text-sm muted">We believe in fair, one-time pricing. There are no monthly subscriptions, no hidden fees, and all our digital products are delivered instantly via secure download. <a href="premium.html" class="font-bold underline" style="color: var(--text);">Click here to browse the Premium Store.</a></p>
-                                </div>
-                            </article>
-                        </div>
-
-
-                        <!-- CATEGORY 1 -->
-                        <div>
-                            <h2 class="text-2xl font-black mb-4 pb-2 border-b" style="color: var(--text); border-color: var(--card-border);">1. Typing & Visuals</h2>
-                            
-                            <article id="typing-guide" class="scroll-mt-24 mb-8">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text);">⌨️ How to Improve Your Typing Speed (and Why It Matters)</h3>
-                                <p>In the digital age, your keyboard is your primary tool. Whether you are a programmer, a writer, or a student, the speed at which you type directly impacts your daily productivity. The average person types at about 40 Words Per Minute (WPM). However, professionals often hit 60-80 WPM.</p>
-                                <p><strong>Focus on Accuracy First:</strong> It is tempting to rush, but hitting the wrong keys constantly will slow you down. If you make a mistake, force yourself to correct it. Muscle memory is built on repetition. Use our <a href="typing-test.html">3D Typing Speed Test</a> to track your accuracy. Aim for 95% or higher before trying to go faster.</p>
-                            </article>
-
-                            <article id="image-guide" class="scroll-mt-24">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text);">🖼️ Why Compressing Images is Crucial for Web Performance</h3>
-                                <p>If you run a website or an online store, page speed is everything. Google uses "Core Web Vitals" as a ranking factor, and one of the biggest culprits for slow websites is unoptimized images. A single photo from a modern smartphone can be 5MB or larger.</p>
-                                <p><strong>The Problem with Uploading:</strong> Most online compressors require you to upload your photos to their server, which raises privacy concerns. With our <a href="image-compressor.html">Image Compressor</a>, your images are never uploaded. The tool uses HTML5 Canvas to process the image locally in your browser.</p>
-                            </article>
-                        </div>
-
-                        <!-- CATEGORY 2 -->
-                        <div>
-                            <h2 class="text-2xl font-black mb-4 pb-2 border-b" style="color: var(--text); border-color: var(--card-border);">2. AI & Content Creation</h2>
-                            
-                            <article id="ai-guide" class="scroll-mt-24 mb-8">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text);">🤖 How to Write Better AI Prompts</h3>
-                                <p>AI language models are only as good as the instructions you give them. If you type "write a blog post," you will get a generic result. To get professional output, you need a structured prompt.</p>
-                                <p>A great prompt includes: <strong>Role</strong>, <strong>Task</strong>, <strong>Context</strong>, and <strong>Format</strong>. Instead of memorizing this, use our <a href="prompt-studio.html">AI Prompt Studio</a>. It asks you a series of questions and generates a perfectly structured prompt for ChatGPT, Gemini, or Midjourney.</p>
-                            </article>
-
-                            <article id="bio-guide" class="scroll-mt-24 mb-8">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text);">✨ Writing a Professional Social Media Bio</h3>
-                                <p>Your bio is often the first thing a client or recruiter reads. It needs to instantly communicate who you are and what you do, while staying within strict character limits. Our <a href="ai-bio-generator.html">AI Bio Generator</a> analyzes your skills and generates highly professional bios for LinkedIn, X, and Instagram.</p>
-                            </article>
-
-                            <article id="outline-guide" class="scroll-mt-24 mb-8">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text);">📑 Planning an Article Outline That Works</h3>
-                                <p>An outline is the skeleton of an article. Writing it first keeps you on topic and saves editing time later. Our <a href="article-outline.html">Article Outline Generator</a> reads your topic and builds a matching H1/H2/H3 structure, ensuring you never stare at a blank page again.</p>
-                            </article>
-
-                            <article id="love-guide" class="scroll-mt-24">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text);">❤️ The Science of Love: How Numerology Compatibility Works</h3>
-                                <p class="text-xs muted mb-4">Last updated: 2026 · Reading time: ~4 minutes</p>
-                                
-                                <p>Have you ever met someone and instantly felt a spark, as if you had known them for years? Or the opposite, where you clash on every little thing? While psychologists study attachment styles and shared values, numerologists believe the answer lies in the letters of your names.</p>
-                                
-                                <p>Our <a href="love-calculator.html">Love Compatibility Calculator</a> uses Pythagorean numerology to analyze the vibrational frequencies of your names. It is a fun, entertaining way to look at relationship dynamics, and it takes just seconds to try.</p>
-
-                                <h4 class="font-bold text-base mt-4 mb-2" style="color: var(--text);">What is Pythagorean Numerology?</h4>
-                                <p>Pythagoras, the ancient Greek philosopher and mathematician, believed that everything in the universe could be reduced to numbers. In numerology, every letter of the alphabet corresponds to a number from 1 to 9. When your name is written, it creates a unique mathematical sequence.</p>
-                                <p>By comparing the sequence of your name with your partner's name, our tool calculates two main numbers:</p>
-                                <ul>
-                                    <li><strong>The Expression Number:</strong> Derived from the consonants in your name. It represents your outer personality and how you approach the world.</li>
-                                    <li><strong>The Soul Urge Number:</strong> Derived from the vowels. It represents your inner desires, emotional needs, and what truly motivates you.</li>
-                                </ul>
-                                <p>When two people have names that create harmonious numbers, numerology suggests they are naturally aligned. If the numbers clash, the relationship might require more conscious effort and communication.</p>
-
-                                <h4 class="font-bold text-base mt-4 mb-2" style="color: var(--text);">Should You Base Your Relationship on a Score?</h4>
-                                <p>Absolutely not. A 99% match does not guarantee a perfect marriage, and a 60% match does not mean a relationship is doomed. A love calculator is meant to be a fun conversation starter. It gives you a playful way to talk about your relationship, your strengths, and the areas where you might grow together.</p>
-                                
-                                <p>Real love is built on trust, patience, mutual respect, and healthy communication. But there is nothing wrong with seeing what the stars (and the numbers) have to say! Try our <a href="love-calculator.html">Free Love Calculator</a> and see if you and your partner are a "Soulmate" match.</p>
-
-                                <div class="faq-item" style="border-bottom: 1px solid var(--card-border); padding: 0.75rem 0;">
-                                    <p class="font-bold">Is the Love Calculator accurate?</p>
-                                    <p>It uses real Pythagorean numerology math to calculate your compatibility based on your names. However, it is designed for entertainment and fun, not as a professional relationship assessment.</p>
-                                </div>
-                                
-                                <div class="faq-item" style="padding: 0.75rem 0;">
-                                    <p class="font-bold">Do I need to enter my date of birth?</p>
-                                    <p>No. Our calculator relies purely on the vibrational frequency of your names, which makes it incredibly fast and easy to use without needing personal data.</p>
-                                </div>
-                            </article>
-                        </div>
-
-                        <!-- CATEGORY 3 (WITH CV-MAKER ADDED) -->
-                        <div>
-                            <h2 class="text-2xl font-black mb-4 pb-2 border-b" style="color: var(--text); border-color: var(--card-border);">3. Writing & CV</h2>
-
-                            <article id="cv-guide" class="scroll-mt-24 mb-8">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text);">📄 How to Build a Professional Resume in 2026 (Free ATS-Friendly CV Maker)</h3>
-                                <p class="text-xs muted mb-4">Last updated: 2026 · Reading time: ~8 minutes</p>
-                                <p><strong>Use the live tool here:</strong> <a href="cv-maker.html">build a free resume with a live PDF preview</a>.</p>
-
-                                <p>In today's competitive job market, your resume is your most important asset. With 75% of resumes rejected by Applicant Tracking Systems (ATS) before a human ever sees them, you need a CV that is both beautifully designed and technically optimized. The <a href="cv-maker.html">MyToolX free resume builder</a> solves this by providing a privacy-first platform to generate clean PDFs.</p>
-
- <h3 class="text-xl font-bold mt-6 mb-3" style="color: var(--text);">What makes an ATS-Friendly Resume?</h3>
-                                <p>Applicant Tracking Systems are software used by recruiters to filter applications. They scan for keywords, standard headings, and clean formatting. To pass the ATS, your resume must avoid complex tables, images, and creative fonts. Our builder uses a clean, semantic text layout with standard headings such as Experience, Education, and Skills. It is designed with ATS best practices in mind, but because platforms like Workday and Greenhouse parse differently, we recommend testing your finished PDF with your target employer's system before you apply.</p>
-
-<h3 class="text-xl font-bold mt-6 mb-3" style="color: var(--text);">Why use a Client-Side CV Maker?</h3>
-                                <p>Most online resume builders require you to create an account and store your personal data (phone number, address, employment history) on their servers. MyToolX is different. Our tool runs entirely in your browser using JavaScript. Your data <strong>never leaves your device</strong>, making it the most private way to build a CV.</p>
-
-                                <h3 class="text-xl font-bold mt-6 mb-3" style="color: var(--text);">Why Use MyToolX Resume Builder?</h3>
-                                <ul class="list-disc pl-5 mb-4 space-y-2">
-                                    <li><strong>100% free, no hidden paywalls.</strong> Unlike Canva, Zety, or Resume.io, MyToolX never asks for a credit card, and there are no premium templates locked behind a paywall.</li>
-                                    <li><strong>Complete privacy.</strong> Every keystroke stays in your browser's memory. Your name, address, phone number, and work history are <em>never</em> transmitted to any server — perfect for privacy-conscious job seekers.</li>
-                                    <li><strong>Live A4 PDF preview.</strong> See exactly how your resume will print in real time, with page-break protection so your experience blocks never split awkwardly.</li>
-                                    <li><strong>Built-in quick proofreading.</strong> A one click Quick Proofread button cleans up common typos, repeated words, punctuation spacing, and capitalization in your summary and bullet points. It runs entirely offline in your browser and never sends your text anywhere.</li>
-                                    <li><strong>ATS conscious formatting.</strong> The clean two column layout uses semantic text, no images, no text boxes, and no tables in the content area. It is designed with parsers like Workday, Greenhouse, Taleo, Lever, and iCIMS in mind. Always test your final PDF with your target system before you apply.</li>
-                                    <li><strong>No sign-up required.</strong> Just fill in the form and click Save PDF. That's it.</li>
-                                </ul>
-
-                                <h3 class="text-xl font-bold mt-6 mb-3" style="color: var(--text);">How to Use the Resume Builder (Step-by-Step)</h3>
-                                <ol class="list-decimal pl-5 mb-4 space-y-2">
-                                    <li><strong>Enter your personal details.</strong> Start with your full name, a clear professional title (e.g., "Senior Accountant" or "Full-Stack Developer"), email, phone, and city.</li>
-                                    <li><strong>Write a punchy summary.</strong> Use 2 to 3 sentences to highlight your years of experience, core expertise, and biggest achievement. Click <em>✨ Quick Proofread</em> to polish your grammar instantly.</li>
-                                    <li><strong>Add your work experience.</strong> For each role, include the job title, company name, dates, and 2–4 achievement-focused bullet points (not responsibilities).</li>
-                                    <li><strong>List your education.</strong> Include your degree, university/school name, and graduation year. Recent graduates can list education before experience.</li>
-                                    <li><strong>Add skills, certifications, and languages.</strong> Keep skills relevant to the job — a hiring manager scanning your CV should see the keywords from the job description within 3 seconds.</li>
-                                    <li><strong>Preview and refine.</strong> Your live preview updates in real time. Check that no section overflows the page and that all dates are consistent.</li>
-                                    <li><strong>Download as PDF.</strong> Click <em>🖨️ Save PDF</em>, then choose "Save as PDF" in the print dialog. You'll get a high-resolution, ATS-parseable file ready to submit.</li>
-                                </ol>
-
-                                <h3 class="text-xl font-bold mt-6 mb-3" style="color: var(--text);">How to Make Your Resume ATS-Friendly</h3>
-                                <p>Applicant Tracking Systems are the first readers of every CV. If your resume isn't ATS-friendly, it may be rejected before a human ever sees it. Follow these rules:</p>
-                                <ul class="list-disc pl-5 mb-4 space-y-2">
-                                    <li><strong>Use a clean, single-flow layout.</strong> Our builder's two-column design keeps the main content in a single text flow, which most modern ATS parsers handle well.</li>
-                                    <li><strong>Avoid graphics, icons, and photos.</strong> ATS software cannot read images — keep your resume image-free.</li>
-                                    <li><strong>Use standard section headings.</strong> "Experience," "Education," and "Skills" are recognized universally. Avoid creative names like "My Journey" or "Career Story."</li>
-                                    <li><strong>Mirror the job description.</strong> Use the exact keywords from the job posting where they genuinely apply to you.</li>
-                                    <li><strong>Save as PDF (not DOCX).</strong> PDF preserves your formatting and is now the preferred format for 80%+ of ATS platforms.</li>
-                                </ul>
-
-                                <h3 class="text-xl font-bold mt-6 mb-3" style="color: var(--text);">Resume Writing Tips That Get You Interviews</h3>
-                                
-                                <h4 class="font-bold text-base mt-4 mb-2" style="color: var(--text);">1. Lead with achievements, not duties</h4>
-                                <p>Weak: <em>"Responsible for managing social media accounts."</em><br>
-                                Strong: <em>"Grew Instagram following by 45% in 6 months by launching a weekly video series."</em><br>
-                                The second bullet uses a number and a result — exactly what recruiters want to see.</p>
-
-                                <h4 class="font-bold text-base mt-4 mb-2" style="color: var(--text);">2. Quantify everything you can</h4>
-                                <p>"Improved sales" is forgettable. But if you managed a team of five, say so. If you cut a process from three days to one, say that. The number matters less than the fact that you measured something real. Even if you do not have exact figures, approximate numbers and clear scope significantly strengthen bullet points. The goal is not to invent impressive statistics. The goal is to show scale and impact using whatever real numbers you actually have.</p>
-
-                                <h4 class="font-bold text-base mt-4 mb-2" style="color: var(--text);">3. Tailor your resume to every job</h4>
-                                <p>Recruiters can tell when a resume is generic. Spend 5 minutes reordering your bullet points and skills for each application, and you'll roughly double your response rate.</p>
-
-                                <h4 class="font-bold text-base mt-4 mb-2" style="color: var(--text);">4. Keep it to one or two pages</h4>
-                                <p>Unless you have 10+ years of experience, one page is ideal. If you must go to two pages, ensure the second page is at least 50% full.</p>
-
-                                <h4 class="font-bold text-base mt-4 mb-2" style="color: var(--text);">5. Proofread before sending</h4>
-                                <p>A single typo can cost you the interview. Use the built in <em>Quick Proofread</em> button, or paste your final text into our <a href="text-suite.html">Word Counter</a> to check length and readability. Then double check that every date, job title, and company name matches your LinkedIn profile.</p>
-
-                                <h3 class="text-xl font-bold mt-6 mb-3" style="color: var(--text);">Frequently Asked Questions</h3>
-
-                                <div class="faq-item" style="border-bottom: 1px solid var(--card-border); padding: 0.75rem 0;">
-                                    <p class="font-bold">Is this resume builder really free?</p>
-                                    <p>Yes. MyToolX Resume Builder is 100% free with no hidden charges, no watermarks, and no sign-up required. You can create and download unlimited resumes.</p>
-                                </div>
-
-                                <div class="faq-item" style="border-bottom: 1px solid var(--card-border); padding: 0.75rem 0;">
-                                    <p class="font-bold">Does the resume builder upload my data to a server?</p>
-                                    <p>No. The entire CV builder runs client-side in your browser using JavaScript. Your personal data never leaves your device there is no backend, no database, and no tracking of your resume content.</p>
-                                </div>
-
-                                <div class="faq-item" style="border-bottom: 1px solid var(--card-border); padding: 0.75rem 0;">
-                                    <p class="font-bold">Can I download my resume as a PDF?</p>
-                                    <p>Yes. Click the <em>🖨️ Save PDF</em> button to open your browser's print dialog, where you can save your resume as a high-resolution PDF ready for ATS and recruiters.</p>
-                                </div>
-
-                                <div class="faq-item" style="border-bottom: 1px solid var(--card-border); padding: 0.75rem 0;">
-                                    <p class="font-bold">Is the resume ATS-friendly?</p>
-                                    <p>The layout is designed with ATS best practices in mind. It uses clean semantic text with no images, icons, or tables in the content area. That said, ATS platforms differ. Workday, Greenhouse, Taleo, Lever, and iCIMS all parse slightly differently. We recommend testing your finished PDF with your target employer system or a free ATS checker before you apply.</p>
-                                </div>
-
-                                <div class="faq-item" style="padding: 0.75rem 0 1rem 0;">
-                                    <p class="font-bold">Do I need to create an account to save my resume?</p>
-                                    <p>No account is needed. Simply fill out the form, then click <em>Save PDF</em> to download a permanent copy to your device. Since nothing is stored on a server, be sure to save your PDF before closing the tab.</p>
-                                </div>
-                            </article>
-
-                            <article id="grammar-guide" class="scroll-mt-24 mb-8">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text);">📝 Why You Need a Grammar Checker</h3>
-                                <p>Writing clear, error-free content is essential for professional communication. Our <a href="grammar-checker.html">Grammar & Spelling Checker</a> detects spelling mistakes, missing commas, and spacing problems. It runs mostly client-side, ensuring your text remains private while giving you instant corrections.</p>
-                            </article>
-
-                            <article id="text-guide" class="scroll-mt-24">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text);">✍️ The Power of Word Counting</h3>
-                                <p>Whether you are writing a tweet or an SEO article, character and word counts matter. Our <a href="text-suite.html">Text & Word Suite</a> instantly measures word volume and estimated reading time. It also includes a Case Converter to instantly change text to UPPERCASE or title case.</p>
-                            </article>
-                        </div>
-
-                        <!-- CATEGORY 4 -->
-                        <div>
-                            <h2 class="text-2xl font-black mb-4 pb-2 border-b" style="color: var(--text); border-color: var(--card-border);">4. Finance & Freelancing</h2>
-
-                            <article id="finance-guide" class="scroll-mt-24 mb-8">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text);">💰 Understanding Freelance Fees</h3>
-                                <p>As a freelancer, the price you quote is not what you take home. Between Stripe and PayPal, your profit margin shrinks fast. Use our <a href="fee-calculator.html">Fee Calculator</a> to see exactly what a gateway will take. It also features a "gross-up" calculator to ensure you receive your exact target amount.</p>
-                            </article>
-
-                            <article id="sip-guide" class="scroll-mt-24 mb-8">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text);">📈 Building Wealth with SIPs</h3>
-                                <p>A Systematic Investment Plan (SIP) allows you to compound wealth steadily. Our <a href="sip-calculator.html">SIP Calculator</a> projects the future value of your investments by applying monthly compounding, helping you understand how small investments grow over 10 or 20 years.</p>
-                            </article>
-
-                            <article id="loan-guide" class="scroll-mt-24">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text);">🏦 Demystifying Loan EMIs</h3>
-                                <p>An Equated Monthly Installment (EMI) is the fixed amount you pay a lender every month. Before taking a mortgage, you must know your exact EMI. Our <a href="loan-emi.html">Loan EMI Calculator</a> provides an exact breakdown of your monthly installment, total interest, and overall outflow.</p>
-                            </article>
-                        </div>
-
-                        <!-- CATEGORY 5 -->
-                        <div>
-                            <h2 class="text-2xl font-black mb-4 pb-2 border-b" style="color: var(--text); border-color: var(--card-border);">5. Developer Utilities</h2>
-
-                            <article id="json-guide" class="scroll-mt-24 mb-8">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text);">⚡ Formatting JSON Safely</h3>
-                                <p>JSON is the standard format for web APIs. Our <a href="json-formatter.html">JSON Formatter</a> beautifies your code with proper indentation. Crucially, it runs 100% in your browser, so you can safely format sensitive API keys without sending them to a third-party server.</p>
-                            </article>
-
-                            <article id="base64-guide" class="scroll-mt-24 mb-8">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text);">🔤 Base64 Encoding & Decoding</h3>
-                                <p>Base64 is used to transmit binary data over text-based protocols. Our <a href="base64-tool.html">Base64 Tool</a> converts text to Base64 and decodes it instantly. It supports Unicode and URL-safe encoding, making it perfect for developers working with API tokens.</p>
-                            </article>
-
-                            <article id="color-guide" class="scroll-mt-24">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text);">🎨 Converting Web Colors</h3>
-                                <p>Designers constantly switch between HEX, RGB, and CSS color names. Our <a href="color-converter.html">Color Converter</a> provides instant color space translation. It even includes a dropdown of all 140+ standard CSS colors.</p>
-                            </article>
-                        </div>
-
-                        <!-- CATEGORY 6 -->
-                        <div>
-                            <h2 class="text-2xl font-black mb-4 pb-2 border-b" style="color: var(--text); border-color: var(--card-border);">6. Everyday Utilities</h2>
-
-                            <article id="qr-guide" class="scroll-mt-24 mb-8">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text);">📱 Creating QR Codes</h3>
-                                <p>QR codes bridge the physical and digital worlds. Our <a href="qr-code-generator.html">QR Code Generator</a> creates high-resolution, static QR codes. They never expire and contain zero tracking redirects, ensuring your printed materials always work.</p>
-                            </article>
-
-                            <article id="password-guide" class="scroll-mt-24 mb-8">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text);">🔑 Generating Secure Passwords</h3>
-                                <p>Weak passwords are the leading vector for security breaches. Our <a href="password-generator.html">Password Generator</a> uses your browser's native Web Crypto API to create cryptographically strong passwords, entirely offline.</p>
-                            </article>
-
-                            <article id="unit-guide" class="scroll-mt-24">
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--text);">⚖️ Instant Unit Conversion</h3>
-                                <p>Converting between Metric and Imperial systems is a daily necessity. Our <a href="unit-converter.html">Unit Converter</a> provides instant, high-precision conversions for distance, mass, and temperature, entirely offline.</p>
-                            </article>
-                        </div>
-
-                    </div>
+            <!-- Card 2: CV Guide -->
+            <a href="blog-cv-guide.html" class="surface rounded-3xl p-6 sm:p-8 blog-card shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl mb-4">📄</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">How to Build an ATS Resume</h3>
+                    <p class="text-sm muted leading-relaxed">Learn the secrets of Applicant Tracking Systems and how to use our free builder to make a resume that actually gets read by humans.</p>
                 </div>
-            </div>
+                <div class="mt-6 text-xs font-bold text-indigo-500">Read the Guide →</div>
+            </a>
+
+            <!-- Card 3: Typing Speed -->
+            <a href="blog-typing-speed.html" class="surface rounded-3xl p-6 sm:p-8 blog-card shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl mb-4">⌨️</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">How to Improve Your Typing Speed</h3>
+                    <p class="text-sm muted leading-relaxed">Stop hunting for keys. Learn the proper finger placements, posture, and practice routines to push your WPM past 60.</p>
+                </div>
+                <div class="mt-6 text-xs font-bold text-indigo-500">Read the Guide →</div>
+            </a>
+
+            <!-- Card 4: Image Compression -->
+            <a href="blog-image-compression.html" class="surface rounded-3xl p-6 sm:p-8 blog-card shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl mb-4">🖼️</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Compress Images Without Losing Quality</h3>
+                    <p class="text-sm muted leading-relaxed">Speed up your website and boost Core Web Vitals by shrinking your images safely. Learn how browser based compression works.</p>
+                </div>
+                <div class="mt-6 text-xs font-bold text-indigo-500">Read the Guide →</div>
+            </a>
+
+            <!-- Card 5: AI Prompts -->
+            <a href="blog-ai-prompts.html" class="surface rounded-3xl p-6 sm:p-8 blog-card shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl mb-4">🤖</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Mastering AI Prompts for ChatGPT</h3>
+                    <p class="text-sm muted leading-relaxed">Get better results from AI. Learn the Role, Task, Context, Format framework and how to use our Prompt Studio.</p>
+                </div>
+                <div class="mt-6 text-xs font-bold text-indigo-500">Read the Guide →</div>
+            </a>
+
+            <!-- Card 6: Grammar -->
+            <a href="blog-grammar-guide.html" class="surface rounded-3xl p-6 sm:p-8 blog-card shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl mb-4">📝</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Why You Need a Grammar Checker</h3>
+                    <p class="text-sm muted leading-relaxed">Writing clear, error free content is essential for professional communication. See how our privacy first checker works.</p>
+                </div>
+                <div class="mt-6 text-xs font-bold text-indigo-500">Read the Guide →</div>
+            </a>
+
+            <!-- Card 7: Freelance Finance -->
+            <a href="blog-freelance-finance.html" class="surface rounded-3xl p-6 sm:p-8 blog-card shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl mb-4">💰</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Understanding Freelance Fees</h3>
+                    <p class="text-sm muted leading-relaxed">Stripe and PayPal take a cut. Learn how to calculate your true profit margin and use our Fee Calculator to gross up your quotes.</p>
+                </div>
+                <div class="mt-6 text-xs font-bold text-indigo-500">Read the Guide →</div>
+            </a>
+
+            <!-- Card 8: SIP Investing -->
+            <a href="blog-sip-investing.html" class="surface rounded-3xl p-6 sm:p-8 blog-card shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl mb-4">📈</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Building Wealth with SIPs</h3>
+                    <p class="text-sm muted leading-relaxed">A Systematic Investment Plan compounds your wealth steadily. See how small investments grow over 10 or 20 years.</p>
+                </div>
+                <div class="mt-6 text-xs font-bold text-indigo-500">Read the Guide →</div>
+            </a>
+
+            <!-- Card 9: Loan EMI -->
+            <a href="blog-loan-emi.html" class="surface rounded-3xl p-6 sm:p-8 blog-card shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl mb-4">🏦</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Demystifying Loan EMIs</h3>
+                    <p class="text-sm muted leading-relaxed">Before taking a mortgage, know your exact EMI. Learn how interest rates affect your total monthly outflow.</p>
+                </div>
+                <div class="mt-6 text-xs font-bold text-indigo-500">Read the Guide →</div>
+            </a>
+
+            <!-- Card 10: Love Calculator -->
+            <a href="blog-love-calculator.html" class="surface rounded-3xl p-6 sm:p-8 blog-card shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl mb-4">❤️</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">The Science of Love Compatibility</h3>
+                    <p class="text-sm muted leading-relaxed">Have you ever felt an instant spark with someone? Explore how Pythagorean numerology analyzes your names.</p>
+                </div>
+                <div class="mt-6 text-xs font-bold text-indigo-500">Read the Guide →</div>
+            </a>
+
+            <!-- Card 11: QR Codes -->
+            <a href="blog-qr-codes.html" class="surface rounded-3xl p-6 sm:p-8 blog-card shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl mb-4">📱</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Creating Static QR Codes</h3>
+                    <p class="text-sm muted leading-relaxed">QR codes bridge physical and digital worlds. Learn how to generate static codes that never expire and contain zero tracking.</p>
+                </div>
+                <div class="mt-6 text-xs font-bold text-indigo-500">Read the Guide →</div>
+            </a>
+
+            <!-- Card 12: Password Security -->
+            <a href="blog-password-security.html" class="surface rounded-3xl p-6 sm:p-8 blog-card shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl mb-4">🔑</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Generating Secure Passwords</h3>
+                    <p class="text-sm muted leading-relaxed">Weak passwords are the leading vector for breaches. Learn why native browser generators are the safest option.</p>
+                </div>
+                <div class="mt-6 text-xs font-bold text-indigo-500">Read the Guide →</div>
+            </a>
+
+            <!-- Card 13: Unit Converter -->
+            <a href="blog-unit-conversion.html" class="surface rounded-3xl p-6 sm:p-8 blog-card shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl mb-4">⚖️</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Instant Unit Conversion</h3>
+                    <p class="text-sm muted leading-relaxed">Converting between Metric and Imperial systems is a daily necessity. See how our offline converter works for distance and mass.</p>
+                </div>
+                <div class="read-more text-xs font-bold text-indigo-500">Read the Guide →</div>
+            </a>
+
+            <!-- Card 14: JSON Tools -->
+            <a href="blog-json-tools.html" class="surface rounded-3xl p-6 sm:p-8 blog-card shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Formatting JSON Safely</h3>
+                    <p class="text-sm muted leading-relaxed">JSON is the standard format for APIs. Learn how to beautify code and debug safely without sending your API keys to a server.</p>
+                </div>
+                <div class="read-more text-xs font-bold text-indigo-500">Read the Guide →</div>
+            </a>
+
+            <!-- Card 15: Base64 -->
+            <a href="blog-base64.html" class="surface rounded-3xl p-6 sm:p-8 blog-card shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl mb-4">🔤</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Base64 Encoding & Decoding</h3>
+                    <p class="text-sm muted leading-relaxed">Base64 transmits binary data over text protocols. See how to encode strings and URL safe text instantly in your browser.</p>
+                </div>
+                <div class="read-more text-xs font-bold text-indigo-500">Read the Guide →</div>
+            </a>
+
+            <!-- Card 16: Color Tools -->
+            <a href="blog-color-tools.html" class="surface rounded-3xl p-6 sm:p-8 blog-card shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl mb-4">🎨</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Converting Web Colors</h3>
+                    <p class="text-sm muted leading-relaxed">Designers constantly switch between HEX, RGB, and CSS names. Learn how color space translation works.</p>
+                </div>
+                <div class="read-more text-xs font-bold text-indigo-500">Read the Guide →</div>
+            </a>
+
+            <!-- Card 17: LinkedIn Bio -->
+            <a href="blog-linkedin-bio.html" class="surface rounded-3xl p-6 sm:p-8 blog-card shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl mb-4">✨</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Writing a Social Media Bio</h3>
+                    <p class="text-sm muted leading-relaxed">Your bio is the first thing a recruiter reads. Learn how to use our AI generator to stand out on LinkedIn and X.</p>
+                </div>
+                <div class="read-more text-xs font-bold text-indigo-500">Read the Guide →</div>
+            </a>
+
+            <!-- Card 18: Text Suite -->
+            <a href="blog-text-suite.html" class="surface rounded-3xl p-6 sm:p-8 blog-card shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl mb-4">✍️</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">The Power of Word Counting</h3>
+                    <p class="text-sm muted leading-relaxed">Whether writing a tweet or an SEO article, character and word counts matter. See how to instantly measure volume.</p>
+                </div>
+                <div class="read-more text-xs font-bold text-indigo-500">Read the Guide →</div>
+            </a>
+
+                        <!-- Card 19: Article Outline -->
+            <a href="blog-content-outline.html" class="surface rounded-3xl p-6 sm:p-8 blog-card shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl mb-4">📑</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Planning an Article Outline</h3>
+                    <p class="text-sm muted leading-relaxed">An outline is the skeleton of an article. Learn how to structure your H1, H2, and H3 tags for SEO with our free generator.</p>
+                </div>
+                <div class="read-more text-xs font-bold text-indigo-500">Read the Guide →</div>
+            </a>
+
         </div>
     </main>
 
-     <footer class="mega-footer py-12 mt-auto">
+    <footer class="mega-footer py-12 mt-auto">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
                 
-                <!-- COLUMN 1: Logo & Description -->
                 <div class="lg:col-span-5">
                     <a href="index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
                         <div class="logo-mark">M<span class="x">X</span></div>
                         <span class="logo-wordmark">MyTool<span class="x">X</span></span>
                     </a>
                     <p class="text-sm leading-relaxed mb-6 pr-4">
-                        MyToolX is a free suite of client-side web tools for writers, freelancers and developers. No sign-up, no tracking, no data leaves your browser.
+                        MyToolX is a free suite of client side web tools for writers, freelancers and developers. No sign up, no tracking, no data leaves your browser.
                     </p>
                 </div>
 
-                 
-		<!-- COLUMN 2: Popular Tools & Premium Link -->
                 <div class="lg:col-span-4">
                     <h3>Popular Tools</h3>
-                    
                     <div class="grid grid-cols-2 gap-3 text-sm">
-                        <!-- Row 1 -->
                         <a href="typing-test.html">Typing Speed Test</a>
-                        
-                        <!-- THE PREMIUM BUTTON (Replaces Image Compressor) -->
                         <div class="flex items-start mt-0.5"> 
                             <a href="premium.html" class="link-premium-gold" aria-label="Visit the Premium Store">
                                 <span class="star-icon">⭐</span> Premium
                             </a>
                         </div>
-
-                        <!-- Row 2 -->
                         <a href="prompt-studio.html">AI Prompt Studio</a>
                         <a href="image-compressor.html">Image Compressor</a>
-                        
-                        <!-- Row 3 -->
                         <a href="text-suite.html">Text &amp; Word Suite</a>
                         <a href="grammar-checker.html">Grammar Checker</a>
-                        
-                        <!-- Row 4 -->
                         <a href="sip-calculator.html">SIP Calculator</a>
                         <a href="fee-calculator.html">Fee Calculator</a>
-                        
-                        <!-- Row 5 -->
                         <a href="json-formatter.html">JSON Formatter</a>
                         <a href="loan-emi.html">Loan EMI Calc</a>
-                        
-                        <!-- Row 6 -->
                         <a href="qr-code-generator.html">QR Code Gen</a>
                         <a href="base64-tool.html">Base64 Tool</a>
-                        
-                        <!-- Row 7 -->
                         <a href="unit-converter.html">Unit Converter</a>
                         <a href="password-generator.html">Password Gen</a>
-                        
-                        <!-- Row 8 -->
                         <a href="article-outline.html">Article Outline</a>
                         <a href="ai-bio-generator.html">AI Bio Generator</a>
-                        
-                        <!-- Row 9 -->
                         <a href="love-calculator.html">Love Calculator</a>
                         <a href="cv-maker.html">Resume Builder</a>
-                        
-                        <!-- Row 10 (Extra space filled) -->
                         <span></span>
                         <a href="color-converter.html">Color Converter</a>
                     </div>
                 </div>
 
-                <!-- COLUMN 3: Company & Legal Links -->
                 <div class="lg:col-span-3">
                     <div class="grid grid-cols-2 gap-8">
                         <div>
@@ -625,16 +417,14 @@
                     </div>
                 </div>
                 
-            </div> <!-- END OF GRID -->
+            </div>
 
-            <!-- Bottom Copyright Bar -->
             <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
                 <p>&copy; 2026 MyToolX. All rights reserved.</p>
-                <p>All tools run 100% client-side in your browser.</p>
+                <p>All tools run 100% client side in your browser.</p>
             </div>
         </div>
     </footer>
-
 
     <script>
         (function initTheme() { 
@@ -646,26 +436,26 @@
         })();
         
         function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    var icon = document.getElementById('themeIcon');
-    var text = document.getElementById('themeText');
-    
-    if (icon && text) {
-        if (theme === 'dark') {
-            icon.textContent = '🌙';
-            text.textContent = 'Dark Mode';
-        } else {
-            icon.textContent = '☀️';
-            text.textContent = 'Light Mode';
+            document.documentElement.setAttribute('data-theme', theme);
+            var icon = document.getElementById('themeIcon');
+            var text = document.getElementById('themeText');
+            
+            if (icon && text) {
+                if (theme === 'dark') {
+                    icon.textContent = '🌙';
+                    text.textContent = 'Dark Mode';
+                } else {
+                    icon.textContent = '☀️';
+                    text.textContent = 'Light Mode';
+                }
+            }
+            
+            var btn = document.getElementById('themeToggle');
+            if (btn) {
+                btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+                btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+            }
         }
-    }
-    
-    var btn = document.getElementById('themeToggle');
-    if (btn) {
-        btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-        btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
-    }
-}
         
         function toggleTheme() { 
             var cur = document.documentElement.getAttribute('data-theme') || 'light'; 
@@ -674,40 +464,8 @@
             try { localStorage.setItem('mtx-theme', next); } catch (e) {} 
         }
         window.toggleTheme = toggleTheme;
-
-        // Custom Mobile Menu Logic
-        function toggleMobileMenu() {
-            var list = document.getElementById('mobileMenuList');
-            var icon = document.getElementById('mobileMenuIcon');
-            if (list.classList.contains('hidden')) {
-                list.classList.remove('hidden');
-                icon.textContent = '▲';
-            } else {
-                list.classList.add('hidden');
-                icon.textContent = '▼';
-            }
-        }
-        window.toggleMobileMenu = toggleMobileMenu;
-
-        function closeMobileMenu(label) {
-            document.getElementById('mobileMenuLabel').textContent = label;
-            document.getElementById('mobileMenuList').classList.add('hidden');
-            document.getElementById('mobileMenuIcon').textContent = '▼';
-        }
-        window.closeMobileMenu = closeMobileMenu;
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            var menuBtn = document.getElementById('mobileMenuBtn');
-            var menuList = document.getElementById('mobileMenuList');
-            if (menuBtn && menuList && !menuBtn.contains(event.target) && !menuList.contains(event.target)) {
-                menuList.classList.add('hidden');
-                document.getElementById('mobileMenuIcon').textContent = '▼';
-            }
-        });
     </script>
 
-<!-- Moved Google Analytics to the bottom to speed up page load -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
     <script>
       window.addEventListener('load', function() {
@@ -717,7 +475,54 @@
         gtag('config', 'G-W8KM3G3BYL');
       });
     </script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "@id": "https://mytoolx.org/blog.html#webpage",
+          "url": "https://mytoolx.org/blog.html",
+          "name": "MyToolX Blog | Free Tools Guides & Articles",
+          "isPartOf": { "@id": "https://mytoolx.org/#website" },
+          "inLanguage": "en",
+          "description": "Explore the MyToolX blog hub. Learn how to improve typing speed, compress images without losing quality, build an ATS friendly resume, and more.",
+                   "hasPart": [
+            { "@type": "Article", "url": "https://mytoolx.org/blog-premium-bundles.html" },
+            { "@type": "Article", "url": "https://mytoolx.org/blog-cv-guide.html" },
+            { "@type": "Article", "url": "https://mytoolx.org/blog-typing-speed.html" },
+            { "@type": "Article", "url": "https://mytoolx.org/blog-image-compression.html" },
+            { "@type": "Article", "url": "https://mytoolx.org/blog-ai-prompts.html" },
+            { "@type": "Article", "url": "https://mytoolx.org/blog-grammar-guide.html" },
+            { "@type": "Article", "url": "https://mytoolx.org/blog-freelance-finance.html" },
+            { "@type": "Article", "url": "https://mytoolx.org/blog-sip-investing.html" },
+            { "@type": "Article", "url": "https://mytoolx.org/blog-loan-emi.html" },
+            { "@type": "Article", "url": "https://mytoolx.org/blog-love-calculator.html" },
+            { "@type": "Article", "url": "https://mytoolx.org/blog-qr-codes.html" },
+            { "@type": "Article", "url": "https://mytoolx.org/blog-password-security.html" },
+            { "@type": "Article", "url": "https://mytoolx.org/blog-unit-conversion.html" },
+            { "@type": "Article", "url": "https://mytoolx.org/blog-json-tools.html" },
+            { "@type": "Article", "url": "https://mytoolx.org/blog-base64.html" },
+            { "@type": "Article", "url": "https://mytoolx.org/blog-color-tools.html" },
+            { "@type": "Article", "url": "https://mytoolx.org/blog-linkedin-bio.html" },
+            { "@type": "Article", "url": "https://mytoolx.org/blog-content-outline.html" },
+            { "@type": "Article", "url": "https://mytoolx.org/blog-text-suite.html" }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://mytoolx.org/blog.html#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mytoolx.org/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mytoolx.org/blog.html" }
+          ]
+        }
+      ]
+    }
+    </script>
 
 </body>
 </html>

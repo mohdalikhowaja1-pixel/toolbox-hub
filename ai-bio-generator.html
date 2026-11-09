@@ -3,25 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>AI Bio Generator — LinkedIn, X & Upwork | MyToolX</title>
+    
+    <!-- PRIMARY SEO -->
+    <title>Free AI Bio Generator: LinkedIn & Upwork ✨ | MyToolX</title>
     <meta name="description" content="Free AI-powered bio generator for LinkedIn, X, Upwork and Instagram. Turn your role and skills into professional, platform-sized bios with character counts.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://mytoolx.org/ai-bio-generator.html">
 
+    <!-- FAVICON (inline SVG emoji — zero HTTP request) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+
+    <!-- OPEN GRAPH -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="MyToolX">
-    <meta property="og:title" content="AI Bio Generator — LinkedIn, X & Upwork | MyToolX">
-    <meta property="og:description" content="Turn your role and skills into professional, platform-sized bios with character counts. Free, in your browser.">
     <meta property="og:url" content="https://mytoolx.org/ai-bio-generator.html">
+    <meta property="og:title" content="Free AI Bio Generator: LinkedIn & Upwork ✨ | MyToolX">
+    <meta property="og:description" content="Turn your role and skills into professional, platform-sized bios with character counts. Free, in your browser.">
     <meta property="og:image" content="https://mytoolx.org/og-image.png">
+    <meta property="og:image:alt" content="MyToolX Free AI Bio Generator">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:locale" content="en_US">
+
+    <!-- TWITTER / X CARD -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AI Bio Generator — LinkedIn, X & Upwork | MyToolX">
+    <meta name="twitter:url" content="https://mytoolx.org/ai-bio-generator.html">
+    <meta name="twitter:title" content="Free AI Bio Generator: LinkedIn & Upwork ✨ | MyToolX">
     <meta name="twitter:description" content="Turn your role and skills into professional, platform-sized bios with character counts. Free, in your browser.">
     <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
+    <meta name="twitter:image:alt" content="MyToolX Free AI Bio Generator">
 
+    <!-- STYLESHEET -->
     <link rel="stylesheet" href="styles.css">
-    
+
+    <!-- SPEED HINTS -->
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//refer.micro1.ai">
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -111,53 +131,37 @@
 </head>
 <body class="font-sans min-h-screen flex flex-col justify-between">
 
-      <!-- HEADER (UPDATED) -->
     <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
         <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2">
-            
-            <!-- TOP ROW: Logo + Back Button + Right Buttons -->
             <div class="flex items-center justify-between gap-2 sm:gap-4">
-                
-                <!-- LEFT SIDE: Logo & Desktop Back Button -->
                 <div class="flex items-center gap-2 sm:gap-4 shrink-0">
-                    <!-- Desktop Back Button (Hidden on Mobile) -->
-                    <a href="index.html" class="hidden sm:flex btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold items-center gap-1">
-                        ← All Tools
-                    </a>
-                    
-                    <!-- Logo -->
+                    <a href="index.html" class="hidden sm:flex btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold items-center gap-1">← All Tools</a>
                     <a href="index.html" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
                         <div class="logo-mark w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base flex items-center justify-center">M<span class="x">X</span></div>
                         <span class="logo-wordmark text-base sm:text-xl block">MyTool<span class="x">X</span></span>
                     </a>
                 </div>
-
-                <!-- RIGHT SIDE: Dark Mode + Jobs + CV -->
                 <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
                     <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch theme" title="Toggle Light/Dark Mode" class="h-8 sm:h-10 px-2 sm:px-3 rounded-xl flex items-center justify-center gap-1.5 text-[10px] sm:text-xs font-bold transition-all hover:opacity-80" style="background: var(--chip-bg); color: var(--chip-text);">
     <span id="themeIcon" aria-hidden="true">🌙</span>
     <span id="themeText" class="hidden sm:block">Dark Mode</span>
 </button>
-                    
                     <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
                         💼 Remote Jobs ↗
                     </a>
-
                     <a href="cv-maker.html" class="hidden md:inline-flex text-xs font-bold text-white px-3 py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
     📄 Live CV
 </a>
                 </div>
             </div>
-
-            <!-- BOTTOM ROW: Mobile Back Button (Only shows on Mobile) -->
             <div class="mt-2 sm:hidden">
                 <a href="index.html" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">
                     ← Back to All Tools
                 </a>
             </div>
-
         </div>
     </header>
+
     <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow">
 
         <nav class="text-xs font-semibold mb-4 flex items-center gap-1 muted" aria-label="Breadcrumb">
@@ -170,7 +174,7 @@
             
             <div class="flex items-center justify-between gap-3 flex-wrap mb-4 pb-4 border-b" style="border-color: var(--card-border);">
                 <h1 class="text-xl sm:text-2xl font-black flex items-center gap-2" style="color: var(--text);">
-                    ✨ AI Social & Freelance Bio Generator
+                    ✨ Free AI Social & Freelance Bio Generator
                 </h1>
                 <button onclick="clearBioGen()" class="btn-3d btn-chip px-3.5 py-2 text-xs font-bold">Clear</button>
             </div>
@@ -214,6 +218,7 @@
                 </p>
             </div>
 
+            <h2 class="text-xl font-bold">Why Use Our Bio Generator?</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                 <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
                     <h3 class="font-bold text-sm mb-1" style="color: var(--text);">💼 LinkedIn & Upwork</h3>
@@ -364,6 +369,7 @@
             </div>
         </div>
     </footer>
+
 
 
     <script>

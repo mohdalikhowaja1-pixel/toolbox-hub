@@ -3,24 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Text & Word Counter — Case Converter | MyToolX</title>
+    
+    <!-- PRIMARY SEO -->
+    <title>Free Word Counter & Case Converter ✍️ | MyToolX</title>
     <meta name="description" content="Free online Text and Word Suite. Count words, characters, sentences, and estimate reading time. Convert text to UPPERCASE, lowercase, or Title Case instantly.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://mytoolx.org/text-suite.html">
 
+    <!-- FAVICON (inline SVG emoji — zero HTTP request) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✍️</text></svg>">
+
+    <!-- OPEN GRAPH -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="MyToolX">
-    <meta property="og:title" content="Text & Word Counter — Case Converter | MyToolX">
-    <meta property="og:description" content="Count words, characters, sentences, and estimate reading time. Convert text case instantly.">
     <meta property="og:url" content="https://mytoolx.org/text-suite.html">
+    <meta property="og:title" content="Free Word Counter & Case Converter ✍️ | MyToolX">
+    <meta property="og:description" content="Count words, characters, sentences, and estimate reading time. Convert text case instantly.">
     <meta property="og:image" content="https://mytoolx.org/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="MyToolX Text & Word Counter Suite">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:locale" content="en_US">
+
+    <!-- TWITTER / X CARD -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Text & Word Counter — Case Converter | MyToolX">
+    <meta name="twitter:url" content="https://mytoolx.org/text-suite.html">
+    <meta name="twitter:title" content="Free Word Counter & Case Converter ✍️ | MyToolX">
     <meta name="twitter:description" content="Count words, characters, sentences, and estimate reading time. Convert text case instantly.">
     <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
+    <meta name="twitter:image:alt" content="MyToolX Text & Word Counter Suite">
 
+    <!-- STYLESHEET -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- SPEED HINTS -->
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//refer.micro1.ai">
 
     <script type="application/ld+json">
     {
@@ -117,7 +137,6 @@
 </head>
 <body class="font-sans min-h-screen flex flex-col justify-between">
 
-    <!-- HEADER -->
     <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
         <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2">
             <div class="flex items-center justify-between gap-2 sm:gap-4">
@@ -129,9 +148,10 @@
                     </a>
                 </div>
                 <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
-                    <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle dark mode" class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center text-xs sm:text-base font-bold" style="background: var(--chip-bg); color: var(--chip-text);">
-                        <span id="themeIcon" aria-hidden="true">🌙</span>
-                    </button>
+                    <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch theme" title="Toggle Light/Dark Mode" class="h-8 sm:h-10 px-2 sm:px-3 rounded-xl flex items-center justify-center gap-1.5 text-[10px] sm:text-xs font-bold transition-all hover:opacity-80" style="background: var(--chip-bg); color: var(--chip-text);">
+    <span id="themeIcon" aria-hidden="true">🌙</span>
+    <span id="themeText" class="hidden sm:block">Dark Mode</span>
+</button>
                     <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
                         💼 Remote Jobs ↗
                     </a>
@@ -141,7 +161,9 @@
                 </div>
             </div>
             <div class="mt-2 sm:hidden">
-                <a href="index.html" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">← Back to All Tools</a>
+                <a href="index.html" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">
+                    ← Back to All Tools
+                </a>
             </div>
         </div>
     </header>
@@ -156,17 +178,18 @@
 
         <div class="tool-panel surface rounded-3xl shadow-xl p-6 sm:p-8 mb-10 transition-shadow">
             
-            <!-- ADDED H1 TITLE FOR SEO -->
-            <h1 class="text-xl sm:text-2xl font-black flex items-center gap-2 mb-4" style="color: var(--text);">
-                ✍️ Text & Word Counter Suite
-            </h1>
+            <div class="flex items-center justify-between gap-3 flex-wrap mb-4 pb-4 border-b" style="border-color: var(--card-border);">
+                <h1 class="text-xl sm:text-2xl font-black flex items-center gap-2" style="color: var(--text);">
+                    ✍️ Free Word Counter & Text Case Converter
+                </h1>
+                <button onclick="clearTextSuite()" class="btn-3d btn-chip px-3.5 py-2 text-xs font-bold">Clear</button>
+            </div>
 
             <div class="flex items-center justify-between gap-3 flex-wrap mb-4 pb-4 border-b" style="border-color: var(--card-border);">
                 <div class="flex items-center gap-2" role="tablist" aria-label="Tool type">
                     <button id="tabCounterBtn" onclick="switchTab('counter')" role="tab" aria-selected="true" aria-controls="contentCounter" class="btn-3d btn-primary px-4 py-2 text-xs font-bold flex items-center gap-1.5">✍️ Word &amp; Char Counter</button>
                     <button id="tabCaseBtn" onclick="switchTab('case')" role="tab" aria-selected="false" aria-controls="contentCase" class="btn-3d btn-chip px-4 py-2 text-xs font-bold flex items-center gap-1.5">🔤 Case Converter</button>
                 </div>
-                <button onclick="clearTextSuite()" class="btn-3d btn-chip px-3.5 py-2 text-xs font-bold">Clear</button>
             </div>
 
             <!-- TAB 1: COUNTER -->
@@ -386,15 +409,26 @@
         })();
 
         function applyTheme(theme) {
-            document.documentElement.setAttribute('data-theme', theme);
-            var icon = document.getElementById('themeIcon');
-            if (icon) icon.textContent = (theme === 'dark' ? '☀️' : '🌙');
-            var btn = document.getElementById('themeToggle');
-            if (btn) {
-                btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-                btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
-            }
+    document.documentElement.setAttribute('data-theme', theme);
+    var icon = document.getElementById('themeIcon');
+    var text = document.getElementById('themeText');
+    
+    if (icon && text) {
+        if (theme === 'dark') {
+            icon.textContent = '🌙';
+            text.textContent = 'Dark Mode';
+        } else {
+            icon.textContent = '☀️';
+            text.textContent = 'Light Mode';
         }
+    }
+    
+    var btn = document.getElementById('themeToggle');
+    if (btn) {
+        btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+        btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+    }
+}
         function toggleTheme() {
             var cur = document.documentElement.getAttribute('data-theme') || 'light';
             var next = cur === 'dark' ? 'light' : 'dark';
