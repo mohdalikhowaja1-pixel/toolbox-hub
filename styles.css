@@ -126,3 +126,39 @@ html[data-theme="dark"] .link-premium-gold .star-icon {
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background-color: rgba(156, 163, 175, 0.8);
 }
+
+/* =========================================================
+   FOOTER GAME LINKS — Highlighted for visibility
+   ========================================================= */
+.footer-game-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+    color: var(--primary) !important;
+    padding: 2px 6px;
+    margin-left: -6px;
+    border-radius: 6px;
+    transition: all 0.18s ease;
+    position: relative;
+}
+
+.footer-game-link:hover {
+    color: var(--primary-hover) !important;
+    background: rgba(79, 70, 229, 0.10);
+    transform: translateX(2px);
+}
+
+html[data-theme="dark"] .footer-game-link {
+    color: #A5B4FC !important;
+}
+
+html[data-theme="dark"] .footer-game-link:hover {
+    color: #C7D2FE !important;
+    background: rgba(129, 140, 248, 0.15);
+}
+
+.footer-game-link span {
+    font-size: 0.95em;
+    line-height: 1;
+}

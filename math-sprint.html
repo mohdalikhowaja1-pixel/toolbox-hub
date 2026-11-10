@@ -1,0 +1,1896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+    (function() {
+        var saved = null;
+        try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+    })();
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- PRIMARY SEO -->
+    <title>Beat the Clock: 30-Second Mental Math Sprint 🧠⚡ | MyToolX</title>
+    <meta name="description" content="Think fast. Beat the clock. Master percentages, discounts and quick sums in the Mental Math Sprint. Four options, three timer speeds, five difficulty tiers. Clear 80% accuracy and celebrate. Free, private, in your browser.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://mytoolx.org/math-sprint.html">
+
+    <!-- FAVICON (inline SVG emoji — zero HTTP request) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:url" content="https://mytoolx.org/math-sprint.html">
+    <meta property="og:title" content="Beat the Clock: 30-Second Mental Math Sprint 🧠⚡ | MyToolX">
+    <meta property="og:description" content="Think fast. Beat the clock. Master percentages, discounts and quick sums. Four options, three timer speeds, five tiers. Clear 80% accuracy and celebrate.">
+
+        <meta property="og:image" content="https://mytoolx.org/og-math-sprint.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:locale" content="en_US">
+
+    <!-- TWITTER / X CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mytoolx.org/math-sprint.html">
+    <meta name="twitter:title" content="Beat the Clock: 30-Second Mental Math Sprint 🧠⚡ | MyToolX">
+    <meta name="twitter:description" content="Think fast. Beat the clock. Master percentages, discounts and quick sums. Four options, three timer speeds, five tiers.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-math-sprint.png">
+
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- SPEED HINTS -->
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//refer.micro1.ai">
+
+    <!-- STRUCTURED DATA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "MyToolX Mental Math Sprint",
+          "url": "https://mytoolx.org/math-sprint.html",
+          "description": "A fast, privacy-first mental math game with adaptive difficulty, a professional 3-2-1 countdown, and four-option answers. Covers percentages, addition, financial math, reverse percentages, multi-step discounts, bill splitting, commission and tax. Three timer speeds: 30, 60, 90 seconds.",
+          "applicationCategory": "GameApplication",
+          "operatingSystem": "Any",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mytoolx.org/" },
+            { "@type": "ListItem", "position": 2, "name": "Math Sprint", "item": "https://mytoolx.org/math-sprint.html" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "How long is a round of the Mental Math Sprint?", "acceptedAnswer": { "@type": "Answer", "text": "You choose 30, 60 or 90 seconds before the round starts. A short 3-2-1 countdown lets you get ready, then the clock starts on the first question and every correct answer adds points to your score." } },
+            { "@type": "Question", "name": "Does the game get harder as I improve?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Five difficulty tiers unlock as your score and accuracy rise. Tier 4 and 5 add reverse percentages, multi-step discounts, bill splitting, commission and tax. Your best accuracy is saved, so a strong player starts at a higher tier next visit." } },
+            { "@type": "Question", "name": "How are the four options generated?", "acceptedAnswer": { "@type": "Answer", "text": "Each question has one correct answer and three plausible wrong answers built from common mistakes such as swapping the percentage for the base, forgetting the second discount, or mixing up the total with the per-person amount." } },
+            { "@type": "Question", "name": "Does the game save my high score?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Your best score, best streak and best accuracy are saved locally in your browser with localStorage. They stay on your device and are never sent to a server." } },
+            { "@type": "Question", "name": "Are the questions random or fixed?", "acceptedAnswer": { "@type": "Answer", "text": "Every question is generated fresh. The game tracks your last 25 questions and never repeats one within that window, so a session always feels new." } }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        /* ===== MASTER THEME VARIABLES ===== */
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
+            --tile-indigo-bg: rgba(224,231,255,0.6); --tile-indigo-border: #C7D2FE; --tile-indigo-text: #4F46E5;
+            --tile-green-bg: rgba(209,250,229,0.6); --tile-green-border: #A7F3D0; --tile-green-text: #059669;
+            --tile-red-bg: rgba(254,226,226,0.6); --tile-red-border: #FECACA; --tile-red-text: #EF4444;
+            --tile-amber-bg: rgba(254,243,199,0.6); --tile-amber-border: #FDE68A; --tile-amber-text: #B45309;
+
+            /* KBC stage (light mode) */
+            --stage-bg: #0F172A;
+            --stage-glow: rgba(245, 158, 11, 0.22);
+            --stage-border: rgba(245, 158, 11, 0.5);
+            --stage-text: #F8FAFC;
+            --stage-text-muted: #CBD5E1;
+            --stage-option-bg: #1E293B;
+            --stage-option-border: #334155;
+            --stage-option-text: #F1F5F9;
+            --stage-option-hover-border: #F59E0B;
+            --stage-option-hover-bg: #1E2B45;
+            --stage-badge-bg: #F59E0B;
+            --stage-badge-text: #0F172A;
+            --stage-correct-bg: #10B981;
+            --stage-correct-border: #34D399;
+            --stage-wrong-bg: #EF4444;
+            --stage-wrong-border: #F87171;
+        }
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
+            --tile-indigo-bg: rgba(49,46,129,0.30); --tile-indigo-border: #3730A3; --tile-indigo-text: #A5B4FC;
+            --tile-green-bg: rgba(6,78,59,0.30); --tile-green-border: #065F46; --tile-green-text: #34D399;
+            --tile-red-bg: rgba(127,29,29,0.25); --tile-red-border: #7F1D1D; --tile-red-text: #F87171;
+            --tile-amber-bg: rgba(120,53,15,0.30); --tile-amber-border: #92400E; --tile-amber-text: #FCD34D;
+
+            /* KBC stage (dark mode) — deeper, warmer */
+            --stage-bg: #020617;
+            --stage-glow: rgba(251, 191, 36, 0.28);
+            --stage-border: rgba(251, 191, 36, 0.55);
+            --stage-text: #FEF3C7;
+            --stage-text-muted: #FDE68A;
+            --stage-option-bg: #0F172A;
+            --stage-option-border: #1E293B;
+            --stage-option-text: #E2E8F0;
+            --stage-option-hover-border: #FBBF24;
+            --stage-option-hover-bg: #172036;
+            --stage-badge-bg: #FBBF24;
+            --stage-badge-text: #0F172A;
+            --stage-correct-bg: #059669;
+            --stage-correct-border: #34D399;
+            --stage-wrong-bg: #DC2626;
+            --stage-wrong-border: #F87171;
+        }
+
+        /* ===== BASE ===== */
+        html, body { overflow-x: clip; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; font-family: 'Inter', system-ui, sans-serif; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+
+        /* ===== LOGO ===== */
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        /* ===== COMPONENTS ===== */
+        .tool-panel { border-top: 4px solid var(--primary); }
+        .tool-panel:hover { box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); }
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-accent { background: var(--accent); color: #fff; } .btn-accent:hover { background: var(--accent-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+
+        .input-field { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
+        .input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); outline: none; }
+
+        .tile-indigo { background: var(--tile-indigo-bg); border: 1px solid var(--tile-indigo-border); } .tile-indigo .num { color: var(--tile-indigo-text); }
+        .tile-green { background: var(--tile-green-bg); border: 1px solid var(--tile-green-border); } .tile-green .num { color: var(--tile-green-text); }
+        .tile-red { background: var(--tile-red-bg); border: 1px solid var(--tile-red-border); } .tile-red .num { color: var(--tile-red-text); }
+        .tile-amber { background: var(--tile-amber-bg); border: 1px solid var(--tile-amber-border); } .tile-amber .num { color: var(--tile-amber-text); }
+        .num { font-variant-numeric: tabular-nums; word-break: break-word; overflow-wrap: anywhere; }
+
+        .related-card { transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; background: var(--card); border: 1px solid var(--card-border); }
+        .related-card:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); border-color: var(--primary); }
+
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+
+        #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
+        :focus-visible { outline: none; }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        ::selection { background: rgba(79,70,229,0.25); }
+        @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+        /* ===== TIER CHIP ===== */
+        .tier-chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; transition: all 0.3s ease; }
+        .tier-1 { background: rgba(148,163,184,0.20); color: #475569; }
+        .tier-2 { background: rgba(59,130,246,0.15); color: #1D4ED8; }
+        .tier-3 { background: rgba(79,70,229,0.15); color: #4F46E5; }
+        .tier-4 { background: rgba(147,51,234,0.15); color: #7C3AED; }
+        .tier-5 { background: rgba(245,158,11,0.18); color: #B45309; }
+        html[data-theme="dark"] .tier-1 { color: #CBD5E1; }
+        html[data-theme="dark"] .tier-2 { color: #93C5FD; }
+        html[data-theme="dark"] .tier-3 { color: #A5B4FC; }
+        html[data-theme="dark"] .tier-4 { color: #C4B5FD; }
+        html[data-theme="dark"] .tier-5 { color: #FCD34D; }
+
+        /* ===== HUD ===== */
+        .hud-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 20px; }
+        @media (max-width: 640px) {
+            .hud-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+        }
+        .hud-tile { border-radius: 16px; padding: 14px 12px; text-align: center; position: relative; }
+        .hud-tile .num { font-size: 24px; font-weight: 900; display: block; line-height: 1.1; }
+        .hud-tile .label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-top: 4px; display: block; }
+        .hud-newbest { position: absolute; top: -8px; right: -4px; font-size: 9px; font-weight: 900; padding: 3px 7px; border-radius: 999px; background: #F59E0B; color: #0F172A; letter-spacing: 0.05em; animation: newBestPulse 1.2s ease infinite; }
+        @keyframes newBestPulse { 0%,100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(245,158,11,0.5); } 50% { transform: scale(1.08); box-shadow: 0 0 0 8px rgba(245,158,11,0); } }
+
+        /* Timer select */
+        .timer-select { background: transparent; border: none; color: inherit; font-size: 20px; font-weight: 900; text-align: center; cursor: pointer; width: 100%; font-family: inherit; padding: 0; line-height: 1.1; }
+        .timer-select:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 6px; }
+        .timer-select option { background: var(--card); color: var(--text); }
+
+        /* ===== KBC STAGE ===== */
+        .stage {
+            position: relative;
+            background: radial-gradient(ellipse at top, var(--stage-glow), transparent 55%), var(--stage-bg);
+            border: 2px solid var(--stage-border);
+            border-radius: 20px;
+            padding: 32px 20px 26px;
+            margin-bottom: 22px;
+            min-height: 320px;
+            box-shadow: 0 20px 40px -20px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.08);
+            overflow: hidden;
+        }
+        .stage::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 50%; transform: translateX(-50%);
+            width: 70%; height: 4px;
+            background: linear-gradient(90deg, transparent, var(--stage-border), transparent);
+            opacity: 0.9;
+        }
+        .stage-meta {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 18px; flex-wrap: wrap; gap: 8px;
+        }
+        .stage-round {
+            font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em;
+            color: var(--stage-text-muted); opacity: 0.85;
+        }
+        .stage-family {
+            font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em;
+            padding: 3px 10px; border-radius: 999px;
+            background: rgba(245,158,11,0.15); color: var(--stage-badge-bg);
+            border: 1px solid var(--stage-border);
+        }
+        .stage-question {
+            font-size: 22px; font-weight: 900; line-height: 1.35;
+            color: var(--stage-text); text-align: center;
+            margin-bottom: 24px; min-height: 80px;
+            display: flex; align-items: center; justify-content: center;
+            letter-spacing: -0.01em;
+            text-shadow: 0 2px 14px rgba(245,158,11,0.25);
+        }
+        @media (min-width: 640px) { .stage-question { font-size: 28px; } }
+        .stage-question.fade-in { animation: stageFadeIn 0.35s ease; }
+        @keyframes stageFadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Four options */
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        @media (max-width: 480px) {
+            .options-grid { grid-template-columns: 1fr; }
+        }
+        .option-btn {
+            display: flex; align-items: center; gap: 12px;
+            padding: 14px 16px;
+            border-radius: 12px;
+            border: 2px solid var(--stage-option-border);
+            background: var(--stage-option-bg);
+            color: var(--stage-option-text);
+            font-size: 16px; font-weight: 800;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.15s ease;
+            min-height: 58px;
+            font-family: inherit;
+            position: relative;
+            overflow: hidden;
+        }
+        .option-btn:hover:not(:disabled) {
+            border-color: var(--stage-option-hover-border);
+            background: var(--stage-option-hover-bg);
+            transform: translateY(-1px);
+        }
+        .option-btn:disabled { cursor: default; }
+        .option-btn .badge {
+            flex-shrink: 0;
+            width: 30px; height: 30px;
+            border-radius: 8px;
+            background: var(--stage-badge-bg);
+            color: var(--stage-badge-text);
+            font-weight: 900; font-size: 14px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .option-btn .value {
+            flex: 1;
+            font-size: 17px;
+            font-weight: 900;
+            letter-spacing: -0.01em;
+        }
+        .option-btn .marker {
+            font-size: 18px; font-weight: 900;
+            opacity: 0; transition: opacity 0.15s ease;
+        }
+        .option-btn.correct {
+            background: var(--stage-correct-bg) !important;
+            border-color: var(--stage-correct-border) !important;
+            color: #fff !important;
+        }
+        .option-btn.correct .badge { background: #fff; color: var(--stage-correct-bg); }
+        .option-btn.correct .marker { opacity: 1; color: #fff; }
+        .option-btn.wrong {
+            background: var(--stage-wrong-bg) !important;
+            border-color: var(--stage-wrong-border) !important;
+            color: #fff !important;
+        }
+        .option-btn.wrong .badge { background: #fff; color: var(--stage-wrong-bg); }
+        .option-btn.wrong .marker { opacity: 1; color: #fff; }
+        .option-btn.dimmed { opacity: 0.4; }
+
+        /* Timing bar */
+        .timing-bar {
+            position: absolute; bottom: 0; left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--stage-badge-bg), #F97316);
+            transition: width 1s linear;
+            width: 100%;
+        }
+
+        /* Start overlay */
+        .start-overlay {
+            position: absolute; inset: 0;
+            background: rgba(2,6,23,0.92);
+            backdrop-filter: blur(6px);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            border-radius: 20px; z-index: 10;
+            padding: 20px;
+            text-align: center;
+        }
+        .start-overlay.hidden { display: none; }
+        .start-overlay p {
+            color: #CBD5E1; font-size: 13px; margin-top: 14px; max-width: 380px; line-height: 1.5;
+        }
+        .start-overlay .kbc-title {
+            font-size: 12px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase;
+            color: #F59E0B; margin-bottom: 10px;
+        }
+
+        /* Feedback flash */
+        .feedback-flash {
+            position: absolute; inset: 0; border-radius: 20px;
+            pointer-events: none; opacity: 0;
+            transition: opacity 0.15s ease;
+        }
+
+        /* Fast answer pop */
+        .fast-pop {
+            position: absolute; top: 12px; right: 16px;
+            font-size: 12px; font-weight: 900;
+            color: #FBBF24; opacity: 0;
+            pointer-events: none;
+        }
+        .fast-pop.show { animation: fastPop 0.8s ease; }
+        @keyframes fastPop {
+            0% { opacity: 0; transform: translateY(6px) scale(0.8); }
+            25% { opacity: 1; transform: translateY(0) scale(1.15); }
+            80% { opacity: 1; transform: translateY(-4px) scale(1); }
+            100% { opacity: 0; transform: translateY(-10px) scale(0.9); }
+        }
+
+        /* Streak bounce */
+        @keyframes streakBounce {
+            0% { transform: scale(1); }
+            40% { transform: scale(1.18); }
+            100% { transform: scale(1); }
+        }
+        .streak-bounce { animation: streakBounce 0.4s ease; }
+
+        /* ===== KBC COUNTDOWN (professional 3-2-1) ===== */
+        .countdown-overlay {
+            position: absolute; inset: 0;
+            border-radius: 20px; z-index: 30;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            background:
+                radial-gradient(ellipse at center, rgba(245,158,11,0.20), transparent 60%),
+                radial-gradient(ellipse at center, rgba(15,23,42,0.96), rgba(2,6,23,0.99));
+            overflow: hidden;
+            transition: opacity 0.35s ease;
+        }
+        .countdown-overlay.hidden { display: none; }
+        .countdown-overlay.fade-out { opacity: 0; pointer-events: none; }
+
+        /* Spotlight halo behind the number */
+        .countdown-halo {
+            position: absolute;
+            width: 260px; height: 260px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(245,158,11,0.35) 0%, rgba(245,158,11,0) 65%);
+            filter: blur(6px);
+            animation: haloBreath 1s ease-in-out infinite;
+        }
+        @keyframes haloBreath {
+            0%, 100% { transform: scale(1); opacity: 0.85; }
+            50% { transform: scale(1.15); opacity: 1; }
+        }
+        .countdown-halo.go-halo {
+            background: radial-gradient(circle, rgba(16,185,129,0.45) 0%, rgba(16,185,129,0) 65%);
+        }
+
+        .countdown-number {
+            position: relative; z-index: 2;
+            font-size: 120px; font-weight: 900; line-height: 1;
+            color: #F59E0B;
+            letter-spacing: -0.04em;
+            text-shadow:
+                0 0 30px rgba(245,158,11,0.55),
+                0 0 60px rgba(245,158,11,0.35),
+                0 4px 0 rgba(0,0,0,0.35);
+            animation: countdownPunch 1s ease both;
+        }
+        @media (max-width: 640px) { .countdown-number { font-size: 96px; } }
+        .countdown-number.one {
+            color: #FBBF24;
+            text-shadow:
+                0 0 36px rgba(251,191,36,0.70),
+                0 0 70px rgba(251,191,36,0.45),
+                0 4px 0 rgba(0,0,0,0.35);
+        }
+        .countdown-number.go {
+            color: #10B981;
+            text-shadow:
+                0 0 36px rgba(16,185,129,0.75),
+                0 0 80px rgba(16,185,129,0.45),
+                0 4px 0 rgba(0,0,0,0.35);
+        }
+        @keyframes countdownPunch {
+            0%   { opacity: 0; transform: scale(0.45); }
+            35%  { opacity: 1; transform: scale(1.18); }
+            65%  { transform: scale(0.96); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .countdown-hint {
+            position: relative; z-index: 2;
+            margin-top: 18px;
+            font-size: 13px; font-weight: 800;
+            letter-spacing: 0.20em; text-transform: uppercase;
+            color: #FCD34D;
+            opacity: 0.92;
+            animation: hintFade 1s ease;
+        }
+        @keyframes hintFade {
+            0% { opacity: 0; transform: translateY(6px); }
+            100% { opacity: 0.92; transform: translateY(0); }
+        }
+
+        /* GO transition flash */
+        .go-flash {
+            position: absolute; inset: 0;
+            border-radius: 20px; z-index: 29;
+            pointer-events: none;
+            background: radial-gradient(circle, rgba(16,185,129,0.55), transparent 70%);
+            opacity: 0;
+        }
+        .go-flash.show { animation: goFlash 0.45s ease forwards; }
+        @keyframes goFlash {
+            0% { opacity: 0; }
+            30% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* Modal close */
+        .modal-close {
+            position: absolute; top: 12px; right: 12px;
+            width: 34px; height: 34px; border-radius: 50%;
+            border: 1px solid var(--card-border);
+            background: var(--chip-bg); color: var(--text-muted);
+            font-size: 20px; font-weight: 700; line-height: 1;
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            transition: all 0.15s ease;
+        }
+        .modal-close:hover { background: var(--tile-red-bg); color: var(--tile-red-text); border-color: var(--tile-red-border); }
+
+        /* Confetti */
+        #confettiCanvas { position: fixed; inset: 0; pointer-events: none; z-index: 60; }
+
+        /* Share line under popup buttons */
+        .share-cta-line {
+            font-size: 12px; font-weight: 700;
+            color: var(--text-muted); text-align: center;
+            margin: 18px 0 10px; line-height: 1.4;
+        }
+        .copy-challenge-btn {
+            width: 100%; padding: 12px;
+            border-radius: 12px;
+            border: 2px dashed var(--primary);
+            background: transparent;
+            color: var(--primary);
+            font-weight: 800; font-size: 13px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            font-family: inherit;
+        }
+        .copy-challenge-btn:hover {
+            background: rgba(79,70,229,0.08);
+            border-style: solid;
+        }
+        html[data-theme="dark"] .copy-challenge-btn:hover {
+            background: rgba(129,140,248,0.10);
+        }
+    </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- ============ HEADER ============ -->
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2">
+            <div class="flex items-center justify-between gap-2 sm:gap-4">
+                <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+                    <a href="index.html" class="hidden sm:flex btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold items-center gap-1">← All Tools</a>
+                    <a href="index.html" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
+                        <div class="logo-mark w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base flex items-center justify-center">M<span class="x">X</span></div>
+                        <span class="logo-wordmark text-base sm:text-xl block">MyTool<span class="x">X</span></span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                    <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch theme" title="Toggle Light/Dark Mode" class="h-8 sm:h-10 px-2 sm:px-3 rounded-xl flex items-center justify-center gap-1.5 text-[10px] sm:text-xs font-bold transition-all hover:opacity-80" style="background: var(--chip-bg); color: var(--chip-text);">
+                        <span id="themeIcon" aria-hidden="true">🌙</span>
+                        <span id="themeText" class="hidden sm:block">Dark Mode</span>
+                    </button>
+                    <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
+                        💼 Remote Jobs ↗
+                    </a>
+                    <a href="cv-maker.html" class="hidden md:inline-flex text-xs font-bold text-white px-3 py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
+                        📄 Live CV
+                    </a>
+                </div>
+            </div>
+            <div class="mt-2 sm:hidden">
+                <a href="index.html" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">← Back to All Tools</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow">
+
+        <nav class="text-xs font-semibold mb-4 flex items-center gap-1 muted" aria-label="Breadcrumb">
+            <a href="index.html" class="hover:text-indigo-500">Home</a>
+            <span>/</span>
+            <span style="color: var(--text); font-weight: 700;">Math Sprint</span>
+        </nav>
+
+        <!-- ============ GAME PANEL ============ -->
+        <div class="tool-panel surface rounded-3xl shadow-xl p-6 sm:p-8 mb-10 transition-shadow">
+
+            <div class="flex items-center justify-between gap-3 flex-wrap mb-4 pb-4 border-b" style="border-color: var(--card-border);">
+                <div class="flex items-center gap-3 flex-wrap">
+                    <h1 class="text-xl sm:text-2xl font-black flex items-center gap-2" style="color: var(--text);">
+                        ⚡ Mental Math Sprint
+                    </h1>
+                    <span id="tierChip" class="tier-chip tier-1" aria-live="polite">Tier 1 · Warmup</span>
+                </div>
+                <button id="resetBtn" onclick="resetGame()" class="btn-3d btn-chip px-3.5 py-2 text-xs font-bold">Reset</button>
+            </div>
+
+            <!-- HUD -->
+            <div class="hud-grid">
+                <div class="hud-tile tile-indigo">
+                    <span id="scoreDisplay" class="num">0</span>
+                    <span class="label">Score</span>
+                    <span id="newBestBadge" class="hud-newbest hidden">🏆 NEW BEST</span>
+                </div>
+                <div class="hud-tile tile-red">
+                    <span id="timerDisplay" class="num">30</span>
+                    <span class="label">Seconds</span>
+                </div>
+                <div class="hud-tile tile-green">
+                    <span id="accDisplay" class="num">—</span>
+                    <span class="label">Accuracy</span>
+                </div>
+                <div class="hud-tile tile-amber">
+                    <span id="bestDisplay" class="num">0</span>
+                    <span class="label">Best</span>
+                </div>
+            </div>
+
+            <!-- KBC STAGE -->
+            <div id="stage" class="stage">
+                <div class="stage-meta">
+                    <span id="roundLabel" class="stage-round">Round 1</span>
+                    <span id="familyLabel" class="stage-family">Ready</span>
+                </div>
+
+                <div id="questionText" class="stage-question fade-in">
+                    Press Start to play
+                </div>
+
+                <div id="optionsGrid" class="options-grid" role="group" aria-label="Answer options"></div>
+
+                <div id="timingBar" class="timing-bar"></div>
+
+                <div id="fastPop" class="fast-pop">⚡ FAST</div>
+                <div id="feedbackFlash" class="feedback-flash"></div>
+
+                <!-- GREEN GO FLASH -->
+                <div id="goFlash" class="go-flash"></div>
+
+                <!-- KBC COUNTDOWN OVERLAY -->
+                <div id="countdownOverlay" class="countdown-overlay hidden" aria-hidden="true">
+                    <div id="countdownHalo" class="countdown-halo"></div>
+                    <div id="countdownNumber" class="countdown-number">3</div>
+                    <div id="countdownHint" class="countdown-hint">Get ready…</div>
+                </div>
+
+                <!-- Start overlay -->
+                <div id="startOverlay" class="start-overlay">
+                    <div class="kbc-title">Kaun Banega Math Champion</div>
+                    <button onclick="startGame()" class="btn-3d btn-primary px-8 py-4 text-base sm:text-lg font-black tracking-wide flex items-center gap-2 shadow-2xl">
+                        ▶️ Start the Sprint
+                    </button>
+                    <p>Pick a timer below the score above, then start. Four options, one correct answer. Answer fast and build your streak.</p>
+                </div>
+            </div>
+
+            <!-- Timer selector + streak + share -->
+            <div class="flex flex-col sm:flex-row items-stretch gap-3">
+                <div class="flex-1 rounded-xl px-4 py-3 flex items-center justify-between" style="background: var(--chip-bg);">
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider muted block">Current streak</span>
+                        <span id="streakDisplay" class="text-xl font-black num" style="color: var(--text);">0</span>
+                    </div>
+                    <span class="text-2xl" aria-hidden="true">🔥</span>
+                </div>
+                <div class="flex-1 rounded-xl px-4 py-3 flex items-center justify-between" style="background: var(--chip-bg);">
+                    <div class="flex-1">
+                        <span class="text-[10px] font-bold uppercase tracking-wider muted block">Timer duration</span>
+                        <select id="timerSelect" onchange="onTimerChange()" class="timer-select" style="text-align:left; color: var(--text); font-size: 16px;" aria-label="Choose timer duration">
+                            <option value="30">30 seconds</option>
+                            <option value="60">60 seconds</option>
+                            <option value="90">90 seconds</option>
+                        </select>
+                    </div>
+                    <span class="text-2xl" aria-hidden="true">⏱️</span>
+                </div>
+                <button id="shareBtn" onclick="shareScore()" class="btn-3d btn-accent px-6 py-3 text-sm font-bold flex items-center justify-center gap-2" disabled>
+                    🔗 Share Score
+                </button>
+            </div>
+
+        </div>
+
+        <!-- ============ HOW TO PLAY ============ -->
+        <article class="surface rounded-3xl shadow-md p-6 sm:p-8 mb-10 space-y-6">
+            <div class="pb-4 border-b" style="border-color: var(--card-border);">
+                <h2 class="text-xl font-bold">How to Play the Mental Math Sprint</h2>
+                <p class="text-sm leading-relaxed mt-2 muted">
+                    The Mental Math Sprint is a fast, quiz-show style workout built on the math you meet every day: percentages on a discount tag, quick addition at the till, and simple financial sums. Each question gives you four options and one correct answer. After you press Start, a short 3-2-1 countdown gets you ready, then the clock begins. The goal is simple: answer as many as you can, correctly and quickly, before the timer runs out. The game adapts to your level, so it stays interesting whether you are warming up or chasing a personal best.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-lg font-bold">Step by step</h3>
+                <ol class="list-decimal pl-5 text-sm muted space-y-2">
+                    <li><strong>Choose your timer.</strong> Pick 30, 60 or 90 seconds from the dropdown. Your choice is saved for next time.</li>
+                    <li><strong>Press Start.</strong> A 3-2-1 countdown appears, then the first question arrives and the clock starts ticking.</li>
+                    <li><strong>Pick an option.</strong> Click or tap A, B, C, or D. The correct answer lights up green, and a wrong pick turns red while the right one glows green so you learn.</li>
+                    <li><strong>Watch your tier climb.</strong> Correct answers and high accuracy unlock harder tiers, which bring new question types into play.</li>
+                    <li><strong>Protect your streak.</strong> Every 7 correct answers in a row earns a milestone bonus. A miss resets the streak and costs one point, but never below zero.</li>
+                    <li><strong>Beat your best.</strong> Your high score, best streak and best accuracy are saved in your own browser, so a strong run carries over to your next visit.</li>
+                </ol>
+            </div>
+
+            <div class="border-t pt-6" style="border-color: var(--card-border);">
+                <h3 class="text-lg font-bold mb-3">Related Tools</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<a href="wordstorm.html" class="related-card block rounded-2xl p-4">
+        <div class="text-2xl mb-1">🌪️</div>
+        <div class="font-bold text-sm" style="color: var(--text);">WordStorm</div>
+        <div class="text-xs muted">Falling Words Typing Game</div>
+    </a>
+                    <a href="fee-calculator.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">💳</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Fee Calculator</div>
+                        <div class="text-xs muted">Stripe &amp; PayPal Fees</div>
+                    </a>
+                    <a href="sip-calculator.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">📈</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">SIP Calculator</div>
+                        <div class="text-xs muted">Mutual Fund Return</div>
+                    </a>
+                    <a href="typing-test.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">⌨️</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Typing Speed Test</div>
+                        <div class="text-xs muted">3D WPM &amp; Accuracy</div>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- ============ TIERS & SCORING ============ -->
+        <article class="surface rounded-3xl shadow-md p-6 sm:p-8 mb-10 space-y-6">
+            <div class="pb-4 border-b" style="border-color: var(--card-border);">
+                <h2 class="text-xl font-bold">Difficulty Tiers, Streaks and Your Personal Leaderboard</h2>
+                <p class="text-sm leading-relaxed mt-2 muted">
+                    There is no sign-up and no global ranking, because the best opponent you have is your own last score. Each session saves three numbers in your browser: your highest score, the best streak you have put together in one run, and your best accuracy. Your best accuracy also decides the tier you start at next time, so a strong player walks straight into harder questions.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">🏅 Five difficulty tiers</h3>
+                    <p class="text-xs muted">Warmup, Standard, Pro, Elite and Master. Tiers unlock from your score and accuracy during a round, and higher tiers add reverse percentages, multi-step discounts, bill splitting, commission and tax.</p>
+                </div>
+                <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">🔥 Streaks and bonuses</h3>
+                    <p class="text-xs muted">Base +1 per correct answer, a +1 milestone at every 7-answer streak, plus a tier bonus that grows with difficulty. A wrong answer costs one point but never below zero.</p>
+                </div>
+                <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">📊 Saved on your device</h3>
+                    <p class="text-xs muted">Best score, best streak and best accuracy live in localStorage. Clearing your browser data will clear them, because nothing is ever sent to a server.</p>
+                </div>
+                <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">🎉 80% club</h3>
+                    <p class="text-xs muted">Finish a round with accuracy of 80% or higher and a celebration popup appears with confetti. Close it with the X to replay immediately, or share your score with friends.</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- ============ FAQ ============ -->
+        <section class="surface rounded-3xl shadow-md p-6 sm:p-8 mb-10">
+            <h2 class="text-xl font-bold border-b pb-3 mb-6" style="border-color: var(--card-border);">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">How long is a round of the Mental Math Sprint?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">You choose 30, 60 or 90 seconds before the round starts. A short 3-2-1 countdown lets you get ready, then the clock begins with the first question. Your choice of timer is remembered for your next visit.</p>
+                </div>
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">Are the questions random or fixed?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">Every question is generated fresh by the game. It remembers your last 25 questions and never repeats one inside that window, so sessions always feel new. Higher tiers add brand-new question families, so veterans keep meeting questions they have not seen before.</p>
+                </div>
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">Does the game get harder as I improve?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">Yes. Five difficulty tiers unlock as your score and accuracy rise. Tier 4 and 5 add reverse percentages, multi-step discounts, bill splitting, commission and tax. Your best accuracy is saved, so a strong player starts at a higher tier next visit.</p>
+                </div>
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">How are the four options generated?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">Each question has one correct answer and three plausible wrong answers built from common mistakes, such as swapping the percentage for the base, forgetting the second discount, or mixing up the total with the per-person amount. Every option is a whole number and no two options are ever the same.</p>
+                </div>
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">Does the game save my high score?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">Yes. Your best score, best streak and best accuracy are saved locally in your browser with localStorage. They stay on your device and are never sent to a server.</p>
+                </div>
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">Is there a leaderboard?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">Your leaderboard is personal. Your best numbers are saved in your browser, and both the Share button and the Copy challenge link button let you send your result to friends with a ready-to-paste message.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+                <div class="lg:col-span-5">
+                    <a href="index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 pr-4">
+                        MyToolX is a free suite of client-side web tools for writers, freelancers and developers. No sign-up, no tracking, no data leaves your browser.
+                    </p>
+                </div>
+                <div class="lg:col-span-4">
+                    <h3>Popular Tools</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <a href="typing-test.html">Typing Speed Test</a>
+                        <div class="flex items-start mt-0.5">
+                            <a href="premium.html" class="link-premium-gold" aria-label="Visit the Premium Store">
+                                <span class="star-icon">⭐</span> Premium
+                            </a>
+                        </div>
+                        <a href="prompt-studio.html">AI Prompt Studio</a>
+                        <a href="image-compressor.html">Image Compressor</a>
+                        <a href="text-suite.html">Text &amp; Word Suite</a>
+                        <a href="grammar-checker.html">Grammar Checker</a>
+                        <a href="sip-calculator.html">SIP Calculator</a>
+                        <a href="fee-calculator.html">Fee Calculator</a>
+                        <a href="json-formatter.html">JSON Formatter</a>
+                        <a href="loan-emi.html">Loan EMI Calc</a>
+                        <a href="qr-code-generator.html">QR Code Gen</a>
+                        <a href="base64-tool.html">Base64 Tool</a>
+                        <a href="unit-converter.html">Unit Converter</a>
+                        <a href="password-generator.html">Password Gen</a>
+                        <a href="article-outline.html">Article Outline</a>
+                        <a href="ai-bio-generator.html">AI Bio Generator</a>
+                        <a href="love-calculator.html">Love Calculator</a>
+                        <a href="cv-maker.html">Resume Builder</a>
+                        <a href="text-summarizer.html">AI Summarizer</a>
+                        <a href="color-converter.html">Color Converter</a>
+			<a href="math-sprint.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Math Sprint Game</a>
+                        <a href="wordstorm.html" class="footer-game-link"><span aria-hidden="true">⭐</span> WordStorm Game</a>
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Company</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Legal</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="blog.html">Blog &amp; Guides</a></li>
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                                <li><a href="terms.html">Terms of Service</a></li>
+                                <li><a href="index.html">Sitemap</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. All rights reserved.</p>
+                <p>All tools run 100% client-side in your browser.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Confetti -->
+    <canvas id="confettiCanvas" class="hidden" aria-hidden="true"></canvas>
+
+    <!-- Results modal -->
+    <div id="resultsModal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="surface rounded-3xl p-6 sm:p-8 max-w-md w-full text-center shadow-2xl relative overflow-hidden" role="dialog" aria-modal="true" aria-labelledby="resultsTitle">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-amber-500"></div>
+
+            <button type="button" class="modal-close" onclick="closeResults()" aria-label="Close and replay">✕</button>
+
+            <div id="congratsEmoji" class="text-5xl mb-2" aria-hidden="true">🎯</div>
+            <h2 id="resultsTitle" class="text-2xl font-black mb-2" style="color: var(--text);">Time's up!</h2>
+            <p id="resultMsg" class="text-sm muted mb-6">Nice work.</p>
+
+            <div class="grid grid-cols-2 gap-3 mb-6">
+                <div class="tile-indigo rounded-2xl p-3 text-center">
+                    <span id="finalScore" class="num text-3xl font-black block">0</span>
+                    <span class="text-[10px] font-bold uppercase muted">Score</span>
+                </div>
+                <div class="tile-green rounded-2xl p-3 text-center">
+                    <span id="finalAcc" class="num text-3xl font-black block">0%</span>
+                    <span class="text-[10px] font-bold uppercase muted">Accuracy</span>
+                </div>
+                <div class="tile-amber rounded-2xl p-3 text-center">
+                    <span id="finalStreak" class="num text-3xl font-black block">0</span>
+                    <span class="text-[10px] font-bold uppercase muted">Best Streak</span>
+                </div>
+                <div class="tile-red rounded-2xl p-3 text-center">
+                    <span id="finalTier" class="num text-3xl font-black block">1</span>
+                    <span class="text-[10px] font-bold uppercase muted">Top Tier</span>
+                </div>
+            </div>
+
+            <div class="flex gap-3">
+                <button onclick="closeResults()" class="btn-3d btn-primary flex-1 py-3 text-sm">Play Again</button>
+                <button id="modalShareBtn" onclick="shareScore()" class="btn-3d btn-chip flex-1 py-3 text-sm">🔗 Share</button>
+            </div>
+
+            <p class="share-cta-line">🔥 Challenge your friends and colleagues to beat this score.</p>
+            <button id="copyChallengeBtn" onclick="copyChallengeLink()" class="copy-challenge-btn">📋 Copy challenge link</button>
+        </div>
+    </div>
+
+    <!-- ============ THEME + GAME SCRIPT ============ -->
+    <script>
+    (function () {
+        'use strict';
+
+        /* =========================================================
+           1. THEME
+           ========================================================= */
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            var icon = document.getElementById('themeIcon');
+            var text = document.getElementById('themeText');
+            if (icon && text) {
+                if (theme === 'dark') { icon.textContent = '🌙'; text.textContent = 'Dark Mode'; }
+                else { icon.textContent = '☀️'; text.textContent = 'Light Mode'; }
+            }
+            var btn = document.getElementById('themeToggle');
+            if (btn) {
+                btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+                btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+            }
+        }
+        function toggleTheme() {
+            var cur = document.documentElement.getAttribute('data-theme') || 'light';
+            var next = cur === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('mtx-theme', next); } catch (e) {}
+        }
+        window.toggleTheme = toggleTheme;
+        applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
+
+        /* =========================================================
+           2. CONSTANTS
+           ========================================================= */
+        var DEFAULT_DURATION = 30;
+        var KEY_SCORE    = 'mtx-mathsprint-best-score';
+        var KEY_STREAK   = 'mtx-mathsprint-best-streak';
+        var KEY_ACC      = 'mtx-mathsprint-best-accuracy';
+        var KEY_DURATION = 'mtx-mathsprint-duration';
+        var RING_SIZE    = 25;
+        var MILESTONE_EVERY = 7;
+        var FAST_ANSWER_MS = 2000;
+        var COUNTDOWN_STEP_MS = 1000;
+        var GO_HOLD_MS = 400;
+        var COUNTDOWN_HINTS = ['Get ready…', 'Focus…', 'Last second…'];
+        var TIER_NAMES   = ['', 'Warmup', 'Standard', 'Pro', 'Elite', 'Master'];
+        var FAMILY_NAMES = {
+            add: 'Quick Sum',
+            pct: 'Percentage',
+            fin: 'Discount',
+            price: 'Total',
+            rev: 'Reverse %',
+            comm: 'Commission',
+            split: 'Split Bill',
+            tax: 'Tax',
+            multi: 'Multi-Step'
+        };
+        var OPTION_LETTERS = ['A', 'B', 'C', 'D'];
+
+        /* =========================================================
+           3. DOM
+           ========================================================= */
+        var el = function (id) { return document.getElementById(id); };
+        var scoreDisplay  = el('scoreDisplay');
+        var timerDisplay  = el('timerDisplay');
+        var accDisplay    = el('accDisplay');
+        var bestDisplay   = el('bestDisplay');
+        var streakDisplay = el('streakDisplay');
+        var tierChip      = el('tierChip');
+        var newBestBadge  = el('newBestBadge');
+        var questionText  = el('questionText');
+        var optionsGrid   = el('optionsGrid');
+        var stage         = el('stage');
+        var startOverlay  = el('startOverlay');
+        var feedbackFlash = el('feedbackFlash');
+        var fastPop       = el('fastPop');
+        var timingBar     = el('timingBar');
+        var roundLabel    = el('roundLabel');
+        var familyLabel   = el('familyLabel');
+        var resultsModal  = el('resultsModal');
+        var resultMsg     = el('resultMsg');
+        var finalScoreEl  = el('finalScore');
+        var finalAccEl    = el('finalAcc');
+        var finalStreakEl = el('finalStreak');
+        var finalTierEl   = el('finalTier');
+        var congratsEmoji = el('congratsEmoji');
+        var shareBtn      = el('shareBtn');
+        var confettiCanvas = el('confettiCanvas');
+        var timerSelect   = el('timerSelect');
+        var countdownOverlay = el('countdownOverlay');
+        var countdownNumber  = el('countdownNumber');
+        var countdownHint    = el('countdownHint');
+        var countdownHalo    = el('countdownHalo');
+        var goFlash          = el('goFlash');
+
+        /* =========================================================
+           4. STATE
+           ========================================================= */
+        var state = {
+            running: false,
+            score: 0,
+            streak: 0,
+            bestStreak: 0,
+            correct: 0,
+            attempted: 0,
+            timeLeft: DEFAULT_DURATION,
+            duration: DEFAULT_DURATION,
+            timerId: null,
+            countdownId: null,
+            currentAnswer: null,
+            currentFamily: '',
+            currentTier: 1,
+            topTier: 1,
+            recentQuestions: [],
+            bestScore: 0,
+            bestStreakSaved: 0,
+            bestAccSaved: 0,
+            lastRoundBestScore: false,
+            questionStartTime: 0,
+            answerLocked: false,
+            roundNumber: 1
+        };
+
+        /* =========================================================
+           5. LOCALSTORAGE
+           ========================================================= */
+        function loadBest() {
+            try {
+                var s = parseInt(localStorage.getItem(KEY_SCORE), 10);
+                var k = parseInt(localStorage.getItem(KEY_STREAK), 10);
+                var a = parseFloat(localStorage.getItem(KEY_ACC));
+                var d = parseInt(localStorage.getItem(KEY_DURATION), 10);
+                state.bestScore       = (isFinite(s) && s > 0) ? s : 0;
+                state.bestStreakSaved = (isFinite(k) && k > 0) ? k : 0;
+                state.bestAccSaved    = (isFinite(a) && a > 0) ? a : 0;
+                if (d === 30 || d === 60 || d === 90) {
+                    state.duration = d;
+                } else {
+                    state.duration = DEFAULT_DURATION;
+                }
+            } catch (e) {
+                state.bestScore = 0; state.bestStreakSaved = 0; state.bestAccSaved = 0; state.duration = DEFAULT_DURATION;
+            }
+            bestDisplay.textContent = state.bestScore;
+            timerSelect.value = String(state.duration);
+            state.timeLeft = state.duration;
+            timerDisplay.textContent = state.duration;
+        }
+        function saveBest() {
+            try {
+                if (state.score > state.bestScore) {
+                    state.bestScore = state.score;
+                    localStorage.setItem(KEY_SCORE, String(state.bestScore));
+                    state.lastRoundBestScore = true;
+                }
+                if (state.bestStreak > state.bestStreakSaved) {
+                    state.bestStreakSaved = state.bestStreak;
+                    localStorage.setItem(KEY_STREAK, String(state.bestStreakSaved));
+                }
+                var accNow = state.attempted > 0 ? (state.correct / state.attempted) * 100 : 0;
+                if (accNow > state.bestAccSaved) {
+                    state.bestAccSaved = accNow;
+                    localStorage.setItem(KEY_ACC, accNow.toFixed(1));
+                }
+            } catch (e) {}
+            bestDisplay.textContent = state.bestScore;
+        }
+
+        /* =========================================================
+           6. HELPERS
+           ========================================================= */
+        function randInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+        function pick(arr) { return arr[randInt(0, arr.length - 1)]; }
+        function shuffle(arr) {
+            var a = arr.slice();
+            for (var i = a.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var t = a[i]; a[i] = a[j]; a[j] = t;
+            }
+            return a;
+        }
+
+        /* =========================================================
+           7. QUESTION GENERATORS
+           ========================================================= */
+        function buildDistractors(correct, family) {
+            var set = {};
+            set[correct] = true;
+            var out = [];
+            var candidates = [];
+
+            function addCandidate(v) {
+                if (typeof v !== 'number' || !isFinite(v) || v < 0 || v === correct) return;
+                v = Math.round(v);
+                if (v < 0) return;
+                if (set[v]) return;
+                set[v] = true;
+                candidates.push(v);
+            }
+
+            if (family === 'add') {
+                addCandidate(correct + 1); addCandidate(correct - 1);
+                addCandidate(correct + 2); addCandidate(correct - 2);
+                addCandidate(correct + 10); addCandidate(correct - 10);
+                addCandidate(correct + 9); addCandidate(correct - 9);
+            } else if (family === 'pct' || family === 'rev') {
+                addCandidate(correct + 10); addCandidate(correct - 10);
+                addCandidate(correct + 5); addCandidate(correct - 5);
+                addCandidate(correct + 25); addCandidate(correct - 25);
+                addCandidate(Math.round(correct * 0.9));
+                addCandidate(Math.round(correct * 1.1));
+            } else if (family === 'fin' || family === 'price') {
+                addCandidate(Math.round(correct * 0.8));
+                addCandidate(Math.round(correct * 1.2));
+                addCandidate(correct + 10); addCandidate(correct - 10);
+                addCandidate(correct + 5); addCandidate(correct - 5);
+                addCandidate(correct + 25); addCandidate(correct - 25);
+            } else if (family === 'comm') {
+                addCandidate(Math.round(correct * 2));
+                addCandidate(Math.round(correct / 2));
+                addCandidate(correct + 10); addCandidate(correct - 10);
+                addCandidate(Math.round(correct * 1.5));
+            } else if (family === 'split') {
+                addCandidate(correct + 5); addCandidate(correct - 5);
+                addCandidate(correct + 10); addCandidate(correct - 10);
+                addCandidate(correct * 2);
+                addCandidate(Math.round(correct / 2));
+            } else if (family === 'tax' || family === 'multi') {
+                addCandidate(correct + 5); addCandidate(correct - 5);
+                addCandidate(correct + 10); addCandidate(correct - 10);
+                addCandidate(Math.round(correct * 0.85));
+                addCandidate(Math.round(correct * 1.15));
+            } else {
+                addCandidate(correct + 1); addCandidate(correct - 1);
+                addCandidate(correct + 10); addCandidate(correct - 10);
+            }
+
+            var offset = 1;
+            while (candidates.length < 3 && offset < 500) {
+                addCandidate(correct + offset * 3);
+                addCandidate(correct - offset * 3);
+                offset++;
+            }
+
+            for (var i = 0; i < candidates.length && out.length < 3; i++) {
+                out.push(candidates[i]);
+            }
+
+            var fallback = 1;
+            while (out.length < 3) {
+                var v = correct + fallback * 7;
+                if (v !== correct && out.indexOf(v) === -1 && v >= 0) out.push(v);
+                fallback++;
+            }
+            return out;
+        }
+
+        function finalize(q) {
+            var distractors = buildDistractors(q.answer, q.family);
+            var options = shuffle([q.answer].concat(distractors));
+            return {
+                text: q.text,
+                answer: q.answer,
+                family: q.family,
+                options: options
+            };
+        }
+
+        function qAdditionSimple() {
+            var a = randInt(10, 49), b = randInt(10, 49);
+            return { text: a + ' + ' + b + ' = ?', answer: a + b, family: 'add' };
+        }
+        function qPercentEasy() {
+            var pct = pick([10, 20, 25, 50]);
+            var base;
+            if (pct === 10) base = randInt(2, 30) * 10;
+            else if (pct === 20) base = randInt(2, 20) * 10;
+            else if (pct === 25) base = randInt(2, 24) * 4;
+            else base = randInt(2, 40) * 2;
+            return { text: 'What is ' + pct + '% of ' + base + '?', answer: Math.round(pct / 100 * base), family: 'pct' };
+        }
+        function qAdditionMedium() {
+            var a = randInt(50, 99), b = randInt(50, 99);
+            return { text: a + ' + ' + b + ' = ?', answer: a + b, family: 'add' };
+        }
+        function qPercentStandard() {
+            var pct = pick([5, 10, 15, 20, 25, 50, 75]);
+            var base;
+            if (pct === 5)  base = randInt(2, 40) * 20;
+            else if (pct === 10) base = randInt(2, 40) * 10;
+            else if (pct === 15) base = randInt(2, 20) * 20;
+            else if (pct === 20) base = randInt(2, 25) * 10;
+            else if (pct === 25) base = randInt(2, 30) * 4;
+            else if (pct === 50) base = randInt(2, 60) * 2;
+            else base = randInt(2, 40) * 4;
+            return { text: 'What is ' + pct + '% of ' + base + '?', answer: Math.round(pct / 100 * base), family: 'pct' };
+        }
+        function qDiscountSimple() {
+            var disc = pick([10, 20, 25, 50]);
+            var price;
+            if (disc === 10) price = randInt(2, 30) * 10;
+            else if (disc === 20) price = randInt(2, 25) * 10;
+            else if (disc === 25) price = randInt(2, 20) * 4;
+            else price = randInt(2, 40) * 2;
+            var finalP = Math.round(price * (1 - disc / 100));
+            return { text: 'A $' + price + ' item is ' + disc + '% off. What is the final price?', answer: finalP, family: 'fin' };
+        }
+        function qPriceTotal() {
+            var qty = randInt(2, 6);
+            var unit = randInt(2, 25) * 5;
+            return { text: 'You buy ' + qty + ' items at $' + unit + ' each. What is the total?', answer: qty * unit, family: 'price' };
+        }
+        function qPercentHard() {
+            var pct = pick([5, 15, 30, 35, 40, 45, 60, 65, 70]);
+            var base;
+            if (pct === 5)       base = randInt(2, 60) * 20;
+            else if (pct === 15) base = randInt(2, 40) * 20;
+            else if (pct === 30) base = randInt(2, 30) * 10;
+            else if (pct === 35) base = randInt(2, 30) * 20;
+            else if (pct === 40) base = randInt(2, 25) * 5;
+            else if (pct === 45) base = randInt(2, 30) * 20;
+            else if (pct === 60) base = randInt(2, 25) * 5;
+            else if (pct === 65) base = randInt(2, 30) * 20;
+            else                 base = randInt(2, 25) * 10;
+            return { text: 'What is ' + pct + '% of ' + base + '?', answer: Math.round(pct / 100 * base), family: 'pct' };
+        }
+        function qReversePercent() {
+            var pct = pick([10, 20, 25, 50]);
+            var base;
+            if (pct === 10) base = randInt(2, 30) * 10;
+            else if (pct === 20) base = randInt(2, 20) * 5;
+            else if (pct === 25) base = randInt(2, 24) * 4;
+            else base = randInt(2, 30) * 2;
+            var part = Math.round(pct / 100 * base);
+            return { text: part + ' is ' + pct + '% of what number?', answer: base, family: 'rev' };
+        }
+        function qCommission() {
+            var pct = pick([5, 10, 15, 20]);
+            var sale;
+            if (pct === 5)  sale = randInt(2, 40) * 20;
+            else if (pct === 10) sale = randInt(2, 30) * 10;
+            else if (pct === 15) sale = randInt(2, 30) * 20;
+            else sale = randInt(2, 25) * 5;
+            var comm = Math.round(pct / 100 * sale);
+            return { text: 'You earn ' + pct + '% commission on a $' + sale + ' sale. What is your commission?', answer: comm, family: 'comm' };
+        }
+        function qBillSplit() {
+            var ways = randInt(2, 8);
+            var total = randInt(5, 40) * ways;
+            return { text: 'A $' + total + ' bill is split ' + ways + ' ways. How much per person?', answer: total / ways, family: 'split' };
+        }
+        function qTaxAddition() {
+            var pct = pick([5, 10, 15, 20]);
+            var price;
+            if (pct === 5)  price = randInt(2, 40) * 20;
+            else if (pct === 10) price = randInt(2, 30) * 10;
+            else if (pct === 15) price = randInt(2, 30) * 20;
+            else price = randInt(2, 25) * 5;
+            var total = price + Math.round(pct / 100 * price);
+            return { text: 'A $' + price + ' item has ' + pct + '% tax. What is the total?', answer: total, family: 'tax' };
+        }
+        function qMultiStepDiscount() {
+            var price = pick([100, 120, 150, 180, 200, 250, 300]);
+            var firstPct = pick([10, 20, 25]);
+            var secondPct = pick([10, 20]);
+            var afterFirst = Math.round(price * (1 - firstPct / 100));
+            var afterSecond = Math.round(afterFirst * (1 - secondPct / 100));
+            return {
+                text: 'A $' + price + ' item is ' + firstPct + '% off, then ' + secondPct + '% off the new price. Final price?',
+                answer: afterSecond,
+                family: 'multi'
+            };
+        }
+
+        /* =========================================================
+           8. TIER POOL
+           ========================================================= */
+        function generatorsForTier(tier) {
+            if (tier <= 1) return [qAdditionSimple, qPercentEasy];
+            if (tier === 2) return [qAdditionSimple, qAdditionMedium, qPercentEasy, qPercentStandard, qDiscountSimple];
+            if (tier === 3) return [qAdditionMedium, qPercentStandard, qDiscountSimple, qPriceTotal, qPercentHard];
+            if (tier === 4) return [qPercentHard, qPriceTotal, qReversePercent, qCommission, qBillSplit, qDiscountSimple];
+            return [qReversePercent, qCommission, qBillSplit, qTaxAddition, qMultiStepDiscount, qPercentHard];
+        }
+
+        /* =========================================================
+           9. UNIQUE QUESTION BUILDER
+           ========================================================= */
+        function buildUniqueQuestion(tier) {
+            var gens = generatorsForTier(tier);
+            var attempts = 0;
+            var q;
+            do {
+                var gen = pick(gens);
+                q = gen();
+                attempts++;
+            } while (state.recentQuestions.indexOf(q.text) !== -1 && attempts < 40);
+
+            state.recentQuestions.push(q.text);
+            while (state.recentQuestions.length > RING_SIZE) {
+                state.recentQuestions.shift();
+            }
+            return finalize(q);
+        }
+
+        /* =========================================================
+           10. TIER ENGINE
+           ========================================================= */
+        function computeTier() {
+            var scoreTier = 1;
+            if (state.score >= 50) scoreTier = 5;
+            else if (state.score >= 25) scoreTier = 4;
+            else if (state.score >= 10) scoreTier = 3;
+            else if (state.score >= 4) scoreTier = 2;
+
+            var acc = state.attempted > 0 ? (state.correct / state.attempted) * 100 : 0;
+            var accTier = 1;
+            if (acc >= 90 && state.attempted >= 5) accTier = 5;
+            else if (acc >= 75 && state.attempted >= 5) accTier = 4;
+            else if (acc >= 60 && state.attempted >= 5) accTier = 3;
+
+            var entryTier = 1;
+            if (state.bestAccSaved >= 90) entryTier = 4;
+            else if (state.bestAccSaved >= 75) entryTier = 3;
+            else if (state.bestAccSaved >= 60) entryTier = 2;
+
+            var t = Math.max(scoreTier, accTier, entryTier);
+            if (t > 5) t = 5;
+            return t;
+        }
+        function refreshTier() {
+            var t = computeTier();
+            if (t !== state.currentTier) {
+                state.currentTier = t;
+                if (t > state.topTier) state.topTier = t;
+            }
+            tierChip.className = 'tier-chip tier-' + state.currentTier;
+            tierChip.textContent = 'Tier ' + state.currentTier + ' · ' + TIER_NAMES[state.currentTier];
+        }
+
+        /* =========================================================
+           11. RENDER
+           ========================================================= */
+        function updateAccuracyDisplay() {
+            if (state.attempted === 0) {
+                accDisplay.textContent = '—';
+            } else {
+                var a = Math.round((state.correct / state.attempted) * 100);
+                accDisplay.textContent = a + '%';
+            }
+        }
+
+        function renderQuestion(q) {
+            state.currentAnswer = q.answer;
+            state.currentFamily = q.family;
+            state.answerLocked = false;
+
+            familyLabel.textContent = FAMILY_NAMES[q.family] || 'Math';
+            questionText.textContent = q.text;
+            questionText.classList.remove('fade-in');
+            void questionText.offsetWidth;
+            questionText.classList.add('fade-in');
+
+            optionsGrid.innerHTML = '';
+            q.options.forEach(function (val, i) {
+                var btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'option-btn';
+                btn.setAttribute('data-value', String(val));
+                btn.setAttribute('aria-label', 'Option ' + OPTION_LETTERS[i] + ': ' + val);
+                btn.innerHTML =
+                    '<span class="badge">' + OPTION_LETTERS[i] + '</span>' +
+                    '<span class="value">' + val + '</span>' +
+                    '<span class="marker" aria-hidden="true"></span>';
+                btn.addEventListener('click', function () {
+                    onOptionClick(btn, val);
+                });
+                optionsGrid.appendChild(btn);
+            });
+
+            state.questionStartTime = Date.now();
+        }
+
+        function onOptionClick(btn, val) {
+            if (!state.running || state.answerLocked) return;
+            state.answerLocked = true;
+
+            var allBtns = optionsGrid.querySelectorAll('.option-btn');
+            allBtns.forEach(function (b) { b.disabled = true; });
+
+            var isCorrect = (val === state.currentAnswer);
+            var elapsed = Date.now() - state.questionStartTime;
+
+            state.attempted++;
+
+            if (isCorrect) {
+                btn.classList.add('correct');
+                btn.querySelector('.marker').textContent = '✓';
+
+                state.correct++;
+                state.streak++;
+                if (state.streak > state.bestStreak) state.bestStreak = state.streak;
+
+                var tierBonus = state.currentTier;
+                var milestone = (state.streak % MILESTONE_EVERY === 0) ? 1 : 0;
+                var gain = 1 + tierBonus + milestone;
+                state.score += gain;
+
+                if (milestone) bounceStreak();
+                flash(true);
+
+                if (elapsed < FAST_ANSWER_MS) showFastPop();
+            } else {
+                btn.classList.add('wrong');
+                btn.querySelector('.marker').textContent = '✗';
+
+                allBtns.forEach(function (b) {
+                    if (parseInt(b.getAttribute('data-value'), 10) === state.currentAnswer) {
+                        b.classList.add('correct');
+                        b.querySelector('.marker').textContent = '✓';
+                    } else if (b !== btn) {
+                        b.classList.add('dimmed');
+                    }
+                });
+
+                state.streak = 0;
+                state.score = Math.max(0, state.score - 1);
+                flash(false);
+            }
+
+            if (state.score > state.bestScore && state.bestScore > 0) {
+                newBestBadge.classList.remove('hidden');
+            }
+
+            scoreDisplay.textContent  = state.score;
+            streakDisplay.textContent = state.streak;
+            updateAccuracyDisplay();
+
+            setTimeout(function () {
+                if (state.running) {
+                    nextQuestion();
+                }
+            }, 650);
+        }
+
+        function showFastPop() {
+            fastPop.classList.remove('show');
+            void fastPop.offsetWidth;
+            fastPop.classList.add('show');
+        }
+
+        function flash(isCorrect) {
+            feedbackFlash.style.background = isCorrect
+                ? 'rgba(16, 185, 129, 0.20)'
+                : 'rgba(239, 68, 68, 0.20)';
+            feedbackFlash.style.opacity = '1';
+            setTimeout(function () { feedbackFlash.style.opacity = '0'; }, 220);
+        }
+
+        function bounceStreak() {
+            streakDisplay.classList.remove('streak-bounce');
+            void streakDisplay.offsetWidth;
+            streakDisplay.classList.add('streak-bounce');
+        }
+
+        function nextQuestion() {
+            refreshTier();
+            var q = buildUniqueQuestion(state.currentTier);
+            renderQuestion(q);
+            updateTimingBar();
+        }
+
+        function updateTimingBar() {
+            var pct = state.duration > 0 ? (state.timeLeft / state.duration) * 100 : 0;
+            if (pct < 0) pct = 0;
+            timingBar.style.width = pct + '%';
+        }
+
+        /* =========================================================
+           12. KBC COUNTDOWN
+           ========================================================= */
+        function showCountdown() {
+            countdownOverlay.classList.remove('hidden', 'fade-out');
+            countdownHalo.classList.remove('go-halo');
+            countdownNumber.textContent = '3';
+            countdownNumber.className = 'countdown-number';
+            countdownHint.textContent = COUNTDOWN_HINTS[0];
+            // Force reflow to restart animations
+            void countdownNumber.offsetWidth;
+
+            // Sequence: 3 → 2 → 1 → GO
+            var steps = [
+                { num: '3', hint: COUNTDOWN_HINTS[0], cls: 'countdown-number' },
+                { num: '2', hint: COUNTDOWN_HINTS[1], cls: 'countdown-number' },
+                { num: '1', hint: COUNTDOWN_HINTS[2], cls: 'countdown-number one' }
+            ];
+
+            // Show 3, then 2, then 1
+            state.countdownId = setTimeout(function () {
+                showStep(1, steps);
+            }, COUNTDOWN_STEP_MS);
+        }
+
+        function showStep(index, steps) {
+            if (index >= steps.length) {
+                showGo();
+                return;
+            }
+            var s = steps[index];
+            countdownNumber.textContent = s.num;
+            countdownNumber.className = s.cls;
+            countdownHint.textContent = s.hint;
+            // Force reflow to restart punch animation
+            countdownNumber.style.animation = 'none';
+            void countdownNumber.offsetWidth;
+            countdownNumber.style.animation = '';
+
+            state.countdownId = setTimeout(function () {
+                showStep(index + 1, steps);
+            }, COUNTDOWN_STEP_MS);
+        }
+
+        function showGo() {
+            countdownNumber.textContent = 'GO!';
+            countdownNumber.className = 'countdown-number go';
+            countdownHint.textContent = 'GO!';
+            countdownHalo.classList.add('go-halo');
+
+            // Green flash
+            goFlash.classList.remove('show');
+            void goFlash.offsetWidth;
+            goFlash.classList.add('show');
+
+            // After GO hold, fade out overlay and begin the round
+            state.countdownId = setTimeout(function () {
+                countdownOverlay.classList.add('fade-out');
+                beginRound();
+                state.countdownId = setTimeout(function () {
+                    countdownOverlay.classList.add('hidden');
+                    countdownOverlay.classList.remove('fade-out');
+                }, 360);
+            }, GO_HOLD_MS);
+        }
+
+        function cancelCountdown() {
+            if (state.countdownId) {
+                clearTimeout(state.countdownId);
+                state.countdownId = null;
+            }
+            countdownOverlay.classList.add('hidden');
+            countdownOverlay.classList.remove('fade-out');
+        }
+
+        /* =========================================================
+           13. GAME FLOW
+           ========================================================= */
+        function startGame() {
+            if (state.running) return;
+
+            // Hide the start overlay, show countdown
+            startOverlay.classList.add('hidden');
+            resultsModal.classList.add('hidden');
+            shareBtn.disabled = true;
+
+            // Reset any previous state
+            state.score       = 0;
+            state.streak      = 0;
+            state.bestStreak  = 0;
+            state.correct     = 0;
+            state.attempted   = 0;
+            state.topTier     = 1;
+            state.currentTier = 1;
+            state.recentQuestions = [];
+            state.lastRoundBestScore = false;
+            state.answerLocked = false;
+            state.timeLeft = state.duration;
+
+            scoreDisplay.textContent  = '0';
+            streakDisplay.textContent = '0';
+            timerDisplay.textContent  = state.duration;
+            roundLabel.textContent    = 'Round ' + state.roundNumber;
+            updateAccuracyDisplay();
+            refreshTier();
+            newBestBadge.classList.add('hidden');
+            updateTimingBar();
+
+            showCountdown();
+        }
+        window.startGame = startGame;
+
+        function beginRound() {
+            state.running = true;
+
+            nextQuestion();
+            updateTimingBar();
+
+            state.timerId = setInterval(function () {
+                state.timeLeft--;
+                timerDisplay.textContent = state.timeLeft;
+                updateTimingBar();
+                if (state.timeLeft <= 0) endGame();
+            }, 1000);
+        }
+
+        function endGame() {
+            if (!state.running) return;
+            state.running = false;
+
+            clearInterval(state.timerId);
+            state.timerId = null;
+            timerDisplay.textContent = '0';
+            timingBar.style.width = '0%';
+
+            saveBest();
+
+            var accPct = state.attempted > 0 ? Math.round((state.correct / state.attempted) * 100) : 0;
+
+            finalScoreEl.textContent  = state.score;
+            finalAccEl.textContent    = accPct + '%';
+            finalStreakEl.textContent = state.bestStreak;
+            finalTierEl.textContent   = state.topTier;
+
+            var isCongrats = accPct >= 80 && state.attempted >= 3;
+
+            if (isCongrats) {
+                congratsEmoji.textContent = '🎉';
+                if (state.lastRoundBestScore) {
+                    resultMsg.textContent = 'Congratulations! A new personal best with ' + accPct + '% accuracy!';
+                } else {
+                    resultMsg.textContent = 'Congratulations! You cleared the 80% club with ' + accPct + '% accuracy!';
+                }
+                startConfetti();
+            } else if (state.lastRoundBestScore) {
+                congratsEmoji.textContent = '🏆';
+                resultMsg.textContent = 'New personal best!';
+            } else if (state.attempted === 0) {
+                congratsEmoji.textContent = '🤔';
+                resultMsg.textContent = 'No answers this round. Give it another try!';
+            } else {
+                congratsEmoji.textContent = '🎯';
+                resultMsg.textContent = 'Good run. Your best score is ' + state.bestScore + '.';
+            }
+
+            shareBtn.disabled = false;
+            resultsModal.classList.remove('hidden');
+        }
+
+        function resetGame() {
+            cancelCountdown();
+            clearInterval(state.timerId);
+            state.timerId    = null;
+            state.running    = false;
+            state.score      = 0;
+            state.streak     = 0;
+            state.correct    = 0;
+            state.attempted  = 0;
+            state.topTier    = 1;
+            state.currentTier = 1;
+            state.bestStreak = 0;
+            state.currentAnswer = null;
+            state.currentFamily = '';
+            state.recentQuestions = [];
+            state.lastRoundBestScore = false;
+            state.answerLocked = false;
+
+            state.timeLeft = state.duration;
+            timerDisplay.textContent = state.duration;
+            scoreDisplay.textContent  = '0';
+            streakDisplay.textContent = '0';
+            updateAccuracyDisplay();
+            questionText.textContent  = 'Press Start to play';
+            familyLabel.textContent   = 'Ready';
+            roundLabel.textContent    = 'Round ' + state.roundNumber;
+            optionsGrid.innerHTML     = '';
+            timingBar.style.width     = '100%';
+            shareBtn.disabled = true;
+            newBestBadge.classList.add('hidden');
+
+            refreshTier();
+            startOverlay.classList.remove('hidden');
+            resultsModal.classList.add('hidden');
+            stopConfetti();
+        }
+        window.resetGame = resetGame;
+
+        function closeResults() {
+            resultsModal.classList.add('hidden');
+            stopConfetti();
+            state.roundNumber++;
+            resetGame();
+        }
+        window.closeResults = closeResults;
+
+        /* =========================================================
+           14. TIMER SELECT
+           ========================================================= */
+        function onTimerChange() {
+            if (state.running) return;
+            var v = parseInt(timerSelect.value, 10);
+            if (v === 30 || v === 60 || v === 90) {
+                state.duration = v;
+                state.timeLeft = v;
+                timerDisplay.textContent = v;
+                timingBar.style.width = '100%';
+                try { localStorage.setItem(KEY_DURATION, String(v)); } catch (e) {}
+            }
+        }
+        window.onTimerChange = onTimerChange;
+
+        /* =========================================================
+           15. CONFETTI
+           ========================================================= */
+        var confettiPieces = [];
+        var confettiRunning = false;
+        var confettiCtx = null;
+
+        function startConfetti() {
+            confettiCanvas.width  = window.innerWidth;
+            confettiCanvas.height = window.innerHeight;
+            confettiCanvas.classList.remove('hidden');
+            confettiCtx = confettiCanvas.getContext('2d');
+
+            var colors = ['#4F46E5', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#EC4899'];
+            confettiPieces = [];
+            for (var i = 0; i < 140; i++) {
+                confettiPieces.push({
+                    x: Math.random() * confettiCanvas.width,
+                    y: -20 - Math.random() * 200,
+                    vx: (Math.random() - 0.5) * 4,
+                    vy: Math.random() * 3 + 2,
+                    size: Math.random() * 6 + 4,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    rot: Math.random() * Math.PI * 2,
+                    vr: (Math.random() - 0.5) * 0.15
+                });
+            }
+            if (!confettiRunning) {
+                confettiRunning = true;
+                requestAnimationFrame(confettiLoop);
+            }
+        }
+        function confettiLoop() {
+            if (!confettiRunning) return;
+            confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+            var alive = 0;
+            for (var i = 0; i < confettiPieces.length; i++) {
+                var p = confettiPieces[i];
+                p.x += p.vx; p.y += p.vy; p.vy += 0.04; p.rot += p.vr;
+                if (p.y < confettiCanvas.height + 30) alive++;
+                confettiCtx.save();
+                confettiCtx.translate(p.x, p.y);
+                confettiCtx.rotate(p.rot);
+                confettiCtx.fillStyle = p.color;
+                confettiCtx.fillRect(-p.size / 2, -p.size / 4, p.size, p.size / 2);
+                confettiCtx.restore();
+            }
+            if (alive > 0) requestAnimationFrame(confettiLoop);
+            else confettiRunning = false;
+        }
+        function stopConfetti() {
+            confettiRunning = false;
+            confettiPieces = [];
+            if (confettiCtx && confettiCanvas) {
+                confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+            }
+            confettiCanvas.classList.add('hidden');
+        }
+
+        /* =========================================================
+           16. SHARE + COPY CHALLENGE
+           ========================================================= */
+        var SITE_URL = 'https://mytoolx.org/math-sprint.html';
+
+        function buildShareText() {
+            var accPct = state.attempted > 0 ? Math.round((state.correct / state.attempted) * 100) : 0;
+            return 'I scored ' + state.score + ' points in the Mental Math Sprint 🧠⚡ with ' + accPct + '% accuracy and a best streak of ' + state.bestStreak + '. Think you can beat me?';
+        }
+
+        function shareScore() {
+            var text = buildShareText();
+            if (navigator.share) {
+                navigator.share({ title: 'My Math Sprint Score', text: text, url: SITE_URL })
+                    .catch(function () {});
+            } else if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text + ' ' + SITE_URL).then(function () {
+                    shareBtn.textContent = '✅ Copied!';
+                    setTimeout(function () { shareBtn.innerHTML = '🔗 Share Score'; }, 1600);
+                }).catch(function () {
+                    shareBtn.textContent = '❌ Copy failed';
+                    setTimeout(function () { shareBtn.innerHTML = '🔗 Share Score'; }, 1600);
+                });
+            } else {
+                shareBtn.textContent = '❌ Not supported';
+                setTimeout(function () { shareBtn.innerHTML = '🔗 Share Score'; }, 1600);
+            }
+        }
+        window.shareScore = shareScore;
+
+        function copyChallengeLink() {
+            var text = buildShareText() + ' Play here: ' + SITE_URL;
+            var btn = el('copyChallengeBtn');
+            var original = btn.textContent;
+            function done() {
+                btn.textContent = '✅ Copied! Paste it anywhere.';
+                setTimeout(function () { btn.textContent = original; }, 1800);
+            }
+            function fail() {
+                btn.textContent = '❌ Could not copy — long press to copy manually';
+                setTimeout(function () { btn.textContent = original; }, 2400);
+            }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(done).catch(function () {
+                    var ta = document.createElement('textarea');
+                    ta.value = text;
+                    ta.style.position = 'fixed';
+                    ta.style.opacity = '0';
+                    document.body.appendChild(ta);
+                    ta.select();
+                    try { document.execCommand('copy'); done(); }
+                    catch (e) { fail(); }
+                    document.body.removeChild(ta);
+                });
+            } else {
+                var ta2 = document.createElement('textarea');
+                ta2.value = text;
+                ta2.style.position = 'fixed';
+                ta2.style.opacity = '0';
+                document.body.appendChild(ta2);
+                ta2.select();
+                try { document.execCommand('copy'); done(); }
+                catch (e) { fail(); }
+                document.body.removeChild(ta2);
+            }
+        }
+        window.copyChallengeLink = copyChallengeLink;
+
+        /* =========================================================
+           17. QA HASH OVERRIDE
+           ========================================================= */
+        function applyHashTierOverride() {
+            try {
+                var hash = window.location.hash || '';
+                var m = hash.match(/tier=([1-5])/);
+                if (m) {
+                    var forced = parseInt(m[1], 10);
+                    state.bestAccSaved = forced >= 5 ? 95 : forced >= 4 ? 80 : forced >= 3 ? 65 : forced >= 2 ? 50 : 0;
+                }
+            } catch (e) {}
+        }
+
+        /* =========================================================
+           18. KEYBOARD
+           ========================================================= */
+        document.addEventListener('keydown', function (e) {
+            if (!state.running || state.answerLocked) return;
+            var k = e.key.toLowerCase();
+            var idx = -1;
+            if (k === 'a' || k === '1') idx = 0;
+            else if (k === 'b' || k === '2') idx = 1;
+            else if (k === 'c' || k === '3') idx = 2;
+            else if (k === 'd' || k === '4') idx = 3;
+            if (idx >= 0) {
+                e.preventDefault();
+                var btn = optionsGrid.querySelectorAll('.option-btn')[idx];
+                if (btn) btn.click();
+            }
+        });
+
+        window.addEventListener('resize', function () {
+            if (confettiCanvas && !confettiCanvas.classList.contains('hidden')) {
+                confettiCanvas.width  = window.innerWidth;
+                confettiCanvas.height = window.innerHeight;
+            }
+        });
+
+        /* =========================================================
+           19. INIT
+           ========================================================= */
+        loadBest();
+        applyHashTierOverride();
+        refreshTier();
+        updateAccuracyDisplay();
+        updateTimingBar();
+
+    })();
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
+    <script>
+      window.addEventListener('load', function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W8KM3G3BYL');
+      });
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
+</body>
+</html>
