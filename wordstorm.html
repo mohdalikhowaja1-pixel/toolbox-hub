@@ -236,7 +236,7 @@
         /* Active / locked state (typing) */
         .falling-phrase.locked { transform: scale(1.08); box-shadow: 0 0 0 3px #fbbf24, 0 0 20px rgba(251,191,36,0.8); z-index: 10; }
         .falling-phrase .char { transition: color 0.05s ease; }
-        .falling-phrase .char.done { color: #10b981; }
+        .falling-phrase .char.done { color: #047857; } /* Dark green for visibility */
         .falling-phrase.locked .char.done { color: #065f46; }
         .theme-space .falling-phrase .char.done { color: #6ee7b7; }
         .theme-space .falling-phrase.locked .char.done { color: #34d399; }
@@ -262,6 +262,7 @@
             cursor: pointer;
             position: absolute;
             transition: transform 0.1s ease, background 0.1s ease;
+            z-index: 10;
         }
         .mobile-word .seq-number {
             position: absolute;
@@ -580,7 +581,7 @@
                     <li><strong>Tap Mode activates automatically</strong> on phones and tablets.</li>
                     <li><strong>Read the target sentence</strong> at the top of the screen.</li>
                     <li><strong>Tap the words in the correct order.</strong> If the sentence is "the sky is blue", tap "the" first, then "sky", then "is", then "blue".</li>
-                    <li><strong>Numbers for the first 3 Levels:</strong> Numbers appear above the words in Worlds 1, 2, and 3 to help you learn. From World 4 onwards, the numbers disappear and you must solve it yourself.</li>
+                    <li><strong>Numbers for the first 2 Levels:</strong> Numbers appear above the words in Worlds 1 and 2 to help you learn. From World 3 onwards, the numbers disappear and you must solve it yourself.</li>
                     <li><strong>Survive all five worlds</strong> with hearts remaining to earn the Legendary badge.</li>
                 </ol>
             </div>
@@ -856,11 +857,11 @@
         };
 
         var WORLDS = [
-            { key: 'ocean',    name: 'Ocean',     icon: '🌊', phrasesToClear: 10, spawnMs: 2600, speedPxPerSec: 42, phrasePool: 'ocean' },
-            { key: 'sky',      name: 'Sky',       icon: '☁️', phrasesToClear: 10, spawnMs: 2400, speedPxPerSec: 48, phrasePool: 'sky' },
-            { key: 'mountain', name: 'Mountain',  icon: '🏔️', phrasesToClear: 10, spawnMs: 2200, speedPxPerSec: 56, phrasePool: 'mountain' },
-            { key: 'space',    name: 'Space',     icon: '🌌', phrasesToClear: 10, spawnMs: 2000, speedPxPerSec: 64, phrasePool: 'space' },
-            { key: 'night',    name: 'Night City', icon: '🌃', phrasesToClear: 10, spawnMs: 1800, speedPxPerSec: 72, phrasePool: 'night' }
+            { key: 'ocean',    name: 'Ocean',     icon: '🌊', phrasesToClear: 10, spawnMs: 2800, speedPxPerSec: 38, phrasePool: 'ocean' }, // Slower speed for Level 1
+            { key: 'sky',      name: 'Sky',       icon: '☁️', phrasesToClear: 10, spawnMs: 2400, speedPxPerSec: 50, phrasePool: 'sky' },
+            { key: 'mountain', name: 'Mountain',  icon: '🏔️', phrasesToClear: 10, spawnMs: 2200, speedPxPerSec: 60, phrasePool: 'mountain' },
+            { key: 'space',    name: 'Space',     icon: '🌌', phrasesToClear: 10, spawnMs: 2000, speedPxPerSec: 70, phrasePool: 'space' },
+            { key: 'night',    name: 'Night City', icon: '🌃', phrasesToClear: 10, spawnMs: 1800, speedPxPerSec: 80, phrasePool: 'night' }
         ];
 
         var PHRASE_POOLS = {
@@ -963,6 +964,7 @@
             // Mobile puzzle state
             mobileCurrentSentence: [],
             mobileExpectedIndex: 0,
+            mobileElements: [],
             // Timers
             spawnTimer: null,
             rafId: null,
@@ -1154,9 +1156,8 @@
             mobileSentenceBanner.textContent = 'Target: ' + sentence;
             mobileSentenceBanner.classList.add('active');
 
-            // Determine shuffle logic
-            // Worlds 1, 2, 3 (index 0, 1, 2) get numbers. Worlds 4, 5 get no numbers and random placement.
-            var showNumbers = (state.worldIndex <= 2);
+            // Numbers logic: Only World 1 (Ocean) and World 2 (Sky) show numbers
+            var showNumbers = (state.worldIndex <= 1);
             
             var elements = [];
             var stageWidth = stage.clientWidth;
@@ -1178,69 +1179,54 @@
                 phraseLayer.appendChild(dom);
                 elements.push(dom);
             });
+            state.mobileElements = elements;
 
-            // Calculate X positions
-            // For Worlds 1-3, keep in rough order but shuffle slightly for challenge
-            // For Worlds 4-5, completely random X positions
+            // --- NEW OVERLAP-FREE X POSITIONING LOGIC ---
             var positions = [];
-            var totalWidth = 0;
-            elements.forEach(function(dom) { totalWidth += dom.offsetWidth + 10; });
+            var gap = 12; // Space between words
             
-            var startX = (stageWidth - totalWidth) / 2;
-            if (startX < 10) startX = 10;
-            
-            var currentX = startX;
-            
-            if (showNumbers) {
-                // Worlds 1-3: Shuffle the horizontal positions
-                // But keep them within a row to avoid overlap
-                var shuffledIndices = [];
-                for (var i = 0; i < elements.length; i++) shuffledIndices.push(i);
-                
-                // Simple shuffle
-                for (var i = shuffledIndices.length - 1; i > 0; i--) {
-                    var j = Math.floor(Math.random() * (i + 1));
-                    var temp = shuffledIndices[i];
-                    shuffledIndices[i] = shuffledIndices[j];
-                    shuffledIndices[j] = temp;
-                }
-
-                // Distribute widths evenly with a gap
-                var gap = 15;
-                var totalW = 0;
-                elements.forEach(function(dom) { totalW += dom.offsetWidth; });
-                var totalGap = gap * (elements.length - 1);
-                var availableSpace = stageWidth - totalW - totalGap - 20;
-                if (availableSpace < 0) availableSpace = 0;
-                
-                var baseStart = 10;
-                var currentPos = baseStart;
-
-                elements.forEach(function(dom, i) {
-                    // Place sequentially but with random gaps
-                    var randomOffset = Math.floor(Math.random() * (availableSpace / elements.length));
-                    dom.style.left = (currentPos + randomOffset) + 'px';
-                    currentPos += dom.offsetWidth + gap + randomOffset;
-                });
-
-            } else {
-                // Worlds 4-5: Completely random X positions, allowing overlap
-                elements.forEach(function(dom) {
-                    var maxLeft = stageWidth - dom.offsetWidth - 10;
-                    var randomLeft = 10 + Math.random() * (maxLeft - 10);
-                    if (randomLeft < 10) randomLeft = 10;
-                    dom.style.left = randomLeft + 'px';
-                });
+            // Shuffle a list of indices to assign random positions
+            var indices = [];
+            for (var i = 0; i < elements.length; i++) indices.push(i);
+            for (var i = indices.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = indices[i];
+                indices[i] = indices[j];
+                indices[j] = temp;
             }
 
-            // Set random start Y to stagger falling (makes it more dynamic)
+            // Calculate total width needed
+            var totalWidth = 0;
             elements.forEach(function(dom) {
+                totalWidth += dom.offsetWidth;
+            });
+            totalWidth += gap * (elements.length - 1);
+
+            // Start placing from left to right
+            var currentX = 10;
+            // If total width is smaller than stage, center it roughly
+            if (totalWidth < stageWidth - 20) {
+                currentX = (stageWidth - totalWidth) / 2;
+            }
+
+            elements.forEach(function(dom, i) {
+                // Give each word a random X position but ensure no overlap
+                var maxOffset = (stageWidth - 20 - totalWidth) / elements.length;
+                if (maxOffset < 0) maxOffset = 0;
+                
+                var randomOffset = Math.random() * maxOffset;
+                
+                dom.style.left = (currentX + randomOffset) + 'px';
+                currentX += dom.offsetWidth + gap + randomOffset;
+                
+                // Random starting Y for stagger
                 dom.style.top = (-Math.random() * 40 - 40) + 'px';
             });
+            // ---------------------------------------------
 
             // Start falling animation
             var startTime = performance.now();
-            var speed = 30; // Fixed 1.0x slow speed for mobile
+            var speed = 50; // Mobile speed increased for flow
             var stageHeight = stage.clientHeight;
 
             function animateMobile(timestamp) {
