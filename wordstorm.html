@@ -95,7 +95,6 @@
             --tile-red-bg: rgba(254,226,226,0.6); --tile-red-border: #FECACA; --tile-red-text: #EF4444;
             --tile-amber-bg: rgba(254,243,199,0.6); --tile-amber-border: #FDE68A; --tile-amber-text: #B45309;
 
-            /* Stage (dark by default for atmosphere) */
             --stage-text: #F8FAFC;
             --stage-text-muted: #CBD5E1;
             --stage-hint: #FCD34D;
@@ -581,7 +580,7 @@
                     <li><strong>Tap Mode activates automatically</strong> on phones and tablets.</li>
                     <li><strong>Read the target sentence</strong> at the top of the screen.</li>
                     <li><strong>Tap the words in the correct order.</strong> If the sentence is "the sky is blue", tap "the" first, then "sky", then "is", then "blue".</li>
-                    <li><strong>Level 1 Tutorial:</strong> Numbers appear above the words in Level 1 to help you learn. From Level 2 onwards, the numbers disappear and you must solve it yourself.</li>
+                    <li><strong>Numbers for the first 3 Levels:</strong> Numbers appear above the words in Worlds 1, 2, and 3 to help you learn. From World 4 onwards, the numbers disappear and you must solve it yourself.</li>
                     <li><strong>Survive all five worlds</strong> with hearts remaining to earn the Legendary badge.</li>
                 </ol>
             </div>
@@ -1143,7 +1142,7 @@
         function spawnMobileSentence() {
             if (!state.running || state.paused) return;
             
-            phraseLayer.innerHTML = ''; // Clear previous
+            phraseLayer.innerHTML = '';
             var world = WORLDS[state.worldIndex];
             var sentence = pickUniqueSentence(world.key);
             var words = sentence.split(' ');
@@ -1155,20 +1154,21 @@
             mobileSentenceBanner.textContent = 'Target: ' + sentence;
             mobileSentenceBanner.classList.add('active');
 
-            // Create falling word elements
-            var stageWidth = stage.clientWidth;
-            var gap = 10;
-            var totalWidth = 0;
+            // Determine shuffle logic
+            // Worlds 1, 2, 3 (index 0, 1, 2) get numbers. Worlds 4, 5 get no numbers and random placement.
+            var showNumbers = (state.worldIndex <= 2);
+            
             var elements = [];
-
+            var stageWidth = stage.clientWidth;
+            
+            // Create elements
             words.forEach(function(word, index) {
                 var dom = document.createElement('div');
                 dom.className = 'mobile-word';
                 dom.textContent = word;
                 dom.dataset.index = index;
                 
-                // Level 1 Tutorial: Show numbers
-                if (state.worldIndex === 0) {
+                if (showNumbers) {
                     var num = document.createElement('div');
                     num.className = 'seq-number';
                     num.textContent = index + 1;
@@ -1177,18 +1177,65 @@
 
                 phraseLayer.appendChild(dom);
                 elements.push(dom);
-                totalWidth += dom.offsetWidth + gap;
             });
 
-            // Distribute words horizontally
+            // Calculate X positions
+            // For Worlds 1-3, keep in rough order but shuffle slightly for challenge
+            // For Worlds 4-5, completely random X positions
+            var positions = [];
+            var totalWidth = 0;
+            elements.forEach(function(dom) { totalWidth += dom.offsetWidth + 10; });
+            
             var startX = (stageWidth - totalWidth) / 2;
             if (startX < 10) startX = 10;
+            
             var currentX = startX;
+            
+            if (showNumbers) {
+                // Worlds 1-3: Shuffle the horizontal positions
+                // But keep them within a row to avoid overlap
+                var shuffledIndices = [];
+                for (var i = 0; i < elements.length; i++) shuffledIndices.push(i);
+                
+                // Simple shuffle
+                for (var i = shuffledIndices.length - 1; i > 0; i--) {
+                    var j = Math.floor(Math.random() * (i + 1));
+                    var temp = shuffledIndices[i];
+                    shuffledIndices[i] = shuffledIndices[j];
+                    shuffledIndices[j] = temp;
+                }
 
+                // Distribute widths evenly with a gap
+                var gap = 15;
+                var totalW = 0;
+                elements.forEach(function(dom) { totalW += dom.offsetWidth; });
+                var totalGap = gap * (elements.length - 1);
+                var availableSpace = stageWidth - totalW - totalGap - 20;
+                if (availableSpace < 0) availableSpace = 0;
+                
+                var baseStart = 10;
+                var currentPos = baseStart;
+
+                elements.forEach(function(dom, i) {
+                    // Place sequentially but with random gaps
+                    var randomOffset = Math.floor(Math.random() * (availableSpace / elements.length));
+                    dom.style.left = (currentPos + randomOffset) + 'px';
+                    currentPos += dom.offsetWidth + gap + randomOffset;
+                });
+
+            } else {
+                // Worlds 4-5: Completely random X positions, allowing overlap
+                elements.forEach(function(dom) {
+                    var maxLeft = stageWidth - dom.offsetWidth - 10;
+                    var randomLeft = 10 + Math.random() * (maxLeft - 10);
+                    if (randomLeft < 10) randomLeft = 10;
+                    dom.style.left = randomLeft + 'px';
+                });
+            }
+
+            // Set random start Y to stagger falling (makes it more dynamic)
             elements.forEach(function(dom) {
-                dom.style.left = currentX + 'px';
-                dom.style.top = '-60px';
-                currentX += dom.offsetWidth + gap;
+                dom.style.top = (-Math.random() * 40 - 40) + 'px';
             });
 
             // Start falling animation
@@ -1208,7 +1255,7 @@
                     if (dom.classList.contains('tapped')) return;
                     allTapped = false;
 
-                    var currentTop = parseFloat(dom.style.top) || -60;
+                    var currentTop = parseFloat(dom.style.top) || -40;
                     var newTop = currentTop + (speed * dt);
                     dom.style.top = newTop + 'px';
 
@@ -1222,7 +1269,6 @@
                     return;
                 }
                 if (allTapped) {
-                    // Handled by tap logic
                     return;
                 }
 
@@ -1244,21 +1290,17 @@
             var index = parseInt(dom.dataset.index);
             
             if (index === state.mobileExpectedIndex) {
-                // Correct tap
                 dom.classList.add('tapped');
                 state.mobileExpectedIndex++;
                 state.correctChars += dom.textContent.length;
                 state.totalCharsTyped += dom.textContent.length;
                 
-                // Visual feedback (Lightweight, no lag)
                 burst(dom.offsetLeft + dom.offsetWidth/2, dom.offsetTop + dom.offsetHeight/2, true);
                 
-                // Check if sentence complete
                 if (state.mobileExpectedIndex >= state.mobileCurrentSentence.length) {
                     clearMobileSentence(elements);
                 }
             } else {
-                // Wrong tap
                 dom.classList.add('wrong-tap');
                 setTimeout(function() { dom.classList.remove('wrong-tap'); }, 300);
                 state.multiplier = 1.0;
@@ -1271,14 +1313,12 @@
             state.phrasesCleared++;
             state.clearedInWorld++;
             
-            // Calculate score
-            var points = 100; // Flat 100 points for a full sentence
+            var points = 100;
             state.score += points;
             
             state.multiplier = Math.min(3.0, state.multiplier + 0.1);
             if (state.multiplier > state.peakMultiplier) state.peakMultiplier = state.multiplier;
 
-            // Clean up
             elements.forEach(function(dom) {
                 dom.classList.add('tapped');
                 setTimeout(function() { dom.remove(); }, 200);
@@ -1287,7 +1327,6 @@
             mobileSentenceBanner.classList.remove('active');
             updateHud();
 
-            // Check world clear
             var world = WORLDS[state.worldIndex];
             if (state.clearedInWorld >= world.phrasesToClear) {
                 advanceWorld();
@@ -1299,22 +1338,18 @@
         function missMobileSentence(elements) {
             cancelAnimationFrame(state.rafId);
             
-            // Lose a heart
             state.hearts--;
             state.multiplier = 1.0;
             updateHud();
 
-            // Heart animation
             var hearts = shHearts.querySelectorAll('.heart');
             if (hearts[state.hearts]) {
                 hearts[state.hearts].classList.add('lost', 'breaking');
             }
 
-            // Clean up
             elements.forEach(function(dom) { dom.remove(); });
             mobileSentenceBanner.classList.remove('active');
 
-            // Game over?
             if (state.hearts <= 0) {
                 setTimeout(function () { endGame(false); }, 400);
             } else {
@@ -1424,6 +1459,9 @@
                         state.paused = false;
                         if (state.inputMode === 'type') typeInput.disabled = false;
                         updateHud();
+                        if (state.inputMode === 'tap') {
+                            spawnMobileSentence();
+                        }
                     }, 1450);
                 }, 100);
             } else {
@@ -1525,7 +1563,6 @@
            ========================================================= */
         function burst(x, y, isMobile) {
             if (isMobile) {
-                // Mobile: Just 4 simple dots, no lag
                 for (var i = 0; i < 4; i++) {
                     var b = document.createElement('div');
                     b.className = 'burst';
@@ -1548,7 +1585,6 @@
                 return;
             }
 
-            // Desktop: Full 12 particles
             var colors = ['#fbbf24', '#10b981', '#3b82f6', '#ec4899', '#fff'];
             for (var i = 0; i < 12; i++) {
                 var b = document.createElement('div');
