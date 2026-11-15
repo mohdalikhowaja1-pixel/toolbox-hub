@@ -22,6 +22,10 @@
     <!-- FAVICON (inline SVG emoji — zero HTTP request) -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4F46E5">
+<link rel="apple-touch-icon" href="icon-192.png">
+
     <!-- OPEN GRAPH -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="MyToolX">
@@ -71,14 +75,16 @@
             { "@type": "ListItem", "position": 2, "name": "JSON Formatter", "item": "https://mytoolx.org/json-formatter.html" }
           ]
         },
-        {
+                {
           "@type": "FAQPage",
           "mainEntity": [
-            { "@type": "Question", "name": "Does this tool validate invalid JSON syntax?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. If your JSON contains syntax errors, the built-in parser catches the exception and highlights the error message to help you fix structural mistakes quickly." } }
+            { "@type": "Question", "name": "Does this tool validate invalid JSON syntax?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. If your JSON contains syntax errors, the built-in parser catches the exception and highlights the error message to help you fix structural mistakes quickly." } },
+            { "@type": "Question", "name": "Is my JSON code uploaded to any external server?", "acceptedAnswer": { "@type": "Answer", "text": "No. All formatting, validation, and minification functions execute strictly inside your local web browser using client-side JavaScript. Nothing is transmitted or saved online." } },
+            { "@type": "Question", "name": "What is the benefit of minifying JSON?", "acceptedAnswer": { "@type": "Answer", "text": "Minification removes all formatting spaces, newlines, and tabs. This decreases payload byte size, resulting in faster network transmission speeds for web application APIs." } },
+            { "@type": "Question", "name": "Is there a maximum file size limit for formatting?", "acceptedAnswer": { "@type": "Answer", "text": "Since processing relies on your device's browser memory, it can handle large multi-megabyte JSON files without experiencing cloud server timeout limits." } },
+                        { "@type": "Question", "name": "Can I use single quotes in standard JSON?", "acceptedAnswer": { "@type": "Answer", "text": "No. According to official JSON specs (RFC 8259), keys and string values must be enclosed in standard double quotes." } }
           ]
         }
-      ]
-    }
     </script>
 
     <style>
@@ -271,7 +277,7 @@
                 </div>
                 <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
                     <h3 class="text-sm font-bold mb-1">Can I use single quotes in standard JSON?</h3>
-                    <p class="text-xs sm:text-sm muted leading-relaxed">No. According to official JSON specs (RFC 8259), keys and string values must be enclosed in standard double quotes (<code class="bg-black/10 px-1 py-0.5 rounded text-slate-800 font-mono">" "</code>).</p>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">No. According to official JSON specs (RFC 8259), keys and string values must be enclosed in standard double quotes (<code class="bg-black/10 px-1 py-0.5 rounded text-slate-900 font-mono">&quot; &quot;</code>).</p>
                 </div>
             </div>
         </section>
@@ -347,6 +353,8 @@
                         <a href="color-converter.html">Color Converter</a>
 			<a href="math-sprint.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Math Sprint Game</a>
                         <a href="wordstorm.html" class="footer-game-link"><span aria-hidden="true">⭐</span> WordStorm Game</a>
+			<a href="reaction-time-test.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Reaction Test</a>
+			<a href="word-scramble.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Word Scramble</a>
                     </div>
                 </div>
 

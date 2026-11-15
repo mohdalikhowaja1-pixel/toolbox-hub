@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+    (function() {
+        var saved = null;
+        try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+    })();
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- PRIMARY SEO -->
+    <title>Free 60 Second Word Scramble Game 🔤 | MyToolX</title>
+    <meta name="description" content="Play Word Scramble free. You get 60 seconds to solve as many scrambled words as you can. Beat your best score and challenge friends.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://mytoolx.org/word-scramble.html">
+
+    <!-- PWA MANIFEST & MOBILE -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4F46E5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔤</text></svg>">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔤</text></svg>">
+
+    <!-- ADSENSE -->
+    <meta name="google-adsense-account" content="ca-pub-3410254230554312">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:url" content="https://mytoolx.org/word-scramble.html">
+    <meta property="og:title" content="Word Scramble: Free 60 Second Word Game | MyToolX">
+    <meta property="og:description" content="You get 60 seconds to solve as many scrambled words as you can. No sign up. Works on any phone. Beat your best score and challenge a friend.">
+    <meta property="og:image" content="https://mytoolx.org/og-image-v2.png">
+    <meta property="og:image:alt" content="Word Scramble by MyToolX">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:locale" content="en_US">
+
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mytoolx.org/word-scramble.html">
+    <meta name="twitter:title" content="Word Scramble: Free 60 Second Word Game | MyToolX">
+    <meta name="twitter:description" content="Solve as many scrambled words as you can in 60 seconds. No sign up. Works on any phone.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
+    <meta name="twitter:image:alt" content="Word Scramble by MyToolX">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//refer.micro1.ai">
+
+    <!-- STRUCTURED DATA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "Word Scramble",
+          "url": "https://mytoolx.org/word-scramble.html",
+          "applicationCategory": "GameApplication",
+          "operatingSystem": "Any",
+          "description": "A free word scramble puzzle. You get 60 seconds to solve as many scrambled words as you can. No sign up. Runs entirely in your browser.",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "127" }
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to Play Word Scramble",
+          "description": "Solve scrambled words in 60 seconds by tapping or typing the letters in the right order.",
+          "step": [
+            {"@type": "HowToStep", "position": 1, "name": "Start the game", "text": "Tap Start Game and the 60 second timer begins."},
+            {"@type": "HowToStep", "position": 2, "name": "Read the letters", "text": "You see the letters of a real word shown in a mixed up order."},
+            {"@type": "HowToStep", "position": 3, "name": "Build the word", "text": "Tap the letters, or type on a keyboard, in the order you think spells a real word."},
+            {"@type": "HowToStep", "position": 4, "name": "Use a hint or skip", "text": "A hint reveals one letter and costs 5 points. A skip costs 10 points and moves you on."},
+            {"@type": "HowToStep", "position": 5, "name": "Share or replay", "text": "When time runs out you can share your score or play again."}
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {"@type": "Question", "name": "Is Word Scramble free to play?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It is completely free. There is no sign up, no download and no paywall."}},
+            {"@type": "Question", "name": "Does it work on mobile phones?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It is built for phones first, and it also works on tablets and desktop. You can tap the letters on a touch screen or type them on a keyboard."}},
+            {"@type": "Question", "name": "Is my score saved?", "acceptedAnswer": {"@type": "Answer", "text": "Your personal best is stored in your browser only. It never leaves your device and is never sent to any server."}},
+            {"@type": "Question", "name": "How many words are in the game?", "acceptedAnswer": {"@type": "Answer", "text": "There are more than 800 words across every word length. Each round is shuffled so you rarely see the same order twice."}},
+            {"@type": "Question", "name": "Can I play more than once a day?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. There is no daily limit. You can play as many rounds as you like, whenever you like."}}
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mytoolx.org/"},
+            {"@type": "ListItem", "position": 2, "name": "Games", "item": "https://mytoolx.org/#games"},
+            {"@type": "ListItem", "position": 3, "name": "Word Scramble", "item": "https://mytoolx.org/word-scramble.html"}
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
+            --danger: #EF4444; --warn: #F59E0B;
+            
+            /* Game Specific */
+            --game-bg-start: #4F46E5;
+            --game-bg-end: #7E22CE;
+            --tile-bg: #FFFFFF;
+            --tile-text: #1E293B;
+            --tile-shadow: #94A3B8;
+        }
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
+            --danger: #F87171; --warn: #FBBF24;
+            
+            /* Game Specific */
+            --game-bg-start: #312E81;
+            --game-bg-end: #581C87;
+            --tile-bg: #F8FAFC;
+            --tile-text: #0F172A;
+            --tile-shadow: #475569;
+        }
+        html, body { overflow-x: clip; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-accent { background: var(--accent); color: #fff; } .btn-accent:hover { background: var(--accent-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+
+        .input-field { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
+        .input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); outline: none; }
+
+        .card-3d-btn { transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; background: var(--card); border: 1px solid var(--card-border); }
+        .card-3d-btn:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(79,70,229,0.15), 0 8px 10px -6px rgba(79,70,229,0.1); border-color: var(--primary); background: var(--card); }
+
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+
+        #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
+        :focus-visible { outline: none; }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        ::selection { background: rgba(79,70,229,0.25); }
+
+        @media (max-width: 360px) { .logo-wordmark { font-size: 1rem !important; } }
+        @media (prefers-reduced-motion: reduce) { * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; } }
+
+        /* ============================================= */
+        /* WORD SCRAMBLE — GAME STYLES                   */
+        /* ============================================= */
+
+        .game-shell {
+            max-width: 640px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, var(--game-bg-start), var(--game-bg-end));
+            border-radius: 24px;
+            padding: 22px 18px;
+            box-shadow: 0 20px 40px -10px rgba(79, 70, 229, 0.4);
+            position: relative;
+            overflow: hidden;
+            overscroll-behavior: contain;
+            color: #fff;
+        }
+
+        /* Challenge Notification Banner */
+        .challenge-banner {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #FDE047;
+            padding: 8px 12px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 800;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            display: none;
+        }
+        .challenge-banner.visible { display: block; animation: fadeIn 0.4s ease; }
+        
+        /* Background floating ABC pattern */
+        .game-bg-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(circle at 20% 30%, #fff 2px, transparent 2px),
+                radial-gradient(circle at 80% 70%, #fff 2px, transparent 2px),
+                radial-gradient(circle at 50% 50%, #fff 1.5px, transparent 1.5px),
+                radial-gradient(circle at 10% 80%, #fff 3px, transparent 3px),
+                radial-gradient(circle at 90% 20%, #fff 3px, transparent 3px);
+            background-size: 150px 150px, 200px 200px, 100px 100px, 250px 250px, 180px 180px;
+            background-position: 0 0, 40px 60px, 130px 270px, 70px 100px, 100px 200px;
+            z-index: 1;
+        }
+
+        .game-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* HUD */
+        .game-hud {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 14px;
+            align-items: stretch;
+        }
+        .hud-item {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 8px 6px 6px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 64px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .hud-label {
+            font-size: 9px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 2px;
+        }
+        .hud-value {
+            font-size: clamp(18px, 5vw, 24px);
+            font-weight: 900;
+            color: #fff;
+            font-variant-numeric: tabular-nums;
+            line-height: 1;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .hud-value.streak-hot { color: #FDE047; }
+
+        /* Round timer ring */
+        .ring-wrap {
+            position: relative;
+            width: 64px;
+            height: 64px;
+            margin: 0 auto;
+        }
+        .ring-svg { transform: rotate(-90deg); width: 64px; height: 64px; display: block; }
+        .ring-bg { fill: none; stroke: rgba(255,255,255,0.2); stroke-width: 5; }
+        .ring-fg {
+            fill: none;
+            stroke: #FDE047;
+            stroke-width: 5;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 0.9s linear, stroke 0.3s ease;
+        }
+        .ring-fg.warn { stroke: #FB923C; }
+        .ring-fg.danger { stroke: #EF4444; }
+        
+        /* Timer Text - Center and perfect */
+        .ring-text {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 18px;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Streak dots */
+        .streak-dots {
+            display: flex; justify-content: center; gap: 6px; margin: 0 0 14px;
+        }
+        .sdot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+        .sdot.on { background: #34D399; transform: scale(1.1); box-shadow: 0 0 8px #34D399; }
+
+        /* Game stage */
+        .game-stage {
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 4px 0 8px;
+            position: relative;
+        }
+
+        /* Level pill */
+        .level-pill {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
+            font-size: 10px; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 0.08em;
+            padding: 4px 12px; border-radius: 100px;
+            margin-bottom: 16px;
+        }
+        .level-pill .len-badge {
+            background: #FDE047; color: #4F46E5;
+            padding: 1px 8px; border-radius: 100px;
+            font-size: 9px; font-weight: 900; letter-spacing: 0.06em;
+        }
+
+        /* Overlays */
+        .stage-overlay {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center;
+            padding: 8px 16px;
+            background: transparent;
+            z-index: 5;
+        }
+        .stage-overlay.hidden { display: none; }
+
+        .overlay-icon { font-size: 48px; margin-bottom: 10px; line-height: 1; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2)); }
+        .overlay-title {
+            font-size: 22px; font-weight: 900; color: #fff;
+            margin-bottom: 6px; letter-spacing: -0.02em;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .overlay-sub {
+            font-size: 14px; color: rgba(255,255,255,0.85);
+            margin-bottom: 20px; max-width: 320px; line-height: 1.5;
+        }
+        .overlay-best {
+            font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 16px;
+            background: rgba(0,0,0,0.2); padding: 4px 12px; border-radius: 100px;
+        }
+        .overlay-best strong { color: #FDE047; font-weight: 900; font-size: 14px; }
+
+        /* Tiles row */
+        .tiles-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: clamp(6px, 1.6vw, 10px);
+            margin-bottom: 20px;
+            max-width: 100%;
+            min-height: clamp(52px, 13vw, 64px);
+        }
+        .letter-tile {
+            width: clamp(44px, 11.5vw, 56px);
+            height: clamp(52px, 13vw, 64px);
+            border-radius: 12px;
+            background: var(--tile-bg);
+            border: none;
+            border-bottom: 6px solid var(--tile-shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(22px, 5.5vw, 28px);
+            font-weight: 900;
+            color: var(--tile-text);
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            transition: transform 0.1s ease, background 0.15s ease, opacity 0.15s ease, border-bottom-width 0.1s ease;
+            text-transform: uppercase;
+            font-family: inherit;
+            padding: 0;
+            will-change: transform;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+        .letter-tile:hover:not(.used):not(:disabled) { transform: translateY(-2px); border-bottom-width: 7px; }
+        .letter-tile:active:not(.used):not(:disabled) { 
+            transform: translateY(3px); 
+            border-bottom-width: 2px; 
+            box-shadow: 0 2px 4px -1px rgba(0,0,0,0.1);
+        }
+        .letter-tile.used {
+            opacity: 0.15;
+            cursor: default;
+            pointer-events: none;
+            transform: scale(0.9);
+            border-bottom-width: 2px;
+        }
+        .letter-tile:disabled { cursor: default; opacity: 0.5; }
+
+        /* Answer slots */
+        .answer-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: clamp(6px, 1.6vw, 10px);
+            margin-bottom: 12px;
+            min-height: clamp(52px, 13vw, 64px);
+            max-width: 100%;
+        }
+        .answer-slot {
+            width: clamp(44px, 11.5vw, 56px);
+            height: clamp(52px, 13vw, 64px);
+            border-radius: 12px;
+            border: 3px dashed rgba(255,255,255,0.4);
+            background: rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(22px, 5.5vw, 28px);
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+            transition: all 0.15s ease;
+        }
+        .answer-slot.filled {
+            border-style: solid;
+            border-color: #FDE047;
+            background: rgba(253, 224, 71, 0.2);
+            color: #FDE047;
+            transform: translateY(-2px);
+        }
+        .answer-slot.correct {
+            border-color: #34D399;
+            background: rgba(52, 211, 153, 0.3);
+            color: #34D399;
+            border-style: solid;
+            box-shadow: 0 0 15px rgba(52, 211, 153, 0.5);
+        }
+        .answer-slot.wrong {
+            border-color: #EF4444;
+            background: rgba(239, 68, 68, 0.2);
+            color: #EF4444;
+            border-style: solid;
+            animation: shake 0.3s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-4px); }
+            75% { transform: translateX(4px); }
+        }
+
+        /* Feedback */
+        .feedback {
+            min-height: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-align: center;
+            transition: color 0.2s ease;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+        .feedback.good { color: #34D399; }
+        .feedback.bad { color: #EF4444; }
+        .feedback.neutral { color: rgba(255,255,255,0.7); }
+
+        /* Action row */
+        .action-row {
+            display: flex; gap: 8px; justify-content: center;
+            flex-wrap: wrap; width: 100%;
+        }
+        .action-row .btn-3d {
+            padding: 9px 14px; font-size: 12px; border-radius: 10px;
+            touch-action: manipulation;
+            flex: 0 1 auto;
+            white-space: nowrap;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(4px);
+        }
+        .action-row .btn-3d:hover { background: rgba(255,255,255,0.2); }
+        .action-row .btn-3d:disabled { opacity: 0.3; cursor: not-allowed; }
+        @media (max-width: 380px) {
+            .action-row .btn-3d { padding: 8px 10px; font-size: 11px; }
+        }
+
+        /* Result screen */
+        .result-score {
+            font-size: clamp(56px, 16vw, 80px);
+            font-weight: 900;
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+            color: #FDE047;
+            margin-bottom: 2px;
+            font-variant-numeric: tabular-nums;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .result-rank {
+            display: inline-block;
+            font-size: 12px; font-weight: 900;
+            text-transform: uppercase; letter-spacing: 0.12em;
+            padding: 4px 14px; border-radius: 100px;
+            margin-bottom: 10px;
+            background: rgba(0,0,0,0.3); color: #fff;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .result-rank.elite { background: #34D399; color: #064E3B; border-color: #34D399; }
+        .result-rank.sharp { background: #818CF8; color: #1E1B4B; border-color: #818CF8; }
+        .result-rank.steady { background: #FBBF24; color: #78350F; border-color: #FBBF24; }
+        
+        .new-best-badge {
+            display: inline-block;
+            background: #FDE047; color: #78350F;
+            font-size: 11px; font-weight: 900;
+            text-transform: uppercase; letter-spacing: 0.1em;
+            padding: 4px 12px; border-radius: 100px;
+            margin-bottom: 10px; margin-left: 6px;
+            animation: pop 0.4s ease;
+            box-shadow: 0 4px 10px rgba(253, 224, 71, 0.4);
+        }
+        .new-best-badge.hidden { display: none; }
+        @keyframes pop {
+            0% { transform: scale(0.6); opacity: 0; }
+            60% { transform: scale(1.15); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .result-stats {
+            display: flex; justify-content: center; gap: 14px;
+            flex-wrap: wrap; margin: 10px 0 16px;
+            font-size: 12px; color: rgba(255,255,255,0.8);
+            font-weight: 600;
+            background: rgba(0,0,0,0.2); padding: 8px 16px; border-radius: 12px;
+        }
+        .result-stats strong { color: #fff; font-weight: 900; }
+
+        .end-actions {
+            display: flex; flex-direction: column; gap: 10px;
+            width: 100%; max-width: 280px; margin: 0 auto;
+        }
+        .end-actions .btn-3d {
+            padding: 14px 16px; font-size: 15px; border-radius: 12px;
+            width: 100%; touch-action: manipulation;
+        }
+        .end-sub {
+            font-size: 13px; color: rgba(255,255,255,0.85);
+            margin-bottom: 16px; max-width: 300px; line-height: 1.5;
+        }
+
+        /* Score pop */
+        .score-pop { animation: scorePop 0.32s ease; }
+        @keyframes scorePop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); color: #FDE047; }
+            100% { transform: scale(1); }
+        }
+
+        /* Hidden input */
+        #hiddenInput {
+            position: absolute; opacity: 0; pointer-events: none;
+            width: 1px; height: 1px; left: -100px; top: 0;
+            border: none; background: transparent; color: transparent;
+        }
+
+        /* Cross links */
+        .cross-link-strip { display: none; margin-top: 24px; }
+        .cross-link-strip.visible { display: block; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .cl-header {
+            font-size: 10px; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.7); margin-bottom: 12px;
+            text-align: center;
+        }
+        .cross-link-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+        }
+        @media (max-width: 420px) { .cross-link-grid { grid-template-columns: 1fr; } }
+        .cross-link-card {
+            display: flex; align-items: center; gap: 9px;
+            padding: 10px 12px; border-radius: 12px;
+            background: rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.1);
+            text-decoration: none;
+            transition: transform 0.15s ease, background 0.15s ease;
+            touch-action: manipulation;
+        }
+        .cross-link-card:hover { background: rgba(0,0,0,0.3); transform: translateY(-2px); }
+        .cross-link-card .cl-icon { font-size: 20px; flex-shrink: 0; }
+        .cross-link-card .cl-title {
+            font-size: 12px; font-weight: 800;
+            color: #fff; line-height: 1.2;
+        }
+        .cross-link-card .cl-sub {
+            font-size: 10px; color: rgba(255,255,255,0.6);
+            margin-top: 2px;
+        }
+
+        /* Content sections */
+        .content-section {
+            max-width: 720px; margin: 0 auto; padding: 0 4px;
+        }
+        .content-section h2 {
+            font-size: 1.3rem; font-weight: 800; color: var(--text);
+            margin-bottom: 10px; margin-top: 34px;
+            letter-spacing: -0.02em; line-height: 1.25;
+        }
+        .content-section h3 {
+            font-size: 1.02rem; font-weight: 700; color: var(--text);
+            margin-bottom: 6px; margin-top: 20px;
+        }
+        .content-section p {
+            font-size: 0.9375rem; line-height: 1.7;
+            color: var(--text-muted); margin-bottom: 12px;
+        }
+        .content-section ol, .content-section ul {
+            padding-left: 22px; margin-bottom: 16px;
+        }
+        .content-section ol li, .content-section ul li {
+            font-size: 0.9375rem; line-height: 1.7;
+            color: var(--text-muted); margin-bottom: 8px;
+        }
+        .content-section ol li strong, .content-section ul li strong {
+            color: var(--text);
+        }
+
+        .faq-item {
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            margin-bottom: 8px;
+            overflow: hidden;
+            background: var(--card);
+        }
+        .faq-item summary {
+            padding: 13px 16px;
+            font-weight: 700;
+            font-size: 0.9375rem;
+            color: var(--text);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            touch-action: manipulation;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after {
+            content: "+";
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--text-muted);
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
+        }
+        .faq-item[open] summary::after { transform: rotate(45deg); }
+        .faq-item summary:hover { background: var(--chip-bg); }
+        .faq-item .faq-answer {
+            padding: 0 16px 14px;
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- ============ HEADER ============ -->
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2">
+            <div class="flex items-center justify-between gap-2 sm:gap-4">
+                <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+                    <a href="index.html" class="hidden sm:flex btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold items-center gap-1">← All Tools</a>
+                    <a href="index.html" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
+                        <div class="logo-mark w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base flex items-center justify-center">M<span class="x">X</span></div>
+                        <span class="logo-wordmark text-base sm:text-xl block">MyTool<span class="x">X</span></span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                    <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch theme" title="Toggle Light/Dark Mode" class="h-8 sm:h-10 px-2 sm:px-3 rounded-xl flex items-center justify-center gap-1.5 text-[10px] sm:text-xs font-bold transition-all hover:opacity-80" style="background: var(--chip-bg); color: var(--chip-text);">
+                        <span id="themeIcon" aria-hidden="true">🌙</span>
+                        <span id="themeText" class="hidden sm:block">Dark Mode</span>
+                    </button>
+                    <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
+                        💼 Remote Jobs ↗
+                    </a>
+                    <a href="cv-maker.html" class="inline-flex text-xs font-bold text-white px-3 py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
+                        📄 Live CV
+                    </a>
+                </div>
+            </div>
+            <div class="mt-2 sm:hidden">
+                <a href="index.html" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">← Back to All Tools</a>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-3 sm:px-4 py-5 sm:py-7 w-full flex-grow">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="max-w-2xl mx-auto mb-3 text-xs muted">
+            <a href="index.html" class="hover:underline">Home</a>
+            <span class="mx-1.5">/</span>
+            <span style="color: var(--text); font-weight: 600;">Word Scramble</span>
+        </nav>
+
+        <!-- H1 -->
+        <div class="text-center max-w-2xl mx-auto mb-4">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight leading-tight mb-1.5" style="color: var(--text);">
+                Word Scramble: A Word Game You Can Finish in 60 Seconds
+            </h1>
+            <p class="text-sm sm:text-base muted font-medium">
+                Letters come in mixed up. You put them back in the right order before the clock runs out.
+            </p>
+        </div>
+
+        <!-- ============================================= -->
+        <!-- GAME SHELL                                    -->
+        <!-- ============================================= -->
+        <div class="game-shell" id="gameShell">
+            <div class="game-bg-pattern"></div>
+            <div id="challengeBanner" class="challenge-banner">🔥 Friend Challenge: Beat <span id="challengeTarget">--</span> points!</div>
+            
+            <div class="game-content">
+                <!-- HUD -->
+                <div class="game-hud">
+                    <div class="hud-item">
+                        <div class="hud-label">Score</div>
+                        <div class="hud-value" id="scoreDisplay">0</div>
+                    </div>
+                    <div class="hud-item">
+                        <div class="ring-wrap" aria-hidden="true">
+                            <svg class="ring-svg" viewBox="0 0 64 64">
+                                <circle class="ring-bg" cx="32" cy="32" r="28"></circle>
+                                <circle class="ring-fg" id="ringFg" cx="32" cy="32" r="28"
+                                        stroke-dasharray="175.93" stroke-dashoffset="0"></circle>
+                            </svg>
+                            <!-- Centered timer text -->
+                            <div class="ring-text" id="ringText">60</div>
+                        </div>
+                    </div>
+                    <div class="hud-item">
+                        <div class="hud-label">Streak</div>
+                        <div class="hud-value" id="streakDisplay">0</div>
+                    </div>
+                </div>
+
+                <!-- Streak dots -->
+                <div class="streak-dots" id="streakDots" aria-hidden="true">
+                    <span class="sdot"></span><span class="sdot"></span><span class="sdot"></span>
+                    <span class="sdot"></span><span class="sdot"></span>
+                </div>
+
+                <!-- Stage -->
+                <div class="game-stage" id="gameStage">
+
+                    <!-- Start overlay -->
+                    <div class="stage-overlay" id="startOverlay">
+                        <div class="overlay-icon" aria-hidden="true">🔤</div>
+                        <div class="overlay-title">Ready to unscramble?</div>
+                        <div class="overlay-sub">You have 60 seconds. Longer words score more. Tap or type the letters in the right order.</div>
+                        <button class="btn-3d btn-primary" id="startBtn" style="padding: 14px 32px; font-size: 16px; border-radius: 12px; touch-action: manipulation; background: #FDE047; color: #4F46E5; box-shadow: 0 4px 0 #CA8A04;">Start Game</button>
+                        <div class="overlay-best">Your best: <strong id="bestScoreStart">0</strong></div>
+                    </div>
+
+                    <!-- End overlay -->
+                    <div class="stage-overlay hidden" id="endOverlay">
+                        <div style="display:flex; align-items:center; gap:6px; justify-content:center;">
+                            <div class="result-score" id="finalScore">0</div>
+                        </div>
+                        <div class="result-rank" id="rankBadge">Sharp</div>
+                        <div class="new-best-badge hidden" id="newBestBadge">🏆 New Best</div>
+                        <div class="result-stats" id="resultStats">
+                            Words: <strong id="statWords">0</strong> · Best streak: <strong id="statStreak">0</strong> · Hints: <strong id="statHints">0</strong>
+                        </div>
+                        <div class="end-sub" id="endSub">Want to try again?</div>
+                        <div class="end-actions">
+                            <button class="btn-3d btn-accent" id="shareBtn" style="background: #FDE047; color: #4F46E5; box-shadow: 0 4px 0 #CA8A04;">📣 Challenge a Friend</button>
+                            <button class="btn-3d btn-primary" id="playAgainBtn" style="background: #fff; color: #4F46E5;">Play Again</button>
+                        </div>
+                    </div>
+
+                    <!-- Active game -->
+                    <div id="activeGame" style="display: none; width: 100%;">
+                        <div style="text-align: center;">
+                            <div class="level-pill">
+                                Level <span id="levelNum">1</span>
+                                <span class="len-badge" id="lenBadge">4 LETTERS</span>
+                            </div>
+                        </div>
+                        <div class="tiles-row" id="scrambledTiles"></div>
+                        <div class="answer-row" id="answerSlots"></div>
+                        <div class="feedback neutral" id="feedback">&nbsp;</div>
+                        <div class="action-row">
+                            <button class="btn-3d" id="hintBtn" type="button">💡 Hint · 2</button>
+                            <button class="btn-3d" id="skipBtn" type="button">⏭ Skip · 2</button>
+                            <button class="btn-3d" id="clearBtn" type="button">↺ Clear</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hidden input for keyboard -->
+                <input type="text" id="hiddenInput" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false" aria-hidden="true" tabindex="-1" inputmode="none">
+
+                <!-- Cross-links (Fully interconnected game hub) -->
+                <div class="cross-link-strip" id="crossLinkStrip">
+                    <div class="cl-header">Try another game on MyToolX</div>
+                    <div class="cross-link-grid">
+                        <a href="reaction-time-test.html" class="cross-link-card">
+                            <span class="cl-icon">🎯</span>
+                            <div>
+                                <div class="cl-title">Reaction Time Test</div>
+                                <div class="cl-sub">Measure your speed</div>
+                            </div>
+                        </a>
+                        <a href="typing-test.html" class="cross-link-card">
+                            <span class="cl-icon">⌨️</span>
+                            <div>
+                                <div class="cl-title">Typing Speed Test</div>
+                                <div class="cl-sub">WPM and accuracy</div>
+                            </div>
+                        </a>
+                        <a href="math-sprint.html" class="cross-link-card">
+                            <span class="cl-icon">🧠</span>
+                            <div>
+                                <div class="cl-title">Math Sprint</div>
+                                <div class="cl-sub">30 second mental math</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+<!-- EXPLORE MORE FREE GAMES GRID -->
+    <div class="related-games-section">
+        <h2 class="related-games-title">Explore More Free Games</h2>
+        <div class="related-games-grid">
+            
+            <a href="reaction-time-test.html" class="related-game-card">
+                <div class="related-game-icon">🎯</div>
+                <div>
+                    <div class="related-game-name">Reaction Time Test</div>
+                    <div class="related-game-sub">Measure your speed</div>
+                </div>
+            </a>
+
+            <a href="typing-test.html" class="related-game-card">
+                <div class="related-game-icon">⌨️</div>
+                <div>
+                    <div class="related-game-name">Typing Speed Test</div>
+                    <div class="related-game-sub">Check your WPM and accuracy</div>
+                </div>
+            </a>
+
+            <a href="wordstorm.html" class="related-game-card">
+                <div class="related-game-icon">🌪️</div>
+                <div>
+                    <div class="related-game-name">WordStorm</div>
+                    <div class="related-game-sub">Falling words typing game</div>
+                </div>
+            </a>
+
+            <a href="math-sprint.html" class="related-game-card">
+                <div class="related-game-icon">🧠</div>
+                <div>
+                    <div class="related-game-name">Math Sprint</div>
+                    <div class="related-game-sub">30 second mental math challenge</div>
+                </div>
+            </a>
+
+            <a href="love-calculator.html" class="related-game-card">
+                <div class="related-game-icon">❤️</div>
+                <div>
+                    <div class="related-game-name">Love Calculator</div>
+                    <div class="related-game-sub">Fun compatibility match tool</div>
+                </div>
+            </a>
+
+            <a href="cv-maker.html" class="related-game-card">
+                <div class="related-game-icon">📄</div>
+                <div>
+                    <div class="related-game-name">Live CV Maker</div>
+                    <div class="related-game-sub">HD PDF Resume Generator</div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+        <!-- ============================================= -->
+        <!-- ON PAGE CONTENT                              -->
+        <!-- ============================================= -->
+        <div class="content-section">
+
+            <h2>What Is Word Scramble?</h2>
+            <p>Word Scramble is a quick word puzzle. You get a set of letters that spell a real word, but the letters are shown in a mixed up order. Your job is to put them back into the right order before the timer hits zero.</p>
+            <p>Every word you solve moves you to the next one. As your streak climbs, the words get longer and a little less common, so the game keeps pace with you. There is no account, no download, and no ad breaking up the game. You open the page, you press start, and you play.</p>
+
+            <h3>How the Words Get Harder</h3>
+            <p>The game quietly adjusts as you play. Early on you get short, everyday words. After a few solves, longer words start to appear. This keeps the loop fresh without ever feeling unfair.</p>
+            <table style="width:100%; border-collapse:collapse; margin: 12px 0 18px; font-size: 0.875rem; border-radius: 12px; overflow: hidden; border: 1px solid var(--card-border);">
+                <thead>
+                    <tr>
+                        <th style="padding: 10px 14px; text-align:left; background: var(--chip-bg); color: var(--text); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; border-bottom: 1px solid var(--card-border);">Words solved</th>
+                        <th style="padding: 10px 14px; text-align:left; background: var(--chip-bg); color: var(--text); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; border-bottom: 1px solid var(--card-border);">Word length</th>
+                        <th style="padding: 10px 14px; text-align:left; background: var(--chip-bg); color: var(--text); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; border-bottom: 1px solid var(--card-border);">Feel</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td style="padding: 10px 14px; color: var(--text-muted); border-bottom: 1px solid var(--card-border);">1 to 5</td><td style="padding: 10px 14px; color: var(--text-muted); border-bottom: 1px solid var(--card-border);">4 letters</td><td style="padding: 10px 14px; color: var(--text-muted); border-bottom: 1px solid var(--card-border);">Warm up phase</td></tr>
+                    <tr><td style="padding: 10px 14px; color: var(--text-muted); border-bottom: 1px solid var(--card-border);">6 to 12</td><td style="padding: 10px 14px; color: var(--text-muted); border-bottom: 1px solid var(--card-border);">5 to 6 letters</td><td style="padding: 10px 14px; color: var(--text-muted); border-bottom: 1px solid var(--card-border);">Steady rhythm</td></tr>
+                    <tr><td style="padding: 10px 14px; color: var(--text-muted);">13 and up</td><td style="padding: 10px 14px; color: var(--text-muted);">7 to 8 letters</td><td style="padding: 10px 14px; color: var(--text-muted);">Sharp expert mode</td></tr>
+                </tbody>
+            </table>
+
+            <h2>How to Play Word Scramble</h2>
+            <ol>
+                <li><strong>Press Start Game.</strong> The 60 second clock begins the moment you tap it.</li>
+                <li><strong>Look at the letters.</strong> They spell a real word, but they are in the wrong order.</li>
+                <li><strong>Put them in the right order.</strong> Tap the letters one by one, or type them on a keyboard, until the answer row spells a word you recognise.</li>
+                <li><strong>Use a hint or skip if you get stuck.</strong> A hint reveals one letter and costs 5 points. A skip costs 10 points and moves you to the next word.</li>
+                <li><strong>Share your score or play again.</strong> When time runs out, you can challenge a friend or start a new round.</li>
+            </ol>
+
+            <h3>Four Tips That Raise Your Score</h3>
+            <ul>
+                <li><strong>Look for common endings first.</strong> Words often end in ing, tion, ed, er or ly. If you can lock down the last two or three letters, the rest of the word usually falls into place.</li>
+                <li><strong>Start with a vowel.</strong> Almost every English word has a vowel in the first three spots. If you cannot find a vowel there, your guess is probably wrong.</li>
+                <li><strong>Do not save your hints.</strong> A 5 point hint that unlocks a long streak is worth far more than the 5 points. Hints exist to keep the momentum going, not to sit unused.</li>
+                <li><strong>Speed matters more than certainty.</strong> A quick guess on a word you are unsure about usually beats a long pause. A wrong answer only stings on the streak, not on the score you already earned.</li>
+            </ul>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <details class="faq-item">
+                <summary>Is Word Scramble free to play?</summary>
+                <div class="faq-answer">Yes. It is completely free. There is no sign up, no download, and no paywall. You can play as many rounds as you want.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Does it work on mobile phones?</summary>
+                <div class="faq-answer">Yes. The game is built for phones first, and it works on tablets and desktop as well. On a phone you tap the letters with silent haptic touch feedback.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Is my score saved?</summary>
+                <div class="faq-answer">Your personal best is saved in your browser only. It stays on your device, and it is never sent to any server.</div>
+            </details>
+            <details class="faq-item">
+                <summary>How many words are in the game?</summary>
+                <div class="faq-answer">There are more than 800 words across every word length. The game shuffles the order each round, so you rarely see the same sequence twice.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Can I play more than once a day?</summary>
+                <div class="faq-answer">Yes. There is no daily limit. Play as many rounds as you like, whenever you like.</div>
+            </details>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+
+                <div class="lg:col-span-5">
+                    <a href="index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 pr-4">
+                        MyToolX is a free suite of client-side web tools for writers, freelancers and developers. No sign up, no tracking, no data leaves your browser.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-4">
+                    <h3>Popular Tools</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <a href="typing-test.html">Typing Speed Test</a>
+                        <div class="flex items-start mt-0.5">
+                            <a href="premium.html" class="link-premium-gold" aria-label="Visit the Premium Store">
+                                <span class="star-icon">⭐</span> Premium
+                            </a>
+                        </div>
+                        <a href="prompt-studio.html">AI Prompt Studio</a>
+                        <a href="image-compressor.html">Image Compressor</a>
+                        <a href="text-suite.html">Text &amp; Word Suite</a>
+                        <a href="grammar-checker.html">Grammar Checker</a>
+                        <a href="sip-calculator.html">SIP Calculator</a>
+                        <a href="fee-calculator.html">Fee Calculator</a>
+                        <a href="json-formatter.html">JSON Formatter</a>
+                        <a href="loan-emi.html">Loan EMI Calc</a>
+                        <a href="qr-code-generator.html">QR Code Gen</a>
+                        <a href="base64-tool.html">Base64 Tool</a>
+                        <a href="unit-converter.html">Unit Converter</a>
+                        <a href="password-generator.html">Password Gen</a>
+                        <a href="article-outline.html">Article Outline</a>
+                        <a href="ai-bio-generator.html">AI Bio Generator</a>
+                        <a href="love-calculator.html">Love Calculator</a>
+                        <a href="cv-maker.html">Resume Builder</a>
+                        <a href="text-summarizer.html">AI Summarizer</a>
+                        <a href="color-converter.html">Color Converter</a>
+                        <a href="word-scramble.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Word Scramble</a>
+                        <a href="reaction-time-test.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Reaction Test</a>
+                        <a href="math-sprint.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Math Sprint Game</a>
+                        <a href="wordstorm.html" class="footer-game-link"><span aria-hidden="true">⭐</span> WordStorm Game</a>
+                    </div>
+                    </div>
+              
+
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Company</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Legal</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="blog.html">Blog &amp; Guides</a></li>
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                                <li><a href="terms.html">Terms of Service</a></li>
+                                <li><a href="index.html">Sitemap</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. All rights reserved.</p>
+                <p>All tools run 100% client-side in your browser.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================= -->
+    <!-- SCRIPTS                                       -->
+    <!-- ============================================= -->
+    <script>
+    // ================= THEME =================
+    (function initTheme() {
+        var saved = null;
+        try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+    })();
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        var icon = document.getElementById('themeIcon');
+        var text = document.getElementById('themeText');
+        if (icon && text) {
+            if (theme === 'dark') { icon.textContent = '🌙'; text.textContent = 'Dark Mode'; }
+            else { icon.textContent = '☀️'; text.textContent = 'Light Mode'; }
+        }
+        var btn = document.getElementById('themeToggle');
+        if (btn) {
+            btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+            btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+        }
+    }
+    function toggleTheme() {
+        var cur = document.documentElement.getAttribute('data-theme') || 'light';
+        var next = cur === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+        try { localStorage.setItem('mtx-theme', next); } catch (e) {}
+    }
+    window.toggleTheme = toggleTheme;
+
+
+    // ================= WORD SCRAMBLE =================
+    (function() {
+        'use strict';
+
+        var WORDS_4 = [
+            'time','word','jump','blue','book','tree','fire','gold','moon','rain',
+            'song','wave','wind','star','road','leaf','hint','rush','fair','glow',
+            'wild','grow','deck','drum','flip','frog','milk','nest','opal','park',
+            'quiz','reef','silk','tune','vast','yarn','zone','arch','bold','calm',
+            'dash','echo','fern','gate','hero','iris','jade','kite','lamp','maze',
+            'node','oath','path','quip','rise','sage','tide','urge','vibe','warm',
+            'yolk','zeal','able','band','cave','dive','exit','fame','gain','hike',
+            'iron','join','keen','last','made','nail','open','peak','quit','race',
+            'safe','task','unit','view','wish','axle','bath','coil','dune','edit',
+            'glue','horn','inch','joke','knot','link','mask','myth','navy','oval',
+            'plot','sail','toad','undo','vase','wand','yell','zest','acid','army'
+        ];
+        var WORDS_5 = [
+            'about','apple','beach','brain','brave','brush','chase','chess','cloud',
+            'dance','dream','drift','eager','earth','flame','flock','flute','focus',
+            'forge','fruit','giant','given','globe','grace','grape','green','guard',
+            'heart','honey','house','jolly','judge','knife','laugh','light','lucky',
+            'magic','maple','march','merit','money','mount','music','noble','north',
+            'ocean','offer','olive','onion','opera','orbit','paint','panel','paper',
+            'pearl','pilot','pitch','plant','plate','point','pound','press','prime',
+            'prize','proud','queen','quest','quick','quiet','radio','raise','rapid',
+            'reach','ready','realm','relay','rider','right','river','roast','rough',
+            'round','route','royal','scale','scarf','scene','score','sense','serve'
+        ];
+        var WORDS_6 = [
+            'across','action','advice','afford','agency','almost','anchor','animal',
+            'answer','appeal','around','artist','aspect','attack','author','autumn',
+            'basket','battle','beauty','become','before','behind','belief','better',
+            'beyond','bottle','bottom','branch','breath','bridge','bright','broken',
+            'brother','budget','button','camera','candle','carbon','career','castle',
+            'center','chance','change','choice','church','circle','client','closed',
+            'coffee','column','combat','comedy','coming','common','copper','corner',
+            'cotton','county','couple','course','cousin','create','credit','crisis',
+            'custom','damage','danger','dealer','debate','decade','defend','degree',
+            'dinner','doctor','dollar','domain','double','dragon','driver','during',
+            'effect','effort','either','eleven','emerge','empire','enable','ending',
+            'energy','engine','enough','ensure','entire','equity','escape','estate',
+            'ethnic','exceed','except','excuse','expand','expect','expert','export',
+            'extend','extent','fabric','facing','factor','fairly','family','famous',
+            'father','fellow','female','figure','filter','finger','finish','fiscal',
+            'flight','flower','flying','follow','forest','forget','formal','format',
+            'former','foster','france','french','friend','future','garden','gather'
+        ];
+        var WORDS_7 = [
+            'ability','account','achieve','address','advance','airport','already',
+            'ancient','another','anxiety','anybody','applied','arrange','arrival',
+            'article','assault','attempt','attract','average','backing','balance',
+            'banking','barrier','battery','bearing','because','bedroom','believe',
+            'beneath','benefit','besides','between','billion','binding','brother',
+            'cabinet','calling','capable','capital','caption','careful','carrier',
+            'caution','ceiling','central','century','certain','chamber','channel',
+            'chapter','charity','charlie','chicken','chronic','circuit','classic',
+            'climate','collect','college','combine','command','comment','company',
+            'compare','compete','complex','concept','concern','concert','conduct'
+        ];
+        var WORDS_8 = [
+            'absolute','abstract','academic','accepted','accident','accurate',
+            'achieved','activity','actually','addition','adequate','adjacent',
+            'adjusted','advanced','advisory','advocate','aircraft','alliance',
+            'although','analysis','announce','annually','anything','anywhere',
+            'apparent','approach','approval','argument','arranged','assembly',
+            'assigned','assisted','assuming','athletic','atlantic','attached',
+            'attacked','attitude','attorney','audience','authored','autonomy',
+            'bacteria','balanced','bankrupt','baseball','bathroom','birthday',
+            'boundary','building','business','calendar','campaign','capacity'
+        ];
+
+        var STRINGS = {
+            wrong: 'Not quite. Try a different order.',
+            correct: 'Solved!',
+            timeUp: 'Time is up.',
+            hintUsed: 'One letter revealed.',
+            hintNone: 'No hints left this round.',
+            skipUsed: 'Skipped. Next word.',
+            sameScore: 'Good run. Want to beat it?',
+            newBest: 'You set a new personal best.',
+            notEnough: 'That letter is not available.',
+            shareText: function(score, rank) {
+                return 'I got ' + score + ' points (' + rank + ' tier) in 60 seconds on Word Scramble at MyToolX. Can you beat me?\nhttps://mytoolx.org/word-scramble.html?challenge=' + score;
+            }
+        };
+
+        var state = {
+            playing: false,
+            score: 0,
+            streak: 0,
+            bestStreak: 0,
+            wordsSolved: 0,
+            hintsUsed: 0,
+            timeLeft: 60,
+            roundStart: 0,
+            currentWord: '',
+            scrambled: [],
+            answer: [],
+            usedIndexes: [],
+            hintsLeft: 2,
+            skipsLeft: 2,
+            recentWords: [],
+            seenThisRound: {},
+            best: 0,
+            playedCount: 0,
+            timerRaf: null,
+            lastTick: 0
+        };
+
+        var RECENT_LIMIT = 10;
+
+        var el = {
+            scoreDisplay: document.getElementById('scoreDisplay'),
+            ringFg: document.getElementById('ringFg'),
+            ringText: document.getElementById('ringText'),
+            streakDisplay: document.getElementById('streakDisplay'),
+            streakDots: document.getElementById('streakDots'),
+            startOverlay: document.getElementById('startOverlay'),
+            endOverlay: document.getElementById('endOverlay'),
+            activeGame: document.getElementById('activeGame'),
+            scrambledTiles: document.getElementById('scrambledTiles'),
+            answerSlots: document.getElementById('answerSlots'),
+            feedback: document.getElementById('feedback'),
+            hintBtn: document.getElementById('hintBtn'),
+            skipBtn: document.getElementById('skipBtn'),
+            clearBtn: document.getElementById('clearBtn'),
+            startBtn: document.getElementById('startBtn'),
+            playAgainBtn: document.getElementById('playAgainBtn'),
+            shareBtn: document.getElementById('shareBtn'),
+            finalScore: document.getElementById('finalScore'),
+            rankBadge: document.getElementById('rankBadge'),
+            newBestBadge: document.getElementById('newBestBadge'),
+            endSub: document.getElementById('endSub'),
+            bestScoreStart: document.getElementById('bestScoreStart'),
+            hiddenInput: document.getElementById('hiddenInput'),
+            crossLinkStrip: document.getElementById('crossLinkStrip'),
+            levelNum: document.getElementById('levelNum'),
+            lenBadge: document.getElementById('lenBadge'),
+            statWords: document.getElementById('statWords'),
+            statStreak: document.getElementById('statStreak'),
+            statHints: document.getElementById('statHints'),
+            challengeBanner: document.getElementById('challengeBanner'),
+            challengeTarget: document.getElementById('challengeTarget')
+        };
+
+        // Check URL challenge parameter
+        try {
+            var params = new URLSearchParams(window.location.search);
+            var challengeVal = params.get('challenge');
+            if (challengeVal) {
+                el.challengeTarget.textContent = challengeVal;
+                el.challengeBanner.classList.add('visible');
+            }
+        } catch (e) {}
+
+        var RING_CIRCUMFERENCE = 2 * Math.PI * 28;
+
+        function loadBest() {
+            try {
+                var v = parseInt(localStorage.getItem('mtx-wordscramble-best') || '0', 10);
+                return isNaN(v) ? 0 : v;
+            } catch (e) { return 0; }
+        }
+        function saveBest(v) {
+            try { localStorage.setItem('mtx-wordscramble-best', String(v)); } catch (e) {}
+        }
+        function loadPlayed() {
+            try {
+                var v = parseInt(localStorage.getItem('mtx-wordscramble-count') || '0', 10);
+                return isNaN(v) ? 0 : v;
+            } catch (e) { return 0; }
+        }
+        function savePlayed(v) {
+            try { localStorage.setItem('mtx-wordscramble-count', String(v)); } catch (e) {}
+        }
+
+        function pickPool() {
+            var n = state.wordsSolved;
+            var r = Math.random();
+            if (n < 3) return WORDS_4;
+            if (n < 8) return (r < 0.55) ? WORDS_4 : WORDS_5;
+            if (n < 14) return (r < 0.30) ? WORDS_5 : (r < 0.85 ? WORDS_6 : WORDS_7);
+            if (n < 22) return (r < 0.40) ? WORDS_6 : (r < 0.85 ? WORDS_7 : WORDS_8);
+            return (r < 0.45) ? WORDS_7 : WORDS_8;
+        }
+
+        function pickWord() {
+            var chosen = null;
+            var attempts = 0;
+            while (attempts < 25) {
+                var pool = pickPool();
+                var candidate = pool[Math.floor(Math.random() * pool.length)];
+                if (!candidate) { attempts++; continue; }
+                if (state.seenThisRound[candidate]) { attempts++; continue; }
+                if (state.recentWords.indexOf(candidate) !== -1) { attempts++; continue; }
+                chosen = candidate;
+                break;
+            }
+            if (!chosen) {
+                var fallbackPool = pickPool();
+                var copy = fallbackPool.slice();
+                for (var i = copy.length - 1; i > 0; i--) {
+                    var j = Math.floor(Math.random() * (i + 1));
+                    var t = copy[i]; copy[i] = copy[j]; copy[j] = t;
+                }
+                for (var k = 0; k < copy.length; k++) {
+                    if (state.recentWords.indexOf(copy[k]) === -1) { chosen = copy[k]; break; }
+                }
+                if (!chosen) chosen = copy[0] || WORDS_4[0];
+            }
+
+            state.currentWord = chosen;
+            state.seenThisRound[chosen] = true;
+            state.recentWords.push(chosen);
+            if (state.recentWords.length > RECENT_LIMIT) state.recentWords.shift();
+
+            state.answer = [];
+            state.usedIndexes = [];
+            state.scrambled = scrambleWord(chosen);
+
+            renderTiles();
+            renderAnswer();
+            updateLevelBadge(chosen.length);
+        }
+
+        function scrambleWord(word) {
+            var arr = word.split('');
+            var shuffled = arr.slice();
+            var tries = 0;
+            do {
+                for (var i = shuffled.length - 1; i > 0; i--) {
+                    var j = Math.floor(Math.random() * (i + 1));
+                    var tmp = shuffled[i]; shuffled[i] = shuffled[j]; shuffled[j] = tmp;
+                }
+                tries++;
+            } while (shuffled.join('') === word && tries < 10 && word.length > 2);
+            return shuffled;
+        }
+
+        function renderTiles() {
+            var frag = document.createDocumentFragment();
+            for (var i = 0; i < state.scrambled.length; i++) {
+                var letter = state.scrambled[i];
+                var btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'letter-tile';
+                btn.textContent = letter;
+                btn.setAttribute('data-idx', String(i));
+                btn.setAttribute('aria-label', 'Letter ' + letter);
+                if (state.usedIndexes.indexOf(i) !== -1) btn.classList.add('used');
+                btn.addEventListener('click', makeTileHandler(i), { passive: false });
+                frag.appendChild(btn);
+            }
+            el.scrambledTiles.innerHTML = '';
+            el.scrambledTiles.appendChild(frag);
+        }
+
+        function makeTileHandler(idx) {
+            return function(e) {
+                e.preventDefault();
+                pickLetter(idx);
+            };
+        }
+
+        function renderAnswer() {
+            var frag = document.createDocumentFragment();
+            for (var i = 0; i < state.currentWord.length; i++) {
+                var slot = document.createElement('div');
+                slot.className = 'answer-slot';
+                if (state.answer[i]) {
+                    slot.textContent = state.answer[i];
+                    slot.classList.add('filled');
+                }
+                frag.appendChild(slot);
+            }
+            el.answerSlots.innerHTML = '';
+            el.answerSlots.appendChild(frag);
+        }
+
+        function updateLevelBadge(len) {
+            var level = Math.min(state.wordsSolved + 1, 99);
+            el.levelNum.textContent = String(level);
+            el.lenBadge.textContent = len + ' LETTERS';
+        }
+
+        function updateStreakDots() {
+            var dots = el.streakDots.querySelectorAll('.sdot');
+            var on = Math.min(state.streak, 5);
+            for (var i = 0; i < dots.length; i++) {
+                if (i < on) dots[i].classList.add('on');
+                else dots[i].classList.remove('on');
+            }
+        }
+
+        function updateHUD() {
+            el.scoreDisplay.textContent = String(state.score);
+            el.streakDisplay.textContent = String(state.streak);
+            if (state.streak >= 3) el.streakDisplay.classList.add('streak-hot');
+            else el.streakDisplay.classList.remove('streak-hot');
+            updateStreakDots();
+        }
+
+        function updateRing(seconds) {
+            var safe = Math.max(0, Math.min(60, seconds));
+            el.ringText.textContent = String(Math.ceil(safe));
+            var pct = safe / 60;
+            var offset = RING_CIRCUMFERENCE * (1 - pct);
+            el.ringFg.style.strokeDashoffset = String(offset);
+            el.ringFg.classList.toggle('warn', safe <= 20 && safe > 10);
+            el.ringFg.classList.toggle('danger', safe <= 10);
+        }
+
+        function setFeedback(msg, type) {
+            el.feedback.textContent = msg || '\u00A0';
+            el.feedback.className = 'feedback ' + (type || 'neutral');
+        }
+
+        function pickLetter(idx) {
+            if (!state.playing) return;
+            if (state.usedIndexes.indexOf(idx) !== -1) return;
+            if (state.answer.length >= state.currentWord.length) return;
+
+            state.usedIndexes.push(idx);
+            state.answer.push(state.scrambled[idx]);
+
+            renderTiles();
+            renderAnswer();
+            setFeedback('', 'neutral');
+            if (navigator.vibrate) navigator.vibrate(15); // Silent tile tap haptic
+
+            if (state.answer.length === state.currentWord.length) {
+                checkAnswer();
+            }
+        }
+
+        function checkAnswer() {
+            var attempt = state.answer.join('');
+            if (attempt === state.currentWord) handleCorrect();
+            else handleWrong();
+        }
+
+        function handleCorrect() {
+            var slots = el.answerSlots.querySelectorAll('.answer-slot');
+            for (var i = 0; i < slots.length; i++) slots[i].classList.add('correct');
+
+            var base = state.currentWord.length * 10;
+            state.streak += 1;
+            if (state.streak > state.bestStreak) state.bestStreak = state.streak;
+            var streakBonus = Math.min(state.streak, 5) * 5;
+            if (state.streak > 1) streakBonus += (state.streak - 1) * 2;
+            var gained = base + streakBonus;
+            state.score += gained;
+            state.wordsSolved += 1;
+
+            setFeedback('+' + gained + (state.streak > 1 ? '  Streak x' + state.streak : ''), 'good');
+            updateHUD();
+            if (navigator.vibrate) navigator.vibrate(40); // Silent success haptic
+            el.scoreDisplay.classList.remove('score-pop');
+            void el.scoreDisplay.offsetWidth;
+            el.scoreDisplay.classList.add('score-pop');
+
+            setTimeout(function() {
+                if (!state.playing) return;
+                pickWord();
+                setFeedback('', 'neutral');
+            }, 420);
+        }
+
+        function handleWrong() {
+            state.streak = 0;
+            updateHUD();
+            
+            var slots = el.answerSlots.querySelectorAll('.answer-slot');
+            for (var i = 0; i < slots.length; i++) slots[i].classList.add('wrong');
+            setFeedback(STRINGS.wrong, 'bad');
+            if (navigator.vibrate) navigator.vibrate([40, 30, 40]); // Silent error vibration
+
+            setTimeout(function() {
+                if (!state.playing) return;
+                state.answer = [];
+                state.usedIndexes = [];
+                renderTiles();
+                renderAnswer();
+                setFeedback('', 'neutral');
+            }, 400);
+        }
+
+        function useHint() {
+            if (!state.playing) return;
+            if (state.hintsLeft <= 0) { setFeedback(STRINGS.hintNone, 'bad'); return; }
+            var nextPos = state.answer.length;
+            if (nextPos >= state.currentWord.length) return;
+            var needed = state.currentWord[nextPos];
+            var foundIdx = -1;
+            for (var i = 0; i < state.scrambled.length; i++) {
+                if (state.usedIndexes.indexOf(i) === -1 && state.scrambled[i] === needed) { foundIdx = i; break; }
+            }
+            if (foundIdx === -1) {
+                for (var k = 0; k < state.scrambled.length; k++) {
+                    if (state.usedIndexes.indexOf(k) === -1) { foundIdx = k; break; }
+                }
+            }
+            if (foundIdx === -1) return;
+
+            state.hintsLeft -= 1;
+            state.hintsUsed += 1;
+            state.score = Math.max(0, state.score - 5);
+            updateHUD();
+            el.hintBtn.textContent = '💡 Hint · ' + state.hintsLeft;
+            if (state.hintsLeft === 0) el.hintBtn.disabled = true;
+
+            pickLetter(foundIdx);
+            setFeedback(STRINGS.hintUsed, 'neutral');
+        }
+
+        function skipWord() {
+            if (!state.playing) return;
+            if (state.skipsLeft <= 0) return;
+            state.skipsLeft -= 1;
+            state.score = Math.max(0, state.score - 10);
+            state.streak = 0;
+            updateHUD();
+            el.skipBtn.textContent = '⏭ Skip · ' + state.skipsLeft;
+            if (state.skipsLeft === 0) el.skipBtn.disabled = true;
+            setFeedback(STRINGS.skipUsed, 'neutral');
+            setTimeout(function() {
+                if (!state.playing) return;
+                pickWord();
+                setFeedback('', 'neutral');
+            }, 250);
+        }
+
+        function clearAttempt() {
+            if (!state.playing) return;
+            state.answer = [];
+            state.usedIndexes = [];
+            renderTiles();
+            renderAnswer();
+            setFeedback('', 'neutral');
+        }
+
+        function startTimer() {
+            state.roundStart = Date.now();
+            state.lastTick = 60;
+            tick();
+        }
+
+        function tick() {
+            if (!state.playing) return;
+            var elapsed = (Date.now() - state.roundStart) / 1000;
+            var remaining = Math.max(0, 60 - elapsed);
+            state.timeLeft = remaining;
+            var rounded = Math.ceil(remaining);
+            if (rounded !== state.lastTick) {
+                state.lastTick = rounded;
+                updateRing(remaining);
+            }
+            if (remaining <= 0) { endGame(); return; }
+            state.timerRaf = requestAnimationFrame(tick);
+        }
+
+        function stopTimer() {
+            if (state.timerRaf) { cancelAnimationFrame(state.timerRaf); state.timerRaf = null; }
+        }
+
+        function startGame() {
+            state.playing = true;
+            state.score = 0;
+            state.streak = 0;
+            state.bestStreak = 0;
+            state.wordsSolved = 0;
+            state.hintsUsed = 0;
+            state.hintsLeft = 2;
+            state.skipsLeft = 2;
+            state.timeLeft = 60;
+            state.recentWords = [];
+            state.seenThisRound = {};
+            state.answer = [];
+            state.usedIndexes = [];
+
+            el.hintBtn.disabled = false;
+            el.hintBtn.textContent = '💡 Hint · 2';
+            el.skipBtn.disabled = false;
+            el.skipBtn.textContent = '⏭ Skip · 2';
+
+            el.startOverlay.classList.add('hidden');
+            el.endOverlay.classList.add('hidden');
+            el.activeGame.style.display = 'block';
+            el.crossLinkStrip.classList.remove('visible');
+
+            el.ringFg.style.strokeDashoffset = '0';
+            el.ringFg.classList.remove('warn', 'danger');
+            updateRing(60);
+            updateHUD();
+            pickWord();
+            setFeedback('', 'neutral');
+            startTimer();
+
+            setTimeout(function() {
+                try {
+                    el.hiddenInput.focus({ preventScroll: true });
+                } catch (e) {
+                    el.hiddenInput.focus();
+                }
+            }, 60);
+        }
+
+        function rankFor(score) {
+            if (score >= 1500) return { label: 'Elite', cls: 'elite' };
+            if (score >= 800) return { label: 'Sharp', cls: 'sharp' };
+            if (score >= 350) return { label: 'Steady', cls: 'steady' };
+            return { label: 'Warming Up', cls: 'steady' };
+        }
+
+        function endGame() {
+            state.playing = false;
+            stopTimer();
+            state.timeLeft = 0;
+            updateRing(0);
+            updateHUD();
+
+            var prevBest = loadBest();
+            var isNewBest = state.score > prevBest && state.score > 0;
+            if (isNewBest) saveBest(state.score);
+            state.best = isNewBest ? state.score : prevBest;
+            state.playedCount = loadPlayed() + 1;
+            savePlayed(state.playedCount);
+
+            var rank = rankFor(state.score);
+            el.finalScore.textContent = String(state.score);
+            el.rankBadge.textContent = rank.label;
+            el.rankBadge.className = 'result-rank ' + rank.cls;
+            el.newBestBadge.classList.toggle('hidden', !isNewBest);
+            el.statWords.textContent = String(state.wordsSolved);
+            el.statStreak.textContent = String(state.bestStreak);
+            el.statHints.textContent = String(state.hintsUsed);
+
+            if (isNewBest) {
+                el.endSub.textContent = STRINGS.newBest;
+            } else if (state.best - state.score > 0 && state.best - state.score <= 60) {
+                el.endSub.textContent = 'You were just ' + (state.best - state.score) + ' points from your best. One more try?';
+            } else {
+                el.endSub.textContent = 'Your best is ' + state.best + '. ' + STRINGS.sameScore;
+            }
+
+            el.activeGame.style.display = 'none';
+            el.endOverlay.classList.remove('hidden');
+            el.bestScoreStart.textContent = String(state.best);
+            el.crossLinkStrip.classList.add('visible');
+
+            try { el.hiddenInput.blur(); } catch (e) {}
+        }
+
+        function shareScore() {
+            var rank = rankFor(state.score).label;
+            var text = STRINGS.shareText(state.score, rank);
+            var url = 'https://mytoolx.org/word-scramble.html?challenge=' + state.score;
+
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Word Scramble by MyToolX',
+                    text: text,
+                    url: url
+                }).catch(function() { copyFallback(text); });
+            } else {
+                copyFallback(text);
+            }
+        }
+
+        function copyFallback(text) {
+            var done = function() {
+                var old = el.shareBtn.textContent;
+                el.shareBtn.textContent = '✓ Copied. Paste to share.';
+                setTimeout(function() { el.shareBtn.textContent = old; }, 2200);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(done).catch(function() {
+                    window.prompt('Copy your score and share:', text);
+                });
+            } else {
+                window.prompt('Copy your score and share:', text);
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (!state.playing) {
+                if (e.key === 'Enter') {
+                    if (!el.startOverlay.classList.contains('hidden')) { e.preventDefault(); startGame(); }
+                    else if (!el.endOverlay.classList.contains('hidden')) { e.preventDefault(); startGame(); }
+                }
+                return;
+            }
+            if (e.key === 'Escape') { clearAttempt(); return; }
+            if (e.key === 'Backspace') {
+                e.preventDefault();
+                if (state.answer.length > 0) {
+                    state.answer.pop();
+                    state.usedIndexes.pop();
+                    renderTiles();
+                    renderAnswer();
+                    setFeedback('', 'neutral');
+                }
+                return;
+            }
+            if (e.key === ' ') { e.preventDefault(); return; }
+            if (e.key.length === 1 && /[a-zA-Z]/.test(e.key)) {
+                var target = e.key.toUpperCase();
+                for (var i = 0; i < state.scrambled.length; i++) {
+                    if (state.usedIndexes.indexOf(i) === -1 && state.scrambled[i] === target) {
+                        pickLetter(i);
+                        return;
+                    }
+                }
+                setFeedback(STRINGS.notEnough, 'bad');
+            }
+        });
+
+        el.startBtn.addEventListener('click', startGame);
+        el.playAgainBtn.addEventListener('click', startGame);
+        el.shareBtn.addEventListener('click', shareScore);
+        el.hintBtn.addEventListener('click', useHint);
+        el.skipBtn.addEventListener('click', skipWord);
+        el.clearBtn.addEventListener('click', clearAttempt);
+
+        state.best = loadBest();
+        state.playedCount = loadPlayed();
+        el.bestScoreStart.textContent = String(state.best);
+        updateRing(60);
+        updateHUD();
+
+    })();
+    </script>
+
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
+    <script>
+      window.addEventListener('load', function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W8KM3G3BYL');
+      });
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
+</body>
+</html>

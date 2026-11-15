@@ -22,6 +22,10 @@
     <!-- FAVICON (inline SVG emoji — zero HTTP request) -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
 
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4F46E5">
+<link rel="apple-touch-icon" href="icon-192.png">
+
     <!-- OPEN GRAPH -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="MyToolX">
@@ -74,9 +78,8 @@
         {
           "@type": "FAQPage",
           "mainEntity": [
-            { "@type": "Question", "name": "What is the 'Ask / Invoice Amount'?", "acceptedAnswer": { "@type": "Answer", "text": "It is the reverse fee calculation showing the total amount you must invoice so that, after payment-gateway deductions, you receive your exact target net payout. If you invoice X, you receive X minus the fee. This tool solves for the X that nets you your target." } },
-            { "@type": "Question", "name": "How are contract earnings calculated?", "acceptedAnswer": { "@type": "Answer", "text": "Hourly rate multiplied by weekly hours across 52 weeks per year, using 4.3333 weeks per month (365 divided by 12 divided by 7) for accurate monthly projection." } },
-            { "@type": "Question", "name": "Are the fixed gateway fees accurate for every currency?", "acceptedAnswer": { "@type": "Answer", "text": "The fixed component ($0.30 Stripe, $0.49 PayPal) is the US standard. Other regions may charge a different fixed fee. Check your gateway's official pricing for your country." } }
+            { "@type": "Question", "name": "What is the 'Ask / Invoice Amount'?", "acceptedAnswer": { "@type": "Answer", "text": "The reverse fee calculation showing the total amount you must invoice so that, after payment-gateway deductions, you receive your exact net payout. If you invoice X, you receive X minus the fee. This tool solves for the X that nets you your target." } },
+            { "@type": "Question", "name": "Does the currency selector apply to both calculators?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Change the currency once at the top of the tool panel. The payment fee and contract earnings outputs both update instantly." } }
           ]
         }
       ]
@@ -346,7 +349,7 @@
             <div class="pb-4 border-b" style="border-color: var(--card-border);">
                 <h2 class="text-xl font-bold">💳 How to Calculate Stripe and PayPal Fees (and Set Your Freelance Rate)</h2>
                 <p class="text-sm leading-relaxed mt-2 muted">
-                    Every payment you receive through Stripe or PayPal loses a slice to processing fees. For a $100 invoice, Stripe keeps about $3.20 and PayPal keeps about $3.98 — small per transaction, but 3–4% of everything you earn over a year. This calculator shows exactly what each gateway takes, what lands in your account, and the invoice amount you need to send so your net payout matches your target. A second tab reverse-calculates the hourly rate that produces a desired monthly or annual income.
+                    Every payment you receive through Stripe or PayPal loses a slice to processing fees. For a $100 invoice, Stripe keeps about $3.20 and PayPal keeps about $3.98 small per transaction, but 3–4% of everything you earn over a year. This calculator shows exactly what each gateway takes, what lands in your account, and the invoice amount you need to send so your net payout matches your target. A second tab reverse-calculates the hourly rate that produces a desired monthly or annual income.
                 </p>
             </div>
 
@@ -356,8 +359,8 @@
                     The calculator applies the standard US pricing for both gateways: <strong>Stripe at 2.9% + $0.30</strong> per successful charge and <strong>PayPal Commercial at 3.49% + $0.49</strong>. It supports two directions:
                 </p>
                 <ul class="space-y-2 text-sm muted">
-                    <li class="flex items-start gap-2"><span class="brand font-bold">1.</span><span><strong>I charge X</strong> — enter the gross amount you invoice. The tool shows the fee and the net amount you receive.</span></li>
-                    <li class="flex items-start gap-2"><span class="brand font-bold">2.</span><span><strong>I want to receive X</strong> — enter your target net payout. The tool solves the gross invoice required so that, after fees, exactly X lands in your account.</span></li>
+                    <li class="flex items-start gap-2"><span class="brand font-bold">1.</span><span><strong>I charge X</strong> - enter the gross amount you invoice. The tool shows the fee and the net amount you receive.</span></li>
+                    <li class="flex items-start gap-2"><span class="brand font-bold">2.</span><span><strong>I want to receive X</strong> - enter your target net payout. The tool solves the gross invoice required so that, after fees, exactly X lands in your account.</span></li>
                 </ul>
             </div>
 
@@ -388,11 +391,11 @@
             <div class="space-y-4">
                 <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
                     <h3 class="text-sm font-bold mb-1">What is the 'Ask / Invoice Amount'?</h3>
-                    <p class="text-xs sm:text-sm muted leading-relaxed">The reverse fee calculation showing the total amount you must invoice so that, after payment-gateway deductions, you receive your exact net payout. If you invoice X, you receive X − fee. This tool solves for the X that nets you your target.</p>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">The reverse fee calculation showing the total amount you must invoice so that, after payment-gateway deductions, you receive your exact net payout. If you invoice X, you receive X−fee. This tool solves for the X that nets you your target.</p>
                 </div>
                 <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
                     <h3 class="text-sm font-bold mb-1">Does the currency selector apply to both calculators?</h3>
-                    <p class="text-xs sm:text-sm muted leading-relaxed">Yes. Change the currency once at the top of the tool panel — the payment fee and contract earnings outputs both update instantly.</p>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">Yes. Change the currency once at the top of the tool panel the payment fee and contract earnings outputs both update instantly.</p>
                 </div>
             </div>
         </section>
@@ -468,6 +471,8 @@
                         <a href="color-converter.html">Color Converter</a>
 			<a href="math-sprint.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Math Sprint Game</a>
                         <a href="wordstorm.html" class="footer-game-link"><span aria-hidden="true">⭐</span> WordStorm Game</a>
+			<a href="reaction-time-test.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Reaction Test</a>
+			<a href="word-scramble.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Word Scramble</a>
                     </div>
                 </div>
 

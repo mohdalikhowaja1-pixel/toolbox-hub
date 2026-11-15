@@ -22,6 +22,10 @@
     <!-- FAVICON (inline SVG emoji — zero HTTP request) -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📱</text></svg>">
 
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4F46E5">
+<link rel="apple-touch-icon" href="icon-192.png">
+
     <!-- OPEN GRAPH -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="MyToolX">
@@ -52,7 +56,7 @@
     <link rel="dns-prefetch" href="//refer.micro1.ai">
 
     <!-- QR CODE LIBRARY (Must be loaded before tool usage) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
 
     <script type="application/ld+json">
     {
@@ -78,7 +82,8 @@
           "@type": "FAQPage",
           "mainEntity": [
             { "@type": "Question", "name": "How do I generate and download a QR Code?", "acceptedAnswer": { "@type": "Answer", "text": "Simply enter your text or website URL into the input box. The QR code generates live instantly. Click Download HD QR to save high quality PNG image." } },
-            { "@type": "Question", "name": "Are the generated QR codes permanent?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, all static QR codes created with this tool do not expire and can be scanned indefinitely." } }
+            { "@type": "Question", "name": "Are the generated QR codes permanent?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, all static QR codes created with this tool do not expire and can be scanned indefinitely." } },
+            { "@type": "Question", "name": "Is this QR code generator completely free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, 100% free with unlimited scans, no hidden fees, no registration, and no expiration date on any created codes." } }
           ]
         }
       ]
@@ -358,6 +363,8 @@
                         <a href="color-converter.html">Color Converter</a>
 			<a href="math-sprint.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Math Sprint Game</a>
                         <a href="wordstorm.html" class="footer-game-link"><span aria-hidden="true">⭐</span> WordStorm Game</a>
+			<a href="reaction-time-test.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Reaction Test</a>
+			<a href="word-scramble.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Word Scramble</a>
                     </div>
                 </div>
 

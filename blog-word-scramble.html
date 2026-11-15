@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+    (function() {
+        var saved = null;
+        try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+    })();
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>How Word Scramble Games Boost Memory, Spelling & Vocabulary 🔤 | MyToolX</title>
+    <meta name="description" content="Discover why 60-second word scramble puzzles sharpen pattern recognition, expand vocabulary, and improve focus. Play Word Scramble for free.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://mytoolx.org/blog-word-scramble.html">
+
+    <!-- Favicon (inline SVG) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔤</text></svg>">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4F46E5">
+<link rel="apple-touch-icon" href="icon-192.png">
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://refer.micro1.ai">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:url" content="https://mytoolx.org/blog-word-scramble.html">
+    <meta property="og:title" content="How Word Scramble Games Boost Memory, Spelling & Vocabulary 🔤 | MyToolX">
+    <meta property="og:description" content="Discover why 60-second word scramble puzzles sharpen pattern recognition, expand vocabulary, and improve focus.">
+    <meta property="og:image" content="https://mytoolx.org/og-image-v2.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:locale" content="en_US">
+
+    <!-- TWITTER / X CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mytoolx.org/blog-word-scramble.html">
+    <meta name="twitter:title" content="How Word Scramble Games Boost Memory, Spelling & Vocabulary 🔤 | MyToolX">
+    <meta name="twitter:description" content="Discover why 60-second word scramble puzzles sharpen pattern recognition, expand vocabulary, and improve focus.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
+        }
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
+        }
+        html, body { overflow-x: clip; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+        
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
+        .btn-primary { background: var(--primary); color: #fff !important; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+        
+        #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
+        :focus-visible { outline: none; }
+        button:focus-visible, a:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        ::selection { background: rgba(79,70,229,0.25); }
+
+        /* Article Content Styles */
+        .article-content h2 { font-size: 1.5rem; font-weight: 800; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--text); border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; }
+        .article-content h3 { font-size: 1.25rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; color: var(--text); }
+        .article-content p { margin-bottom: 1.25rem; line-height: 1.8; color: var(--text-muted); font-size: 1rem; }
+        .article-content ul, .article-content ol { margin: 0 0 1.5rem 1.5rem; line-height: 1.8; color: var(--text-muted); font-size: 1rem; }
+        .article-content li { margin-bottom: 0.5rem; list-style: disc; }
+        .article-content ol li { list-style: decimal; }
+        .article-content a { color: var(--primary); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+        .article-content a:hover { color: var(--primary-hover); }
+        .article-content strong { color: var(--text); font-weight: 700; }
+        
+        .cta-box { background: rgba(79,70,229,0.05); border: 2px solid var(--primary); border-radius: 1rem; padding: 2rem; margin: 2.5rem 0; text-align: center; }
+    </style>
+
+    <!-- Article JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "How Word Scramble Games Boost Memory, Spelling, and Vocabulary",
+      "description": "Discover why 60-second word scramble puzzles sharpen pattern recognition, expand vocabulary, and improve focus.",
+      "author": {
+        "@type": "Organization",
+        "name": "MyToolX Team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "MyToolX",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://mytoolx.org/og-image.png"
+        }
+      },
+      "datePublished": "2026-11-14",
+      "dateModified": "2026-11-14",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://mytoolx.org/blog-word-scramble.html"
+      }
+    }
+    </script>
+</head>
+<body class="font-sans min-h-screen flex flex-col justify-between">
+
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2">
+            <div class="flex items-center justify-between gap-2 sm:gap-4">
+                <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+                    <a href="index.html" class="hidden sm:flex btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold items-center gap-1">← All Tools</a>
+                    <a href="index.html" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
+                        <div class="logo-mark w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base flex items-center justify-center">M<span class="x">X</span></div>
+                        <span class="logo-wordmark text-base sm:text-xl block">MyTool<span class="x">X</span></span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                   <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch theme" title="Toggle Light/Dark Mode" class="h-8 sm:h-10 px-2 sm:px-3 rounded-xl flex items-center justify-center gap-1.5 text-[10px] sm:text-xs font-bold transition-all hover:opacity-80" style="background: var(--chip-bg); color: var(--chip-text);">
+                        <span id="themeIcon" aria-hidden="true">🌙</span>
+                        <span id="themeText" class="hidden sm:block">Dark Mode</span>
+                    </button>
+                    <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
+                        💼 Remote Jobs ↗
+                    </a>
+                    <a href="cv-maker.html" class="inline-flex text-xs font-bold text-white px-3 py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
+                        📄 Live CV
+                    </a>
+                </div>
+            </div>
+            <div class="mt-2 sm:hidden">
+                <a href="index.html" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">← Back to All Tools</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4 py-10 w-full flex-grow">
+        
+        <nav class="text-xs font-semibold mb-6 flex items-center gap-1 muted" aria-label="Breadcrumb">
+            <a href="index.html" class="hover:text-indigo-500">Home</a><span>/</span>
+            <a href="blog.html" class="hover:text-indigo-500">Blog</a><span>/</span>
+            <span style="color: var(--text); font-weight: 700;">Word Scramble Guide</span>
+        </nav>
+
+        <article class="surface rounded-3xl shadow-xl p-6 sm:p-10 mb-10">
+            
+            <h1 class="text-3xl sm:text-4xl font-black mb-4" style="color: var(--text);">🔤 How Word Scramble Games Boost Memory, Spelling & Vocabulary</h1>
+            
+            <div class="flex items-center gap-2 text-xs font-bold muted mb-8 pb-6 border-b" style="border-color: var(--card-border);">
+                <span>By MyToolX Team</span>
+                <span>•</span>
+                <span>Updated: 2026</span>
+                <span>•</span>
+                <span>Reading time: 5 min</span>
+            </div>
+
+            <div class="article-content">
+                <p>When you read a normal sentence, your brain takes shortcuts. As long as the first and last letters of a word are in place, you barely notice the middle letters at all. That is great for skimming emails, but it means your brain rarely has to work hard to recall exact spelling or word structure.</p>
+                
+                <p>Word scrambles flip that habit upside down. By mixing up the letters of a familiar word, a scramble forces your brain out of autopilot and into active pattern recognition. That is why we created our <a href="word-scramble.html">free 60-Second Word Scramble</a>—a fast, zero-distraction browser puzzle that turns a one-minute break into a genuine workout for your vocabulary and working memory.</p>
+
+                <h2>Why Unscrambling Words Is Such an Effective Brain Workout</h2>
+                <p>Unlike passive scrolling, solving an anagram or scrambled word requires several cognitive skills to fire together at once:</p>
+
+                <h3>1. Deeper Active Recall</h3>
+                <p>Recognizing a word on a page is easy; reconstructing it from jumbled tiles is active recall. When you rearrange letters mentally until a real word clicks into place, you strengthen the neural retrieval pathways for that word, making it faster to summon when you are writing or speaking later.</p>
+
+                <h3>2. Stronger Spelling and Phonetic Awareness</h3>
+                <p>Relying on autocorrect all day slowly dulls our natural spelling instincts. Unscrambling forces you to test which consonants pair together naturally and where vowels belong. Over time, spotting common letter clusters becomes automatic—a skill that also helps when polishing drafts with our <a href="grammar-checker.html">Grammar Checker</a>.</p>
+
+                <h3>3. Rapid Pattern Recognition Under Pressure</h3>
+                <p>Adding a 60-second clock trains your brain to scan visual information quickly without panicking. Instead of staring blankly at six random letters, your eyes learn to group prefixes, suffixes, and root structures on sight.</p>
+
+                <div class="cta-box">
+                    <h3 class="text-xl font-bold mb-2" style="color: var(--text);">How many words can you solve in 60 seconds?</h3>
+                    <p class="text-sm muted mb-4">Tap the tiles or type on your keyboard. Build streaks, unlock longer words, and beat your personal best.</p>
+                    <a href="word-scramble.html" class="btn-3d btn-primary inline-flex px-6 py-3 rounded-xl text-sm font-bold" style="text-decoration: none !important; color: #FFFFFF !important;">Play Word Scramble Free 🔤</a>
+                </div>
+
+                <h2>How to Play Word Scramble on MyToolX</h2>
+                <p>You do not need to download an app or create an account. Everything runs directly in your browser on both mobile phones and desktop computers:</p>
+                
+                <ol>
+                    <li><strong>Tap Start Game.</strong> A 60-second countdown ring begins immediately.</li>
+                    <li><strong>Unscramble the tiles.</strong> Tap the letter tiles on your screen—or type directly on your keyboard—in the order that spells a valid English word.</li>
+                    <li><strong>Build your streak.</strong> Every solved word adds points and increases your streak bonus. As you solve more words, the game automatically scales up from 4-letter warm-ups to 7- and 8-letter challenges.</li>
+                    <li><strong>Use hints or skips wisely.</strong> Stuck on a tricky 7-letter word? Use one of your two Hints to lock in the next letter, or Skip to protect your momentum before the clock runs down.</li>
+                    <li><strong>Share your challenge link.</strong> When the round ends, send your score link to friends to see if they can beat your tier.</li>
+                </ol>
+
+                <h2>4 Proven Tricks to Beat High Scores in Word Scramble</h2>
+                <ul>
+                    <li><strong>Hunt for common endings first.</strong> Look at the available tiles for <em>-ING</em>, <em>-TION</em>, <em>-ED</em>, <em>-ER</em>, or <em>-LY</em>. Locking down the last two or three letters instantly shrinks the remaining puzzle.</li>
+                    <li><strong>Separate vowels from consonants mentally.</strong> Count how many vowels you have. If a 6-letter scramble has three vowels (like A, E, O), they almost certainly alternate with consonants rather than clustering together.</li>
+                    <li><strong>Spot consonant blends early.</strong> Pairs like <em>CH</em>, <em>SH</em>, <em>TH</em>, <em>BR</em>, <em>TR</em>, and <em>ST</em> act like single building blocks. Grouping them together cuts a 6-tile problem down to four pieces.</li>
+                    <li><strong>Keep your streak alive.</strong> Streak multipliers add huge bonus points on consecutive solves. Spending a 5-point hint to save a 5x streak is almost always smarter than wasting ten seconds staring at one word.</li>
+                </ul>
+
+                <h2>Pair Word Puzzles With Daily Writing Habits</h2>
+                <p>If you enjoy testing your word skills, combine a daily round of <a href="word-scramble.html">Word Scramble</a> with our <a href="wordstorm.html">WordStorm typing arcade</a> or <a href="text-suite.html">Text &amp; Word Suite</a>. Together, they keep your vocabulary sharp, your spelling clean, and your typing speed effortless.</p>
+            </div>
+
+            <!-- READ NEXT NAVIGATION -->
+            <div class="mt-12 pt-8 border-t" style="border-color: var(--card-border);">
+                <h3 class="text-lg font-bold mb-4" style="color: var(--text);">📖 Read Next</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <a href="blog-reaction-time.html" class="surface p-5 rounded-xl border hover:border-indigo-500 transition-colors group" style="text-decoration: none !important;">
+                        <span class="text-xs font-bold text-indigo-500 uppercase tracking-wider mb-1 block">Next Guide</span>
+                        <span class="font-bold group-hover:text-indigo-500 transition-colors" style="color: var(--text);">🎯 What Is Average Human Reaction Time?</span>
+                    </a>
+                    <a href="blog-wordstorm.html" class="surface p-5 rounded-xl border hover:border-indigo-500 transition-colors group" style="text-decoration: none !important;">
+                        <span class="text-xs font-bold text-indigo-500 uppercase tracking-wider mb-1 block">More Word Games</span>
+                        <span class="font-bold group-hover:text-indigo-500 transition-colors" style="color: var(--text);">🌪️ Why Spatial Typing Games Save Your Day</span>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+                <div class="lg:col-span-5">
+                    <a href="index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 pr-4">
+                        MyToolX is a free suite of client side web tools for writers, freelancers and developers. No sign up, no tracking, no data leaves your browser.
+                    </p>
+                </div>
+                <div class="lg:col-span-4">
+                    <h3>Popular Tools</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <a href="typing-test.html">Typing Speed Test</a>
+                        <div class="flex items-start mt-0.5"> 
+                            <a href="premium.html" class="link-premium-gold" aria-label="Visit the Premium Store">
+                                <span class="star-icon">⭐</span> Premium
+                            </a>
+                        </div>
+                        <a href="prompt-studio.html">AI Prompt Studio</a>
+                        <a href="image-compressor.html">Image Compressor</a>
+                        <a href="text-suite.html">Text &amp; Word Suite</a>
+                        <a href="grammar-checker.html">Grammar Checker</a>
+                        <a href="sip-calculator.html">SIP Calculator</a>
+                        <a href="fee-calculator.html">Fee Calculator</a>
+                        <a href="json-formatter.html">JSON Formatter</a>
+                        <a href="loan-emi.html">Loan EMI Calc</a>
+                        <a href="qr-code-generator.html">QR Code Gen</a>
+                        <a href="base64-tool.html">Base64 Tool</a>
+                        <a href="unit-converter.html">Unit Converter</a>
+                        <a href="password-generator.html">Password Gen</a>
+                        <a href="article-outline.html">Article Outline</a>
+                        <a href="ai-bio-generator.html">AI Bio Generator</a>
+                        <a href="love-calculator.html">Love Calculator</a>
+                        <a href="cv-maker.html">Resume Builder</a> 
+                        <a href="text-summarizer.html">AI Summarizer</a>
+                        <a href="color-converter.html">Color Converter</a>
+                        <a href="reaction-time-test.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Reaction Test</a>
+                        <a href="word-scramble.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Word Scramble</a>
+                        <a href="math-sprint.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Math Sprint Game</a>
+                        <a href="wordstorm.html" class="footer-game-link"><span aria-hidden="true">⭐</span> WordStorm Game</a>
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Company</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Legal</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="blog.html">Blog &amp; Guides</a></li>
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                                <li><a href="terms.html">Terms of Service</a></li>
+                                <li><a href="index.html">Sitemap</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. All rights reserved.</p>
+                <p>All tools run 100% client side in your browser.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function initTheme() { 
+            var saved = null; 
+            try { saved = localStorage.getItem('mtx-theme'); } catch (e) {} 
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; 
+            var theme = saved || (prefersDark ? 'dark' : 'light'); 
+            applyTheme(theme); 
+        })();
+        
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            var icon = document.getElementById('themeIcon');
+            var text = document.getElementById('themeText');
+            if (icon && text) {
+                if (theme === 'dark') { icon.textContent = '🌙'; text.textContent = 'Dark Mode'; } 
+                else { icon.textContent = '☀️'; text.textContent = 'Light Mode'; }
+            }
+            var btn = document.getElementById('themeToggle');
+            if (btn) {
+                btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+                btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+            }
+        }
+        
+        function toggleTheme() { 
+            var cur = document.documentElement.getAttribute('data-theme') || 'light'; 
+            var next = cur === 'dark' ? 'light' : 'dark'; 
+            applyTheme(next); 
+            try { localStorage.setItem('mtx-theme', next); } catch (e) {} 
+        }
+        window.toggleTheme = toggleTheme;
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
+    <script>
+      window.addEventListener('load', function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W8KM3G3BYL');
+      });
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
+</body>
+</html>

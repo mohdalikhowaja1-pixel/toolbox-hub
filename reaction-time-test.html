@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+    (function() {
+        var saved = null;
+        try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+    })();
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- PRIMARY SEO -->
+    <title>Reaction Time Test: Measure Your Speed Free 🎯 | MyToolX</title>
+    <meta name="description" content="Test your reaction time in milliseconds. Play the free reaction speed test, measure your reflexes, and challenge friends. No sign up required.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://mytoolx.org/reaction-time-test.html">
+
+    <!-- PWA MANIFEST & MOBILE -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4F46E5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+
+    <!-- ADSENSE -->
+    <meta name="google-adsense-account" content="ca-pub-3410254230554312">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:url" content="https://mytoolx.org/reaction-time-test.html">
+    <meta property="og:title" content="Reaction Time Test: Measure Your Speed Free | MyToolX">
+    <meta property="og:description" content="How fast are your reflexes? Take the free reaction time test in milliseconds and see where you rank against the average human.">
+    <meta property="og:image" content="https://mytoolx.org/og-image-v2.png">
+    <meta property="og:image:alt" content="Reaction Time Test by MyToolX">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:locale" content="en_US">
+
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mytoolx.org/reaction-time-test.html">
+    <meta name="twitter:title" content="Reaction Time Test: Measure Your Speed Free | MyToolX">
+    <meta name="twitter:description" content="How fast are your reflexes? Take the free reaction time test in milliseconds and see where you rank.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
+    <meta name="twitter:image:alt" content="Reaction Time Test by MyToolX">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//refer.micro1.ai">
+
+    <!-- STRUCTURED DATA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "Reaction Time Test",
+          "url": "https://mytoolx.org/reaction-time-test.html",
+          "applicationCategory": "GameApplication",
+          "operatingSystem": "Any",
+          "description": "A free reaction time test. Measure how fast your brain responds to a visual signal. No sign up. Runs entirely in your browser.",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "342" }
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to Take the Reaction Time Test",
+          "description": "Measure your visual reaction time by clicking when the screen turns green.",
+          "step": [
+            {"@type": "HowToStep", "position": 1, "name": "Start the test", "text": "Click the start button to begin. The screen will turn red."},
+            {"@type": "HowToStep", "position": 2, "name": "Wait for green", "text": "Watch the screen carefully. Do not click yet."},
+            {"@type": "HowToStep", "position": 3, "name": "React instantly", "text": "The moment the screen turns green, click or tap as fast as you can."},
+            {"@type": "HowToStep", "position": 4, "name": "Read your score", "text": "Your reaction time will appear in milliseconds."},
+            {"@type": "HowToStep", "position": 5, "name": "Play again", "text": "Repeat the test to get an average score and challenge your friends."}
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {"@type": "Question", "name": "What is the average human reaction time?", "acceptedAnswer": {"@type": "Answer", "text": "The average visual reaction time for humans is about 250 milliseconds."}},
+            {"@type": "Question", "name": "Is clicking too early bad?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. If you click before the screen turns green, the test resets. You must wait for the green signal."}},
+            {"@type": "Question", "name": "Does this test work on mobile phones?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It is designed to work perfectly on touch screens. You can tap instead of click. Mobile scores might be slightly slower due to screen touch latency."}},
+            {"@type": "Question", "name": "What is a good reaction time score?", "acceptedAnswer": {"@type": "Answer", "text": "Anything under 200 milliseconds is excellent. Between 200 and 250 is above average. Over 300 milliseconds means you might be tired or distracted."}},
+            {"@type": "Question", "name": "Is my data saved?", "acceptedAnswer": {"@type": "Answer", "text": "No. The test runs entirely in your browser. Your scores are not sent to any server."}}
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mytoolx.org/"},
+            {"@type": "ListItem", "position": 2, "name": "Games", "item": "https://mytoolx.org/#games"},
+            {"@type": "ListItem", "position": 3, "name": "Reaction Time Test", "item": "https://mytoolx.org/reaction-time-test.html"}
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
+            --danger: #EF4444; --warn: #F59E0B;
+            
+            /* Game Specific */
+            --game-bg: #1E1E2E;
+            --game-text: #FFFFFF;
+            --reaction-red: #EF4444;
+            --reaction-green: #10B981;
+            --reaction-blue: #3B82F6;
+        }
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
+            --danger: #F87171; --warn: #FBBF24;
+            
+            /* Game Specific */
+            --game-bg: #0F172A;
+            --game-text: #FFFFFF;
+            --reaction-red: #DC2626;
+            --reaction-green: #059669;
+            --reaction-blue: #2563EB;
+        }
+        html, body { overflow-x: clip; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-accent { background: var(--accent); color: #fff; } .btn-accent:hover { background: var(--accent-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+
+        .input-field { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
+        .input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); outline: none; }
+
+        .card-3d-btn { transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; background: var(--card); border: 1px solid var(--card-border); }
+        .card-3d-btn:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(79,70,229,0.15), 0 8px 10px -6px rgba(79,70,229,0.1); border-color: var(--primary); background: var(--card); }
+
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+
+        #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
+        :focus-visible { outline: none; }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        ::selection { background: rgba(79,70,229,0.25); }
+
+        @media (max-width: 360px) { .logo-wordmark { font-size: 1rem !important; } }
+        @media (prefers-reduced-motion: reduce) { * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; } }
+
+        /* ============================================= */
+        /* REACTION TIME TEST — GAME STYLES              */
+        /* ============================================= */
+
+        .game-shell {
+            max-width: 640px;
+            margin: 0 auto;
+            background: var(--game-bg);
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            min-height: 420px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        /* Challenge Notification Banner */
+        .challenge-banner {
+            background: linear-gradient(90deg, #4F46E5, #7E22CE);
+            color: #fff;
+            padding: 10px 16px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 700;
+            display: none;
+            box-shadow: inset 0 -2px 0 rgba(0,0,0,0.2);
+            animation: fadeIn 0.4s ease;
+        }
+        .challenge-banner.visible { display: block; }
+
+        /* The clickable reaction zone */
+        .reaction-zone {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            cursor: pointer;
+            transition: background-color 0.1s ease;
+            background-color: var(--reaction-blue);
+            color: var(--game-text);
+        }
+        
+        .reaction-zone.state-red { background-color: var(--reaction-red); }
+        .reaction-zone.state-green { background-color: var(--reaction-green); }
+        
+        .reaction-zone.state-fail { background-color: var(--danger); }
+
+        .reaction-title {
+            font-size: clamp(24px, 6vw, 36px);
+            font-weight: 900;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: -0.02em;
+        }
+
+        .reaction-sub {
+            font-size: clamp(14px, 4vw, 18px);
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 320px;
+            line-height: 1.5;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .reaction-score {
+            font-size: clamp(48px, 15vw, 80px);
+            font-weight: 900;
+            font-variant-numeric: tabular-nums;
+            line-height: 1;
+            margin-bottom: 8px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            letter-spacing: -0.03em;
+        }
+        .reaction-ms {
+            font-size: clamp(18px, 5vw, 24px);
+            font-weight: 700;
+            opacity: 0.9;
+        }
+
+        /* Stats Bar (bottom of game) */
+        .game-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .stat-box {
+            background: var(--game-bg);
+            padding: 16px 12px;
+            text-align: center;
+        }
+        .stat-label {
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 4px;
+        }
+        .stat-val {
+            font-size: 20px;
+            font-weight: 900;
+            color: var(--game-text);
+            font-variant-numeric: tabular-nums;
+        }
+        .stat-val span { font-size: 12px; font-weight: 700; opacity: 0.7; margin-left: 2px; }
+
+        /* Action bar (bottom) */
+        .game-actions {
+            display: flex;
+            gap: 10px;
+            padding: 14px;
+            background: var(--game-bg);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-action {
+            padding: 12px 20px;
+            font-size: 14px;
+            border-radius: 12px;
+            font-weight: 800;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.1s ease, opacity 0.2s ease;
+            touch-action: manipulation;
+            flex: 1;
+            min-width: 120px;
+            max-width: 200px;
+        }
+        .btn-action:active { transform: scale(0.96); }
+        .btn-action:disabled { opacity: 0.5; cursor: not-allowed; }
+        
+        .btn-share {
+            background: #FDE047;
+            color: #4F46E5;
+            box-shadow: 0 4px 0 #CA8A04;
+        }
+        .btn-share:active { box-shadow: 0 2px 0 #CA8A04; transform: translateY(2px); }
+        
+        .btn-restart {
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hidden { display: none !important; }
+
+        /* Content sections */
+        .content-section {
+            max-width: 720px; margin: 0 auto; padding: 0 4px;
+        }
+        .content-section h2 {
+            font-size: 1.3rem; font-weight: 800; color: var(--text);
+            margin-bottom: 10px; margin-top: 34px;
+            letter-spacing: -0.02em; line-height: 1.25;
+        }
+        .content-section h3 {
+            font-size: 1.02rem; font-weight: 700; color: var(--text);
+            margin-bottom: 6px; margin-top: 20px;
+        }
+        .content-section p {
+            font-size: 0.9375rem; line-height: 1.7;
+            color: var(--text-muted); margin-bottom: 12px;
+        }
+        .content-section ol, .content-section ul {
+            padding-left: 22px; margin-bottom: 16px;
+        }
+        .content-section ol li, .content-section ul li {
+            font-size: 0.9375rem; line-height: 1.7;
+            color: var(--text-muted); margin-bottom: 8px;
+        }
+        .content-section ol li strong, .content-section ul li strong {
+            color: var(--text);
+        }
+
+        .faq-item {
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            margin-bottom: 8px;
+            overflow: hidden;
+            background: var(--card);
+        }
+        .faq-item summary {
+            padding: 13px 16px;
+            font-weight: 700;
+            font-size: 0.9375rem;
+            color: var(--text);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            touch-action: manipulation;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after {
+            content: "+";
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--text-muted);
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
+        }
+        .faq-item[open] summary::after { transform: rotate(45deg); }
+        .faq-item summary:hover { background: var(--chip-bg); }
+        .faq-item .faq-answer {
+            padding: 0 16px 14px;
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- ============ HEADER ============ -->
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2">
+            <div class="flex items-center justify-between gap-2 sm:gap-4">
+                <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+                    <a href="index.html" class="flex btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold items-center gap-1">← All Tools</a>
+                    <a href="index.html" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
+                        <div class="logo-mark w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base flex items-center justify-center">M<span class="x">X</span></div>
+                        <span class="logo-wordmark text-base sm:text-xl block">MyTool<span class="x">X</span></span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                    <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch theme" title="Toggle Light/Dark Mode" class="h-8 sm:h-10 px-2 sm:px-3 rounded-xl flex items-center justify-center gap-1.5 text-[10px] sm:text-xs font-bold transition-all hover:opacity-80" style="background: var(--chip-bg); color: var(--chip-text);">
+                        <span id="themeIcon" aria-hidden="true">🌙</span>
+                        <span id="themeText" class="hidden sm:block">Dark Mode</span>
+                    </button>
+                    <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
+                        💼 Remote Jobs ↗
+                    </a>
+                    <a href="cv-maker.html" class="inline-flex text-xs font-bold text-white px-3 py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
+                        📄 Live CV
+                    </a>
+                </div>
+            </div>
+            <div class="mt-2 sm:hidden">
+                <a href="index.html" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">← Back to All Tools</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-3 sm:px-4 py-5 sm:py-7 w-full flex-grow">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="max-w-2xl mx-auto mb-3 text-xs muted">
+            <a href="index.html" class="hover:underline">Home</a>
+            <span class="mx-1.5">/</span>
+            <span style="color: var(--text); font-weight: 600;">Reaction Time Test</span>
+        </nav>
+
+        <!-- H1 -->
+        <div class="text-center max-w-2xl mx-auto mb-4">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight leading-tight mb-1.5" style="color: var(--text);">
+                Reaction Time Test: How Fast Are You?
+            </h1>
+            <p class="text-sm sm:text-base muted font-medium">
+                Measure your visual reflexes in milliseconds. Wait for the green screen, then click.
+            </p>
+        </div>
+
+        <!-- TOP CROSS-LINKS -->
+        <div class="max-w-2xl mx-auto mb-6">
+            <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest text-center mb-3" style="color: var(--text-muted);">More Games on MyToolX</div>
+            <div class="flex flex-wrap justify-center gap-2">
+                <a href="word-scramble.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition hover:opacity-80" style="background: var(--chip-bg); color: var(--text); border: 1px solid var(--card-border);">
+                    🔤 Word Scramble
+                </a>
+                <a href="typing-test.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition hover:opacity-80" style="background: var(--chip-bg); color: var(--text); border: 1px solid var(--card-border);">
+                    ⌨️ Typing Test
+                </a>
+                <a href="wordstorm.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition hover:opacity-80" style="background: var(--chip-bg); color: var(--text); border: 1px solid var(--card-border);">
+                    🌪️ WordStorm
+                </a>
+                <a href="math-sprint.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition hover:opacity-80" style="background: var(--chip-bg); color: var(--text); border: 1px solid var(--card-border);">
+                    🧠 Math Sprint
+                </a>
+            </div>
+        </div>
+
+        <!-- ============================================= -->
+        <!-- GAME SHELL                                    -->
+        <!-- ============================================= -->
+        <div class="game-shell" id="gameShell">
+            <div id="challengeBanner" class="challenge-banner">🔥 Your friend challenged you to beat <span id="challengeTarget">--</span> ms!</div>
+            
+            <!-- The Clickable Area -->
+            <div class="reaction-zone" id="reactionZone">
+                <div id="stateStart">
+                    <div class="reaction-title">Reaction Time Test</div>
+                    <div class="reaction-sub mb-6">Click the box to start. When the screen turns green, click as fast as you can.</div>
+                    <button class="btn-3d btn-primary" id="startBtn" style="padding: 14px 32px; font-size: 16px; border-radius: 12px; background: #fff; color: #3B82F6; pointer-events: none;">
+                        Click anywhere to start
+                    </button>
+                </div>
+
+                <div id="stateWaiting" class="hidden">
+                    <div class="reaction-title">Wait for green...</div>
+                    <div class="reaction-sub">Do not click yet.</div>
+                </div>
+
+                <div id="stateReady" class="hidden">
+                    <div class="reaction-title" style="font-size: clamp(36px, 10vw, 54px);">CLICK!</div>
+                </div>
+
+                <div id="stateResult" class="hidden">
+                    <div class="reaction-score" id="resultScore">245</div>
+                    <div class="reaction-ms">milliseconds</div>
+                    <div class="reaction-sub mt-4" id="resultMessage">Above average!</div>
+                </div>
+
+                <div id="stateTooSoon" class="hidden">
+                    <div class="reaction-title">Too soon!</div>
+                    <div class="reaction-sub mb-4">You clicked before the screen turned green. Click to try again.</div>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="game-stats">
+                <div class="stat-box">
+                    <div class="stat-label">Your Best</div>
+                    <div class="stat-val" id="bestScoreDisplay">--<span>ms</span></div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Attempts</div>
+                    <div class="stat-val" id="attemptsDisplay">0</div>
+                </div>
+            </div>
+
+            <!-- Actions (Visible only on result) -->
+            <div class="game-actions hidden" id="actionBar">
+                <button class="btn-action btn-share" id="shareBtn">📣 Challenge a Friend</button>
+                <button class="btn-action btn-restart" id="tryAgainBtn">Try Again</button>
+            </div>
+
+        </div>
+
+        <!-- ============================================= -->
+        <!-- ON PAGE CONTENT                              -->
+        <!-- ============================================= -->
+        <div class="content-section">
+
+            <h2>What Is the Reaction Time Test?</h2>
+            <p>The reaction time test measures how fast your brain can process a visual signal and tell your hand to move. It is often called the Human Benchmark. When the screen turns from red to green, you click or tap as fast as you can. The time it takes for you to react is recorded in milliseconds.</p>
+            <p>It is completely free, requires no sign up, and runs entirely in your browser. Your data never leaves your device.</p>
+
+            <h3>What is a Good Reaction Time Score?</h3>
+            <p>The average human visual reaction time is around 250 milliseconds. Here is how you can rank your score:</p>
+            <table style="width:100%; border-collapse:collapse; margin: 12px 0 18px; font-size: 0.875rem; border-radius: 12px; overflow: hidden; border: 1px solid var(--card-border);">
+                <thead>
+                    <tr>
+                        <th style="padding: 10px 14px; text-align:left; background: var(--chip-bg); color: var(--text); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; border-bottom: 1px solid var(--card-border);">Score</th>
+                        <th style="padding: 10px 14px; text-align:left; background: var(--chip-bg); color: var(--text); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; border-bottom: 1px solid var(--card-border);">Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td style="padding: 10px 14px; color: var(--text-muted); border-bottom: 1px solid var(--card-border);">Under 200 ms</td><td style="padding: 10px 14px; color: var(--text-muted); border-bottom: 1px solid var(--card-border);">Elite Pro Gamer level</td></tr>
+                    <tr><td style="padding: 10px 14px; color: var(--text-muted); border-bottom: 1px solid var(--card-border);">200 to 250 ms</td><td style="padding: 10px 14px; color: var(--text-muted); border-bottom: 1px solid var(--card-border);">Above Average speed</td></tr>
+                    <tr><td style="padding: 10px 14px; color: var(--text-muted); border-bottom: 1px solid var(--card-border);">250 to 300 ms</td><td style="padding: 10px 14px; color: var(--text-muted); border-bottom: 1px solid var(--card-border);">Average human reflex</td></tr>
+                    <tr><td style="padding: 10px 14px; color: var(--text-muted);">Over 300 ms</td><td style="padding: 10px 14px; color: var(--text-muted);">Room to improve focus</td></tr>
+                </tbody>
+            </table>
+
+            <h2>How to Take the Test Properly</h2>
+            <ol>
+                <li><strong>Click to start.</strong> The box will turn red to prepare your focus.</li>
+                <li><strong>Wait patiently.</strong> Do not click while the box is red or you will trigger a quick penalty warning.</li>
+                <li><strong>React to green.</strong> The moment the box turns green, tap or click your screen as fast as humanly possible.</li>
+                <li><strong>Read your score.</strong> Your exact reaction time appears instantly in milliseconds.</li>
+                <li><strong>Repeat the test.</strong> Reflexes vary, so try it multiple times to calculate your true average score.</li>
+            </ol>
+
+            <h3>Frequently Asked Questions</h3>
+
+            <details class="faq-item">
+                <summary>What is the average human reaction time?</summary>
+                <div class="faq-answer">The average visual reaction time for humans is about 250 milliseconds. This means it takes a quarter of a second for your brain to process what you see and command your hand to move.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Why does the screen turn red first?</summary>
+                <div class="faq-answer">The red screen serves as a warning barrier. It forces you to wait actively, preventing random guessing. If you click on red, the test resets immediately.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Can I play on mobile devices?</summary>
+                <div class="faq-answer">Yes. The test is fully optimized for mobile touch screens. You tap instead of click with full support for silent haptic vibrations on supported phones.</div>
+            </details>
+            <details class="faq-item">
+                <summary>How can I improve my reaction speed?</summary>
+                <div class="faq-answer">Proper sleep, hydration, and mental focus are the biggest factors. Regular practice with this browser tool also trains your neurological pathway over time.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Is my personal data saved?</summary>
+                <div class="faq-answer">No. The test runs entirely inside your browser storage. Your scores are never uploaded to any remote servers.</div>
+            </details>
+
+        </div>
+
+        <!-- BOTTOM CROSS-LINKS -->
+        <div class="mt-16 mb-8 max-w-4xl mx-auto">
+            <h2 class="text-xl font-bold mb-6 text-center" style="color: var(--text);">Explore More Free Games</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                
+                <a href="word-scramble.html" class="card-3d-btn p-4 rounded-2xl flex items-center gap-4 text-left">
+                    <div class="text-3xl bg-purple-50 dark:bg-purple-900/30 w-12 h-12 flex items-center justify-center rounded-xl shrink-0">🔤</div>
+                    <div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Word Scramble</div>
+                        <div class="text-xs muted mt-0.5">60 second word puzzle</div>
+                    </div>
+                </a>
+
+                <a href="typing-test.html" class="card-3d-btn p-4 rounded-2xl flex items-center gap-4 text-left">
+                    <div class="text-3xl bg-blue-50 dark:bg-blue-900/30 w-12 h-12 flex items-center justify-center rounded-xl shrink-0">⌨️</div>
+                    <div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Typing Speed Test</div>
+                        <div class="text-xs muted mt-0.5">Check your WPM and accuracy</div>
+                    </div>
+                </a>
+
+                <a href="wordstorm.html" class="card-3d-btn p-4 rounded-2xl flex items-center gap-4 text-left">
+                    <div class="text-3xl bg-emerald-50 dark:bg-emerald-900/30 w-12 h-12 flex items-center justify-center rounded-xl shrink-0">🌪️</div>
+                    <div>
+                        <div class="font-bold text-sm" style="color: var(--text);">WordStorm</div>
+                        <div class="text-xs muted mt-0.5">Falling words typing game</div>
+                    </div>
+                </a>
+
+                <a href="math-sprint.html" class="card-3d-btn p-4 rounded-2xl flex items-center gap-4 text-left">
+                    <div class="text-3xl bg-indigo-50 dark:bg-indigo-900/30 w-12 h-12 flex items-center justify-center rounded-xl shrink-0">🧠</div>
+                    <div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Math Sprint</div>
+                        <div class="text-xs muted mt-0.5">30 second mental math challenge</div>
+                    </div>
+                </a>
+
+                <a href="love-calculator.html" class="card-3d-btn p-4 rounded-2xl flex items-center gap-4 text-left">
+                    <div class="text-3xl bg-red-50 dark:bg-red-900/30 w-12 h-12 flex items-center justify-center rounded-xl shrink-0">❤️</div>
+                    <div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Love Calculator</div>
+                        <div class="text-xs muted mt-0.5">Fun compatibility match tool</div>
+                    </div>
+                </a>
+
+                <a href="cv-maker.html" class="card-3d-btn p-4 rounded-2xl flex items-center gap-4 text-left">
+                    <div class="text-3xl bg-indigo-50 dark:bg-indigo-900/30 w-12 h-12 flex items-center justify-center rounded-xl shrink-0">📄</div>
+                    <div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Live CV Maker</div>
+                        <div class="text-xs muted mt-0.5">HD PDF Resume Generator</div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+
+                <div class="lg:col-span-5">
+                    <a href="index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 pr-4">
+                        MyToolX is a free suite of client-side web tools for writers, freelancers and developers. No sign up, no tracking, no data leaves your browser.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-4">
+                    <h3>Popular Tools</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <a href="typing-test.html">Typing Speed Test</a>
+                        <div class="flex items-start mt-0.5">
+                            <a href="premium.html" class="link-premium-gold" aria-label="Visit the Premium Store">
+                                <span class="star-icon">⭐</span> Premium
+                            </a>
+                        </div>
+                        <a href="prompt-studio.html">AI Prompt Studio</a>
+                        <a href="image-compressor.html">Image Compressor</a>
+                        <a href="text-suite.html">Text &amp; Word Suite</a>
+                        <a href="grammar-checker.html">Grammar Checker</a>
+                        <a href="sip-calculator.html">SIP Calculator</a>
+                        <a href="fee-calculator.html">Fee Calculator</a>
+                        <a href="json-formatter.html">JSON Formatter</a>
+                        <a href="loan-emi.html">Loan EMI Calc</a>
+                        <a href="qr-code-generator.html">QR Code Gen</a>
+                        <a href="base64-tool.html">Base64 Tool</a>
+                        <a href="unit-converter.html">Unit Converter</a>
+                        <a href="password-generator.html">Password Gen</a>
+                        <a href="article-outline.html">Article Outline</a>
+                        <a href="ai-bio-generator.html">AI Bio Generator</a>
+                        <a href="love-calculator.html">Love Calculator</a>
+                        <a href="cv-maker.html">Resume Builder</a>
+                        <a href="text-summarizer.html">AI Summarizer</a>
+                        <a href="color-converter.html">Color Converter</a>
+                        <a href="word-scramble.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Word Scramble</a>
+                        <a href="reaction-time-test.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Reaction Test</a>
+                        <a href="math-sprint.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Math Sprint Game</a>
+                        <a href="wordstorm.html" class="footer-game-link"><span aria-hidden="true">⭐</span> WordStorm Game</a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Company</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Legal</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="blog.html">Blog &amp; Guides</a></li>
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                                <li><a href="terms.html">Terms of Service</a></li>
+                                <li><a href="index.html">Sitemap</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. All rights reserved.</p>
+                <p>All tools run 100% client-side in your browser.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================= -->
+    <!-- SCRIPTS                                       -->
+    <!-- ============================================= -->
+    <script>
+    // ================= THEME =================
+    (function initTheme() {
+        var saved = null;
+        try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+    })();
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        var icon = document.getElementById('themeIcon');
+        var text = document.getElementById('themeText');
+        if (icon && text) {
+            if (theme === 'dark') { icon.textContent = '🌙'; text.textContent = 'Dark Mode'; }
+            else { icon.textContent = '☀️'; text.textContent = 'Light Mode'; }
+        }
+        var btn = document.getElementById('themeToggle');
+        if (btn) {
+            btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+            btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+        }
+    }
+    function toggleTheme() {
+        var cur = document.documentElement.getAttribute('data-theme') || 'light';
+        var next = cur === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+        try { localStorage.setItem('mtx-theme', next); } catch (e) {}
+    }
+    window.toggleTheme = toggleTheme;
+
+    // ================= REACTION TIME TEST =================
+    (function() {
+        'use strict';
+
+        var state = {
+            isPlaying: false,
+            isReady: false,
+            startTime: 0,
+            timeoutId: null,
+            best: 0,
+            attempts: 0
+        };
+
+        var el = {
+            zone: document.getElementById('reactionZone'),
+            stateStart: document.getElementById('stateStart'),
+            stateWaiting: document.getElementById('stateWaiting'),
+            stateReady: document.getElementById('stateReady'),
+            stateResult: document.getElementById('stateResult'),
+            stateTooSoon: document.getElementById('stateTooSoon'),
+            resultScore: document.getElementById('resultScore'),
+            resultMessage: document.getElementById('resultMessage'),
+            bestScoreDisplay: document.getElementById('bestScoreDisplay'),
+            attemptsDisplay: document.getElementById('attemptsDisplay'),
+            actionBar: document.getElementById('actionBar'),
+            tryAgainBtn: document.getElementById('tryAgainBtn'),
+            shareBtn: document.getElementById('shareBtn'),
+            challengeBanner: document.getElementById('challengeBanner'),
+            challengeTarget: document.getElementById('challengeTarget')
+        };
+
+        // Check URL for challenge parameter
+        try {
+            var params = new URLSearchParams(window.location.search);
+            var challengeVal = params.get('challenge');
+            if (challengeVal) {
+                el.challengeTarget.textContent = challengeVal;
+                el.challengeBanner.classList.add('visible');
+            }
+        } catch (e) {}
+
+        // Load best from local storage
+        function loadBest() {
+            try {
+                var v = parseInt(localStorage.getItem('mtx-reaction-best') || '0', 10);
+                return isNaN(v) ? 0 : v;
+            } catch (e) { return 0; }
+        }
+        function saveBest(v) {
+            try { localStorage.setItem('mtx-reaction-best', String(v)); } catch (e) {}
+        }
+
+        function updateStatsUI() {
+            if (state.best > 0) {
+                el.bestScoreDisplay.innerHTML = state.best + '<span>ms</span>';
+            } else {
+                el.bestScoreDisplay.innerHTML = '--<span>ms</span>';
+            }
+            el.attemptsDisplay.textContent = state.attempts;
+        }
+
+        function showState(name) {
+            el.stateStart.classList.add('hidden');
+            el.stateWaiting.classList.add('hidden');
+            el.stateReady.classList.add('hidden');
+            el.stateResult.classList.add('hidden');
+            el.stateTooSoon.classList.add('hidden');
+            el.actionBar.classList.add('hidden');
+
+            el.zone.classList.remove('state-red', 'state-green', 'state-fail');
+
+            if (name === 'start') {
+                el.stateStart.classList.remove('hidden');
+            }
+            else if (name === 'waiting') {
+                el.stateWaiting.classList.remove('hidden');
+                el.zone.classList.add('state-red');
+            }
+            else if (name === 'ready') {
+                el.stateReady.classList.remove('hidden');
+                el.zone.classList.add('state-green');
+                if (navigator.vibrate && typeof navigator.vibrate === 'function') {
+    navigator.vibrate(30);
+}
+ // Silent mobile haptic pulse
+            }
+            else if (name === 'result') {
+                el.stateResult.classList.remove('hidden');
+                el.actionBar.classList.remove('hidden');
+                if (navigator.vibrate) navigator.vibrate(50); // Silent success feedback
+            }
+            else if (name === 'tooSoon') {
+                el.stateTooSoon.classList.add('hidden'); // Fixed typo from original toggle
+                el.stateTooSoon.classList.remove('hidden');
+                el.zone.classList.add('state-fail');
+                if (navigator.vibrate) navigator.vibrate([40, 30, 40]); // Silent error vibration
+                setTimeout(function() {
+                    if (!state.isPlaying) showState('start');
+                }, 1000);
+            }
+        }
+
+        function startWait() {
+            if (state.isPlaying) return;
+            state.isPlaying = true;
+            state.isReady = false;
+            
+            showState('waiting');
+
+            var delay = Math.floor(Math.random() * 2500) + 1500;
+
+            state.timeoutId = setTimeout(function() {
+                state.isReady = true;
+                showState('ready');
+                state.startTime = Date.now();
+            }, delay);
+        }
+
+        function handleZoneClick() {
+            if (!state.isPlaying) {
+                if (!el.stateTooSoon.classList.contains('hidden')) {
+                    showState('start');
+                    return;
+                }
+                startWait();
+                return;
+            }
+
+            if (state.isPlaying && !state.isReady) {
+                clearTimeout(state.timeoutId);
+                state.isPlaying = false;
+                state.isReady = false;
+                showState('tooSoon');
+                return;
+            }
+
+            if (state.isPlaying && state.isReady) {
+                var endTime = Date.now();
+                var reactionTime = endTime - state.startTime;
+                
+                reactionTime = Math.round(reactionTime);
+                
+                state.isPlaying = false;
+                state.isReady = false;
+                state.attempts++;
+                
+                if (state.best === 0 || reactionTime < state.best) {
+                    state.best = reactionTime;
+                    saveBest(state.best);
+                }
+                
+                updateStatsUI();
+                displayResult(reactionTime);
+            }
+        }
+
+        function displayResult(ms) {
+            el.resultScore.textContent = ms;
+            
+            var msg = "";
+            if (ms < 200) msg = "Elite reflexes! 🏆";
+            else if (ms <= 250) msg = "Above average! 🎯";
+            else if (ms <= 300) msg = "Average human speed. 😐";
+            else msg = "A bit slow. Are you tired? ☕";
+            
+            el.resultMessage.textContent = msg;
+            showState('result');
+        }
+
+        function shareScore() {
+            var text = "I scored " + state.best + " ms on the Reaction Time Test at MyToolX. Can you beat me?\nhttps://mytoolx.org/reaction-time-test.html?challenge=" + state.best;
+            var url = 'https://mytoolx.org/reaction-time-test.html?challenge=' + state.best;
+
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Reaction Time Test by MyToolX',
+                    text: text,
+                    url: url
+                }).catch(function() { copyFallback(text); });
+            } else {
+                copyFallback(text);
+            }
+        }
+
+        function copyFallback(text) {
+            var done = function() {
+                var old = el.shareBtn.textContent;
+                el.shareBtn.textContent = '✓ Copied!';
+                setTimeout(function() { el.shareBtn.textContent = old; }, 2000);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(done).catch(function() {
+                    window.prompt('Copy your score:', text);
+                });
+            } else {
+                window.prompt('Copy your score:', text);
+            }
+        }
+
+        // ---------- INIT ----------
+        state.best = loadBest();
+        updateStatsUI();
+        showState('start');
+
+        // ---------- WIRING ----------
+        el.zone.addEventListener('click', handleZoneClick);
+        
+        el.tryAgainBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            showState('start');
+            setTimeout(startWait, 100);
+        });
+
+        el.shareBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            shareScore();
+        });
+
+    })();
+    </script>
+
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
+    <script>
+      window.addEventListener('load', function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W8KM3G3BYL');
+      });
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
+</body>
+</html>

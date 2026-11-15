@@ -22,11 +22,15 @@
     <!-- FAVICON (inline SVG emoji — zero HTTP request) -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖼️</text></svg>">
 
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4F46E5">
+<link rel="apple-touch-icon" href="icon-192.png">
+
     <!-- OPEN GRAPH -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="MyToolX">
     <meta property="og:url" content="https://mytoolx.org/image-compressor.html">
-    <meta property="og:title" content="Compress Images Without Losing Quality (100% Private) 🖼️ | MyToolX">
+    <meta property="og:title" content="Compress Images 100% Private: No Upload 🖼️ | MyToolX">
     <meta property="og:description" content="Compress and resize images instantly in your browser. No uploads, no servers, 100% privacy.">
     <meta property="og:image" content="https://mytoolx.org/og-image.png">
     <meta property="og:image:alt" content="MyToolX Free Image Compressor">
@@ -208,9 +212,11 @@
                         <input type="number" id="resizeWidth" placeholder="Original width" class="input-field w-full p-3.5 rounded-xl text-sm font-medium">
                     </div>
                     <div>
-                        <label for="qualitySlider" class="block text-xs font-bold uppercase tracking-wider mb-1.5 muted">Compression Quality: <span id="qualityVal">80%</span></label>
+                        <label for="qualitySlider" class="block text-xs font-bold uppercase tracking-wider mb-1.5 muted">Image Quality: <span id="qualityVal">80%</span></label>
                         <input type="range" id="qualitySlider" min="10" max="100" value="80" class="w-full accent-indigo-500 mt-2">
-                    </div>
+<p class="text-[10px] muted mt-1">Lower quality = smaller file size.</p>                    
+</div>
+
                 </div>
                 
                 <div class="flex gap-3">
@@ -369,6 +375,8 @@
                         <a href="color-converter.html">Color Converter</a>
 			<a href="math-sprint.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Math Sprint Game</a>
                         <a href="wordstorm.html" class="footer-game-link"><span aria-hidden="true">⭐</span> WordStorm Game</a>
+			<a href="reaction-time-test.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Reaction Test</a>
+			<a href="word-scramble.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Word Scramble</a>
                     </div>
                 </div>
 
