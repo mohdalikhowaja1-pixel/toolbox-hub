@@ -387,23 +387,23 @@
             <!-- Header (Fixed) -->
             <div style="padding: 12px 16px; border-bottom: 1px solid var(--card-border); display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;">
                 <div>
-                    <h2 style="font-size: 16px; font-weight: 900; color: var(--text); margin: 0;">Checkout</h2>
-                    <p style="font-size: 10px; color: var(--text-muted); margin: 0;">Choose your payment method</p>
+                    <h2 id="checkoutProductTitle" style="font-size: 16px; font-weight: 900; color: var(--text); margin: 0;">Checkout</h2>
+                    <p style="font-size: 10px; color: var(--text-muted); margin: 0;">Pay by Card (Instant Download) or Direct Bank Transfer</p>
                 </div>
                 <button onclick="closeBankModal()" style="background: rgba(0,0,0,0.1); border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 20px; font-weight: bold; cursor: pointer; color: var(--text); display: flex; align-items: center; justify-content: center;">&times;</button>
             </div>
 
             <!-- Tabs Navigation -->
             <div style="display: flex; border-bottom: 1px solid var(--card-border); background-color: var(--chip-bg);">
-                <button onclick="switchPaymentTab('bank')" id="tab-btn-bank" style="flex: 1; padding: 12px; font-size: 11px; font-weight: bold; border: none; background: transparent; cursor: pointer; border-bottom: 2px solid #10B981; color: var(--text);">🏦 Bank Transfer</button>
-                <button onclick="switchPaymentTab('card')" id="tab-btn-card" style="flex: 1; padding: 12px; font-size: 11px; font-weight: bold; border: none; background: transparent; cursor: pointer; border-bottom: 2px solid transparent; color: var(--text-muted);">💳 Card (Coming Soon)</button>
+                <button onclick="switchPaymentTab('card')" id="tab-btn-card" style="flex: 1; padding: 12px; font-size: 11px; font-weight: bold; border: none; background: transparent; cursor: pointer; border-bottom: 2px solid #10B981; color: var(--text);">💳 Card Payment (Instant)</button>
+                <button onclick="switchPaymentTab('bank')" id="tab-btn-bank" style="flex: 1; padding: 12px; font-size: 11px; font-weight: bold; border: none; background: transparent; cursor: pointer; border-bottom: 2px solid transparent; color: var(--text-muted);">🏦 Direct Transfer</button>
             </div>
 
             <!-- Scrollable Body -->
             <div style="padding: 16px; overflow-y: auto; flex-grow: 1;">
 
-                <!-- TAB 1: BANK TRANSFER (Active) -->
-                <div id="tab-content-bank">
+                <!-- TAB 1: BANK TRANSFER -->
+                <div id="tab-content-bank" style="display: none;">
                     <!-- Warning -->
                     <div style="background-color: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px; padding: 8px; margin-bottom: 12px; text-align: center;">
                         <p style="font-size: 10px; font-weight: bold; color: #EF4444; margin: 0;">⚠️ ONLY ACH transfers. No Wire/SWIFT.</p>
@@ -460,16 +460,32 @@
                     <a id="emailReceiptBtn" href="#" class="btn-3d bg-emerald-600 hover:bg-emerald-700" style="display: flex; justify-content: center; align-items: center; width: 100%; padding: 12px; border-radius: 8px; color: white !important; font-size: 12px; font-weight: bold; text-decoration: none; margin-bottom: 12px;">✉️ Email Receipt</a>
                 </div>
 
-                <!-- TAB 2: CARD PAYMENT (Disabled/Coming Soon) -->
-                <div id="tab-content-card" style="display: none; text-align: center; padding: 20px 0;">
-                    <div style="font-size: 40px; margin-bottom: 10px;">💳</div>
-                    <h3 style="font-size: 16px; font-weight: bold; color: var(--text); margin-bottom: 8px;">Card Payments Coming Soon</h3>
-                    <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.5;">We are currently setting up our global payment gateways (Whop & Lemon Squeezy). Please use the **Bank Transfer** tab for instant access right now.</p>
-                    
-                    <!-- Visual Placeholder Button -->
-                    <button disabled style="width: 100%; padding: 12px; border-radius: 8px; background: var(--chip-bg); color: var(--text-muted); border: 1px dashed var(--card-border); font-size: 12px; font-weight: bold; cursor: not-allowed; opacity: 0.7;">
-                        Pay with Card (Coming Soon)
-                    </button>
+                <!-- TAB 2: CARD PAYMENT (WHOP) -->
+                <div id="tab-content-card" style="display: block; text-align: center; padding: 16px 0;">
+                    <div style="font-size: 38px; margin-bottom: 8px;">💳</div>
+
+                    <h3 style="font-size: 16px; font-weight: 900; color: var(--text); margin-bottom: 6px;">
+                        Instant Card Checkout
+                    </h3>
+
+                    <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.6;">
+                        Pay securely with Credit/Debit Card, Apple Pay, or Google Pay via Whop and get <strong>instant access</strong> to your files right after checkout.
+                    </p>
+
+                    <a
+                        id="whopCheckoutBtn"
+                        href="https://whop.com/mytoolx/the-ultimate-ats-resume-pack-e1/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-3d bg-emerald-600 hover:bg-emerald-700"
+                        style="display: flex; justify-content: center; align-items: center; width: 100%; padding: 13px; border-radius: 10px; background: #10B981; color: white !important; font-size: 12px; font-weight: bold; text-decoration: none; cursor: pointer;"
+                    >
+                        💳 Pay with Card &amp; Download Instantly ↗
+                    </a>
+
+                    <p style="font-size: 10px; color: var(--text-muted); margin-top: 10px;">
+                        ✅ One-time payment &bull; 🔒 Secured by Whop
+                    </p>
                 </div>
 
                 <!-- Referral (Visible on both tabs) -->
@@ -686,13 +702,29 @@
     </script>
 
 <script>
+    var whopLinks = {
+        'ATS Resume Pack': 'https://whop.com/mytoolx/the-ultimate-ats-resume-pack-e1/',
+        'Excel Bundle': 'https://whop.com/mytoolx/freelancer-small-business-excel-bundle-99/',
+        'Contract Kit': 'https://whop.com/mytoolx/freelance-contract-kit-4b/',
+        'AI Prompt Vault': 'https://whop.com/mytoolx/the-ultimate-ai-prompt-vault-79/'
+    };
+
     function openBankModal(productName) {
         var modal = document.getElementById('bankTransferModal');
         modal.style.display = 'block'; 
         document.body.style.overflow = 'hidden'; 
         
-        // Reset to Bank Tab by default every time it opens
-        switchPaymentTab('bank');
+        var modalTitle = document.getElementById('checkoutProductTitle');
+        if (modalTitle) {
+            modalTitle.textContent = 'Checkout — ' + productName;
+        }
+
+        var whopBtn = document.getElementById('whopCheckoutBtn');
+        if (whopBtn && whopLinks[productName]) {
+            whopBtn.href = whopLinks[productName];
+        }
+
+        switchPaymentTab('card');
 
         var emailBtn = document.getElementById('emailReceiptBtn');
         var email = "mytoolx0@gmail.com"; // Your new professional email
