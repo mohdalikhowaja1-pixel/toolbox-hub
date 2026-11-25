@@ -24,7 +24,10 @@
 
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#4F46E5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="apple-touch-icon" href="icon-192.png">
+
 
     <!-- OPEN GRAPH -->
     <meta property="og:type" content="website">
@@ -149,10 +152,33 @@
         .related-card { transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; background: var(--card); border: 1px solid var(--card-border); }
         .related-card:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); border-color: var(--primary); }
 
+        /* --- MEGA FOOTER --- */
         .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
         .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
         .mega-footer a { transition: color 0.15s ease; }
         .mega-footer a:hover { color: var(--primary); }
+
+        /* --- FOOTER SOCIAL ICONS --- */
+        .social-links-row { display: flex; align-items: center; gap: 12px; margin-top: 4px; }
+        .social-btn {
+            width: 42px; height: 42px; border-radius: 12px;
+            display: inline-flex; align-items: center; justify-content: center;
+            color: #FFFFFF !important; text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+            box-shadow: 0 6px 14px -3px rgba(0, 0, 0, 0.28);
+        }
+        .social-btn svg { width: 20px; height: 20px; fill: currentColor; }
+        .social-btn.fb-btn {
+            background: linear-gradient(135deg, #1877F2 0%, #0D5BD6 100%);
+        }
+        .social-btn.ig-btn {
+            background: radial-gradient(circle at 30% 107%, #FDF497 0%, #FDF497 5%, #FD5949 45%, #D6249F 60%, #285AEB 90%);
+        }
+        .social-btn:hover {
+            transform: translateY(-2px) scale(1.06);
+            box-shadow: 0 10px 20px -4px rgba(79, 70, 229, 0.35);
+            filter: brightness(1.05);
+        }
 
         #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
         :focus-visible { outline: none; }
@@ -568,7 +594,63 @@
             transform: scale(1.1);
             filter: drop-shadow(0 0 8px #fbbf24);
         }
+
     </style>
+<style>
+    /* --- FEEDBACK MODAL CSS --- */
+    .mtx-modal-backdrop {
+        position: fixed !important; 
+        inset: 0 !important; 
+        z-index: 999999 !important;
+        width: 100vw;
+        height: 100dvh;
+        background: rgba(15, 23, 42, 0.75);
+        backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        padding: 16px;
+    }
+    .mtx-modal-backdrop.hidden { 
+        display: none !important; 
+    }
+    .mtx-modal-dialog {
+        background: var(--card); 
+        border: 1px solid var(--card-border); 
+        color: var(--text);
+        width: 100%; 
+        max-width: 500px; 
+        max-height: 90dvh; 
+        overflow-y: auto;
+        border-radius: 22px; 
+        padding: 24px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); 
+        position: relative;
+        margin: auto;
+    }
+    @media (min-width: 640px) { 
+        .mtx-modal-dialog { padding: 32px; } 
+    }
+    .mtx-modal-close {
+        width: 36px; height: 36px; border-radius: 10px;
+        background: var(--chip-bg); color: var(--text); border: none;
+        font-size: 16px; font-weight: 800; cursor: pointer;
+        display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .mtx-modal-close:hover { background: #EF4444; color: #FFFFFF; }
+    .star-click { cursor: pointer; transition: transform 0.1s; }
+    .star-click:hover { transform: scale(1.15); }
+    .star-click svg { width: 32px; height: 32px; fill: currentColor; }
+    select option, select optgroup {
+        background-color: var(--card) !important;
+        color: var(--text) !important;
+    }
+</style>
+
+
+<!-- GLOBAL LANGUAGE SWITCHER -->
+    <link rel="stylesheet" href="lang-switcher.css">
+    <script src="lang-switcher.js" defer></script>
 </head>
 <body class="font-sans min-h-screen flex flex-col justify-between">
 
@@ -588,6 +670,11 @@
                         <span id="themeIcon" aria-hidden="true">🌙</span>
                         <span id="themeText" class="hidden sm:block">Dark Mode</span>
                     </button>
+
+<!-- Community Link -->
+<a href="community.html" class="inline-flex items-center text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap" style="background: var(--chip-bg); color: var(--text);">
+    💬 Community
+</a>         
                     <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
                         💼 Remote Jobs ↗
                     </a>
@@ -721,7 +808,7 @@
                     </div>
                     <span class="text-2xl" aria-hidden="true">🏆</span>
                 </div>
-                <button id="shareBtn" onclick="shareScore()" class="btn-3d btn-accent px-6 py-3 text-sm font-bold flex items-center justify-center gap-2" disabled>
+                <button id="shareBtn" onclick="shareScore()" class="btn-3d btn-accent px-6 py-3 text-sm font-bold flex items-center justify-center gap-2">
                     🔗 Share Score
                 </button>
             </div>
@@ -837,27 +924,56 @@
             </div>
         </section>
 
-    </main>
+    <!-- COMMUNITY FEEDBACK CARD FOR FREE TOOLS -->
+<section class="max-w-3xl mx-auto my-10 px-4">
+    <div class="surface rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+        <div class="text-center sm:text-left">
+            <h3 class="text-base font-black" style="color: var(--text);">Did this tool save you time?</h3>
+            <p class="text-xs muted mt-0.5">Leave a quick rating or suggest an improvement on our Community board.</p>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+            <button type="button" onclick="openFeedbackModal('review')" class="btn-3d btn-primary px-4 py-2.5 rounded-xl text-xs font-black whitespace-nowrap">
+    ✍️ Leave Feedback
+</button>
+        </div>
+    </div>
+</section>
 
-    <!-- ============ FOOTER ============ -->
+</main>
+
+    <!-- MEGA FOOTER (Identical to Homepage) -->
     <footer class="mega-footer py-12 mt-auto">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+                
                 <div class="lg:col-span-5">
                     <a href="index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
                         <div class="logo-mark">M<span class="x">X</span></div>
                         <span class="logo-wordmark">MyTool<span class="x">X</span></span>
                     </a>
                     <p class="text-sm leading-relaxed mb-6 pr-4">
-                        MyToolX is a free suite of client-side web tools for writers, freelancers and developers. No sign-up, no tracking, no data leaves your browser.
+                        MyToolX is a free suite of client side web tools for writers, freelancers and developers. No sign up, no tracking, no data leaves your browser.
                     </p>
+                    <div class="social-links-row" aria-label="MyToolX social media links">
+                        <a href="https://www.facebook.com/profile.php?id=61596813242660" target="_blank" rel="noopener noreferrer" aria-label="MyToolX on Facebook" title="Facebook" class="social-btn fb-btn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/mytoolx0?fqnt=dm05bDBzazZ6Nmpp" target="_blank" rel="noopener noreferrer" aria-label="MyToolX on Instagram" title="Instagram" class="social-btn ig-btn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
+
                 <div class="lg:col-span-4">
                     <h3>Popular Tools</h3>
                     <div class="grid grid-cols-2 gap-3 text-sm">
                         <a href="typing-test.html">Typing Speed Test</a>
-                        <div class="flex items-start mt-0.5">
-                            <a href="premium.html" class="link-premium-gold" aria-label="Visit the Premium Store">
+                        <div class="flex items-start mt-0.5"> 
+                            <a href="premium.html" class="link-premium-gold" aria-label="Visit the Premium Store" style="color: #EAB308; font-weight: 700; display: flex; align-items: center; gap: 4px;">
                                 <span class="star-icon">⭐</span> Premium
                             </a>
                         </div>
@@ -876,15 +992,16 @@
                         <a href="article-outline.html">Article Outline</a>
                         <a href="ai-bio-generator.html">AI Bio Generator</a>
                         <a href="love-calculator.html">Love Calculator</a>
-                        <a href="cv-maker.html">Resume Builder</a>
+                        <a href="cv-maker.html">Resume Builder</a> 
                         <a href="text-summarizer.html">AI Summarizer</a>
                         <a href="color-converter.html">Color Converter</a>
-			<a href="math-sprint.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Math Sprint Game</a>
+                        <a href="math-sprint.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Math Sprint Game</a>
                         <a href="wordstorm.html" class="footer-game-link"><span aria-hidden="true">⭐</span> WordStorm Game</a>
-			<a href="reaction-time-test.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Reaction Test</a>
-			<a href="word-scramble.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Word Scramble</a>
+                        <a href="reaction-time-test.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Reaction Test</a>
+                        <a href="word-scramble.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Word Scramble</a>
                     </div>
                 </div>
+
                 <div class="lg:col-span-3">
                     <div class="grid grid-cols-2 gap-8">
                         <div>
@@ -893,6 +1010,7 @@
                                 <li><a href="index.html">Home</a></li>
                                 <li><a href="about.html">About Us</a></li>
                                 <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="community.html">Community</a></li>
                             </ul>
                         </div>
                         <div>
@@ -906,13 +1024,109 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
+
             <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
                 <p>&copy; 2026 MyToolX. All rights reserved.</p>
-                <p>All tools run 100% client-side in your browser.</p>
+                <p>All tools run 100% client side in your browser.</p>
             </div>
         </div>
     </footer>
+
+<!-- ============================================================ -->
+<!-- FEEDBACK MODAL HTML (LOCKED TO WORDSTORM)                    -->
+<!-- ============================================================ -->
+<div id="feedbackModal" class="mtx-modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="handleBackdropClick(event)">
+    <div class="mtx-modal-dialog" onclick="event.stopPropagation()">
+        <div class="flex items-start justify-between gap-3 mb-4">
+            <div>
+                <h3 id="modalTitle" class="text-lg sm:text-xl font-black" style="color: var(--text);">WordStorm Feedback</h3>
+                <p class="text-xs muted mt-0.5">Takes 20 seconds • No sign-up required</p>
+            </div>
+            <button type="button" onclick="closeFeedbackModal()" aria-label="Close popup" title="Close" class="mtx-modal-close">✕</button>
+        </div>
+
+        <form id="communityForm" onsubmit="submitCommunityFeedback(event)" class="space-y-4">
+            <div>
+                <label for="formType" class="block text-xs font-bold uppercase tracking-wider muted mb-1">1. What would you like to share? *</label>
+                <select id="formType" name="formType" required onchange="toggleFormFields()" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                    <option value="review">⭐ Rate &amp; Review WordStorm</option>
+                    <option value="suggestion">💡 Suggest an Improvement for WordStorm</option>
+                </select>
+            </div>
+
+            <div id="targetPageGroup" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider muted mb-1">Feedback for:</label>
+                    <div class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-black flex items-center gap-2" style="background: var(--chip-bg); color: var(--primary);">
+                        🌪️ WordStorm
+                    </div>
+                    <input type="hidden" id="targetPageId" name="targetPageId" value="wordstorm">
+                </div>
+
+                <div id="ratingGroup">
+                    <label class="block text-xs font-bold uppercase tracking-wider muted mb-1">Your WordStorm Rating *</label>
+                    <div id="starRatingContainer" class="flex items-center gap-1 mt-1">
+                        <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                        <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                        <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                        <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                        <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                        <input type="hidden" id="starRating" name="starRating" value="5">
+                    </div>
+                </div>
+            </div>
+
+            <div id="suggestionCategoryGroup" class="hidden space-y-3">
+                <div>
+                    <label for="suggestionCategory" class="block text-xs font-bold uppercase tracking-wider muted mb-1">2. Idea Category *</label>
+                    <select id="suggestionCategory" name="suggestionCategory" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                        <option value="New Game Ideas">New WordStorm World / Mode Idea</option>
+                        <option value="Existing Tool Improvements">Improve WordStorm Gameplay</option>
+                        <option value="Website Improvements">Website Improvement</option>
+                    </select>
+                </div>
+                <div id="titleGroup">
+                    <label for="suggestionTitle" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Short Idea Title *</label>
+                    <input type="text" id="suggestionTitle" name="suggestionTitle" maxlength="80" placeholder="e.g. Volcano World or Hardcore Speed Mode" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                    <label for="authorName" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Name (Optional)</label>
+                    <input type="text" id="authorName" name="authorName" maxlength="40" placeholder="Anonymous" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                </div>
+                <div>
+                    <label for="country" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Country (Optional)</label>
+                    <input type="text" id="country" name="country" maxlength="40" placeholder="e.g. US, UK, PK" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                </div>
+            </div>
+
+            <div>
+                <label for="commentText" id="commentLabel" class="block text-xs font-bold uppercase tracking-wider muted mb-1">3. Your WordStorm Comment *</label>
+                <textarea id="commentText" name="commentText" required rows="3" maxlength="400" placeholder="Write a quick note about playing WordStorm..." class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-medium"></textarea>
+            </div>
+
+            <p class="text-[11px] muted leading-relaxed">
+                🔒 Voluntary submission. Approved posts appear publicly without personal data.
+            </p>
+
+            <div id="formError" class="hidden p-3 rounded-xl text-xs font-bold text-red-500 bg-red-500/10 border border-red-500/30"></div>
+            <div id="formSuccess" class="hidden p-3 rounded-xl text-xs font-bold text-emerald-500 bg-emerald-500/10 border border-emerald-500/30"></div>
+
+            <div class="flex items-center gap-2.5 pt-1">
+                <button type="button" onclick="closeFeedbackModal()" class="btn-3d btn-chip px-4 py-3 rounded-xl text-xs sm:text-sm font-bold">
+                    Cancel
+                </button>
+                <button type="submit" id="submitModalBtn" class="btn-3d btn-primary flex-1 py-3 rounded-xl text-xs sm:text-sm font-black">
+                    🚀 Submit Feedback
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
 
     <!-- Confetti -->
     <canvas id="confettiCanvas" class="hidden" aria-hidden="true"></canvas>
@@ -1699,7 +1913,7 @@
             startOverlay.classList.add('hidden');
             resultsModal.classList.add('hidden');
             tapHint.classList.remove('show');
-            shareBtn.disabled = true;
+            
 
             // Set first world background BEFORE countdown so it shows behind
             stage.className = 'stage theme-' + WORLDS[0].key;
@@ -1768,129 +1982,91 @@
             state.recentPhrases = [];
             state.lastRoundBest = false;
 
-            // Reset UI
+                                   // Reset UI
             updateHud();
-            shHearts.querySelectorAll('.heart').forEach(function (h) {
-                h.classList.remove('lost', 'breaking');
-            });
+            shHearts.querySelectorAll('.heart').forEach(function (h) { h.classList.remove('lost', 'breaking'); });
             if (typeInput) { typeInput.value = ''; typeInput.disabled = true; }
-            worldBanner.classList.remove('show');
         }
 
         function endGame(won) {
-            if (!state.running && !won) return;
             state.running = false;
-
+            state.paused = true;
             if (state.spawnTimer) { clearInterval(state.spawnTimer); state.spawnTimer = null; }
             if (state.rafId) { cancelAnimationFrame(state.rafId); state.rafId = null; }
             if (state.bannerTimeoutId) { clearTimeout(state.bannerTimeoutId); state.bannerTimeoutId = null; }
 
-            // Clear all falling phrases
             state.activePhrases.forEach(function (p) { p.dom.remove(); });
             state.activePhrases = [];
-            if (typeInput) typeInput.disabled = true;
+            state.lockedPhraseId = null;
+            state.typedString = '';
+            if (typeInput) { typeInput.value = ''; typeInput.disabled = true; }
 
             saveBest();
+            updateHud();
 
-            var acc = state.totalCharsTyped > 0 ? Math.round((state.correctChars / state.totalCharsTyped) * 100) : 100;
+            var accuracy = state.totalCharsTyped > 0
+                ? Math.round((state.correctChars / state.totalCharsTyped) * 100)
+                : (state.phrasesCleared > 0 ? 100 : 0);
+
             var stars = 0;
-            if (won) stars = 3;
-            else if (state.worldIndex >= 3 && acc >= 80) stars = 3;
+            if (won && state.worldIndex >= 3 && accuracy >= 80) stars = 3;
             else if (state.worldIndex >= 2) stars = 2;
-            else if (state.phrasesCleared > 0) stars = 1;
+            else if (state.phrasesCleared >= 3) stars = 1;
+            if (won && stars < 3) stars = Math.max(stars, 2);
 
-            // Populate popup
             finalScoreEl.textContent = state.score.toLocaleString();
-            finalAccEl.textContent = acc + '%';
+            finalAccEl.textContent = accuracy + '%';
             finalMultEl.textContent = state.peakMultiplier.toFixed(1) + 'x';
-            finalWorldEl.textContent = WORLDS[state.worldIndex].icon + ' ' + WORLDS[state.worldIndex].name;
+            finalWorldEl.textContent = WORLDS[state.worldIndex].name;
 
             star1.classList.toggle('earned', stars >= 1);
             star2.classList.toggle('earned', stars >= 2);
             star3.classList.toggle('earned', stars >= 3);
 
-            var isCongrats = stars >= 3 || (acc >= 80 && state.phrasesCleared >= 5);
-
             if (won) {
                 congratsEmoji.textContent = '🏆';
-                resultMsg.textContent = 'You conquered all five worlds! Legendary.';
-                startConfetti();
-            } else if (isCongrats) {
+                resultMsg.textContent = 'You survived all five worlds. Legendary.';
+            } else if (state.lastRoundBest && state.score > 0) {
                 congratsEmoji.textContent = '🎉';
-                if (state.lastRoundBest) {
-                    resultMsg.textContent = 'Congratulations! New personal best with ' + acc + '% accuracy!';
-                } else {
-                    resultMsg.textContent = 'Congratulations! You cleared the 80% club with ' + acc + '% accuracy!';
-                }
-                startConfetti();
-            } else if (state.lastRoundBest) {
-                congratsEmoji.textContent = '🔥';
-                resultMsg.textContent = 'New personal best!';
-            } else if (state.phrasesCleared === 0) {
-                congratsEmoji.textContent = '🤔';
-                resultMsg.textContent = 'No phrases cleared this run. Give it another try!';
+                resultMsg.textContent = 'New personal best score!';
+            } else if (state.hearts <= 0) {
+                congratsEmoji.textContent = '💔';
+                resultMsg.textContent = 'Out of hearts. The storm wins this round.';
             } else {
-                congratsEmoji.textContent = '⚡';
-                resultMsg.textContent = 'Good run. Your best score is ' + state.bestScore + '.';
+                congratsEmoji.textContent = '🌪️';
+                resultMsg.textContent = 'Run complete. Try again to beat your score.';
             }
 
-            shareBtn.disabled = false;
             resultsModal.classList.remove('hidden');
-        }
+            // shareBtn.disabled is completely removed here so it always works
 
-        function resetGame() {
-            // Cancel timers
-            cancelCountdown();
-            if (state.spawnTimer) { clearInterval(state.spawnTimer); state.spawnTimer = null; }
-            if (state.rafId) { cancelAnimationFrame(state.rafId); state.rafId = null; }
-            if (state.bannerTimeoutId) { clearTimeout(state.bannerTimeoutId); state.bannerTimeoutId = null; }
-
-            // Clear phrases
-            state.activePhrases.forEach(function (p) { p.dom.remove(); });
-            state.activePhrases = [];
-            phraseLayer.innerHTML = '';
-
-            // Reset state
-            state.running = false;
-            state.paused = false;
-            state.score = 0;
-            state.multiplier = 1.0;
-            state.peakMultiplier = 1.0;
-            state.hearts = 3;
-            state.phrasesCleared = 0;
-            state.correctChars = 0;
-            state.totalCharsTyped = 0;
-            state.worldIndex = 0;
-            state.clearedInWorld = 0;
-            state.lockedPhraseId = null;
-            state.typedString = '';
-            state.recentPhrases = [];
-            state.lastRoundBest = false;
-
-            // Reset UI
-            updateHud();
-            shHearts.querySelectorAll('.heart').forEach(function (h) { h.classList.remove('lost', 'breaking'); });
-            stage.className = 'stage theme-ocean';
-            buildStageBackground('ocean');
-            if (typeInput) { typeInput.value = ''; typeInput.disabled = true; }
-            worldBanner.classList.remove('show');
-            if (state.inputMode === 'tap') {
-                tapHint.classList.remove('show');
+            if (won || state.lastRoundBest) {
+                confettiCanvas.classList.remove('hidden');
+                fireConfetti();
+                setTimeout(function () { confettiCanvas.classList.add('hidden'); }, 3500);
             }
-
-            startOverlay.classList.remove('hidden');
-            resultsModal.classList.add('hidden');
-            stopConfetti();
         }
-        window.resetGame = resetGame;
 
         function closeResults() {
             resultsModal.classList.add('hidden');
-            stopConfetti();
-            state.roundNumber++;
-            resetGame();
+            startOverlay.classList.remove('hidden');
+            stage.className = 'stage theme-' + WORLDS[0].key;
+            buildStageBackground(WORLDS[0].key);
+            shWorld.innerHTML = WORLDS[0].icon + ' ' + WORLDS[0].name + ' · 0/10';
+            resetStateForNewRound();
+            if (state.inputMode === 'type') {
+                typeBar.style.display = 'flex';
+            } else {
+                typeBar.style.display = 'none';
+            }
         }
         window.closeResults = closeResults;
+
+        function resetGame() {
+            resetStateForNewRound();
+            closeResults();
+        }
+        window.resetGame = resetGame;
 
         function dismissTapHint() {
             tapHint.classList.remove('show');
@@ -1898,175 +2074,293 @@
         window.dismissTapHint = dismissTapHint;
 
         /* =========================================================
-           15. CONFETTI
+           SHARE (UPDATED TO WORK BEFORE AND AFTER GAME)
            ========================================================= */
-        var confettiPieces = [];
-        var confettiRunning = false;
-        var confettiCtx = null;
-
-        function startConfetti() {
-            confettiCanvas.width = window.innerWidth;
-            confettiCanvas.height = window.innerHeight;
-            confettiCanvas.classList.remove('hidden');
-            confettiCtx = confettiCanvas.getContext('2d');
-            var colors = ['#4F46E5', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#EC4899'];
-            confettiPieces = [];
-            for (var i = 0; i < 140; i++) {
-                confettiPieces.push({
-                    x: Math.random() * confettiCanvas.width,
-                    y: -20 - Math.random() * 200,
-                    vx: (Math.random() - 0.5) * 4,
-                    vy: Math.random() * 3 + 2,
-                    size: Math.random() * 6 + 4,
-                    color: colors[Math.floor(Math.random() * colors.length)],
-                    rot: Math.random() * Math.PI * 2,
-                    vr: (Math.random() - 0.5) * 0.15
-                });
-            }
-            if (!confettiRunning) {
-                confettiRunning = true;
-                requestAnimationFrame(confettiLoop);
-            }
-        }
-        function confettiLoop() {
-            if (!confettiRunning) return;
-            confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
-            var alive = 0;
-            for (var i = 0; i < confettiPieces.length; i++) {
-                var p = confettiPieces[i];
-                p.x += p.vx; p.y += p.vy; p.vy += 0.04; p.rot += p.vr;
-                if (p.y < confettiCanvas.height + 30) alive++;
-                confettiCtx.save();
-                confettiCtx.translate(p.x, p.y);
-                confettiCtx.rotate(p.rot);
-                confettiCtx.fillStyle = p.color;
-                confettiCtx.fillRect(-p.size / 2, -p.size / 4, p.size, p.size / 2);
-                confettiCtx.restore();
-            }
-            if (alive > 0) requestAnimationFrame(confettiLoop);
-            else confettiRunning = false;
-        }
-        function stopConfetti() {
-            confettiRunning = false;
-            confettiPieces = [];
-            if (confettiCtx && confettiCanvas) {
-                confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
-            }
-            confettiCanvas.classList.add('hidden');
-        }
-
-        /* =========================================================
-           16. SHARE + COPY CHALLENGE
-           ========================================================= */
-        var SITE_URL = 'https://mytoolx.org/wordstorm.html';
-
-        function buildShareText() {
-            var acc = state.totalCharsTyped > 0 ? Math.round((state.correctChars / state.totalCharsTyped) * 100) : 100;
-            return 'I scored ' + state.score + ' points in WordStorm 🌪️🌊 — reached ' + WORLDS[state.worldIndex].name + ' with a ' + state.peakMultiplier.toFixed(1) + 'x combo and ' + acc + '% accuracy. Think you can beat me?';
-        }
-
         function shareScore() {
-            var text = buildShareText();
+            var baseUrl = 'https://mytoolx.org/wordstorm.html';
+            var text = '';
+
+            if (state.score > 0) {
+                text = 'I scored ' + state.score + ' in WordStorm with a peak ' +
+                       state.peakMultiplier.toFixed(1) + 'x multiplier and reached ' +
+                       WORLDS[state.worldIndex].name + '. Can you beat me?\n' + baseUrl + '?challenge=' + state.score;
+            } else {
+                text = 'Play WordStorm! Catch the falling phrases before they hit the ground.\n' + baseUrl;
+            }
+
             if (navigator.share) {
-                navigator.share({ title: 'My WordStorm Score', text: text, url: SITE_URL })
-                    .catch(function () {});
-            } else if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(text + ' ' + SITE_URL).then(function () {
-                    shareBtn.textContent = '✅ Copied!';
-                    setTimeout(function () { shareBtn.innerHTML = '🔗 Share Score'; }, 1600);
-                }).catch(function () {});
+                navigator.share({
+                    title: 'WordStorm by MyToolX',
+                    text: text
+                }).catch(function () { copyFallback(text, shareBtn); });
+            } else {
+                copyFallback(text, shareBtn);
             }
         }
         window.shareScore = shareScore;
 
         function copyChallengeLink() {
-            var text = buildShareText() + ' Play here: ' + SITE_URL;
-            var btn = el('copyChallengeBtn');
-            var original = btn.textContent;
-            function done() {
-                btn.textContent = '✅ Copied! Paste it anywhere.';
-                setTimeout(function () { btn.textContent = original; }, 1800);
-            }
-            function fail() {
-                btn.textContent = '❌ Could not copy — long press to copy manually';
-                setTimeout(function () { btn.textContent = original; }, 2400);
-            }
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(text).then(done).catch(fallbackCopy);
-            } else {
-                fallbackCopy();
-            }
-            function fallbackCopy() {
-                try {
-                    var ta = document.createElement('textarea');
-                    ta.value = text;
-                    ta.style.position = 'fixed';
-                    ta.style.opacity = '0';
-                    document.body.appendChild(ta);
-                    ta.select();
-                    document.execCommand('copy');
-                    document.body.removeChild(ta);
-                    done();
-                } catch (e) { fail(); }
-            }
+            var url = 'https://mytoolx.org/wordstorm.html?challenge=' + state.score;
+            var btn = document.getElementById('copyChallengeBtn');
+            copyFallback(url, btn, '📋 Copy challenge link', '✓ Link copied!');
         }
         window.copyChallengeLink = copyChallengeLink;
 
+        function copyFallback(text, button, origLabel, doneLabel) {
+            var orig = origLabel || (button ? button.textContent : 'Share');
+            var done = doneLabel || '✓ Copied!';
+            function onDone() {
+                if (!button) return;
+                button.textContent = done;
+                setTimeout(function () { button.textContent = orig; }, 2200);
+            }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(onDone).catch(function () {
+                    window.prompt('Copy and share:', text);
+                });
+            } else {
+                window.prompt('Copy and share:', text);
+            }
+        }
+
         /* =========================================================
-           17. INPUT LISTENERS
+           CONFETTI
+           ========================================================= */
+        function fireConfetti() {
+            var ctx = confettiCanvas.getContext('2d');
+            var W = confettiCanvas.width = window.innerWidth;
+            var H = confettiCanvas.height = window.innerHeight;
+            var colors = ['#fbbf24', '#10b981', '#3b82f6', '#ec4899', '#a78bfa', '#f87171'];
+            var pieces = [];
+            for (var i = 0; i < 140; i++) {
+                pieces.push({
+                    x: Math.random() * W,
+                    y: -20 - Math.random() * H * 0.4,
+                    vx: (Math.random() - 0.5) * 3,
+                    vy: 2 + Math.random() * 4,
+                    size: 4 + Math.random() * 6,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    rot: Math.random() * Math.PI * 2,
+                    vr: (Math.random() - 0.5) * 0.3
+                });
+            }
+            var start = performance.now();
+            function frame(t) {
+                var elapsed = t - start;
+                ctx.clearRect(0, 0, W, H);
+                for (var j = 0; j < pieces.length; j++) {
+                    var p = pieces[j];
+                    p.x += p.vx; p.y += p.vy; p.rot += p.vr;
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate(p.rot);
+                    ctx.fillStyle = p.color;
+                    ctx.globalAlpha = Math.max(0, 1 - elapsed / 3500);
+                    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+                    ctx.restore();
+                }
+                if (elapsed < 3500) {
+                    requestAnimationFrame(frame);
+                } else {
+                    ctx.clearRect(0, 0, W, H);
+                }
+            }
+            requestAnimationFrame(frame);
+        }
+
+        /* =========================================================
+           INPUT LISTENERS & BOOT
            ========================================================= */
         if (typeInput) {
             typeInput.addEventListener('input', handleTyping);
             typeInput.addEventListener('keydown', function (e) {
-                if (!state.running || state.paused) return;
-                // Backspace fully clears lock
-                if (e.key === 'Backspace' && typeInput.value.length === 0) {
-                    clearLock();
-                }
-                // Escape unlocks
-                if (e.key === 'Escape') {
-                    clearLock();
-                }
+                if (e.key === 'Enter') e.preventDefault();
             });
         }
 
-        // Click stage to refocus input (desktop only)
-        stage.addEventListener('click', function (e) {
-            if (state.inputMode === 'type' && state.running && !state.paused) {
-                try { typeInput.focus(); } catch (err) {}
-            }
-        });
-
-        /* =========================================================
-           18. RESIZE
-           ========================================================= */
-        window.addEventListener('resize', function () {
-            if (confettiCanvas && !confettiCanvas.classList.contains('hidden')) {
-                confettiCanvas.width = window.innerWidth;
-                confettiCanvas.height = window.innerHeight;
-            }
-        });
-
-        /* =========================================================
-           19. INIT
-           ========================================================= */
-        loadBest();
         state.inputMode = detectInputMode();
         if (state.inputMode === 'tap') {
             modeChip.textContent = 'Tap Mode';
-            modeHint.textContent = 'Tap mode is active — tap any phrase to clear it.';
+            modeHint.textContent = '📱 Tap Mode — tap phrases to clear them';
             typeBar.style.display = 'none';
         } else {
             modeChip.textContent = 'Type Mode';
-            modeHint.textContent = 'Start typing any phrase to lock on. Backspace to undo.';
+            modeHint.textContent = '⌨️ Type Mode — start typing any phrase';
             typeBar.style.display = 'flex';
+            typeInput.disabled = true;
         }
+
+        loadBest();
         updateHud();
+        stage.className = 'stage theme-' + WORLDS[0].key;
+        buildStageBackground(WORLDS[0].key);
+        shWorld.innerHTML = WORLDS[0].icon + ' ' + WORLDS[0].name + ' · 0/10';
 
     })();
     </script>
 
-    <!-- Google Analytics -->
+    <!-- FEEDBACK MODAL LOGIC (LOCKED TO WORDSTORM) -->
+    <script>
+        function openFeedbackModal(type = "review") {
+            document.getElementById("formType").value = type;
+            toggleFormFields();
+            document.getElementById("feedbackModal").classList.remove("hidden");
+        }
+
+        function closeFeedbackModal() {
+            document.getElementById("feedbackModal").classList.add("hidden");
+            document.getElementById("communityForm").reset();
+            document.getElementById("formError").classList.add("hidden");
+            document.getElementById("formSuccess").classList.add("hidden");
+        }
+
+        function handleBackdropClick(e) {
+            if (e.target && e.target.id === 'feedbackModal') closeFeedbackModal();
+        }
+
+        function toggleFormFields() {
+            const type = document.getElementById("formType").value;
+            const targetPageGroup = document.getElementById("targetPageGroup");
+            const suggestionCategoryGroup = document.getElementById("suggestionCategoryGroup");
+            const ratingGroup = document.getElementById("ratingGroup");
+            const titleGroup = document.getElementById("titleGroup");
+            const commentLabel = document.getElementById("commentLabel");
+            const modalTitle = document.getElementById("modalTitle");
+
+            if (type === "suggestion") {
+                targetPageGroup.classList.add("hidden");
+                suggestionCategoryGroup.classList.remove("hidden");
+                ratingGroup.classList.add("hidden");
+                titleGroup.classList.remove("hidden");
+                commentLabel.textContent = "Detailed Suggestion Description *";
+                modalTitle.textContent = "Suggest a WordStorm Improvement";
+            } else {
+                targetPageGroup.classList.remove("hidden");
+                suggestionCategoryGroup.classList.add("hidden");
+                ratingGroup.classList.remove("hidden");
+                titleGroup.classList.add("hidden");
+                commentLabel.textContent = "Your WordStorm Comment *";
+                modalTitle.textContent = "WordStorm Feedback";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const container = document.getElementById("starRatingContainer");
+            const input = document.getElementById("starRating");
+            if (!container || !input) return;
+
+            const stars = container.querySelectorAll(".star-click");
+            let currentRating = 5;
+
+            function updateStars(rating) {
+                stars.forEach((star, index) => {
+                    if (index < rating) {
+                        star.classList.add("text-amber-500");
+                        star.classList.remove("text-gray-300", "dark:text-gray-600");
+                    } else {
+                        star.classList.remove("text-amber-500");
+                        star.classList.add("text-gray-300", "dark:text-gray-600");
+                    }
+                });
+            }
+
+            stars.forEach((star, index) => {
+                star.addEventListener("mouseenter", () => updateStars(index + 1));
+                star.addEventListener("mouseleave", () => updateStars(currentRating));
+                star.addEventListener("click", () => {
+                    currentRating = index + 1;
+                    input.value = currentRating;
+                    updateStars(currentRating);
+                });
+                star.addEventListener("touchstart", (e) => {
+                    e.preventDefault();
+                    currentRating = index + 1;
+                    input.value = currentRating;
+                    updateStars(currentRating);
+                });
+            });
+            updateStars(currentRating);
+        });
+
+        async function submitCommunityFeedback(event) {
+            event.preventDefault();
+            const errorBox = document.getElementById("formError");
+            const successBox = document.getElementById("formSuccess");
+            const submitBtn = document.getElementById("submitModalBtn");
+            const API_URL = "https://script.google.com/macros/s/AKfycbxMZGHXUkzX04Z3slFH5F3GveBOIrj-XiKPl04aPOTHjBur8uSg57kb-PRr781vcStd5w/exec";
+
+            errorBox.classList.add("hidden");
+            successBox.classList.add("hidden");
+
+            const formType = document.getElementById("formType").value;
+            const commentText = document.getElementById("commentText").value.trim();
+            const authorName = document.getElementById("authorName") ? document.getElementById("authorName").value.trim() : "";
+            const country = document.getElementById("country") ? document.getElementById("country").value.trim() : "";
+
+            let payload = {
+                formType: formType,
+                commentText: commentText,
+                authorName: authorName,
+                country: country,
+                recommendation: "Yes",
+                language: document.documentElement.lang
+            };
+
+            if (formType === "suggestion") {
+                payload.suggestionCategory = document.getElementById("suggestionCategory").value;
+                payload.suggestionTitle = document.getElementById("suggestionTitle").value.trim();
+                if (!payload.suggestionTitle || !commentText) {
+                    errorBox.textContent = "Please fill out all required suggestion fields.";
+                    errorBox.classList.remove("hidden");
+                    return;
+                }
+            } else {
+                payload.targetPageId = "wordstorm";
+                payload.starRating = document.getElementById("starRating").value;
+                payload.pageUrl = "wordstorm.html";
+                if (!commentText) {
+                    errorBox.textContent = "Please enter your written review.";
+                    errorBox.classList.remove("hidden");
+                    return;
+                }
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = "⏳...";
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "text/plain;charset=utf-8" },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+
+                if (result.status === "success") {
+                    successBox.textContent = "🎉 Thank you! Your submission is pending moderation.";
+                    successBox.classList.remove("hidden");
+                    document.getElementById("communityForm").reset();
+                    setTimeout(() => {
+                        closeFeedbackModal();
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = "🚀 Submit Feedback";
+                    }, 3000);
+                } else {
+                    errorBox.textContent = result.message || "Submission failed.";
+                    errorBox.classList.remove("hidden");
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "🚀 Submit Feedback";
+                }
+            } catch (err) {
+                errorBox.textContent = "Network error. Please try again.";
+                errorBox.classList.remove("hidden");
+                submitBtn.disabled = false;
+                submitBtn.textContent = "🚀 Submit Feedback";
+            }
+        }
+    </script>
+
+    <!-- Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
     <script>
       window.addEventListener('load', function() {
