@@ -1,0 +1,113 @@
+/* ============================================================
+   MyToolX Global Language Switcher — Styles
+   Works for English (root), Spanish (/es/), French (/fr/),
+   and any future language folder.
+   Uses CSS variables from the page so it inherits theme colors.
+   ============================================================ */
+
+.mtx-lang-switcher {
+    position: relative;
+    display: inline-block;
+    margin-left: 6px;
+    font-family: inherit;
+    vertical-align: middle;
+}
+
+/* --- The trigger button --- */
+.mtx-lang-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 32px;
+    padding: 0 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid var(--card-border, #E2E8F0);
+    background: var(--chip-bg, #F1F5F9);
+    color: var(--chip-text, #334155);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+.mtx-lang-btn:hover { opacity: 0.85; }
+.mtx-lang-btn:active { transform: scale(0.97); }
+
+.mtx-lang-btn .mtx-caret {
+    font-size: 8px;
+    margin-left: 2px;
+    opacity: 0.6;
+}
+
+/* --- Flag icons (inline SVG) --- */
+.mtx-flag {
+    width: 18px;
+    height: 13px;
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* --- Dropdown menu --- */
+.mtx-lang-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 6px);
+    min-width: 150px;
+    background: var(--card, #FFFFFF);
+    border: 1px solid var(--card-border, #E2E8F0);
+    border-radius: 12px;
+    box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.18);
+    padding: 6px;
+    z-index: 100;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.mtx-lang-switcher.open .mtx-lang-menu { display: flex; }
+
+.mtx-lang-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text, #0F172A);
+    text-decoration: none;
+    transition: background 0.15s ease;
+}
+
+.mtx-lang-menu a:hover { background: var(--chip-bg, #F1F5F9); }
+
+.mtx-lang-menu a.mtx-current {
+    color: var(--primary, #4F46E5);
+}
+
+.mtx-lang-menu a.mtx-current::after {
+    content: "✓";
+    margin-left: auto;
+    font-size: 11px;
+    opacity: 0.8;
+}
+
+/* --- Desktop: slightly larger --- */
+@media (min-width: 640px) {
+    .mtx-lang-btn {
+        height: 40px;
+        padding: 0 12px;
+        font-size: 12px;
+    }
+    .mtx-flag { width: 20px; height: 15px; }
+}
+
+/* --- Mobile: hide language label, keep flag + caret --- */
+@media (max-width: 640px) {
+    .mtx-lang-btn .mtx-lang-name { display: none; }
+}
