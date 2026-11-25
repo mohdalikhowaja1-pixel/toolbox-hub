@@ -83,6 +83,7 @@
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
+
     <url>
         <loc>https://mytoolx.org/prompt-studio.html</loc>
         <lastmod>2026-11-08</lastmod>
@@ -268,6 +269,13 @@
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://mytoolx.org/blog-text-summarizer.html</loc>
+        <lastmod>2026-11-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>    
+
+    <url>
         <loc>https://mytoolx.org/blog-love-calculator.html</loc>
         <lastmod>2026-11-08</lastmod>
         <changefreq>monthly</changefreq>
@@ -306,6 +314,22 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+
+
+    <!-- COMMUNITY AND GIVEAWAY -->
+    <url>
+        <loc>https://mytoolx.org/community.html</loc>
+        <lastmod>2026-11-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mytoolx.org/giveaway.html</loc>
+        <lastmod>2026-11-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
 
     <!-- COMPANY & LEGAL -->
     <url>

@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+    (function() {
+        var saved = null;
+        try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+    })();
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- PRIMARY SEO -->
+    <title>🎄 Win 1 of 50 Premium Bundles — MyToolX Giveaway</title>
+    <meta name="description" content="Celebrate the holidays with MyToolX! Play free games or use our privacy tools to win 1 of 50 Premium Digital Bundles. No purchase required.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://mytoolx.org/giveaway.html">
+    
+    <!-- HREFLANG -->
+    <link rel="alternate" hreflang="en" href="https://mytoolx.org/giveaway.html">
+    <link rel="alternate" hreflang="es" href="https://mytoolx.org/es/giveaway.html">
+    <link rel="alternate" hreflang="fr" href="https://mytoolx.org/fr/giveaway.html">
+    <link rel="alternate" hreflang="x-default" href="https://mytoolx.org/giveaway.html">
+
+    <!-- FAVICON & PWA -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎄</text></svg>">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4F46E5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="icon-192.png">
+
+    <!-- OPEN GRAPH / TWITTER -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:url" content="https://mytoolx.org/giveaway.html">
+    <meta property="og:title" content="🎄 MyToolX Christmas &amp; New Year 2027 Giveaway">
+    <meta property="og:description" content="Play free games, use privacy-first tools, and enter to win 1 of 50 Premium Digital Bundles. No purchase required.">
+    <meta property="og:image" content="https://mytoolx.org/og-image-v2.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="🎄 MyToolX Christmas &amp; New Year 2027 Giveaway">
+    <meta name="twitter:description" content="Play free games, use privacy-first tools, and enter to win 1 of 5
+0 Premium Digital Bundles.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image-v2.png">
+
+    <!-- STYLESHEET & SWITCHER -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lang-switcher.css">
+    <script src="lang-switcher.js" defer></script>
+
+    <!-- SEO STRUCTURED DATA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "MyToolX Christmas & New Year 2027 Digital Giveaway",
+      "startDate": "2026-12-05T00:00:00Z",
+      "endDate": "2027-01-05T23:59:59Z",
+      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "VirtualLocation",
+        "url": "https://mytoolx.org/giveaway.html"
+      },
+      "description": "Play free browser games or use MyToolX privacy-first tools. Submit a screenshot to win one of 50 Premium Digital Bundles.",
+      "image": "https://mytoolx.org/og-image-v2.png",
+      "inLanguage": "en",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://mytoolx.org/giveaway.html"
+      }
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
+            --festive-red: #DC2626; --festive-gold: #D97706; --festive-green: #059669;
+        }
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
+            --festive-red: #F87171; --festive-gold: #FBBF24; --festive-green: #34D399;
+        }
+        html, body { overflow-x: clip; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); }
+        .btn-3d:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-accent { background: var(--accent); color: #fff; } .btn-accent:hover { background: var(--accent-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+
+        .input-field { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
+        .input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); outline: none; }
+
+        .card-3d-btn { transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; background: var(--card); border: 1px solid var(--card-border); }
+        .card-3d-btn:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(79,70,229,0.14), 0 8px 10px -6px rgba(79,70,229,0.08); border-color: var(--primary); }
+
+        /* Festive Hero & Snow */
+        .festive-hero {
+            position: relative; overflow: hidden;
+            background: linear-gradient(135deg, rgba(220,38,38,0.08) 0%, rgba(79,70,229,0.12) 50%, rgba(16,185,129,0.08) 100%);
+            border: 1px solid var(--card-border);
+        }
+        html[data-theme="dark"] .festive-hero {
+            background: linear-gradient(135deg, rgba(220,38,38,0.15) 0%, rgba(99,102,241,0.18) 50%, rgba(16,185,129,0.12) 100%);
+        }
+        .festive-ribbon { background: linear-gradient(90deg, #DC2626, #D97706, #059669); color: #FFFFFF; }
+        
+        .snow-dot {
+            position: absolute; top: -10px; border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.8); pointer-events: none;
+            animation: snowfall linear infinite;
+        }
+        html[data-theme="light"] .snow-dot { background: rgba(99, 102, 241, 0.25); }
+        @keyframes snowfall {
+            0% { transform: translateY(-10px) translateX(0); opacity: 0; }
+            15% { opacity: 1; }
+            85% { opacity: 1; }
+            100% { transform: translateY(400px) translateX(20px); opacity: 0; }
+        }
+
+        /* --- MEGA FOOTER --- */
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+        /* --- FOOTER SOCIAL ICONS --- */
+        .social-links-row { display: flex; align-items: center; gap: 12px; margin-top: 4px; }
+        .social-btn {
+            width: 42px; height: 42px; border-radius: 12px;
+            display: inline-flex; align-items: center; justify-content: center;
+            color: #FFFFFF !important; text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+            box-shadow: 0 6px 14px -3px rgba(0, 0, 0, 0.28);
+        }
+        .social-btn svg { width: 20px; height: 20px; fill: currentColor; }
+        .social-btn.fb-btn {
+            background: linear-gradient(135deg, #1877F2 0%, #0D5BD6 100%);
+        }
+        .social-btn.ig-btn {
+            background: radial-gradient(circle at 30% 107%, #FDF497 0%, #FDF497 5%, #FD5949 45%, #D6249F 60%, #285AEB 90%);
+        }
+        .social-btn:hover {
+            transform: translateY(-2px) scale(1.06);
+            box-shadow: 0 10px 20px -4px rgba(79, 70, 229, 0.35);
+            filter: brightness(1.05);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .snow-dot { display: none !important; }
+            * { animation: none !important; transition: none !important; }
+        }
+
+        /* Force images to scale perfectly with the layout */
+        .prize-img-container {
+            width: 100%;
+            height: 180px; /* Standardizes the card heights */
+            overflow: hidden;
+            position: relative;
+            background-color: #f3f4f6;
+        }
+        .prize-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image fills the box without stretching */
+            object-position: top;
+            display: block;
+        }
+    </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- HEADER -->
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2">
+            <div class="flex items-center justify-between gap-2 sm:gap-4">
+                
+                <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+                    <a href="index.html" class="hidden sm:flex btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold items-center gap-1">← All Tools</a>
+                    <a href="index.html" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
+                        <div class="logo-mark w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base flex items-center justify-center">M<span class="x">X</span></div>
+                        <span class="logo-wordmark text-base sm:text-xl block">MyTool<span class="x">X</span></span>
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                    <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch theme" class="h-8 sm:h-10 px-2 sm:px-3 rounded-xl flex items-center justify-center gap-1.5 text-[10px] sm:text-xs font-bold transition-all hover:opacity-80" style="background: var(--chip-bg); color: var(--chip-text);">
+                        <span id="themeIcon" aria-hidden="true">🌙</span>
+                        <span id="themeText" class="hidden sm:block">Dark Mode</span>
+                    </button>
+
+                    <!-- Community Link -->
+                    <a href="community.html" class="inline-flex items-center text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap" style="background: var(--chip-bg); color: var(--text);">
+                        💬 Community
+                    </a>                 
+                    
+                    <a href="#entry-form-section" class="inline-flex items-center text-[10px] sm:text-xs font-black !text-white bg-gradient-to-r from-red-600 to-amber-500 hover:from-red-700 hover:to-amber-600 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl shadow-md transition whitespace-nowrap border border-red-500/50">
+                        🎁 How to Win
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-2 sm:hidden">
+                <a href="index.html" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">
+                    ← Back to All Tools
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-8 w-full flex-grow">
+
+        <!-- HERO SECTION -->
+        <section class="festive-hero rounded-3xl p-6 sm:p-10 md:p-12 mb-10 text-center shadow-lg" aria-labelledby="hero-heading">
+            <span class="snow-dot w-2 h-2" style="left: 8%; animation-duration: 7s; animation-delay: 0s;"></span>
+            <span class="snow-dot w-1.5 h-1.5" style="left: 22%; animation-duration: 9s; animation-delay: 1.5s;"></span>
+            <span class="snow-dot w-2.5 h-2.5" style="left: 41%; animation-duration: 8s; animation-delay: 0.7s;"></span>
+            <span class="snow-dot w-1.5 h-1.5" style="left: 64%; animation-duration: 10s; animation-delay: 2.2s;"></span>
+            <span class="snow-dot w-2 h-2" style="left: 83%; animation-duration: 7.5s; animation-delay: 1s;"></span>
+            <span class="snow-dot w-1.5 h-1.5" style="left: 93%; animation-duration: 8.5s; animation-delay: 2.8s;"></span>
+
+            <div class="relative z-10 max-w-3xl mx-auto">
+                <div class="inline-flex flex-wrap items-center justify-center gap-2 festive-ribbon text-[11px] sm:text-xs font-black uppercase tracking-wider px-4 py-1.5 rounded-full shadow-md mb-5">
+                    <span>🎄 Christmas &amp; New Year 2027 Event</span>
+                    <span>•</span>
+                    <span>Dec 5, 2026 – Jan 5, 2027 (UTC)</span>
+                </div>
+
+                <h1 id="hero-heading" class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 tracking-tight leading-tight" style="color: var(--text);">
+                    Win 1 of 50 Premium Digital Productivity Bundles 🎁
+                </h1>
+
+                <p class="text-sm sm:text-base md:text-lg muted font-medium mb-6 leading-relaxed">
+                    Play our browser games, test any of our 23+ privacy-first tools, or share honest feedback on our premium packs. <strong>No purchase required.</strong> Normal MyToolX tools remain 100% free with zero registration.
+                </p>
+
+                <div class="max-w-lg mx-auto surface rounded-2xl p-4 sm:p-5 shadow-sm mb-6">
+                    <div id="campaignStatusBadge" class="text-xs font-extrabold uppercase tracking-wider mb-3" style="color: var(--festive-green);">
+                        ⏳ Campaign Countdown
+                    </div>
+                    <div class="grid grid-cols-4 gap-2 sm:gap-3">
+                        <div class="rounded-xl p-2.5" style="background: var(--chip-bg);">
+                            <div id="cdDays" class="text-2xl sm:text-3xl font-black" style="color: var(--primary);">--</div>
+                            <div class="text-[10px] font-bold uppercase muted">Days</div>
+                        </div>
+                        <div class="rounded-xl p-2.5" style="background: var(--chip-bg);">
+                            <div id="cdHours" class="text-2xl sm:text-3xl font-black" style="color: var(--primary);">--</div>
+                            <div class="text-[10px] font-bold uppercase muted">Hours</div>
+                        </div>
+                        <div class="rounded-xl p-2.5" style="background: var(--chip-bg);">
+                            <div id="cdMinutes" class="text-2xl sm:text-3xl font-black" style="color: var(--primary);">--</div>
+                            <div class="text-[10px] font-bold uppercase muted">Minutes</div>
+                        </div>
+                        <div class="rounded-xl p-2.5" style="background: var(--chip-bg);">
+                            <div id="cdSeconds" class="text-2xl sm:text-3xl font-black" style="color: var(--primary);">--</div>
+                            <div class="text-[10px] font-bold uppercase muted">Seconds</div>
+                        </div>
+                    </div>
+                    <p id="campaignWindowNote" class="text-[11px] muted mt-3 font-medium">
+                        Opens: <strong>Dec 5, 2026 (00:00 UTC)</strong> • Closes: <strong>Jan 5, 2027 (23:59 UTC)</strong> • Winners: <strong>Jan 10, 2027</strong>
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-3">
+                    <a href="#entry-form-section" class="btn-3d btn-primary px-6 py-3.5 rounded-2xl text-sm font-black inline-flex items-center gap-2">
+                        🎟️ Submit Giveaway Entry
+                    </a>
+                    <a href="#how-to-participate" class="btn-3d btn-chip px-6 py-3.5 rounded-2xl text-sm font-bold inline-flex items-center gap-2">
+                        📋 View 3 Ways to Enter
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW TO PARTICIPATE -->
+        <section id="how-to-participate" class="mb-14" aria-labelledby="ways-heading">
+            <div class="text-center mb-8">
+                <span class="text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full" style="background: var(--chip-bg); color: var(--primary);">
+                    3-Step Participation Guide
+                </span>
+                <h2 id="ways-heading" class="text-2xl sm:text-3xl font-black mt-3 mb-2" style="color: var(--text);">
+                    Choose One Qualification Path
+                </h2>
+                <p class="text-sm muted max-w-2xl mx-auto">
+                    Each verified participant receives <strong>1 official entry</strong> into the random prize draw (maximum 1 entry per person/email). Social media sharing is <strong>100% optional</strong>.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <!-- Path 1 -->
+                <div class="surface rounded-2xl p-6 flex flex-col justify-between card-3d-btn">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl">🎮</span>
+                            <span class="text-[10px] font-black uppercase px-2.5 py-1 rounded-md" style="background: var(--chip-bg); color: var(--primary);">Path 1 • Game Score</span>
+                        </div>
+                        <h3 class="text-lg font-extrabold mb-2" style="color: var(--text);">Play a Game &amp; Capture Score</h3>
+                        <p class="text-xs sm:text-sm muted leading-relaxed mb-4">
+                            Play any official MyToolX game (Typing Test, Reaction Time, Word Scramble, Math Sprint, or WordStorm) and upload a clear screenshot of your end-of-round score.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t text-xs font-bold" style="border-color: var(--card-border); color: var(--festive-green);">
+                        ✓ Counts as 1 verified entry
+                    </div>
+                </div>
+<br>
+                <!-- Path 2 -->
+                <div class="surface rounded-2xl p-6 flex flex-col justify-between card-3d-btn">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl">🧰</span>
+                            <span class="text-[10px] font-black uppercase px-2.5 py-1 rounded-md" style="background: var(--chip-bg); color: var(--accent);">Path 2 • Free Tool Use</span>
+                        </div>
+                        <h3 class="text-lg font-extrabold mb-2" style="color: var(--text);">Use a Free Tool &amp; Share Feedback</h3>
+                        <p class="text-xs sm:text-sm muted leading-relaxed mb-4">
+                            Try any free utility (Live CV Maker, Image Compressor, Grammar Checker, etc.), upload a screenshot of your session (hide sensitive data), and write an honest recommendation.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t text-xs font-bold" style="border-color: var(--card-border); color: var(--festive-green);">
+                        ✓ Counts as 1 verified entry
+                    </div>
+                </div>
+<br>
+                <!-- Path 3 -->
+                <div class="surface rounded-2xl p-6 flex flex-col justify-between card-3d-btn">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl">⭐</span>
+                            <span class="text-[10px] font-black uppercase px-2.5 py-1 rounded-md" style="background: var(--chip-bg); color: var(--festive-gold);">Path 3 • Product Feedback</span>
+                        </div>
+                        <h3 class="text-lg font-extrabold mb-2" style="color: var(--text);">Explore Premium Bundles</h3>
+                        <p class="text-xs sm:text-sm muted leading-relaxed mb-4">
+                            Visit the <a href="premium.html" class="underline font-bold" style="color: var(--primary);">Premium Store</a>, inspect the bundles, and submit constructive feedback on which pack helps your workflow with a screenshot.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t text-xs font-bold" style="border-color: var(--card-border); color: var(--festive-green);">
+                        ✓ Counts as 1 verified entry
+                    </div>
+                </div>
+            </div>
+        </section>
+<br>
+        <!-- QUICK-LAUNCH SHORTCUTS -->
+        <section class="mb-14" aria-labelledby="shortcuts-heading">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-5 gap-2">
+                <div>
+                    <h2 id="shortcuts-heading" class="text-xl font-black" style="color: var(--text);">⚡ Quick-Launch Games &amp; Tools</h2>
+                    <p class="text-xs muted">Open any tool below or from the main page in a new tab to try it out and capture a screenshot.</p>
+                </div>
+
+                <a href="community.html" class="text-xs font-bold hover:underline" style="color: var(--primary);">Visit Community Hub →</a>
+            </div>
+<br>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                <a href="typing-test.html" target="_blank" rel="noopener" class="card-3d-btn p-3.5 rounded-2xl flex flex-col justify-between h-28">
+                    <div class="flex justify-between items-start"><span class="text-2xl">⌨️</span><span class="text-[9px] font-black uppercase px-2 py-0.5 rounded" style="background: var(--chip-bg); color: var(--primary);">Game</span></div>
+                    <div><div class="font-bold text-sm" style="color: var(--text);">Typing Speed Test</div><div class="text-[11px] muted">3D WPM &amp; Accuracy</div></div>
+                </a>
+                <a href="reaction-time-test.html" target="_blank" rel="noopener" class="card-3d-btn p-3.5 rounded-2xl flex flex-col justify-between h-28">
+                    <div class="flex justify-between items-start"><span class="text-2xl">🎯</span><span class="text-[9px] font-black uppercase px-2 py-0.5 rounded" style="background: var(--chip-bg); color: var(--primary);">Game</span></div>
+                    <div><div class="font-bold text-sm" style="color: var(--text);">Reaction Time Test</div><div class="text-[11px] muted">Measure Reflexes</div></div>
+                </a>
+                <a href="wordstorm.html" target="_blank" rel="noopener" class="card-3d-btn p-3.5 rounded-2xl flex flex-col justify-between h-28">
+                    <div class="flex justify-between items-start"><span class="text-2xl">🌪️</span><span class="text-[9px] font-black uppercase px-2 py-0.5 rounded" style="background: var(--chip-bg); color: var(--primary);">Game</span></div>
+                    <div><div class="font-bold text-sm" style="color: var(--text);">WordStorm</div><div class="text-[11px] muted">Typing Arcade Game</div></div>
+                </a>
+                <a href="cv-maker.html" target="_blank" rel="noopener" class="card-3d-btn p-3.5 rounded-2xl flex flex-col justify-between h-28">
+                    <div class="flex justify-between items-start"><span class="text-2xl">📄</span><span class="text-[9px] font-black uppercase px-2 py-0.5 rounded" style="background: var(--chip-bg); color: var(--accent);">Free Tool</span></div>
+                    <div><div class="font-bold text-sm" style="color: var(--text);">Live CV Maker</div><div class="text-[11px] muted">PDF Resume Builder</div></div>
+                </a>
+            </div>
+        </section>
+<br>
+        <!-- PRIZES -->
+        <section class="mb-14" aria-labelledby="prizes-heading">
+            <div class="text-center mb-8">
+                <span class="text-xs font-black uppercase tracking-wider text-amber-500 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/30">
+                    🎁 50 Total Digital Prizes Available
+                </span>
+                <h2 id="prizes-heading" class="text-2xl sm:text-3xl font-black mt-3 mb-2" style="color: var(--text);">
+                    Official Holiday Prize Pool
+                </h2>
+                <p class="text-sm muted max-w-xl mx-auto">
+                    Ten (10) winners will be drawn for each of our five flagship digital productivity bundles (50 winners total).
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <!-- 1. ATS Resume Pack -->
+                <div class="surface rounded-2xl overflow-hidden flex flex-col justify-between shadow-sm card-3d-btn">
+                    <div class="prize-img-container">
+    <img src="cv-bundle-cover.webp" alt="ATS Resume Pack" loading="lazy" class="prize-img">
+    <span class="absolute top-2.5 right-2.5 bg-amber-500 text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow z-10">10 Winners</span>
+</div>
+                    <div class="p-4">
+                        <h3 class="font-black text-base mb-1" style="color: var(--text);">ATS Resume Pack</h3>
+                        <p class="text-xs muted leading-relaxed">Recruiter-tested resume &amp; cover letter templates designed to pass Applicant Tracking Systems.</p>
+                    </div>
+                    <div class="px-4 pb-4 flex items-center justify-between text-xs font-bold">
+                        <span class="text-amber-500">Value: $2.99</span>
+                        <a href="premium.html" class="hover:underline" style="color: var(--primary);">Preview →</a>
+                    </div>
+                </div>
+
+                <!-- 2. Excel Bundle -->
+                <div class="surface rounded-2xl overflow-hidden flex flex-col justify-between shadow-sm card-3d-btn">
+                    <div class="prize-img-container">
+    <img src="excel-bundle-cover.webp" alt="Excel Bundle" loading="lazy" class="prize-img">
+    <span class="absolute top-2.5 right-2.5 bg-emerald-600 text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow z-10">10 Winners</span>
+</div>
+                    <div class="p-4">
+                        <h3 class="font-black text-base mb-1" style="color: var(--text);">Excel Bundle</h3>
+                        <p class="text-xs muted leading-relaxed">Ready-to-use financial trackers, invoice templates, and automated business spreadsheets.</p>
+                    </div>
+                    <div class="px-4 pb-4 flex items-center justify-between text-xs font-bold">
+                        <span class="text-emerald-500">Value: $4.99</span>
+                        <a href="premium.html" class="hover:underline" style="color: var(--primary);">Preview →</a>
+                    </div>
+                </div>
+
+                <!-- 3. Contract Kit -->
+                <div class="surface rounded-2xl overflow-hidden flex flex-col justify-between shadow-sm card-3d-btn">
+                    <div class="prize-img-container">
+    <img src="freelancer-kit-thumbnail.webp" alt="Contract Kit" loading="lazy" class="prize-img">
+    <span class="absolute top-2.5 right-2.5 bg-indigo-600 text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow z-10">10 Winners</span>
+</div>
+                    <div class="p-4">
+                        <h3 class="font-black text-base mb-1" style="color: var(--text);">Contract Kit</h3>
+                        <p class="text-xs muted leading-relaxed">Client service agreements, scope-of-work templates, and onboarding checklists for freelancers.</p>
+                    </div>
+                    <div class="px-4 pb-4 flex items-center justify-between text-xs font-bold">
+                        <span class="text-indigo-500">Value: $2.99</span>
+                        <a href="premium.html" class="hover:underline" style="color: var(--primary);">Preview →</a>
+                    </div>
+                </div>
+
+                <!-- 4. AI Prompt Vault -->
+                <div class="surface rounded-2xl overflow-hidden flex flex-col justify-between shadow-sm card-3d-btn">
+                    <div class="prize-img-container">
+    <img src="ai-vault-cover.webp" alt="AI Prompt Vault" loading="lazy" class="prize-img">
+    <span class="absolute top-2.5 right-2.5 bg-purple-600 text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow z-10">10 Winners</span>
+</div>
+                    <div class="p-4">
+                        <h3 class="font-black text-base mb-1" style="color: var(--text);">AI Prompt Vault</h3>
+                        <p class="text-xs muted leading-relaxed">Curated prompt frameworks for writing, coding, research, and productivity workflows.</p>
+                    </div>
+                    <div class="px-4 pb-4 flex items-center justify-between text-xs font-bold">
+                        <span class="text-purple-500">Value: $1.99</span>
+                        <a href="premium.html" class="hover:underline" style="color: var(--primary);">Preview →</a>
+                    </div>
+                </div>
+<br>
+                <!-- 5. NEW: Monthly Household Budget Tracker (Centered) -->
+                <div class="surface rounded-2xl overflow-hidden flex flex-col justify-between shadow-sm card-3d-btn sm:col-span-2 lg:col-span-2 lg:col-start-2">
+                    <div class="prize-img-container">
+    <img src="budget-tracker-cover.webp" alt="Monthly Household Budget Tracker" loading="lazy" class="prize-img">
+    <span class="absolute top-2.5 right-2.5 bg-cyan-600 text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow z-10">10 Winners</span>
+</div>
+                    <div class="p-4">
+                        <h3 class="font-black text-base mb-1" style="color: var(--text);">Monthly Household Budget Tracker</h3>
+                        <p class="text-xs muted leading-relaxed">Track spending and build savings with an easy monthly budget tool. Visualize income, expenses, and savings goals.</p>
+                    </div>
+                    <div class="px-4 pb-4 flex items-center justify-between text-xs font-bold">
+                        <span class="text-cyan-500">Value: $4.99</span>
+                        <a href="premium.html" class="hover:underline" style="color: var(--primary);">Preview →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+<br>
+        <!-- ENTRY FORM -->
+        <section id="entry-form-section" class="max-w-2xl mx-auto mb-16" aria-labelledby="form-heading">
+            <div class="surface rounded-3xl p-6 sm:p-10 shadow-xl border-t-4 border-t-red-500">
+                <div class="text-center mb-6">
+                    <span class="inline-block text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full mb-2" style="background: var(--chip-bg); color: var(--primary);">
+                        Official Entry Form
+                    </span>
+                    <h2 id="form-heading" class="text-2xl sm:text-3xl font-black" style="color: var(--text);">
+                        Submit Your Giveaway Entry
+                    </h2>
+                    <p class="text-xs sm:text-sm muted mt-1">
+                        Complete the fields below and attach your verification screenshot (PNG, JPG, or WebP, max 5 MB).
+                    </p>
+                </div>
+
+                <div id="campaignClosedBanner" class="hidden rounded-2xl p-5 mb-6 text-center border" style="background: rgba(239,68,68,0.08); border-color: #EF4444;">
+                    <div class="text-2xl mb-1">🗓️</div>
+                    <h3 id="closedBannerTitle" class="text-sm font-black uppercase tracking-wider" style="color: #EF4444;">Submissions Currently Closed</h3>
+                    <p id="closedBannerText" class="text-xs muted mt-1"></p>
+                </div>
+
+                <form id="giveawayForm" novalidate class="space-y-5">
+                    <div style="position:absolute; left:-9999px; opacity:0;" aria-hidden="true">
+                        <label for="websiteUrlHp">Leave this field empty</label>
+                        <input type="text" id="websiteUrlHp" name="websiteUrlHp" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="displayName" class="block text-xs font-bold uppercase tracking-wider muted mb-1.5">Display Name *</label>
+                            <input type="text" id="displayName" name="displayName" required maxlength="60" placeholder="e.g. Sarah K." class="input-field w-full px-4 py-3 rounded-xl text-sm font-semibold">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-xs font-bold uppercase tracking-wider muted mb-1.5">Email Address *</label>
+                            <input type="email" id="email" name="email" required maxlength="120" placeholder="sarah@example.com" class="input-field w-full px-4 py-3 rounded-xl text-sm font-semibold">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="country" class="block text-xs font-bold uppercase tracking-wider muted mb-1.5">Country / Region *</label>
+                            <input type="text" id="country" name="country" required maxlength="60" placeholder="e.g. United States" class="input-field w-full px-4 py-3 rounded-xl text-sm font-semibold">
+                        </div>
+                        <div>
+                            <label for="prizeCategory" class="block text-xs font-bold uppercase tracking-wider muted mb-1.5">Preferred Prize *</label>
+                            <select id="prizeCategory" name="prizeCategory" required class="input-field w-full px-4 py-3 rounded-xl text-sm font-semibold">
+                                <option value="">-- Select Prize --</option>
+                                <option value="ATS Resume Pack">ATS Resume Pack ($2.99)</option>
+                                <option value="Excel Bundle">Excel Bundle ($4.99)</option>
+                                <option value="Contract Kit">Contract Kit ($2.99)</option>
+                                <option value="AI Prompt Vault">AI Prompt Vault ($1.99)</option>
+                                <option value="Monthly Household Budget Tracker">Monthly Household Budget Tracker ($4.99)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="participationCategory" class="block text-xs font-bold uppercase tracking-wider muted mb-1.5">Participation Category *</label>
+                        <select id="participationCategory" name="participationCategory" required onchange="handleCategoryFields()" class="input-field w-full px-4 py-3 rounded-xl text-sm font-semibold">
+                            <option value="">-- Choose How You Participated --</option>
+                            <option value="Game Score Screenshot">1. Play a Game &amp; Submit Score Screenshot</option>
+                            <option value="Free Tool Recommendation">2. Use a Free Tool &amp; Share Recommendation</option>
+                            <option value="Premium Product Feedback">3. Explore Premium Store &amp; Submit Feedback</option>
+                        </select>
+                    </div>
+
+                    <div id="gameFieldsWrapper" class="hidden grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-2xl" style="background: var(--chip-bg);">
+                        <div>
+                            <label for="gameName" class="block text-xs font-bold uppercase tracking-wider muted mb-1.5">Game Played *</label>
+                            <select id="gameName" name="gameName" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                                <option value="">-- Select Game --</option>
+                                <option value="Typing Speed Test">Typing Speed Test</option>
+                                <option value="Reaction Time Test">Reaction Time Test</option>
+                                <option value="Word Scramble">Word Scramble</option>
+                                <option value="Math Sprint">Math Sprint</option>
+                                <option value="WordStorm">WordStorm</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="gameScore" class="block text-xs font-bold uppercase tracking-wider muted mb-1.5">Achieved Score *</label>
+                            <input type="text" id="gameScore" name="gameScore" maxlength="50" placeholder="e.g. 74 WPM" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="participantNote" id="participantNoteLabel" class="block text-xs font-bold uppercase tracking-wider muted mb-1.5">
+                            Experience / Feedback *
+                        </label>
+                        <textarea id="participantNote" name="participantNote" required rows="3" maxlength="500" placeholder="Tell us what you found most helpful..." class="input-field w-full px-4 py-3 rounded-xl text-sm font-medium"></textarea>
+                        <div class="text-[11px] muted mt-1 text-right"><span id="noteCharCount">0</span> / 500</div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl border" style="border-color: var(--card-border); background: var(--input-bg);">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-extrabold uppercase tracking-wider" style="color: var(--text);">Optional Social Mention</span>
+                            <span class="text-[10px] font-bold px-2 py-0.5 rounded" style="background: var(--chip-bg); color: var(--text-muted);">Optional • No Extra Entries</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
+                            <div>
+                                <label for="socialPlatform" class="block text-[11px] font-bold muted mb-1">Platform</label>
+                                <select id="socialPlatform" name="socialPlatform" class="input-field w-full px-3 py-2.5 rounded-xl text-xs font-semibold">
+                                    <option value="None">None / Not Shared</option>
+                                    <option value="LinkedIn">LinkedIn</option>
+                                    <option value="X (Twitter)">X (Twitter)</option>
+                                    <option value="Facebook">Facebook</option>
+                                    <option value="Instagram">Instagram</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="publicPostUrl" class="block text-[11px] font-bold muted mb-1">Post URL</label>
+                                <input type="url" id="publicPostUrl" name="publicPostUrl" maxlength="250" placeholder="https://..." class="input-field w-full px-3 py-2.5 rounded-xl text-xs font-semibold">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="screenshotFile" class="block text-xs font-bold uppercase tracking-wider muted mb-1.5">
+                            Verification Screenshot *
+                        </label>
+                        <div id="dropZone" class="border-2 border-dashed rounded-2xl p-5 text-center cursor-pointer transition hover:border-indigo-500" style="border-color: var(--card-border); background: var(--input-bg);" onclick="document.getElementById('screenshotFile').click()">
+                            <input type="file" id="screenshotFile" accept="image/png,image/jpeg,image/webp" class="hidden" onchange="handleFileSelect(event)">
+                            <div id="uploadPrompt">
+                                <div class="text-3xl mb-1.5">📸</div>
+                                <p class="text-xs sm:text-sm font-bold" style="color: var(--text);">Click to upload or drag &amp; drop</p>
+                                <p class="text-[11px] muted mt-1">Crop out any private details before uploading.</p>
+                            </div>
+                            <div id="previewContainer" class="hidden mt-2">
+                                <img id="screenshotPreview" src="" alt="Screenshot preview" class="max-h-52 mx-auto rounded-xl shadow-md border" style="border-color: var(--card-border);">
+                                <div class="mt-2 flex items-center justify-center gap-3">
+                                    <span id="fileMetaLabel" class="text-xs font-bold muted"></span>
+                                    <button type="button" onclick="clearSelectedFile(event)" class="text-xs font-bold text-red-500 hover:underline">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 pt-2">
+                        <label class="flex items-start gap-2.5 cursor-pointer text-xs leading-relaxed">
+                            <input type="checkbox" id="privacyConsent" required class="mt-0.5 rounded">
+                            <span class="muted">
+                                <strong>(Required)</strong> I am 18+ and agree to the <a href="#rules-section" class="underline font-bold" style="color: var(--primary);">Campaign Rules</a> &amp; <a href="#privacy-section" class="underline font-bold" style="color: var(--primary);">Privacy Notice</a>.
+                            </span>
+                        </label>
+                        <label class="flex items-start gap-2.5 cursor-pointer text-xs leading-relaxed">
+                            <input type="checkbox" id="winnerPublishConsent" class="mt-0.5 rounded">
+                            <span class="muted">
+                                <strong>(Optional)</strong> If I win, MyToolX may publish my Display Name and Country.
+                            </span>
+                        </label>
+                    </div>
+
+                    <div id="formErrorBox" role="alert" class="hidden rounded-xl p-4 text-xs font-bold border" style="background: rgba(239,68,68,0.1); border-color: #EF4444; color: #EF4444;"></div>
+
+                    <button type="submit" id="submitBtn" class="btn-3d btn-primary w-full py-4 rounded-2xl text-sm sm:text-base font-black shadow-lg">
+                        🎟️ Submit Entry
+                    </button>
+                </form>
+
+                <div id="confirmationCard" class="hidden rounded-2xl p-6 text-center border mt-4" style="background: rgba(16,185,129,0.08); border-color: var(--accent);">
+                    <div class="text-4xl mb-2">📩</div>
+                    <h3 class="text-lg font-black mb-1" style="color: var(--text);">Submission Received</h3>
+                    <p class="text-xs sm:text-sm muted mb-4">
+                        Thank you! Your submission is queued for manual administrator review.
+                    </p>
+                    <div class="inline-block px-4 py-2.5 rounded-xl surface mb-4">
+                        <div class="text-[10px] uppercase font-bold muted">Your Entry Reference ID</div>
+                        <div id="confirmedEntryId" class="text-base sm:text-lg font-black tracking-wider select-all" style="color: var(--primary);">MTX-2027-XXXXXX</div>
+                    </div>
+                    <p class="text-xs muted leading-relaxed max-w-md mx-auto">
+                        Please save your ID. Entries are <strong>not automatically approved</strong>; we verify each screenshot before the draw on <strong>Jan 10, 2027</strong>.
+                    </p>
+                </div>
+            </div>
+        </section>
+<br>
+        <!-- WINNERS -->
+        <section id="winners-section" class="mb-14" aria-labelledby="winners-heading">
+            <div class="surface rounded-3xl p-6 sm:p-8 text-center border-t-4 border-t-amber-500">
+                <span class="text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full" style="background: var(--chip-bg); color: var(--festive-gold);">
+                    🏆 Official Results Board
+                </span>
+                <h2 id="winners-heading" class="text-2xl font-black mt-3 mb-2" style="color: var(--text);">
+                    New Year 2027 Winner Announcement
+                </h2>
+                <p class="text-xs sm:text-sm muted max-w-xl mx-auto mb-4">
+                    Verified winners will be selected via random draw on <strong>Jan 10, 2027</strong> (displaying only those who opted into public listing).
+                </p>
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold" style="background: var(--chip-bg); color: var(--text-muted);">
+                    <span>🗓️ Status:</span>
+                    <span id="winnerBoardStatus">Awaiting Draw on Jan 10, 2027</span>
+                </div>
+            </div>
+        </section>
+<br>
+        <!-- RULES & PRIVACY -->
+        <section id="rules-section" class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-14">
+            <div class="surface rounded-3xl p-6 sm:p-8">
+                <h2 class="text-xl font-black mb-4" style="color: var(--text);">📜 Official Campaign Rules</h2>
+                <ul class="space-y-3 text-xs sm:text-sm muted leading-relaxed list-disc pl-5">
+                    <li><strong>Window:</strong> Dec 5, 2026 (00:00 UTC) to Jan 5, 2027 (23:59 UTC).</li>
+                    <li><strong>No Purchase Necessary:</strong> Participating is completely free. Buying Premium does not increase your odds.</li>
+                    <li><strong>Eligibility:</strong> Open to individuals aged 18+ worldwide, void where prohibited.</li>
+                    <li><strong>Limit:</strong> Strictly one (1) entry per person and email. Duplicate screenshots are disqualified.</li>
+                    <li><strong>Verification:</strong> Entries stay <em>Pending</em> until manually reviewed. Altered screenshots or bots are <em>Rejected</em>.</li>
+                    <li><strong>Prizes:</strong> 50 digital bundles total (1 bundle per winner; 10 copies of 5 different packs). Delivered via email within 7 days of the Jan 10 draw.</li>
+                </ul>
+            </div>
+
+            <div id="privacy-section" class="surface rounded-3xl p-6 sm:p-8">
+                <h2 class="text-xl font-black mb-4" style="color: var(--text);">🔒 Privacy Notice</h2>
+                <ul class="space-y-3 text-xs sm:text-sm muted leading-relaxed list-disc pl-5">
+                    <li><strong>Separate from Free Tools:</strong> Our regular tools require zero registration. This giveaway is a purely voluntary activity.</li>
+                    <li><strong>Data Collected:</strong> Name, Email, Country, Category, Optional URL, and Screenshot.</li>
+                    <li><strong>Purpose:</strong> Strictly to verify entries, contact winners, and deliver prizes. No marketing subscriptions.</li>
+                    <li><strong>Security:</strong> Screenshots are stored in a restricted, admin-only Google Drive folder.</li>
+                    <li><strong>Retention:</strong> All data is permanently deleted within 30 days after prize delivery (by Feb 15, 2027).</li>
+                </ul>
+            </div>
+        </section>
+<br>
+        <!-- FAQ -->
+        <section class="max-w-3xl mx-auto mb-12" aria-labelledby="faq-heading">
+            <h2 id="faq-heading" class="text-2xl font-black text-center mb-6" style="color: var(--text);"> 📌 Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <details class="surface rounded-2xl p-5 cursor-pointer">
+                    <summary class="font-bold text-sm" style="color: var(--text);">Do I need to share on social media to enter?</summary>
+                    <p class="text-xs sm:text-sm muted mt-2 leading-relaxed">No. Social sharing is optional and grants no bonus entries. You qualify simply by uploading a screenshot of your game score, tool usage, or premium feedback.</p>
+                </details>
+                <details class="surface rounded-2xl p-5 cursor-pointer">
+                    <summary class="font-bold text-sm" style="color: var(--text);">Do I need a Google account to submit?</summary>
+                    <p class="text-xs sm:text-sm muted mt-2 leading-relaxed">No. Any visitor can submit the form and upload a screenshot directly from this page without logging into Google or creating an account.</p>
+                </details>
+                <details class="surface rounded-2xl p-5 cursor-pointer">
+                    <summary class="font-bold text-sm" style="color: var(--text);">Why does my confirmation say "Pending Verification"?</summary>
+                    <p class="text-xs sm:text-sm muted mt-2 leading-relaxed">To keep the draw fair, an admin reviews each screenshot to confirm it is genuine before approving it for the Jan 10 draw.</p>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+                
+                <div class="lg:col-span-5">
+                    <a href="index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 pr-4">
+MyToolX is a free suite of client-side web tools for writers, freelancers and developers. No sign-up, no tracking, no data leaves your browser.
+                    </p>
+                    <div class="social-links-row" aria-label="MyToolX social media links">
+                        <a href="https://www.facebook.com/profile.php?id=61596813242660" target="_blank" rel="noopener noreferrer" aria-label="MyToolX on Facebook" title="Facebook" class="social-btn fb-btn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/mytoolx0?fqnt=dm05bDBzazZ6Nmpp" target="_blank" rel="noopener noreferrer" aria-label="MyToolX on Instagram" title="Instagram" class="social-btn ig-btn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-4">
+                    <h3>Popular Tools</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <a href="typing-test.html">Typing Speed Test</a>
+                        <div class="flex items-start mt-0.5"> 
+                            <a href="premium.html" class="link-premium-gold" aria-label="Visit the Premium Store">
+                                <span class="star-icon">⭐</span> Premium
+                            </a>
+                        </div>
+                        <a href="prompt-studio.html">AI Prompt Studio</a>
+                        <a href="image-compressor.html">Image Compressor</a>
+                        <a href="text-suite.html">Text &amp; Word Suite</a>
+                        <a href="grammar-checker.html">Grammar Checker</a>
+                        <a href="sip-calculator.html">SIP Calculator</a>
+                        <a href="fee-calculator.html">Fee Calculator</a>
+                        <a href="json-formatter.html">JSON Formatter</a>
+                        <a href="loan-emi.html">Loan EMI Calc</a>
+                        <a href="qr-code-generator.html">QR Code Gen</a>
+                        <a href="base64-tool.html">Base64 Tool</a>
+                        <a href="unit-converter.html">Unit Converter</a>
+                        <a href="password-generator.html">Password Gen</a>
+                        <a href="article-outline.html">Article Outline</a>
+                        <a href="ai-bio-generator.html">AI Bio Generator</a>
+                        <a href="love-calculator.html">Love Calculator</a>
+                        <a href="cv-maker.html">Resume Builder</a> 
+                        <a href="text-summarizer.html">AI Summarizer</a>
+                        <a href="color-converter.html">Color Converter</a>
+                        <a href="math-sprint.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Math Sprint Game</a>
+                        <a href="wordstorm.html" class="footer-game-link"><span aria-hidden="true">⭐</span> WordStorm Game</a>
+                        <a href="reaction-time-test.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Reaction Test</a>
+                        <a href="word-scramble.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Word Scramble</a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Company</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="community.html">Community</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Legal</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="blog.html">Blog &amp; Guides</a></li>
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                                <li><a href="terms.html">Terms of Service</a></li>
+                                <li><a href="giveaway.html">Holiday Giveaway</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. All rights reserved.</p>
+                <p>All tools run 100% client-side in your browser.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- CONFIGURATION ---
+        // UPDATE THIS URL WITH YOUR DEPLOYED GOOGLE APPS SCRIPT WEB APP
+        const CAMPAIGN_CONFIG = {
+            APPS_SCRIPT_WEB_APP_URL: "https://script.google.com/macros/s/AKfycbyp4IOrXv1afAfTr4_Hn9hI52BU7gSa2YKlxz1QI2WoIywtW5Vf9ISpB8WIAXxwJTJJ/exec", 
+            // Temporarily set to open NOW for testing
+            OPEN_DATE_UTC: "2026-12-05T00:00:00Z", 
+            CLOSE_DATE_UTC: "2027-01-05T23:59:59Z",
+            MAX_FILE_BYTES: 5 * 1024 * 1024,
+            ALLOWED_MIME_TYPES: ["image/png", "image/jpeg", "image/webp"]
+        };
+
+        // --- THEME LOGIC ---
+        (function initTheme() {
+            var saved = null;
+            try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            applyTheme(saved || (prefersDark ? 'dark' : 'light'));
+        })();
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            var icon = document.getElementById('themeIcon');
+            var text = document.getElementById('themeText');
+            if (icon && text) {
+                icon.textContent = theme === 'dark' ? '🌙' : '☀️';
+                text.textContent = theme === 'dark' ? 'Dark Mode' : 'Light Mode';
+            }
+        }
+
+        function toggleTheme() {
+            var cur = document.documentElement.getAttribute('data-theme') || 'light';
+            var next = cur === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('mtx-theme', next); } catch (e) {}
+        }
+
+        // --- COUNTDOWN LOGIC ---
+        function updateCampaignClock() {
+            const now = Date.now();
+            const openMs = Date.parse(CAMPAIGN_CONFIG.OPEN_DATE_UTC);
+            const closeMs = Date.parse(CAMPAIGN_CONFIG.CLOSE_DATE_UTC);
+
+            const statusBadge = document.getElementById("campaignStatusBadge");
+            const closedBanner = document.getElementById("campaignClosedBanner");
+            const closedTitle = document.getElementById("closedBannerTitle");
+            const closedText = document.getElementById("closedBannerText");
+            const submitBtn = document.getElementById("submitBtn");
+
+            let targetMs = closeMs;
+
+            if (now < openMs) {
+                targetMs = openMs;
+                statusBadge.textContent = "🎄 Campaign Opens In:";
+                closedBanner.classList.remove("hidden");
+                closedTitle.textContent = "Giveaway Opens Dec 5, 2026 (00:00 UTC)";
+                closedText.textContent = "You can explore the games and tools now entries open when the countdown hits zero.";
+                submitBtn.disabled = true;
+            } else if (now > closeMs) {
+                statusBadge.textContent = "🔒 Campaign Closed";
+                closedBanner.classList.remove("hidden");
+                closedTitle.textContent = "Submissions Closed on Jan 5, 2027";
+                closedText.textContent = "Winners will be announced on Jan 10, 2027.";
+                submitBtn.disabled = true;
+                setClockDigits(0);
+                return;
+            } else {
+                statusBadge.textContent = "🟢 Live Now — Closes In:";
+                closedBanner.classList.add("hidden");
+                submitBtn.disabled = false;
+            }
+
+            setClockDigits(Math.max(0, targetMs - now));
+        }
+
+        function setClockDigits(diffMs) {
+            const d = Math.floor(diffMs / 86400000);
+            const h = Math.floor((diffMs % 86400000) / 3600000);
+            const m = Math.floor((diffMs % 3600000) / 60000);
+            const s = Math.floor((diffMs % 60000) / 1000);
+
+            document.getElementById("cdDays").textContent = String(d).padStart(2, "0");
+            document.getElementById("cdHours").textContent = String(h).padStart(2, "0");
+            document.getElementById("cdMinutes").textContent = String(m).padStart(2, "0");
+            document.getElementById("cdSeconds").textContent = String(s).padStart(2, "0");
+        }
+
+        updateCampaignClock();
+        setInterval(updateCampaignClock, 1000);
+
+        // --- FORM LOGIC ---
+        let selectedFilePayload = null;
+
+        document.getElementById("participantNote").addEventListener("input", function () {
+            document.getElementById("noteCharCount").textContent = this.value.length;
+        });
+
+        function handleCategoryFields() {
+            const cat = document.getElementById("participationCategory").value;
+            const gameWrapper = document.getElementById("gameFieldsWrapper");
+            const gameName = document.getElementById("gameName");
+            const gameScore = document.getElementById("gameScore");
+            const noteLabel = document.getElementById("participantNoteLabel");
+
+            if (cat === "Game Score Screenshot") {
+                gameWrapper.classList.remove("hidden");
+                gameName.required = true;
+                gameScore.required = true;
+                noteLabel.textContent = "Game Experience / Notes *";
+            } else {
+                gameWrapper.classList.add("hidden");
+                gameName.required = false;
+                gameScore.required = false;
+                noteLabel.textContent = cat === "Premium Product Feedback"
+                    ? "Honest Feedback on the Premium Bundle *"
+                    : "Honest Recommendation of the Free Tool *";
+            }
+        }
+
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            processImageFile(file);
+        }
+
+        const dropZone = document.getElementById("dropZone");
+        dropZone.addEventListener("dragover", function (e) {
+            e.preventDefault();
+            dropZone.style.borderColor = "var(--primary)";
+        });
+        dropZone.addEventListener("dragleave", function () {
+            dropZone.style.borderColor = "var(--card-border)";
+        });
+        dropZone.addEventListener("drop", function (e) {
+            e.preventDefault();
+            dropZone.style.borderColor = "var(--card-border)";
+            if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+                processImageFile(e.dataTransfer.files[0]);
+            }
+        });
+
+        function processImageFile(file) {
+            hideError();
+            if (!CAMPAIGN_CONFIG.ALLOWED_MIME_TYPES.includes(file.type)) {
+                showError("Invalid file type. Please upload a PNG, JPG, or WebP screenshot.");
+                clearSelectedFile();
+                return;
+            }
+            if (file.size > CAMPAIGN_CONFIG.MAX_FILE_BYTES) {
+                showError("Screenshot exceeds the 5 MB limit. Please compress it and try again.");
+                clearSelectedFile();
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const dataUrl = e.target.result;
+                const base64Data = dataUrl.split(",")[1];
+                selectedFilePayload = {
+                    fileName: file.name,
+                    mimeType: file.type,
+                    sizeBytes: file.size,
+                    base64: base64Data
+                };
+                document.getElementById("screenshotPreview").src = dataUrl;
+                document.getElementById("fileMetaLabel").textContent = file.name + " (" + (file.size / 1024 / 1024).toFixed(2) + " MB)";
+                document.getElementById("uploadPrompt").classList.add("hidden");
+                document.getElementById("previewContainer").classList.remove("hidden");
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function clearSelectedFile(event) {
+            if (event) event.stopPropagation();
+            selectedFilePayload = null;
+            document.getElementById("screenshotFile").value = "";
+            document.getElementById("screenshotPreview").src = "";
+            document.getElementById("previewContainer").classList.add("hidden");
+            document.getElementById("uploadPrompt").classList.remove("hidden");
+        }
+
+        function showError(msg) {
+            const box = document.getElementById("formErrorBox");
+            box.textContent = "⚠️ " + msg;
+            box.classList.remove("hidden");
+        }
+
+        function hideError() {
+            const box = document.getElementById("formErrorBox");
+            box.textContent = "";
+            box.classList.add("hidden");
+        }
+
+        document.getElementById("giveawayForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+            hideError();
+
+            if (CAMPAIGN_CONFIG.APPS_SCRIPT_WEB_APP_URL.includes("YOUR_APPS_SCRIPT_URL_HERE")) {
+                showError("Campaign backend endpoint is not configured yet. Please add your Google Apps Script URL.");
+                return;
+            }
+
+            const displayName = document.getElementById("displayName").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const country = document.getElementById("country").value.trim();
+            const prizeCategory = document.getElementById("prizeCategory").value;
+            const participationCategory = document.getElementById("participationCategory").value;
+            const gameName = document.getElementById("gameName").value;
+            const gameScore = document.getElementById("gameScore").value.trim();
+            const participantNote = document.getElementById("participantNote").value.trim();
+            const socialPlatform = document.getElementById("socialPlatform").value;
+            const publicPostUrl = document.getElementById("publicPostUrl").value.trim();
+            const privacyConsent = document.getElementById("privacyConsent").checked;
+            const winnerPublishConsent = document.getElementById("winnerPublishConsent").checked;
+            const websiteUrlHp = document.getElementById("websiteUrlHp").value;
+
+            if (!displayName || !email || !country || !prizeCategory || !participationCategory || !participantNote) {
+                showError("Please fill out all required fields marked with *.");
+                return;
+            }
+            if (participationCategory === "Game Score Screenshot" && (!gameName || !gameScore)) {
+                showError("Please select the game you played and enter your score.");
+                return;
+            }
+            if (!selectedFilePayload) {
+                showError("Please attach a verification screenshot.");
+                return;
+            }
+            if (!privacyConsent) {
+                showError("You must agree to the Campaign Rules and Privacy Notice.");
+                return;
+            }
+
+            const submitBtn = document.getElementById("submitBtn");
+            submitBtn.disabled = true;
+            submitBtn.textContent = "⏳ Uploading & Submitting...";
+
+            const payload = {
+                websiteUrlHp: websiteUrlHp,
+                displayName: displayName,
+                email: email,
+                country: country,
+                prizeCategory: prizeCategory,
+                participationCategory: participationCategory,
+                gameName: gameName,
+                gameScore: gameScore,
+                participantNote: participantNote,
+                socialPlatform: socialPlatform,
+                publicPostUrl: publicPostUrl,
+                privacyConsent: privacyConsent,
+                winnerPublishConsent: winnerPublishConsent,
+                file: selectedFilePayload
+            };
+
+            try {
+                const response = await fetch(CAMPAIGN_CONFIG.APPS_SCRIPT_WEB_APP_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "text/plain;charset=utf-8" },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (result.status === "success" && result.entryId) {
+                    document.getElementById("giveawayForm").classList.add("hidden");
+                    document.getElementById("confirmedEntryId").textContent = result.entryId;
+                    document.getElementById("confirmationCard").classList.remove("hidden");
+                    document.getElementById("confirmationCard").scrollIntoView({ behavior: "smooth", block: "center" });
+                } else {
+                    showError(result.message || "Submission could not be accepted. Please try again.");
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "🎟️ Submit Entry";
+                }
+            } catch (err) {
+                showError("Network error while uploading. Please check your connection.");
+                submitBtn.disabled = false;
+                submitBtn.textContent = "🎟️ Submit Entry";
+            }
+        });
+    </script>
+</body>
+</html>
