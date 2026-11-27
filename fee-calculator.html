@@ -741,7 +741,8 @@ MyToolX is a free suite of client-side web tools for writers, freelancers and de
             return parseFloat(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         }
         function num(id) {
-            var v = parseFloat(document.getElementById(id).value);
+            var raw = document.getElementById(id).value.trim();
+            var v = raw === '' ? NaN : Number(raw);
             return (isFinite(v) && v > 0) ? v : 0;
         }
         function fmt(sym, n) { return sym + money(n); }
