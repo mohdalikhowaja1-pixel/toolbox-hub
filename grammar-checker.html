@@ -756,7 +756,7 @@ MyToolX provides free browser-based tools for writers, freelancers and developer
                         model: CONFIG.AI_MODEL,
                         temperature: 0.1,
                         messages: [
-                            { role: 'system', content: 'You are a professional proofreader. Correct all spelling, grammar, punctuation. Output ONLY the corrected text. Language: ' + langName },
+                            { role: 'system', content: 'You are a professional proofreader. Correct all spelling, grammar, and punctuation. Output ONLY the corrected text. ' + (langName === 'auto' ? 'Detect the input language and preserve it.' : 'Language: ' + langName) },
                             { role: 'user', content: text }
                         ]
                     }),
@@ -784,7 +784,7 @@ MyToolX provides free browser-based tools for writers, freelancers and developer
             }
 
             var chosen = langSelect.value;
-            var lang = chosen === 'auto' ? 'en-US' : chosen;
+            var lang = chosen;
             var wantAI = document.getElementById('aiToggle').checked;
             var aiAllowed = wantAI && Date.now() >= aiDownUntil;
 
