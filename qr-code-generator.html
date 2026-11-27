@@ -671,6 +671,10 @@ MyToolX is a free suite of client-side web tools for writers, freelancers and de
             var val = qrInput.value.trim();
             if (!val) return;
 
+            if (typeof QRCode === 'undefined') {
+                showToast('QR code library is unavailable. Please reload the page.');
+                return;
+            }
             var tempDiv = document.createElement('div');
             new QRCode(tempDiv, {
                 text: val,
@@ -713,12 +717,16 @@ MyToolX is a free suite of client-side web tools for writers, freelancers and de
         function shareQR() {
             var val = qrInput.value.trim();
             if (!val) return;
-            
-            navigator.clipboard.writeText(val).then(function() {
-                showToast("Link or text copied to clipboard!");
-            }).catch(function() {
-                showToast("Unable to copy. Please check clipboard permissions.");
-            });
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(val).then(function() {
+                    showToast("Link or text copied to clipboard!");
+                }).catch(function() {
+                    window.prompt('Copy this link or text:', val);
+                });
+            } else {
+                window.prompt('Copy this link or text:', val);
+            }
         }
         window.shareQR = shareQR;
 
