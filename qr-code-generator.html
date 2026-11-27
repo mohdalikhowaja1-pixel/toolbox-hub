@@ -14,8 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
     <!-- PRIMARY SEO -->
-    <title>Free QR Code Generator for WiFi & URLs | MyToolX</title>
-    <meta name="description" content="Create QR codes for website links, text, WiFi access and contact details. Customize and download your QR code with this free online generator.">
+    <title>Free QR Code Generator for Links & Text | MyToolX</title>
+    <meta name="description" content="Create QR codes for website links and plain text. Preview and download high-resolution QR code images with this free online generator.">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://mytoolx.org/qr-code-generator.html">
 
@@ -56,7 +56,7 @@
     <link rel="dns-prefetch" href="//refer.micro1.ai">
 
     <!-- QR CODE LIBRARY (Must be loaded before tool usage) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer onerror="window.qrLibraryFailed=true"></script>
 
     <script type="application/ld+json">
     {
@@ -286,7 +286,7 @@
 
                 <div class="flex flex-wrap justify-center gap-3 w-full max-w-sm">
                     <button id="downloadBtn" type="button" onclick="downloadHDQR()" class="btn-3d btn-accent flex-1 px-5 py-2.5 text-xs flex items-center justify-center gap-1.5 whitespace-nowrap">⬇️ Download HD QR</button>
-                    <button id="shareBtn" type="button" onclick="shareQR()" class="btn-3d btn-primary flex-1 px-5 py-2.5 text-xs flex items-center justify-center gap-1.5 whitespace-nowrap">🔗 Share Link</button>
+                    <button id="shareBtn" type="button" onclick="shareQR()" class="btn-3d btn-primary flex-1 px-5 py-2.5 text-xs flex items-center justify-center gap-1.5 whitespace-nowrap">📋 Copy Link or Text</button>
                 </div>
             </div>
 
@@ -296,7 +296,7 @@
             <div class="pb-4 border-b" style="border-color: var(--card-border);">
                 <h2 class="text-xl font-bold">Fast &amp; Private QR Code Creation</h2>
                 <p class="text-sm leading-relaxed mt-2 muted">
-                    Quick Response (QR) codes have become an essential link between the physical and digital worlds. From sharing website URLs, restaurant menus, Wi-Fi login credentials, and digital business cards (vCards) to payment links, QR codes provide instant, friction-free access for mobile users without manual typing.
+                    Quick Response (QR) codes have become an essential link between the physical and digital worlds. From sharing website URLs, restaurant menus, and plain text, QR codes provide instant, friction-free access for mobile users without manual typing.
                 </p>
             </div>
 
@@ -641,6 +641,13 @@ MyToolX is a free suite of client-side web tools for writers, freelancers and de
             downloadBtn.style.opacity = '1';
             shareBtn.style.opacity = '1';
 
+            if (typeof QRCode === 'undefined') {
+                qrContainer.textContent = 'QR code library could not be loaded. Please check your connection and reload this page.';
+                qrObj = null;
+                downloadBtn.disabled = true;
+                return;
+            }
+            downloadBtn.disabled = false;
             qrContainer.innerHTML = '';
             // Give the container a white background specifically for the QR code
             var qrWrapper = document.createElement('div');
@@ -708,9 +715,9 @@ MyToolX is a free suite of client-side web tools for writers, freelancers and de
             if (!val) return;
             
             navigator.clipboard.writeText(val).then(function() {
-                showToast("Link copied to clipboard!");
+                showToast("Link or text copied to clipboard!");
             }).catch(function() {
-                showToast("Failed to copy link.");
+                showToast("Unable to copy. Please check clipboard permissions.");
             });
         }
         window.shareQR = shareQR;
@@ -721,7 +728,9 @@ MyToolX is a free suite of client-side web tools for writers, freelancers and de
         }
         window.clearQR = clearQR;
 
-        renderQR();
+        document.addEventListener('DOMContentLoaded', function() {
+            renderQR();
+        });
     })();
     </script>
 
