@@ -166,7 +166,8 @@ async function fetchTopFeatures() {
 // --- UI BUILDERS ---
 function buildReviewCard(item) {
     const isSuggestion = item.formType === "suggestion";
-    const stars = isSuggestion ? "💡" : "⭐".repeat(Number(item.starRating) || 5);
+    const rating = Math.min(5, Math.max(1, Number(item.starRating) || 5));
+    const stars = isSuggestion ? "💡" : "⭐".repeat(rating);
     const dateStr = new Date(item.timestamp).toLocaleDateString(LANG, { month: "short", day: "numeric", year: "numeric" });
     const author = item.authorName || T.anonymous;
     const country = item.country ? ` • ${escapeHtml(item.country)}` : "";
