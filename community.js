@@ -20,7 +20,7 @@ const LANG = document.documentElement.lang || "en";
 const UI_STRINGS = {
     en: {
         anonymous: "Anonymous",
-        verified: "Verified",
+        verified: "Approved",
         helpful: "Helpful",
         visit: "Visit Page →",
         open: "Open →",
@@ -32,7 +32,7 @@ const UI_STRINGS = {
     },
     es: {
         anonymous: "Anónimo",
-        verified: "Verificado",
+        verified: "Aprobado",
         helpful: "Útil",
         visit: "Visitar página →",
         open: "Abrir →",
@@ -44,7 +44,7 @@ const UI_STRINGS = {
     },
     fr: {
         anonymous: "Anonyme",
-        verified: "Vérifié",
+        verified: "Approuvé",
         helpful: "Utile",
         visit: "Visiter la page →",
         open: "Ouvrir →",
@@ -146,12 +146,12 @@ async function fetchTopFeatures() {
             grid.innerHTML = json.data.map(feat => `
                 <div class="surface p-4 rounded-2xl flex items-center justify-between shadow-sm gap-3">
                     <div class="min-w-0">
-                        <div class="font-bold text-sm truncate" style="color: var(--text);">${feat.name}</div>
-                        <div class="text-xs muted">${feat.count} ${LANG === 'es' ? 'opiniones' : LANG === 'fr' ? 'avis' : 'reviews'}</div>
+                        <div class="font-bold text-sm truncate" style="color: var(--text);">${escapeHtml(feat.name || "MyToolX")}</div>
+                        <div class="text-xs muted">${escapeHtml(feat.count ?? 0)} ${LANG === 'es' ? 'opiniones' : LANG === 'fr' ? 'avis' : 'reviews'}</div>
                     </div>
                     <div class="text-right shrink-0">
-                        <div class="text-sm font-black text-amber-500">${feat.avg} ⭐</div>
-                        ${feat.url ? `<a href="${feat.url}" class="text-[11px] font-bold hover:underline" style="color: var(--primary);">${T.open}</a>` : ''}
+                        <div class="text-sm font-black text-amber-500">${escapeHtml(feat.avg ?? "—")} ⭐</div>
+                        ${safeCommunityUrl(feat.url) ? `<a href="${safeCommunityUrl(feat.url)}" class="text-[11px] font-bold hover:underline" style="color: var(--primary);">${T.open}</a>` : ''}
                     </div>
                 </div>
             `).join("");
@@ -169,7 +169,7 @@ function buildReviewCard(item) {
     const stars = isSuggestion ? "💡" : "⭐".repeat(Number(item.starRating) || 5);
     const dateStr = new Date(item.timestamp).toLocaleDateString(LANG, { month: "short", day: "numeric", year: "numeric" });
     const author = item.authorName || T.anonymous;
-    const country = item.country ? ` • ${item.country}` : "";
+    const country = item.country ? ` • ${escapeHtml(item.country)}` : "";
     const badge = `<span class="text-[9px] font-black uppercase px-2 py-0.5 rounded text-emerald-600 bg-emerald-100 dark:bg-emerald-900/30 dark:text-emerald-400">✓ ${T.verified}</span>`;
 
     return `
@@ -177,9 +177,9 @@ function buildReviewCard(item) {
             <div>
                 <div class="flex items-center justify-between mb-3 gap-2">
                     <span class="text-xs font-bold px-2.5 py-1 rounded-md truncate" style="background: var(--chip-bg); color: var(--primary);">
-                        ${item.pageName || item.suggestionCategory || 'MyToolX'}
+                        ${escapeHtml(item.pageName || item.suggestionCategory || "MyToolX")}
                     </span>
-                    <span class="text-xs font-bold text-amber-500 whitespace-nowrap">${stars}</span>
+                    <span class="text-xs font-bold text-amber-500 whitespace-nowrap">${escapeHtml(stars)}</span>
                 </div>
                 
                 ${isSuggestion ? `<h4 class="font-bold text-sm mb-1" style="color: var(--text);">${escapeHtml(item.suggestionTitle || '')}</h4>` : ''}
@@ -189,9 +189,9 @@ function buildReviewCard(item) {
             <div class="pt-3 border-t flex items-center justify-between text-[11px] muted" style="border-color: var(--card-border);">
                 <div class="flex flex-col gap-0.5">
                     <span class="font-bold" style="color: var(--text);">${escapeHtml(author)}${country}</span>
-                    <span>📅 ${dateStr} ${!isSuggestion ? badge : ''}</span>
+                    <span>📅 ${escapeHtml(dateStr)} ${!isSuggestion ? badge : ''}</span>
                 </div>
-                ${item.pageUrl && !isSuggestion ? `<a href="${item.pageUrl}" class="font-bold hover:underline" style="color: var(--primary);">${T.visit}</a>` : ''}
+                ${item.pageUrl && !isSuggestion && safeCommunityUrl(item.pageUrl) ? `<a href="${safeCommunityUrl(item.pageUrl)}" class="font-bold hover:underline" style="color: var(--primary);">${T.visit}</a>` : ''}
             </div>
         </div>
     `;
@@ -413,6 +413,16 @@ document.addEventListener('keydown', function(e) {
 
 function escapeHtml(str) {
     return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+function safeCommunityUrl(value) {
+    if (typeof value !== "string" || !value.trim()) return "";
+    try {
+        const url = new URL(value.trim(), window.location.origin);
+        const allowedHosts = ["mytoolx.org", "www.mytoolx.org", window.location.hostname];
+        if (url.protocol !== "https:" || !allowedHosts.includes(url.hostname.toLowerCase())) return "";
+        return escapeHtml(url.href);
+    } catch (error) { return ""; }
 }
 
 // --- AUTO-OPEN MODAL FROM URL PARAMETERS ---
