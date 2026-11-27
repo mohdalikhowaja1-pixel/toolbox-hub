@@ -637,9 +637,10 @@ MyToolX is a free suite of client-side web tools for writers, freelancers and de
 
         function convertUnits() {
             var mode = modeEl.value;
-            var val = parseFloat(inputEl.value);
-            
-            if (isNaN(val)) {
+            var rawValue = inputEl.value.trim();
+            var val = Number(rawValue);
+
+            if (!rawValue || !Number.isFinite(val)) {
                 outEl.textContent = '0.00';
                 return;
             }
