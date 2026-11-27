@@ -831,7 +831,7 @@ MyToolX is a free collection of browser-based tools for writers, freelancers and
             else if (feeMode === 'net') {
                 fee = amt * cfg.rate + cfg.fixed;
                 youReceive = amt - fee;
-                invoice = (amt + cfg.fixed) / (1 - cfg.rate);
+                invoice = amt;
             } else {
                 youReceive = amt;
                 invoice = (amt + cfg.fixed) / (1 - cfg.rate);
