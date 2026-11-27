@@ -697,12 +697,20 @@ MyToolX is a free suite of client-side web tools for writers, freelancers and de
             
             // Read to get dimensions
             var reader = new FileReader();
+            reader.onerror = function() {
+                currentFile = null;
+                alert('The selected image could not be read. Please try another file.');
+            };
             reader.onload = function(e) {
                 var img = new Image();
+                img.onerror = function() {
+                    currentFile = null;
+                    alert('The selected image could not be decoded. Please try a supported image file.');
+                };
                 img.onload = function() {
                     resizeWidth.placeholder = 'Original: ' + img.width + 'px';
                     if (!resizeWidth.value) resizeWidth.value = img.width;
-                    
+
                     document.getElementById('origSize').textContent = (file.size / 1024).toFixed(1) + ' KB';
                     previewImg.src = e.target.result;
                     previewImg.classList.remove('hidden');
