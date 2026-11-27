@@ -683,6 +683,7 @@ MyToolX is a free collection of browser-based tools for writers, freelancers and
         window.updateBase64 = updateBase64;
 
         inputEl.addEventListener('input', updateBase64);
+        document.getElementById('b64Mode').addEventListener('change', updateBase64);
         urlSafeEl.addEventListener('change', updateBase64);
 
         function copyOutputText() {
