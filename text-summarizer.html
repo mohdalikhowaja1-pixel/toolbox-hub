@@ -217,7 +217,7 @@
                         <h1 class="text-xl sm:text-2xl font-black flex items-center gap-2" style="color: var(--text);">
                             📰 Free AI Text Summarizer - Turn Long Documents into 1-Minute Reads
                         </h1>
-                <p class="text-xs muted mt-2" role="note">This summarizer uses a local extractive algorithm to select important sentences. It does not use a generative AI model.</p>
+                <p class="text-xs muted mt-2" role="note">This summarizer uses local extractive analysis to select important paragraphs or sentences. It does not use a generative AI model.</p>
                         <p class="text-xs sm:text-sm muted mt-1 font-medium">100% Private. No sign-up required. Save hours of reading time.</p>
                     </div>
                     <button type="button" onclick="clearSummary()" class="btn-3d btn-chip px-3.5 py-2 text-xs font-bold self-start sm:self-center">Clear</button>
@@ -538,11 +538,17 @@ MyToolX is a free suite of client-side web tools for writers, freelancers and de
             out.style.color = 'var(--text)';
             out.textContent = "Analyzing text...";
 
-            // 1. Split into paragraphs (blocks) by double line breaks
+            // 1. Prefer paragraph blocks; for a single paragraph, summarize by sentence.
             var paragraphs = text.split(/\n\s*\n/).map(function(p) { return p.trim(); }).filter(Boolean);
-            
+
             if (paragraphs.length < 2) {
-                out.textContent = "Please separate your text into paragraphs to use this feature.";
+                paragraphs = (text.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [])
+                    .map(function(sentence) { return sentence.trim(); })
+                    .filter(Boolean);
+            }
+
+            if (paragraphs.length < 2) {
+                out.textContent = "Please enter at least two sentences or separate your text into paragraphs.";
                 return;
             }
 
