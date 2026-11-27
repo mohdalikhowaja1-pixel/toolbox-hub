@@ -1125,15 +1125,20 @@
         }
 
         function shareScore() {
-            var text = "I scored " + state.best + " ms on the Reaction Time Test at MyToolX. Can you beat me?\nhttps://mytoolx.org/reaction-time-test.html?challenge=" + state.best;
-            var url = 'https://mytoolx.org/reaction-time-test.html?challenge=' + state.best;
+            if (!Number.isFinite(state.lastResult) || state.lastResult <= 0) return;
+            var score = state.lastResult;
+            var text = "I scored " + score + " ms on the Reaction Time Test at MyToolX. Can you beat me?\\nhttps://mytoolx.org/reaction-time-test.html?challenge=" + score;
+            var url = 'https://mytoolx.org/reaction-time-test.html?challenge=' + score;
 
             if (navigator.share) {
                 navigator.share({
                     title: 'Reaction Time Test by MyToolX',
                     text: text,
                     url: url
-                }).catch(function() { copyFallback(text); });
+                }).catch(function(error) {
+                    if (error && error.name === 'AbortError') return;
+                    copyFallback(text);
+                });
             } else {
                 copyFallback(text);
             }
