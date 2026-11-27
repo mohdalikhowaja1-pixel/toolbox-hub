@@ -967,7 +967,8 @@
             startTime: 0,
             timeoutId: null,
             best: 0,
-            attempts: 0
+            attempts: 0,
+            lastResult: null
         };
 
         var el = {
@@ -1100,6 +1101,7 @@
                 state.isPlaying = false;
                 state.isReady = false;
                 state.attempts++;
+                state.lastResult = reactionTime;
                 
                 if (state.best === 0 || reactionTime < state.best) {
                     state.best = reactionTime;
