@@ -714,49 +714,75 @@ MyToolX is a free suite of client-side web tools for writers, freelancers and de
 
         function processImage() {
             if (!currentFile) return;
-            
+
+            var widthText = resizeWidth.value.trim();
+            var targetWidth = widthText === '' ? 0 : Number(widthText);
+            if (widthText !== '' && (!Number.isInteger(targetWidth) || targetWidth < 1 || targetWidth > 10000)) {
+                alert('Please enter a valid resize width between 1 and 10,000 pixels.');
+                resizeWidth.focus();
+                return;
+            }
+
             compressBtn.textContent = 'Processing...';
             compressBtn.disabled = true;
 
+            function failProcessing(message) {
+                compressBtn.textContent = '⚡ Compress Image';
+                compressBtn.disabled = false;
+                alert(message);
+            }
+
             var reader = new FileReader();
+            reader.onerror = function() {
+                failProcessing('The selected image could not be read. Please try another file.');
+            };
             reader.onload = function(e) {
                 var img = new Image();
+                img.onerror = function() {
+                    failProcessing('The image could not be decoded. Please try a supported JPG, PNG or WebP file.');
+                };
                 img.onload = function() {
-                    var canvas = document.createElement('canvas');
-                    var ctx = canvas.getContext('2d');
-                    
-                    var targetWidth = parseInt(resizeWidth.value) || img.width;
-                    var targetHeight = Math.round((targetWidth / img.width) * img.height);
-                    
-                    canvas.width = targetWidth;
-                    canvas.height = targetHeight;
-                    
-                    // Draw with high quality scaling
-                    ctx.imageSmoothingEnabled = true;
-                    ctx.imageSmoothingQuality = 'high';
-                    ctx.drawImage(img, 0, 0, targetWidth, targetHeight);
-                    
-                    var quality = parseInt(qualitySlider.value) / 100;
-                    
-                    canvas.toBlob(function(blob) {
-                        compressedBlob = blob;
-                        
-                        var origKB = (currentFile.size / 1024).toFixed(1);
-                        var newKB = (blob.size / 1024).toFixed(1);
-                        
-                        document.getElementById('newSize').textContent = newKB + ' KB';
-                        document.getElementById('origSize').textContent = origKB + ' KB';
-                        
-                        // Update preview
-                        previewImg.src = URL.createObjectURL(blob);
-                        
-                        resultPanel.classList.remove('hidden');
-                        downloadBtn.classList.remove('hidden');
-                        compressBtn.classList.add('hidden');
-                        
-                        compressBtn.textContent = '⚡ Compress Image';
-                        compressBtn.disabled = false;
-                    }, 'image/jpeg', quality);
+                    try {
+                        var canvas = document.createElement('canvas');
+                        var ctx = canvas.getContext('2d');
+                        if (!ctx) throw new Error('Canvas is unavailable in this browser.');
+
+                        var width = targetWidth || img.width;
+                        var height = Math.max(1, Math.round((width / img.width) * img.height));
+                        canvas.width = width;
+                        canvas.height = height;
+                        ctx.imageSmoothingEnabled = true;
+                        ctx.imageSmoothingQuality = 'high';
+                        ctx.drawImage(img, 0, 0, width, height);
+
+                        var quality = Number(qualitySlider.value) / 100;
+                        canvas.toBlob(function(blob) {
+                            if (!blob) {
+                                failProcessing('Image compression failed. Please try a different image or browser.');
+                                return;
+                            }
+
+                            compressedBlob = blob;
+                            var origKB = (currentFile.size / 1024).toFixed(1);
+                            var newKB = (blob.size / 1024).toFixed(1);
+                            document.getElementById('newSize').textContent = newKB + ' KB';
+                            document.getElementById('origSize').textContent = origKB + ' KB';
+
+                            if (previewImg.dataset.objectUrl) URL.revokeObjectURL(previewImg.dataset.objectUrl);
+                            var previewUrl = URL.createObjectURL(blob);
+                            previewImg.dataset.objectUrl = previewUrl;
+                            previewImg.src = previewUrl;
+
+                            resultPanel.classList.remove('hidden');
+                            downloadBtn.classList.remove('hidden');
+                            compressBtn.classList.add('hidden');
+                            compressBtn.textContent = '⚡ Compress Image';
+                            compressBtn.disabled = false;
+                        }, 'image/jpeg', quality);
+                    } catch (error) {
+                        console.error('Image compression failed:', error);
+                        failProcessing(error.message || 'Image compression failed. Please try again.');
+                    }
                 };
                 img.src = e.target.result;
             };
