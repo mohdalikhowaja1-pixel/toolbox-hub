@@ -301,7 +301,7 @@ async function submitCommunityFeedback(event) {
         commentText: commentText,
         authorName: authorName,
         country: country,
-        recommendation: "Yes",
+        recommendation: "",
         language: LANG
     };
 
