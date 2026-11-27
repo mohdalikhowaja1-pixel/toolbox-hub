@@ -874,9 +874,10 @@ MyToolX is a free suite of client-side web tools for writers, freelancers and de
                 if (charIndex > 0) {
                     charIndex--;
                     var spans = display.querySelectorAll('.char');
+                    var wasIncorrect = spans[charIndex].classList.contains('incorrect');
                     spans[charIndex].classList.remove('correct', 'incorrect');
                     spans[charIndex].classList.add('active');
-                    if (spans[charIndex].classList.contains('incorrect')) {
+                    if (wasIncorrect && errors > 0) {
                         errors--;
                     }
                 }
