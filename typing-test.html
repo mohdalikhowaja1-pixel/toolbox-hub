@@ -815,11 +815,8 @@ MyToolX is a free suite of client-side web tools for writers, freelancers and de
         window.startTest = startTest;
 
         function stopTest() {
-            clearInterval(timer);
-            isTyping = false;
-            input.blur();
-            overlay.classList.remove('hidden');
-            stopBtnWrap.classList.add('hidden');
+            if (!isTyping) return;
+            endTest();
         }
         window.stopTest = stopTest;
 
@@ -904,16 +901,17 @@ MyToolX is a free suite of client-side web tools for writers, freelancers and de
             clearInterval(timer);
             stopBtnWrap.classList.add('hidden');
             input.blur();
-            
-            var timeElapsed = (new Date().getTime() - startTime) / 1000;
-            var wordsTyped = charIndex / 5;
+
+            var timeElapsed = startTime === null ? 0 : Math.max(0, (Date.now() - startTime) / 1000);
             var minutes = timeElapsed / 60;
-            var wpm = Math.round(wordsTyped / minutes);
-            var accuracy = Math.round(((charIndex - errors) / charIndex) * 100);
-            
+            var wpm = minutes > 0 ? Math.round((charIndex / 5) / minutes) : 0;
+            if (!Number.isFinite(wpm)) wpm = 0;
+            var accuracy = charIndex > 0 ? Math.round(((charIndex - errors) / charIndex) * 100) : 100;
+            accuracy = Math.max(0, Math.min(100, Number.isFinite(accuracy) ? accuracy : 100));
+
             document.getElementById('finalWpm').textContent = wpm;
             document.getElementById('finalAcc').textContent = accuracy + '%';
-            
+
             resultsModal.classList.remove('hidden');
         }
 
