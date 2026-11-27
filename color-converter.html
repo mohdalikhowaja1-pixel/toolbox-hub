@@ -656,26 +656,27 @@ MyToolX is a free suite of client-side web tools for writers, freelancers and de
         });
 
         function convertColor(val, updateDropdown) {
-            if (!val) return;
+            if (!val || !val.trim()) {
+                hexOut.textContent = '—';
+                rgbOut.textContent = '—';
+                previewBox.style.backgroundColor = 'transparent';
+                previewBox.style.borderColor = 'var(--card-border)';
+                return;
+            }
 
-            var ctx = document.createElement('canvas').getContext('2d');
-            
-            // Check if valid color
-            ctx.fillStyle = '#000000'; // Reset to black to prevent false positives
-            ctx.fillStyle = val;
-            var computed = ctx.fillStyle;
-
-            // If user typed a valid color, ctx.fillStyle changes to hex or rgba string
-            // If invalid, it stays #000000. We also check if they literally typed black.
-            if (computed === '#000000' && val.toLowerCase() !== '#000000' && val.toLowerCase() !== 'black' && val.toLowerCase() !== 'rgb(0, 0, 0)' && val.toLowerCase() !== 'rgba(0, 0, 0, 1)') {
+            if (!CSS.supports('color', val.trim())) {
                 hexOut.textContent = 'Invalid';
-                hexOut.style.color = '#F87171'; // red-400
+                hexOut.style.color = '#F87171';
                 rgbOut.textContent = 'Invalid';
                 rgbOut.style.color = '#F87171';
                 previewBox.style.backgroundColor = 'transparent';
                 previewBox.style.borderColor = '#F87171';
                 return;
             }
+
+            var ctx = document.createElement('canvas').getContext('2d');
+            ctx.fillStyle = val.trim();
+            var computed = ctx.fillStyle;
 
             // Valid color
             hexOut.style.color = 'var(--text)';
