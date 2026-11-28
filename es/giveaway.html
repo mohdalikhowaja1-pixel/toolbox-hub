@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+    (function() {
+        var saved = null;
+        try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+    })();
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- PRIMARY SEO -->
+    <title>🎄 Gana uno de los 50 paquetes prémium — Sorteo MyToolX</title>
+    <meta name="description" content="¡Celebra las fiestas con MyToolX! Juega gratis o utiliza nuestras herramientas privadas para ganar uno de los 50 paquetes digitales prémium. No necesitas comprar nada.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://mytoolx.org/es/giveaway.html">
+    <link rel="alternate" hreflang="en" href="https://mytoolx.org/es/giveaway.html">
+
+    
+    <!-- HREFLANG -->
+    <link rel="alternate" hreflang="en" href="https://mytoolx.org/giveaway.html">
+    <link rel="alternate" hreflang="es" href="https://mytoolx.org/es/giveaway.html">
+    <link rel="alternate" hreflang="fr" href="https://mytoolx.org/fr/giveaway.html">
+    <link rel="alternate" hreflang="x-default" href="https://mytoolx.org/giveaway.html">
+
+    <!-- FAVICON & PWA -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎄</text></svg>">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#4F46E5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="/icon-192.png">
+
+    <!-- OPEN GRAPH / TWITTER -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:url" content="https://mytoolx.org/es/giveaway.html">
+    <meta property="og:title" content="🎄 MyToolX Christmas &amp; New Year 2027 Giveaway">
+    <meta property="og:description" content="Play free games, use privacy-first tools, and enter to win 1 of 50 Premium Digital Bundles. No es necesario comprar.">
+    <meta property="og:image" content="https://mytoolx.org/og-image-v2.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="🎄 MyToolX Christmas &amp; New Year 2027 Giveaway">
+    <meta name="twitter:description" content="Play free games, use privacy-first tools, and enter to win 1 of 50
+0 Premium Digital Bundles.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image-v2.png">
+
+    <!-- STYLESHEET & SWITCHER -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/lang-switcher.css">
+    <script src="/lang-switcher.js" defer></script>
+
+    <!-- SEO STRUCTURED DATA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "MyToolX Christmas & New Year 2027 Digital Giveaway",
+      "startDate": "2026-12-05T00:00:00Z",
+      "endDate": "2027-01-05T23:59:59Z",
+      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "VirtualLocation",
+        "url": "https://mytoolx.org/es/giveaway.html"
+      },
+      "description": "Play free browser games or use MyToolX privacy-first tools. Submit a screenshot to win one of 50 Premium Digital Bundles.",
+      "image": "https://mytoolx.org/og-image-v2.png",
+      "inLanguage": "es",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://mytoolx.org/es/giveaway.html"
+      }
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
+            --festive-red: #DC2626; --festive-gold: #D97706; --festive-green: #059669;
+        }
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
+            --festive-red: #F87171; --festive-gold: #FBBF24; --festive-green: #34D399;
+        }
+        html, body { overflow-x: clip; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); }
+        .btn-3d:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-accent { background: var(--accent); color: #fff; } .btn-accent:hover { background: var(--accent-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+
+        .input-field { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
+        .input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); outline: none; }
+
+        .card-3d-btn { transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; background: var(--card); border: 1px solid var(--card-border); }
+        .card-3d-btn:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(79,70,229,0.14), 0 8px 10px -6px rgba(79,70,229,0.08); border-color: var(--primary); }
+
+        /* Festive Hero & Snow */
+        .festive-hero {
+            position: relative; overflow: hidden;
+            background: linear-gradient(135deg, rgba(220,38,38,0.08) 0%, rgba(79,70,229,0.12) 50%, rgba(16,185,129,0.08) 100%);
+            border: 1px solid var(--card-border);
+        }
+        html[data-theme="dark"] .festive-hero {
+            background: linear-gradient(135deg, rgba(220,38,38,0.15) 0%, rgba(99,102,241,0.18) 50%, rgba(16,185,129,0.12) 100%);
+        }
+        .festive-ribbon { background: linear-gradient(90deg, #DC2626, #D97706, #059669); color: #FFFFFF; }
+        
+        .snow-dot {
+            position: absolute; top: -10px; border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.8); pointer-events: none;
+            animation: snowfall linear infinite;
+        }
+        html[data-theme="light"] .snow-dot { background: rgba(99, 102, 241, 0.25); }
+        @keyframes snowfall {
+            0% { transform: translateY(-10px) translateX(0); opacity: 0; }
+            15% { opacity: 1; }
+            85% { opacity: 1; }
+            100% { transform: translateY(400px) translateX(20px); opacity: 0; }
+        }
+
+        /* --- MEGA FOOTER --- */
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+        /* --- FOOTER SOCIAL ICONS --- */
+        .social-links-row { display: flex; align-items: center; gap: 12px; margin-top: 4px; }
+        .social-btn {
+            width: 42px; height: 42px; border-radius: 12px;
+            display: inline-flex; align-items: center; justify-content: center;
+            color: #FFFFFF !important; text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+            box-shadow: 0 6px 14px -3px rgba(0, 0, 0, 0.28);
+        }
+        .social-btn svg { width: 20px; height: 20px; fill: currentColor; }
+        .social-btn.fb-btn {
+            background: linear-gradient(135deg, #1877F2 0%, #0D5BD6 100%);
+        }
+        .social-btn.ig-btn {
+            background: radial-gradient(circle at 30% 107%, #FDF497 0%, #FDF497 5%, #FD5949 45%, #D6249F 60%, #285AEB 90%);
+        }
+        .social-btn:hover {
+            transform: translateY(-2px) scale(1.06);
+            box-shadow: 0 10px 20px -4px rgba(79, 70, 229, 0.35);
+            filter: brightness(1.05);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .snow-dot { display: none !important; }
+            * { animation: none !important; transition: none !important; }
+        }
+
+        /* Force images to scale perfectly with the layout */
+        .prize-img-container {
+            width: 100%;
+            height: 180px; /* Standardizes the card heights */
+            overflow: hidden;
+            position: relative;
+            background-color: #f3f4f6;
+        }
+        .prize-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image fills the box without stretching */
+            object-position: top;
+            display: block;
+        }
+    </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- HEADER -->
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2">
+            <div class="flex items-center justify-between gap-2 sm:gap-4">
+                
+                <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+                    <a href="/index.html" class="hidden sm:flex btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold items-center gap-1">← Todas las herramientas</a>
+                    <a href="/index.html" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
+                        <div class="logo-mark w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base flex items-center justify-center">M<span class="x">X</span></div>
+                        <span class="logo-wordmark text-base sm:text-xl block">MyTool<span class="x">X</span></span>
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                    <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch theme" class="h-8 sm:h-10 px-2 sm:px-3 rounded-xl flex items-center justify-center gap-1.5 text-[10px] sm:text-xs font-bold transition-all hover:opacity-80" style="background: var(--chip-bg); color: var(--chip-text);">
+                        <span id="themeIcon" aria-hidden="true">🌙</span>
+                        <span id="themeText" class="hidden sm:block">Modo oscuro</span>
+                    </button>
+
+                    <!-- Community Link -->
+                    <a href="/community.html" class="inline-flex items-center text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap" style="background: var(--chip-bg); color: var(--text);">
+                        💬 Comunidad
+                    </a>                 
+                    
+                    <a href="#entry-form-section" class="inline-flex items-center text-[10px] sm:text-xs font-black !text-white bg-gradient-to-r from-red-600 to-amber-500 hover:from-red-700 hover:to-amber-600 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl shadow-md transition whitespace-nowrap border border-red-500/50">
+                        🎁 Cómo participar
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-2 sm:hidden">
+                <a href="/index.html" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">
+                    ← Volver a todas las herramientas
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-8 w-full flex-grow">
+
+        <!-- HERO SECTION -->
+        <section class="festive-hero rounded-3xl p-6 sm:p-10 md:p-12 mb-10 text-center shadow-lg" aria-labelledby="hero-heading">
+            <span class="snow-dot w-2 h-2" style="left: 8%; animation-duration: 7s; animation-delay: 0s;"></span>
+            <span class="snow-dot w-1.5 h-1.5" style="left: 22%; animation-duration: 9s; animation-delay: 1.5s;"></span>
+            <span class="snow-dot w-2.5 h-2.5" style="left: 41%; animation-duration: 8s; animation-delay: 0.7s;"></span>
+            <span class="snow-dot w-1.5 h-1.5" style="left: 64%; animation-duration: 10s; animation-delay: 2.2s;"></span>
+            <span class="snow-dot w-2 h-2" style="left: 83%; animation-duration: 7.5s; animation-delay: 1s;"></span>
+            <span class="snow-dot w-1.5 h-1.5" style="left: 93%; animation-duration: 8.5s; animation-delay: 2.8s;"></span>
+
+            <div class="relative z-10 max-w-3xl mx-auto">
+                <div class="inline-flex flex-wrap items-center justify-center gap-2 festive-ribbon text-[11px] sm:text-xs font-black uppercase tracking-wider px-4 py-1.5 rounded-full shadow-md mb-5">
+                    <span>🎄 Evento de Navidad y Año Nuevo 2027</span>
+                    <span>•</span>
+                    <span>5 dic 2026 – 5 ene 2027 (UTC)</span>
+                </div>
+
+                <h1 id="hero-heading" class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 tracking-tight leading-tight" style="color: var(--text);">
+                    Gana uno de los 50 paquetes digitales prémium de productividad 🎁
+                </h1>
+
+                <p class="text-sm sm:text-base md:text-lg muted font-medium mb-6 leading-relaxed">
+                    Juega a nuestros juegos en el navegador, prueba cualquiera de nuestras más de 23 herramientas centradas en la privacidad o comparte tu opinión sincera sobre los paquetes prémium. <strong>No es necesario comprar.</strong> Las herramientas habituales de MyToolX siguen siendo 100 % gratuitas y no requieren registro.
+                </p>
+
+                <div class="max-w-lg mx-auto surface rounded-2xl p-4 sm:p-5 shadow-sm mb-6">
+                    <div id="campaignStatusBadge" class="text-xs font-extrabold uppercase tracking-wider mb-3" style="color: var(--festive-green);">
+                        ⏳ Cuenta atrás de la campaña
+                    </div>
+                    <div class="grid grid-cols-4 gap-2 sm:gap-3">
+                        <div class="rounded-xl p-2.5" style="background: var(--chip-bg);">
+                            <div id="cdDías" class="text-2xl sm:text-3xl font-black" style="color: var(--primary);">--</div>
+                            <div class="text-[10px] font-bold uppercase muted">Días</div>
+                        </div>
+                        <div class="rounded-xl p-2.5" style="background: var(--chip-bg);">
+                            <div id="cdHoras" class="text-2xl sm:text-3xl font-black" style="color: var(--primary);">--</div>
+                            <div class="text-[10px] font-bold uppercase muted">Horas</div>
+                        </div>
+                        <div class="rounded-xl p-2.5" style="background: var(--chip-bg);">
+                            <div id="cdMinutos" class="text-2xl sm:text-3xl font-black" style="color: var(--primary);">--</div>
+                            <div class="text-[10px] font-bold uppercase muted">Minutos</div>
+                        </div>
+                        <div class="rounded-xl p-2.5" style="background: var(--chip-bg);">
+                            <div id="cdSegundos" class="text-2xl sm:text-3xl font-black" style="color: var(--primary);">--</div>
+                            <div class="text-[10px] font-bold uppercase muted">Segundos</div>
+                        </div>
+                    </div>
+                    <p id="campaignWindowNote" class="text-[11px] muted mt-3 font-medium">
+                        Apertura: <strong>5 dic 2026 (00:00 UTC)</strong> • Cierre: <strong>5 ene 2027 (23:59 UTC)</strong> • Ganadores: <strong>10 ene 2027</strong>
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-3">
+                    <a href="#entry-form-section" class="btn-3d btn-primary px-6 py-3.5 rounded-2xl text-sm font-black inline-flex items-center gap-2">
+                        🎟️ Enviar participación
+                    </a>
+                    <a href="#how-to-participate" class="btn-3d btn-chip px-6 py-3.5 rounded-2xl text-sm font-bold inline-flex items-center gap-2">
+                        📋 Ver las 3 formas de participar
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW TO PARTICIPATE -->
+        <section id="how-to-participate" class="mb-14" aria-labelledby="ways-heading">
+            <div class="text-center mb-8">
+                <span class="text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full" style="background: var(--chip-bg); color: var(--primary);">
+                    Guía de participación en 3 pasos
+                </span>
+                <h2 id="ways-heading" class="text-2xl sm:text-3xl font-black mt-3 mb-2" style="color: var(--text);">
+                    Elige una forma de participar
+                </h2>
+                <p class="text-sm muted max-w-2xl mx-auto">
+                    Cada participante verificado recibe <strong>1 participación oficial</strong> en el sorteo aleatorio (máximo una participación por persona/correo electrónico). Compartir en redes sociales es <strong>.</strong>.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <!-- Path 1 -->
+                <div class="surface rounded-2xl p-6 flex flex-col justify-between card-3d-btn">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl">🎮</span>
+                            <span class="text-[10px] font-black uppercase px-2.5 py-1 rounded-md" style="background: var(--chip-bg); color: var(--primary);">Opción 1 • Puntuación de un juego</span>
+                        </div>
+                        <h3 class="text-lg font-extrabold mb-2" style="color: var(--text);">Juega y captura tu puntuación</h3>
+                        <p class="text-xs sm:text-sm muted leading-relaxed mb-4">
+                            Juega a cualquier juego oficial de MyToolX (Prueba de escritura, Tiempo de reacción, Palabras desordenadas, Math Sprint o WordStorm) y sube una captura clara de tu puntuación final.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t text-xs font-bold" style="border-color: var(--card-border); color: var(--festive-green);">
+                        ✓ Cuenta como una participación verificada
+                    </div>
+                </div>
+<br>
+                <!-- Path 2 -->
+                <div class="surface rounded-2xl p-6 flex flex-col justify-between card-3d-btn">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl">🧰</span>
+                            <span class="text-[10px] font-black uppercase px-2.5 py-1 rounded-md" style="background: var(--chip-bg); color: var(--accent);">Opción 2 • Uso de una herramienta gratuita</span>
+                        </div>
+                        <h3 class="text-lg font-extrabold mb-2" style="color: var(--text);">Utiliza una herramienta gratuita y comparte tu opinión</h3>
+                        <p class="text-xs sm:text-sm muted leading-relaxed mb-4">
+                            Prueba cualquier herramienta gratuita (creador de CV, compresor de imágenes, corrector gramatical, etc.), sube una captura de tu sesión (oculta los datos confidenciales) y escribe una recomendación sincera.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t text-xs font-bold" style="border-color: var(--card-border); color: var(--festive-green);">
+                        ✓ Cuenta como una participación verificada
+                    </div>
+                </div>
+<br>
+                <!-- Path 3 -->
+                <div class="surface rounded-2xl p-6 flex flex-col justify-between card-3d-btn">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl">⭐</span>
+                            <span class="text-[10px] font-black uppercase px-2.5 py-1 rounded-md" style="background: var(--chip-bg); color: var(--festive-gold);">Opción 3 • Opinión sobre productos</span>
+                        </div>
+                        <h3 class="text-lg font-extrabold mb-2" style="color: var(--text);">Explora los paquetes prémium</h3>
+                        <p class="text-xs sm:text-sm muted leading-relaxed mb-4">
+                            Visita la <a href="/premium.html" class="underline font-bold" style="color: var(--primary);">Tienda prémium</a>, revisa los paquetes y envía una opinión constructiva sobre cuál ayuda más a tu trabajo, junto con una captura de pantalla.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t text-xs font-bold" style="border-color: var(--card-border); color: var(--festive-green);">
+                        ✓ Cuenta como una participación verificada
+                    </div>
+                </div>
+            </div>
+        </section>
+<br>
+        <!-- QUICK-LAUNCH SHORTCUTS -->
+        <section class="mb-14" aria-labelledby="shortcuts-heading">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-5 gap-2">
+                <div>
+                    <h2 id="shortcuts-heading" class="text-xl font-black" style="color: var(--text);">⚡ Juegos y herramientas de acceso rápido</h2>
+                    <p class="text-xs muted">Abre cualquiera de las herramientas siguientes o desde la página principal en una nueva pestaña, pruébala y haz una captura de pantalla.</p>
+                </div>
+
+                <a href="/community.html" class="text-xs font-bold hover:underline" style="color: var(--primary);">Visitar la comunidad →</a>
+            </div>
+<br>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                <a href="/typing-test.html" target="_blank" rel="noopener" class="card-3d-btn p-3.5 rounded-2xl flex flex-col justify-between h-28">
+                    <div class="flex justify-between items-start"><span class="text-2xl">⌨️</span><span class="text-[9px] font-black uppercase px-2 py-0.5 rounded" style="background: var(--chip-bg); color: var(--primary);">Juego</span></div>
+                    <div><div class="font-bold text-sm" style="color: var(--text);">Prueba de velocidad de escritura</div><div class="text-[11px] muted">Velocidad y precisión de escritura</div></div>
+                </a>
+                <a href="/reaction-time-test.html" target="_blank" rel="noopener" class="card-3d-btn p-3.5 rounded-2xl flex flex-col justify-between h-28">
+                    <div class="flex justify-between items-start"><span class="text-2xl">🎯</span><span class="text-[9px] font-black uppercase px-2 py-0.5 rounded" style="background: var(--chip-bg); color: var(--primary);">Juego</span></div>
+                    <div><div class="font-bold text-sm" style="color: var(--text);">Prueba de tiempo de reacción</div><div class="text-[11px] muted">Mide tus reflejos</div></div>
+                </a>
+                <a href="/wordstorm.html" target="_blank" rel="noopener" class="card-3d-btn p-3.5 rounded-2xl flex flex-col justify-between h-28">
+                    <div class="flex justify-between items-start"><span class="text-2xl">🌪️</span><span class="text-[9px] font-black uppercase px-2 py-0.5 rounded" style="background: var(--chip-bg); color: var(--primary);">Juego</span></div>
+                    <div><div class="font-bold text-sm" style="color: var(--text);">WordStorm</div><div class="text-[11px] muted">Juego arcade de mecanografía</div></div>
+                </a>
+                <a href="/cv-maker.html" target="_blank" rel="noopener" class="card-3d-btn p-3.5 rounded-2xl flex flex-col justify-between h-28">
+                    <div class="flex justify-between items-start"><span class="text-2xl">📄</span><span class="text-[9px] font-black uppercase px-2 py-0.5 rounded" style="background: var(--chip-bg); color: var(--accent);">Herramienta gratuita</span></div>
+                    <div><div class="font-bold text-sm" style="color: var(--text);">Creador de CV</div><div class="text-[11px] muted">Creador de currículums PDF</div></div>
+                </a>
+            </div>
+        </section>
+<br>
+        <!-- PRIZES -->
+        <section class="mb-14" aria-labelledby="prizes-heading">
+            <div class="text-center mb-8">
+                <span class="text-xs font-black uppercase tracking-wider text-amber-500 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/30">
+                    🎁 50 premios digitales en total
+                </span>
+                <h2 id="prizes-heading" class="text-2xl sm:text-3xl font-black mt-3 mb-2" style="color: var(--text);">
+                    Premios oficiales de las fiestas
+                </h2>
+                <p class="text-sm muted max-w-xl mx-auto">
+                    Se elegirán diez (10) ganadores para cada uno de nuestros cinco paquetes principales de productividad digital (50 ganadores en total).
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <!-- 1. Paquete de currículums ATS -->
+                <div class="surface rounded-2xl overflow-hidden flex flex-col justify-between shadow-sm card-3d-btn">
+                    <div class="prize-img-container">
+    <img src="/cv-bundle-cover.webp" alt="Paquete de currículums ATS" loading="lazy" class="prize-img">
+    <span class="absolute top-2.5 right-2.5 bg-amber-500 text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow z-10">10 ganadores</span>
+</div>
+                    <div class="p-4">
+                        <h3 class="font-black text-base mb-1" style="color: var(--text);">Paquete de currículums ATS</h3>
+                        <p class="text-xs muted leading-relaxed">Plantillas de currículum y carta de presentación probadas por reclutadores y diseñadas para superar sistemas ATS.</p>
+                    </div>
+                    <div class="px-4 pb-4 flex items-center justify-between text-xs font-bold">
+                        <span class="text-amber-500">Valor: 2,99 $</span>
+                        <a href="/premium.html" class="hover:underline" style="color: var(--primary);">Vista previa →</a>
+                    </div>
+                </div>
+
+                <!-- 2. Paquete Excel -->
+                <div class="surface rounded-2xl overflow-hidden flex flex-col justify-between shadow-sm card-3d-btn">
+                    <div class="prize-img-container">
+    <img src="/excel-bundle-cover.webp" alt="Paquete Excel" loading="lazy" class="prize-img">
+    <span class="absolute top-2.5 right-2.5 bg-emerald-600 text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow z-10">10 ganadores</span>
+</div>
+                    <div class="p-4">
+                        <h3 class="font-black text-base mb-1" style="color: var(--text);">Paquete Excel</h3>
+                        <p class="text-xs muted leading-relaxed">Hojas de seguimiento financiero listas para usar, plantillas de facturas y hojas de cálculo empresariales automatizadas.</p>
+                    </div>
+                    <div class="px-4 pb-4 flex items-center justify-between text-xs font-bold">
+                        <span class="text-emerald-500">Valor: 4,99 $</span>
+                        <a href="/premium.html" class="hover:underline" style="color: var(--primary);">Vista previa →</a>
+                    </div>
+                </div>
+
+                <!-- 3. Kit de contratos -->
+                <div class="surface rounded-2xl overflow-hidden flex flex-col justify-between shadow-sm card-3d-btn">
+                    <div class="prize-img-container">
+    <img src="/freelancer-kit-thumbnail.webp" alt="Kit de contratos" loading="lazy" class="prize-img">
+    <span class="absolute top-2.5 right-2.5 bg-indigo-600 text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow z-10">10 ganadores</span>
+</div>
+                    <div class="p-4">
+                        <h3 class="font-black text-base mb-1" style="color: var(--text);">Kit de contratos</h3>
+                        <p class="text-xs muted leading-relaxed">Acuerdos de prestación de servicios, plantillas de alcance del trabajo y listas de incorporación para profesionales independientes.</p>
+                    </div>
+                    <div class="px-4 pb-4 flex items-center justify-between text-xs font-bold">
+                        <span class="text-indigo-500">Valor: 2,99 $</span>
+                        <a href="/premium.html" class="hover:underline" style="color: var(--primary);">Vista previa →</a>
+                    </div>
+                </div>
+
+                <!-- 4. Colección de prompts de IA -->
+                <div class="surface rounded-2xl overflow-hidden flex flex-col justify-between shadow-sm card-3d-btn">
+                    <div class="prize-img-container">
+    <img src="/ai-vault-cover.webp" alt="Colección de prompts de IA" loading="lazy" class="prize-img">
+    <span class="absolute top-2.5 right-2.5 bg-purple-600 text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow z-10">10 ganadores</span>
+</div>
+                    <div class="p-4">
+                        <h3 class="font-black text-base mb-1" style="color: var(--text);">Colección de prompts de IA</h3>
+                        <p class="text-xs muted leading-relaxed">Estructuras de prompts seleccionadas para escritura, programación, investigación y flujos de productividad.</p>
+                    </div>
+                    <div class="px-4 pb-4 flex items-center justify-between text-xs font-bold">
+                        <span class="text-purple-500">Value: $1.99</span>
+                        <a href="/premium.html" class="hover:underline" style="color: var(--primary);">Vista previa →</a>
+                    </div>
+                </div>
+<br>
+                <!-- 5. NEW: Controlador mensual del presupuesto familiar (Centered) -->
+                <div class="surface rounded-2xl overflow-hidden flex flex-col justify-between shadow-sm card-3d-btn sm:col-span-2 lg:col-span-2 lg:col-start-2">
+                    <div class="prize-img-container">
+    <img src="/budget-tracker-cover.webp" alt="Controlador mensual del presupuesto familiar" loading="lazy" class="prize-img">
+    <span class="absolute top-2.5 right-2.5 bg-cyan-600 text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow z-10">10 ganadores</span>
+</div>
+                    <div class="p-4">
+                        <h3 class="font-black text-base mb-1" style="color: var(--text);">Controlador mensual del presupuesto familiar</h3>
+                        <p class="text-xs muted leading-relaxed">Controla tus gastos y aumenta tus ahorros con una herramienta sencilla de presupuesto mensual. Visualiza ingresos, gastos y objetivos de ahorro.</p>
+                    </div>
+                    <div class="px-4 pb-4 flex items-center justify-between text-xs font-bold">
+                        <span class="text-cyan-500">Valor: 4,99 $</span>
+                        <a href="/premium.html" class="hover:underline" style="color: var(--primary);">Vista previa →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+<br>
+        <!-- ENTRY FORM -->
+        <section id="entry-form-section" class="max-w-2xl mx-auto mb-16" aria-labelledby="form-heading">
+            <div class="surface rounded-3xl p-6 sm:p-10 shadow-xl border-t-4 border-t-red-500">
+                <div class="text-center mb-6">
+                    <span class="inline-block text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full mb-2" style="background: var(--chip-bg); color: var(--primary);">
+                        Formulario oficial de participación
+                    </span>
+                    <h2 id="form-heading" class="text-2xl sm:text-3xl font-black" style="color: var(--text);">
+                        Envía tu participación en el sorteo
+                    </h2>
+                    <p class="text-xs sm:text-sm muted mt-1">
+                        Completa los campos siguientes y adjunta una captura de verificación (PNG, JPG o WebP, máximo 5 MB).
+                    </p>
+                </div>
+
+                <div id="campaignClosedBanner" class="hidden rounded-2xl p-5 mb-6 text-center border" style="background: rgba(239,68,68,0.08); border-color: #EF4444;">
+                    <div class="text-2xl mb-1">🗓️</div>
+                    <h3 id="closedBannerTitle" class="text-sm font-black uppercase tracking-wider" style="color: #EF4444;">Las participaciones están cerradas actualmente</h3>
+                    <p id="closedBannerText" class="text-xs muted mt-1"></p>
+                </div>
+
+                <form id="giveawayForm" novalidate class="space-y-5">
+                    <div style="position:absolute; left:-9999px; opacity:0;" aria-hidden="true">
+                        <label for="websiteUrlHp">Deja este campo vacío</label>
+                        <input type="text" id="websiteUrlHp" name="websiteUrlHp" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="displayName" class="block text-xs font-bold uppercase tracking-wider muted mb-1.5">Nombre visible *</label>
+                            <input type="text" id="displayName" name="displayName" required maxlength="60" placeholder="e.g. Sarah K." class="input-field w-full px-4 py-3 rounded-xl text-sm font-semibold">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-xs font-bold uppercase tracking-wider muted mb-1.5">Correo electrónico *</label>
+                            <input type="email" id="email" name="email" required maxlength="120" placeholder="sarah@example.com" class="input-field w-full px-4 py-3 rounded-xl text-sm font-semibold">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="country" class="block text-xs font-bold uppercase tracking-wider muted mb-1.5">País / región *</label>
+                            <input type="text" id="country" name="country" required maxlength="60" placeholder="e.g. United States" class="input-field w-full px-4 py-3 rounded-xl text-sm font-semibold">
+                        </div>
+                        <div>
+                            <label for="prizeCategory" class="block text-xs font-bold uppercase tracking-wider muted mb-1.5">Premio preferido *</label>
+                            <select id="prizeCategory" name="prizeCategory" required class="input-field w-full px-4 py-3 rounded-xl text-sm font-semibold">
+                                <option value="">-- Selecciona un premio --</option>
+                                <option value="Paquete de currículums ATS">Paquete de currículums ATS ($2.99)</option>
+                                <option value="Paquete Excel">Paquete Excel ($4.99)</option>
+                                <option value="Kit de contratos">Kit de contratos ($2.99)</option>
+                                <option value="Colección de prompts de IA">Colección de prompts de IA ($1.99)</option>
+                                <option value="Controlador mensual del presupuesto familiar">Controlador mensual del presupuesto familiar ($4.99)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="participationCategory" class="block text-xs font-bold uppercase tracking-wider muted mb-1.5">Tipo de participación *</label>
+                        <select id="participationCategory" name="participationCategory" required onchange="handleCategoryFields()" class="input-field w-full px-4 py-3 rounded-xl text-sm font-semibold">
+                            <option value="">-- Elige cómo participaste --</option>
+                            <option value="Juego Score Screenshot">1. Jugar y enviar una captura de la puntuación</option>
+                            <option value="Herramienta gratuita Recommendation">2. Usar una herramienta gratuita y compartir una recomendación</option>
+                            <option value="Premium Product Feedback">3. Explorar la tienda prémium y enviar comentarios</option>
+                        </select>
+                    </div>
+
+                    <div id="gameFieldsWrapper" class="hidden grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-2xl" style="background: var(--chip-bg);">
+                        <div>
+                            <label for="gameName" class="block text-xs font-bold uppercase tracking-wider muted mb-1.5">Juego realizado *</label>
+                            <select id="gameName" name="gameName" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                                <option value="">-- Selecciona un juego --</option>
+                                <option value="Prueba de velocidad de escritura">Prueba de velocidad de escritura</option>
+                                <option value="Prueba de tiempo de reacción">Prueba de tiempo de reacción</option>
+                                <option value="Word Scramble">Word Scramble</option>
+                                <option value="Math Sprint">Math Sprint</option>
+                                <option value="WordStorm">WordStorm</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="gameScore" class="block text-xs font-bold uppercase tracking-wider muted mb-1.5">Puntuación obtenida *</label>
+                            <input type="text" id="gameScore" name="gameScore" maxlength="50" placeholder="e.g. 74 WPM" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="participantNote" id="participantNoteLabel" class="block text-xs font-bold uppercase tracking-wider muted mb-1.5">
+                            Experiencia / comentarios *
+                        </label>
+                        <textarea id="participantNote" name="participantNote" required rows="3" maxlength="500" placeholder="Tell us what you found most helpful..." class="input-field w-full px-4 py-3 rounded-xl text-sm font-medium"></textarea>
+                        <div class="text-[11px] muted mt-1 text-right"><span id="noteCharCount">0</span> / 500</div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl border" style="border-color: var(--card-border); background: var(--input-bg);">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-extrabold uppercase tracking-wider" style="color: var(--text);">Mención en redes sociales (opcional)</span>
+                            <span class="text-[10px] font-bold px-2 py-0.5 rounded" style="background: var(--chip-bg); color: var(--text-muted);">Opcional • No otorga participaciones adicionales</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
+                            <div>
+                                <label for="socialPlataforma" class="block text-[11px] font-bold muted mb-1">Plataforma</label>
+                                <select id="socialPlataforma" name="socialPlataforma" class="input-field w-full px-3 py-2.5 rounded-xl text-xs font-semibold">
+                                    <option value="None">Ninguna / No compartido</option>
+                                    <option value="LinkedIn">LinkedIn</option>
+                                    <option value="X (Twitter)">X (Twitter)</option>
+                                    <option value="Facebook">Facebook</option>
+                                    <option value="Instagram">Instagram</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="publicPostUrl" class="block text-[11px] font-bold muted mb-1">URL de la publicación</label>
+                                <input type="url" id="publicPostUrl" name="publicPostUrl" maxlength="250" placeholder="https://..." class="input-field w-full px-3 py-2.5 rounded-xl text-xs font-semibold">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="screenshotFile" class="block text-xs font-bold uppercase tracking-wider muted mb-1.5">
+                            Captura de verificación *
+                        </label>
+                        <div id="dropZone" class="border-2 border-dashed rounded-2xl p-5 text-center cursor-pointer transition hover:border-indigo-500" style="border-color: var(--card-border); background: var(--input-bg);" onclick="document.getElementById('screenshotFile').click()">
+                            <input type="file" id="screenshotFile" accept="image/png,image/jpeg,image/webp" class="hidden" onchange="handleFileSelect(event)">
+                            <div id="uploadPrompt">
+                                <div class="text-3xl mb-1.5">📸</div>
+                                <p class="text-xs sm:text-sm font-bold" style="color: var(--text);">Haz clic para subir o arrastra y suelta</p>
+                                <p class="text-[11px] muted mt-1">Oculta cualquier dato privado antes de subir la imagen.</p>
+                            </div>
+                            <div id="previewContainer" class="hidden mt-2">
+                                <img id="screenshotPreview" src="" alt="Screenshot preview" class="max-h-52 mx-auto rounded-xl shadow-md border" style="border-color: var(--card-border);">
+                                <div class="mt-2 flex items-center justify-center gap-3">
+                                    <span id="fileMetaLabel" class="text-xs font-bold muted"></span>
+                                    <button type="button" onclick="clearSelectedFile(event)" class="text-xs font-bold text-red-500 hover:underline">Eliminar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 pt-2">
+                        <label class="flex items-start gap-2.5 cursor-pointer text-xs leading-relaxed">
+                            <input type="checkbox" id="privacyConsent" required class="mt-0.5 rounded">
+                            <span class="muted">
+                                <strong>(Obligatorio)</strong> Tengo 18 años o más y acepto las <a href="#rules-section" class="underline font-bold" style="color: var(--primary);">Normas de la campaña</a> &amp; <a href="#privacy-section" class="underline font-bold" style="color: var(--primary);">Aviso de privacidad</a>.
+                            </span>
+                        </label>
+                        <label class="flex items-start gap-2.5 cursor-pointer text-xs leading-relaxed">
+                            <input type="checkbox" id="winnerPublishConsent" class="mt-0.5 rounded">
+                            <span class="muted">
+                                <strong>(Opcional)</strong> Si gano, MyToolX puede publicar mi nombre visible y mi país.
+                            </span>
+                        </label>
+                    </div>
+
+                    <div id="formErrorBox" role="alert" class="hidden rounded-xl p-4 text-xs font-bold border" style="background: rgba(239,68,68,0.1); border-color: #EF4444; color: #EF4444;"></div>
+
+                    <button type="submit" id="submitBtn" class="btn-3d btn-primary w-full py-4 rounded-2xl text-sm sm:text-base font-black shadow-lg">
+                        🎟️ Enviar participación
+                    </button>
+                </form>
+
+                <div id="confirmationCard" class="hidden rounded-2xl p-6 text-center border mt-4" style="background: rgba(16,185,129,0.08); border-color: var(--accent);">
+                    <div class="text-4xl mb-2">📩</div>
+                    <h3 class="text-lg font-black mb-1" style="color: var(--text);">Participación recibida</h3>
+                    <p class="text-xs sm:text-sm muted mb-4">
+                        ¡Gracias! Tu participación está pendiente de revisión manual por parte del administrador.
+                    </p>
+                    <div class="inline-block px-4 py-2.5 rounded-xl surface mb-4">
+                        <div class="text-[10px] uppercase font-bold muted">Tu identificador de participación</div>
+                        <div id="confirmedEntryId" class="text-base sm:text-lg font-black tracking-wider select-all" style="color: var(--primary);">MTX-2027-XXXXXX</div>
+                    </div>
+                    <p class="text-xs muted leading-relaxed max-w-md mx-auto">
+                        Guarda tu identificador. Las participaciones <strong>no se aprueban automáticamente</strong>; verificamos cada captura antes del sorteo del <strong>10 ene 2027</strong>.
+                    </p>
+                </div>
+            </div>
+        </section>
+<br>
+        <!-- WINNERS -->
+        <section id="winners-section" class="mb-14" aria-labelledby="winners-heading">
+            <div class="surface rounded-3xl p-6 sm:p-8 text-center border-t-4 border-t-amber-500">
+                <span class="text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full" style="background: var(--chip-bg); color: var(--festive-gold);">
+                    🏆 Panel oficial de resultados
+                </span>
+                <h2 id="winners-heading" class="text-2xl font-black mt-3 mb-2" style="color: var(--text);">
+                    Anuncio de ganadores de Año Nuevo 2027
+                </h2>
+                <p class="text-xs sm:text-sm muted max-w-xl mx-auto mb-4">
+                    Los ganadores verificados se elegirán mediante sorteo el <strong>10 ene 2027</strong> (solo se mostrarán quienes hayan aceptado aparecer públicamente).
+                </p>
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold" style="background: var(--chip-bg); color: var(--text-muted);">
+                    <span>🗓️ Status:</span>
+                    <span id="winnerBoardStatus">Pendiente del sorteo del 10 de enero de 2027</span>
+                </div>
+            </div>
+        </section>
+<br>
+        <!-- RULES & PRIVACY -->
+        <section id="rules-section" class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-14">
+            <div class="surface rounded-3xl p-6 sm:p-8">
+                <h2 class="text-xl font-black mb-4" style="color: var(--text);">📜 Normas oficiales de la campaña</h2>
+                <ul class="space-y-3 text-xs sm:text-sm muted leading-relaxed list-disc pl-5">
+                    <li><strong>Periodo:</strong> 5 dic 2026 (00:00 UTC) to 5 ene 2027 (23:59 UTC).</li>
+                    <li><strong>No es necesario comprar:</strong> Participar es totalmente gratuito. Comprar productos prémium no aumenta tus posibilidades.</li>
+                    <li><strong>Requisitos:</strong> Abierto a personas mayores de 18 años de todo el mundo, excepto donde esté prohibido.</li>
+                    <li><strong>Límite:</strong> Se permite una (1) participación por persona y correo electrónico. Las capturas duplicadas quedan descalificadas.</li>
+                    <li><strong>Verificación:</strong> Las participaciones permanecen <em>Pendientes</em> hasta que se revisen manualmente. Las capturas modificadas y los bots serán <em>Rechazados</em>.</li>
+                    <li><strong>Premios:</strong> 50 paquetes digitales en total (un paquete por ganador; 10 copias de cada uno de los 5 paquetes). Se entregarán por correo electrónico en los 7 días posteriores al sorteo del 10 de enero.</li>
+                </ul>
+            </div>
+
+            <div id="privacy-section" class="surface rounded-3xl p-6 sm:p-8">
+                <h2 class="text-xl font-black mb-4" style="color: var(--text);">🔒 Aviso de privacidad</h2>
+                <ul class="space-y-3 text-xs sm:text-sm muted leading-relaxed list-disc pl-5">
+                    <li><strong>Independiente de las herramientas gratuitas:</strong> Nuestras herramientas habituales no requieren registro. Este sorteo es una actividad totalmente voluntaria.</li>
+                    <li><strong>Datos recopilados:</strong> Nombre, correo electrónico, país, categoría, URL opcional y captura de pantalla.</li>
+                    <li><strong>Finalidad:</strong> Únicamente verificar participaciones, contactar con los ganadores y entregar premios. No se crean suscripciones de marketing.</li>
+                    <li><strong>Seguridad:</strong> Las capturas se almacenan en una carpeta restringida de Google Drive a la que solo tiene acceso el administrador.</li>
+                    <li><strong>Conservación:</strong> Todos los datos se eliminan permanentemente en un plazo de 30 días después de entregar los premios (antes del 15 de febrero de 2027).</li>
+                </ul>
+            </div>
+        </section>
+<br>
+        <!-- FAQ -->
+        <section class="max-w-3xl mx-auto mb-12" aria-labelledby="faq-heading">
+            <h2 id="faq-heading" class="text-2xl font-black text-center mb-6" style="color: var(--text);"> 📌 Preguntas frecuentes</h2>
+            <div class="space-y-3">
+                <details class="surface rounded-2xl p-5 cursor-pointer">
+                    <summary class="font-bold text-sm" style="color: var(--text);">¿Tengo que compartir algo en redes sociales para participar?</summary>
+                    <p class="text-xs sm:text-sm muted mt-2 leading-relaxed">No. Compartir en redes sociales es opcional y no concede participaciones adicionales. Solo tienes que subir una captura de la puntuación del juego, del uso de una herramienta o de tus comentarios sobre un producto prémium.</p>
+                </details>
+                <details class="surface rounded-2xl p-5 cursor-pointer">
+                    <summary class="font-bold text-sm" style="color: var(--text);">¿Necesito una cuenta de Google para participar?</summary>
+                    <p class="text-xs sm:text-sm muted mt-2 leading-relaxed">No. Cualquier visitante puede enviar el formulario y subir una captura directamente desde esta página sin iniciar sesión en Google ni crear una cuenta.</p>
+                </details>
+                <details class="surface rounded-2xl p-5 cursor-pointer">
+                    <summary class="font-bold text-sm" style="color: var(--text);">¿Por qué mi confirmación indica «Pendiente de verificación»?</summary>
+                    <p class="text-xs sm:text-sm muted mt-2 leading-relaxed">Para garantizar la imparcialidad del sorteo, un administrador revisa cada captura y confirma que sea auténtica antes de aprobarla para el sorteo del 10 de enero.</p>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+                
+                <div class="lg:col-span-5">
+                    <a href="/index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 pr-4">
+MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesionales independientes y desarrolladores. La mayoría no requiere registro. Algunas funciones utilizan servicios externos y pueden cargarse tecnologías de análisis o publicidad.
+                    </p>
+                    <div class="social-links-row" aria-label="MyToolX social media links">
+                        <a href="https://www.facebook.com/profile.php?id=61596813242660" target="_blank" rel="noopener noreferrer" aria-label="MyToolX on Facebook" title="Facebook" class="social-btn fb-btn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/mytoolx0?fqnt=dm05bDBzazZ6Nmpp" target="_blank" rel="noopener noreferrer" aria-label="MyToolX on Instagram" title="Instagram" class="social-btn ig-btn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-4">
+                    <h3>Popular Tools</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <a href="/typing-test.html">Prueba de velocidad de escritura</a>
+                        <div class="flex items-start mt-0.5"> 
+                            <a href="/premium.html" class="link-premium-gold" aria-label="Visita la Tienda prémium">
+                                <span class="star-icon">⭐</span> Premium
+                            </a>
+                        </div>
+                        <a href="/prompt-studio.html">AI Prompt Studio</a>
+                        <a href="/image-compressor.html">Image Compressor</a>
+                        <a href="/text-suite.html">Text &amp; Word Suite</a>
+                        <a href="/grammar-checker.html">Grammar Checker</a>
+                        <a href="/sip-calculator.html">SIP Calculator</a>
+                        <a href="/fee-calculator.html">Fee Calculator</a>
+                        <a href="/json-formatter.html">JSON Formatter</a>
+                        <a href="/loan-emi.html">Loan EMI Calc</a>
+                        <a href="/qr-code-generator.html">QR Code Gen</a>
+                        <a href="/base64-tool.html">Base64 Tool</a>
+                        <a href="/unit-converter.html">Unit Converter</a>
+                        <a href="/password-generator.html">Password Gen</a>
+                        <a href="/article-outline.html">Article Outline</a>
+                        <a href="/ai-bio-generator.html">AI Bio Generator</a>
+                        <a href="/love-calculator.html">Love Calculator</a>
+                        <a href="/cv-maker.html">Resume Builder</a> 
+                        <a href="/text-summarizer.html">AI Summarizer</a>
+                        <a href="/color-converter.html">Color Converter</a>
+                        <a href="/math-sprint.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Math Sprint Juego</a>
+                        <a href="/wordstorm.html" class="footer-game-link"><span aria-hidden="true">⭐</span> WordStorm Juego</a>
+                        <a href="/reaction-time-test.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Reaction Test</a>
+                        <a href="/word-scramble.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Word Scramble</a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Company</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="/index.html">Home</a></li>
+                                <li><a href="/about.html">About Us</a></li>
+                                <li><a href="/contact.html">Contact Us</a></li>
+                                <li><a href="/community.html">Community</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Legal</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="/blog.html">Blog &amp; Guides</a></li>
+                                <li><a href="/privacy.html">Privacy Policy</a></li>
+                                <li><a href="/terms.html">Terms of Service</a></li>
+                                <li><a href="/giveaway.html">Holiday Giveaway</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. All rights reserved.</p>
+                <p>Many tools run locally in your browser. Some features use external services for processing.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- CONFIGURATION ---
+        // UPDATE THIS URL WITH YOUR DEPLOYED GOOGLE APPS SCRIPT WEB APP
+        const CAMPAIGN_CONFIG = {
+            APPS_SCRIPT_WEB_APP_URL: "https://script.google.com/macros/s/AKfycbyp4IOrXv1afAfTr4_Hn9hI52BU7gSa2YKlxz1QI2WoIywtW5Vf9ISpB8WIAXxwJTJJ/exec", 
+            // Temporarily set to open NOW for testing
+            OPEN_DATE_UTC: "2026-12-05T00:00:00Z", 
+            CLOSE_DATE_UTC: "2027-01-05T23:59:59Z",
+            MAX_FILE_BYTES: 5 * 1024 * 1024,
+            ALLOWED_MIME_TYPES: ["image/png", "image/jpeg", "image/webp"]
+        };
+
+        // --- THEME LOGIC ---
+        (function initTheme() {
+            var saved = null;
+            try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            applyTheme(saved || (prefersDark ? 'dark' : 'light'));
+        })();
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            var icon = document.getElementById('themeIcon');
+            var text = document.getElementById('themeText');
+            if (icon && text) {
+                icon.textContent = theme === 'dark' ? '🌙' : '☀️';
+                text.textContent = theme === 'dark' ? 'Modo oscuro' : 'Light Mode';
+            }
+        }
+
+        function toggleTheme() {
+            var cur = document.documentElement.getAttribute('data-theme') || 'light';
+            var next = cur === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('mtx-theme', next); } catch (e) {}
+        }
+
+        // --- COUNTDOWN LOGIC ---
+        function updateCampaignClock() {
+            const now = Date.now();
+            const openMs = Date.parse(CAMPAIGN_CONFIG.OPEN_DATE_UTC);
+            const closeMs = Date.parse(CAMPAIGN_CONFIG.CLOSE_DATE_UTC);
+
+            const statusBadge = document.getElementById("campaignStatusBadge");
+            const closedBanner = document.getElementById("campaignClosedBanner");
+            const closedTitle = document.getElementById("closedBannerTitle");
+            const closedText = document.getElementById("closedBannerText");
+            const submitBtn = document.getElementById("submitBtn");
+
+            let targetMs = closeMs;
+
+            if (now < openMs) {
+                targetMs = openMs;
+                statusBadge.textContent = "🎄 Campaign Opens In:";
+                closedBanner.classList.remove("hidden");
+                closedTitle.textContent = "Giveaway Opens 5 dic 2026 (00:00 UTC)";
+                closedText.textContent = "You can explore the games and tools now entries open when the countdown hits zero.";
+                submitBtn.disabled = true;
+            } else if (now > closeMs) {
+                statusBadge.textContent = "🔒 Campaign Closed";
+                closedBanner.classList.remove("hidden");
+                closedTitle.textContent = "Submissions Closed on Jan 5, 2027";
+                closedText.textContent = "Winners will be announced on 10 ene 2027.";
+                submitBtn.disabled = true;
+                setClockDigits(0);
+                return;
+            } else {
+                statusBadge.textContent = "🟢 Live Now — Closes In:";
+                closedBanner.classList.add("hidden");
+                submitBtn.disabled = false;
+            }
+
+            setClockDigits(Math.max(0, targetMs - now));
+        }
+
+        function setClockDigits(diffMs) {
+            const d = Math.floor(diffMs / 86400000);
+            const h = Math.floor((diffMs % 86400000) / 3600000);
+            const m = Math.floor((diffMs % 3600000) / 60000);
+            const s = Math.floor((diffMs % 60000) / 1000);
+
+            document.getElementById("cdDías").textContent = String(d).padStart(2, "0");
+            document.getElementById("cdHoras").textContent = String(h).padStart(2, "0");
+            document.getElementById("cdMinutos").textContent = String(m).padStart(2, "0");
+            document.getElementById("cdSegundos").textContent = String(s).padStart(2, "0");
+        }
+
+        updateCampaignClock();
+        setInterval(updateCampaignClock, 1000);
+
+        // --- FORM LOGIC ---
+        let selectedFilePayload = null;
+
+        document.getElementById("participantNote").addEventListener("input", function () {
+            document.getElementById("noteCharCount").textContent = this.value.length;
+        });
+
+        function handleCategoryFields() {
+            const cat = document.getElementById("participationCategory").value;
+            const gameWrapper = document.getElementById("gameFieldsWrapper");
+            const gameName = document.getElementById("gameName");
+            const gameScore = document.getElementById("gameScore");
+            const noteLabel = document.getElementById("participantNoteLabel");
+
+            if (cat === "Juego Score Screenshot") {
+                gameWrapper.classList.remove("hidden");
+                gameName.required = true;
+                gameScore.required = true;
+                noteLabel.textContent = "Juego Experience / Notes *";
+            } else {
+                gameWrapper.classList.add("hidden");
+                gameName.required = false;
+                gameScore.required = false;
+                noteLabel.textContent = cat === "Premium Product Feedback"
+                    ? "Honest Feedback on the Premium Bundle *"
+                    : "Honest Recommendation of the Herramienta gratuita *";
+            }
+        }
+
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            processImageFile(file);
+        }
+
+        const dropZone = document.getElementById("dropZone");
+        dropZone.addEventListener("dragover", function (e) {
+            e.preventDefault();
+            dropZone.style.borderColor = "var(--primary)";
+        });
+        dropZone.addEventListener("dragleave", function () {
+            dropZone.style.borderColor = "var(--card-border)";
+        });
+        dropZone.addEventListener("drop", function (e) {
+            e.preventDefault();
+            dropZone.style.borderColor = "var(--card-border)";
+            if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+                processImageFile(e.dataTransfer.files[0]);
+            }
+        });
+
+        function processImageFile(file) {
+            hideError();
+            if (!CAMPAIGN_CONFIG.ALLOWED_MIME_TYPES.includes(file.type)) {
+                showError("Invalid file type. Please upload a PNG, JPG, or WebP screenshot.");
+                clearSelectedFile();
+                return;
+            }
+            if (file.size > CAMPAIGN_CONFIG.MAX_FILE_BYTES) {
+                showError("Screenshot exceeds the 5 MB limit. Please compress it and try again.");
+                clearSelectedFile();
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const dataUrl = e.target.result;
+                const base64Data = dataUrl.split(",")[1];
+                selectedFilePayload = {
+                    fileName: file.name,
+                    mimeType: file.type,
+                    sizeBytes: file.size,
+                    base64: base64Data
+                };
+                document.getElementById("screenshotPreview").src = dataUrl;
+                document.getElementById("fileMetaLabel").textContent = file.name + " (" + (file.size / 1024 / 1024).toFixed(2) + " MB)";
+                document.getElementById("uploadPrompt").classList.add("hidden");
+                document.getElementById("previewContainer").classList.remove("hidden");
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function clearSelectedFile(event) {
+            if (event) event.stopPropagation();
+            selectedFilePayload = null;
+            document.getElementById("screenshotFile").value = "";
+            document.getElementById("screenshotPreview").src = "";
+            document.getElementById("previewContainer").classList.add("hidden");
+            document.getElementById("uploadPrompt").classList.remove("hidden");
+        }
+
+        function showError(msg) {
+            const box = document.getElementById("formErrorBox");
+            box.textContent = "⚠️ " + msg;
+            box.classList.remove("hidden");
+        }
+
+        function hideError() {
+            const box = document.getElementById("formErrorBox");
+            box.textContent = "";
+            box.classList.add("hidden");
+        }
+
+        document.getElementById("giveawayForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+            hideError();
+
+            if (CAMPAIGN_CONFIG.APPS_SCRIPT_WEB_APP_URL.includes("YOUR_APPS_SCRIPT_URL_HERE")) {
+                showError("Campaign backend endpoint is not configured yet. Please add your Google Apps Script URL.");
+                return;
+            }
+
+            const displayName = document.getElementById("displayName").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const country = document.getElementById("country").value.trim();
+            const prizeCategory = document.getElementById("prizeCategory").value;
+            const participationCategory = document.getElementById("participationCategory").value;
+            const gameName = document.getElementById("gameName").value;
+            const gameScore = document.getElementById("gameScore").value.trim();
+            const participantNote = document.getElementById("participantNote").value.trim();
+            const socialPlataforma = document.getElementById("socialPlataforma").value;
+            const publicPostUrl = document.getElementById("publicPostUrl").value.trim();
+            const privacyConsent = document.getElementById("privacyConsent").checked;
+            const winnerPublishConsent = document.getElementById("winnerPublishConsent").checked;
+            const websiteUrlHp = document.getElementById("websiteUrlHp").value;
+
+            if (!displayName || !email || !country || !prizeCategory || !participationCategory || !participantNote) {
+                showError("Please fill out all required fields marked with *.");
+                return;
+            }
+            if (participationCategory === "Juego Score Screenshot" && (!gameName || !gameScore)) {
+                showError("Please select the game you played and enter your score.");
+                return;
+            }
+            if (!selectedFilePayload) {
+                showError("Please attach a verification screenshot.");
+                return;
+            }
+            if (!privacyConsent) {
+                showError("You must agree to the Normas de la campaña and Aviso de privacidad.");
+                return;
+            }
+
+            const submitBtn = document.getElementById("submitBtn");
+            submitBtn.disabled = true;
+            submitBtn.textContent = "⏳ Uploading & Submitting...";
+
+            const payload = {
+                websiteUrlHp: websiteUrlHp,
+                displayName: displayName,
+                email: email,
+                country: country,
+                prizeCategory: prizeCategory,
+                participationCategory: participationCategory,
+                gameName: gameName,
+                gameScore: gameScore,
+                participantNote: participantNote,
+                socialPlataforma: socialPlataforma,
+                publicPostUrl: publicPostUrl,
+                privacyConsent: privacyConsent,
+                winnerPublishConsent: winnerPublishConsent,
+                file: selectedFilePayload
+            };
+
+            try {
+                const response = await fetch(CAMPAIGN_CONFIG.APPS_SCRIPT_WEB_APP_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "text/plain;charset=utf-8" },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (result.status === "success" && result.entryId) {
+                    document.getElementById("giveawayForm").classList.add("hidden");
+                    document.getElementById("confirmedEntryId").textContent = result.entryId;
+                    document.getElementById("confirmationCard").classList.remove("hidden");
+                    document.getElementById("confirmationCard").scrollIntoView({ behavior: "smooth", block: "center" });
+                } else {
+                    showError(result.message || "Submission could not be accepted. Please try again.");
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "🎟️ Enviar participación";
+                }
+            } catch (err) {
+                showError("Network error while uploading. Please check your connection.");
+                submitBtn.disabled = false;
+                submitBtn.textContent = "🎟️ Enviar participación";
+            }
+        });
+    </script>
+</body>
+</html>
