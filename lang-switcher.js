@@ -20,6 +20,22 @@
       }
     });
 
+    // Keep language navigation on the local HTTP preview when testing locally.
+    // SEO hreflang/canonical tags remain untouched and continue pointing to production.
+    function adaptHrefForLocalPreview(href) {
+      var hostname = window.location.hostname.toLowerCase();
+      var isLocalHost = hostname === 'localhost' || hostname === '127.0.0.1' ||
+        hostname === '::1' || hostname.slice(-10) === '.localhost';
+      if (!isLocalHost || (window.location.protocol !== 'http:' &&
+          window.location.protocol !== 'https:')) return href;
+      var target = new URL(href, window.location.href);
+      return window.location.origin + target.pathname + target.search + target.hash;
+    }
+
+    Object.keys(supported).forEach(function (code) {
+      supported[code] = adaptHrefForLocalPreview(supported[code]);
+    });
+
     var currentPath = window.location.pathname;
     var currentLang = /^\/es(?:\/|$)/i.test(currentPath) ? 'es' :
                       /^\/fr(?:\/|$)/i.test(currentPath) ? 'fr' : 'en';
