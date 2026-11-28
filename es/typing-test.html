@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+    (function() {
+        var saved = null;
+        try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+    })();
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <!-- PRIMARY SEO -->
+    <title>Prueba gratuita de velocidad de escritura y WPM | MyToolX</title>
+    <meta name="description" content="Comprueba tu velocidad y precisión al escribir online. Mide las palabras por minuto (WPM), practica con distintos niveles y mejora tus habilidades de mecanografía.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://mytoolx.org/es/typing-test.html">
+
+    <!-- HREFLANG -->
+    <link rel="alternate" hreflang="en" href="https://mytoolx.org/typing-test.html">
+    <link rel="alternate" hreflang="es" href="https://mytoolx.org/es/typing-test.html">
+    <link rel="alternate" hreflang="fr" href="https://mytoolx.org/fr/typing-test.html">
+    <link rel="alternate" hreflang="x-default" href="https://mytoolx.org/typing-test.html">
+
+    <!-- FAVICON (inline SVG emoji — zero HTTP request) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌨️</text></svg>">
+
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#4F46E5">
+<link rel="apple-touch-icon" href="/icon-192.png">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:url" content="https://mytoolx.org/es/typing-test.html">
+    <meta property="og:title" content="Free Prueba de velocidad de escritura: Check Your WPM ⌨️ | MyToolX">
+    <meta property="og:description" content="Test your typing speed and accuracy with our interactive 3D keyboard. Play basic, medium, or advanced levels. Track your WPM instantly. 100% free.">
+    <meta property="og:image" content="https://mytoolx.org/og-image.png">
+    <meta property="og:image:alt" content="MyToolX Free Prueba de velocidad de escritura">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:locale" content="es_ES">
+
+    <!-- TWITTER / X CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mytoolx.org/es/typing-test.html">
+    <meta name="twitter:title" content="Free Prueba de velocidad de escritura: Check Your WPM ⌨️ | MyToolX">
+    <meta name="twitter:description" content="Test your typing speed and accuracy with our interactive 3D keyboard. Play basic, medium, or advanced levels.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
+    <meta name="twitter:image:alt" content="MyToolX Free Prueba de velocidad de escritura">
+
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="/styles.css">
+
+    <!-- SPEED HINTS -->
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//refer.micro1.ai">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "MyToolX Prueba de velocidad de escritura",
+          "url": "https://mytoolx.org/es/typing-test.html",
+          "description": "Test your typing speed and accuracy with an interactive 3D keyboard.",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Any",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://mytoolx.org/" },
+            { "@type": "ListItem", "position": 2, "name": "Prueba de escritura", "item": "https://mytoolx.org/es/typing-test.html" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "¿Cómo se calcula el WPM?", "acceptedAnswer": { "@type": "Answer", "text": "El WPM (palabras por minuto) se calcula dividiendo el total de caracteres escritos correctamente entre 5 (la longitud estándar de una palabra) y luego entre el tiempo transcurrido en minutos." } },
+            { "@type": "Question", "name": "¿Cuál es una buena velocidad de escritura?", "acceptedAnswer": { "@type": "Answer", "text": "La velocidad media de escritura ronda las 40 palabras por minuto. Entre 60 y 70 WPM se considera un nivel profesional, y más de 80 WPM es un nivel muy avanzado." } },
+            { "@type": "Question", "name": "¿Esta herramienta registra mis pulsaciones?", "acceptedAnswer": { "@type": "Answer", "text": "No. Todas las pruebas y cálculos se realizan íntegramente en tu navegador mediante JavaScript. No registramos, almacenamos ni enviamos tus pulsaciones a ningún servidor." } }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
+            --tile-indigo-bg: rgba(224,231,255,0.6); --tile-indigo-border: #C7D2FE; --tile-indigo-text: #4F46E5;
+            --tile-green-bg: rgba(209,250,229,0.6); --tile-green-border: #A7F3D0; --tile-green-text: #059669;
+            --tile-red-bg: rgba(254,226,226,0.6); --tile-red-border: #FECACA; --tile-red-text: #EF4444;
+            --kb-bg: #FFFFFF; --kb-border: #CBD5E1; --kb-shadow: #94A3B8; --kb-text: #334155;
+        }
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
+            --tile-indigo-bg: rgba(49,46,129,0.30); --tile-indigo-border: #3730A3; --tile-indigo-text: #A5B4FC;
+            --tile-green-bg: rgba(6,78,59,0.30); --tile-green-border: #065F46; --tile-green-text: #34D399;
+            --tile-red-bg: rgba(127,29,29,0.25); --tile-red-border: #7F1D1D; --tile-red-text: #F87171;
+            --kb-bg: #1E293B; --kb-border: #334155; --kb-shadow: #0F172A; --kb-text: #E2E8F0;
+        }
+        html, body { overflow-x: clip; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; font-family: 'Inter', system-ui, sans-serif; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+        
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .tool-panel { border-top: 4px solid var(--primary); }
+        .tool-panel:hover { box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); }
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-accent { background: var(--accent); color: #fff; } .btn-accent:hover { background: var(--accent-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+        
+        .tile-indigo { background: var(--tile-indigo-bg); border: 1px solid var(--tile-indigo-border); } .tile-indigo .num { color: var(--tile-indigo-text); }
+        .tile-green { background: var(--tile-green-bg); border: 1px solid var(--tile-green-border); } .tile-green .num { color: var(--tile-green-text); }
+        .tile-red { background: var(--tile-red-bg); border: 1px solid var(--tile-red-border); } .tile-red .num { color: var(--tile-red-text); }
+        .num { font-variant-numeric: tabular-nums; }
+        
+        .related-card { transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; background: var(--card); border: 1px solid var(--card-border); }
+        .related-card:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); border-color: var(--primary); }
+
+        /* --- MEGA FOOTER --- */
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+
+        /* --- FOOTER SOCIAL ICONS --- */
+        .social-links-row { display: flex; align-items: center; gap: 12px; margin-top: 4px; }
+        .social-btn {
+            width: 42px; height: 42px; border-radius: 12px;
+            display: inline-flex; align-items: center; justify-content: center;
+            color: #FFFFFF !important; text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+            box-shadow: 0 6px 14px -3px rgba(0, 0, 0, 0.28);
+        }
+        .social-btn svg { width: 20px; height: 20px; fill: currentColor; }
+        .social-btn.fb-btn {
+            background: linear-gradient(135deg, #1877F2 0%, #0D5BD6 100%);
+        }
+        .social-btn.ig-btn {
+            background: radial-gradient(circle at 30% 107%, #FDF497 0%, #FDF497 5%, #FD5949 45%, #D6249F 60%, #285AEB 90%);
+        }
+        .social-btn:hover {
+            transform: translateY(-2px) scale(1.06);
+            box-shadow: 0 10px 20px -4px rgba(79, 70, 229, 0.35);
+            filter: brightness(1.05);
+        }
+        
+        #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
+        :focus-visible { outline: none; }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        ::selection { background: rgba(79,70,229,0.25); }
+        @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+        /* --- TYPING GAME STYLES --- */
+        .typing-text { font-size: 1.5rem; line-height: 1.8; font-family: 'ui-monospace', 'SFMono-Regular', Menlo, Monaco, Consolas, monospace; letter-spacing: 0.02em; }
+        .char { position: relative; transition: all 0.1s ease; }
+        .char.correct { color: var(--accent); }
+        .char.incorrect { color: #EF4444; background-color: rgba(239, 68, 68, 0.2); border-radius: 4px; }
+        .char.active { background-color: rgba(79,70,229,0.2); border-radius: 4px; box-shadow: 0 0 0 2px var(--primary) inset; }
+        
+        /* 3D Keyboard Visualizer */
+        .kb-row { display: flex; justify-content: center; gap: 4px; margin-bottom: 4px; }
+        .key { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; border-radius: 6px; background: var(--kb-bg); border: 1px solid var(--kb-border); color: var(--kb-text); box-shadow: 0 3px 0 var(--kb-shadow); transition: all 0.05s ease; text-transform: uppercase; }
+        .key.active { transform: translateY(3px); box-shadow: 0 0 0 var(--kb-shadow); background: var(--primary); border-color: var(--primary); color: #fff; }
+        .key.space { width: 160px; }
+        
+        @media (max-width: 640px) {
+            .typing-text { font-size: 1.1rem; }
+            .key { width: 26px; height: 26px; font-size: 9px; }
+            .key.space { width: 120px; }
+        }
+
+        /* FEEDBACK MODAL STYLES */
+        .mtx-modal-backdrop {
+            position: fixed; inset: 0; z-index: 9999;
+            background: rgba(15, 23, 42, 0.68);
+            backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+            display: flex; align-items: center; justify-content: center; padding: 12px;
+        }
+        .mtx-modal-backdrop.hidden { display: none !important; }
+        .mtx-modal-dialog {
+            background: var(--card); border: 1px solid var(--card-border); color: var(--text);
+            width: 100%; max-width: 480px; max-height: 88dvh; overflow-y: auto;
+            border-radius: 22px; padding: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35); position: relative;
+        }
+        @media (min-width: 640px) { .mtx-modal-dialog { padding: 28px; } }
+        .mtx-modal-close {
+            width: 34px; height: 34px; border-radius: 10px;
+            background: var(--chip-bg); color: var(--text); border: none;
+            font-size: 16px; font-weight: 800; cursor: pointer;
+            display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .mtx-modal-close:hover { background: #EF4444; color: #FFFFFF; }
+        .star-click { cursor: pointer; transition: transform 0.1s; }
+        .star-click:hover { transform: scale(1.15); }
+        .star-click svg { width: 32px; height: 32px; fill: currentColor; }
+        select option, select optgroup {
+            background-color: var(--card) !important;
+            color: var(--text) !important;
+        }
+    </style>
+<!-- GLOBAL LANGUAGE SWITCHER -->
+    <link rel="stylesheet" href="/lang-switcher.css">
+    <script src="/lang-switcher.js" defer></script>
+</head>
+<body class="font-sans min-h-screen flex flex-col justify-between">
+
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2">
+            <div class="flex items-center justify-between gap-2 sm:gap-4">
+                <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+                    <a href="/index.html" class="hidden sm:flex btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold items-center gap-1">← Todas las herramientas</a>
+                    <a href="/index.html" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
+                        <div class="logo-mark w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base flex items-center justify-center">M<span class="x">X</span></div>
+                        <span class="logo-wordmark text-base sm:text-xl block">MyTool<span class="x">X</span></span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                   <button id="themeToggle" type="button" onclick="toggleTheme()" aria-label="Switch theme" title="Toggle Light/Modo oscuro" class="h-8 sm:h-10 px-2 sm:px-3 rounded-xl flex items-center justify-center gap-1.5 text-[10px] sm:text-xs font-bold transition-all hover:opacity-80" style="background: var(--chip-bg); color: var(--chip-text);">
+    <span id="themeIcon" aria-hidden="true">🌙</span>
+    <span id="themeText" class="hidden sm:block">Modo oscuro</span>
+</button>
+
+<!-- Comunidad Link -->
+<a href="/community.html" class="inline-flex items-center text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap" style="background: var(--chip-bg); color: var(--text);">
+    💬 Comunidad
+</a>
+
+                    <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
+                        💼 Empleos remotos ↗
+                    </a>
+                    <a href="/cv-maker.html" class="hidden md:inline-flex text-xs font-bold text-white px-3 py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
+    📄 Creador de CV
+</a>
+                </div>
+            </div>
+            <div class="mt-2 sm:hidden">
+                <a href="/index.html" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">
+                    ← Volver a todas las herramientas
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow">
+
+        <nav class="text-xs font-semibold mb-4 flex items-center gap-1 muted" aria-label="Breadcrumb">
+            <a href="/index.html" class="hover:text-indigo-500">Inicio</a>
+            <span>/</span>
+            <span style="color: var(--text); font-weight: 700;">Prueba de escritura</span>
+        </nav>
+
+        <div class="tool-panel surface rounded-3xl shadow-xl p-6 sm:p-8 mb-10 transition-shadow">
+            
+            <div class="flex items-center justify-between gap-3 flex-wrap mb-6 pb-4 border-b" style="border-color: var(--card-border);">
+                <h1 class="text-xl sm:text-2xl font-black flex items-center gap-2" style="color: var(--text);">
+                    ⌨️ Prueba gratuita de velocidad de escritura (sin iniciar sesión)
+                </h1>
+                <div class="flex gap-2 items-center">
+                    <div id="levelTabs" class="flex gap-2 mr-2">
+                        <button type="button" onclick="changeLevel('basic')" class="btn-3d btn-primary px-3 py-1.5 text-xs font-bold" data-level="basic">Básico</button>
+                        <button type="button" onclick="changeLevel('medium')" class="btn-3d btn-chip px-3 py-1.5 text-xs font-bold" data-level="medium">Intermedio</button>
+                        <button type="button" onclick="changeLevel('advanced')" class="btn-3d btn-chip px-3 py-1.5 text-xs font-bold" data-level="advanced">Avanzado</button>
+                    </div>
+                    <button type="button" onclick="resetTest()" class="btn-3d btn-chip px-3 py-1.5 text-xs font-bold text-red-500 hover:text-red-600 border-red-200" style="border-color: #FECACA;">Borrar</button>
+                </div>
+            </div>
+
+            <!-- Live Stats -->
+            <div class="grid grid-cols-3 gap-3 mb-6">
+                <div class="tile-indigo rounded-2xl p-4 text-center">
+                    <span id="wpmDisplay" class="num text-3xl font-black block">0</span>
+                    <span class="text-[10px] font-bold uppercase muted">WPM</span>
+                </div>
+                <div class="tile-green rounded-2xl p-4 text-center">
+                    <span id="accDisplay" class="num text-3xl font-black block">100%</span>
+                    <span class="text-[10px] font-bold uppercase muted">Precisión</span>
+                </div>
+                <div class="tile-red rounded-2xl p-4 text-center">
+                    <span id="timeDisplay" class="num text-3xl font-black block">0s</span>
+                    <span class="text-[10px] font-bold uppercase muted">Tiempo</span>
+                </div>
+            </div>
+
+            <!-- Typing Area -->
+            <div class="relative mb-6">
+                <div id="textDisplay" class="typing-text p-6 rounded-2xl border-2" style="background: var(--input-bg); border-color: var(--card-border); color: var(--text-muted); user-select: none; min-height: 120px;">
+                    <!-- Generated spans go here -->
+                </div>
+                <!-- Hidden input to capture keystrokes -->
+                <input type="text" id="hiddenInput" class="absolute inset-0 opacity-0 cursor-default" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0">
+                
+                <!-- Start Overlay -->
+                <div id="startOverlay" class="absolute inset-0 flex items-center justify-center rounded-2xl z-10" style="background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(4px);">
+                    <button type="button" onclick="startTest()" class="btn-3d btn-primary px-8 py-4 text-lg font-black tracking-wide flex items-center gap-2 shadow-2xl">
+                        ▶️ Iniciar prueba de escritura
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Stop Button (Hidden initially) -->
+            <div id="stopBtnWrap" class="hidden text-center mb-6">
+                <button type="button" onclick="stopTest()" class="btn-3d btn-chip px-6 py-2 text-xs font-bold text-red-500 border-red-200" style="border-color: #FECACA;">⏹ Detener prueba</button>
+            </div>
+
+            <!-- 3D Keyboard Visualizer (Hidden on Mobile) -->
+            <div id="keyboardVisualizer" class="hidden sm:flex flex-col items-center py-4 mb-4 select-none opacity-80 pointer-events-none">
+                <div class="kb-row"><div class="key" data-key="q">q</div><div class="key" data-key="w">w</div><div class="key" data-key="e">e</div><div class="key" data-key="r">r</div><div class="key" data-key="t">t</div><div class="key" data-key="y">y</div><div class="key" data-key="u">u</div><div class="key" data-key="i">i</div><div class="key" data-key="o">o</div><div class="key" data-key="p">p</div></div>
+                <div class="kb-row"><div class="key" data-key="a">a</div><div class="key" data-key="s">s</div><div class="key" data-key="d">d</div><div class="key" data-key="f">f</div><div class="key" data-key="g">g</div><div class="key" data-key="h">h</div><div class="key" data-key="j">j</div><div class="key" data-key="k">k</div><div class="key" data-key="l">l</div></div>
+                <div class="kb-row"><div class="key" data-key="z">z</div><div class="key" data-key="x">x</div><div class="key" data-key="c">c</div><div class="key" data-key="v">v</div><div class="key" data-key="b">b</div><div class="key" data-key="n">n</div><div class="key" data-key="m">m</div></div>
+                <div class="kb-row mt-1"><div class="key space" data-key=" ">space</div></div>
+            </div>
+
+            <!-- Results Modal -->
+            <div id="resultsModal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+                <div class="surface rounded-3xl p-8 max-w-md w-full text-center shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-indigo-500 to-emerald-500"></div>
+                    <h2 class="text-2xl font-black mb-2" style="color: var(--text);">¡Prueba completada!</h2>
+                    <p class="text-sm muted mb-6">Este es tu resultado de escritura.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="tile-indigo rounded-2xl p-4 text-center">
+                            <span id="finalWpm" class="num text-4xl font-black block">0</span>
+                            <span class="text-xs font-bold uppercase muted">WPM</span>
+                        </div>
+                        <div class="tile-green rounded-2xl p-4 text-center">
+                            <span id="finalAcc" class="num text-4xl font-black block">0%</span>
+                            <span class="text-xs font-bold uppercase muted">Precisión</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-3">
+                        <button type="button" onclick="closeResults()" class="btn-3d btn-primary flex-1 py-3 text-sm">Intentar de nuevo</button>
+                        <button type="button" onclick="shareScore()" class="btn-3d btn-chip flex-1 py-3 text-sm">Compartir resultado</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <article class="surface rounded-3xl shadow-md p-6 sm:p-8 mb-10 space-y-6">
+            <div class="pb-4 border-b" style="border-color: var(--card-border);">
+                <h2 class="text-xl font-bold">¿Por qué medir tu velocidad de escritura?</h2>
+                <p class="text-sm leading-relaxed mt-2 muted">
+                    La velocidad de escritura es una de las habilidades más útiles de la era digital. Tanto si eres programador, escritor, estudiante o trabajas en una oficina, escribir rápido y con precisión puede ahorrarte horas cada semana. Nuestra prueba de escritura te permite medir las palabras por minuto (WPM) y la precisión en tiempo real, con indicaciones visuales mediante un teclado interactivo.
+                </p>
+                <p class="text-sm leading-relaxed mt-2 muted">
+                    Con plantillas de nivel básico, intermedio y avanzado, puedes superar tus límites poco a poco. El modo avanzado incluye párrafos largos y complejos que ponen a prueba tu concentración y memoria muscular. Deja de adivinar tu velocidad: mídela con precisión y privacidad.
+                </p>
+            </div>
+
+            <h2 class="text-xl font-bold">Funciones de nuestra prueba de escritura</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">🎯 Mejora la precisión</h3>
+                    <p class="text-xs muted">Las letras incorrectas se marcan en rojo al instante para que puedas corregir tu memoria muscular sobre la marcha.</p>
+                </div>
+                <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">📈 Sigue tu progreso</h3>
+                    <p class="text-xs muted">Utiliza los niveles básico, intermedio y avanzado para aumentar gradualmente tu velocidad.</p>
+                </div>
+                <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">🔒 100 % privado</h3>
+                    <p class="text-xs muted">Tus pulsaciones nunca salen de tu navegador. Sin seguimiento ni registros.</p>
+                </div>
+            </div>
+
+            <div class="border-t pt-6" style="border-color: var(--card-border);">
+                <h3 class="text-lg font-bold mb-3">Herramientas relacionadas</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+    <a href="/wordstorm.html" class="related-card block rounded-2xl p-4">
+        <div class="text-2xl mb-1">🌪️</div>
+        <div class="font-bold text-sm" style="color: var(--text);">WordStorm</div>
+        <div class="text-xs muted">Juego de escritura y rompecabezas</div>
+    </a>
+    <a href="/math-sprint.html" class="related-card block rounded-2xl p-4">
+        <div class="text-2xl mb-1">⚡</div>
+        <div class="font-bold text-sm" style="color: var(--text);">Math Sprint</div>
+        <div class="text-xs muted">Cálculo mental de 30 segundos</div>
+    </a>
+                    <a href="/text-suite.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">✍️</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Text &amp; Word Counter</div>
+                        <div class="text-xs muted">Contador de palabras y mayúsculas</div>
+                    </a>
+                    <a href="/password-generator.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">🔑</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Generador de contraseñas</div>
+                        <div class="text-xs muted">Claves aleatorias seguras</div>
+                    </a>
+                    <a href="/grammar-checker.html" class="related-card block rounded-2xl p-4">
+                        <div class="text-2xl mb-1">📝</div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Corrector gramatical</div>
+                        <div class="text-xs muted">Corrección instantánea de errores</div>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <section class="surface rounded-3xl shadow-md p-6 sm:p-8 mb-10">
+            <h2 class="text-xl font-bold border-b pb-3 mb-6" style="border-color: var(--card-border);">Preguntas frecuentes</h2>
+            <div class="space-y-4">
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">¿Cómo se calcula el WPM?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">El WPM (palabras por minuto) se calcula dividiendo el total de caracteres escritos correctamente entre 5 (la longitud estándar de una palabra) y luego entre el tiempo transcurrido en minutos.</p>
+                </div>
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">¿Cuál es una buena velocidad de escritura?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">La velocidad media de escritura ronda las 40 palabras por minuto. Entre 60 y 70 WPM se considera un nivel profesional, y más de 80 WPM es un nivel muy avanzado.</p>
+                </div>
+                <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
+                    <h3 class="text-sm font-bold mb-1">¿Esta herramienta registra mis pulsaciones?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">No. Todas las pruebas y cálculos se realizan íntegramente en tu navegador mediante JavaScript. No registramos, almacenamos ni enviamos tus pulsaciones a ningún servidor.</p>
+                </div>
+            </div>
+        </section>
+
+    <!-- COMMUNITY FEEDBACK CARD FOR FREE TOOLS -->
+<section class="max-w-3xl mx-auto my-10 px-4">
+    <div class="surface rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+        <div class="text-center sm:text-left">
+            <h3 class="text-base font-black" style="color: var(--text);">¿Esta herramienta te ahorró tiempo?</h3>
+            <p class="text-xs muted mt-0.5">Deja una valoración rápida o sugiere una mejora en nuestro espacio de comunidad.</p>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+            <button type="button" onclick="openFeedbackModal('review')" class="btn-3d btn-primary px-4 py-2.5 rounded-xl text-xs font-black whitespace-nowrap">
+                ✍️ Dejar comentarios
+            </button>
+        </div>
+    </div>
+</section>
+
+</main>
+
+        <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+                
+                <!-- COLUMN 1: Logo & Description -->
+                <div class="lg:col-span-5">
+                    <a href="/index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 pr-4">
+MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesionales independientes y desarrolladores. La mayoría no requiere una cuenta. Muchas procesan el contenido localmente, mientras que algunas funciones y las estadísticas del sitio utilizan servicios externos. Consulta nuestra Política de privacidad para más información.
+                    </p>
+                    <div class="social-links-row" aria-label="MyToolX social media links">
+                        <a href="https://www.facebook.com/profile.php?id=61596813242660" target="_blank" rel="noopener noreferrer" aria-label="MyToolX on Facebook" title="Facebook" class="social-btn fb-btn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/mytoolx0?fqnt=dm05bDBzazZ6Nmpp" target="_blank" rel="noopener noreferrer" aria-label="MyToolX on Instagram" title="Instagram" class="social-btn ig-btn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                 
+		<!-- COLUMN 2: Herramientas populares & Premium Link -->
+                <div class="lg:col-span-4">
+                    <h3>Herramientas populares</h3>
+                    
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <!-- Row 1 -->
+                        <a href="/typing-test.html">Prueba de velocidad de escritura</a>
+                        
+                        <!-- THE PREMIUM BUTTON (Replaces Compresor de imágenes) -->
+                        <div class="flex items-start mt-0.5"> 
+                            <a href="/premium.html" class="link-premium-gold" aria-label="Visit the Premium Store">
+                                <span class="star-icon">⭐</span> Premium
+                            </a>
+                        </div>
+
+                        <!-- Row 2 -->
+                        <a href="/prompt-studio.html">Estudio de prompts de IA</a>
+                        <a href="/image-compressor.html">Compresor de imágenes</a>
+                        
+                        <!-- Row 3 -->
+                        <a href="/text-suite.html">Herramientas de texto y palabras</a>
+                        <a href="/grammar-checker.html">Corrector gramatical</a>
+                        
+                        <!-- Row 4 -->
+                        <a href="/sip-calculator.html">Calculadora SIP</a>
+                        <a href="/fee-calculator.html">Calculadora de comisiones</a>
+                        
+                        <!-- Row 5 -->
+                        <a href="/json-formatter.html">Formateador JSON</a>
+                        <a href="/loan-emi.html">Calculadora de cuotas de préstamo</a>
+                        
+                        <!-- Row 6 -->
+                        <a href="/qr-code-generator.html">Generador de códigos QR</a>
+                        <a href="/base64-tool.html">Herramienta Base64</a>
+                        
+                        <!-- Row 7 -->
+                        <a href="/unit-converter.html">Conversor de unidades</a>
+                        <a href="/password-generator.html">Generador de contraseñas</a>
+                        
+                        <!-- Row 8 -->
+                        <a href="/article-outline.html">Esquema de artículos</a>
+                        <a href="/ai-bio-generator.html">Generador de biografías con IA</a>
+                        
+                        <!-- Row 9 -->
+                        <a href="/love-calculator.html">Calculadora del amor</a>
+                         <a href="/cv-maker.html">Creador de currículums</a> 
+ 
+                        
+                        <!-- Row 10 (Extra space filled) -->
+                         <a href="/text-summarizer.html">Resumidor con IA</a>
+                        <a href="/color-converter.html">Conversor de colores</a>
+			<a href="/math-sprint.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Juego Math Sprint</a>
+                        <a href="/wordstorm.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Juego WordStorm</a>
+			<a href="/reaction-time-test.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Prueba de reflejos</a>
+			<a href="/word-scramble.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Palabras desordenadas</a>
+                    </div>
+                </div>
+
+                <!-- COLUMN 3: Empresa & Legal Links -->
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Empresa</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="/index.html">Inicio</a></li>
+                                <li><a href="/about.html">Acerca de nosotros</a></li>
+                                <li><a href="/contact.html">Contacto</a></li>
+				<li><a href="/community.html">Comunidad</a></li>
+
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Legal</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="/blog.html">Blog y guías</a></li>
+                                <li><a href="/privacy.html">Política de privacidad</a></li>
+                                <li><a href="/terms.html">Términos del servicio</a></li>
+                                <li><a href="/index.html">Mapa del sitio</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div> <!-- END OF GRID -->
+
+            <!-- Bottom Copyright Bar -->
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. Todos los derechos reservados.</p>
+                <p>Many tools process your content in your browser; selected features use external services. See our Política de privacidad for details.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FEEDBACK MODAL HTML (LOCKED TO TYPING SPEED TEST) -->
+    <div id="feedbackModal" class="mtx-modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="handleBackdropClick(event)">
+        <div class="mtx-modal-dialog" onclick="event.stopPropagation()">
+            <div class="flex items-start justify-between gap-3 mb-4">
+                <div>
+                    <h3 id="modalTitle" class="text-lg sm:text-xl font-black" style="color: var(--text);">Share Quick Feedback</h3>
+                    <p class="text-xs muted mt-0.5">Takes 20 seconds • No sign-up required</p>
+                </div>
+                <button type="button" onclick="closeFeedbackModal()" aria-label="Close popup" title="Close" class="mtx-modal-close">✕</button>
+            </div>
+
+            <form id="communityForm" onsubmit="submitComunidadFeedback(event)" class="space-y-4">
+                <div>
+                    <label for="formType" class="block text-xs font-bold uppercase tracking-wider muted mb-1">1. What would you like to share? *</label>
+                    <select id="formType" name="formType" required onchange="toggleFormFields()" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                        <option value="review">⭐ Rate &amp; Review a Tool / Game</option>
+                        <option value="suggestion">💡 Suggest a New Tool or Feature</option>
+                    </select>
+                </div>
+
+                <div id="targetPageGroup" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider muted mb-1">Rating for:</label>
+                        <div class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-black flex items-center gap-2" style="background: var(--chip-bg); color: var(--primary);">
+                            ⌨️ Prueba de velocidad de escritura
+                        </div>
+                        <input type="hidden" id="targetPageId" value="typing-test">
+                    </div>
+
+                    <div id="ratingGroup">
+                        <label class="block text-xs font-bold uppercase tracking-wider muted mb-1">Your Rating *</label>
+                        <div id="starRatingContainer" class="flex items-center gap-1 mt-1">
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <input type="hidden" id="starRating" name="starRating" value="5">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="suggestionCategoryGroup" class="hidden space-y-3">
+                    <div>
+                        <label for="suggestionCategory" class="block text-xs font-bold uppercase tracking-wider muted mb-1">2. Idea Category *</label>
+                        <select id="suggestionCategory" name="suggestionCategory" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                            <option value="New Tool Ideas">New Tool Idea</option>
+                            <option value="New Game Ideas">New Game Idea</option>
+                            <option value="Existing Tool Improvements">Improve Existing Tool</option>
+                            <option value="Website Improvements">Website Improvement</option>
+                            <option value="Premium Product Ideas">New Premium Bundle Idea</option>
+                        </select>
+                    </div>
+                    <div id="titleGroup">
+                        <label for="suggestionTitle" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Short Idea Title *</label>
+                        <input type="text" id="suggestionTitle" name="suggestionTitle" maxlength="80" placeholder="e.g. PDF Merger or Invoice Generator" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label for="authorName" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Name (Optional)</label>
+                        <input type="text" id="authorName" name="authorName" maxlength="40" placeholder="Anonymous" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                    </div>
+                    <div>
+                        <label for="country" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Country (Optional)</label>
+                        <input type="text" id="country" name="country" maxlength="40" placeholder="e.g. US, UK, PK" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="commentText" id="commentLabel" class="block text-xs font-bold uppercase tracking-wider muted mb-1">3. Your Comment *</label>
+                    <textarea id="commentText" name="commentText" required rows="3" maxlength="400" placeholder="Write a quick note about your experience..." class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-medium"></textarea>
+                </div>
+
+                <p class="text-[11px] muted leading-relaxed">
+                    🔒 Voluntary submission. Approved posts appear publicly without personal data.
+                </p>
+
+                <div id="formError" class="hidden p-3 rounded-xl text-xs font-bold text-red-500 bg-red-500/10 border border-red-500/30"></div>
+                <div id="formSuccess" class="hidden p-3 rounded-xl text-xs font-bold text-emerald-500 bg-emerald-500/10 border border-emerald-500/30"></div>
+
+                <div class="flex items-center gap-2.5 pt-1">
+                    <button type="button" onclick="closeFeedbackModal()" class="btn-3d btn-chip px-4 py-3 rounded-xl text-xs sm:text-sm font-bold">Cancel</button>
+                    <button type="submit" id="submitModalBtn" class="btn-3d btn-primary flex-1 py-3 rounded-xl text-xs sm:text-sm font-black">🚀 Submit Feedback</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+    (function () {
+        'use strict';
+
+        // Theme Logic
+        (function initTheme() {
+            var saved = null;
+            try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = saved || (prefersDark ? 'dark' : 'light');
+            applyTheme(theme);
+        })();
+
+        function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    var icon = document.getElementById('themeIcon');
+    var text = document.getElementById('themeText');
+    
+    if (icon && text) {
+        if (theme === 'dark') {
+            icon.textContent = '🌙';
+            text.textContent = 'Modo oscuro';
+        } else {
+            icon.textContent = '☀️';
+            text.textContent = 'Light Mode';
+        }
+    }
+    
+    var btn = document.getElementById('themeToggle');
+    if (btn) {
+        btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+        btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+    }
+}
+        function toggleTheme() {
+            var cur = document.documentElement.getAttribute('data-theme') || 'light';
+            var next = cur === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('mtx-theme', next); } catch (e) {}
+        }
+        window.toggleTheme = toggleTheme;
+
+        // --- TYPING GAME LOGIC ---
+        var texts = {
+            basic: [
+                "The quick brown fox jumps over the lazy dog. This is a simple sentence to test your basic typing speed.",
+                "Practice makes perfect. Keep your fingers on the home row and focus on hitting the right keys.",
+                "A journey of a thousand miles begins with a single step. Start slow and build your muscle memory."
+            ],
+            medium: [
+                "Learning to type fast is a skill that requires patience and practice. Focus on accuracy first, and the speed will naturally follow.",
+                "The keyboard is your main tool for digital communication. Improving your typing speed can drastically increase your daily productivity.",
+                "Do not look down at your hands while typing. Trust your fingers to find the keys and keep your eyes on the screen."
+            ],
+            advanced: [
+                "The rapid advancement of artificial intelligence is fundamentally reshaping industries across the globe, from healthcare to finance. As algorithms become more sophisticated, they are automating routine tasks, analyzing massive datasets, and providing unprecedented insights that were previously impossible for humans to achieve alone.",
+                "Space exploration has entered a new era of commercialization and innovation. Private companies are now competing with government agencies to develop reusable rockets, lower the cost of satellite deployment, and ultimately pave the way for human colonization of Mars and beyond.",
+                "Climate change represents one of the most complex challenges facing humanity in the twenty-first century. Rising global temperatures are causing extreme weather events, shifting agricultural zones, and threatening biodiversity, requiring immediate and coordinated international action to mitigate the effects."
+            ]
+        };
+
+        var currentLevel = 'basic';
+        var currentIndex = 0; // To rotate through the 3 texts
+        var timer = null;
+        var startTiempo = null;
+        var isTyping = false;
+        var textToType = "";
+        var textArray = [];
+        var charIndex = 0;
+        var errors = 0;
+        var totalTyped = 0;
+
+        var display = document.getElementById('textDisplay');
+        var input = document.getElementById('hiddenInput');
+        var overlay = document.getElementById('startOverlay');
+        var wpmDisplay = document.getElementById('wpmDisplay');
+        var accDisplay = document.getElementById('accDisplay');
+        var timeDisplay = document.getElementById('timeDisplay');
+        var resultsModal = document.getElementById('resultsModal');
+        var stopBtnWrap = document.getElementById('stopBtnWrap');
+        var keys = document.querySelectorAll('.key');
+
+        function changeLevel(level) {
+            currentLevel = level;
+            currentIndex = 0; // Reset rotation on level change
+            document.querySelectorAll('#levelTabs button').forEach(function(btn) {
+                if (btn.dataset.level === level) {
+                    btn.className = 'btn-3d btn-primary px-3 py-1.5 text-xs font-bold';
+                } else {
+                    btn.className = 'btn-3d btn-chip px-3 py-1.5 text-xs font-bold';
+                }
+            });
+            resetTest();
+        }
+        window.changeLevel = changeLevel;
+
+        function resetTest() {
+            clearInterval(timer);
+            isTyping = false;
+            startTiempo = null;
+            charIndex = 0;
+            errors = 0;
+            totalTyped = 0;
+            
+            // Rotate the text array
+            var levelTexts = texts[currentLevel];
+            textToType = levelTexts[currentIndex];
+            currentIndex = (currentIndex + 1) % levelTexts.length;
+            
+            textArray = textToType.split('');
+            
+            wpmDisplay.textContent = '0';
+            accDisplay.textContent = '100%';
+            timeDisplay.textContent = '0s';
+            
+            overlay.classList.remove('hidden');
+            stopBtnWrap.classList.add('hidden');
+            resultsModal.classList.add('hidden');
+            input.value = '';
+            
+            renderText();
+        }
+        window.resetTest = resetTest;
+
+        function renderText() {
+            display.innerHTML = '';
+            textArray.forEach(function(char, index) {
+                var span = document.createElement('span');
+                span.className = 'char';
+                if (index === 0) span.classList.add('active');
+                span.textContent = char;
+                display.appendChild(span);
+            });
+        }
+
+        function startTest() {
+            overlay.classList.add('hidden');
+            stopBtnWrap.classList.remove('hidden');
+            input.focus();
+            isTyping = true;
+            startTiempo = new Date().getTiempo();
+            
+            timer = setInterval(function() {
+                var timeElapsed = (new Date().getTiempo() - startTiempo) / 1000;
+                timeDisplay.textContent = Math.floor(timeElapsed) + 's';
+                updateStats(timeElapsed);
+            }, 1000);
+        }
+        window.startTest = startTest;
+
+        function stopTest() {
+            if (!isTyping) return;
+            endTest();
+        }
+        window.stopTest = stopTest;
+
+        // Keyboard visualizer animation
+        document.addEventListener('keydown', function(e) {
+            var keyStr = e.key.toLowerCase();
+            if (keyStr === ' ') keyStr = ' ';
+            keys.forEach(function(k) {
+                if (k.dataset.key === keyStr) {
+                    k.classList.add('active');
+                }
+            });
+        });
+        document.addEventListener('keyup', function(e) {
+            var keyStr = e.key.toLowerCase();
+            if (keyStr === ' ') keyStr = ' ';
+            keys.forEach(function(k) {
+                if (k.dataset.key === keyStr) {
+                    k.classList.remove('active');
+                }
+            });
+        });
+
+        input.addEventListener('input', function(e) {
+            if (!isTyping) return;
+            
+            var typedChar = e.target.value.slice(-1);
+            var targetChar = textArray[charIndex];
+            
+            // Prevent breaking the input
+            if (e.target.value.length > charIndex + 1) {
+                e.target.value = e.target.value.slice(0, charIndex + 1);
+            }
+            
+            if (typedChar) {
+                var spans = display.querySelectorAll('.char');
+                
+                if (typedChar === targetChar) {
+                    spans[charIndex].classList.add('correct');
+                } else {
+                    spans[charIndex].classList.add('incorrect');
+                    errors++;
+                }
+                
+                spans[charIndex].classList.remove('active');
+                charIndex++;
+                
+                if (charIndex < textArray.length) {
+                    spans[charIndex].classList.add('active');
+                } else {
+                    endTest();
+                }
+            } else {
+                // User pressed backspace
+                if (charIndex > 0) {
+                    charIndex--;
+                    var spans = display.querySelectorAll('.char');
+                    var wasIncorrect = spans[charIndex].classList.contains('incorrect');
+                    spans[charIndex].classList.remove('correct', 'incorrect');
+                    spans[charIndex].classList.add('active');
+                    if (wasIncorrect && errors > 0) {
+                        errors--;
+                    }
+                }
+            }
+        });
+
+        function updateStats(timeElapsed) {
+            var wordsTyped = charIndex / 5;
+            var minutes = timeElapsed / 60;
+            var wpm = Math.round(wordsTyped / minutes);
+            if (!isFinite(wpm)) wpm = 0;
+            
+            var accuracy = charIndex > 0 ? Math.round(((charIndex - errors) / charIndex) * 100) : 100;
+            if (accuracy < 0) accuracy = 0;
+            
+            wpmDisplay.textContent = wpm;
+            accDisplay.textContent = accuracy + '%';
+        }
+
+        function endTest() {
+            isTyping = false;
+            clearInterval(timer);
+            stopBtnWrap.classList.add('hidden');
+            input.blur();
+
+            var timeElapsed = startTiempo === null ? 0 : Math.max(0, (Date.now() - startTiempo) / 1000);
+            var minutes = timeElapsed / 60;
+            var wpm = minutes > 0 ? Math.round((charIndex / 5) / minutes) : 0;
+            if (!Number.isFinite(wpm)) wpm = 0;
+            var accuracy = charIndex > 0 ? Math.round(((charIndex - errors) / charIndex) * 100) : 100;
+            accuracy = Math.max(0, Math.min(100, Number.isFinite(accuracy) ? accuracy : 100));
+
+            document.getElementById('finalWpm').textContent = wpm;
+            document.getElementById('finalAcc').textContent = accuracy + '%';
+
+            resultsModal.classList.remove('hidden');
+        }
+
+        function closeResults() {
+            resultsModal.classList.add('hidden');
+            resetTest(); // This will automatically load the next text
+        }
+        window.closeResults = closeResults;
+
+        function shareScore() {
+            var wpm = document.getElementById('finalWpm').textContent;
+            var acc = document.getElementById('finalAcc').textContent;
+            var text = 'I just scored ' + wpm + ' WPM with ' + acc + ' accuracy on the MyToolX Prueba de escritura! 🚀 Test your speed here:';
+            var url = 'https://mytoolx.org/es/typing-test.html';
+            
+            if (navigator.share) {
+                navigator.share({ title: 'Typing Score', text: text, url: url }).catch(function() {});
+            } else {
+                navigator.clipboard.writeText(text + ' ' + url).then(function() {
+                    alert('Score copied to clipboard!');
+                });
+            }
+        }
+        window.shareScore = shareScore;
+
+        // Init
+        resetTest();
+
+    })();
+    </script>
+
+    <!-- FEEDBACK MODAL LOGIC (LOCKED TO TYPING SPEED TEST) -->
+    <script>
+        function openFeedbackModal(type = "review") {
+            document.getElementById("formType").value = type;
+            toggleFormFields();
+            document.getElementById("feedbackModal").classList.remove("hidden");
+        }
+
+        function closeFeedbackModal() {
+            document.getElementById("feedbackModal").classList.add("hidden");
+            document.getElementById("communityForm").reset();
+            document.getElementById("formError").classList.add("hidden");
+            document.getElementById("formSuccess").classList.add("hidden");
+        }
+
+        function handleBackdropClick(e) {
+            if (e.target && e.target.id === 'feedbackModal') closeFeedbackModal();
+        }
+
+        function toggleFormFields() {
+            const type = document.getElementById("formType").value;
+            const targetPageGroup = document.getElementById("targetPageGroup");
+            const suggestionCategoryGroup = document.getElementById("suggestionCategoryGroup");
+            const ratingGroup = document.getElementById("ratingGroup");
+            const titleGroup = document.getElementById("titleGroup");
+            const commentLabel = document.getElementById("commentLabel");
+            const modalTitle = document.getElementById("modalTitle");
+
+            if (type === "suggestion") {
+                targetPageGroup.classList.add("hidden");
+                suggestionCategoryGroup.classList.remove("hidden");
+                ratingGroup.classList.add("hidden");
+                titleGroup.classList.remove("hidden");
+                commentLabel.textContent = "Detailed Suggestion Description *";
+                modalTitle.textContent = "Suggest a New Tool or Feature";
+            } else {
+                targetPageGroup.classList.remove("hidden");
+                suggestionCategoryGroup.classList.add("hidden");
+                ratingGroup.classList.remove("hidden");
+                titleGroup.classList.add("hidden");
+                commentLabel.textContent = "Written Comment *";
+                modalTitle.textContent = "Share Your Feedback";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const container = document.getElementById("starRatingContainer");
+            const input = document.getElementById("starRating");
+            if (!container || !input) return;
+
+            const stars = container.querySelectorAll(".star-click");
+            let currentRating = 5;
+
+            function updateStars(rating) {
+                stars.forEach((star, index) => {
+                    if (index < rating) {
+                        star.classList.add("text-amber-500");
+                        star.classList.remove("text-gray-300", "dark:text-gray-600");
+                    } else {
+                        star.classList.remove("text-amber-500");
+                        star.classList.add("text-gray-300", "dark:text-gray-600");
+                    }
+                });
+            }
+
+            stars.forEach((star, index) => {
+                star.addEventListener("mouseenter", () => updateStars(index + 1));
+                star.addEventListener("mouseleave", () => updateStars(currentRating));
+                star.addEventListener("click", () => {
+                    currentRating = index + 1;
+                    input.value = currentRating;
+                    updateStars(currentRating);
+                });
+                star.addEventListener("touchstart", (e) => {
+                    e.preventDefault();
+                    currentRating = index + 1;
+                    input.value = currentRating;
+                    updateStars(currentRating);
+                });
+            });
+            updateStars(currentRating);
+        });
+
+        async function submitComunidadFeedback(event) {
+            event.preventDefault();
+            const errorBox = document.getElementById("formError");
+            const successBox = document.getElementById("formSuccess");
+            const submitBtn = document.getElementById("submitModalBtn");
+            const API_URL = "https://script.google.com/macros/s/AKfycbxMZGHXUkzX04Z3slFH5F3GveBOIrj-XiKPl04aPOTHjBur8uSg57kb-PRr781vcStd5w/exec";
+
+            errorBox.classList.add("hidden");
+            successBox.classList.add("hidden");
+
+            const formType = document.getElementById("formType").value;
+            const commentText = document.getElementById("commentText").value.trim();
+            const authorName = document.getElementById("authorName") ? document.getElementById("authorName").value.trim() : "";
+            const country = document.getElementById("country") ? document.getElementById("country").value.trim() : "";
+
+            let payload = {
+                formType: formType,
+                commentText: commentText,
+                authorName: authorName,
+                country: country,
+                recommendation: "",
+                language: document.documentElement.lang
+            };
+
+            if (formType === "suggestion") {
+                payload.suggestionCategory = document.getElementById("suggestionCategory").value;
+                payload.suggestionTitle = document.getElementById("suggestionTitle").value.trim();
+                if (!payload.suggestionTitle || !commentText) {
+                    errorBox.textContent = "Please fill out all required suggestion fields.";
+                    errorBox.classList.remove("hidden");
+                    return;
+                }
+            } else {
+                payload.targetPageId = "typing-test";
+                payload.starRating = document.getElementById("starRating").value;
+                payload.pageUrl = "typing-test.html";
+                if (!commentText) {
+                    errorBox.textContent = "Please enter your written review.";
+                    errorBox.classList.remove("hidden");
+                    return;
+                }
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = "⏳...";
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "text/plain;charset=utf-8" },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+
+                if (result.status === "success") {
+                    successBox.textContent = "🎉 Thank you! Your submission is pending moderation.";
+                    successBox.classList.remove("hidden");
+                    document.getElementById("communityForm").reset();
+                    setTiempoout(() => { 
+                        closeFeedbackModal(); 
+                        submitBtn.disabled = false; 
+                        submitBtn.textContent = "🚀 Submit Feedback"; 
+                    }, 3000);
+                } else {
+                    errorBox.textContent = result.message || "Submission failed.";
+                    errorBox.classList.remove("hidden");
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "🚀 Submit Feedback";
+                }
+            } catch (err) {
+                errorBox.textContent = "Network error. Please try again.";
+                errorBox.classList.remove("hidden");
+                submitBtn.disabled = false;
+                submitBtn.textContent = "🚀 Submit Feedback";
+            }
+        }
+    </script>
+
+<!-- Moved Google Analytics to the bottom to speed up page load -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
+    <script>
+      window.addEventListener('load', function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W8KM3G3BYL');
+      });
+    </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
+</body>
+</html>
