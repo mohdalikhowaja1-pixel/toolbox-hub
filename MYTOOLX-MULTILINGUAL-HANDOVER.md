@@ -458,3 +458,35 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 2. Finish the remaining WordStorm, Reaction Time, and Math Sprint markup-aware copy corrections.
 3. Continue page-family linguistic QA and validate all internal localized links and form labels without changing application logic.
 4. Inspect CI/Actions results separately; an empty combined status response is not a passing test.
+
+
+## Structured-data audit batch — localized Article schema — 2026-11-28
+
+### Scope and findings
+- Audited the JSON-LD blocks in all 72 article pages: 24 English source articles, 24 Spanish translations, and 24 French translations.
+- Parsed the JSON-LD blocks in all inspected pages successfully. Each inspected page contained an Article object and BreadcrumbList; the Article `inLanguage` values matched the page language (en/es/fr). Breadcrumb labels were localized on the Spanish and French pages in the audit.
+- Found a broad SEO localization defect: numerous Spanish/French Article schema `headline` values were still English or mixed-language even though visible H1s and breadcrumb names were translated. Replaced these Article headlines with the corresponding localized H1 text in 37 localized pages, preserving all other schema properties and page functionality.
+- Also found English Article schema descriptions on the Spanish and French Grammar Guide and Password Security pages. Replaced those four descriptions with localized Spanish/French copy.
+- Localized headline corrections covered Base64, color tools, content outline, CV guide, freelance finance, grammar guide, image compression, JSON tools, LinkedIn bio, loan EMI, love calculator, Math Sprint/Reaction Time where needed, password security, premium bundles, QR codes, SIP investing, Text Suite, text summarizer, typing speed, unit conversion, and other previously identified variants. Only pages with a confirmed mismatch were edited.
+
+### Validation notes
+- All JSON-LD blocks in the inspected 72-page set parsed during the audit; no JSON syntax errors were detected.
+- Article `inLanguage` values were present and matched the expected locale in the inspected set.
+- BreadcrumbList objects were present, and localized breadcrumb labels were observed in Spanish/French pages.
+- The headline comparison exposed the mismatch and was corrected by matching Article `headline` to the localized H1 text. The four English schema descriptions were corrected as noted above.
+- This is a static source-level JSON-LD audit only. It does not prove rendered DOM correctness, Google Rich Results eligibility, live HTTP status, indexability, or browser/runtime behavior.
+
+### Commits
+- Article schema headline corrections were committed individually to `multilingual-expansion` during this batch. The current branch history is the authoritative record; each update was based on a freshly fetched file SHA.
+- Grammar Guide description commits: `1c08e0931bf3fcdf608440003e3862afa64269d4` (ES), `06619a337c2c1ff842076f173d5e50689e7666e6` (FR).
+- Password Security description commits: `8662e0092a305dc9473540c7661ee4e1f64c2b3c` (ES), `91ca0a1e6c67631c3a8c84e786f135140f8297e9` (FR).
+
+### Correction to earlier scope wording
+- Earlier handover notes referred to “24 Article JSON-LD objects”. The correct audit scope is 24 article families × 3 languages = 72 localized/source article pages and their JSON-LD blocks.
+
+### Next actions
+1. Continue markup-aware body-copy and UI-label QA for WordStorm, Reaction Time, and Math Sprint, then proceed through the remaining 20 article families.
+2. Re-run a machine-readable schema consistency check after all editorial edits: Article headline vs H1, description vs localized metadata, `inLanguage`, canonical URL, and BreadcrumbList URLs/names.
+3. Validate all internal links, reciprocal hreflang, sitemap URLs, browser behavior, responsive layout, theme, accessibility, console/network and live HTTP/indexability before release.
+4. Check CI/Actions independently; empty combined status and no returned workflow runs do not constitute a pass.
+5. Keep branch isolated. No merge, deployment, Pages source change, or modification to `main` without explicit approval.
