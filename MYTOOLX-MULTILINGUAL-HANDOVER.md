@@ -589,3 +589,58 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 2. Re-run article-wide structured-data and internal-link checks after editorial review.
 3. Then begin the 56 tool/application page families, with functional logic and identifiers protected.
 4. Continue to keep the development branch isolated; no merge, deployment or production-branch modification is authorized.
+
+
+## Editorial QA batch — four article families, Spanish and French — 2026-11-28
+
+### Pages reviewed and corrected
+- Completed direct English-source comparison for four additional article families (eight localized HTML pages):
+  - CV Guide
+  - Grammar Guide
+  - Typing Speed
+  - Image Compression
+- CV Guide:
+  - Translated the example achievement bullets that had remained in English.
+  - Repaired the Spanish browser-processing sentence, which had lost the phrase describing client-side execution.
+  - Corrected the French client-side sentence and removed duplicated punctuation.
+  - Removed stray punctuation from both localized links to the CV Maker.
+- Grammar Guide:
+  - Repaired a French sentence accidentally embedded in the Spanish article.
+  - Aligned the Spanish privacy explanation with the actual behavior: basic processing is local, while online checking sends text to LanguageTool and optional AI processing may send it to an external AI service. This avoids the inaccurate blanket claim that no text is ever transmitted.
+  - Corrected Spanish and French social image alt text.
+- Typing Speed:
+  - Localized keyboard shortcut descriptions while preserving the actual key combinations.
+  - Repaired untranslated shared footer copy, localized social image alt text, and translated the related Image Compression guide card title.
+- Image Compression:
+  - Localized the related Grammar Guide card title, social image alt text and shared footer copy.
+- Corrected the recurring Spanish feedback-modal typo “Cancelarar” to “Cancelar” on the affected localized pages.
+- Preserved page structure, localized internal destination paths, functional code, identifiers, form values, event handlers and JSON-LD data types.
+
+### Verification performed
+- Re-fetched all eight localized pages after the edits.
+- Parsed both JSON-LD blocks on each page successfully (16 blocks total).
+- Confirmed each Article JSON-LD headline matches its visible H1 after ignoring the leading decorative emoji.
+- Targeted residual scans for the specific English/mixed-language defects addressed in this batch returned no matches in the eight pages.
+- Checked the localized pages for the specific related-card titles corrected in this batch.
+- This is source-level editorial and JSON-LD syntax validation. It is not browser/runtime testing, full-page linguistic certification, native-speaker review, live HTTP/indexability verification, or a form-submission test.
+
+### Key latest content commits in this batch
+- Spanish CV Guide: `425e7a7f560308ffb9d3f288b71510b6973942c6`
+- French CV Guide: `856e2cdcbe414cc47e2f1ebd28c7223b0e9a7691`
+- Spanish Grammar Guide: `049917705bf0d298e70d2bb4119d398a22f18402`
+- French Grammar Guide: `0342861358bbb62cca6be8f2b23f6861f6a3112e`
+- Spanish Typing Speed: `73fd8efbac509ba66a4492ac4dc99a16fa3bca5f`
+- French Typing Speed: `013a8681899435fb366861d9d4e312e6837d210b`
+- Spanish Image Compression: `e4ae9dec1214b847e16e7a6739ca59c36dd627d3`
+- French Image Compression: `89f430ad95b7443011c07d3c00a4372e91ea81da`
+
+### Branch and CI status
+- Comparison against baseline `5b1df099dcc77f8428c9834b34c280a2dc631bb1` reported 198 commits ahead and 0 behind before this handover update.
+- Combined status and workflow-run lookup for the latest content commit returned no records. CI is therefore unknown, not passed.
+- No merge, deployment, GitHub Pages publishing-source change, or production-branch modification was performed.
+
+### Next action
+1. Continue English-source comparison on the remaining 14 article families, including body copy, examples, related cards, metadata alt text and FAQ content.
+2. Re-run article-wide structured-data and internal-link validation after the article editorial pass.
+3. Then begin the 56 tool/application page families, protecting application logic and identifiers.
+4. Keep production isolated until all release blockers are cleared and explicit deployment approval is given.
