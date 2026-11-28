@@ -132,3 +132,7 @@ The validator now parses inline JavaScript blocks and local JavaScript files ref
 
 ### Local link and asset targets
 The automated validator now checks same-origin `href` and `src` references on all 168 sitemap pages, resolving both root-absolute and page-relative paths. The latest workflow run [46151847826](https://github.com/mohdalikhowaja1-pixel/toolbox-hub/actions/runs/46151847826) passed with no missing local targets reported.
+
+
+### Sitemap XML parser check
+Added a Python standard-library XML parse step to CI. Latest run [46151901562](https://github.com/mohdalikhowaja1-pixel/toolbox-hub/actions/runs/46151901562) passed both the XML well-formedness check and the full multilingual validator.
