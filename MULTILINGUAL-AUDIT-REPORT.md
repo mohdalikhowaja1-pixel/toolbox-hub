@@ -124,3 +124,7 @@ This does not replace browser/runtime tests, real form submissions, mobile/dark-
 The validator was extended to compare ordered IDs, form names, named function declarations, and inline event-handler types across **all 56 English/Spanish/French public-page triplets**, not only the 24 blog article triplets.
 
 Latest run: [46151625702](https://github.com/mohdalikhowaja1-pixel/toolbox-hub/actions/runs/46151625702) — **PASSED**. The run reported 56 URLs in each language, 24 blog articles, and 56 identifier triplets checked.
+
+
+### JavaScript syntax checks
+The validator now parses inline JavaScript blocks and local JavaScript files referenced by the public pages using Node's syntax parser. The latest run [46151767968](https://github.com/mohdalikhowaja1-pixel/toolbox-hub/actions/runs/46151767968) passed with 56 page triplets checked and no JavaScript syntax errors reported. This does not execute browser interactions or network-dependent behavior.
