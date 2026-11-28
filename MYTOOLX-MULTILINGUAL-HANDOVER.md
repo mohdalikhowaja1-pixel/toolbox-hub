@@ -321,3 +321,40 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 - Remaining: verify language switching on local Spanish and French pages, then continue broader static and browser QA. No merge or deployment performed.
 
 - CI follow-up: multilingual static validation passed on switcher code commit `ba572e61474e356914fd2042e90733ee87a215a3` in [run 46168069084](https://github.com/mohdalikhowaja1-pixel/toolbox-hub/actions/runs/46168069084). This is static CI, not a live browser test.
+
+## New-session checkpoint — 2026-11-28
+
+### Owner-confirmed local preview
+- Ali confirmed the local HTTP preview is now working overall: CSS/styling, JavaScript loading, and language switching behave correctly when served from the repository root at `http://127.0.0.1:8000/`.
+- The local server is started from the project root with `py -3 -m http.server 8000`. The Command Prompt window must remain open during testing.
+- Local language switching stays within the local preview origin. The shared switcher local-host adaptation remains in `lang-switcher.js`; production href behavior and SEO canonical/hreflang markup are intended to remain unchanged.
+- This is user-confirmed testing of the local preview and language switcher, not a full browser QA pass across all 112 localized pages.
+
+### Spanish inverted question mark investigation
+- Ali noticed the Spanish opening question mark `¿` appearing before headings and asked whether it could be removed globally.
+- Inspected heading elements in five representative Spanish pages on this branch: `es/index.html`, `es/about.html`, `es/premium.html`, `es/blog.html`, and `es/grammar-checker.html`.
+- Every sampled heading beginning with `¿` was a grammatically valid Spanish question, including feedback prompts, FAQ questions, and a question-based article heading.
+- No bulk deletion or replacement was performed. Do NOT remove `¿` globally: it is required Spanish punctuation for interrogative headings and FAQ questions. Continue checking only headings that are clearly statements or labels; preserve opening punctuation on actual questions.
+- A suggested VS Code regex was provided for targeted use, but owner should not run a broad replacement without reviewing matches. Automated linguistic review should distinguish interrogative headings from declarative headings before any edits.
+
+### Branch and repository checkpoint
+- Active development branch remains `multilingual-expansion`; publishing branch remains `safe-maintenance-audit`.
+- Compared `safe-maintenance-audit` to `multilingual-expansion`: development branch is ahead by 624 commits and behind by 0 at this checkpoint. This count is a branch comparison only and is NOT release approval.
+- Compared known checkpoint `5ad68dec96b1adaccfc1def4c7e68b718705d035` to `multilingual-expansion`: development branch is ahead by 11 commits and behind by 0. The exact current branch-head SHA was not returned by the available comparison response; resolve it at the start of the next session before further edits.
+- Re-read this handover and `MULTILINGUAL-SEO-PLAN.md` during this checkpoint.
+- No source code was changed in this checkpoint. No merge, deployment, GitHub Pages source change, or modification to `main` was performed.
+
+### Release and QA strategy reaffirmed
+1. Continue automated linguistic and editorial QA for all 56 Spanish and 56 French pages, comparing each page with its English source. Ali cannot independently proofread Spanish/French, so do not ask him to validate translations manually.
+2. Prioritize page title, meta description, H1-H3, visible body copy, navigation, labels, buttons, FAQs, alt text, breadcrumbs, and JSON-LD text. Flag mixed-language remnants, mistranslations, unnatural phrasing, duplicate copy, and incorrect punctuation.
+3. Preserve legitimate Spanish punctuation, including `¿` and `¡`, where grammatically required. Never perform global character deletion.
+4. Keep application logic, calculations, identifiers, form names, API payloads, game mechanics, event handlers, privacy disclosures, English content, design, and theme behavior unchanged unless a specific defect is proven.
+5. For each verified defect, fetch the latest file content and blob SHA, make a targeted correction, compare the localized page with its English source, and commit a logical batch to `multilingual-expansion`.
+6. Update this handover after each meaningful QA/fix batch with exact paths, findings, commits, tests, and remaining blockers.
+7. Complete static validation, JavaScript syntax checks, local link/asset checks, XML validation, browser interactions, responsive/mobile, dark/light, accessibility, console/network, and live HTTP/indexability checks. Clearly distinguish automated source checks from real browser tests and native-speaker certification.
+8. Prepare a controlled release from the development branch to the live publishing branch. Do not merge the full development branch blindly: it is substantially ahead and contains unrelated history. Identify and review the minimal safe release set, preserve current live functionality, and provide rollback instructions.
+9. Do not merge, deploy, change GitHub Pages publishing source, or modify `main` until Ali gives explicit approval after receiving the release report.
+
+### Next action for the next chat
+- Re-resolve the exact head SHA of `multilingual-expansion` and inspect the 11 commits after `5ad68dec96b1adaccfc1def4c7e68b718705d035` to determine whether they contain any unrecorded QA or code changes.
+- Then resume systematic automated linguistic QA. Start with the remaining blog/article structured data and visible heading/body copy, then move through tool/application page families in batches. Do not ask Ali to identify translation mistakes; use source comparison and report only when human input or an approval is genuinely required.
