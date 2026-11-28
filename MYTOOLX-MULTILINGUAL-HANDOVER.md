@@ -182,3 +182,28 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 - This is a source-level structural comparison, not a browser execution or end-to-end test. It does not prove that every application works in a real browser.
 - Remaining checks: JavaScript parse/runtime validation, game interaction regression, form submission tests, browser console/network inspection, responsive/mobile and dark-mode checks, and complete linguistic proofreading.
 - Production publishing branch remains unchanged. No merge or deployment was performed.
+
+
+## Automated validation and CV maker hreflang correction — 2026-11-28
+
+### New automated check
+- Added `scripts/validate-multilingual.js` and `.github/workflows/multilingual-validation.yml`.
+- The workflow runs on pushes and pull requests targeting `multilingual-expansion`; it does not deploy or publish the site.
+- The validator checks the 168 sitemap URLs, 56 URLs per language, sitemap and HTML hreflang targets, canonical URLs, page language attributes, exactly one root-absolute switcher CSS/JS reference per public page, all 24 blog articles in three languages for valid JSON-LD Article/BreadcrumbList data, and ordered code identifier sequences across language triplets.
+
+### Defect found and corrected by the validator
+- The first successful execution of the validator logic found that `es/cv-maker.html` and `fr/cv-maker.html` had their `hreflang="en"` alternate pointing back to the localized page instead of `https://mytoolx.org/cv-maker.html`.
+- Corrected both English alternate targets. The sitemap entries were already correct.
+
+### Automated test result
+<badge> 
+- Workflow: `Multilingual static validation`
+- Run: `46151537792`
+- Result: **PASSED**
+- Commit tested: `28f50b8a1aa7de4a5bc17cbd1fb517e89410a484`
+- Output: 168 sitemap URLs; 56 English, 56 Spanish, 56 French; 24 blog articles; 24 article triplets checked for code identifier consistency.
+
+### Release status
+- Automated repository validation now passes on the development branch.
+- This is static validation only. Browser rendering, real application interactions, form submissions, mobile/dark-mode checks, and live HTTP/production verification remain outstanding.
+- `safe-maintenance-audit` remains the publishing branch and still does not contain the translated pages or shared switcher JavaScript. No merge, deployment, or publishing-source change has been performed.
