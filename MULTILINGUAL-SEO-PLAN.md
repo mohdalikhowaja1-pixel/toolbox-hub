@@ -86,3 +86,14 @@ Read `MYTOOLX-MULTILINGUAL-HANDOVER.md` first for the authoritative resume point
 - Latest combined status and workflow-run lookup returned no records. This is not a CI pass.
 - This work remains on `multilingual-expansion`; no merge, deployment, GitHub Pages publishing-source change, or production-branch modification was made.
 - Outstanding: full article body/FAQ/related-card linguistic review; 56 tool/application page families; complete internal-link and structured-data consistency review; runtime/browser, responsive/theme/accessibility, console/network and live HTTP/indexability testing.
+
+
+## Article editorial QA checkpoint — 2026-11-28
+
+- Direct English-source comparison and editorial corrections are complete for six article families in both Spanish and French: Base64, Color Tools, AI Prompts, LinkedIn Bio, Content Outline and Text Suite (12 localized pages).
+- Fixed mixed-language body fragments, translated example bio and prompt content, corrected Spanish typo, localized related-article titles and corrected mixed/untranslated social image alt text.
+- Revalidated 24 JSON-LD blocks across the 12 pages: both blocks on each page parse successfully; Article headline matches the visible H1 after ignoring leading decorative emoji.
+- Targeted residual scans for the issues found in this batch returned no remaining matches.
+- Latest detailed handover: `8c3fb815ccaa83facf530f0592d7029b765d1fba`. Read `MYTOOLX-MULTILINGUAL-HANDOVER.md` for exact file/commit ledger.
+- Source-level QA only; full-page translation certification, native-speaker review, browser/runtime, live HTTP and indexability checks remain outstanding.
+- Next: continue source-comparison editorial review on the remaining 18 article families, then begin the 56 tool/application page families. Keep production branch and GitHub Pages settings untouched pending explicit release approval.
