@@ -308,3 +308,14 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 - Next action: continue QA in batches; check all localized pages for missing/duplicate theme controls, switcher assets, stylesheets, and page-specific CSS/script path defects; record browser results separately from static source checks.
 
 - Launcher follow-up: corrected `preview-multilingual.bat` to start the HTTP server in a separate command window, wait briefly, then open the preview URL. Commit: `40b0af7a6c2fade93d6e5502ff8058e9fd52e159`.
+
+
+## Local preview language-switcher routing fix — 2026-11-28
+
+- Ali confirmed the local HTTP preview now loads CSS and JavaScript, but selecting another language navigated to the production domain.
+- Root cause: the shared switcher used absolute production URLs from the page's hreflang links directly.
+- Updated `lang-switcher.js` to detect localhost/127.0.0.1/IPv6 loopback and `.localhost` hosts, then map language-menu destinations to the current local origin while preserving the target pathname, query, and hash.
+- Production hosts continue to use the original production hrefs. SEO canonical and hreflang markup is not changed.
+- Commit: `ba572e61474e356914fd2042e90733ee87a215a3`.
+- Validation: fetched the current script and confirmed the exact replacement block was applied. The expected local routing maps `https://mytoolx.org/fr/about.html` to `http://127.0.0.1:8000/fr/about.html` when previewing on port 8000; production behavior remains unchanged by the host check. Ali should confirm the menu navigation in the local browser.
+- Remaining: verify language switching on local Spanish and French pages, then continue broader static and browser QA. No merge or deployment performed.
