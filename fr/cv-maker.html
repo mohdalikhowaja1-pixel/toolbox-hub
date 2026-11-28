@@ -516,7 +516,7 @@
 
             <div id="cvToast" class="cv-toast" role="status" aria-live="polite" hidden>
                 <span id="cvToastMsg"></span>
-                <button type="button" id="cvToastAnnuler" hidden>Annuler</button>
+                <button type="button" id="cvToastUndo" hidden>Annuler</button>
             </div>
 
         </div>
@@ -777,7 +777,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
     </footer>
 
     <!-- FEEDBACK MODAL HTML -->
-    <div id="feedbackModal" class="mtx-modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="handleBackdropCliquez sur(event)">
+    <div id="feedbackModal" class="mtx-modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="handleBackdropClick(event)">
         <div class="mtx-modal-dialog" onclick="event.stopPropagation()">
             <div class="flex items-start justify-between gap-3 mb-4">
                 <div>
@@ -1402,7 +1402,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
             clearTimeout(toastTimer);
             t.className = 'cv-toast' + (isError ? ' is-error' : '');
             el('cvToastMsg').textContent = msg;
-            el('cvToastAnnuler').hidden = !undoable;
+            el('cvToastUndo').hidden = !undoable;
             t.hidden = false;
             toastTimer = setTimeout(hideToast, undoable ? 9000 : 4500);
         }
@@ -1452,7 +1452,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
                 this.textContent = zoomFull ? '🔍 Fit to width' : '🔍 Taille réelle';
                 rescale();
             });
-            el('cvToastAnnuler').addEventListener('click', function () {
+            el('cvToastUndo').addEventListener('click', function () {
                 if (lastFix && lastFix.node) { lastFix.node.value = lastFix.prev; scheduleUpdate(); }
                 lastFix = null;
                 hideToast();
@@ -1496,7 +1496,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
             document.getElementById("formSuccess").classList.add("hidden");
         }
 
-        function handleBackdropCliquez sur(e) {
+        function handleBackdropClick(e) {
             if (e.target && e.target.id === 'feedbackModal') closeFeedbackModal();
         }
 
