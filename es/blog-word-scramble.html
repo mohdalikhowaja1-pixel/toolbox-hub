@@ -638,15 +638,15 @@
             suggestionCategoryGroup.classList.remove("hidden");
             ratingGroup.classList.add("hidden");
             titleGroup.classList.remove("hidden");
-            commentLabel.textContent = "Detailed Suggestion Description *";
-            modalTitle.textContent = "Suggest a New Tool or Feature";
+            commentLabel.textContent = "Descripción detallada de la sugerencia *";
+            modalTitle.textContent = "Sugerir una nueva herramienta o función";
         } else {
             targetPageGroup.classList.remove("hidden");
             suggestionCategoryGroup.classList.add("hidden");
             ratingGroup.classList.remove("hidden");
             titleGroup.classList.add("hidden");
-            commentLabel.textContent = "Written Comment *";
-            modalTitle.textContent = "Share Your Feedback";
+            commentLabel.textContent = "Comentario escrito *";
+            modalTitle.textContent = "Comparte tus comentarios";
         }
     }
 
@@ -716,7 +716,7 @@
             payload.suggestionCategory = document.getElementById("suggestionCategory").value;
             payload.suggestionTitle = document.getElementById("suggestionTitle").value.trim();
             if (!payload.suggestionTitle || !commentText) {
-                errorBox.textContent = "Please fill out all required suggestion fields.";
+                errorBox.textContent = "Completa todos los campos obligatorios de la sugerencia.";
                 errorBox.classList.remove("hidden");
                 return;
             }
@@ -726,7 +726,7 @@
             payload.starRating = document.getElementById("starRating").value;
             payload.pageUrl = pageSelect.value + ".html";
             if (!commentText) {
-                errorBox.textContent = "Please enter your written review.";
+                errorBox.textContent = "Escribe tu reseña.";
                 errorBox.classList.remove("hidden");
                 return;
             }
@@ -744,7 +744,7 @@
             const result = await response.json();
 
             if (result.status === "success") {
-                successBox.textContent = "🎉 Thank you! Your submission is pending moderation.";
+                successBox.textContent = "🎉 ¡Gracias! Tu envío está pendiente de moderación.";
                 successBox.classList.remove("hidden");
                 document.getElementById("communityForm").reset();
                 setTimeout(() => {
@@ -753,13 +753,13 @@
                     submitBtn.textContent = "🚀 Submit Feedback";
                 }, 3000);
             } else {
-                errorBox.textContent = result.message || "Submission failed.";
+                errorBox.textContent = result.message || "No se pudo enviar la sugerencia.";
                 errorBox.classList.remove("hidden");
                 submitBtn.disabled = false;
                 submitBtn.textContent = "🚀 Submit Feedback";
             }
         } catch (err) {
-            errorBox.textContent = "Network error. Please try again.";
+            errorBox.textContent = "Error de red. Inténtalo de nuevo.";
             errorBox.classList.remove("hidden");
             submitBtn.disabled = false;
             submitBtn.textContent = "🚀 Submit Feedback";
