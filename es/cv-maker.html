@@ -949,7 +949,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
             div.style.background = 'var(--input-bg)';
             div.id = id;
             div.innerHTML = `
-                <button type="button" onclick="removeBlock('${id}')" aria-label="Remove this experience entry" class="absolute top-2 right-2 text-red-500 font-bold text-xs hover:underline">Remove</button>
+                <button type="button" onclick="removeBlock('${id}')" aria-label="Eliminar this experience entry" class="absolute top-2 right-2 text-red-500 font-bold text-xs hover:underline">Eliminar</button>
                 <div class="space-y-2 mt-2">
                     <input type="text" class="exp-title input-field w-full p-2 rounded-lg text-xs font-bold" placeholder="Job Title" aria-label="Job title" value="${escapeHTML(data.title)}" oninput="updateCV()" autocomplete="organization-title">
                     <input type="text" class="exp-company input-field w-full p-2 rounded-lg text-xs" placeholder="Company Name" aria-label="Company name" value="${escapeHTML(data.company)}" oninput="updateCV()" autocomplete="organization">
@@ -976,7 +976,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
             div.style.background = 'var(--input-bg)';
             div.id = id;
             div.innerHTML = `
-                <button type="button" onclick="removeBlock('${id}')" aria-label="Remove this education entry" class="absolute top-2 right-2 text-red-500 font-bold text-xs hover:underline">Remove</button>
+                <button type="button" onclick="removeBlock('${id}')" aria-label="Eliminar this education entry" class="absolute top-2 right-2 text-red-500 font-bold text-xs hover:underline">Eliminar</button>
                 <div class="space-y-2 mt-2">
                     <input type="text" class="edu-degree input-field w-full p-2 rounded-lg text-xs font-bold" placeholder="Degree (e.g. B.Sc Computer Science)" aria-label="Degree" value="${escapeHTML(data.degree)}" oninput="updateCV()">
                     <input type="text" class="edu-school input-field w-full p-2 rounded-lg text-xs" placeholder="University / School" aria-label="University or school" value="${escapeHTML(data.school)}" oninput="updateCV()">
