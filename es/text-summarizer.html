@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script>
+        (function() {
+            var saved = null;
+            try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = saved || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Resumidor gratuito de textos y artículos con IA | MyToolX</title>
+    <meta name="description" content="Resume textos y artículos extensos en notas breves con este resumidor online gratuito. Utiliza análisis extractivo local, no un modelo de IA generativa.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://mytoolx.org/es/text-summarizer.html">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#4F46E5">
+<link rel="apple-touch-icon" href="/icon-192.png">
+
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://refer.micro1.ai">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:url" content="https://mytoolx.org/es/text-summarizer.html">
+    <meta property="og:title" content="Free resumidor de textos: 24/7 Instant 📰 | MyToolX">
+    <meta property="og:description" content="Summarize long text with local extractive sentence analysis. Runs in your browser without a generative AI service.">
+    <meta property="og:image" content="https://mytoolx.org/og-image.png">
+    <meta property="og:image:alt" content="MyToolX Resumidor de textos">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mytoolx.org/es/text-summarizer.html">
+    <meta name="twitter:title" content="Resumidor gratuito de textos y artículos con IA | MyToolX">
+    <meta name="twitter:description" content="Summarize long text with local extractive sentence analysis. Runs in your browser without a generative AI service.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
+    <meta name="twitter:image:alt" content="MyToolX Resumidor de textos">
+
+    <link rel="stylesheet" href="/styles.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "MyToolX Resumidor de textos",
+      "url": "https://mytoolx.org/es/text-summarizer.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "Summarize long text in the browser using local extractive sentence analysis, without a generative AI model or API key."
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
+        }
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
+        }
+        html, body { overflow-x: clip; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+        
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .tool-panel { border-top: 4px solid var(--primary); }
+        .tool-panel:hover { box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); }
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+        
+        .input-field { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
+        .input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); outline: none; }
+        
+        /* --- MEGA FOOTER --- */
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+
+        /* --- FOOTER SOCIAL ICONS --- */
+        .social-links-row { display: flex; align-items: center; gap: 12px; margin-top: 4px; }
+        .social-btn {
+            width: 42px; height: 42px; border-radius: 12px;
+            display: inline-flex; align-items: center; justify-content: center;
+            color: #FFFFFF !important; text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+            box-shadow: 0 6px 14px -3px rgba(0, 0, 0, 0.28);
+        }
+        .social-btn svg { width: 20px; height: 20px; fill: currentColor; }
+        .social-btn.fb-btn {
+            background: linear-gradient(135deg, #1877F2 0%, #0D5BD6 100%);
+        }
+        .social-btn.ig-btn {
+            background: radial-gradient(circle at 30% 107%, #FDF497 0%, #FDF497 5%, #FD5949 45%, #D6249F 60%, #285AEB 90%);
+        }
+        .social-btn:hover {
+            transform: translateY(-2px) scale(1.06);
+            box-shadow: 0 10px 20px -4px rgba(79, 70, 229, 0.35);
+            filter: brightness(1.05);
+        }
+        
+        #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
+        :focus-visible { outline: none; }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        ::selection { background: rgba(79,70,229,0.25); }
+
+        .faq-item { border-bottom: 1px solid var(--card-border); padding: 1rem 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-q { font-weight: 800; font-size: 1rem; color: var(--text); margin-bottom: 0.4rem; }
+
+        /* FEEDBACK MODAL STYLES */
+        .mtx-modal-backdrop {
+            position: fixed; inset: 0; z-index: 9999;
+            background: rgba(15, 23, 42, 0.68);
+            backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+            display: flex; align-items: center; justify-content: center; padding: 12px;
+        }
+        .mtx-modal-backdrop.hidden { display: none !important; }
+        .mtx-modal-dialog {
+            background: var(--card); border: 1px solid var(--card-border); color: var(--text);
+            width: 100%; max-width: 480px; max-height: 88dvh; overflow-y: auto;
+            border-radius: 22px; padding: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35); position: relative;
+        }
+        @media (min-width: 640px) { .mtx-modal-dialog { padding: 28px; } }
+        .mtx-modal-close {
+            width: 34px; height: 34px; border-radius: 10px;
+            background: var(--chip-bg); color: var(--text); border: none;
+            font-size: 16px; font-weight: 800; cursor: pointer;
+            display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .mtx-modal-close:hover { background: #EF4444; color: #FFFFFF; }
+        .star-click { cursor: pointer; transition: transform 0.1s; }
+        .star-click:hover { transform: scale(1.15); }
+        .star-click svg { width: 32px; height: 32px; fill: currentColor; }
+        select option, select optgroup {
+            background-color: var(--card) !important;
+            color: var(--text) !important;
+        }
+    </style>
+<!-- GLOBAL LANGUAGE SWITCHER -->
+    <link rel="stylesheet" href="/lang-switcher.css">
+    <script src="/lang-switcher.js" defer></script>
+</head>
+<body class="font-sans min-h-screen flex flex-col justify-between">
+
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2">
+            <div class="flex items-center justify-between gap-2 sm:gap-4">
+                <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+                    <a href="/index.html" class="hidden sm:flex btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold items-center gap-1">← Todas las herramientas</a>
+                    <a href="/index.html" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
+                        <div class="logo-mark w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base flex items-center justify-center">M<span class="x">X</span></div>
+                        <span class="logo-wordmark text-base sm:text-xl block">MyTool<span class="x">X</span></span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                    <button id="themeToggle" type="button" onclick="toggleTheme()" aria-label="Switch theme" title="Toggle Light/Modo oscuro" class="h-8 sm:h-10 px-2 sm:px-3 rounded-xl flex items-center justify-center gap-1.5 text-[10px] sm:text-xs font-bold transition-all hover:opacity-80" style="background: var(--chip-bg); color: var(--chip-text);">
+    <span id="themeIcon" aria-hidden="true">🌙</span>
+    <span id="themeText" class="hidden sm:block">Modo oscuro</span>
+</button>
+
+<!-- Comunidad Link -->
+<a href="/community.html" class="inline-flex items-center text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap" style="background: var(--chip-bg); color: var(--text);">
+    💬 Comunidad
+</a>                    <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
+                        💼 Empleos remotos ↗
+                    </a>
+                    <a href="/cv-maker.html" class="hidden md:inline-flex text-xs font-bold text-white px-3 py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
+    📄 Creador de CV
+</a>
+                </div>
+            </div>
+            <div class="mt-2 sm:hidden">
+                <a href="/index.html" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">
+                    ← Volver a todas las herramientas
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow">
+
+        <nav class="text-xs font-semibold mb-4 flex items-center gap-1 muted" aria-label="Breadcrumb">
+            <a href="/index.html" class="hover:text-indigo-500">Inicio</a>
+            <span>/</span>
+            <span style="color: var(--text); font-weight: 700;">Resumidor de textos</span>
+        </nav>
+
+        <div class="tool-panel surface rounded-3xl shadow-xl p-6 sm:p-8 mb-10 transition-shadow">
+            
+            <div class="flex items-center justify-between gap-3 flex-wrap mb-4 pb-4 border-b" style="border-color: var(--card-border);">
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 w-full">
+                    <div>
+                        <h1 class="text-xl sm:text-2xl font-black flex items-center gap-2" style="color: var(--text);">
+                            📰 Resumidor gratuito de textos: convierte documentos largos en lecturas de un minuto
+                        </h1>
+                        <p class="text-xs sm:text-sm muted mt-1 font-medium">100 % privado. Sin registro. Ahorra horas de lectura.</p>
+                    </div>
+                    <button type="button" onclick="clearSummary()" class="btn-3d btn-chip px-3.5 py-2 text-xs font-bold self-start sm:self-center">Borrar</button>
+                </div>
+            <p class="text-xs muted mt-2 mb-3" role="note">Este resumidor utiliza análisis extractivo local para seleccionar párrafos o frases importantes. No utiliza un modelo de IA generativa.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label for="sumRatio" class="block text-xs font-bold uppercase tracking-wider mb-1.5 muted">Nivel de resumen</label>
+                    <select id="sumRatio" class="input-field w-full p-3.5 rounded-xl text-sm font-semibold">
+                        <option value="25">Resumen breve (ejecutivo)</option>
+                        <option value="50" selected>Resumen equilibrado (estándar)</option>
+                        <option value="75">Resumen detallado (completo)</option>
+                    </select>
+                </div>
+            </div>
+
+            <label for="sumInput" class="block text-xs font-bold uppercase tracking-wider mb-1.5 muted">Pega tu texto aquí</label>
+            <textarea id="sumInput" rows="8" class="input-field w-full p-4 rounded-2xl text-sm font-medium transition mb-6" placeholder="Paste a long article, essay, or document here..."></textarea>
+
+            <button type="button" onclick="generateSummary()" class="btn-3d btn-primary px-6 py-3 text-sm flex items-center justify-center gap-2 w-full sm:w-auto mb-6">
+                ⚡ Resumir texto ahora
+            </button>
+
+            <div class="flex justify-between items-center mb-2">
+                <label class="block text-xs font-bold uppercase tracking-wider muted">Resultado del resumen</label>
+                <button id="copyBtn" type="button" onclick="copySummaryText()" class="btn-3d btn-chip px-3 py-1.5 text-xs font-bold flex items-center gap-1.5">📋 Copiar resultado</button>
+            </div>
+            
+            <div id="sumOutput" role="status" aria-live="polite" class="w-full p-5 rounded-2xl text-sm shadow-inner min-h-[120px] mb-2 leading-relaxed whitespace-pre-wrap" style="background: var(--chip-bg); color: var(--text);">Tu resumen aparecerá aquí...</div>
+
+        </div>
+
+        <!-- RICH SEO CONTENT -->
+        <article class="surface rounded-3xl shadow-md p-6 sm:p-8 mb-10 space-y-6">
+            <div class="pb-4 border-b" style="border-color: var(--card-border);">
+                <h2 class="text-xl font-bold">Lee menos y aprende más: el poder de los resúmenes instantáneos</h2>
+                <p class="text-sm leading-relaxed mt-2 muted">
+                    En el mundo digital actual, recibimos más información de la que podemos procesar. Tanto si eres estudiante y estás investigando un trabajo de 50 páginas, como profesional que sigue las noticias del sector o escritor que revisa un borrador extenso, el tiempo es tu recurso más valioso. Nuestro <strong>resumidor de textos</strong> está diseñado para ayudarte a recuperarlo.
+                </p>
+                <p class="text-sm leading-relaxed mt-2 muted">
+                    A diferencia de otras herramientas online que obligan a subir documentos privados a servidores en la nube, MyToolX funciona íntegramente en tu navegador. Puedes resumir contratos, ensayos personales o correos confidenciales con mayor tranquilidad. <strong>Tus datos nunca salen de tu dispositivo.</strong>
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-bold mb-3">Cómo funciona nuestro algoritmo NLP local</h2>
+                <p class="text-sm leading-relaxed muted mb-4">
+                    Quizá te preguntes cómo puede una herramienta gratuita resumir textos sin conectarse a ChatGPT. Utilizamos un algoritmo avanzado que se ejecuta en el navegador y se basa en <strong>Procesamiento del Lenguaje Natural (NLP)</strong>.
+                </p>
+                <ul class="list-disc pl-5 text-sm muted space-y-2">
+                    <li><strong>Puntuación de frases:</strong> La herramienta lee cada frase y le asigna una puntuación según la frecuencia de términos clave, ignorando palabras comunes como «el» y «y».</li>
+                    <li><strong>Priorización de señales:</strong> Las frases que contienen conectores (como «por lo tanto», «en conclusión» o «sin embargo») o advertencias importantes reciben mayor prioridad para conservar el mensaje principal.</li>
+                    <li><strong>Conservación del contexto:</strong> Para evitar que el resumen parezca una lista de frases inconexas, el algoritmo conserva como referencia la primera y la última frase del texto, manteniendo la introducción y la conclusión originales.</li>
+                </ul>
+            </div>
+
+            <div class="border-t pt-6" style="border-color: var(--card-border);">
+                <h2 class="text-xl font-bold mb-3">Preguntas frecuentes</h2>
+                
+                <div class="faq-item">
+                    <p class="faq-q">¿Se sube mi texto a un servidor?</p>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">No. Esta herramienta está diseñada para proteger tu privacidad. Todo el procesamiento del texto se realiza localmente en tu navegador mediante JavaScript. Tu texto nunca se transmite a MyToolX ni a proveedores externos de IA.</p>
+                </div>
+
+                <div class="faq-item">
+                    <p class="faq-q">¿Qué longitud debe tener el texto original?</p>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">Para obtener mejores resultados, recomendamos introducir al menos 100 palabras. Si el texto es demasiado corto, el resumidor devolverá el original porque no habrá suficiente contenido para extraer un resumen significativo.</p>
+                </div>
+
+                <div class="faq-item">
+                    <p class="faq-q">¿El resumen sonará artificial?</p>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">Como esta herramienta extrae las frases más importantes del texto original, el resumen conserva el estilo del autor. No reescribe el contenido como podría hacerlo un chatbot de pago; selecciona las mejores frases para ofrecerte una visión rápida.</p>
+                </div>
+
+                <div class="faq-item">
+                    <p class="faq-q">¿Cuál es la diferencia entre los niveles de resumen?</p>
+                    <p class="text-xs sm:text-sm muted leading-relaxed"><strong>Resumen breve:</strong> Ideal para obtener las ideas principales de un artículo extenso. <strong>Resumen equilibrado:</strong> Conserva más contexto y ejemplos. <strong>Resumen detallado:</strong> Tiene aproximadamente la mitad de la longitud del texto original y es ideal para temas complejos en los que deseas conservar la mayoría de los detalles.</p>
+                </div>
+            </div>
+        </article>
+    <!-- COMMUNITY FEEDBACK CARD FOR FREE TOOLS -->
+<section class="max-w-3xl mx-auto my-10 px-4">
+    <div class="surface rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+        <div class="text-center sm:text-left">
+            <h3 class="text-base font-black" style="color: var(--text);">¿Esta herramienta te ahorró tiempo?</h3>
+            <p class="text-xs muted mt-0.5">Deja una valoración rápida o sugiere una mejora en nuestro espacio de comunidad.</p>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+            <button type="button" onclick="openFeedbackModal('review')" class="btn-3d btn-primary px-4 py-2.5 rounded-xl text-xs font-black whitespace-nowrap">
+                ✍️ Dejar comentarios
+            </button>
+        </div>
+    </div>
+</section>
+
+</main>
+
+    <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+                <div class="lg:col-span-5">
+                    <a href="/index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 pr-4">
+MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesionales independientes y desarrolladores. La mayoría no requiere una cuenta. Muchas procesan el contenido localmente, mientras que algunas funciones y las estadísticas del sitio utilizan servicios externos. Consulta nuestra Política de privacidad para más información.
+                    </p>
+                    <div class="social-links-row" aria-label="MyToolX social media links">
+                        <a href="https://www.facebook.com/profile.php?id=61596813242660" target="_blank" rel="noopener noreferrer" aria-label="MyToolX on Facebook" title="Facebook" class="social-btn fb-btn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/mytoolx0?fqnt=dm05bDBzazZ6Nmpp" target="_blank" rel="noopener noreferrer" aria-label="MyToolX on Instagram" title="Instagram" class="social-btn ig-btn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-4">
+                    <h3>Herramientas populares</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <a href="/typing-test.html">Prueba de velocidad de escritura</a>
+                        <div class="flex items-start mt-0.5"> 
+                            <a href="/premium.html" class="link-premium-gold" aria-label="Visit the Premium Store"><span class="star-icon">⭐</span> Premium</a>
+                        </div>
+                        <a href="/prompt-studio.html">Estudio de prompts de IA</a>
+                        <a href="/image-compressor.html">Compresor de imágenes</a>
+                        <a href="/text-suite.html">Herramientas de texto y palabras</a>
+                        <a href="/grammar-checker.html">Corrector gramatical</a>
+                        <a href="/sip-calculator.html">Calculadora SIP</a>
+                        <a href="/fee-calculator.html">Calculadora de comisiones</a>
+                        <a href="/json-formatter.html">Formateador JSON</a>
+                        <a href="/loan-emi.html">Calculadora de cuotas de préstamo</a>
+                        <a href="/qr-code-generator.html">Generador de códigos QR</a>
+                        <a href="/base64-tool.html">Herramienta Base64</a>
+                        <a href="/unit-converter.html">Conversor de unidades</a>
+                        <a href="/password-generator.html">Generador de contraseñas</a>
+                        <a href="/article-outline.html">Esquema de artículos</a>
+                        <a href="/ai-bio-generator.html">Generador de biografías con IA</a>
+                        <a href="/love-calculator.html">Calculadora del amor</a>
+                         <a href="/cv-maker.html">Creador de currículums</a> 
+ 
+                         <a href="/text-summarizer.html">Resumidor con IA</a>
+                        <a href="/color-converter.html">Conversor de colores</a>
+			<a href="/math-sprint.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Juego Math Sprint</a>
+                        <a href="/wordstorm.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Juego WordStorm</a>
+			<a href="/reaction-time-test.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Prueba de reflejos</a>
+			<a href="/word-scramble.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Palabras desordenadas</a>
+
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Empresa</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="/index.html">Inicio</a></li>
+                                <li><a href="/about.html">Acerca de nosotros</a></li>
+                                <li><a href="/contact.html">Contacto</a></li>
+				<li><a href="/community.html">Comunidad</a></li>
+
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Legal</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="/blog.html">Blog y guías</a></li>
+                                <li><a href="/privacy.html">Política de privacidad</a></li>
+                                <li><a href="/terms.html">Términos del servicio</a></li>
+                                <!-- SITEMAP ADDED HERE -->
+                                <li><a href="/index.html">Mapa del sitio</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. Todos los derechos reservados.</p>
+                <p>Many tools process your content in your browser; selected features use external services. See our Política de privacidad for details.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FEEDBACK MODAL HTML (LOCKED TO TEXT SUMMARIZER) -->
+    <div id="feedbackModal" class="mtx-modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="handleBackdropClick(event)">
+        <div class="mtx-modal-dialog" onclick="event.stopPropagation()">
+            <div class="flex items-start justify-between gap-3 mb-4">
+                <div>
+                    <h3 id="modalTitle" class="text-lg sm:text-xl font-black" style="color: var(--text);">Comparte tu opinión</h3>
+                    <p class="text-xs muted mt-0.5">Solo 20 segundos • No necesitas registrarte</p>
+                </div>
+                <button type="button" onclick="closeFeedbackModal()" aria-label="Close popup" title="Close" class="mtx-modal-close">✕</button>
+            </div>
+
+            <form id="communityForm" onsubmit="submitComunidadFeedback(event)" class="space-y-4">
+                <div>
+                    <label for="formType" class="block text-xs font-bold uppercase tracking-wider muted mb-1">1. ¿Qué te gustaría compartir? *</label>
+                    <select id="formType" name="formType" required onchange="toggleFormFields()" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                        <option value="review">⭐ Valorar y reseñar una herramienta o juego</option>
+                        <option value="suggestion">💡 Sugerir una herramienta o función</option>
+                    </select>
+                </div>
+
+                <div id="targetPageGroup" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider muted mb-1">Valoración de:</label>
+                        <div class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-black flex items-center gap-2" style="background: var(--chip-bg); color: var(--primary);">
+                            📰 Resumidor de textos
+                        </div>
+                        <input type="hidden" id="targetPageId" value="text-summarizer">
+                    </div>
+
+                    <div id="ratingGroup">
+                        <label class="block text-xs font-bold uppercase tracking-wider muted mb-1">Tu valoración *</label>
+                        <div id="starRatingContainer" class="flex items-center gap-1 mt-1">
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <input type="hidden" id="starRating" name="starRating" value="5">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="suggestionCategoryGroup" class="hidden space-y-3">
+                    <div>
+                        <label for="suggestionCategory" class="block text-xs font-bold uppercase tracking-wider muted mb-1">2. Categoría de la idea *</label>
+                        <select id="suggestionCategory" name="suggestionCategory" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                            <option value="Nueva herramientas">Nueva herramienta</option>
+                            <option value="Nuevo juegos">Nuevo juego</option>
+                            <option value="Existing Tool Improvements">Mejorar una herramienta existente</option>
+                            <option value="Mejora del sitio webs">Mejora del sitio web</option>
+                            <option value="Premium Product Ideas">Nueva idea de paquete prémium</option>
+                        </select>
+                    </div>
+                    <div id="titleGroup">
+                        <label for="suggestionTitle" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Título breve de la idea *</label>
+                        <input type="text" id="suggestionTitle" name="suggestionTitle" maxlength="80" placeholder="e.g. PDF Merger or Invoice Generator" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label for="authorName" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Nombre (opcional)</label>
+                        <input type="text" id="authorName" name="authorName" maxlength="40" placeholder="Anonymous" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                    </div>
+                    <div>
+                        <label for="country" class="block text-xs font-bold uppercase tracking-wider muted mb-1">País (opcional)</label>
+                        <input type="text" id="country" name="country" maxlength="40" placeholder="e.g. US, UK, PK" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="commentText" id="commentLabel" class="block text-xs font-bold uppercase tracking-wider muted mb-1">3. Tu comentario *</label>
+                    <textarea id="commentText" name="commentText" required rows="3" maxlength="400" placeholder="Write a quick note about your experience..." class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-medium"></textarea>
+                </div>
+
+                <p class="text-[11px] muted leading-relaxed">
+                    🔒 Envío voluntario. Las publicaciones aprobadas se muestran públicamente sin datos personales.
+                </p>
+
+                <div id="formError" class="hidden p-3 rounded-xl text-xs font-bold text-red-500 bg-red-500/10 border border-red-500/30"></div>
+                <div id="formSuccess" class="hidden p-3 rounded-xl text-xs font-bold text-emerald-500 bg-emerald-500/10 border border-emerald-500/30"></div>
+
+                <div class="flex items-center gap-2.5 pt-1">
+                    <button type="button" onclick="closeFeedbackModal()" class="btn-3d btn-chip px-4 py-3 rounded-xl text-xs sm:text-sm font-bold">Cancelar</button>
+                    <button type="submit" id="submitModalBtn" class="btn-3d btn-primary flex-1 py-3 rounded-xl text-xs sm:text-sm font-black">🚀 Enviar opinión</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+    (function () {
+        'use strict';
+
+        // THEME LOGIC
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            var icon = document.getElementById('themeIcon');
+            var text = document.getElementById('themeText');
+            if (icon && text) {
+                if (theme === 'dark') { icon.textContent = '🌙'; text.textContent = 'Modo oscuro'; } 
+                else { icon.textContent = '☀️'; text.textContent = 'Light Mode'; }
+            }
+            var btn = document.getElementById('themeToggle');
+            if (btn) {
+                btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+                btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+            }
+        }
+        function toggleTheme() {
+            var cur = document.documentElement.getAttribute('data-theme') || 'light';
+            var next = cur === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('mtx-theme', next); } catch (e) {}
+        }
+        window.toggleTheme = toggleTheme;
+        applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
+
+        // UPGRADED SUMMARIZER LOGIC (Block-Based & Formatting Preserved)
+        var stopWords = ["a","about","above","after","again","against","all","am","an","and","any","are","aren't","as","at","be","because","been","before","being","below","between","both","but","by","can't","cannot","could","couldn't","did","didn't","do","does","doesn't","doing","don't","down","during","each","few","for","from","further","had","hadn't","has","hasn't","have","haven't","having","he","he'd","he'll","he's","her","here","here's","hers","herself","him","himself","his","how","how's","i","i'd","i'll","i'm","i've","if","in","into","is","isn't","it","it's","its","itself","let's","me","more","most","mustn't","my","myself","no","nor","not","of","off","on","once","only","or","other","ought","our","ours","ourselves","out","over","own","same","shan't","she","she'd","she'll","she's","should","shouldn't","so","some","such","than","that","that's","the","their","theirs","them","themselves","then","there","there's","these","they","they'd","they'll","they're","they've","this","those","through","to","too","under","until","up","very","was","wasn't","we","we'd","we'll","we're","we've","were","weren't","what","what's","when","when's","where","where's","which","while","who","who's","whom","why","why's","with","won't","would","wouldn't","you","you'd","you'll","you're","you've","your","yours","yourself","yourselves"];
+
+        function generateSummary() {
+            var text = document.getElementById('sumInput').value.trim();
+            var out = document.getElementById('sumOutput');
+            
+            if (text.length < 150) {
+                out.textContent = "Please enter a longer text (at least 150 characters) to summarize.";
+                out.style.color = '#EF4444';
+                return;
+            }
+            out.style.color = 'var(--text)';
+            out.textContent = "Analyzing text...";
+
+            // 1. Prefer paragraph blocks; for a single paragraph, summarize by sentence.
+            var paragraphs = text.split(/\n\s*\n/).map(function(p) { return p.trim(); }).filter(Boolean);
+
+            if (paragraphs.length < 2) {
+                paragraphs = (text.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [])
+                    .map(function(sentence) { return sentence.trim(); })
+                    .filter(Boolean);
+            }
+
+            if (paragraphs.length < 2) {
+                out.textContent = "Please enter at least two sentences or separate your text into paragraphs.";
+                return;
+            }
+
+            var totalWords = text.toLowerCase().match(/\b[a-z]{3,}\b/g) || [];
+            var wordFreq = {};
+            totalWords.forEach(function(w) {
+                if (!stopWords.includes(w)) {
+                    wordFreq[w] = (wordFreq[w] || 0) + 1;
+                }
+            });
+
+            var signalWords = ["conclusion", "therefore", "however", "important", "must", "critical", "result", "significant", "warns", "recommends"];
+            var fluffWords = ["in today's", "it is important to note", "in conclusion, it", "this article will", "let's dive"];
+
+            // 2. Score entire paragraphs
+            var paragraphScores = [];
+            paragraphs.forEach(function(para, index) {
+                var score = 0;
+                var lowerPara = para.toLowerCase();
+                var paraWords = lowerPara.match(/\b[a-z]{3,}\b/g) || [];
+                
+                paraWords.forEach(function(w) {
+                    if (wordFreq[w]) score += wordFreq[w];
+                });
+                score = score / (paraWords.length || 1);
+
+                var hasSignal = signalWords.some(function(sw) { return lowerPara.includes(sw); });
+                if (hasSignal) score *= 1.5;
+
+                var hasFluff = fluffWords.some(function(fw) { return lowerPara.includes(fw); });
+                if (hasFluff) score *= 0.3;
+
+                // Strongly favor the first and last paragraph
+                if (index === 0) score *= 3;
+                if (index === paragraphs.length - 1) score *= 2;
+
+                paragraphScores.push({ text: para, score: score, index: index });
+            });
+
+            var ratio = parseInt(document.getElementById('sumRatio').value) / 100;
+            var numParas = Math.max(1, Math.floor(paragraphs.length * ratio));
+            if (numParas >= paragraphs.length) numParas = paragraphs.length - 1; 
+            
+            // 3. Sort by score and pick the top paragraphs
+            paragraphScores.sort(function(a, b) { return b.score - a.score; });
+            var topParas = paragraphScores.slice(0, numParas);
+
+            // 4. Put them back in the original order
+            topParas.sort(function(a, b) { return a.index - b.index; });
+
+            // 5. Output them with double line breaks to preserve the formatting
+            var summary = topParas.map(function(p) { return p.text; }).join('\n\n');
+            out.textContent = summary;
+        }
+        window.generateSummary = generateSummary;
+
+        function copySummaryText() {
+            var out = document.getElementById('sumOutput');
+            var txt = out.textContent;
+            if (!txt || txt === 'Tu resumen aparecerá aquí...') return;
+
+            var btn = document.getElementById('copyBtn');
+            var orig = btn.innerHTML;
+            navigator.clipboard.writeText(txt).then(function() {
+                btn.textContent = '✅ Copied!';
+                setTimeout(function() { btn.innerHTML = orig; }, 1500);
+            });
+        }
+        window.copySummaryText = copySummaryText;
+
+        function clearSummary() {
+            document.getElementById('sumInput').value = '';
+            document.getElementById('sumOutput').textContent = 'Tu resumen aparecerá aquí...';
+            document.getElementById('sumOutput').style.color = 'var(--text)';
+        }
+        window.clearSummary = clearSummary;
+
+    })();
+    </script>
+
+    <!-- FEEDBACK MODAL LOGIC (LOCKED TO TEXT SUMMARIZER) -->
+    <script>
+        function openFeedbackModal(type = "review") {
+            document.getElementById("formType").value = type;
+            toggleFormFields();
+            document.getElementById("feedbackModal").classList.remove("hidden");
+        }
+
+        function closeFeedbackModal() {
+            document.getElementById("feedbackModal").classList.add("hidden");
+            document.getElementById("communityForm").reset();
+            document.getElementById("formError").classList.add("hidden");
+            document.getElementById("formSuccess").classList.add("hidden");
+        }
+
+        function handleBackdropClick(e) {
+            if (e.target && e.target.id === 'feedbackModal') closeFeedbackModal();
+        }
+
+        function toggleFormFields() {
+            const type = document.getElementById("formType").value;
+            const targetPageGroup = document.getElementById("targetPageGroup");
+            const suggestionCategoryGroup = document.getElementById("suggestionCategoryGroup");
+            const ratingGroup = document.getElementById("ratingGroup");
+            const titleGroup = document.getElementById("titleGroup");
+            const commentLabel = document.getElementById("commentLabel");
+            const modalTitle = document.getElementById("modalTitle");
+
+            if (type === "suggestion") {
+                targetPageGroup.classList.add("hidden");
+                suggestionCategoryGroup.classList.remove("hidden");
+                ratingGroup.classList.add("hidden");
+                titleGroup.classList.remove("hidden");
+                commentLabel.textContent = "Detailed Suggestion Description *";
+                modalTitle.textContent = "Suggest a New Tool or Feature";
+            } else {
+                targetPageGroup.classList.remove("hidden");
+                suggestionCategoryGroup.classList.add("hidden");
+                ratingGroup.classList.remove("hidden");
+                titleGroup.classList.add("hidden");
+                commentLabel.textContent = "Written Comment *";
+                modalTitle.textContent = "Share Your Feedback";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const container = document.getElementById("starRatingContainer");
+            const input = document.getElementById("starRating");
+            if (!container || !input) return;
+
+            const stars = container.querySelectorAll(".star-click");
+            let currentRating = 5;
+
+            function updateStars(rating) {
+                stars.forEach((star, index) => {
+                    if (index < rating) {
+                        star.classList.add("text-amber-500");
+                        star.classList.remove("text-gray-300", "dark:text-gray-600");
+                    } else {
+                        star.classList.remove("text-amber-500");
+                        star.classList.add("text-gray-300", "dark:text-gray-600");
+                    }
+                });
+            }
+
+            stars.forEach((star, index) => {
+                star.addEventListener("mouseenter", () => updateStars(index + 1));
+                star.addEventListener("mouseleave", () => updateStars(currentRating));
+                star.addEventListener("click", () => {
+                    currentRating = index + 1;
+                    input.value = currentRating;
+                    updateStars(currentRating);
+                });
+                star.addEventListener("touchstart", (e) => {
+                    e.preventDefault();
+                    currentRating = index + 1;
+                    input.value = currentRating;
+                    updateStars(currentRating);
+                });
+            });
+            updateStars(currentRating);
+        });
+
+        async function submitComunidadFeedback(event) {
+            event.preventDefault();
+            const errorBox = document.getElementById("formError");
+            const successBox = document.getElementById("formSuccess");
+            const submitBtn = document.getElementById("submitModalBtn");
+            const API_URL = "https://script.google.com/macros/s/AKfycbxMZGHXUkzX04Z3slFH5F3GveBOIrj-XiKPl04aPOTHjBur8uSg57kb-PRr781vcStd5w/exec";
+
+            errorBox.classList.add("hidden");
+            successBox.classList.add("hidden");
+
+            const formType = document.getElementById("formType").value;
+            const commentText = document.getElementById("commentText").value.trim();
+            const authorName = document.getElementById("authorName") ? document.getElementById("authorName").value.trim() : "";
+            const country = document.getElementById("country") ? document.getElementById("country").value.trim() : "";
+
+            let payload = {
+                formType: formType,
+                commentText: commentText,
+                authorName: authorName,
+                country: country,
+                recommendation: "",
+                language: document.documentElement.lang
+            };
+
+            if (formType === "suggestion") {
+                payload.suggestionCategory = document.getElementById("suggestionCategory").value;
+                payload.suggestionTitle = document.getElementById("suggestionTitle").value.trim();
+                if (!payload.suggestionTitle || !commentText) {
+                    errorBox.textContent = "Please fill out all required suggestion fields.";
+                    errorBox.classList.remove("hidden");
+                    return;
+                }
+            } else {
+                payload.targetPageId = "text-summarizer";
+                payload.starRating = document.getElementById("starRating").value;
+                payload.pageUrl = "text-summarizer.html";
+                if (!commentText) {
+                    errorBox.textContent = "Please enter your written review.";
+                    errorBox.classList.remove("hidden");
+                    return;
+                }
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = "⏳...";
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "text/plain;charset=utf-8" },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+
+                if (result.status === "success") {
+                    successBox.textContent = "🎉 Thank you! Your submission is pending moderation.";
+                    successBox.classList.remove("hidden");
+                    document.getElementById("communityForm").reset();
+                    setTimeout(() => { 
+                        closeFeedbackModal(); 
+                        submitBtn.disabled = false; 
+                        submitBtn.textContent = "🚀 Enviar opinión"; 
+                    }, 3000);
+                } else {
+                    errorBox.textContent = result.message || "No se pudo enviar.";
+                    errorBox.classList.remove("hidden");
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "🚀 Enviar opinión";
+                }
+            } catch (err) {
+                errorBox.textContent = "Error de conexión. Inténtalo de nuevo.";
+                errorBox.classList.remove("hidden");
+                submitBtn.disabled = false;
+                submitBtn.textContent = "🚀 Enviar opinión";
+            }
+        }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
+    <script>
+      window.addEventListener('load', function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W8KM3G3BYL');
+      });
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+</body>
+</html>
