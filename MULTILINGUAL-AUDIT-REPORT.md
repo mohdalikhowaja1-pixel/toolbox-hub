@@ -118,3 +118,9 @@ Workflow run: [46151537792](https://github.com/mohdalikhowaja1-pixel/toolbox-hub
 The passing validator checked 168 unique sitemap URLs (56 per language), sitemap and page-level hreflang targets, canonical URLs, HTML language attributes, exactly one shared switcher CSS/JS reference per public page, and all 72 blog article pages for valid Article and BreadcrumbList JSON-LD with canonical-matching URLs and correct language values. It also compared code identifier sequences across the 24 blog article triplets.
 
 This does not replace browser/runtime tests, real form submissions, mobile/dark-mode checks, production HTTP checks, or full linguistic proofreading. The publishing branch was not changed.
+
+
+### Expanded CI coverage
+The validator was extended to compare ordered IDs, form names, named function declarations, and inline event-handler types across **all 56 English/Spanish/French public-page triplets**, not only the 24 blog article triplets.
+
+Latest run: [46151625702](https://github.com/mohdalikhowaja1-pixel/toolbox-hub/actions/runs/46151625702) — **PASSED**. The run reported 56 URLs in each language, 24 blog articles, and 56 identifier triplets checked.
