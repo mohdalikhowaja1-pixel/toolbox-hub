@@ -123,3 +123,15 @@ Read `MYTOOLX-MULTILINGUAL-HANDOVER.md` first for the authoritative resume point
 - Latest handover commit: `4ca164a7086b1e22faf72a217621509adbbbb42b`. Exact content commits and limitations are recorded in `MYTOOLX-MULTILINGUAL-HANDOVER.md`.
 - Source-level translation QA only. Changing provider fee schedules have not been independently fact-checked; browser/runtime, full-page linguistic, native-speaker, responsive/theme/accessibility, console/network and live HTTP/indexability checks remain outstanding.
 - Next: continue the remaining 11 article families, then review the 56 tool/application page families. No merge or deployment without explicit approval.
+
+
+## Editorial QA checkpoint — QR Codes, Password Security and Unit Conversion — 2026-11-28
+
+- Completed English-source comparison and corrections for QR Codes, Password Security and Unit Conversion in Spanish and French (six localized pages).
+- Repaired mixed-language generator labels, opposite-language paragraphs, English “Free” and “More importantly” fragments, social image alt text, related guide cards, shared footer copy and Spanish feedback-modal typos.
+- Translated the Spanish/French Password Security meta descriptions and Open Graph/Twitter descriptions, which had remained in English.
+- Revalidated 12 JSON-LD blocks; all parsed, and Article headlines match visible H1 headings after decorative emoji normalization.
+- Targeted checks for the specific defects addressed are clear; all six pages have localized social image alt text.
+- Latest handover commit: `bc2b976c889db5372570abababd53bc5ce0b9066`. Exact content commits and limitations are recorded in `MYTOOLX-MULTILINGUAL-HANDOVER.md`.
+- Source-level validation only. Full-page linguistic review, native-speaker certification, browser/runtime, application interaction, responsive/theme/accessibility, console/network and live HTTP/indexability checks remain outstanding.
+- Next: complete the remaining eight article families, then review the 56 tool/application page families. Do not merge or deploy without explicit approval.
