@@ -27,21 +27,26 @@
 - Internal navigation should stay within the selected language where a translated destination exists; otherwise use a safe English fallback.
 - Preserve existing design, responsive layout, privacy statements, external-service disclosures, and accessibility.
 
-## Current multilingual work
-- Created `multilingual-expansion` from `safe-maintenance-audit`.
-- Found obsolete file `disbaled lang-switcher.js` which had a deliberate early `return;` disabling the switcher.
-- Created active `lang-switcher.js`. It reads only explicit alternate hreflang links, performs no fetch/HEAD/network probing, and does not display a language switcher unless at least two language destinations are explicitly declared.
-- Removed obsolete `disbaled lang-switcher.js`.
-- Removed premature Spanish/French hreflang tags from English `index.html` and `about.html` because those translated destinations do not yet exist. Add them back only when corresponding translations are ready.
-- Existing `lang-switcher.css` retained.
-- No Spanish or French pages have been created yet. No translated URLs should be submitted to sitemap or indexed until completed.
+## Current multilingual work — status as of 2026-11-28
 
-## First milestone
-1. Build a fully translated pilot page in Spanish and French from one low-risk page (About or a simple informational page), keeping its page behavior and shared styles intact.
-2. Add reciprocal hreflang tags to all three versions only when both translations are complete.
-3. Test links, switcher, mobile layout, theme toggle, console errors, canonical, metadata, language attributes and HTTP paths.
-4. Repeat the process page-by-page for all applications and games, preserving English logic.
-5. Validate translated sitemap and internal links before any production release.
+Read `MYTOOLX-MULTILINGUAL-HANDOVER.md` first for the authoritative resume point, completed commit list, QA ledger and next actions.
+
+- Development branch: `multilingual-expansion`; production branch remains `safe-maintenance-audit`.
+- The 56 English sitemap page paths have all 56 Spanish and all 56 French counterpart files present (112 localized files). File presence is not translation/runtime certification.
+- Active language switcher uses explicit hreflang declarations only; do not introduce URL probing or fetching.
+- Sampled translated home, About, Grammar Checker and Community pages have expected language attributes and shared switcher assets.
+- Corrected reciprocal hreflang on French Privacy Policy, Spanish/French Terms, and English/Spanish/French Contact pages.
+- Sitemap expanded to 168 URLs (56 per language) and 672 xhtml alternate links. Treat as candidate only until every localized URL passes content, canonical, HTTP 200, indexability and reciprocal-hreflang QA.
+- No deployment or merge has been performed. Do not modify `main` or change GitHub Pages source without explicit approval.
+- Latest batch commit: `56e64c27f600174544d163253d3005dc7bc27ca9`.
+- Full translation proofreading, full application behavior testing, mobile/theme/accessibility regression, complete metadata/internal-link audit and deployment workflow validation remain outstanding.
+
+## Next milestone
+1. Audit all 56 page triplets (English/Spanish/French) in batches and update the persistent handover after each batch.
+2. Verify application/game behavior against English originals; do not change functional logic to translate.
+3. Validate every sitemap/hreflang URL and canonical before release.
+4. Run browser, responsive, theme, accessibility, console and network checks.
+5. Prepare a final release report and obtain Ali's explicit deployment approval.
 
 ## Previous SEO maintenance audit findings to preserve
 - Live site: https://mytoolx.org
