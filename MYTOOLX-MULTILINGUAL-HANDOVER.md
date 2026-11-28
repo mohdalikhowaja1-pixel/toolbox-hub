@@ -166,3 +166,19 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 - Production branch `safe-maintenance-audit` still lacks the Spanish/French pages and `lang-switcher.js`; this branch mismatch is not resolved by the development-branch cleanup.
 - Browser runtime tests, mobile and dark-mode visual checks, live HTTP/console/network validation, app behavior regression testing, full translation proofreading, and release workflow validation remain outstanding.
 - Do not merge, deploy, or change GitHub Pages publishing source without Ali's explicit approval.
+
+
+## Code-identifier integrity audit — 2026-11-28
+
+### Scope and result
+- Compared all 56 English public HTML pages against their Spanish and French counterparts (112 localized pages).
+- Compared ordered DOM `id` attributes, form `name` attributes, JavaScript named function declarations (including Unicode identifiers), and inline event-handler attribute types.
+- The first pass found translation substitutions inside code identifiers in several localized pages. Examples included renamed feedback handlers, countdown IDs, game score IDs, and game helper functions. The CV maker also had a malformed translated backdrop-handler function name.
+- Restored the English source identifiers in the localized pages, including all references to the affected identifiers. The CV maker's malformed `handleBackdropClick` function name and its toast undo ID were repaired explicitly.
+- Re-ran the comparison over all 56 page triplets after the corrections. Result: no mismatches in the ordered ID, form-name, named-function, or inline-handler-type sequences across English, Spanish, and French.
+- The normalization did not intentionally change application algorithms, event behavior, API endpoints, or user-facing translated copy. It restored stable identifiers and their references.
+
+### Important limits
+- This is a source-level structural comparison, not a browser execution or end-to-end test. It does not prove that every application works in a real browser.
+- Remaining checks: JavaScript parse/runtime validation, game interaction regression, form submission tests, browser console/network inspection, responsive/mobile and dark-mode checks, and complete linguistic proofreading.
+- Production publishing branch remains unchanged. No merge or deployment was performed.
