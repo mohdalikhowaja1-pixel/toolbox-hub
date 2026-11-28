@@ -319,3 +319,5 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 - Commit: `ba572e61474e356914fd2042e90733ee87a215a3`.
 - Validation: fetched the current script and confirmed the exact replacement block was applied. The expected local routing maps `https://mytoolx.org/fr/about.html` to `http://127.0.0.1:8000/fr/about.html` when previewing on port 8000; production behavior remains unchanged by the host check. Ali should confirm the menu navigation in the local browser.
 - Remaining: verify language switching on local Spanish and French pages, then continue broader static and browser QA. No merge or deployment performed.
+
+- CI follow-up: multilingual static validation passed on switcher code commit `ba572e61474e356914fd2042e90733ee87a215a3` in [run 46168069084](https://github.com/mohdalikhowaja1-pixel/toolbox-hub/actions/runs/46168069084). This is static CI, not a live browser test.
