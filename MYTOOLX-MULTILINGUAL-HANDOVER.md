@@ -262,3 +262,11 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 - The subsequent commit `e40ef62952f3b3b83ec11283b7ed508ce106830d` only records this handover audit and does not change application code. The latest code-validation run therefore covers the latest application-code commit inspected at this checkpoint.
 - GitHub Actions emitted a non-failing Node.js 20 deprecation warning for the pinned `actions/checkout@v4` and `actions/setup-node@v4` actions. This is maintenance advice, not a failed test.
 - Browser interaction, real-world form submissions, visual regression, and live HTTP checks remain unverified. No production merge or deployment was performed.
+
+
+## Publishing-branch mismatch rechecked — 2026-11-28
+
+- Rechecked `safe-maintenance-audit` after completing the localized-page audit.
+- `es/index.html`, `fr/index.html`, and `lang-switcher.js` are still absent from that branch (GitHub returned 404 for each path).
+- `lang-switcher.css` exists on the publishing branch, but that alone is insufficient: the translated landing pages and switcher script are missing.
+- This confirms the deployment gap is not explained by the CSS rules in the development branch. The publishing branch still needs a deliberate, reviewed release plan. Do not merge the full development branch or change the Pages source automatically.
