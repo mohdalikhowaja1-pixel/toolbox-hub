@@ -1047,7 +1047,7 @@
     <div class="mtx-modal-dialog" onclick="event.stopPropagation()">
         <div class="flex items-start justify-between gap-3 mb-4">
             <div>
-                <h3 id="modalTitle" class="text-lg sm:text-xl font-black" style="color: var(--text);">WordStorm Feedback</h3>
+                <h3 id="modalTitle" class="text-lg sm:text-xl font-black" style="color: var(--text);">Avis sur WordStorm</h3>
                 <p class="text-xs muted mt-0.5">20 secondes suffisent • Aucune inscription requise</p>
             </div>
             <button type="button" onclick="closeFeedbackModal()" aria-label="Close popup" title="Close" class="mtx-modal-close">✕</button>
@@ -1058,7 +1058,7 @@
                 <label for="formType" class="block text-xs font-bold uppercase tracking-wider muted mb-1">1. Que souhaitez-vous partager ? *</label>
                 <select id="formType" name="formType" required onchange="toggleFormFields()" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
                     <option value="review">⭐ Rate &amp; Review WordStorm</option>
-                    <option value="suggestion">💡 Suggest an Improvement for WordStorm</option>
+                    <option value="suggestion">💡 Proposer une amélioration pour WordStorm</option>
                 </select>
             </div>
 
@@ -1088,9 +1088,9 @@
                 <div>
                     <label for="suggestionCategory" class="block text-xs font-bold uppercase tracking-wider muted mb-1">2. Catégorie de l’idée *</label>
                     <select id="suggestionCategory" name="suggestionCategory" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
-                        <option value="New Game Ideas">New WordStorm World / Mode Idea</option>
+                        <option value="Idée de nouveau jeus">Idée de nouvel univers ou mode WordStorm</option>
                         <option value="Existing Tool Improvements">Improve Jeu WordStormplay</option>
-                        <option value="Website Improvements">Website Improvement</option>
+                        <option value="Amélioration du site webs">Amélioration du site web</option>
                     </select>
                 </div>
                 <div id="titleGroup">
@@ -2246,7 +2246,7 @@
                 ratingGroup.classList.remove("hidden");
                 titleGroup.classList.add("hidden");
                 commentLabel.textContent = "Your WordStorm Comment *";
-                modalTitle.textContent = "WordStorm Feedback";
+                modalTitle.textContent = "Avis sur WordStorm";
             }
         }
 
