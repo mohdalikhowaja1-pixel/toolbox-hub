@@ -544,3 +544,48 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 2. After article copy review, begin the remaining 56 tool/application page families, comparing visible UI text and SEO metadata against English while preserving functional logic and identifiers.
 3. Re-run the repository's static multilingual validator after the next cohesive batch and record an actual workflow result if one is returned.
 4. Continue internal-link, hreflang, sitemap, responsive/theme/accessibility and browser/runtime validation. No merge, deployment, Pages source change or production-branch edit has been performed.
+
+
+## Editorial QA batch — six article families, Spanish and French — 2026-11-28
+
+### Pages reviewed and corrected
+- Completed a direct English-source versus Spanish/French body-copy review for six article families (12 localized HTML pages):
+  - Base64
+  - Color Tools
+  - AI Prompts
+  - LinkedIn Bio
+  - Content Outline
+  - Text Suite
+- Corrected mixed-language sentences and translation defects, including the Spanish Base64 JWT typo (“L encabezado”), English “Our” fragments before translated tool names, mixed-language tool names, and the French/Spanish Content Outline generator labels.
+- Translated the example professional bio content on LinkedIn Bio pages rather than leaving all sample copy in English; preserved the example email placeholder.
+- Translated both sample prompts on the AI Prompts pages into Spanish and French so the article examples are usable in the selected language.
+- Localized related-article card titles for the next guide on each reviewed page.
+- Localized Open Graph and Twitter image alt text where it contained mixed-language or untranslated page titles.
+- Preserved technical identifiers and examples where they must remain exact, including Base64 strings, HEX/RGB/HSL syntax, CSS color names, JWT/API terms, and the R-T-C-F framework. No application logic, URLs, form payloads, IDs or event handlers were modified.
+
+### Verification
+- Re-fetched all 12 localized files after edits.
+- Parsed both JSON-LD blocks on each page successfully (24 blocks total).
+- Verified each Article JSON-LD headline matches the visible H1 after normalizing leading decorative emoji.
+- Ran targeted residual-string checks for the specific English/mixed-language defects identified during this pass; no checked target phrases remain in the 12 pages.
+- This is source-level editorial and JSON-LD syntax validation. It is not a full page-wide language audit, browser/runtime test, native-speaker certification, or live Rich Results test.
+
+### Key commits in this batch
+- Base64 ES: `55d27f1bc83682259e5b4349d7013c1d3c464ac1`
+- Base64 FR: `c7bd0748e7c5688543dcaf32f831e5b5894008f4`
+- Color Tools ES: `55425cb24ab409853750304fade65629a62ad48b`
+- Color Tools FR: `fbab8de700b9064df3608de9bbee336c60ed675c`
+- AI Prompts ES: `f5bafee5fb24a9c177e775d8a8afae63ba8ff2ea`
+- AI Prompts FR: `e56991eb0fe187af7b307f65abb96c24dec8c9b8`
+- LinkedIn Bio ES: `f7b8caf1723d0b4d1b090e147765e70fbca76309`
+- LinkedIn Bio FR: `122c7d5e9784889ca169df052ec89525d2a7ca76`
+- Content Outline ES: `61d54863a657c857eb613c63236834ce4a794b79`
+- Content Outline FR: `ef4238affc8ce8008910c4bfa130697985c7b566`
+- Text Suite ES: `857f5b7eceaeab8384683936af1a6849b1084cd6`
+- Text Suite FR: `ef88ea5fd536bfd405b0e660c1755e6e3faee0f6`
+
+### Next action
+1. Continue the same source-comparison editorial QA on the remaining 18 article families, including body copy, examples, related cards, metadata alt text and FAQ content.
+2. Re-run article-wide structured-data and internal-link checks after editorial review.
+3. Then begin the 56 tool/application page families, with functional logic and identifiers protected.
+4. Continue to keep the development branch isolated; no merge, deployment or production-branch modification is authorized.
