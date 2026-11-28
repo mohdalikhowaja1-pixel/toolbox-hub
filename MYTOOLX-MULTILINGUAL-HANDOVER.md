@@ -138,3 +138,31 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 1. Continue a complete reference and structural audit across all 168 development-branch pages, including duplicate/missing asset references and pages without the expected header/theme button.
 2. Continue the translation and app-behavior QA ledger.
 3. Keep production unchanged until all release blockers are cleared and Ali explicitly approves deployment.
+
+
+## Full switcher asset audit and normalization — 2026-11-28
+
+### Complete page-level source audit
+- Audited all 112 localized HTML pages: 56 Spanish and 56 French.
+- Every localized page has exactly one root-absolute `/lang-switcher.css` reference, exactly one deferred root-absolute `/lang-switcher.js` reference, an HTML language attribute matching its folder, and four hreflang alternate declarations.
+- The CV maker pages contain a second semantic `<header>` for an internal content section; this is not a duplicate site navigation header and does not affect switcher insertion, which targets the unique `#themeToggle` button.
+
+### English duplicate asset issue corrected
+- The complete English public-page audit found all 56 English pages included the switcher CSS and JavaScript twice: once through relative paths and again through root-absolute paths.
+- Normalized all 56 English public pages on `multilingual-expansion`: retained one root-absolute stylesheet and one deferred root-absolute JavaScript reference; removed the redundant relative references and duplicate script tag.
+- Re-audited all 56 English public pages after the commits. Each now has exactly one `/lang-switcher.css`, one `/lang-switcher.js`, and zero legacy relative-path references.
+- The 112 localized pages were not modified in this normalization pass.
+
+### Sitemap recheck
+- Parsed the current development-branch `sitemap.xml`: 168 unique `<loc>` URLs and 672 xhtml alternate declarations.
+- Language split: 56 English, 56 Spanish, 56 French.
+- This is a repository XML content check, not a live HTTP status or Google indexing verification.
+
+### Commits
+- English asset normalization was committed in six small, coordinated commits to keep each Git tree update manageable.
+- Latest branch head after normalization: `b8ccba735d5740de04d5a5c21a5fc9303b0a9180`.
+
+### Remaining release blockers
+- Production branch `safe-maintenance-audit` still lacks the Spanish/French pages and `lang-switcher.js`; this branch mismatch is not resolved by the development-branch cleanup.
+- Browser runtime tests, mobile and dark-mode visual checks, live HTTP/console/network validation, app behavior regression testing, full translation proofreading, and release workflow validation remain outstanding.
+- Do not merge, deploy, or change GitHub Pages publishing source without Ali's explicit approval.
