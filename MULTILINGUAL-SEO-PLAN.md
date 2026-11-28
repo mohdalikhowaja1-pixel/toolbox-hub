@@ -111,3 +111,15 @@ Read `MYTOOLX-MULTILINGUAL-HANDOVER.md` first for the authoritative resume point
 - Branch comparison before this documentation update: 198 commits ahead, 0 behind the starting baseline. CI status/workflow lookup returned no records; do not report a passing CI result.
 - Source-level checks only. Full-page translation review, native-speaker certification, browser/runtime, form submission, responsive/theme/accessibility, console/network and live HTTP/indexability checks remain outstanding.
 - Next: continue the remaining 14 article families, then review all 56 tool/application page families. Do not merge, deploy or change the publishing branch without explicit approval.
+
+
+## Editorial QA checkpoint — three financial article families — 2026-11-28
+
+- Completed English-source comparison and corrections for Freelance Finance, SIP Investing and Loan EMI in Spanish and French (six localized pages).
+- Fixed mixed-language calculator-link sentences, malformed Loan EMI tool names, unlocalized percentage/currency formatting, related-guide card titles, social image alt text, shared footer copy and Spanish feedback-modal typos.
+- Preserved the financial example values, calculations, localized tool links and all application identifiers/handlers.
+- Revalidated 12 JSON-LD blocks; all parsed, and Article headlines match visible H1 headings after decorative emoji normalization.
+- Targeted residual scans for the specific defects addressed returned no matches; localized OG/Twitter image alt text is present on all six pages.
+- Latest handover commit: `4ca164a7086b1e22faf72a217621509adbbbb42b`. Exact content commits and limitations are recorded in `MYTOOLX-MULTILINGUAL-HANDOVER.md`.
+- Source-level translation QA only. Changing provider fee schedules have not been independently fact-checked; browser/runtime, full-page linguistic, native-speaker, responsive/theme/accessibility, console/network and live HTTP/indexability checks remain outstanding.
+- Next: continue the remaining 11 article families, then review the 56 tool/application page families. No merge or deployment without explicit approval.
