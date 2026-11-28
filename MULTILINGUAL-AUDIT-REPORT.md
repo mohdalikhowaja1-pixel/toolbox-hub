@@ -128,3 +128,7 @@ Latest run: [46151625702](https://github.com/mohdalikhowaja1-pixel/toolbox-hub/a
 
 ### JavaScript syntax checks
 The validator now parses inline JavaScript blocks and local JavaScript files referenced by the public pages using Node's syntax parser. The latest run [46151767968](https://github.com/mohdalikhowaja1-pixel/toolbox-hub/actions/runs/46151767968) passed with 56 page triplets checked and no JavaScript syntax errors reported. This does not execute browser interactions or network-dependent behavior.
+
+
+### Local link and asset targets
+The automated validator now checks same-origin `href` and `src` references on all 168 sitemap pages, resolving both root-absolute and page-relative paths. The latest workflow run [46151847826](https://github.com/mohdalikhowaja1-pixel/toolbox-hub/actions/runs/46151847826) passed with no missing local targets reported.
