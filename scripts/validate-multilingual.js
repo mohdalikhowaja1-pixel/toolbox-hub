@@ -7,7 +7,7 @@ const stats = { urls: 0, en: 0, es: 0, fr: 0, blogArticles: 0, identifierTriplet
 const read = file => fs.readFileSync(path.join(ROOT, file), 'utf8');
 const fail = message => errors.push(message);
 function attr(tag, name) {
-  const match = tag.match(new RegExp('(?:^|\\\\s)' + name + '=["\\x27]([^"\\x27]*)["\\x27]', 'i'));
+  const match = tag.match(new RegExp('(?:^|\\s)' + name + '=["\\x27]([^"\\x27]*)["\\x27]', 'i'));
   return match ? match[1] : null;
 }
 function langOf(p) { return p === '/es' || p.startsWith('/es/') ? 'es' : p === '/fr' || p.startsWith('/fr/') ? 'fr' : 'en'; }
