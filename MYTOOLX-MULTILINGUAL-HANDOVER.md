@@ -225,3 +225,12 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 - Latest run: `46151767968` — **PASSED**.
 - Verified output: 56 English, 56 Spanish, 56 French pages; 24 blog articles; 56 identifier triplets.
 - The passing run includes the source-level JavaScript syntax check. It still does not execute browser DOM interactions, game flows, network requests, or form submissions.
+
+
+## Local link and asset target validation — 2026-11-28
+
+- Added local `href` and `src` target checks to the automated validator for every sitemap page.
+- The check resolves same-origin relative and root-absolute references against the page path, handles language-folder index paths, and reports missing repository targets.
+- Latest workflow run: `46151847826` — **PASSED**.
+- Combined CI coverage now includes sitemap URL inventory, canonical and reciprocal hreflang targets, language attributes, switcher asset counts, local href/src targets, all 72 blog Article/BreadcrumbList JSON-LD blocks, code identifier parity across all 56 language triplets, and JavaScript syntax parsing for inline and referenced local scripts.
+- Browser-based interaction and visual testing remains outstanding.
