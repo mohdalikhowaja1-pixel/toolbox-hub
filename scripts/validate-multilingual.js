@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const vm = require('node:vm');
 const ROOT = process.cwd();
 const BASE = 'https://mytoolx.org';
 const errors = [];
@@ -57,6 +58,24 @@ if (stats.urls !== 168 || stats.en !== 56 || stats.es !== 56 || stats.fr !== 56)
 for (const row of pageRows) {
   if (!fs.existsSync(path.join(ROOT, row.file))) continue;
   const source = read(row.file);
+  const scriptTags = [...source.matchAll(/<script\\b([^>]*)>([\\s\\S]*?)<\\/script>/gi)];
+  scriptTags.forEach((match, index) => {
+    const tag = '<script ' + match[1] + '>';
+    const type = (attr(tag, 'type') || '').toLowerCase();
+    const src = attr(tag, 'src');
+    if (type === 'module' || /json|template/.test(type)) return;
+    if (type && !/(java|ecma)script/.test(type)) return;
+    if (!src) {
+      try { new vm.Script(match[2], { filename: row.file + ':inline-' + index }); }
+      catch (error) { fail(row.file + ': inline JavaScript syntax error: ' + error.message); }
+    } else if (!/^https?:|^\\/\\//i.test(src)) {
+      const local = src.startsWith('/') ? src.slice(1) : path.posix.normalize(path.posix.join(path.posix.dirname(row.file), src));
+      if (fs.existsSync(path.join(ROOT, local))) {
+        try { new vm.Script(read(local), { filename: local }); }
+        catch (error) { fail(local + ': JavaScript syntax error: ' + error.message); }
+      }
+    }
+  });
   const html = source.match(/<html\b[^>]*>/i);
   if (!html || attr(html[0], 'lang') !== row.lang) fail(row.file + ': wrong html lang');
   const links = [...source.matchAll(/<link\b[^>]*>/gi)].map(x => x[0]);
