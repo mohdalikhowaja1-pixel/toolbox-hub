@@ -938,7 +938,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
                 navigator.share({ title: 'Typing Score', text: text, url: url }).catch(function() {});
             } else {
                 navigator.clipboard.writeText(text + ' ' + url).then(function() {
-                    alert('Score copied to clipboard!');
+                    alert('Score copié dans le presse-papiers !');
                 });
             }
         }
@@ -991,7 +991,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
                 ratingGroup.classList.remove("hidden");
                 titleGroup.classList.add("hidden");
                 commentLabel.textContent = "Written Comment *";
-                modalTitle.textContent = "Share Your Feedback";
+                modalTitle.textContent = "Partagez votre avis";
             }
         }
 
@@ -1061,7 +1061,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
                 payload.suggestionCategory = document.getElementById("suggestionCategory").value;
                 payload.suggestionTitle = document.getElementById("suggestionTitle").value.trim();
                 if (!payload.suggestionTitle || !commentText) {
-                    errorBox.textContent = "Please fill out all required suggestion fields.";
+                    errorBox.textContent = "Veuillez remplir tous les champs obligatoires de la suggestion.";
                     errorBox.classList.remove("hidden");
                     return;
                 }
@@ -1070,7 +1070,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
                 payload.starRating = document.getElementById("starRating").value;
                 payload.pageUrl = "typing-test.html";
                 if (!commentText) {
-                    errorBox.textContent = "Please enter your written review.";
+                    errorBox.textContent = "Veuillez saisir votre avis écrit.";
                     errorBox.classList.remove("hidden");
                     return;
                 }
@@ -1088,7 +1088,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
                 const result = await response.json();
 
                 if (result.status === "success") {
-                    successBox.textContent = "🎉 Thank you! Your submission is pending moderation.";
+                    successBox.textContent = "🎉 Merci ! Votre contribution est en attente de modération.";
                     successBox.classList.remove("hidden");
                     document.getElementById("communityForm").reset();
                     setTempsout(() => { 
@@ -1103,7 +1103,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
                     submitBtn.textContent = "🚀 Envoyer le commentaire";
                 }
             } catch (err) {
-                errorBox.textContent = "Network error. Please try again.";
+                errorBox.textContent = "Erreur réseau. Veuillez réessayer.";
                 errorBox.classList.remove("hidden");
                 submitBtn.disabled = false;
                 submitBtn.textContent = "🚀 Envoyer le commentaire";
