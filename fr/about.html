@@ -241,7 +241,7 @@
             <div class="border-t pt-6" style="border-color: var(--card-border);">
                 <h2 class="text-lg font-bold mb-2" style="color: var(--text);">Une invitation</h2>
                 <p class="text-sm sm:text-base leading-relaxed muted">
-                    Vous avez une question, une idée de fonctionnalité ou un problème avec un outil ? Contactez-moi via le <a href="/contact.html" class="text-indigo-500 font-bold hover:underline">formulaire de contact</a>, ou laissez un message sur l’ <a href="/community.html" class="text-indigo-500 font-bold hover:underline">community board</a>. Je suis seul à gérer le site : je ne pourrai peut-être pas répondre dans l’heure, mais je répondrai. C’est une promesse que je tiens depuis le premier jour.
+                    Vous avez une question, une idée de fonctionnalité ou un problème avec un outil ? Contactez-moi via le <a href="/contact.html" class="text-indigo-500 font-bold hover:underline">formulaire de contact</a>, ou laissez un message sur l’ <a href="/community.html" class="text-indigo-500 font-bold hover:underline">espace communautaire</a>. Je suis seul à gérer le site : je ne pourrai peut-être pas répondre dans l’heure, mais je répondrai. C’est une promesse que je tiens depuis le premier jour.
                 </p>
             </div>
 
@@ -295,34 +295,34 @@
                 <div class="lg:col-span-4">
                     <h3>Outils populaires</h3>
                     <div class="grid grid-cols-2 gap-3 text-sm">
-                        <a href="/typing-test.html">Typing Speed Test</a>
+                        <a href="/typing-test.html">Test de vitesse de frappe</a>
                         <div class="flex items-start mt-0.5"> 
                             <a href="/premium.html" class="link-premium-gold" aria-label="Visit the Premium Store">
                                 <span class="star-icon">⭐</span> Premium
                             </a>
                         </div>
                         <a href="/prompt-studio.html">AI Prompt Studio</a>
-                        <a href="/image-compressor.html">Image Compressor</a>
-                        <a href="/text-suite.html">Text &amp; Word Suite</a>
-                        <a href="/grammar-checker.html">Grammar Checker</a>
+                        <a href="/image-compressor.html">Compresseur d’images</a>
+                        <a href="/text-suite.html">Outils de texte et de mots</a>
+                        <a href="/grammar-checker.html">Correcteur grammatical</a>
                         <a href="/sip-calculator.html">SIP Calculator</a>
-                        <a href="/fee-calculator.html">Fee Calculator</a>
+                        <a href="/fee-calculator.html">Calculateur de frais</a>
                         <a href="/json-formatter.html">JSON Formatter</a>
                         <a href="/loan-emi.html">Loan EMI Calc</a>
-                        <a href="/qr-code-generator.html">QR Code Gen</a>
+                        <a href="/qr-code-generator.html">Générateur de QR codes</a>
                         <a href="/base64-tool.html">Base64 Tool</a>
-                        <a href="/unit-converter.html">Unit Converter</a>
-                        <a href="/password-generator.html">Password Gen</a>
-                        <a href="/article-outline.html">Article Outline</a>
+                        <a href="/unit-converter.html">Convertisseur d’unités</a>
+                        <a href="/password-generator.html">Générateur de mots de passe</a>
+                        <a href="/article-outline.html">Plan d’article</a>
                         <a href="/ai-bio-generator.html">AI Bio Generator</a>
-                        <a href="/love-calculator.html">Love Calculator</a>
-                        <a href="/cv-maker.html">Resume Builder</a> 
+                        <a href="/love-calculator.html">Calculateur d’affinité</a>
+                        <a href="/cv-maker.html">Créateur de CV</a> 
                         <a href="/text-summarizer.html">AI Summarizer</a>
-                        <a href="/color-converter.html">Color Converter</a>
+                        <a href="/color-converter.html">Convertisseur de couleurs</a>
                         <a href="/math-sprint.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Math Sprint Game</a>
                         <a href="/wordstorm.html" class="footer-game-link"><span aria-hidden="true">⭐</span> WordStorm Game</a>
-                        <a href="/reaction-time-test.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Reaction Test</a>
-                        <a href="/word-scramble.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Word Scramble</a>
+                        <a href="/reaction-time-test.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Test de réflexes</a>
+                        <a href="/word-scramble.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Mots mélangés</a>
                     </div>
                 </div>
 
@@ -377,7 +377,7 @@
             
             var btn = document.getElementById('themeToggle');
             if (btn) {
-                btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+                btn.setAttribute('aria-label', theme === 'dark' ? 'Passer en mode clair' : 'Passer en mode sombre');
                 btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
             }
         }
@@ -481,37 +481,37 @@
                         <label for="targetPageId" class="block text-xs font-bold uppercase tracking-wider muted mb-1">2. Choisissez un outil ou un jeu *</label>
                         <select id="targetPageId" name="targetPageId" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
                             <optgroup label="🎮 Jeux dans le navigateur">
-                                <option value="wordstorm">WordStorm Game (Games)</option>
-                                <option value="typing-test">Typing Speed Test (Games)</option>
-                                <option value="reaction-time-test">Reaction Time Test (Games)</option>
-                                <option value="word-scramble">Word Scramble (Games)</option>
-                                <option value="math-sprint">Math Sprint (Games)</option>
+                                <option value="wordstorm">WordStorm Game (Jeux)</option>
+                                <option value="typing-test">Test de vitesse de frappe (Jeux)</option>
+                                <option value="reaction-time-test">Reaction Time Test (Jeux)</option>
+                                <option value="word-scramble">Mots mélangés (Jeux)</option>
+                                <option value="math-sprint">Math Sprint (Jeux)</option>
                             </optgroup>
                             <optgroup label="🧰 Outils gratuits et IA">
-                                <option value="cv-maker">Créateur de CV Maker (Free Tools)</option>
-                                <option value="image-compressor">Image Compressor (Free Tools)</option>
-                                <option value="grammar-checker">Grammar Checker (Free Tools)</option>
-                                <option value="text-suite">Text &amp; Word Suite (Free Tools)</option>
-                                <option value="prompt-studio">AI Prompt Studio (Free Tools)</option>
-                                <option value="ai-bio-generator">AI Bio Generator (Free Tools)</option>
-                                <option value="article-outline">Article Outline Gen (Free Tools)</option>
-                                <option value="text-summarizer">AI Text Summarizer (Free Tools)</option>
-                                <option value="json-formatter">JSON Formatter (Free Tools)</option>
-                                <option value="base64-tool">Base64 Tool (Free Tools)</option>
-                                <option value="color-converter">Color Converter (Free Tools)</option>
-                                <option value="qr-code-generator">QR Code Gen (Free Tools)</option>
-                                <option value="password-generator">Password Gen (Free Tools)</option>
-                                <option value="unit-converter">Unit Converter (Free Tools)</option>
-                                <option value="sip-calculator">SIP Calculator (Free Tools)</option>
-                                <option value="loan-emi">Loan EMI Calc (Free Tools)</option>
-                                <option value="fee-calculator">Fee Calculators (Free Tools)</option>
+                                <option value="cv-maker">Créateur de CV Maker (Outils gratuits)</option>
+                                <option value="image-compressor">Compresseur d’images (Outils gratuits)</option>
+                                <option value="grammar-checker">Correcteur grammatical (Outils gratuits)</option>
+                                <option value="text-suite">Outils de texte et de mots (Outils gratuits)</option>
+                                <option value="prompt-studio">AI Prompt Studio (Outils gratuits)</option>
+                                <option value="ai-bio-generator">AI Bio Generator (Outils gratuits)</option>
+                                <option value="article-outline">Plan d’article Gen (Outils gratuits)</option>
+                                <option value="text-summarizer">AI Text Summarizer (Outils gratuits)</option>
+                                <option value="json-formatter">JSON Formatter (Outils gratuits)</option>
+                                <option value="base64-tool">Base64 Tool (Outils gratuits)</option>
+                                <option value="color-converter">Convertisseur de couleurs (Outils gratuits)</option>
+                                <option value="qr-code-generator">Générateur de QR codes (Outils gratuits)</option>
+                                <option value="password-generator">Générateur de mots de passe (Outils gratuits)</option>
+                                <option value="unit-converter">Convertisseur d’unités (Outils gratuits)</option>
+                                <option value="sip-calculator">SIP Calculator (Outils gratuits)</option>
+                                <option value="loan-emi">Loan EMI Calc (Outils gratuits)</option>
+                                <option value="fee-calculator">Calculateur de fraiss (Outils gratuits)</option>
                             </optgroup>
                             <optgroup label="⭐ Packs premium">
-                                <option value="ats-resume-pack">ATS Resume Pack (Premium Products)</option>
-                                <option value="excel-bundle">Excel Bundle (Premium Products)</option>
-                                <option value="freelance-contract-kit">Contract Kit (Premium Products)</option>
-                                <option value="ai-prompt-vault">AI Prompt Vault (Premium Products)</option>
-				<option value="monthly-budget-tracker">Monthly Household Budget Tracker (Premium Products)</option>
+                                <option value="ats-resume-pack">ATS Resume Pack (Produits premium)</option>
+                                <option value="excel-bundle">Excel Bundle (Produits premium)</option>
+                                <option value="freelance-contract-kit">Contract Kit (Produits premium)</option>
+                                <option value="ai-prompt-vault">AI Prompt Vault (Produits premium)</option>
+				<option value="monthly-budget-tracker">Monthly Household Budget Tracker (Produits premium)</option>
                             </optgroup>
                         </select>
                     </div>
