@@ -196,7 +196,6 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 - Corrected both English alternate targets. The sitemap entries were already correct.
 
 ### Automated test result
-<badge> 
 - Workflow: `Multilingual static validation`
 - Run: `46151537792`
 - Result: **PASSED**
