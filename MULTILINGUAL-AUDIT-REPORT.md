@@ -54,19 +54,29 @@ The audited public-page samples consistently contained canonical URLs, the four 
 
 No hardcoded English form-language payload was identified in these inspected scripts.
 
-## 5. Remaining items requiring follow-up
+## 5. Follow-up fixes completed in the final maintenance pass
 
-1. **Blog article breadcrumbs:** The blog article templates inspected in English, Spanish, and French have JSON-LD but do not yet include BreadcrumbList markup. Add localized BreadcrumbList data to all 24 blog article pages in all three language folders. The blog index pages already have breadcrumbs.
-2. **Deep schema consistency:** Complete a field-by-field JSON-LD validation for every blog article, including top-level `url` and `inLanguage`. JSON-LD presence alone does not prove those fields are correct.
-3. **Campaign start date:** The Event JSON-LD currently specifies `2026-12-05` as the start date. Confirm this against the approved campaign schedule before changing it.
-4. **Runtime testing:** External destinations, Google Apps Script endpoint behavior, and actual mobile/desktop rendering should be smoke-tested in a browser after deployment. Static repository inspection cannot certify those live behaviors.
+A second, deeper inspection found that the shared language-switcher assets existed but were not consistently included by the page HTML. The earlier audit checked asset existence, not page-level loading, and its initial conclusion that no switcher change was required was incorrect.
 
-## 6. Final status
+The final maintenance pass updated all 168 public HTML pages (56 English, 56 Spanish, 56 French):
+- Added the root-relative `/lang-switcher.css` stylesheet reference.
+- Added the deferred `/lang-switcher.js` script reference.
+- Replaced hardcoded English feedback payload language values with the page's actual `document.documentElement.lang` value where found.
+- For all 24 blog articles in each language (72 article pages), added localized BreadcrumbList JSON-LD and ensured the Article JSON-LD includes the page's canonical `url` and correct `inLanguage`.
+
+The five noindex confirmation pages and the Google verification HTML remain excluded from the public-page switcher pass.
+
+## 6. Remaining items requiring follow-up
+
+1. **Campaign start date:** The Event JSON-LD currently specifies `2026-12-05` as the start date. Confirm this against the approved campaign schedule before changing it.
+2. **Runtime testing:** External destinations, Google Apps Script endpoint behavior, and actual mobile/desktop rendering should be smoke-tested in a browser after deployment. Static repository inspection cannot certify those live behaviors.
+
+## 7. Final status
 
 - Public page mapping: **56/56 pages available in English, Spanish, and French**
 - Sitemap: **168 public URLs**
 - Broken local paths found in the audited HTML inventory: **0**
-- Shared language-switcher assets: **present**
+- Shared language-switcher assets: **linked on all 168 public HTML pages**
 - Community form language handling: **dynamic**
 - Targeted metadata and structured-data fixes: **committed to the audit branch**
-- Remaining SEO work: **blog article BreadcrumbList and complete per-page JSON-LD field validation**
+- Blog article schema: **72/72 localized article pages updated with BreadcrumbList, canonical URL, and inLanguage**

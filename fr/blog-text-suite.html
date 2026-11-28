@@ -588,31 +588,33 @@
 
     <!-- Article JSON-LD Schema -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "The Power of Word Counting",
-      "description": "Que vous rédigiez un tweet ou un article SEO, le nombre de caractères et de mots compte. Découvrez comment mesurer instantanément le volume et le temps de lecture avec notre outil gratuit.",
-      "author": {
-        "@type": "Organization",
-        "name": "MyToolX Team"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "MyToolX",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://mytoolx.org/og-image.png"
-        }
-      },
-      "datePublished": "2026-11-08",
-      "dateModified": "2026-11-08",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://mytoolx.org/fr/blog-text-suite.html"
-      }
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Power of Word Counting",
+  "description": "Que vous rédigiez un tweet ou un article SEO, le nombre de caractères et de mots compte. Découvrez comment mesurer instantanément le volume et le temps de lecture avec notre outil gratuit.",
+  "author": {
+    "@type": "Organization",
+    "name": "MyToolX Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MyToolX",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mytoolx.org/og-image.png"
     }
-    </script>
+  },
+  "datePublished": "2026-11-08",
+  "dateModified": "2026-11-08",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mytoolx.org/fr/blog-text-suite.html"
+  },
+  "url": "https://mytoolx.org/fr/blog-text-suite.html",
+  "inLanguage": "fr"
+}
+</script>
 <!-- ============================================================ -->
 <!-- FEEDBACK MODAL JS -->
 <!-- ============================================================ -->
@@ -719,7 +721,7 @@
             authorName: authorName,
             country: country,
             recommendation: "",
-            language: "en"
+            language: document.documentElement.lang || "en"
         };
 
         if (formType === "suggestion") {
@@ -777,5 +779,31 @@
     }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://mytoolx.org/fr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mytoolx.org/fr/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "✍️ L’importance du comptage des mots | Guide MyToolX",
+      "item": "https://mytoolx.org/fr/blog-text-suite.html"
+    }
+  ]
+}
+</script>
 </body>
 </html>

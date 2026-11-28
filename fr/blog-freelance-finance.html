@@ -597,31 +597,33 @@
 
     <!-- Article JSON-LD Schema -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Understanding Freelance Fees",
-      "description": "Stripe et PayPal prélèvent des frais. Apprenez à calculer votre marge réelle et à utiliser notre calculateur pour ajuster vos devis au montant brut nécessaire.",
-      "author": {
-        "@type": "Organization",
-        "name": "MyToolX Team"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "MyToolX",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://mytoolx.org/og-image.png"
-        }
-      },
-      "datePublished": "2026-11-08",
-      "dateModified": "2026-11-08",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://mytoolx.org/fr/blog-freelance-finance.html"
-      }
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Understanding Freelance Fees",
+  "description": "Stripe et PayPal prélèvent des frais. Apprenez à calculer votre marge réelle et à utiliser notre calculateur pour ajuster vos devis au montant brut nécessaire.",
+  "author": {
+    "@type": "Organization",
+    "name": "MyToolX Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MyToolX",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mytoolx.org/og-image.png"
     }
-    </script>
+  },
+  "datePublished": "2026-11-08",
+  "dateModified": "2026-11-08",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mytoolx.org/fr/blog-freelance-finance.html"
+  },
+  "url": "https://mytoolx.org/fr/blog-freelance-finance.html",
+  "inLanguage": "fr"
+}
+</script>
 <!-- ============================================================ -->
 <!-- FEEDBACK MODAL JS -->
 <!-- ============================================================ -->
@@ -728,7 +730,7 @@
             authorName: authorName,
             country: country,
             recommendation: "",
-            language: "en"
+            language: document.documentElement.lang || "en"
         };
 
         if (formType === "suggestion") {
@@ -784,6 +786,32 @@
             submitBtn.textContent = "🚀 Envoyer le commentaire";
         }
     }
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://mytoolx.org/fr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mytoolx.org/fr/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "💰 Comprendre les frais des freelances | Guide MyToolX",
+      "item": "https://mytoolx.org/fr/blog-freelance-finance.html"
+    }
+  ]
+}
 </script>
 </body>
 </html>

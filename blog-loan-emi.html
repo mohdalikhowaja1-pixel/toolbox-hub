@@ -191,6 +191,7 @@
 <!-- GLOBAL LANGUAGE SWITCHER -->
     <link rel="stylesheet" href="lang-switcher.css">
     <script src="lang-switcher.js" defer></script>
+    <link rel="stylesheet" href="/lang-switcher.css">
 </head>
 <body class="font-sans min-h-screen flex flex-col justify-between">
 
@@ -598,31 +599,33 @@
 
     <!-- Article JSON-LD Schema -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Demystifying Loan EMIs",
-      "description": "Before taking a mortgage, know your exact EMI. Learn how interest rates affect your total monthly outflow and use our free EMI calculator to plan safely.",
-      "author": {
-        "@type": "Organization",
-        "name": "MyToolX Team"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "MyToolX",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://mytoolx.org/og-image.png"
-        }
-      },
-      "datePublished": "2026-11-08",
-      "dateModified": "2026-11-08",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://mytoolx.org/blog-loan-emi.html"
-      }
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Demystifying Loan EMIs",
+  "description": "Before taking a mortgage, know your exact EMI. Learn how interest rates affect your total monthly outflow and use our free EMI calculator to plan safely.",
+  "author": {
+    "@type": "Organization",
+    "name": "MyToolX Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MyToolX",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mytoolx.org/og-image.png"
     }
-    </script>
+  },
+  "datePublished": "2026-11-08",
+  "dateModified": "2026-11-08",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mytoolx.org/blog-loan-emi.html"
+  },
+  "url": "https://mytoolx.org/blog-loan-emi.html",
+  "inLanguage": "en"
+}
+</script>
 <!-- ============================================================ -->
 <!-- FEEDBACK MODAL JS -->
 <!-- ============================================================ -->
@@ -729,7 +732,7 @@
             authorName: authorName,
             country: country,
             recommendation: "",
-            language: "en"
+            language: document.documentElement.lang || "en"
         };
 
         if (formType === "suggestion") {
@@ -787,5 +790,32 @@
     }
 </script>
 
+<script src="/lang-switcher.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mytoolx.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mytoolx.org/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "🏦 Demystifying Loan EMIs | MyToolX Guide",
+      "item": "https://mytoolx.org/blog-loan-emi.html"
+    }
+  ]
+}
+</script>
 </body>
 </html>

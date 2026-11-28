@@ -1587,7 +1587,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                 authorName: authorName,
                 country: country,
                 recommendation: "",
-                language: "en"
+                language: document.documentElement.lang || "en"
             };
 
             if (formType === "suggestion") {

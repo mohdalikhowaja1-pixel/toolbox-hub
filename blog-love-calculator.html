@@ -190,6 +190,7 @@
 <!-- GLOBAL LANGUAGE SWITCHER -->
     <link rel="stylesheet" href="lang-switcher.css">
     <script src="lang-switcher.js" defer></script>
+    <link rel="stylesheet" href="/lang-switcher.css">
 </head>
 <body class="font-sans min-h-screen flex flex-col justify-between">
 
@@ -585,31 +586,33 @@
 
     <!-- Article JSON-LD Schema -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "The Science of Love Compatibility",
-      "description": "Have you ever felt an instant spark with someone? Explore how Pythagorean numerology analyzes your names with our fun, free love calculator.",
-      "author": {
-        "@type": "Organization",
-        "name": "MyToolX Team"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "MyToolX",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://mytoolx.org/og-image.png"
-        }
-      },
-      "datePublished": "2026-11-08",
-      "dateModified": "2026-11-08",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://mytoolx.org/blog-love-calculator.html"
-      }
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Science of Love Compatibility",
+  "description": "Have you ever felt an instant spark with someone? Explore how Pythagorean numerology analyzes your names with our fun, free love calculator.",
+  "author": {
+    "@type": "Organization",
+    "name": "MyToolX Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MyToolX",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mytoolx.org/og-image.png"
     }
-    </script>
+  },
+  "datePublished": "2026-11-08",
+  "dateModified": "2026-11-08",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mytoolx.org/blog-love-calculator.html"
+  },
+  "url": "https://mytoolx.org/blog-love-calculator.html",
+  "inLanguage": "en"
+}
+</script>
 <!-- ============================================================ -->
 <!-- FEEDBACK MODAL JS -->
 <!-- ============================================================ -->
@@ -716,7 +719,7 @@
             authorName: authorName,
             country: country,
             recommendation: "",
-            language: "en"
+            language: document.documentElement.lang || "en"
         };
 
         if (formType === "suggestion") {
@@ -774,5 +777,32 @@
     }
 </script>
 
+<script src="/lang-switcher.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mytoolx.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mytoolx.org/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "❤️ The Science of Love Compatibility | MyToolX",
+      "item": "https://mytoolx.org/blog-love-calculator.html"
+    }
+  ]
+}
+</script>
 </body>
 </html>

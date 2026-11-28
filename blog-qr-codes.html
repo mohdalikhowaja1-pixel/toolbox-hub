@@ -189,6 +189,7 @@
 <!-- GLOBAL LANGUAGE SWITCHER -->
     <link rel="stylesheet" href="lang-switcher.css">
     <script src="lang-switcher.js" defer></script>
+    <link rel="stylesheet" href="/lang-switcher.css">
 </head>
 <body class="font-sans min-h-screen flex flex-col justify-between">
 
@@ -599,31 +600,33 @@
 
     <!-- Article JSON-LD Schema -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Creating Static QR Codes",
-      "description": "QR codes bridge physical and digital worlds. Learn how to generate static codes that never expire and contain zero tracking using our free QR generator.",
-      "author": {
-        "@type": "Organization",
-        "name": "MyToolX Team"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "MyToolX",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://mytoolx.org/og-image.png"
-        }
-      },
-      "datePublished": "2026-11-08",
-      "dateModified": "2026-11-08",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://mytoolx.org/blog-qr-codes.html"
-      }
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Creating Static QR Codes",
+  "description": "QR codes bridge physical and digital worlds. Learn how to generate static codes that never expire and contain zero tracking using our free QR generator.",
+  "author": {
+    "@type": "Organization",
+    "name": "MyToolX Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MyToolX",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mytoolx.org/og-image.png"
     }
-    </script>
+  },
+  "datePublished": "2026-11-08",
+  "dateModified": "2026-11-08",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mytoolx.org/blog-qr-codes.html"
+  },
+  "url": "https://mytoolx.org/blog-qr-codes.html",
+  "inLanguage": "en"
+}
+</script>
 <!-- ============================================================ -->
 <!-- FEEDBACK MODAL JS -->
 <!-- ============================================================ -->
@@ -730,7 +733,7 @@
             authorName: authorName,
             country: country,
             recommendation: "",
-            language: "en"
+            language: document.documentElement.lang || "en"
         };
 
         if (formType === "suggestion") {
@@ -788,5 +791,32 @@
     }
 </script>
 
+<script src="/lang-switcher.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mytoolx.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mytoolx.org/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "📱 Creating Static QR Codes | MyToolX Guide",
+      "item": "https://mytoolx.org/blog-qr-codes.html"
+    }
+  ]
+}
+</script>
 </body>
 </html>

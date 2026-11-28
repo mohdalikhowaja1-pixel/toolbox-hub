@@ -589,31 +589,33 @@
 
     <!-- Article JSON-LD Schema -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Converting Web Colors",
-      "description": "Los diseñadores cambian constantemente entre HEX, RGB y nombres CSS. Aprende cómo funciona la conversión de colores y cómo utilizar nuestro conversor gratuito.",
-      "author": {
-        "@type": "Organization",
-        "name": "MyToolX Team"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "MyToolX",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://mytoolx.org/og-image.png"
-        }
-      },
-      "datePublished": "2026-11-08",
-      "dateModified": "2026-11-08",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://mytoolx.org/es/blog-color-tools.html"
-      }
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Converting Web Colors",
+  "description": "Los diseñadores cambian constantemente entre HEX, RGB y nombres CSS. Aprende cómo funciona la conversión de colores y cómo utilizar nuestro conversor gratuito.",
+  "author": {
+    "@type": "Organization",
+    "name": "MyToolX Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MyToolX",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mytoolx.org/og-image.png"
     }
-    </script>
+  },
+  "datePublished": "2026-11-08",
+  "dateModified": "2026-11-08",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mytoolx.org/es/blog-color-tools.html"
+  },
+  "url": "https://mytoolx.org/es/blog-color-tools.html",
+  "inLanguage": "es"
+}
+</script>
 <!-- ============================================================ -->
 <!-- FEEDBACK MODAL JS -->
 <!-- ============================================================ -->
@@ -720,7 +722,7 @@
             authorName: authorName,
             country: country,
             recommendation: "",
-            language: "en"
+            language: document.documentElement.lang || "en"
         };
 
         if (formType === "suggestion") {
@@ -776,6 +778,32 @@
             submitBtn.textContent = "🚀 Enviar comentario";
         }
     }
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://mytoolx.org/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mytoolx.org/es/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "🎨 Cómo convertir colores web | Guía MyToolX",
+      "item": "https://mytoolx.org/es/blog-color-tools.html"
+    }
+  ]
+}
 </script>
 </body>
 </html>

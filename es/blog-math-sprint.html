@@ -138,31 +138,33 @@
 
     <!-- Article JSON-LD Schema -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Por qué el cálculo mental diario mantiene tu mente ágil",
-      "description": "Learn how a simple daily mental math workout keeps your mind fresh and improves daily productivity.",
-      "author": {
-        "@type": "Organization",
-        "name": "MyToolX Team"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "MyToolX",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://mytoolx.org/og-image.png"
-        }
-      },
-      "datePublished": "2026-11-10",
-      "dateModified": "2026-11-10",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://mytoolx.org/es/blog-math-sprint.html"
-      }
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Por qué el cálculo mental diario mantiene tu mente ágil",
+  "description": "Learn how a simple daily mental math workout keeps your mind fresh and improves daily productivity.",
+  "author": {
+    "@type": "Organization",
+    "name": "MyToolX Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MyToolX",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mytoolx.org/og-image.png"
     }
-    </script>
+  },
+  "datePublished": "2026-11-10",
+  "dateModified": "2026-11-10",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mytoolx.org/es/blog-math-sprint.html"
+  },
+  "url": "https://mytoolx.org/es/blog-math-sprint.html",
+  "inLanguage": "es"
+}
+</script>
 <style>
     /* --- FEEDBACK MODAL CSS --- */
     .mtx-modal-backdrop {
@@ -719,7 +721,7 @@
             authorName: authorName,
             country: country,
             recommendation: "",
-            language: "en"
+            language: document.documentElement.lang || "en"
         };
 
         if (formType === "suggestion") {
@@ -777,5 +779,31 @@
     }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://mytoolx.org/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mytoolx.org/es/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Por qué el cálculo mental diario mantiene tu mente ágil 🧠 | MyToolX",
+      "item": "https://mytoolx.org/es/blog-math-sprint.html"
+    }
+  ]
+}
+</script>
 </body>
 </html>

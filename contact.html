@@ -128,6 +128,7 @@
 <!-- GLOBAL LANGUAGE SWITCHER -->
     <link rel="stylesheet" href="lang-switcher.css">
     <script src="lang-switcher.js" defer></script>
+    <link rel="stylesheet" href="/lang-switcher.css">
 </head>
 <body class="font-sans min-h-screen flex flex-col justify-between">
 
@@ -594,7 +595,7 @@
                 authorName: authorName,
                 country: country,
                 recommendation: "",
-                language: "en"
+                language: document.documentElement.lang || "en"
             };
 
             if (formType === "suggestion") {
@@ -729,5 +730,6 @@
     }
     </script>
 
+<script src="/lang-switcher.js" defer></script>
 </body>
 </html>

@@ -191,34 +191,37 @@
 
     <!-- Article JSON-LD Schema -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "What Is Average Human Reaction Time? How to Test and Improve Your Reflexes",
-      "description": "Find out what the average human reaction time is in milliseconds, what slows your reflexes down, and how to train your brain for faster responses.",
-      "author": {
-        "@type": "Organization",
-        "name": "MyToolX Team"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "MyToolX",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://mytoolx.org/og-image.png"
-        }
-      },
-      "datePublished": "2026-11-14",
-      "dateModified": "2026-11-14",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://mytoolx.org/blog-reaction-time.html"
-      }
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Is Average Human Reaction Time? How to Test and Improve Your Reflexes",
+  "description": "Find out what the average human reaction time is in milliseconds, what slows your reflexes down, and how to train your brain for faster responses.",
+  "author": {
+    "@type": "Organization",
+    "name": "MyToolX Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MyToolX",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mytoolx.org/og-image.png"
     }
-    </script>
+  },
+  "datePublished": "2026-11-14",
+  "dateModified": "2026-11-14",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mytoolx.org/blog-reaction-time.html"
+  },
+  "url": "https://mytoolx.org/blog-reaction-time.html",
+  "inLanguage": "en"
+}
+</script>
 <!-- GLOBAL LANGUAGE SWITCHER -->
     <link rel="stylesheet" href="lang-switcher.css">
     <script src="lang-switcher.js" defer></script>
+    <link rel="stylesheet" href="/lang-switcher.css">
 </head>
 <body class="font-sans min-h-screen flex flex-col justify-between">
 
@@ -744,7 +747,7 @@
             authorName: authorName,
             country: country,
             recommendation: "",
-            language: "en"
+            language: document.documentElement.lang || "en"
         };
 
         if (formType === "suggestion") {
@@ -802,5 +805,32 @@
     }
 </script>
 
+<script src="/lang-switcher.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mytoolx.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mytoolx.org/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "What Is Average Human Reaction Time? 🎯 | MyToolX",
+      "item": "https://mytoolx.org/blog-reaction-time.html"
+    }
+  ]
+}
+</script>
 </body>
 </html>

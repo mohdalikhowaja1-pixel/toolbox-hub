@@ -601,31 +601,33 @@
 
     <!-- Article JSON-LD Schema -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Planning an Esquema de artículos",
-      "description": "Un esquema es la estructura de un artículo. Aprende a organizar los encabezados H1, H2 y H3 para SEO y utiliza nuestro generador gratuito de esquemas.",
-      "author": {
-        "@type": "Organization",
-        "name": "MyToolX Team"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "MyToolX",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://mytoolx.org/og-image.png"
-        }
-      },
-      "datePublished": "2026-11-08",
-      "dateModified": "2026-11-08",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://mytoolx.org/es/blog-content-outline.html"
-      }
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Planning an Esquema de artículos",
+  "description": "Un esquema es la estructura de un artículo. Aprende a organizar los encabezados H1, H2 y H3 para SEO y utiliza nuestro generador gratuito de esquemas.",
+  "author": {
+    "@type": "Organization",
+    "name": "MyToolX Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MyToolX",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mytoolx.org/og-image.png"
     }
-    </script>
+  },
+  "datePublished": "2026-11-08",
+  "dateModified": "2026-11-08",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mytoolx.org/es/blog-content-outline.html"
+  },
+  "url": "https://mytoolx.org/es/blog-content-outline.html",
+  "inLanguage": "es"
+}
+</script>
 <!-- ============================================================ -->
 <!-- FEEDBACK MODAL JS -->
 <!-- ============================================================ -->
@@ -732,7 +734,7 @@
             authorName: authorName,
             country: country,
             recommendation: "",
-            language: "en"
+            language: document.documentElement.lang || "en"
         };
 
         if (formType === "suggestion") {
@@ -788,6 +790,32 @@
             submitBtn.textContent = "🚀 Enviar comentario";
         }
     }
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://mytoolx.org/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mytoolx.org/es/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "📑 Cómo planificar el esquema de un artículo | Guía MyToolX",
+      "item": "https://mytoolx.org/es/blog-content-outline.html"
+    }
+  ]
+}
 </script>
 </body>
 </html>

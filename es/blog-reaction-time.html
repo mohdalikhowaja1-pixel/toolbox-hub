@@ -191,31 +191,33 @@
 
     <!-- Article JSON-LD Schema -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "What Is Average Human Tiempo de reacción? How to Test and Improve Your Reflexes",
-      "description": "Descubre cuál es el tiempo de reacción humano medio en milisegundos, qué ralentiza tus reflejos y cómo entrenar el cerebro para responder más rápido.",
-      "author": {
-        "@type": "Organization",
-        "name": "MyToolX Team"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "MyToolX",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://mytoolx.org/og-image.png"
-        }
-      },
-      "datePublished": "2026-11-14",
-      "dateModified": "2026-11-14",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://mytoolx.org/es/blog-reaction-time.html"
-      }
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Is Average Human Tiempo de reacción? How to Test and Improve Your Reflexes",
+  "description": "Descubre cuál es el tiempo de reacción humano medio en milisegundos, qué ralentiza tus reflejos y cómo entrenar el cerebro para responder más rápido.",
+  "author": {
+    "@type": "Organization",
+    "name": "MyToolX Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MyToolX",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mytoolx.org/og-image.png"
     }
-    </script>
+  },
+  "datePublished": "2026-11-14",
+  "dateModified": "2026-11-14",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mytoolx.org/es/blog-reaction-time.html"
+  },
+  "url": "https://mytoolx.org/es/blog-reaction-time.html",
+  "inLanguage": "es"
+}
+</script>
 <!-- GLOBAL LANGUAGE SWITCHER -->
     <link rel="stylesheet" href="/lang-switcher.css">
     <script src="/lang-switcher.js" defer></script>
@@ -744,7 +746,7 @@
             authorName: authorName,
             country: country,
             recommendation: "",
-            language: "en"
+            language: document.documentElement.lang || "en"
         };
 
         if (formType === "suggestion") {
@@ -802,5 +804,31 @@
     }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://mytoolx.org/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mytoolx.org/es/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "¿Cuál es el tiempo de reacción humano promedio? Cómo medir y mejorar tus reflejos | MyToolX",
+      "item": "https://mytoolx.org/es/blog-reaction-time.html"
+    }
+  ]
+}
+</script>
 </body>
 </html>

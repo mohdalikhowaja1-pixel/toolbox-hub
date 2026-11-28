@@ -186,31 +186,33 @@
 
     <!-- Article JSON-LD Schema -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "How Mots mélangés Games Boost Memory, Spelling, and Vocabulary",
-      "description": "Discover why 60-second word scramble puzzles sharpen pattern recognition, expand vocabulary, and improve focus.",
-      "author": {
-        "@type": "Organization",
-        "name": "MyToolX Team"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "MyToolX",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://mytoolx.org/og-image.png"
-        }
-      },
-      "datePublished": "2026-11-14",
-      "dateModified": "2026-11-14",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://mytoolx.org/fr/blog-word-scramble.html"
-      }
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How Mots mélangés Games Boost Memory, Spelling, and Vocabulary",
+  "description": "Discover why 60-second word scramble puzzles sharpen pattern recognition, expand vocabulary, and improve focus.",
+  "author": {
+    "@type": "Organization",
+    "name": "MyToolX Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MyToolX",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mytoolx.org/og-image.png"
     }
-    </script>
+  },
+  "datePublished": "2026-11-14",
+  "dateModified": "2026-11-14",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mytoolx.org/fr/blog-word-scramble.html"
+  },
+  "url": "https://mytoolx.org/fr/blog-word-scramble.html",
+  "inLanguage": "fr"
+}
+</script>
 <!-- GLOBAL LANGUAGE SWITCHER -->
     <link rel="stylesheet" href="/lang-switcher.css">
     <script src="/lang-switcher.js" defer></script>
@@ -707,7 +709,7 @@
             authorName: authorName,
             country: country,
             recommendation: "",
-            language: "en"
+            language: document.documentElement.lang || "en"
         };
 
         if (formType === "suggestion") {
@@ -765,5 +767,31 @@
     }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://mytoolx.org/fr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mytoolx.org/fr/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Comment les jeux de mots mélangés stimulent la mémoire, l’orthographe et le vocabulaire | MyToolX",
+      "item": "https://mytoolx.org/fr/blog-word-scramble.html"
+    }
+  ]
+}
+</script>
 </body>
 </html>

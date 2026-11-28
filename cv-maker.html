@@ -368,6 +368,7 @@
     <!-- GLOBAL LANGUAGE SWITCHER -->
     <link rel="stylesheet" href="lang-switcher.css">
     <script src="lang-switcher.js" defer></script>
+    <link rel="stylesheet" href="/lang-switcher.css">
 </head>
 <body class="font-sans min-h-screen flex flex-col justify-between">
 
@@ -1587,7 +1588,7 @@ MyToolX is a free collection of browser-based tools for writers, freelancers and
                 authorName: authorName,
                 country: country,
                 recommendation: "",
-                language: "en"
+                language: document.documentElement.lang || "en"
             };
 
             if (formType === "suggestion") {
@@ -1657,5 +1658,6 @@ MyToolX is a free collection of browser-based tools for writers, freelancers and
     </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
 
+<script src="/lang-switcher.js" defer></script>
 </body>
 </html>

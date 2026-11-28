@@ -585,31 +585,33 @@
 
     <!-- Article JSON-LD Schema -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "The Science of Love Compatibility",
-      "description": "Avez-vous déjà ressenti une connexion immédiate avec quelqu’un ? Découvrez comment la numérologie pythagoricienne analyse vos prénoms avec notre calculateur d’affinité gratuit et ludique.",
-      "author": {
-        "@type": "Organization",
-        "name": "MyToolX Team"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "MyToolX",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://mytoolx.org/og-image.png"
-        }
-      },
-      "datePublished": "2026-11-08",
-      "dateModified": "2026-11-08",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://mytoolx.org/fr/blog-love-calculator.html"
-      }
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Science of Love Compatibility",
+  "description": "Avez-vous déjà ressenti une connexion immédiate avec quelqu’un ? Découvrez comment la numérologie pythagoricienne analyse vos prénoms avec notre calculateur d’affinité gratuit et ludique.",
+  "author": {
+    "@type": "Organization",
+    "name": "MyToolX Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MyToolX",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mytoolx.org/og-image.png"
     }
-    </script>
+  },
+  "datePublished": "2026-11-08",
+  "dateModified": "2026-11-08",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mytoolx.org/fr/blog-love-calculator.html"
+  },
+  "url": "https://mytoolx.org/fr/blog-love-calculator.html",
+  "inLanguage": "fr"
+}
+</script>
 <!-- ============================================================ -->
 <!-- FEEDBACK MODAL JS -->
 <!-- ============================================================ -->
@@ -716,7 +718,7 @@
             authorName: authorName,
             country: country,
             recommendation: "",
-            language: "en"
+            language: document.documentElement.lang || "en"
         };
 
         if (formType === "suggestion") {
@@ -774,5 +776,31 @@
     }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://mytoolx.org/fr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mytoolx.org/fr/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "❤️ La science de la compatibilité amoureuse | MyToolX",
+      "item": "https://mytoolx.org/fr/blog-love-calculator.html"
+    }
+  ]
+}
+</script>
 </body>
 </html>
