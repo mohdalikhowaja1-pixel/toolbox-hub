@@ -858,19 +858,19 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
                     setTimeout(() => { 
                         closeFeedbackModal(); 
                         submitBtn.disabled = false; 
-                        submitBtn.textContent = "🚀 Submit Feedback"; 
+                        submitBtn.textContent = "🚀 Envoyer le commentaire"; 
                     }, 3000);
                 } else {
                     errorBox.textContent = result.message || "L’envoi a échoué.";
                     errorBox.classList.remove("hidden");
                     submitBtn.disabled = false;
-                    submitBtn.textContent = "🚀 Submit Feedback";
+                    submitBtn.textContent = "🚀 Envoyer le commentaire";
                 }
             } catch (err) {
                 errorBox.textContent = "Erreur réseau. Veuillez réessayer.";
                 errorBox.classList.remove("hidden");
                 submitBtn.disabled = false;
-                submitBtn.textContent = "🚀 Submit Feedback";
+                submitBtn.textContent = "🚀 Envoyer le commentaire";
             }
         }
     </script>
