@@ -104,3 +104,17 @@ The audit found several translated code identifiers in localized pages, includin
 Post-fix verification found no differences in the compared identifier/handler sequences across the 56 English/Spanish/French page triplets.
 
 This is structural source verification only. Browser execution, JavaScript runtime behavior, form submissions, app/game regression tests, mobile and dark-mode rendering, and complete native-language proofreading remain outstanding.
+
+
+## 10. Automated validation and CV maker hreflang fix — 2026-11-28
+
+Added a static validation script at `scripts/validate-multilingual.js` and a GitHub Actions workflow at `.github/workflows/multilingual-validation.yml`. The workflow runs on pushes and pull requests to `multilingual-expansion` only; it does not deploy the site.
+
+The first completed validation identified incorrect English hreflang targets in `es/cv-maker.html` and `fr/cv-maker.html`. Both now correctly point to `https://mytoolx.org/cv-maker.html`.
+
+**Automated result: PASSED**  
+Workflow run: [46151537792](https://github.com/mohdalikhowaja1-pixel/toolbox-hub/actions/runs/46151537792)
+
+The passing validator checked 168 unique sitemap URLs (56 per language), sitemap and page-level hreflang targets, canonical URLs, HTML language attributes, exactly one shared switcher CSS/JS reference per public page, and all 72 blog article pages for valid Article and BreadcrumbList JSON-LD with canonical-matching URLs and correct language values. It also compared code identifier sequences across the 24 blog article triplets.
+
+This does not replace browser/runtime tests, real form submissions, mobile/dark-mode checks, production HTTP checks, or full linguistic proofreading. The publishing branch was not changed.
