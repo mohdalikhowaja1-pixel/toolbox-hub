@@ -775,3 +775,60 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 2. Re-run article-wide structured-data, metadata, related-card and internal-link checks after editorial review.
 3. Then begin the 56 tool/application page families, preserving all functional logic and identifiers.
 4. Keep the development branch isolated; no merge, deployment or publishing-source change is authorized.
+
+
+## Editorial QA batch — final five article families and article milestone completion — 2026-11-28
+
+### Pages reviewed and corrected
+- Completed direct English-source comparison for the final five article families (ten localized HTML pages):
+  - Premium Bundles
+  - Math Sprint
+  - WordStorm
+  - Word Scramble
+  - Reaction Time
+- Premium Bundles:
+  - Localized the remaining Spanish/French social image alt text and shared footer privacy sentence.
+  - Corrected the Spanish feedback-modal typo “Cancelarar”.
+- Math Sprint:
+  - Localized the remaining English feedback form category label.
+  - Added localized Open Graph and Twitter image alt text.
+- WordStorm:
+  - Localized the feedback form category label and related Math Sprint guide card title.
+  - Added localized Open Graph and Twitter image alt text.
+  - Preserved English in-game sample phrases and world names where they are part of the English game content.
+- Word Scramble:
+  - Localized the feedback form category label and remaining English shared footer statements.
+  - Added localized Open Graph and Twitter image alt text.
+  - Preserved English letter-cluster examples and target-word examples because the game uses an English word corpus.
+- Reaction Time:
+  - Localized the feedback form category label.
+  - Added localized Open Graph and Twitter image alt text.
+- Corrected two French Article JSON-LD headline mismatches so the schema headline matches the visible H1: Word Scramble and Reaction Time.
+- Preserved game mechanics, game prompts/word corpus, calculations, identifiers, form values, event handlers and internal tool links.
+
+### Verification performed
+- Re-fetched all ten localized pages after edits.
+- Parsed both JSON-LD blocks on each page successfully (20 blocks total).
+- Confirmed Article JSON-LD headline matches the visible H1 on all ten pages after ignoring leading decorative emoji.
+- Targeted scans for the remaining English feedback category label, malformed Spanish cancel label, English shared footer copy and untranslated related-card title returned no matches.
+- Confirmed localized social image alt text is present on all ten pages with Open Graph images.
+- This is source-level editorial, metadata and JSON-LD validation. It is not browser/runtime testing, end-to-end game testing, full native-speaker certification, accessibility testing or live HTTP/indexability verification.
+
+### Key latest content commits in this batch
+- Spanish Premium Bundles: `42ef7186e4783f8021946275ca615f89b66c652b`
+- French Premium Bundles: `0b8175d889f276067177b492039311e00dd7faad`
+- Spanish Math Sprint: `e180672a82456d64ca1cd51c0f0b2dd9b6a190b3`
+- French Math Sprint: `edcf14254d80a21d8c46acd20f3bd6a7c4d751ef`
+- Spanish WordStorm: `fed144e46f1378dbb8578aae1af71fa15251cd0a`
+- French WordStorm: `4699a974c7c9246d364a7e34719d25150dfa651d`
+- Spanish Word Scramble: `17a12121da0f19715665c4682bd22f36bd6bd380`
+- French Word Scramble: `ca7ed052c59b1b532d7fad6650e81e9703fdda51`
+- Spanish Reaction Time: `555c681405837ef3dd73e5beb3131954622f1d6d`
+- French Reaction Time: `29a6a18b96ff8d7a1abf42a40a61c8ad179eaa8d`
+
+### Article editorial milestone
+- Direct English-source comparison has now been completed for all 24 article families in Spanish and French (48 localized article pages).
+- This milestone covers article body copy, examples, related cards, metadata/alt text, feedback form labels, shared footer copy and Article JSON-LD headline consistency.
+- It remains a source-level editorial review, not native-speaker certification or runtime/release approval.
+- Next major phase: begin the 56 tool/application page families, reviewing translated interface copy and SEO metadata while protecting all functional logic and identifiers.
+- Keep the development branch isolated. No merge, deployment or publishing-source change is authorized.
