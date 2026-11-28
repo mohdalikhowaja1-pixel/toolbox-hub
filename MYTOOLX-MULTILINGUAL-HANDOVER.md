@@ -285,3 +285,24 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 - Next action: confirm CI passes on the new head, then continue the localized schema/content QA without merging or deploying.
 
 - CI confirmation: [run 46163350548](https://github.com/mohdalikhowaja1-pixel/toolbox-hub/actions/runs/46163350548) completed successfully on the French headline-fix commit `c20fb52b262166157a4fb617a873fa2de3607bfa`. The Spanish fix also passed in [run 46163345416](https://github.com/mohdalikhowaja1-pixel/toolbox-hub/actions/runs/46163345416). These runs validate structure and schema consistency; they do not perform linguistic review.
+
+
+## Local preview / reported missing switcher and unstyled pages — 2026-11-28
+
+### Source diagnosis
+- Ali reported that the language switcher is missing on About and localized pages look like raw HTML when downloaded and run locally.
+- Re-fetched and inspected current `about.html`, `es/about.html`, and `fr/about.html` on `multilingual-expansion`, plus Spanish/French Grammar Checker and CV Maker samples.
+- About pages all contain a valid `#themeToggle` anchor, reciprocal hreflang entries, `/lang-switcher.css`, and deferred `/lang-switcher.js`. The shared script inserts the language control next to the theme button; it is not hard-coded into the HTML.
+- Localized samples use root-absolute assets such as `/styles.css`, `/lang-switcher.css`, and `/lang-switcher.js`. These are correct when served from the website root, but fail when HTML is opened directly with the `file://` protocol: leading-slash paths resolve from the filesystem root rather than the downloaded project. This explains both the missing injected language button and the raw/un-styled appearance during direct file opening. The same path pattern affects localized pages, not just About.
+- This is a local-preview serving issue, not proof of a production CSS/JS defect. Do not replace production root-absolute paths based only on a `file://` test.
+
+### Convenience fix
+- Added `preview-multilingual.bat` at repository root to start a local HTTP server from the repository root and open `http://127.0.0.1:8000/es/about.html`.
+- Commit: `98a90a7d5b63022f81ccbd424f19dcabdcbe38d6`.
+- Use the launcher from the extracted repository folder; keep the console window open while testing. It requires Python's Windows launcher (`py -3`) installed. Alternatively, run `py -3 -m http.server 8000` in the repository root and navigate to `http://127.0.0.1:8000/es/about.html`.
+
+### Scope and remaining checks
+- Source inspection confirmed the pattern in About, Grammar Checker, and CV Maker localized pages; this was not a visual/browser execution test. A full browser test of all 112 localized pages is still outstanding.
+- After the local server is running, test About language menu and CSS first, then check representative apps in both languages. If they still render raw over `http://127.0.0.1:8000/`, investigate missing CSS/script requests and browser console before editing app files.
+- Production branch and deployment settings unchanged. No merge or deployment performed.
+- Next action: continue QA in batches; check all localized pages for missing/duplicate theme controls, switcher assets, stylesheets, and page-specific CSS/script path defects; record browser results separately from static source checks.
