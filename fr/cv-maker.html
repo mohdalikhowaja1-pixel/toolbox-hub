@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<script>
+    (function() {
+        var saved = null;
+        try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+    })();
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <!-- PRIMARY SEO -->
+    <title>Créateur de CV gratuit compatible ATS | MyToolX</title>
+    <meta name="description" content="Créez un CV professionnel compatible ATS avec ce créateur en ligne gratuit. Personnalisez votre CV et préparez un PDF soigné sans créer de compte.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://mytoolx.org/fr/cv-maker.html">
+
+    <!-- HREFLANG -->
+    <link rel="alternate" hreflang="en" href="https://mytoolx.org/fr/cv-maker.html">
+    <link rel="alternate" hreflang="es" href="https://mytoolx.org/es/cv-maker.html">
+    <link rel="alternate" hreflang="fr" href="https://mytoolx.org/fr/cv-maker.html">
+    <link rel="alternate" hreflang="x-default" href="https://mytoolx.org/cv-maker.html">
+
+    <!-- ADSENSE ACCOUNT META -->
+    <meta name="google-adsense-account" content="ca-pub-3410254230554312">
+
+    <!-- FAVICON (inline SVG emoji — zero HTTP request) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#4F46E5">
+    <link rel="apple-touch-icon" href="/icon-192.png">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:url" content="https://mytoolx.org/cv-maker.html">
+    <meta property="og:title" content="Free ATS Créateur de CV — No Sign-Up 📄 | MyToolX">
+    <meta property="og:description" content="Build a professional ATS-friendly resume instantly. 100 % free, no sign-up, and your personal data jamais leaves your browser.">
+    <meta property="og:image" content="https://mytoolx.org/og-image.png">
+    <meta property="og:image:alt" content="MyToolX Free ATS Créateur de CV">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- TWITTER / X CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mytoolx.org/cv-maker.html">
+    <meta name="twitter:title" content="Free ATS Créateur de CV — No Sign-Up 📄 | MyToolX">
+    <meta name="twitter:description" content="Build a professional ATS-friendly resume instantly. 100 % free, no sign-up, and your personal data jamais leaves your browser.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
+    <meta name="twitter:image:alt" content="MyToolX Free ATS Créateur de CV">
+
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="/styles.css">
+
+    <!-- SPEED HINTS -->
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//refer.micro1.ai">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Créateur de CV MyToolX",
+      "url": "https://mytoolx.org/cv-maker.html",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Free, privacy-first resume builder that generates professional PDF CVs entirely in your browser. No sign-up or resume data uploads; website analytics are described in the Privacy Policy.",
+      "featureList": [
+        "Live A4 PDF preview",
+        "Modern two-column resume layout",
+        "Built-in quick proofreading for grammar and spelling",
+        "100 % client-side processing",
+        "No sign-up required",
+        "ATS-conscious formatting"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Ce créateur de CV est-il vraiment gratuit ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Créateur de CV MyToolX is 100 % free with no hidden charges, no watermarks, and no sign-up required." }
+        },
+        {
+          "@type": "Question",
+          "name": "Le créateur de CV envoie-t-il mes données à un serveur ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The entire CV builder runs client-side in your browser using JavaScript. Your personal data jamais leaves your device." }
+        },
+        {
+          "@type": "Question",
+          "name": "Puis-je télécharger mon CV au format PDF ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Cliquez sur the 'Save PDF' button to open your browser's print dialog, where you can save your resume as a high-resolution PDF ready for ATS and recruiters." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the resume ATS-friendly?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The layout is designed with ATS best practices in mind: clean semantic text, no images, icons, or tables in the content area. Because ATS platforms differ, we recommend testing your finished PDF with your target employer's system or a free ATS checker before applying." }
+        },
+        {
+          "@type": "Question",
+          "name": "Dois-je créer un compte pour enregistrer mon CV ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Aucun compte n’est nécessaire. Remplissez simplement le formulaire, puis cliquez sur Save PDF to download a permanent copy to your device." }
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://mytoolx.org/" },
+        { "@type": "ListItem", "position": 2, "name": "Créateur de CV", "item": "https://mytoolx.org/cv-maker.html" }
+      ]
+    }
+    </script>
+
+   <style>
+        /* --- MASTER THEME VARIABLES --- */
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
+        }
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { overflow-x: clip; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+        
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .tool-panel { border-top: 4px solid var(--primary); }
+        .tool-panel:hover { box-shadow: 0 12px 24px -4px rgba(79,70,229,0.18); }
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+        
+        .input-field { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
+        .input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); outline: none; }
+        
+        /* --- MEGA FOOTER --- */
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+        /* --- FOOTER SOCIAL ICONS --- */
+        .social-links-row { display: flex; align-items: center; gap: 12px; margin-top: 4px; }
+        .social-btn {
+            width: 42px; height: 42px; border-radius: 12px;
+            display: inline-flex; align-items: center; justify-content: center;
+            color: #FFFFFF !important; text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+            box-shadow: 0 6px 14px -3px rgba(0, 0, 0, 0.28);
+        }
+        .social-btn svg { width: 20px; height: 20px; fill: currentColor; }
+        .social-btn.fb-btn {
+            background: linear-gradient(135deg, #1877F2 0%, #0D5BD6 100 %);
+        }
+        .social-btn.ig-btn {
+            background: radial-gradient(circle at 30% 107%, #FDF497 0%, #FDF497 5%, #FD5949 45%, #D6249F 60%, #285AEB 90%);
+        }
+        .social-btn:hover {
+            transform: translateY(-2px) scale(1.06);
+            box-shadow: 0 10px 20px -4px rgba(79, 70, 229, 0.35);
+            filter: brightness(1.05);
+        }
+        
+        #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
+        :focus-visible { outline: none; }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        ::selection { background: rgba(79,70,229,0.25); }
+        @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+        /* --- WORKSPACE & CV PREVIEW ALIGNMENT --- */
+        .cv-workspace {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 2rem;
+            align-items: start;
+        }
+        @media (min-width: 1024px) {
+            .cv-workspace {
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            }
+        }
+        .cv-editor { min-width: 0; width: 100 %; }
+        .cv-preview-col {
+            min-width: 0;
+            width: 100 %;
+            background: var(--chip-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 14px;
+            scroll-margin-top: 84px;
+        }
+        .cv-preview-bar { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+        .cv-page-info { font-size: 12px; font-weight: 700; color: var(--text-muted); }
+        .cv-bar-actions { display: flex; gap: 6px; }
+        .cv-bar-btn { background: var(--card); color: var(--chip-text); border: 1px solid var(--card-border); border-radius: 10px; padding: 0 10px; min-height: 34px; min-width: 34px; font-size: 12px; font-weight: 700; cursor: pointer; }
+        .cv-bar-btn:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+        .cv-bar-btn:disabled { opacity: 0.45; cursor: default; }
+        .cv-bar-btn[aria-pressed="true"] { background: var(--primary); border-color: var(--primary); color: #fff; }
+        .cv-viewport {
+            background: rgba(148,163,184,0.18);
+            border-radius: 14px;
+            padding: 12px;
+            overflow: auto;
+            overscroll-behavior: contain;
+            -webkit-overflow-scrolling: touch;
+            width: 100 %;
+        }
+        .cv-scaler { margin: 0 auto; position: relative; }
+        .cv-pages { display: flex; flex-direction: column; gap: 16px; width: 210mm; transform-origin: 0 0; }
+        .cv-page { width: 210mm; height: 296.8mm; flex: none; overflow: hidden; scroll-margin-top: 96px; }
+        .cv-paper { background: #FFFFFF; color: #1E293B; border-radius: 2px; box-shadow: 0 10px 25px rgba(0,0,0,0.12); }
+        .layout-modern { display: grid; grid-template-columns: minmax(0, 35%) minmax(0, 65%); font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+        .cv-probe { height: auto; overflow: visible; box-shadow: none; align-items: start; }
+
+        .modern-sidebar { background-color: #334155; color: #F8FAFC; padding: 40px 30px; word-break: break-word; overflow-wrap: anywhere; }
+        .modern-sidebar .cv-name { font-size: 26px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; text-transform: capitalize; color: #FFFFFF; }
+        .modern-sidebar .cv-title { font-size: 14px; font-weight: 600; color: #C7D2FE; margin-bottom: 30px; line-height: 1.3; }
+        .modern-sidebar .cv-h { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-top: 25px; margin-bottom: 10px; color: #C7D2FE; border-bottom: 1px solid #475569; padding-bottom: 5px; line-height: 1.4; }
+        .modern-sidebar .cv-h:first-child { margin-top: 0; }
+        .modern-sidebar p { font-size: 12px; line-height: 1.6; margin-bottom: 8px; color: #E2E8F0; }
+        .modern-sidebar > :last-child { margin-bottom: 0; }
+
+        .modern-main { background-color: #FFFFFF; padding: 40px; overflow-wrap: anywhere; }
+        .modern-main .cv-sec { font-size: 15px; font-weight: 800; border-bottom: 2px solid #4F46E5; padding-bottom: 5px; margin-top: 25px; margin-bottom: 15px; text-transform: uppercase; color: #0F172A; letter-spacing: 1px; line-height: 1.4; }
+        .modern-main .cv-sec:first-child { margin-top: 0; }
+        .modern-main p { font-size: 13px; line-height: 1.6; color: #475569; margin-bottom: 10px; }
+        .modern-main .cv-job { margin-bottom: 20px; }
+        .modern-main .cv-job-title { font-weight: 800; font-size: 14px; color: #0F172A; display: flex; justify-content: space-between; gap: 12px; }
+        .modern-main .cv-job-title span:last-child { white-space: nowrap; text-align: right; }
+        .modern-main .cv-job-company { font-weight: 600; font-size: 13px; color: #4F46E5; margin-bottom: 6px; }
+        .modern-main ul { list-style-type: disc; padding-left: 20px; font-size: 13px; color: #334155; margin-bottom: 10px; }
+        .modern-main li { margin-bottom: 4px; line-height: 1.5; }
+        .modern-main li.cont { list-style: none; }
+        .modern-main .cv-job > :last-child { margin-bottom: 0; }
+        .modern-main > :last-child { margin-bottom: 0; }
+
+        @media (min-width: 1024px) {
+            .cv-preview-col {
+                position: sticky;
+                top: 84px;
+                display: flex;
+                flex-direction: column;
+                max-height: calc(100vh - 104px);
+                transform: none !important;
+            }
+            .cv-viewport { flex: 1 1 auto; min-height: 0; }
+            .cv-page { scroll-margin-top: 12px; }
+        }
+
+        .cv-jump { display: inline-flex; align-items: center; }
+        @media (min-width: 1024px) { .cv-jump { display: none; } }
+
+        /* Toast (AI Fix feedback) */
+        .cv-toast { position: fixed; left: 50%; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 60; max-width: calc(100vw - 24px); display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; background: #0F172A; color: #F8FAFC; font-size: 13px; font-weight: 600; box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+        .cv-toast[hidden] { display: none; }
+        .cv-toast.is-error { background: #B91C1C; }
+        .cv-toast button { background: rgba(255,255,255,0.15); color: #fff; border: 0; border-radius: 8px; padding: 4px 10px; font-size: 12px; font-weight: 700; cursor: pointer; }
+
+        /* SEO Content Article Styling */
+        .seo-article h2 { font-size: 1.5rem; font-weight: 800; margin-top: 2rem; margin-bottom: 1rem; color: var(--text); border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; }
+        .seo-article h3 { font-size: 1.15rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.6rem; color: var(--text); }
+        .seo-article p { margin-bottom: 0.9rem; line-height: 1.75; color: var(--text-muted); }
+        .seo-article ul, .seo-article ol { margin: 0 0 1rem 1.5rem; line-height: 1.75; color: var(--text-muted); font-size: 0.95rem; }
+        .seo-article li { margin-bottom: 0.4rem; list-style: disc; }
+        .seo-article ol li { list-style: decimal; }
+        .seo-article a { color: var(--primary); font-weight: 600; text-decoration: underline; }
+        .seo-article a:hover { color: var(--primary-hover); }
+        .seo-article strong { color: var(--text); }
+        .seo-article .faq-item { border-bottom: 1px solid var(--card-border); padding: 1rem 0; }
+        .seo-article .faq-q { font-weight: 800; font-size: 1rem; color: var(--text); margin-bottom: 0.4rem; }
+
+        .print-tip {
+            background: rgba(79,70,229,0.08);
+            border: 1px solid rgba(79,70,229,0.25);
+            border-left: 4px solid var(--primary);
+            border-radius: 12px;
+            padding: 12px 14px;
+            margin-bottom: 16px;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        /* FEEDBACK MODAL STYLES */
+        .mtx-modal-backdrop {
+            position: fixed; inset: 0; z-index: 9999;
+            background: rgba(15, 23, 42, 0.68);
+            backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+            display: flex; align-items: center; justify-content: center; padding: 12px;
+        }
+        .mtx-modal-backdrop.hidden { display: none !important; }
+        .mtx-modal-dialog {
+            background: var(--card); border: 1px solid var(--card-border); color: var(--text);
+            width: 100 %; max-width: 480px; max-height: 88dvh; overflow-y: auto;
+            border-radius: 22px; padding: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35); position: relative;
+        }
+        @media (min-width: 640px) { .mtx-modal-dialog { padding: 28px; } }
+        .mtx-modal-close {
+            width: 34px; height: 34px; border-radius: 10px;
+            background: var(--chip-bg); color: var(--text); border: none;
+            font-size: 16px; font-weight: 800; cursor: pointer;
+            display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .mtx-modal-close:hover { background: #EF4444; color: #FFFFFF; }
+        .star-click { cursor: pointer; transition: transform 0.1s; }
+        .star-click:hover { transform: scale(1.15); }
+        .star-click svg { width: 32px; height: 32px; fill: currentColor; }
+
+        /* --- PRINT: only the CV pages are printed (A4, no browser margins => no URL/date headers) --- */
+        @media print {
+            @page { size: A4 portrait; margin: 0; }
+            html, body { background: #fff !important; margin: 0 !important; padding: 0 !important; display: block !important; height: auto !important; min-height: 0 !important; max-width: none !important; overflow: visible !important; }
+            body > *:not(main) { display: none !important; }
+            main { display: block !important; padding: 0 !important; margin: 0 !important; max-width: none !important; width: auto !important; }
+            main > *:not(.tool-panel) { display: none !important; }
+            .tool-panel { display: block !important; border: 0 !important; box-shadow: none !important; background: transparent !important; padding: 0 !important; margin: 0 !important; border-radius: 0 !important; }
+            .tool-panel > *:not(.cv-workspace) { display: none !important; }
+            .cv-workspace { display: block !important; margin: 0 !important; }
+            .cv-workspace > *:not(.cv-preview-col) { display: none !important; }
+            .cv-preview-col { display: block !important; position: static !important; transform: none !important; max-height: none !important; padding: 0 !important; margin: 0 !important; border: 0 !important; background: transparent !important; }
+            .cv-preview-bar { display: none !important; }
+            .cv-viewport { display: block !important; overflow: visible !important; max-height: none !important; padding: 0 !important; margin: 0 !important; background: none !important; border-radius: 0 !important; }
+            .cv-scaler { width: 210mm !important; height: auto !important; margin: 0 !important; }
+            .cv-pages { display: block !important; transform: none !important; width: 210mm !important; gap: 0 !important; }
+            .cv-page { margin: 0 !important; box-shadow: none !important; border-radius: 0 !important; break-after: page; page-break-after: always; break-inside: avoid; page-break-inside: avoid; }
+            .cv-page:last-child { break-after: auto; page-break-after: auto; }
+            .cv-page, .cv-page * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .modern-sidebar { background-color: #334155 !important; color: #F8FAFC !important; }
+        }
+    </style>
+    
+    <!-- GLOBAL LANGUAGE SWITCHER -->
+    <link rel="stylesheet" href="/lang-switcher.css">
+    <script src="/lang-switcher.js" defer></script>
+</head>
+<body class="font-sans min-h-screen flex flex-col justify-between">
+
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2">
+            <div class="flex items-center justify-between gap-2 sm:gap-4">
+                <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+                    <a href="/index.html" class="hidden sm:flex btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold items-center gap-1">← Tous les outils</a>
+                    <a href="/index.html" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
+                        <div class="logo-mark w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base flex items-center justify-center">M<span class="x">X</span></div>
+                        <span class="logo-wordmark text-base sm:text-xl block">MyTool<span class="x">X</span></span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                    <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch theme" title="Toggle Light/Mode sombre" class="h-8 sm:h-10 px-2 sm:px-3 rounded-xl flex items-center justify-center gap-1.5 text-[10px] sm:text-xs font-bold transition-all hover:opacity-80" style="background: var(--chip-bg); color: var(--chip-text);">
+                        <span id="themeIcon" aria-hidden="true">🌙</span>
+                        <span id="themeText" class="hidden sm:block">Mode sombre</span>
+                    </button>
+
+                    <!-- Community Link -->
+                    <a href="/community.html" class="inline-flex items-center text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap" style="background: var(--chip-bg); color: var(--text);">
+                        💬 Communauté
+                    </a>                    
+                    
+                    <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
+                        💼 Emplois à distance ↗
+                    </a>
+
+                    <a href="/blog-cv-guide.html" class="hidden md:inline-flex text-xs font-bold text-white px-3 py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
+                        📄 Guide CV
+                    </a>
+                </div>
+            </div>
+            <div class="mt-2 sm:hidden">
+                <a href="/index.html" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">← Retour à tous les outils</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8 w-full flex-grow">
+
+        <nav class="text-xs font-semibold mb-4 flex items-center gap-1 muted" aria-label="Breadcrumb">
+            <a href="/index.html" class="hover:text-indigo-500">Accueil</a><span>/</span><a href="/blog-cv-guide.html" class="hover:text-indigo-500">Guides</a><span>/</span><span style="color: var(--text); font-weight: 700;">Créateur de CV</span>
+        </nav>
+
+        <div class="tool-panel surface rounded-3xl shadow-xl p-4 sm:p-6 lg:p-8 mb-10 transition-shadow">
+            
+            <div class="flex items-center justify-between gap-3 flex-wrap mb-6 pb-4 border-b" style="border-color: var(--card-border);">
+                <div>
+                    <h1 class="text-xl sm:text-2xl font-black flex items-center gap-2" style="color: var(--text);">
+                        📄 Créateur de CV ATS gratuit — 100 % privé
+                    </h1>
+                    <p class="text-xs muted mt-1">Sans inscription · PDF compatible ATS</p>
+                </div>
+                <div class="flex gap-2 items-center flex-wrap">
+                    <a href="#cvPreviewCol" class="cv-jump btn-3d btn-chip px-3 py-2 text-xs font-bold">Aperçu ↓</a>
+                    <button type="button" onclick="clearForm()" class="btn-3d btn-chip px-3 py-2 text-xs font-bold text-red-500 border-red-200">Effacer</button>
+                    <button type="button" onclick="printCV()" class="btn-3d btn-chip px-3 py-2 text-xs font-bold" aria-label="Imprimer resume">Imprimer</button>
+                    <button type="button" onclick="printCV()" class="btn-3d btn-primary px-4 py-2 text-xs font-bold flex items-center gap-2" aria-label="Save resume as PDF">🖨️ Enregistrer en PDF</button>
+                </div>
+            </div>
+
+            <div class="print-tip" role="note">
+                <strong>💡 Conseil pour obtenir un PDF propre :</strong> Lorsque la fenêtre d’impression s’ouvre, choisissez <strong>« Enregistrer au format PDF »</strong>, format de papier <strong>A4</strong> et échelle <strong>100 %</strong>. Les marges sont déjà réglées pour masquer normalement la date et l’URL du navigateur. Si elles apparaissent encore, décochez <strong>« En-têtes et pieds de page »</strong> dans les paramètres.
+            </div>
+
+            <div class="cv-workspace grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                
+                <!-- LEFT: FORM -->
+                <div class="cv-editor space-y-6 min-w-0">
+                    <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                        <h3 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">1. Informations personnelles</h3>
+                        <div class="space-y-3">
+                            <input type="text" id="inpName" oninput="updateCV()" aria-label="Full name" placeholder="Full Name" class="input-field w-full p-3 rounded-xl text-sm font-bold" autocomplete="name">
+                            <input type="text" id="inpTitle" oninput="updateCV()" aria-label="Professional title" placeholder="Professional Title (e.g. Senior Accountant)" class="input-field w-full p-3 rounded-xl text-sm" autocomplete="organization-title">
+                            <div class="grid grid-cols-2 gap-3">
+                                <input type="email" id="inpEmail" oninput="updateCV()" aria-label="Email address" placeholder="Email" class="input-field w-full p-3 rounded-xl text-sm" autocomplete="email">
+                                <input type="tel" id="inpPhone" oninput="updateCV()" aria-label="Phone number" placeholder="Phone" class="input-field w-full p-3 rounded-xl text-sm" autocomplete="tel">
+                            </div>
+                            <input type="text" id="inpLocation" oninput="updateCV()" aria-label="City and country" placeholder="City, Country" class="input-field w-full p-3 rounded-xl text-sm" autocomplete="address-level2">
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-sm font-bold uppercase tracking-wider" style="color: var(--primary);">2. Résumé professionnel</h3>
+                            <button type="button" data-fix-for="inpSummary" onclick="fixWithAI('inpSummary', this)" class="text-[10px] font-bold text-indigo-500 hover:text-indigo-700 bg-indigo-50 px-2 py-1 rounded-md border border-indigo-100 flex items-center gap-1">✨ Relecture rapide</button>
+                        </div>
+                        <textarea id="inpSummary" oninput="updateCV()" rows="3" aria-label="Professional summary" placeholder="Brief overview of your experience..." class="input-field w-full p-3 rounded-xl text-sm" autocomplete="off"></textarea>
+                    </div>
+
+                    <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-sm font-bold uppercase tracking-wider" style="color: var(--primary);">3. Expérience professionnelle</h3>
+                            <button type="button" aria-label="Add experience entry" onclick="addExperience()" class="btn-3d btn-chip px-2 py-1 text-[10px] font-bold">+ Ajouter</button>
+                        </div>
+                        <div id="experienceContainer" class="space-y-4"></div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-sm font-bold uppercase tracking-wider" style="color: var(--primary);">4. Formation</h3>
+                            <button type="button" aria-label="Add education entry" onclick="addEducation()" class="btn-3d btn-chip px-2 py-1 text-[10px] font-bold">+ Ajouter</button>
+                        </div>
+                        <div id="educationContainer" class="space-y-4"></div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                        <h3 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">5. Compétences</h3>
+                        <textarea id="inpSkills" oninput="updateCV()" rows="2" aria-label="Skills, separated by commas" placeholder="e.g. Project Management, Data Analysis, Python" class="input-field w-full p-3 rounded-xl text-sm"></textarea>
+                    </div>
+
+                    <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                        <h3 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">6. Certifications</h3>
+                        <textarea id="inpCerts" oninput="updateCV()" rows="2" aria-label="Certifications, separated by commas or new lines" placeholder="e.g. PMP Certification (2022)" class="input-field w-full p-3 rounded-xl text-sm"></textarea>
+                    </div>
+
+                    <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                        <h3 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">7. Langues</h3>
+                        <input type="text" id="inpLangs" oninput="updateCV()" aria-label="Languages, separated by commas" placeholder="e.g. English (Native), Spanish (Fluent)" class="input-field w-full p-3 rounded-xl text-sm">
+                    </div>
+
+                    <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
+                        <h3 class="text-sm font-bold uppercase tracking-wider mb-3" style="color: var(--primary);">8. Références</h3>
+                        <textarea id="inpRefs" oninput="updateCV()" rows="2" aria-label="References" placeholder="e.g. Available upon request" class="input-field w-full p-3 rounded-xl text-sm"></textarea>
+                    </div>
+                </div>
+
+                <!-- RIGHT: PREVIEW -->
+                <div id="cvPreviewCol" class="cv-preview-col">
+                    <div class="cv-preview-bar" role="toolbar" aria-label="Preview controls">
+                        <span id="cvPageInfo" class="cv-page-info" aria-live="polite">1 page · A4</span>
+                        <div class="cv-bar-actions">
+                            <button type="button" id="cvPrev" class="cv-bar-btn" aria-label="Previous page" disabled>‹</button>
+                            <button type="button" id="cvNext" class="cv-bar-btn" aria-label="Next page" disabled>›</button>
+                            <button type="button" id="cvZoom" class="cv-bar-btn" aria-pressed="false">🔍 Taille réelle</button>
+                        </div>
+                    </div>
+                    <div id="cvViewport" class="cv-viewport" role="region" aria-label="Live resume preview" tabindex="0">
+                        <div id="cvScaler" class="cv-scaler">
+                            <div id="cvPreview" class="cv-pages"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cvToast" class="cv-toast" role="status" aria-live="polite" hidden>
+                <span id="cvToastMsg"></span>
+                <button type="button" id="cvToastAnnuler" hidden>Annuler</button>
+            </div>
+
+        </div>
+
+        <!-- ================================================== -->
+        <!-- SEO CONTENT SECTION                                -->
+        <!-- ================================================== -->
+        <article class="surface rounded-3xl shadow-lg p-6 sm:p-10 mb-10 seo-article">
+            <header class="mb-6">
+                <p class="text-xs font-bold uppercase tracking-wider mb-2" style="color: var(--primary);">Guide complet</p>
+                <h2 class="text-2xl sm:text-3xl font-black mb-3" style="color: var(--text); border: none; padding: 0; margin-top: 0;">
+    Guide complet : créer un CV professionnel compatible ATS
+</h2>
+                <p class="text-sm muted">
+                    Dernière mise à jour : 2026 · Temps de lecture : ~6 minutes
+                </p>
+            </header>
+
+            <p>
+                Votre CV constitue souvent la première impression qu’un recruteur a de vous. Sur un marché où une offre peut recevoir plus de 250 candidatures, sa qualité peut déterminer si vous obtenez un entretien ou si un logiciel de suivi des candidatures (ATS) l’écarte automatiquement. Le <strong>Créateur de CV MyToolX</strong> est un outil gratuit dans le navigateur pour créer un <strong>créateur de CV</strong> qui vous permet de créer en quelques minutes un CV soigné, prêt à être envoyé aux recruteurs, sans inscription, abonnement ni transfert de données vers un serveur.
+            </p>
+
+            <p>
+                Que vous soyez jeune diplômé préparant votre premier <strong>CV pour un premier emploi</strong>, ou professionnel confirmé mettant à jour son <strong>CV LinkedIn</strong>, ou freelance à la recherche de clients internationaux, cet outil vous offre une mise en page moderne à deux colonnes, un aperçu PDF en direct et une correction grammaticale par IA en un clic, le tout dans votre navigateur.
+            </p>
+
+            <h2>Pourquoi utiliser le créateur de CV MyToolX ?</h2>
+            <ul>
+                <li><strong>100 % gratuit, sans frais cachés.</strong> Contrairement à Canva, Zety ou Resume.io, MyToolX ne demande jamais de carte bancaire et ne réserve aucun modèle premium derrière un paiement.</li>
+                <li><strong>Confidentialité totale.</strong> Chaque saisie reste dans la mémoire de votre navigateur. Votre nom, adresse, numéro de téléphone et parcours professionnel ne sont jamais <em>jamais</em> transmis vers un serveur, ce qui est idéal pour les personnes soucieuses de leur confidentialité.</li>
+                <li><strong>Aperçu PDF A4 en direct.</strong> Visualisez exactement l’impression de votre CV en temps réel, avec une protection des sauts de page pour éviter de couper maladroitement les blocs d’expérience.</li>
+                <li><strong>Relecture rapide intégrée.</strong> Le bouton « Relecture rapide » corrige les fautes courantes, les répétitions, les espaces de ponctuation et les majuscules dans votre résumé et vos listes, directement dans le navigateur et hors ligne.</li>
+                <li><strong>Mise en forme adaptée aux ATS.</strong> La mise en page épurée à deux colonnes utilise du texte sémantique, sans images, zones de texte ni tableaux dans la zone de contenu. Elle tient compte de lecteurs comme Workday, Greenhouse, Taleo, Lever et iCIMS. Testez toujours le PDF final avec le système ciblé.</li>
+                <li><strong>Aucune inscription nécessaire.</strong> Remplissez simplement le formulaire et cliquez sur Enregistrer en PDF. C’est tout.</li>
+            </ul>
+
+            <h2>Comment utiliser le créateur de CV étape par étape</h2>
+            <ol>
+                <li><strong>Saisissez vos informations personnelles.</strong> Commencez par votre nom complet, un intitulé professionnel clair (par exemple « Comptable senior » ou « Développeur full-stack »), votre e-mail, votre téléphone et votre ville.</li>
+                <li><strong>Rédigez un résumé percutant.</strong> Utilisez 2 à 3 phrases pour mettre en avant vos années d’expérience, votre expertise principale et votre plus grande réussite. Cliquez sur <em>✨ Relecture rapide</em> pour améliorer instantanément votre grammaire.</li>
+                <li><strong>Ajoutez votre expérience professionnelle.</strong> Pour chaque poste, indiquez l’intitulé, le nom de l’entreprise, les dates et 2 à 4 puces axées sur les résultats plutôt que sur les responsabilités.</li>
+                <li><strong>Indiquez votre formation.</strong> Indiquez votre diplôme, le nom de l’établissement et l’année d’obtention. Les jeunes diplômés peuvent placer la formation avant l’expérience.</li>
+                <li><strong>Ajoutez vos compétences, certifications et langues.</strong> Choisissez des compétences pertinentes pour le poste. Le recruteur doit repérer les mots-clés de l’offre en quelques secondes.</li>
+                <li><strong>Prévisualisez et peaufinez.</strong> L’aperçu se met à jour en temps réel. Vérifiez qu’aucune section ne déborde de la page et que les dates sont cohérentes.</li>
+                <li><strong>Téléchargez le PDF.</strong> Cliquez sur <em>🖨️ Enregistrer en PDF</em>, puis choisissez « Enregistrer au format PDF » dans la fenêtre d’impression. Vous obtiendrez un fichier haute résolution, lisible par les ATS et prêt à être envoyé.</li>
+            </ol>
+
+            <h2>Comment créer un CV compatible ATS</h2>
+            <p>
+                Les logiciels de suivi des candidatures (ATS) sont souvent les premiers à lire un CV. S’il n’est pas compatible, il peut être écarté avant même d’être examiné par une personne. Suivez ces conseils :
+            </p>
+            <ul>
+                <li><strong>Utilisez une mise en page simple et fluide.</strong> Our builder's two-column design keeps the main content in a single text flow, which most modern ATS parsers handle well.</li>
+                <li><strong>Évitez les graphiques, icônes et photos.</strong> Les logiciels ATS peuvent avoir du mal à lire les images ; évitez d’en ajouter à votre CV.</li>
+                <li><strong>Utilisez des titres de section classiques.</strong> "Experience," "Education," and "Skills" are recognized universally. Avoid creative names like "My Journey" or "Career Story."</li>
+                <li><strong>Reprenez les termes de l’offre d’emploi.</strong> Use the exact keywords from the job posting where they genuinely apply to you.</li>
+                <li><strong>Enregistrez le fichier en PDF (pas en DOCX).</strong> PDF preserves your formatting and is now the preferred format for 80%+ of ATS platforms.</li>
+            </ul>
+
+            <h2>Conseils pour rédiger un CV qui décroche des entretiens</h2>
+            <h3>1. Lead with achievements, not duties</h3>
+            <p>
+                Weak: <em>"Responsible for managing social media accounts."</em><br>
+                Strong: <em>"Grew Instagram following by 45% in 6 months by launching a weekly video series."</em><br>
+                The second bullet uses a number and a result exactly what recruiters want to see.
+            </p>
+
+            <h3>2. Quantify everything you can</h3>
+            <p>
+                "Improved sales" is forgettable. "Increased Q3 sales by 22% across 4 regions, generating $1.2M in new revenue" is memorable. Even if you don't have exact figures, approximate percentages and numbers significantly strengthen bullet points.
+            </p>
+
+            <h3>3. Tailor your resume to every job</h3>
+            <p>
+                Recruiters can tell when a resume is generic. Spend 5 minutes reordering your bullet points and skills for each application, and you'll roughly double your response rate.
+            </p>
+
+            <h3>4. Keep it to one or two pages</h3>
+            <p>
+                Unless you have 10+ years of experience, one page is ideal. If you must go to two pages, ensure the second page is at least 50% full.
+            </p>
+
+            <h3>5. Proofread before sending</h3>
+            <p>
+                A single typo can cost you the interview. Use the built-in <em>Quick Proofread</em> button, or paste your final text into our <a href="/text-suite.html">online word and character counter</a> to check length and readability, and double-check that every date, job title, and company name matches your LinkedIn profile.
+            </p>
+
+            <h2>Questions fréquentes</h2>
+
+            <div class="faq-item">
+                <p class="faq-q">Ce créateur de CV est-il vraiment gratuit ?</p>
+                <p>Oui. Le créateur de CV MyToolX est 100 % gratuit, sans frais cachés, filigrane ni inscription. Vous pouvez créer et télécharger autant de CV que vous le souhaitez.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-q">Le créateur de CV envoie-t-il mes données à un serveur ?</p>
+                <p>Non. Le créateur de CV fonctionne entièrement dans votre navigateur grâce à JavaScript. Vos données personnelles ne quittent jamais votre appareil ; il n’y a ni serveur backend, ni base de données, ni suivi du contenu de votre CV.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-q">Puis-je télécharger mon CV au format PDF ?</p>
+                <p>Yes. Cliquez sur the <em>🖨️ Enregistrer en PDF</em> button to open your browser's print dialog, where you can save your resume as a high-resolution PDF ready for ATS and recruiters.</p>
+            </div>
+
+            <div class="faq-item">
+    <p class="faq-q">Is the resume ATS-friendly?</p>
+    <p>The layout is designed with ATS best practices in mind: clean semantic text, no images, icons, or tables in the content area. That said, ATS platforms differ (Workday, Greenhouse, Taleo, Lever, iCIMS all parse differently), so we recommend testing your finished PDF with your target employer's system or a free ATS checker before you apply.</p>
+</div>
+
+            <div class="faq-item">
+                <p class="faq-q">Dois-je créer un compte pour enregistrer mon CV ?</p>
+                <p>Aucun compte n’est nécessaire. Remplissez simplement le formulaire, puis cliquez sur <em>Save PDF</em> pour télécharger une copie permanente sur votre appareil. Puisque rien n’est stocké sur un serveur, veillez à enregistrer votre PDF avant de fermer l’onglet.</p>
+            </div>
+
+            <h2>Outils et guides associés</h2>
+            <ul>
+                <li><a href="/blog-cv-guide.html">Guide de rédaction de CV compatibles ATS</a> — in-depth advice on structure, keywords, and formatting.</li>
+                <li><a href="/text-suite.html">online word and character counter</a> — check resume length and readability.</li>
+                <li><a href="/index.html">Tous les outils MyToolX</a> — découvrez toute la boîte à outils gratuite.</li>
+            </ul>
+        </article>
+
+    <!-- COMMUNITY FEEDBACK CARD FOR FREE TOOLS -->
+<section class="max-w-3xl mx-auto my-10 px-4">
+    <div class="surface rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+        <div class="text-center sm:text-left">
+            <h3 class="text-base font-black" style="color: var(--text);">Cet outil vous a-t-il fait gagner du temps ?</h3>
+            <p class="text-xs muted mt-0.5">Laissez une évaluation rapide ou proposez une amélioration sur notre espace communautaire.</p>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+            <button type="button" onclick="openFeedbackModal('review')" class="btn-3d btn-primary px-4 py-2.5 rounded-xl text-xs font-black whitespace-nowrap">
+                ✍️ Donner votre avis
+            </button>
+        </div>
+    </div>
+</section>
+
+</main>
+
+     <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+                
+                <!-- COLUMN 1: Logo & Description -->
+                <div class="lg:col-span-5">
+                    <a href="/index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 pr-4">
+MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les freelances et les développeurs. La plupart ne nécessitent aucun compte. De nombreux outils traitent le contenu localement, tandis que certaines fonctionnalités et les statistiques du site utilisent des services externes. Consultez notre Politique de confidentialité pour plus de détails.
+                    </p>
+                    <div class="social-links-row" aria-label="MyToolX social media links">
+                        <a href="https://www.facebook.com/profile.php?id=61596813242660" target="_blank" rel="noopener noreferrer" aria-label="MyToolX on Facebook" title="Facebook" class="social-btn fb-btn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/mytoolx0?fqnt=dm05bDBzazZ6Nmpp" target="_blank" rel="noopener noreferrer" aria-label="MyToolX on Instagram" title="Instagram" class="social-btn ig-btn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                                     
+		<!-- COLUMN 2: Popular Tools & Premium Link -->
+                <div class="lg:col-span-4">
+                    <h3>Popular Tools</h3>
+                    
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <!-- Row 1 -->
+                        <a href="/typing-test.html">Typing Speed Test</a>
+                        
+                        <!-- THE PREMIUM BUTTON (Replaces Image Compressor) -->
+                        <div class="flex items-start mt-0.5"> 
+                            <a href="/premium.html" class="link-premium-gold" aria-label="Visit the Premium Store">
+                                <span class="star-icon">⭐</span> Premium
+                            </a>
+                        </div>
+
+                        <!-- Row 2 -->
+                        <a href="/prompt-studio.html">AI Prompt Studio</a>
+                        <a href="/image-compressor.html">Image Compressor</a>
+                        
+                        <!-- Row 3 -->
+                        <a href="/text-suite.html">Text &amp; Word Suite</a>
+                        <a href="/grammar-checker.html">Grammar Checker</a>
+                        
+                        <!-- Row 4 -->
+                        <a href="/sip-calculator.html">SIP Calculator</a>
+                        <a href="/fee-calculator.html">Fee Calculator</a>
+                        
+                        <!-- Row 5 -->
+                        <a href="/json-formatter.html">JSON Formatter</a>
+                        <a href="/loan-emi.html">Loan EMI Calc</a>
+                        
+                        <!-- Row 6 -->
+                        <a href="/qr-code-generator.html">QR Code Gen</a>
+                        <a href="/base64-tool.html">Base64 Tool</a>
+                        
+                        <!-- Row 7 -->
+                        <a href="/unit-converter.html">Unit Converter</a>
+                        <a href="/password-generator.html">Password Gen</a>
+                        
+                        <!-- Row 8 -->
+                        <a href="/article-outline.html">Article Outline</a>
+                        <a href="/ai-bio-generator.html">AI Bio Generator</a>
+                        
+                        <!-- Row 9 -->
+                        <a href="/love-calculator.html">Love Calculator</a>
+                         <a href="/cv-maker.html">Créateur de CV</a> 
+ 
+                        
+                        <!-- Row 10 (Extra space filled) -->
+                         <a href="/text-summarizer.html">AI Summarizer</a>
+                        <a href="/color-converter.html">Color Converter</a>
+			<a href="/math-sprint.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Math Sprint Game</a>
+                        <a href="/wordstorm.html" class="footer-game-link"><span aria-hidden="true">⭐</span> WordStorm Game</a>
+			<a href="/reaction-time-test.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Reaction Test</a>
+			<a href="/word-scramble.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Word Scramble</a>
+                    </div>
+                </div>
+
+                <!-- COLUMN 3: Company & Legal Links -->
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Company</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="/index.html">Accueil</a></li>
+                                <li><a href="/about.html">About Us</a></li>
+                                <li><a href="/contact.html">Contact Us</a></li>
+				<li><a href="/community.html">Community</a></li>
+
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Legal</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="/blog.html">Blog &amp; Guides</a></li>
+                                <li><a href="/privacy.html">Privacy Policy</a></li>
+                                <li><a href="/terms.html">Terms of Service</a></li>
+                                <li><a href="/index.html">Sitemap</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div> <!-- END OF GRID -->
+
+            <!-- Bottom Copyright Bar -->
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. All rights reserved.</p>
+                <p>Many tools process your content in your browser; selected features use external services. See our Privacy Policy for details.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FEEDBACK MODAL HTML -->
+    <div id="feedbackModal" class="mtx-modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="handleBackdropCliquez sur(event)">
+        <div class="mtx-modal-dialog" onclick="event.stopPropagation()">
+            <div class="flex items-start justify-between gap-3 mb-4">
+                <div>
+                    <h3 id="modalTitle" class="text-lg sm:text-xl font-black" style="color: var(--text);">Share Quick Feedback</h3>
+                    <p class="text-xs muted mt-0.5">Takes 20 seconds • No sign-up required</p>
+                </div>
+                <button type="button" onclick="closeFeedbackModal()" aria-label="Close popup" title="Close" class="mtx-modal-close">✕</button>
+            </div>
+
+            <form id="communityForm" onsubmit="submitCommunityFeedback(event)" class="space-y-4">
+                <div>
+                    <label for="formType" class="block text-xs font-bold uppercase tracking-wider muted mb-1">1. What would you like to share? *</label>
+                    <select id="formType" name="formType" required onchange="toggleFormFields()" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                        <option value="review">⭐ Rate &amp; Review a Tool / Game</option>
+                        <option value="suggestion">💡 Suggest a New Tool or Feature</option>
+                    </select>
+                </div>
+
+                                              <!-- NO DROPDOWN, JUST THE APP NAME AND STARS -->
+                <div id="targetPageGroup" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider muted mb-1">Rating for:</label>
+                        <div class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-black flex items-center gap-2" style="background: var(--chip-bg); color: var(--primary);">
+                            📄 Live CV Maker
+                        </div>
+                        <input type="hidden" id="targetPageId" value="cv-maker">
+                    </div>
+
+                    
+
+                    <div id="ratingGroup">
+                        <label class="block text-xs font-bold uppercase tracking-wider muted mb-1">Rating *</label>
+                        <div id="starRatingContainer" class="flex items-center gap-1 mt-1">
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <input type="hidden" id="starRating" name="starRating" value="5">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="suggestionCategoryGroup" class="hidden space-y-3">
+                    <div>
+                        <label for="suggestionCategory" class="block text-xs font-bold uppercase tracking-wider muted mb-1">2. Idea Category *</label>
+                        <select id="suggestionCategory" name="suggestionCategory" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                            <option value="New Tool Ideas">New Tool Idea</option>
+                            <option value="New Game Ideas">New Game Idea</option>
+                            <option value="Existing Tool Improvements">Improve Existing Tool</option>
+                            <option value="Website Improvements">Website Improvement</option>
+                            <option value="Premium Product Ideas">New Premium Bundle Idea</option>
+                        </select>
+                    </div>
+                    <div id="titleGroup">
+                        <label for="suggestionTitle" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Short Idea Title *</label>
+                        <input type="text" id="suggestionTitle" name="suggestionTitle" maxlength="80" placeholder="e.g. PDF Merger or Invoice Generator" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                    </div>
+                </div>
+
+                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label for="authorName" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Name (Optional)</label>
+                        <input type="text" id="authorName" name="authorName" maxlength="40" placeholder="Anonymous" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                    </div>
+                    <div>
+                        <label for="country" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Country (Optional)</label>
+                        <input type="text" id="country" name="country" maxlength="40" placeholder="e.g. US, UK, PK" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="commentText" id="commentLabel" class="block text-xs font-bold uppercase tracking-wider muted mb-1">3. Your Comment *</label>
+                    <textarea id="commentText" name="commentText" required rows="3" maxlength="400" placeholder="Write a quick note about your experience..." class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-medium"></textarea>
+                </div>
+
+                <p class="text-[11px] muted leading-relaxed">
+                    🔒 Voluntary submission. Approved posts appear publicly without personal data.
+                </p>
+
+                <div id="formError" class="hidden p-3 rounded-xl text-xs font-bold text-red-500 bg-red-500/10 border border-red-500/30"></div>
+                <div id="formSuccess" class="hidden p-3 rounded-xl text-xs font-bold text-emerald-500 bg-emerald-500/10 border border-emerald-500/30"></div>
+
+                <div class="flex items-center gap-2.5 pt-1">
+                    <button type="button" onclick="closeFeedbackModal()" class="btn-3d btn-chip px-4 py-3 rounded-xl text-xs sm:text-sm font-bold">
+                        Cancel
+                    </button>
+                    <button type="submit" id="submitModalBtn" class="btn-3d btn-primary flex-1 py-3 rounded-xl text-xs sm:text-sm font-black">
+                        🚀 Submit Feedback
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- CV MAKER LOGIC -->
+    <script>
+    (function () {
+        'use strict';
+
+        // --- THEME ---
+        (function initTheme() {
+            var saved = null;
+            try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = saved || (prefersDark ? 'dark' : 'light');
+            applyTheme(theme);
+        })();
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            var icon = document.getElementById('themeIcon');
+            var text = document.getElementById('themeText');
+            
+            if (icon && text) {
+                if (theme === 'dark') {
+                    icon.textContent = '🌙';
+                    text.textContent = 'Mode sombre';
+                } else {
+                    icon.textContent = '☀️';
+                    text.textContent = 'Light Mode';
+                }
+            }
+            
+            var btn = document.getElementById('themeToggle');
+            if (btn) {
+                btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+                btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+            }
+        }
+        function toggleTheme() {
+            var cur = document.documentElement.getAttribute('data-theme') || 'light';
+            var next = cur === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('mtx-theme', next); } catch (e) {}
+        }
+        window.toggleTheme = toggleTheme;
+
+        // --- SMALL HELPERS ---
+        function escapeHTML(str) {
+            return String(str == null ? '' : str).replace(/[&<>"']/g, function (m) {
+                return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[m];
+            });
+        }
+        function el(id) { return document.getElementById(id); }
+        function val(id) { var e = el(id); return e ? e.value.trim() : ''; }
+        function splitLines(s) { return s.split(/\r?\n/).map(function (t) { return t.trim(); }).filter(Boolean); }
+        function splitList(s) { return s.split(/[,\n]+/).map(function (t) { return t.trim(); }).filter(Boolean); }
+
+        // --- DYNAMIC FORM LOGIC ---
+        var expCount = 0;
+        var eduCount = 0;
+
+        function removeBlock(id) {
+            var node = el(id);
+            if (node) node.remove();
+            scheduleUpdate();
+        }
+        window.removeBlock = removeBlock;
+
+        function addExperience(data) {
+            data = data || {};
+            expCount++;
+            var id = 'exp' + expCount;
+            var container = el('experienceContainer');
+            var div = document.createElement('div');
+            div.className = 'p-3 border rounded-xl relative';
+            div.style.borderColor = 'var(--input-border)';
+            div.style.background = 'var(--input-bg)';
+            div.id = id;
+            div.innerHTML = `
+                <button type="button" onclick="removeBlock('${id}')" aria-label="Remove this experience entry" class="absolute top-2 right-2 text-red-500 font-bold text-xs hover:underline">Remove</button>
+                <div class="space-y-2 mt-2">
+                    <input type="text" class="exp-title input-field w-full p-2 rounded-lg text-xs font-bold" placeholder="Job Title" aria-label="Job title" value="${escapeHTML(data.title)}" oninput="updateCV()" autocomplete="organization-title">
+                    <input type="text" class="exp-company input-field w-full p-2 rounded-lg text-xs" placeholder="Company Name" aria-label="Company name" value="${escapeHTML(data.company)}" oninput="updateCV()" autocomplete="organization">
+                    <input type="text" class="exp-dates input-field w-full p-2 rounded-lg text-xs" placeholder="Dates (e.g. Jan 2020 - Present)" aria-label="Employment dates" value="${escapeHTML(data.dates)}" oninput="updateCV()">
+                    <div class="relative">
+                        <textarea class="exp-desc input-field w-full p-2 rounded-lg text-xs" rows="2" placeholder="Describe your achievements (one per line)..." aria-label="Job achievements, one per line" oninput="updateCV()">${escapeHTML(data.desc)}</textarea>
+                        <button type="button" onclick="fixWithAI(null, this)" class="absolute bottom-2 right-2 text-[9px] font-bold text-indigo-500 bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-100">✨ Relecture rapide</button>
+                    </div>
+                </div>
+            `;
+            container.appendChild(div);
+            scheduleUpdate();
+        }
+        window.addExperience = addExperience;
+
+        function addEducation(data) {
+            data = data || {};
+            eduCount++;
+            var id = 'edu' + eduCount;
+            var container = el('educationContainer');
+            var div = document.createElement('div');
+            div.className = 'p-3 border rounded-xl relative';
+            div.style.borderColor = 'var(--input-border)';
+            div.style.background = 'var(--input-bg)';
+            div.id = id;
+            div.innerHTML = `
+                <button type="button" onclick="removeBlock('${id}')" aria-label="Remove this education entry" class="absolute top-2 right-2 text-red-500 font-bold text-xs hover:underline">Remove</button>
+                <div class="space-y-2 mt-2">
+                    <input type="text" class="edu-degree input-field w-full p-2 rounded-lg text-xs font-bold" placeholder="Degree (e.g. B.Sc Computer Science)" aria-label="Degree" value="${escapeHTML(data.degree)}" oninput="updateCV()">
+                    <input type="text" class="edu-school input-field w-full p-2 rounded-lg text-xs" placeholder="University / School" aria-label="University or school" value="${escapeHTML(data.school)}" oninput="updateCV()">
+                    <input type="text" class="edu-year input-field w-full p-2 rounded-lg text-xs" placeholder="Graduation Year" aria-label="Graduation year" value="${escapeHTML(data.year)}" oninput="updateCV()">
+                </div>
+            `;
+            container.appendChild(div);
+            scheduleUpdate();
+        }
+        window.addEducation = addEducation;
+
+        // --- CLEAR FORM ---
+        function clearForm() {
+            if (!confirm("Are you sure you want to clear all resume data?")) return;
+
+            ['inpName', 'inpTitle', 'inpEmail', 'inpPhone', 'inpLocation', 'inpSummary', 'inpSkills', 'inpCerts', 'inpLangs', 'inpRefs'].forEach(function (id) {
+                var e = el(id);
+                if (e) e.value = '';
+            });
+
+            el('experienceContainer').innerHTML = '';
+            el('educationContainer').innerHTML = '';
+            expCount = 0;
+            eduCount = 0;
+            lastFix = null;
+            hideToast();
+            addExperience();
+            addEducation();
+            renderNow();
+        }
+        window.clearForm = clearForm;
+
+        // =====================================================================
+        // PAGINATION ENGINE
+        // =====================================================================
+        var probe = null;     
+        var lastSig = null;
+        var pageCount = 1;
+        var currentPage = 1;
+        var zoomFull = false;
+        var updTimer = null;
+
+        function ensureProbe() {
+            if (probe) return probe;
+            var holder = document.createElement('div');
+            holder.id = 'cvMeasure';
+            holder.setAttribute('aria-hidden', 'true');
+            holder.style.cssText = 'position:absolute;left:-10000px;top:0;width:210mm;visibility:hidden;pointer-events:none;';
+            holder.innerHTML = '<div class="cv-paper cv-page layout-modern cv-probe"><div class="modern-sidebar"></div><div class="modern-main"></div></div><div class="cv-ruler" style="height:296.8mm;width:1px;"></div>';
+            document.body.appendChild(holder);
+            probe = {
+                side: holder.querySelector('.modern-sidebar'),
+                main: holder.querySelector('.modern-main'),
+                ruler: holder.querySelector('.cv-ruler')
+            };
+            return probe;
+        }
+        function vPad(node) {
+            var cs = getComputedStyle(node);
+            return (parseFloat(cs.paddingTop) || 0) + (parseFloat(cs.paddingBottom) || 0);
+        }
+
+        function headHTML(b) {
+            var out = '';
+            if (b.ti || b.d) out += '<div class="cv-job-title"><span>' + escapeHTML(b.ti) + '</span><span>' + escapeHTML(b.d) + '</span></div>';
+            if (b.c) out += '<div class="cv-job-company">' + escapeHTML(b.c) + '</div>';
+            return out;
+        }
+
+        function renderAtoms(list) {
+            var out = '', i = 0, n = list.length;
+            while (i < n) {
+                var a = list[i], j;
+                if (a.t === 'hdr') {
+                    out += '<div class="cv-name">' + escapeHTML(a.n) + '</div><div class="cv-title">' + escapeHTML(a.ti) + '</div>';
+                    i++;
+                } else if (a.t === 'h') {
+                    out += '<div class="cv-h">' + escapeHTML(a.x) + '</div>';
+                    i++;
+                } else if (a.t === 'sec') {
+                    out += '<div class="cv-sec">' + escapeHTML(a.x) + '</div>';
+                    i++;
+                } else if (a.t === 'ln') {
+                    var parts = [];
+                    j = i;
+                    while (j < n && list[j].t === 'ln' && list[j].g === a.g) { parts.push(escapeHTML(list[j].x)); j++; }
+                    out += '<p>' + parts.join('<br>') + '</p>';
+                    i = j;
+                } else {
+                    var inner = '', lis = '';
+                    j = i;
+                    while (j < n && list[j].g === a.g && list[j].t !== 'ln') {
+                        var b = list[j];
+                        if (b.t === 'li') {
+                            lis += '<li' + (b.cont ? ' class="cont"' : '') + '>' + escapeHTML(b.x) + '</li>';
+                        } else {
+                            if (lis) { inner += '<ul>' + lis + '</ul>'; lis = ''; }
+                            inner += headHTML(b);
+                        }
+                        j++;
+                    }
+                    if (lis) inner += '<ul>' + lis + '</ul>';
+                    out += '<div class="cv-job">' + inner + '</div>';
+                    i = j;
+                }
+            }
+            return out;
+        }
+
+        function setKeep(arr, whole) {
+            var n = arr.length;
+            for (var i = 0; i < n - 1; i++) {
+                if (whole || i <= 1 || i === n - 2) arr[i].k = true;
+            }
+        }
+
+        function splitToFit(atom, page, measure, limit) {
+            if (atom.t !== 'li' && atom.t !== 'ln') return null;
+            var words = atom.x.split(/\s+/);
+            if (words.length < 2) return null;
+            var lo = 1, hi = words.length - 1, best = 0;
+            while (lo <= hi) {
+                var mid = (lo + hi) >> 1;
+                var test = page.concat([Object.assign({}, atom, { x: words.slice(0, mid).join(' '), k: false })]);
+                if (measure(test) <= limit) { best = mid; lo = mid + 1; } else { hi = mid - 1; }
+            }
+            if (!best) return null;
+            return [
+                Object.assign({}, atom, { x: words.slice(0, best).join(' '), k: false }),
+                Object.assign({}, atom, { x: words.slice(best).join(' '), cont: true })
+            ];
+        }
+
+        function paginate(atoms, measure, limit) {
+            var pages = [[]], queue = atoms.slice(), guard = 0;
+            while (queue.length && guard++ < 20000) {
+                var page = pages[pages.length - 1];
+                var a = queue.shift();
+                if (measure(page.concat([a])) <= limit) { page.push(a); continue; }
+                if (page.length === 0) {
+                    var parts = splitToFit(a, page, measure, limit);
+                    if (parts) { page.push(parts[0]); queue.unshift(parts[1]); }
+                    else { page.push(a); }
+                    pages.push([]);
+                    continue;
+                }
+                if ((a.t === 'li' || a.t === 'ln') && measure([a]) > limit) {
+                    var fit = splitToFit(a, page, measure, limit);
+                    if (fit) { page.push(fit[0]); queue.unshift(fit[1]); pages.push([]); continue; }
+                }
+                var cut = page.length;
+                while (cut > 0 && page[cut - 1].k) cut--;
+                if (cut === 0) cut = page.length; 
+                var moved = page.splice(cut);
+                queue = moved.concat([a], queue);
+                pages.push([]);
+            }
+            while (pages.length > 1 && pages[pages.length - 1].length === 0) pages.pop();
+            return pages;
+        }
+
+        function readForm() {
+            var d = {
+                name: val('inpName'), title: val('inpTitle'), email: val('inpEmail'), phone: val('inpPhone'),
+                loc: val('inpLocation'), summary: val('inpSummary'), skills: val('inpSkills'),
+                certs: val('inpCerts'), langs: val('inpLangs'), refs: val('inpRefs'), jobs: [], edus: []
+            };
+            document.querySelectorAll('#experienceContainer > div').forEach(function (b) {
+                d.jobs.push({
+                    t: b.querySelector('.exp-title').value.trim(), c: b.querySelector('.exp-company').value.trim(),
+                    d: b.querySelector('.exp-dates').value.trim(), desc: b.querySelector('.exp-desc').value.trim()
+                });
+            });
+            document.querySelectorAll('#educationContainer > div').forEach(function (b) {
+                d.edus.push({
+                    deg: b.querySelector('.edu-degree').value.trim(), sch: b.querySelector('.edu-school').value.trim(),
+                    yr: b.querySelector('.edu-year').value.trim()
+                });
+            });
+            return d;
+        }
+
+        function layoutPages(d) {
+            var p = ensureProbe();
+            var pageH = p.ruler.getBoundingClientRect().height;
+            var padS = vPad(p.side), padM = vPad(p.main);
+            var limS = pageH - padS - 1, limM = pageH - padM - 1;
+            var measureS = function (l) { p.side.innerHTML = renderAtoms(l); return p.side.getBoundingClientRect().height - padS; };
+            var measureM = function (l) { p.main.innerHTML = renderAtoms(l); return p.main.getBoundingClientRect().height - padM; };
+
+            var side = [{ t: 'hdr', n: d.name || 'Your Name', ti: d.title }];
+            function sideSection(title, lines, gid, uniq) {
+                if (!lines.length) return;
+                var arr = [{ t: 'h', x: title }];
+                lines.forEach(function (l, i) { arr.push({ t: 'ln', g: uniq ? gid + i : gid, x: l }); });
+                setKeep(arr, lines.length <= 8);
+                side = side.concat(arr);
+            }
+            sideSection('Contact', [d.email, d.phone, d.loc].filter(Boolean), 'c', true);
+            sideSection('Skills', splitList(d.skills), 'sk');
+            sideSection('Languages', splitList(d.langs), 'lg');
+            sideSection('Certifications', splitList(d.certs), 'ct');
+            sideSection('References', splitLines(d.refs), 'rf');
+
+            var main = [];
+            if (d.summary) {
+                var sa = [{ t: 'sec', x: 'Profile' }];
+                splitLines(d.summary).forEach(function (l) { sa.push({ t: 'ln', g: 'sm', x: l }); });
+                setKeep(sa, false);
+                main = main.concat(sa);
+            }
+            var expAtoms = [];
+            d.jobs.forEach(function (j, i) {
+                var g = 'j' + i, arr = [];
+                if (j.t || j.c || j.d) arr.push({ t: 'jh', g: g, ti: j.t, c: j.c, d: j.d });
+                splitLines(j.desc).forEach(function (l) { arr.push({ t: 'li', g: g, x: l }); });
+                if (!arr.length) return;
+                setKeep(arr, measureM(arr) <= 0.3 * limM);
+                expAtoms = expAtoms.concat(arr);
+            });
+            if (expAtoms.length) main = main.concat([{ t: 'sec', x: 'Experience', k: true }], expAtoms);
+            var eduAtoms = [];
+            d.edus.forEach(function (e, i) {
+                if (e.deg || e.sch || e.yr) eduAtoms.push({ t: 'edu', g: 'e' + i, ti: e.deg, c: e.sch, d: e.yr });
+            });
+            if (eduAtoms.length) main = main.concat([{ t: 'sec', x: 'Education', k: true }], eduAtoms);
+
+            var sidePages = paginate(side, measureS, limS);
+            var mainPages = paginate(main, measureM, limM);
+            var total = Math.max(sidePages.length, mainPages.length, 1);
+
+            var html = '';
+            for (var i = 0; i < total; i++) {
+                html += '<section class="cv-paper cv-page layout-modern" data-page="' + (i + 1) + '" aria-label="Page ' + (i + 1) + ' of ' + total + '">' +
+                    '<div class="modern-sidebar">' + renderAtoms(sidePages[i] || []) + '</div>' +
+                    '<div class="modern-main">' + renderAtoms(mainPages[i] || []) + '</div></section>';
+            }
+            p.side.innerHTML = '';
+            p.main.innerHTML = '';
+            return { html: html, total: total };
+        }
+
+        function renderNow() {
+            clearTimeout(updTimer);
+            updTimer = null;
+            var preview = el('cvPreview');
+            if (!preview) return;
+            var d = readForm();
+            var sig = JSON.stringify(d);
+            if (sig === lastSig) return;
+            lastSig = sig;
+            var res = layoutPages(d);
+            preview.innerHTML = res.html;
+            pageCount = res.total;
+            if (currentPage > pageCount) currentPage = pageCount;
+            rescale();
+            observePages();
+            updatePageInfo();
+            queuePin();
+        }
+        function scheduleUpdate() {
+            clearTimeout(updTimer);
+            updTimer = setTimeout(renderNow, 100);
+        }
+        window.updateCV = scheduleUpdate;
+
+        function rescale() {
+            var vp = el('cvViewport'), st = el('cvPreview'), sc = el('cvScaler');
+            if (!vp || !st || !sc) return;
+            var w = st.offsetWidth, h = st.offsetHeight;
+            if (!w) return;
+            var cs = getComputedStyle(vp);
+            var avail = vp.clientWidth - (parseFloat(cs.paddingLeft) || 0) - (parseFloat(cs.paddingRight) || 0);
+            var s = zoomFull ? 1 : Math.min(1, avail / w);
+            if (!(s > 0)) s = 1;
+            st.style.transform = s === 1 ? 'none' : 'scale(' + s + ')';
+            sc.style.width = (w * s) + 'px';
+            sc.style.height = (h * s) + 'px';
+        }
+
+        var pinQueued = false, desktopMQ = window.matchMedia ? window.matchMedia('(min-width: 1024px)') : null;
+        function pinPreview() {
+            pinQueued = false;
+            var col = el('cvPreviewCol');
+            if (!col) return;
+            if (!desktopMQ || !desktopMQ.matches) { col.style.transform = ''; return; }
+            var ws = col.parentElement, hdr = document.querySelector('body > header');
+            var gap = 12 + (hdr ? Math.max(0, hdr.getBoundingClientRect().bottom) : 0);
+            var push = Math.max(0, gap - ws.getBoundingClientRect().top);
+            var room = Math.max(0, ws.clientHeight - col.offsetHeight);
+            col.style.transform = push > 0 ? 'translateY(' + Math.round(Math.min(push, room)) + 'px)' : '';
+        }
+        function queuePin() {
+            if (pinQueued) return;
+            pinQueued = true;
+            requestAnimationFrame(pinPreview);
+        }
+
+        var pageObserver = null, ratios = {};
+        function observePages() {
+            if (pageObserver) pageObserver.disconnect();
+            ratios = {};
+            if (!('IntersectionObserver' in window)) return;
+            pageObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) { ratios[e.target.getAttribute('data-page')] = e.intersectionRatio; });
+                var best = currentPage, bv = -1;
+                Object.keys(ratios).forEach(function (k) { if (ratios[k] > bv) { bv = ratios[k]; best = +k; } });
+                if (best !== currentPage) { currentPage = best; updatePageInfo(); }
+            }, { threshold: [0, 0.25, 0.5, 0.75, 1] });
+            document.querySelectorAll('#cvPreview .cv-page').forEach(function (pg) { pageObserver.observe(pg); });
+        }
+        function updatePageInfo() {
+            var info = el('cvPageInfo');
+            if (info) info.textContent = pageCount === 1 ? '1 page · A4' : 'Page ' + currentPage + ' of ' + pageCount + ' · A4';
+            var prev = el('cvPrev'), next = el('cvNext');
+            if (prev) prev.disabled = currentPage <= 1;
+            if (next) next.disabled = currentPage >= pageCount;
+        }
+        function goPage(n) {
+            n = Math.max(1, Math.min(pageCount, n));
+            var pg = document.querySelector('#cvPreview .cv-page[data-page="' + n + '"]');
+            if (pg) pg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            currentPage = n;
+            updatePageInfo();
+        }
+
+        var savedTitle = null, titleTimer = null;
+        function restoreTitle() {
+            clearTimeout(titleTimer);
+            if (savedTitle !== null) { document.title = savedTitle; savedTitle = null; }
+        }
+        function printCV() {
+            renderNow();
+            var nm = val('inpName');
+            if (nm && savedTitle === null) {
+                savedTitle = document.title;
+                document.title = nm + ' - Resume';
+                titleTimer = setTimeout(restoreTitle, 30000);
+            }
+            window.print();
+        }
+        window.printCV = printCV;
+
+        var TYPOS = {
+            teh: 'the', recieve: 'receive', recieved: 'received', recieving: 'receiving', adress: 'address',
+            occured: 'occurred', occurence: 'occurrence', seperate: 'separate', seperately: 'separately',
+            definately: 'definitely', definitly: 'definitely', managment: 'management', enviroment: 'environment',
+            accomodate: 'accommodate', acheive: 'achieve', acheived: 'achieved', achivement: 'achievement',
+            acheivement: 'achievement', experiance: 'experience', responsibilty: 'responsibility',
+            sucessful: 'successful', sucessfully: 'successfully', succesful: 'successful', succesfully: 'successfully',
+            knowlege: 'knowledge', profesional: 'professional', proffesional: 'professional',
+            comunication: 'communication', comunicate: 'communicate', developement: 'development',
+            maintainance: 'maintenance', begining: 'beginning', wich: 'which', becuase: 'because', beacuse: 'because',
+            thier: 'their', untill: 'until', alot: 'a lot', dont: "don't", didnt: "didn't", cant: "can't",
+            wasnt: "wasn't", bussiness: 'business', buisness: 'business', inovative: 'innovative',
+            efficent: 'efficient', effecient: 'efficient', tecnical: 'technical', techincal: 'technical',
+            implimented: 'implemented', impliment: 'implement', anaylsis: 'analysis', resposible: 'responsible',
+            collaberate: 'collaborate', collaberation: 'collaboration'
+        };
+        var CASING = {
+            javascript: 'JavaScript', typescript: 'TypeScript', linkedin: 'LinkedIn', github: 'GitHub',
+            powerpoint: 'PowerPoint', wordpress: 'WordPress', mysql: 'MySQL', postgresql: 'PostgreSQL',
+            html: 'HTML', css: 'CSS', sql: 'SQL', seo: 'SEO', api: 'API', apis: 'APIs', aws: 'AWS', ui: 'UI', ux: 'UX'
+        };
+        var ABBREV = { etc: 1, inc: 1, ltd: 1, vs: 1, approx: 1, dept: 1, corp: 1, est: 1, mrs: 1, prof: 1, avg: 1, min: 1, max: 1 };
+        var KEEP_DOUBLE = { had: 1, that: 1 };
+
+        function matchCase(orig, rep) {
+            if (orig === orig.toLowerCase()) return rep;
+            if (orig === orig.toUpperCase() && orig.length > 1) return rep.toUpperCase();
+            if (orig.charAt(0) === orig.charAt(0).toUpperCase()) return rep.charAt(0).toUpperCase() + rep.slice(1);
+            return rep;
+        }
+
+        function fixLine(line) {
+            var s = line.replace(/[ \t\u00A0]+/g, ' ').trim();
+            if (!s) return '';
+            s = s.replace(/[A-Za-z]+(?:['\u2019][A-Za-z]+)?/g, function (w, off, str) {
+                var prev = str.charAt(off - 1), low = w.toLowerCase();
+                if (prev === '.' || prev === '/' || prev === '@' || prev === '-' || prev === '#' || prev === '_') return w;
+                if (str.charAt(off + w.length) === '.' && /[A-Za-z]/.test(str.charAt(off + w.length + 1))) return w;
+                if (Object.prototype.hasOwnProperty.call(TYPOS, low)) return matchCase(w, TYPOS[low]);
+                if (Object.prototype.hasOwnProperty.call(CASING, low) && w === low) return CASING[low];
+                return w;
+            });
+            s = s.replace(/\b([A-Za-z]{2,})\s+\1\b/gi, function (m, w) { return KEEP_DOUBLE[w.toLowerCase()] ? m : w; });
+            s = s.replace(/\s+([,;:!?])/g, '$1').replace(/\s+\.(?=\s|$)/g, '.');
+            s = s.replace(/([,;])(?=[A-Za-z])/g, '$1 ');
+            s = s.replace(/([a-z]{2,}[.!?])(?=[A-Z][a-z]{3,})/g, '$1 ');
+            s = s.replace(/\bi\b(?=['\u2019](?:m|ve|ll|d)\b|[\s,;:!?]|$)/g, 'I');
+            s = s.replace(/([A-Za-z]{3,})([.!?])(\s+)([a-z])/g, function (m, w, p, sp, c) {
+                return ABBREV[w.toLowerCase()] ? m : w + p + sp + c.toUpperCase();
+            });
+            s = s.replace(/^([-\u2022*\u2013]\s*)?([a-z])/, function (m, mark, c) {
+                return /^[a-z]+[A-Z]/.test(s.replace(/^[-\u2022*\u2013]\s*/, '')) ? m : (mark || '') + c.toUpperCase();
+            });
+            return s;
+        }
+
+        function fixText(text, sentenceMode) {
+            var src = text.split(/\r?\n/);
+            var out = src.map(fixLine);
+            var filled = out.filter(Boolean);
+            var ends = filled.filter(function (l) { return /[.!?\u2026]$/.test(l); }).length;
+            var addStop = sentenceMode || (filled.length >= 2 && ends / filled.length >= 0.5);
+            if (addStop) {
+                out = out.map(function (l) { return l && !/[.!?\u2026:]$/.test(l) ? l + '.' : l; });
+            }
+            var changed = 0;
+            for (var i = 0; i < src.length; i++) if (src[i] !== out[i]) changed++;
+            return { text: out.join('\n'), changed: changed };
+        }
+
+        var toastTimer = null, lastFix = null;
+        function hideToast() {
+            var t = el('cvToast');
+            if (t) t.hidden = true;
+            clearTimeout(toastTimer);
+        }
+        function showToast(msg, isError, undoable) {
+            var t = el('cvToast');
+            if (!t) return;
+            clearTimeout(toastTimer);
+            t.className = 'cv-toast' + (isError ? ' is-error' : '');
+            el('cvToastMsg').textContent = msg;
+            el('cvToastAnnuler').hidden = !undoable;
+            t.hidden = false;
+            toastTimer = setTimeout(hideToast, undoable ? 9000 : 4500);
+        }
+
+        function fixWithAI(targetId, btnElement) {
+            var textarea = targetId ? el(targetId) : (btnElement && btnElement.parentElement ? btnElement.parentElement.querySelector('textarea') : null);
+            var btn = btnElement || (targetId ? document.querySelector('[data-fix-for="' + targetId + '"]') : null);
+            if (!textarea) { showToast('Could not find the text field to fix.', true); return; }
+            if (btn && btn.getAttribute('data-busy') === '1') return;      
+            var original = textarea.value;
+            if (!original.trim()) { showToast('Nothing to fix yet - type some text first.', false); return; }
+
+            var label = btn ? btn.innerHTML : '';
+            if (btn) { btn.setAttribute('data-busy', '1'); btn.disabled = true; btn.innerHTML = '✨ Fixing...'; }
+            function finish(text) {
+                if (!btn) return;
+                btn.innerHTML = text;
+                setTimeout(function () { btn.innerHTML = label; btn.disabled = false; btn.removeAttribute('data-busy'); }, 1200);
+            }
+            setTimeout(function () {
+                try {
+                    var res = fixText(original, textarea.id === 'inpSummary');
+                    if (res.text === original) {
+                        showToast('Looks good - no changes needed.', false);
+                        finish('✓ Looks good');
+                    } else {
+                        textarea.value = res.text;
+                        lastFix = { node: textarea, prev: original };
+                        scheduleUpdate();
+                        showToast('Improved ' + res.changed + (res.changed === 1 ? ' line.' : ' lines.'), false, true);
+                        finish('✅ Fixed!');
+                    }
+                } catch (err) {
+                    showToast('AI Fix failed. Your text was not changed.', true);
+                    finish('❌ Failed');
+                }
+            }, 40);
+        }
+        window.fixWithAI = fixWithAI;
+
+        function init() {
+            el('cvPrev').addEventListener('click', function () { goPage(currentPage - 1); });
+            el('cvNext').addEventListener('click', function () { goPage(currentPage + 1); });
+            el('cvZoom').addEventListener('click', function () {
+                zoomFull = !zoomFull;
+                this.setAttribute('aria-pressed', zoomFull ? 'true' : 'false');
+                this.textContent = zoomFull ? '🔍 Fit to width' : '🔍 Taille réelle';
+                rescale();
+            });
+            el('cvToastAnnuler').addEventListener('click', function () {
+                if (lastFix && lastFix.node) { lastFix.node.value = lastFix.prev; scheduleUpdate(); }
+                lastFix = null;
+                hideToast();
+            });
+            if ('ResizeObserver' in window) {
+                var raf = 0;
+                new ResizeObserver(function () { cancelAnimationFrame(raf); raf = requestAnimationFrame(rescale); }).observe(el('cvViewport'));
+            } else {
+                window.addEventListener('resize', rescale);
+            }
+            window.addEventListener('scroll', queuePin, { passive: true });
+            window.addEventListener('resize', queuePin);
+            window.addEventListener('beforeprint', function () { var c = el('cvPreviewCol'); if (c) c.style.transform = ''; renderNow(); });
+            window.addEventListener('afterprint', restoreTitle);
+            if (document.fonts && document.fonts.ready) {
+                document.fonts.ready.then(function () { lastSig = null; renderNow(); });
+            }
+            addExperience();
+            addEducation();
+            renderNow();
+        }
+        init();
+
+    })();
+    </script>
+
+        <!-- FEEDBACK MODAL LOGIC -->
+    <script>
+        // 1. OPEN MODAL
+        function openFeedbackModal(type = "review") {
+            document.getElementById("formType").value = type;
+            toggleFormFields();
+            document.getElementById("feedbackModal").classList.remove("hidden");
+        }
+
+        // 2. CLOSE MODAL
+        function closeFeedbackModal() {
+            document.getElementById("feedbackModal").classList.add("hidden");
+            document.getElementById("communityForm").reset();
+            document.getElementById("formError").classList.add("hidden");
+            document.getElementById("formSuccess").classList.add("hidden");
+        }
+
+        function handleBackdropCliquez sur(e) {
+            if (e.target && e.target.id === 'feedbackModal') closeFeedbackModal();
+        }
+
+        function toggleFormFields() {
+            const type = document.getElementById("formType").value;
+            const targetPageGroup = document.getElementById("targetPageGroup");
+            const suggestionCategoryGroup = document.getElementById("suggestionCategoryGroup");
+            const ratingGroup = document.getElementById("ratingGroup");
+            const titleGroup = document.getElementById("titleGroup");
+            const commentLabel = document.getElementById("commentLabel");
+            const modalTitle = document.getElementById("modalTitle");
+
+            if (type === "suggestion") {
+                targetPageGroup.classList.add("hidden");
+                suggestionCategoryGroup.classList.remove("hidden");
+                ratingGroup.classList.add("hidden");
+                titleGroup.classList.remove("hidden");
+                commentLabel.textContent = "Detailed Suggestion Description *";
+                modalTitle.textContent = "Suggest a New Tool or Feature";
+            } else {
+                targetPageGroup.classList.remove("hidden");
+                suggestionCategoryGroup.classList.add("hidden");
+                ratingGroup.classList.remove("hidden");
+                titleGroup.classList.add("hidden");
+                commentLabel.textContent = "Written Comment *";
+                modalTitle.textContent = "Share Your Feedback";
+            }
+        }
+
+        // 3. STAR RATING LOGIC
+        document.addEventListener("DOMContentLoaded", function() {
+            const container = document.getElementById("starRatingContainer");
+            const input = document.getElementById("starRating");
+            if (!container || !input) return;
+
+            const stars = container.querySelectorAll(".star-click");
+            let currentRating = 5;
+
+            function updateStars(rating) {
+                stars.forEach((star, index) => {
+                    if (index < rating) {
+                        star.classList.add("text-amber-500");
+                        star.classList.remove("text-gray-300", "dark:text-gray-600");
+                    } else {
+                        star.classList.remove("text-amber-500");
+                        star.classList.add("text-gray-300", "dark:text-gray-600");
+                    }
+                });
+            }
+
+            stars.forEach((star, index) => {
+                star.addEventListener("mouseenter", () => updateStars(index + 1));
+                star.addEventListener("mouseleave", () => updateStars(currentRating));
+                star.addEventListener("click", () => {
+                    currentRating = index + 1;
+                    input.value = currentRating;
+                    updateStars(currentRating);
+                });
+                star.addEventListener("touchstart", (e) => {
+                    e.preventDefault();
+                    currentRating = index + 1;
+                    input.value = currentRating;
+                    updateStars(currentRating);
+                });
+            });
+            updateStars(currentRating);
+        });
+
+        // 4. FORM SUBMISSION
+        async function submitCommunityFeedback(event) {
+            event.preventDefault();
+            const errorBox = document.getElementById("formError");
+            const successBox = document.getElementById("formSuccess");
+            const submitBtn = document.getElementById("submitModalBtn");
+            const API_URL = "https://script.google.com/macros/s/AKfycbxMZGHXUkzX04Z3slFH5F3GveBOIrj-XiKPl04aPOTHjBur8uSg57kb-PRr781vcStd5w/exec";
+
+            errorBox.classList.add("hidden");
+            successBox.classList.add("hidden");
+
+            const formType = document.getElementById("formType").value;
+            const commentText = document.getElementById("commentText").value.trim();
+            const authorName = document.getElementById("authorName") ? document.getElementById("authorName").value.trim() : "";
+            const country = document.getElementById("country") ? document.getElementById("country").value.trim() : "";
+
+            let payload = {
+                formType: formType,
+                commentText: commentText,
+                authorName: authorName,
+                country: country,
+                recommendation: "",
+                language: "en"
+            };
+
+            if (formType === "suggestion") {
+                payload.suggestionCategory = document.getElementById("suggestionCategory").value;
+                payload.suggestionTitle = document.getElementById("suggestionTitle").value.trim();
+                if (!payload.suggestionTitle || !commentText) {
+                    errorBox.textContent = "Please fill out all required suggestion fields.";
+                    errorBox.classList.remove("hidden");
+                    return;
+                }
+            } else {
+                // Since the dropdown is gone, we force the values here
+                payload.targetPageId = "cv-maker";
+                payload.starRating = document.getElementById("starRating").value;
+                payload.pageUrl = "cv-maker.html";
+                if (!commentText) {
+                    errorBox.textContent = "Please enter your written review.";
+                    errorBox.classList.remove("hidden");
+                    return;
+                }
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = "⏳...";
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "text/plain;charset=utf-8" },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+
+                if (result.status === "success") {
+                    successBox.textContent = "🎉 Thank you! Your submission is pending moderation.";
+                    successBox.classList.remove("hidden");
+                    document.getElementById("communityForm").reset();
+                    setTimeout(() => { 
+                        closeFeedbackModal(); 
+                        submitBtn.disabled = false; 
+                        submitBtn.textContent = "🚀 Submit Feedback"; 
+                    }, 3000);
+                } else {
+                    errorBox.textContent = result.message || "Submission failed.";
+                    errorBox.classList.remove("hidden");
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "🚀 Submit Feedback";
+                }
+            } catch (err) {
+                errorBox.textContent = "Network error. Please try again.";
+                errorBox.classList.remove("hidden");
+                submitBtn.disabled = false;
+                submitBtn.textContent = "🚀 Submit Feedback";
+            }
+        }
+    </script>
+
+    <!-- ANALYTICS & ADSENSE -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
+    <script>
+      window.addEventListener('load', function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W8KM3G3BYL');
+      });
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
+</body>
+</html>
