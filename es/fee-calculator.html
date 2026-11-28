@@ -690,7 +690,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                 <div id="formSuccess" class="hidden p-3 rounded-xl text-xs font-bold text-emerald-500 bg-emerald-500/10 border border-emerald-500/30"></div>
 
                 <div class="flex items-center gap-2.5 pt-1">
-                    <button type="button" onclick="closeFeedbackModal()" class="btn-3d btn-chip px-4 py-3 rounded-xl text-xs sm:text-sm font-bold">Cancelar</button>
+                    <button type="button" onclick="closeFeedbackModal()" class="btn-3d btn-chip px-4 py-3 rounded-xl text-xs sm:text-sm font-bold">Cancelarar</button>
                     <button type="submit" id="submitModalBtn" class="btn-3d btn-primary flex-1 py-3 rounded-xl text-xs sm:text-sm font-black">🚀 Enviar opinión</button>
                 </div>
             </form>
@@ -1048,19 +1048,19 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                     setTimeout(() => { 
                         closeFeedbackModal(); 
                         submitBtn.disabled = false; 
-                        submitBtn.textContent = "🚀 Submit Feedback"; 
+                        submitBtn.textContent = "🚀 Enviar comentario"; 
                     }, 3000);
                 } else {
                     errorBox.textContent = result.message || "No se pudo enviar.";
                     errorBox.classList.remove("hidden");
                     submitBtn.disabled = false;
-                    submitBtn.textContent = "🚀 Submit Feedback";
+                    submitBtn.textContent = "🚀 Enviar comentario";
                 }
             } catch (err) {
                 errorBox.textContent = "Error de conexión. Inténtalo de nuevo.";
                 errorBox.classList.remove("hidden");
                 submitBtn.disabled = false;
-                submitBtn.textContent = "🚀 Submit Feedback";
+                submitBtn.textContent = "🚀 Enviar comentario";
             }
         }
     </script>
