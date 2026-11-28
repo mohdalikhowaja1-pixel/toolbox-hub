@@ -832,3 +832,46 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 - It remains a source-level editorial review, not native-speaker certification or runtime/release approval.
 - Next major phase: begin the 56 tool/application page families, reviewing translated interface copy and SEO metadata while protecting all functional logic and identifiers.
 - Keep the development branch isolated. No merge, deployment or publishing-source change is authorized.
+
+
+## Tool/application page QA batch 1 — Homepage, Premium Store and CV Maker — 2026-11-28
+
+### Pages reviewed and corrected
+- Began the 32 non-article site/tool page families after completing the 24 article families.
+- Completed English-source comparison for the Homepage, Premium Store and CV Maker in Spanish and French (six localized pages).
+- Homepage:
+  - Translated the remaining English giveaway prize/no-purchase copy, mixed category and tool labels, feedback prompt and feedback selector label.
+  - Repaired malformed Spanish/French Loan EMI, QR Generator and password-generator labels.
+  - Localized the “Why we built MyToolX” privacy explanation, footer description and footer privacy note.
+  - Localized Open Graph/Twitter image alt text and the ItemList structured-data name/description entries. All 23 tool names in the ItemList are now localized.
+- Premium Store:
+  - Localized the remaining “New” badge, shared footer privacy note, social image alt text, and Open Graph/Twitter title and description metadata.
+  - Corrected the Spanish feedback-modal “Cancelarar” typo.
+- CV Maker:
+  - Repaired duplicated/malformed Spanish and French introductory copy and privacy wording.
+  - Translated remaining English ATS guidance, resume achievement examples, PDF download FAQ, related-guide descriptions and footer navigation.
+  - Localized the WebApplication structured-data description and all FAQPage question/answer text.
+  - Localized social image alt text and Open Graph/Twitter metadata.
+  - Preserved the CV builder interface IDs, form controls, event handlers, PDF print behavior, preview logic and app code.
+
+### Verification performed
+- Re-fetched all six localized pages after edits.
+- Homepage: both JSON-LD blocks parse successfully; ItemList contains 23 localized tool names in each language; targeted mixed-language scan returned no matches.
+- Premium Store: both JSON-LD blocks parse successfully; metadata and social image alt text are localized; targeted English-fragment scan returned no matches.
+- CV Maker: all three JSON-LD blocks parse successfully; WebApplication description and FAQPage answers are localized; targeted English-fragment scan returned no matches.
+- Confirmed localized Open Graph and Twitter image alt metadata on all six pages.
+- These are source-level editorial, metadata and structured-data checks only. Browser/runtime, responsive/theme, form submission, CV preview/print, payment checkout, accessibility, console/network and live HTTP/indexability testing remain outstanding.
+
+### Key latest content commits in this batch
+- Spanish Homepage: `99cd5361d9565fd480d974cab35e1d657f31f99a`
+- French Homepage: `d63baa13bb85035e034dd94df0f27ce4295b64f2`
+- Spanish Premium Store: `595e1e8c835ce77428801ea9a64ccb38d9d5e959`
+- French Premium Store: `3d569ab8bbd06a7bb6e2729fd61103109185882c`
+- Spanish CV Maker: `fb054711984d2a5e3121ad2cf7eb4f2e0b6290a1`
+- French CV Maker: `ecbe8a9f7de2d7bf44a8335246160b7988c9f8b8`
+
+### Next action
+1. Continue the remaining site/tool page families in controlled batches, comparing each localized page with English and preserving all app logic.
+2. Prioritize the Blog index, Community, About, Contact, Privacy, Terms and Giveaway pages, then the remaining tool interfaces.
+3. Complete full technical/runtime validation after all translations are reviewed.
+4. Keep the development branch isolated; no merge, deployment or publishing-source change is authorized.
