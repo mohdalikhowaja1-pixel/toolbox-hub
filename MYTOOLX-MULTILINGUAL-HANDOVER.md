@@ -644,3 +644,46 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 2. Re-run article-wide structured-data and internal-link validation after the article editorial pass.
 3. Then begin the 56 tool/application page families, protecting application logic and identifiers.
 4. Keep production isolated until all release blockers are cleared and explicit deployment approval is given.
+
+
+## Editorial QA batch — three financial article families, Spanish and French — 2026-11-28
+
+### Pages reviewed and corrected
+- Completed direct English-source comparison for three additional article families (six localized HTML pages):
+  - Freelance Finance / Fee Calculator
+  - SIP Investing
+  - Loan EMI
+- Freelance Finance:
+  - Corrected mixed-language “Our” fragments before the Spanish and French Fee Calculator links.
+  - Localized percentage and currency formatting for Stripe, PayPal and ACH examples while preserving the numeric fee values.
+  - Translated related SIP guide cards, social image alt text, shared footer copy and the recurring Spanish feedback-modal typo.
+- SIP Investing:
+  - Corrected mixed-language calculator-link labels in both locales.
+  - Localized related Loan EMI guide cards, social image alt text and shared footer copy; corrected the Spanish feedback-modal typo.
+  - Preserved investment examples and added/retained risk qualifications in translated explanatory copy; no calculator logic was changed.
+- Loan EMI:
+  - Repaired malformed translated tool names (“préstamoulator” and “prêtulator”) and the mixed-language “Our” sentence.
+  - Localized social image alt text and shared footer copy; corrected the Spanish feedback-modal typo.
+- Preserved calculations, financial values, tool links, identifiers, form values, event handlers and application behavior.
+
+### Verification performed
+- Re-fetched all six localized files after the edits.
+- Parsed both JSON-LD blocks on each page successfully (12 blocks total).
+- Confirmed each Article JSON-LD headline matches its visible H1 after ignoring the leading decorative emoji.
+- Targeted residual scans for the mixed-language phrases, untranslated metadata/card titles and malformed calculator labels addressed in this batch returned no matches.
+- Confirmed localized OG/Twitter image alt text is present on all six pages.
+- This is source-level editorial and JSON-LD syntax validation only. It is not financial fact-checking of changing provider fees, browser/runtime testing, full-page linguistic certification, native-speaker review, live HTTP/indexability verification or a form-submission test.
+
+### Key latest content commits in this batch
+- Spanish Freelance Finance: `ff990d9d430e63e48a3409f30b0d5590b46142ff`
+- French Freelance Finance: `b36a28edc7d30c3dbab248c96db055890c5226f0`
+- Spanish SIP Investing: `be7037f9431f787666065c7ce1ff58605a9436ff`
+- French SIP Investing: `684b585d9070f3bf3d6203638ab6cdbf9dcd578e`
+- Spanish Loan EMI: `44b7b23f87e161f9d613b585c930ab417dd9f7e0`
+- French Loan EMI: `04537e1b3b8b95252425632115bead3a82a6ae5d`
+
+### Next action
+1. Continue direct source comparison on the remaining 11 article families.
+2. Re-run article-wide structured-data, localized related-card and internal-link validation after editorial review.
+3. Then begin the 56 tool/application page families, protecting all functional logic and identifiers.
+4. Keep the development branch isolated; no merge, deployment or publishing-source change is authorized.
