@@ -147,3 +147,15 @@ Read `MYTOOLX-MULTILINGUAL-HANDOVER.md` first for the authoritative resume point
 - Latest handover commit: `2c7d355dfbb7710112892f1d003b6b6e9e96ad18`. Exact content commits and limitations are recorded in `MYTOOLX-MULTILINGUAL-HANDOVER.md`.
 - Source-level checks only. Full-page language certification, native-speaker review, browser/runtime, application interaction, responsive/theme/accessibility, console/network and live HTTP/indexability checks remain outstanding.
 - Next: review the remaining five article families, then begin the 56 tool/application page families. Do not merge or deploy without explicit approval.
+
+
+## Article editorial milestone completed — 2026-11-28
+
+- Completed direct English-source comparison across all 24 article families in Spanish and French (48 localized article pages).
+- The final five families reviewed were Premium Bundles, Math Sprint, WordStorm, Word Scramble and Reaction Time.
+- Final corrections included the remaining feedback form category labels, Spanish cancel typo, shared footer copy, localized related-card titles, social image alt metadata on game pages, and two French Article JSON-LD headline/H1 mismatches.
+- Preserved game word corpora, in-game English sample phrases, world names, calculations, identifiers, form values and event handlers where English is part of the functional content.
+- The final ten pages had 20 JSON-LD blocks parsed successfully; Article headlines match visible H1 headings after decorative emoji normalization. Targeted residual scans for the defects found in this batch returned no matches.
+- Latest handover commit: `445cfdd51989a855da7bdf5a5778031a80c0d37b`. See `MYTOOLX-MULTILINGUAL-HANDOVER.md` for the detailed per-batch commit ledger and QA limits.
+- Article milestone is complete at source-review level only. Native-speaker certification, browser/runtime and game interaction tests, responsive/theme/accessibility, console/network and live HTTP/indexability checks remain outstanding.
+- Next major phase: begin editorial and functional review of the 56 tool/application page families. Keep the development branch isolated; no merge, deployment or publishing-source change without explicit approval.
