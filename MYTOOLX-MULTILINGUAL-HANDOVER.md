@@ -49,6 +49,8 @@ Latest known commit from this batch: `56e64c27f600174544d163253d3005dc7bc27ca9` 
 ## QA status
 
 ### Batch audit progress — 2026-11-28
+- Completed source-level structural metadata checks for all 56 page families in English, Spanish and French (168 HTML files): language attribute, title presence, meta description presence, canonical, H1 count, hreflang presence and language-switcher inclusion. This is not equivalent to full content proofreading or browser QA.
+- All 56 localized page paths exist in both language folders. No missing counterpart files were found in the sitemap-derived file existence scan.
 - Source-level metadata audit completed for 48 of 56 English page families and their 96 localized counterparts (144 files total), checking language attribute, title, description presence, canonical, H1 count, hreflang presence and language-switcher script.
 - The sampled tool pages and several guides showed correct `lang`, unique canonical, title/description presence, one H1 and four hreflang values.
 - Defects discovered and corrected:
@@ -57,6 +59,11 @@ Latest known commit from this batch: `56e64c27f600174544d163253d3005dc7bc27ca9` 
   - Missing reciprocal hreflang on all three `blog-unit-conversion.html` variants.
   - Missing reciprocal hreflang on all three `blog-text-suite.html` variants.
   - Missing reciprocal hreflang on all three `blog-text-summarizer.html` variants.
+- Additional translation defects discovered and corrected:
+  - `es/blog-math-sprint.html` and `fr/blog-math-sprint.html`: localized article headings, core body copy and instructions; fixed mixed-language SEO titles and retained localized internal tool links.
+  - `es/blog-wordstorm.html` and `fr/blog-wordstorm.html`: translated article title, headings, body and play instructions; retained localized internal tool links. English sample phrases remain intentionally in English because the game uses an English word/phrase corpus.
+  - `es/blog-word-scramble.html` and `fr/blog-word-scramble.html`: translated article content, instructions, headings, metadata and preserved localized links. English sample suffixes/letter clusters remain because the game accepts English words.
+  - `es/blog-reaction-time.html` and `fr/blog-reaction-time.html`: translated article title, core paragraphs and headings, preserving the tool links.
 - Significant translation defects discovered:
   - `es/blog-math-sprint.html` and `fr/blog-math-sprint.html` have mixed-language titles/headings and substantial English article body copy.
   - All three `blog-wordstorm.html` variants retain English title, headings and article body; Spanish/French pages are not fully translated.
@@ -96,7 +103,9 @@ The sitemap now advertises localized URLs for all 56 page families. This must be
 ## Next work — resume here
 
 1. Fetch the current branch head and re-read this handover and `MULTILINGUAL-SEO-PLAN.md`.
-2. Fix the known mixed-language/English body defects in the Math Sprint and WordStorm guides before continuing the remaining 8 page families.
+2. Recheck all four corrected guides (Math Sprint, WordStorm, Word Scramble, Reaction Time) for remaining English text and accidental link loss.
+3. Continue linguistic review of all remaining guides and tool interfaces. The 56-family structural metadata pass is complete, but native-level proofreading is not.
+4. Run browser/runtime tests, responsive/theme/accessibility checks and verify all live URLs after an approved staging/deployment process.
 2. Audit the 56 English/Spanish/French page triplets in batches. Compare page structure, visible copy, title/description, H1-H3, canonical, hreflang, language attribute, internal links, images/alt text, structured data, forms and navigation.
 3. Prioritize application/game behavior: inspect scripts and event wiring against English originals; fix translation-only defects without changing functional logic.
 4. Add a QA ledger to this file after each batch, including exact paths checked, defects found, fixes and commit SHAs.
