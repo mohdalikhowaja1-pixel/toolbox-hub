@@ -21,6 +21,26 @@ function walkJson(v, visit) {
   if (!v || typeof v !== 'object') return;
   visit(v); Object.values(v).forEach(x => walkJson(x, visit));
 }
+function checkLocalTargets(source, file) {
+  const baseUrl = new URL(file, BASE + '/');
+  const refs = [...source.matchAll(/\b(?:href|src)=["']([^"']+)["']/gi)];
+  for (const match of refs) {
+    const value = match[1].trim();
+    if (!value || /^(?:#|mailto:|tel:|javascript:|data:|blob:)/i.test(value)) continue;
+    let target;
+    try { target = new URL(value, baseUrl); } catch (error) { fail(file + ': invalid local reference ' + value); continue; }
+    if (target.hostname !== new URL(BASE).hostname) continue;
+    let pathname;
+    try { pathname = decodeURIComponent(target.pathname); } catch (error) { fail(file + ': invalid encoded path ' + value); continue; }
+    if (pathname === '/es' || pathname === '/fr') pathname += '/';
+    if (pathname.endsWith('/')) pathname += 'index.html';
+    let local = path.resolve(ROOT, '.' + pathname);
+    if (local !== ROOT && !local.startsWith(ROOT + path.sep)) { fail(file + ': target escapes repository root ' + value); continue; }
+    if (fs.existsSync(local) && fs.statSync(local).isDirectory()) local = path.join(local, 'index.html');
+    if (!fs.existsSync(local)) fail(file + ': missing local target ' + value);
+  }
+}
+
 function compareTriplet(relative) {
   const files = [relative, 'es/' + relative, 'fr/' + relative];
   const sources = files.map(read);
@@ -58,6 +78,7 @@ if (stats.urls !== 168 || stats.en !== 56 || stats.es !== 56 || stats.fr !== 56)
 for (const row of pageRows) {
   if (!fs.existsSync(path.join(ROOT, row.file))) continue;
   const source = read(row.file);
+  checkLocalTargets(source, row.file);
   const scriptTags = [...source.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)];
   scriptTags.forEach((match, index) => {
     const tag = '<script ' + match[1] + '>';
