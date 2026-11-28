@@ -1821,10 +1821,10 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                 startConfetti();
             } else if (state.lastRoundRécordPuntuación) {
                 congratsEmoji.textContent = '🏆';
-                resultMsg.textContent = 'New personal best!';
+                resultMsg.textContent = '¡Nuevo récord personal!';
             } else if (state.attempted === 0) {
                 congratsEmoji.textContent = '🤔';
-                resultMsg.textContent = 'No answers this round. Give it another try!';
+                resultMsg.textContent = 'No has respondido ninguna pregunta en esta ronda. ¡Inténtalo de nuevo!';
             } else {
                 congratsEmoji.textContent = '🎯';
                 resultMsg.textContent = 'Buen intento. Tu mejor puntuación es ' + state.bestPuntuación + '.';
@@ -1975,11 +1975,11 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                     shareBtn.textContent = '✅ ¡Copiado!';
                     setTimeout(function () { shareBtn.innerHTML = '🔗 Compartir puntuación'; }, 1600);
                 }).catch(function () {
-                    shareBtn.textContent = '❌ Copy failed';
+                    shareBtn.textContent = '❌ No se pudo copiar';
                     setTimeout(function () { shareBtn.innerHTML = '🔗 Compartir puntuación'; }, 1600);
                 });
             } else {
-                shareBtn.textContent = '❌ Not supported';
+                shareBtn.textContent = '❌ No compatible';
                 setTimeout(function () { shareBtn.innerHTML = '🔗 Compartir puntuación'; }, 1600);
             }
         }
@@ -1994,7 +1994,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                 setTimeout(function () { btn.textContent = original; }, 1800);
             }
             function fail() {
-                btn.textContent = '❌ Could not copy — long press to copy manually';
+                btn.textContent = '❌ No se pudo copiar. Mantén pulsado para copiar manualmente';
                 setTimeout(function () { btn.textContent = original; }, 2400);
             }
             if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -2107,14 +2107,14 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                 suggestionCategoryGroup.classList.remove("hidden");
                 ratingGroup.classList.add("hidden");
                 titleGroup.classList.remove("hidden");
-                commentLabel.textContent = "Detailed Suggestion Description *";
-                modalTitle.textContent = "Suggest a New Tool or Feature";
+                commentLabel.textContent = "Descripción detallada de la sugerencia *";
+                modalTitle.textContent = "Sugerir una nueva herramienta o función";
             } else {
                 targetPageGroup.classList.remove("hidden");
                 suggestionCategoryGroup.classList.add("hidden");
                 ratingGroup.classList.remove("hidden");
                 titleGroup.classList.add("hidden");
-                commentLabel.textContent = "Written Comment *";
+                commentLabel.textContent = "Comentario escrito *";
                 modalTitle.textContent = "Comparte tus comentarios";
             }
         }
@@ -2221,7 +2221,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                         submitBtn.textContent = "🚀 Enviar comentario"; 
                     }, 3000);
                 } else {
-                    errorBox.textContent = result.message || "Submission failed.";
+                    errorBox.textContent = result.message || "No se pudo enviar la sugerencia.";
                     errorBox.classList.remove("hidden");
                     submitBtn.disabled = false;
                     submitBtn.textContent = "🚀 Enviar comentario";

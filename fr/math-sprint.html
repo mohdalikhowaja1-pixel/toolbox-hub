@@ -1821,10 +1821,10 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
                 startConfetti();
             } else if (state.lastRoundRecordScore) {
                 congratsEmoji.textContent = '🏆';
-                resultMsg.textContent = 'New personal best!';
+                resultMsg.textContent = 'Nouveau record personnel !';
             } else if (state.attempted === 0) {
                 congratsEmoji.textContent = '🤔';
-                resultMsg.textContent = 'No answers this round. Give it another try!';
+                resultMsg.textContent = 'Aucune réponse lors de cette manche. Réessayez !';
             } else {
                 congratsEmoji.textContent = '🎯';
                 resultMsg.textContent = 'Belle partie. Votre meilleur score est ' + state.bestScore + '.';
@@ -1975,11 +1975,11 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
                     shareBtn.textContent = '✅ Copié !';
                     setTimeout(function () { shareBtn.innerHTML = '🔗 Partager le score'; }, 1600);
                 }).catch(function () {
-                    shareBtn.textContent = '❌ Copy failed';
+                    shareBtn.textContent = '❌ Échec de la copie';
                     setTimeout(function () { shareBtn.innerHTML = '🔗 Partager le score'; }, 1600);
                 });
             } else {
-                shareBtn.textContent = '❌ Not supported';
+                shareBtn.textContent = '❌ Non pris en charge';
                 setTimeout(function () { shareBtn.innerHTML = '🔗 Partager le score'; }, 1600);
             }
         }
@@ -1994,7 +1994,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
                 setTimeout(function () { btn.textContent = original; }, 1800);
             }
             function fail() {
-                btn.textContent = '❌ Could not copy — long press to copy manually';
+                btn.textContent = '❌ Copie impossible. Appuyez longuement pour copier manuellement';
                 setTimeout(function () { btn.textContent = original; }, 2400);
             }
             if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -2107,14 +2107,14 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
                 suggestionCategoryGroup.classList.remove("hidden");
                 ratingGroup.classList.add("hidden");
                 titleGroup.classList.remove("hidden");
-                commentLabel.textContent = "Detailed Suggestion Description *";
-                modalTitle.textContent = "Suggest a New Tool or Feature";
+                commentLabel.textContent = "Description détaillée de la suggestion *";
+                modalTitle.textContent = "Suggérer un nouvel outil ou une fonctionnalité";
             } else {
                 targetPageGroup.classList.remove("hidden");
                 suggestionCategoryGroup.classList.add("hidden");
                 ratingGroup.classList.remove("hidden");
                 titleGroup.classList.add("hidden");
-                commentLabel.textContent = "Written Comment *";
+                commentLabel.textContent = "Commentaire écrit *";
                 modalTitle.textContent = "Partagez votre avis";
             }
         }
@@ -2221,7 +2221,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
                         submitBtn.textContent = "🚀 Envoyer le commentaire"; 
                     }, 3000);
                 } else {
-                    errorBox.textContent = result.message || "Submission failed.";
+                    errorBox.textContent = result.message || "Échec de l’envoi de la suggestion.";
                     errorBox.classList.remove("hidden");
                     submitBtn.disabled = false;
                     submitBtn.textContent = "🚀 Envoyer le commentaire";
