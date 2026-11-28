@@ -268,7 +268,7 @@
             <div class="flex items-center justify-between gap-3 flex-wrap mb-4 pb-4 border-b" style="border-color: var(--card-border);">
                 <div class="flex items-center gap-2">
                     <label for="feeCurr" class="text-xs font-bold uppercase tracking-wider muted">Moneda</label>
-                    <select id="feeCurr" onchange="onMonedaChange()" class="input-field px-3 py-2 rounded-xl text-xs font-semibold" aria-label="Moneda for both calculators">
+                    <select id="feeCurr" onchange="onCurrencyChange()" class="input-field px-3 py-2 rounded-xl text-xs font-semibold" aria-label="Moneda for both calculators">
                         <option value="$">USD ($)</option>
                         <option value="€">EUR (€)</option>
                         <option value="£">GBP (£)</option>
@@ -617,7 +617,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                 <button type="button" onclick="closeFeedbackModal()" aria-label="Close popup" title="Close" class="mtx-modal-close">✕</button>
             </div>
 
-            <form id="communityForm" onsubmit="submitComunidadFeedback(event)" class="space-y-4">
+            <form id="communityForm" onsubmit="submitCommunityFeedback(event)" class="space-y-4">
                 <div>
                     <label for="formType" class="block text-xs font-bold uppercase tracking-wider muted mb-1">1. ¿Qué te gustaría compartir? *</label>
                     <select id="formType" name="formType" required onchange="toggleFormFields()" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
@@ -773,13 +773,13 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
         var feeMode = 'net';
         var lastValues = { fee: null, receive: null, invoice: null, w: null, m: null, y: null, h2: null, a2: null, h3: null, m3: null };
 
-        function getMoneda() { return document.getElementById('feeCurr').value || '$'; }
+        function getCurrency() { return document.getElementById('feeCurr').value || '$'; }
 
-        function onMonedaChange() {
+        function onCurrencyChange() {
             lastValues = { fee: null, receive: null, invoice: null, w: null, m: null, y: null, h2: null, a2: null, h3: null, m3: null };
             calcPaymentFee(); calcContract1(); calcContract2(); calcContract3();
         }
-        window.onMonedaChange = onMonedaChange;
+        window.onCurrencyChange = onCurrencyChange;
 
         function setFeeMode(mode) {
             feeMode = mode;
@@ -827,7 +827,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
 
         function calcPaymentFee() {
             var gw = document.getElementById('feeGateway').value;
-            var sym = getMoneda();
+            var sym = getCurrency();
             var amt = num('feeAmount');
             var cfg = GATEWAYS[gw] || GATEWAYS.stripe;
 
@@ -857,7 +857,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
         window.calcPaymentFee = calcPaymentFee;
 
         function calcContract1() {
-            var sym = getMoneda(), rate = num('cRate'), hours = num('cHours');
+            var sym = getCurrency(), rate = num('cRate'), hours = num('cHours');
             var weekly = Math.round(rate * hours * 100) / 100;
             var yearly = Math.round(weekly * 52 * 100) / 100;
             var monthly = Math.round(yearly / 12 * 100) / 100;
@@ -870,7 +870,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
         window.calcContract1 = calcContract1;
 
         function calcContract2() {
-            var sym = getMoneda(), monthly = num('tMonthly'), hours = num('tHours');
+            var sym = getCurrency(), monthly = num('tMonthly'), hours = num('tHours');
             var annual = Math.round(monthly * 12 * 100) / 100;
             var hourly = hours > 0 ? Math.round(monthly / (hours * (52 / 12)) * 100) / 100 : 0;
 
@@ -881,7 +881,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
         window.calcContract2 = calcContract2;
 
         function calcContract3() {
-            var sym = getMoneda(), annual = num('sSalary'), hours = num('sHours');
+            var sym = getCurrency(), annual = num('sSalary'), hours = num('sHours');
             var monthly = Math.round(annual / 12 * 100) / 100;
             var hourly = hours > 0 ? Math.round(annual / (hours * 52) * 100) / 100 : 0;
 
@@ -987,7 +987,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
             updateStars(currentRating);
         });
 
-        async function submitComunidadFeedback(event) {
+        async function submitCommunityFeedback(event) {
             event.preventDefault();
             const errorBox = document.getElementById("formError");
             const successBox = document.getElementById("formSuccess");
