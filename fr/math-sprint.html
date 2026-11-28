@@ -1767,7 +1767,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
             scoreDisplay.textContent  = '0';
             streakDisplay.textContent = '0';
             timerDisplay.textContent  = state.duration;
-            roundLabel.textContent    = 'Round ' + state.roundNumber;
+            roundLabel.textContent    = 'Manche ' + state.roundNumber;
             updateAccuracyDisplay();
             refreshTier();
             newBestBadge.classList.add('hidden');
@@ -1814,9 +1814,9 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
             if (isCongrats) {
                 congratsEmoji.textContent = '🎉';
                 if (state.lastRoundRecordScore) {
-                    resultMsg.textContent = 'Congratulations! A new personal best with ' + accPct + '% accuracy!';
+                    resultMsg.textContent = 'Félicitations ! Nouveau record personnel avec ' + accPct + '% de précision !';
                 } else {
-                    resultMsg.textContent = 'Congratulations! You cleared the 80% club with ' + accPct + '% accuracy!';
+                    resultMsg.textContent = 'Félicitations ! Vous avez dépassé les 80 % avec ' + accPct + '% de précision !';
                 }
                 startConfetti();
             } else if (state.lastRoundRecordScore) {
@@ -1827,7 +1827,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
                 resultMsg.textContent = 'No answers this round. Give it another try!';
             } else {
                 congratsEmoji.textContent = '🎯';
-                resultMsg.textContent = 'Good run. Your best score is ' + state.bestScore + '.';
+                resultMsg.textContent = 'Belle partie. Votre meilleur score est ' + state.bestScore + '.';
             }
 
             shareBtn.disabled = false;
@@ -1859,7 +1859,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
             updateAccuracyDisplay();
             questionText.textContent  = 'Appuyez sur Démarrer pour jouer';
             familyLabel.textContent   = 'Prêt';
-            roundLabel.textContent    = 'Round ' + state.roundNumber;
+            roundLabel.textContent    = 'Manche ' + state.roundNumber;
             optionsGrid.innerHTML     = '';
             timingBar.style.width     = '100%';
             shareBtn.disabled = true;
@@ -1972,7 +1972,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
                     .catch(function () {});
             } else if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(text + ' ' + SITE_URL).then(function () {
-                    shareBtn.textContent = '✅ Copied!';
+                    shareBtn.textContent = '✅ Copié !';
                     setTimeout(function () { shareBtn.innerHTML = '🔗 Partager le score'; }, 1600);
                 }).catch(function () {
                     shareBtn.textContent = '❌ Copy failed';
@@ -1990,7 +1990,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
             var btn = el('copyChallengeBtn');
             var original = btn.textContent;
             function done() {
-                btn.textContent = '✅ Copied! Paste it anywhere.';
+                btn.textContent = '✅ Copié ! Collez-le où vous le souhaitez.';
                 setTimeout(function () { btn.textContent = original; }, 1800);
             }
             function fail() {
@@ -2115,7 +2115,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
                 ratingGroup.classList.remove("hidden");
                 titleGroup.classList.add("hidden");
                 commentLabel.textContent = "Written Comment *";
-                modalTitle.textContent = "Share Your Feedback";
+                modalTitle.textContent = "Partagez votre avis";
             }
         }
 
@@ -2185,7 +2185,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
                 payload.suggestionCategory = document.getElementById("suggestionCategory").value;
                 payload.suggestionTitle = document.getElementById("suggestionTitle").value.trim();
                 if (!payload.suggestionTitle || !commentText) {
-                    errorBox.textContent = "Please fill out all required suggestion fields.";
+                    errorBox.textContent = "Veuillez remplir tous les champs obligatoires de la suggestion.";
                     errorBox.classList.remove("hidden");
                     return;
                 }
@@ -2194,7 +2194,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
                 payload.starRating = document.getElementById("starRating").value;
                 payload.pageUrl = "math-sprint.html";
                 if (!commentText) {
-                    errorBox.textContent = "Please enter your written review.";
+                    errorBox.textContent = "Veuillez saisir votre avis écrit.";
                     errorBox.classList.remove("hidden");
                     return;
                 }
@@ -2212,7 +2212,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
                 const result = await response.json();
 
                 if (result.status === "success") {
-                    successBox.textContent = "🎉 Thank you! Your submission is pending moderation.";
+                    successBox.textContent = "🎉 Merci ! Votre contribution est en attente de modération.";
                     successBox.classList.remove("hidden");
                     document.getElementById("communityForm").reset();
                     setTimeout(() => { 
@@ -2227,7 +2227,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
                     submitBtn.textContent = "🚀 Envoyer le commentaire";
                 }
             } catch (err) {
-                errorBox.textContent = "Network error. Please try again.";
+                errorBox.textContent = "Erreur réseau. Veuillez réessayer.";
                 errorBox.classList.remove("hidden");
                 submitBtn.disabled = false;
                 submitBtn.textContent = "🚀 Envoyer le commentaire";

@@ -765,7 +765,7 @@
                 <!-- Type input -->
                 <div id="typeBar" class="type-bar">
                     <span class="type-bar-label">Type</span>
-                    <input type="text" id="typeInput" class="type-bar-input" placeholder="Start typing any word shown…" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="Type the phrase" disabled>
+                    <input type="text" id="typeInput" class="type-bar-input" placeholder="Commencez à saisir n’importe quel mot affiché…" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="Saisissez la phrase" disabled>
                 </div>
 
                 <!-- World banner -->
@@ -2031,7 +2031,7 @@
 
             if (won) {
                 congratsEmoji.textContent = '🏆';
-                resultMsg.textContent = 'You survived all five worlds. Legendary.';
+                resultMsg.textContent = 'Vous avez survécu aux cinq mondes. Légendaire !';
             } else if (state.lastRoundBest && state.score > 0) {
                 congratsEmoji.textContent = '🎉';
                 resultMsg.textContent = 'New personal best score!';
@@ -2040,7 +2040,7 @@
                 resultMsg.textContent = 'Out of hearts. The storm wins this round.';
             } else {
                 congratsEmoji.textContent = '🌪️';
-                resultMsg.textContent = 'Run complete. Try again to beat your score.';
+                resultMsg.textContent = 'Partie terminée. Réessayez pour battre votre score.';
             }
 
             resultsModal.classList.remove('hidden');
@@ -2245,7 +2245,7 @@
                 suggestionCategoryGroup.classList.add("hidden");
                 ratingGroup.classList.remove("hidden");
                 titleGroup.classList.add("hidden");
-                commentLabel.textContent = "Your WordStorm Comment *";
+                commentLabel.textContent = "Votre commentaire sur WordStorm *";
                 modalTitle.textContent = "Avis sur WordStorm";
             }
         }
@@ -2316,7 +2316,7 @@
                 payload.suggestionCategory = document.getElementById("suggestionCategory").value;
                 payload.suggestionTitle = document.getElementById("suggestionTitle").value.trim();
                 if (!payload.suggestionTitle || !commentText) {
-                    errorBox.textContent = "Please fill out all required suggestion fields.";
+                    errorBox.textContent = "Veuillez remplir tous les champs obligatoires de la suggestion.";
                     errorBox.classList.remove("hidden");
                     return;
                 }
@@ -2325,7 +2325,7 @@
                 payload.starRating = document.getElementById("starRating").value;
                 payload.pageUrl = "wordstorm.html";
                 if (!commentText) {
-                    errorBox.textContent = "Please enter your written review.";
+                    errorBox.textContent = "Veuillez saisir votre avis écrit.";
                     errorBox.classList.remove("hidden");
                     return;
                 }
@@ -2343,7 +2343,7 @@
                 const result = await response.json();
 
                 if (result.status === "success") {
-                    successBox.textContent = "🎉 Thank you! Your submission is pending moderation.";
+                    successBox.textContent = "🎉 Merci ! Votre contribution est en attente de modération.";
                     successBox.classList.remove("hidden");
                     document.getElementById("communityForm").reset();
                     setTimeout(() => {
@@ -2358,7 +2358,7 @@
                     submitBtn.textContent = "🚀 Envoyer le commentaire";
                 }
             } catch (err) {
-                errorBox.textContent = "Network error. Please try again.";
+                errorBox.textContent = "Erreur réseau. Veuillez réessayer.";
                 errorBox.classList.remove("hidden");
                 submitBtn.disabled = false;
                 submitBtn.textContent = "🚀 Envoyer le commentaire";

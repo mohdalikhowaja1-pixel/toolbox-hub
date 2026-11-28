@@ -1767,7 +1767,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
             scoreDisplay.textContent  = '0';
             streakDisplay.textContent = '0';
             timerDisplay.textContent  = state.duration;
-            roundLabel.textContent    = 'Round ' + state.roundNumber;
+            roundLabel.textContent    = 'Ronda ' + state.roundNumber;
             updateAccuracyDisplay();
             refreshTier();
             newBestBadge.classList.add('hidden');
@@ -1814,9 +1814,9 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
             if (isCongrats) {
                 congratsEmoji.textContent = '🎉';
                 if (state.lastRoundRécordPuntuación) {
-                    resultMsg.textContent = 'Congratulations! A new personal best with ' + accPct + '% accuracy!';
+                    resultMsg.textContent = '¡Felicidades! Nuevo récord personal con ' + accPct + '% de precisión!';
                 } else {
-                    resultMsg.textContent = 'Congratulations! You cleared the 80% club with ' + accPct + '% accuracy!';
+                    resultMsg.textContent = '¡Felicidades! Has superado el 80 % de precisión con ' + accPct + '%!;
                 }
                 startConfetti();
             } else if (state.lastRoundRécordPuntuación) {
@@ -1827,7 +1827,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                 resultMsg.textContent = 'No answers this round. Give it another try!';
             } else {
                 congratsEmoji.textContent = '🎯';
-                resultMsg.textContent = 'Good run. Your best score is ' + state.bestPuntuación + '.';
+                resultMsg.textContent = 'Buen intento. Tu mejor puntuación es ' + state.bestPuntuación + '.';
             }
 
             shareBtn.disabled = false;
@@ -1859,7 +1859,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
             updateAccuracyDisplay();
             questionText.textContent  = 'Pulsa Iniciar para jugar';
             familyLabel.textContent   = 'Listo';
-            roundLabel.textContent    = 'Round ' + state.roundNumber;
+            roundLabel.textContent    = 'Ronda ' + state.roundNumber;
             optionsGrid.innerHTML     = '';
             timingBar.style.width     = '100%';
             shareBtn.disabled = true;
@@ -1972,7 +1972,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                     .catch(function () {});
             } else if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(text + ' ' + SITE_URL).then(function () {
-                    shareBtn.textContent = '✅ Copied!';
+                    shareBtn.textContent = '✅ ¡Copiado!';
                     setTimeout(function () { shareBtn.innerHTML = '🔗 Compartir puntuación'; }, 1600);
                 }).catch(function () {
                     shareBtn.textContent = '❌ Copy failed';
@@ -1990,7 +1990,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
             var btn = el('copyChallengeBtn');
             var original = btn.textContent;
             function done() {
-                btn.textContent = '✅ Copied! Paste it anywhere.';
+                btn.textContent = '✅ ¡Copiado! Pégalo donde quieras.';
                 setTimeout(function () { btn.textContent = original; }, 1800);
             }
             function fail() {
@@ -2115,7 +2115,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                 ratingGroup.classList.remove("hidden");
                 titleGroup.classList.add("hidden");
                 commentLabel.textContent = "Written Comment *";
-                modalTitle.textContent = "Share Your Feedback";
+                modalTitle.textContent = "Comparte tus comentarios";
             }
         }
 
@@ -2185,7 +2185,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                 payload.suggestionCategory = document.getElementById("suggestionCategory").value;
                 payload.suggestionTitle = document.getElementById("suggestionTitle").value.trim();
                 if (!payload.suggestionTitle || !commentText) {
-                    errorBox.textContent = "Please fill out all required suggestion fields.";
+                    errorBox.textContent = "Completa todos los campos obligatorios de la sugerencia.";
                     errorBox.classList.remove("hidden");
                     return;
                 }
@@ -2194,7 +2194,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                 payload.starRating = document.getElementById("starRating").value;
                 payload.pageUrl = "math-sprint.html";
                 if (!commentText) {
-                    errorBox.textContent = "Please enter your written review.";
+                    errorBox.textContent = "Escribe tu reseña.";
                     errorBox.classList.remove("hidden");
                     return;
                 }
@@ -2212,7 +2212,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                 const result = await response.json();
 
                 if (result.status === "success") {
-                    successBox.textContent = "🎉 Thank you! Your submission is pending moderation.";
+                    successBox.textContent = "🎉 ¡Gracias! Tu envío está pendiente de moderación.";
                     successBox.classList.remove("hidden");
                     document.getElementById("communityForm").reset();
                     setTimeout(() => { 
@@ -2227,7 +2227,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                     submitBtn.textContent = "🚀 Enviar comentario";
                 }
             } catch (err) {
-                errorBox.textContent = "Network error. Please try again.";
+                errorBox.textContent = "Error de red. Inténtalo de nuevo.";
                 errorBox.classList.remove("hidden");
                 submitBtn.disabled = false;
                 submitBtn.textContent = "🚀 Enviar comentario";
