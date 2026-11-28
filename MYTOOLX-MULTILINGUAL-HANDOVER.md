@@ -731,3 +731,47 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 2. Re-run article-wide structured-data, metadata, related-card and internal-link checks after the editorial pass.
 3. Then begin the 56 tool/application page families, preserving all functional logic and identifiers.
 4. Keep the development branch isolated; no merge, deployment or publishing-source change is authorized.
+
+
+## Editorial QA batch — JSON Tools, Text Summarizer and Love Calculator — 2026-11-28
+
+### Pages reviewed and corrected
+- Completed direct English-source comparison for three additional article families (six localized HTML pages):
+  - JSON Tools
+  - Text Summarizer
+  - Love Calculator
+- JSON Tools:
+  - Repaired the mixed-language “At MyToolX, our” paragraph in both locales.
+  - Localized social image alt text, shared footer copy and the Spanish feedback-modal typo.
+  - Preserved JSON code examples and syntax exactly.
+- Text Summarizer:
+  - Repaired the mixed-language “At MyToolX, our” paragraph in both locales.
+  - Localized social image alt text, shared footer copy and the Spanish feedback-modal typo.
+  - Preserved NLP terminology, algorithm descriptions and code-related content.
+- Love Calculator:
+  - Translated the mixed-language related Premium Bundles card title.
+  - Localized social image alt text and shared footer copy; corrected the Spanish feedback-modal typo.
+  - Preserved the playful framing and the explanatory caveat that numerology scores are not scientific relationship assessments.
+- Preserved tool links, IDs, event handlers, forms and functional logic.
+
+### Verification performed
+- Re-fetched all six localized files after edits.
+- Parsed both JSON-LD blocks on each page successfully (12 blocks total).
+- Confirmed each Article JSON-LD headline matches its visible H1 after ignoring the leading decorative emoji.
+- Targeted residual scans for mixed-language fragments, English footer copy, old image alt text, and the specific related-card title returned no matches.
+- Confirmed localized social image alt text on all six pages.
+- This is source-level editorial and JSON-LD syntax validation only. It is not a full-page language certification, native-speaker review, browser/runtime test, end-to-end tool test or live HTTP/indexability verification.
+
+### Key latest content commits in this batch
+- Spanish JSON Tools: `510ffdcd5957033be81f423c31eb08f737fab8ea`
+- French JSON Tools: `2b99efd1b1e6d49da1503357ef99f130d62a64cd`
+- Spanish Text Summarizer: `e5a7a7e669c015cf21debd230cebbe8e298bc33a`
+- French Text Summarizer: `704017564e904706c8095981a709c7ceac063a06`
+- Spanish Love Calculator: `499207890698ae0b6f648ab0a09313d10fb2537b`
+- French Love Calculator: `9be9223af9948e992934023d21373d03f57fa4e1`
+
+### Next action
+1. Continue direct source comparison on the remaining five article families: Premium Bundles, Math Sprint, WordStorm, Word Scramble and Reaction Time.
+2. Re-run article-wide structured-data, metadata, related-card and internal-link checks after editorial review.
+3. Then begin the 56 tool/application page families, preserving all functional logic and identifiers.
+4. Keep the development branch isolated; no merge, deployment or publishing-source change is authorized.
