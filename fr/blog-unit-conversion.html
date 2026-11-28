@@ -420,30 +420,30 @@
                 <h3 id="modalTitle" class="text-lg sm:text-xl font-black" style="color: var(--text);">Partagez vos commentaires</h3>
                 <p class="text-xs muted mt-0.5">20 secondes suffisent • Aucune inscription requise</p>
             </div>
-            <button type="button" onclick="closeFeedbackModal()" aria-label="Close popup" title="Close" class="mtx-modal-close">✕</button>
+            <button type="button" onclick="closeFeedbackModal()" aria-label="Fermer la fenêtre" title="Close" class="mtx-modal-close">✕</button>
         </div>
 
         <form id="communityForm" onsubmit="submitCommunityFeedback(event)" class="space-y-4">
             <div>
                 <label for="formType" class="block text-xs font-bold uppercase tracking-wider muted mb-1">1. Que souhaitez-vous partager ? *</label>
                 <select id="formType" name="formType" required onchange="toggleFormFields()" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
-                    <option value="review">⭐ Rate &amp; Review a Tool / Game</option>
-                    <option value="suggestion">💡 Suggest a New Tool or Feature</option>
+                    <option value="review">⭐ Évaluer un outil ou un jeu</option>
+                    <option value="suggestion">💡 Suggérer un nouvel outil ou une fonctionnalité</option>
                 </select>
             </div>
 
             <div id="targetPageGroup" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                    <label for="targetPageId" class="block text-xs font-bold uppercase tracking-wider muted mb-1">2. Select Tool or Game *</label>
+                    <label for="targetPageId" class="block text-xs font-bold uppercase tracking-wider muted mb-1">2. Sélectionnez un outil ou un jeu *</label>
                     <select id="targetPageId" name="targetPageId" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
-                        <optgroup label="🎮 Browser Games">
+                        <optgroup label="🎮 Jeux sur navigateur">
                             <option value="wordstorm">Jeu WordStorm (Games)</option>
                             <option value="typing-test">Test de vitesse de frappe (Games)</option>
                             <option value="reaction-time-test">Reaction Time Test (Games)</option>
                             <option value="word-scramble">Mots mélangés (Games)</option>
                             <option value="math-sprint">Math Sprint (Games)</option>
                         </optgroup>
-                        <optgroup label="🧰 Free Utilities &amp; AI">
+                        <optgroup label="🧰 Outils gratuits et IA">
                             <option value="cv-maker">Live CV Maker (Free Tools)</option>
                             <option value="image-compressor">Compresseur d’images (Free Tools)</option>
                             <option value="grammar-checker">Correcteur grammatical (Free Tools)</option>
@@ -462,7 +462,7 @@
                             <option value="loan-emi">Calculateur de mensualités de prêt (Free Tools)</option>
                             <option value="fee-calculator">Calculateur de fraiss (Free Tools)</option>
                         </optgroup>
-                        <optgroup label="⭐ Premium Bundles">
+                        <optgroup label="⭐ Packs premium">
                             <option value="ats-resume-pack">ATS Resume Pack (Premium Products)</option>
                             <option value="excel-bundle">Excel Bundle (Premium Products)</option>
                             <option value="freelance-contract-kit">Contract Kit (Premium Products)</option>
@@ -473,7 +473,7 @@
                 </div>
 
                 <div id="ratingGroup">
-                    <label class="block text-xs font-bold uppercase tracking-wider muted mb-1">Rating *</label>
+                    <label class="block text-xs font-bold uppercase tracking-wider muted mb-1">Évaluation *</label>
                     <div id="starRatingContainer" class="flex items-center gap-1 mt-1">
                         <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
                         <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
@@ -489,33 +489,33 @@
                 <div>
                     <label for="suggestionCategory" class="block text-xs font-bold uppercase tracking-wider muted mb-1">2. Catégorie de l’idée *</label>
                     <select id="suggestionCategory" name="suggestionCategory" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
-                        <option value="New Tool Ideas">New Tool Idea</option>
-                        <option value="New Game Ideas">New Game Idea</option>
-                        <option value="Existing Tool Improvements">Improve Existing Tool</option>
-                        <option value="Website Improvements">Website Improvement</option>
-                        <option value="Premium Product Ideas">New Premium Bundle Idea</option>
+                        <option value="Nouvel outils">Nouvel outil</option>
+                        <option value="Nouveau jeus">Nouveau jeu</option>
+                        <option value="Existing Tool Improvements">Améliorer un outil existant</option>
+                        <option value="Amélioration du site webs">Amélioration du site web</option>
+                        <option value="Premium Product Ideas">Nouvelle idée de pack premium</option>
                     </select>
                 </div>
                 <div id="titleGroup">
                     <label for="suggestionTitle" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Titre court de l’idée *</label>
-                    <input type="text" id="suggestionTitle" name="suggestionTitle" maxlength="80" placeholder="e.g. PDF Merger or Invoice Generator" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                    <input type="text" id="suggestionTitle" name="suggestionTitle" maxlength="80" placeholder="p. ex. fusionner des PDF ou créer des factures" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
                 </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                     <label for="authorName" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Nom (facultatif)</label>
-                    <input type="text" id="authorName" name="authorName" maxlength="40" placeholder="Anonymous" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                    <input type="text" id="authorName" name="authorName" maxlength="40" placeholder="Anonyme" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
                 </div>
                 <div>
                     <label for="country" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Pays (facultatif)</label>
-                    <input type="text" id="country" name="country" maxlength="40" placeholder="e.g. US, UK, PK" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                    <input type="text" id="country" name="country" maxlength="40" placeholder="p. ex. FR, BE, CA" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
                 </div>
             </div>
 
             <div>
                 <label for="commentText" id="commentLabel" class="block text-xs font-bold uppercase tracking-wider muted mb-1">3. Votre commentaire *</label>
-                <textarea id="commentText" name="commentText" required rows="3" maxlength="400" placeholder="Write a quick note about your experience..." class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-medium"></textarea>
+                <textarea id="commentText" name="commentText" required rows="3" maxlength="400" placeholder="Décrivez brièvement votre expérience…" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-medium"></textarea>
             </div>
 
             <p class="text-[11px] muted leading-relaxed">
