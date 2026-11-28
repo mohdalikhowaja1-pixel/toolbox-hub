@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+    (function() {
+        var saved = null;
+        try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+    })();
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- PRIMARY SEO -->
+    <title>Herramientas online gratuitas para el trabajo y el día a día | MyToolX</title>
+    <meta name="description" content="Explora herramientas online gratuitas para texto, imágenes, productividad y finanzas. Utiliza herramientas prácticas en el navegador, sin cuenta para la mayoría de las funciones.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://mytoolx.org/">
+
+    <!-- HREFLANG -->
+    <link rel="alternate" hreflang="en" href="https://mytoolx.org/index.html">
+    <link rel="alternate" hreflang="es" href="https://mytoolx.org/es/index.html">
+    <link rel="alternate" hreflang="fr" href="https://mytoolx.org/fr/index.html">
+    <link rel="alternate" hreflang="x-default" href="https://mytoolx.org/index.html">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#4F46E5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="/icon-192.png">
+
+    <!-- ADSENSE ACCOUNT -->
+    <meta name="google-adsense-account" content="ca-pub-3410254230554312">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:url" content="https://mytoolx.org/">
+    <meta property="og:title" content="Free Online Tools & AI Prompts — No Sign-Up 🚀 | MyToolX">
+    <meta property="og:description" content="20+ free browser-based tools and AI prompt generators. No account required for most tools. Selected features use external services.">
+    <meta property="og:image" content="https://mytoolx.org/og-image-v2.png">
+    <meta property="og:image:alt" content="MyToolX — Free privacy-first online tools">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:locale" content="es_ES">
+
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mytoolx.org/">
+    <meta name="twitter:title" content="Free Online Tools & AI Prompts — No Sign-Up 🚀 | MyToolX">
+    <meta name="twitter:description" content="20+ free browser-based tools and AI prompt generators. No account required for most tools.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image-v2.png">
+    <meta name="twitter:image:alt" content="MyToolX — Free privacy-first online tools">
+
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="/styles.css">
+
+    <!-- SPEED HINTS -->
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//refer.micro1.ai">
+
+    <!-- STRUCTURED DATA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "MyToolX",
+          "url": "https://mytoolx.org/",
+          "description": "A free suite of client-side web tools for writers, freelancers and developers.",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://mytoolx.org/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "ItemList",
+          "name": "Free Online Tools by MyToolX",
+          "description": "A curated collection of 23 free online tools for writers, developers, freelancers, and everyday users. Many tools process data in your browser, while selected features connect to external services.",
+          "url": "https://mytoolx.org/",
+          "numberOfItems": 23,
+          "itemListOrder": "https://schema.org/ItemListOrderAscending",
+          "itemListElement": [
+            {"@type":"ListItem","position":1,"name":"Free ATS Creador de currículums","url":"https://mytoolx.org/cv-maker.html"},
+            {"@type":"ListItem","position":2,"name":"Prueba de velocidad de escritura","url":"https://mytoolx.org/typing-test.html"},
+            {"@type":"ListItem","position":3,"name":"Reaction Time Test","url":"https://mytoolx.org/reaction-time-test.html"},
+            {"@type":"ListItem","position":4,"name":"Palabras desordenadas Juego","url":"https://mytoolx.org/word-scramble.html"},
+            {"@type":"ListItem","position":5,"name":"JPG PNG WebP Compresor de imágenes","url":"https://mytoolx.org/image-compressor.html"},
+            {"@type":"ListItem","position":6,"name":"Corrector gramatical","url":"https://mytoolx.org/grammar-checker.html"},
+            {"@type":"ListItem","position":7,"name":"Estudio de prompts de IA","url":"https://mytoolx.org/prompt-studio.html"},
+            {"@type":"ListItem","position":8,"name":"Generador de biografías con IA","url":"https://mytoolx.org/ai-bio-generator.html"},
+            {"@type":"ListItem","position":9,"name":"Esquema de artículos Generator","url":"https://mytoolx.org/article-outline.html"},
+            {"@type":"ListItem","position":10,"name":"Text & Word Counter","url":"https://mytoolx.org/text-suite.html"},
+            {"@type":"ListItem","position":11,"name":"Calculadora del amor","url":"https://mytoolx.org/love-calculator.html"},
+            {"@type":"ListItem","position":12,"name":"Juego Math Sprint","url":"https://mytoolx.org/math-sprint.html"},
+            {"@type":"ListItem","position":13,"name":"WordStorm Typing Juego","url":"https://mytoolx.org/wordstorm.html"},
+            {"@type":"ListItem","position":14,"name":"Freelance Fee and Rate Calculator","url":"https://mytoolx.org/fee-calculator.html"},
+            {"@type":"ListItem","position":15,"name":"Calculadora SIP","url":"https://mytoolx.org/sip-calculator.html"},
+            {"@type":"ListItem","position":16,"name":"Loan EMI and Monthly Payment Calculator","url":"https://mytoolx.org/loan-emi.html"},
+            {"@type":"ListItem","position":17,"name":"Formateador JSON","url":"https://mytoolx.org/json-formatter.html"},
+            {"@type":"ListItem","position":18,"name":"Base64 Encoder","url":"https://mytoolx.org/base64-tool.html"},
+            {"@type":"ListItem","position":19,"name":"Conversor de colores","url":"https://mytoolx.org/color-converter.html"},
+            {"@type":"ListItem","position":20,"name":"Free Generador de códigos QRerator","url":"https://mytoolx.org/qr-code-generator.html"},
+            {"@type":"ListItem","position":21,"name":"Generador de contraseñaserator","url":"https://mytoolx.org/password-generator.html"},
+            {"@type":"ListItem","position":22,"name":"Conversor de unidades","url":"https://mytoolx.org/unit-converter.html"},
+            {"@type":"ListItem","position":23,"name":"AI Text Summarizer","url":"https://mytoolx.org/text-summarizer.html"}
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
+        }
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
+        }
+        html, body { overflow-x: clip; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+        
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-accent { background: var(--accent); color: #fff; } .btn-accent:hover { background: var(--accent-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+
+        .input-field { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
+        .input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); outline: none; }
+
+        .card-3d-btn { transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; background: var(--card); border: 1px solid var(--card-border); }
+        .card-3d-btn:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 20px 25px -5px rgba(79,70,229,0.15), 0 8px 10px -6px rgba(79,70,229,0.1); 
+            border-color: var(--primary); 
+            background: var(--card);
+        }
+
+        /* --- MEGA FOOTER --- */
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+        /* --- FOOTER SOCIAL ICONS --- */
+        .social-links-row { display: flex; align-items: center; gap: 12px; margin-top: 4px; }
+        .social-btn {
+            width: 42px; height: 42px; border-radius: 12px;
+            display: inline-flex; align-items: center; justify-content: center;
+            color: #FFFFFF !important; text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+            box-shadow: 0 6px 14px -3px rgba(0, 0, 0, 0.28);
+        }
+        .social-btn svg { width: 20px; height: 20px; fill: currentColor; }
+        .social-btn.fb-btn {
+            background: linear-gradient(135deg, #1877F2 0%, #0D5BD6 100%);
+        }
+        .social-btn.ig-btn {
+            background: radial-gradient(circle at 30% 107%, #FDF497 0%, #FDF497 5%, #FD5949 45%, #D6249F 60%, #285AEB 90%);
+        }
+        .social-btn:hover {
+            transform: translateY(-2px) scale(1.06);
+            box-shadow: 0 10px 20px -4px rgba(79, 70, 229, 0.35);
+            filter: brightness(1.05);
+        }
+        
+        #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
+        :focus-visible { outline: none; }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        ::selection { background: rgba(79,70,229,0.25); }
+
+        /* Mobile Adjustments */
+        @media (max-width: 360px) {
+            .logo-wordmark { font-size: 1rem !important; }
+            .inline-flex.items-center.text-\[10px\] { padding-left: 0.4rem !important; padding-right: 0.4rem !important; font-size: 9px !important; }
+            #globalSearchInput { padding-left: 2.5rem !important; font-size: 13px !important; }
+        }
+
+        /* Modo oscuro Color Fixes */
+        html[data-theme="dark"] .card-3d-btn span[style*="color: #6D28D9;"] { color: #A78BFA !important; }
+        html[data-theme="dark"] .card-3d-btn span[style*="color: #1D4ED8;"] { color: #60A5FA !important; }
+        html[data-theme="dark"] .card-3d-btn span[style*="color: #7F1D1D;"] { color: #F87171 !important; }
+        html[data-theme="dark"] .card-3d-btn span[style*="color: #047857;"] { color: #34D399 !important; }
+        html[data-theme="dark"] .card-3d-btn span[style*="color: #B45309;"] { color: #FBBF24 !important; }
+
+        @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+                /* FESTIVE RIBBON BANNER STYLES */
+        .festive-ribbon {
+            background: linear-gradient(135deg, #1E1B4B 0%, #4C1D95 40%, #BE185D 80%, #991B1B 100%);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .festive-ribbon:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -5px rgba(190, 24, 93, 0.4);
+        }
+
+        /* Big Background Decorative Trees/Stars */
+        .bg-decor {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.4));
+            opacity: 0.15;
+        }
+        .bg-decor-left { left: -20px; bottom: -20px; font-size: 150px; }
+        .bg-decor-right { right: -10px; top: -30px; font-size: 120px; opacity: 0.1; }
+
+        /* Realistic Falling Snow */
+        .snow-container {
+            position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 1;
+        }
+        .snowflake {
+            position: absolute; top: -10px; color: #fff; opacity: 0.8;
+            animation: fall linear infinite;
+            filter: drop-shadow(0 0 2px rgba(255,255,255,0.8));
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10px) translateX(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(200px) translateX(20px) rotate(360deg); opacity: 0; }
+        }
+
+        /* Emoji float animations */
+        @keyframes floatEmoji {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-5px) scale(1.1); }
+        }
+        .emoji-float { display: inline-block; animation: floatEmoji 3s ease-in-out infinite; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); }
+        .emoji-float-delay { animation-delay: 1.5s; }
+        
+        /* Countdown Box */
+        .countdown-box {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            padding: 4px 8px;
+            font-family: monospace, sans-serif;
+            font-weight: 900;
+            font-size: 14px;
+            color: #FDE047; /* Amber-300 */
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+        }
+    </style>
+    
+    <!-- GLOBAL LANGUAGE SWITCHER -->
+    <link rel="stylesheet" href="/lang-switcher.css">
+    <script src="/lang-switcher.js" defer></script>
+</head>
+<body class="font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- HEADER -->
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2 flex items-center justify-between gap-1.5 sm:gap-2">
+            
+            <div class="flex items-center shrink-0">
+                <a href="/index.html" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
+                    <div class="logo-mark w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base flex items-center justify-center">M<span class="x">X</span></div>
+                    <span class="logo-wordmark text-base sm:text-xl block">MyTool<span class="x">X</span></span>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch theme" title="Toggle Light/Modo oscuro" class="h-8 sm:h-10 px-2 sm:px-3 rounded-xl flex items-center justify-center gap-1.5 text-[10px] sm:text-xs font-bold transition-all hover:opacity-80" style="background: var(--chip-bg); color: var(--chip-text);">
+                    <span id="themeIcon" aria-hidden="true">🌙</span>
+                    <span id="themeText" class="hidden sm:block">Modo oscuro</span>
+                </button>
+
+                <a href="/community.html" class="inline-flex items-center text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap" style="background: var(--chip-bg); color: var(--text);">
+                    💬 Comunidad
+                </a>
+
+                <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
+                    💼 Empleos remotos ↗
+                </a>
+
+                <a href="/cv-maker.html" class="hidden md:inline-flex text-xs font-bold text-white px-3 py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
+                    📄 Creador de CV
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-6 w-full flex-grow">
+        
+                              <!-- COMPACT FESTIVE RIBBON BANNER -->
+        <section class="max-w-7xl mx-auto px-2 sm:px-4 mb-6 sm:mb-8">
+            <a href="/giveaway.html" class="festive-ribbon block rounded-2xl text-white shadow-xl relative group">
+                
+                <!-- Background Decor (Trees & Stars) -->
+                <div class="bg-decor bg-decor-left">🌲</div>
+                <div class="bg-decor bg-decor-right">✨</div>
+
+                <!-- Falling Snow Animation -->
+                <div class="snow-container">
+                    <div class="snowflake" style="left: 10%; animation-duration: 4s; animation-delay: 0s; font-size: 10px;">❄</div>
+                    <div class="snowflake" style="left: 25%; animation-duration: 6s; animation-delay: 1s; font-size: 14px;">❅</div>
+                    <div class="snowflake" style="left: 40%; animation-duration: 3.5s; animation-delay: 2s; font-size: 12px;">❆</div>
+                    <div class="snowflake" style="left: 60%; animation-duration: 5s; animation-delay: 0.5s; font-size: 8px;">❄</div>
+                    <div class="snowflake" style="left: 75%; animation-duration: 7s; animation-delay: 1.5s; font-size: 16px;">❅</div>
+                    <div class="snowflake" style="left: 90%; animation-duration: 4.5s; animation-delay: 3s; font-size: 10px;">❆</div>
+                </div>
+
+                <!-- Main Content Grid -->
+                <div class="relative z-10 px-4 py-6 sm:px-8 sm:py-8 flex flex-col items-center justify-center text-center gap-5">
+                    
+                    <!-- Top: Emojis -->
+                    <div class="flex items-center justify-center gap-3 drop-shadow-2xl mb-1">
+                        <span class="emoji-float text-4xl sm:text-5xl">🎄</span>
+                        <span class="emoji-float emoji-float-delay text-3xl sm:text-4xl">🎁</span>
+                        <span class="emoji-float text-4xl sm:text-5xl" style="animation-delay: 0.7s;">✨</span>
+                    </div>
+
+                    <!-- Middle: Text -->
+                    <div class="max-w-3xl mx-auto">
+                        <div class="text-[10px] sm:text-xs font-black uppercase tracking-widest text-amber-300 mb-2 flex items-center justify-center gap-2">
+                            <span class="animate-pulse">🌟</span> Holiday Season 2026–2027 <span class="animate-pulse">🌟</span>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-black leading-tight text-white drop-shadow-lg mb-2">
+                            Christmas & New Year <br class="hidden sm:block" />
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-200">Mega Giveaway!</span>
+                        </h2>
+                        <p class="text-sm sm:text-base text-white/95 font-medium max-w-xl mx-auto">
+                            Win 1 of 50 Premium Digital Bundles! No purchase necessary.
+                        </p>
+                    </div>
+
+                    <!-- Bottom: Countdown & CTA -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full mt-2">
+                        
+                        <!-- Timer -->
+                        <div class="flex items-center justify-center gap-2 bg-black/40 px-4 py-2.5 rounded-2xl border border-white/20 backdrop-blur-md shadow-inner">
+                            <span class="text-[10px] uppercase font-bold text-white/70 tracking-wider hidden sm:block">Ends In:</span>
+                            <div class="countdown-box" id="bnDays">00<span class="text-[10px] text-white/60 ml-1">d</span></div>
+                            <div class="countdown-box" id="bnHours">00<span class="text-[10px] text-white/60 ml-1">h</span></div>
+                            <div class="countdown-box" id="bnMins">00<span class="text-[10px] text-white/60 ml-1">m</span></div>
+                            <div class="countdown-box" id="bnSecs">00<span class="text-[10px] text-white/60 ml-1">s</span></div>
+                        </div>
+
+                        <!-- Button -->
+                        <div class="btn-3d px-8 py-3 rounded-2xl text-sm sm:text-base font-black text-white shadow-xl w-full sm:w-auto text-center whitespace-nowrap transition-transform hover:scale-105" style="background: #10B981; box-shadow: 0 4px 0 #047857, 0 6px 15px rgba(16, 185, 129, 0.4);">
+                            Enter Giveaway 🚀
+                        </div>
+                    </div>
+
+                </div>
+            </a>
+        </section>
+
+        <!-- Hero Section -->
+        <div class="text-center mb-10 max-w-3xl mx-auto mt-4">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-black mb-3 tracking-tight leading-tight" style="color: var(--text);">
+                Herramientas online gratuitas e ideas de prompts con IA
+            </h1>
+            <p class="text-lg sm:text-xl md:text-2xl font-bold mb-6 muted">
+                Sin necesidad de registrarse 🚀
+            </p>
+
+            <p class="text-sm md:text-base max-w-xl mx-auto font-medium mb-6 muted">
+                Herramientas rápidas, seguras y profesionales que funcionan en el navegador, organizadas para escritores, creadores, desarrolladores y personas que buscan empleo.
+            </p>
+                        
+            <!-- Search Bar -->
+            <div class="max-w-xl mx-auto relative group">
+                <div class="relative flex items-center">
+                    <span class="absolute left-4 text-lg muted group-focus-within:text-primary transition-colors">🔍</span>
+                    <input type="text" id="globalSearchInput" onkeyup="handleGlobalSearch()" placeholder="Search tools (e.g. Typing, Image, SIP, Grammar...)" class="input-field w-full pl-11 pr-10 py-3.5 rounded-2xl text-sm font-semibold transition-all shadow-sm focus:shadow-md" aria-label="Search tools">
+                    <button onclick="clearGlobalSearch()" id="searchClearBtn" class="absolute right-3 muted hover:text-red-500 font-bold text-sm hidden" aria-label="Clear search">✕</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Role Filter Tabs -->
+        <div id="categoryTabsContainer" class="flex flex-wrap justify-center gap-2 mb-8 text-xs font-bold">
+            <button onclick="filterCategory('all', this)" class="btn-3d btn-primary px-5 py-2.5 rounded-full shadow-sm">Todas las herramientas</button>
+            <button onclick="filterCategory('writer', this)" class="btn-3d btn-chip px-5 py-2.5 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">✍️ Escritura y CV</button>
+            <button onclick="filterCategory('ai', this)" class="btn-3d btn-chip px-5 py-2.5 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">🤖 IA y contenido</button>
+            <button onclick="filterCategory('finance', this)" class="btn-3d btn-chip px-5 py-2.5 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">💰 Finanzas</button>
+            <button onclick="filterCategory('everyday', this)" class="btn-3d btn-chip px-5 py-2.5 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">📱 Herramientas cotidianas</button>
+            <button onclick="filterCategory('dev', this)" class="btn-3d btn-chip px-5 py-2.5 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">💻 Desarrolladores</button>
+        </div>
+
+        <!-- INVALID SEARCH ALERT BOX -->
+        <div id="noSearchResultsMsg" class="hidden max-w-xl mx-auto rounded-2xl p-6 text-center mb-8 shadow-sm" style="background: rgba(239, 68, 68, 0.1); border: 1px solid #EF4444;">
+            <div class="text-3xl mb-2">🔍❌</div>
+            <h3 class="text-sm font-extrabold uppercase tracking-wider mb-1" style="color: #EF4444;">No se encontró ninguna herramienta</h3>
+            <p class="text-xs font-medium mb-3" style="color: #B91C1C;">No encontramos herramientas que coincidan con tu búsqueda. Prueba con otras palabras clave.</p>
+        </div>
+
+        <!-- ALL TOOLS GRID -->
+        <div class="mb-6">
+            <h2 class="text-2xl font-bold mb-3" style="color: var(--text);" id="gridHeader">Todas las herramientas online gratuitas</h2>
+            <p class="text-sm muted max-w-4xl mb-6 leading-relaxed">
+                Explora más de 20 herramientas online gratuitas para escritores, desarrolladores, profesionales independientes y personas que buscan empleo. Muchas herramientas procesan los archivos y textos directamente en tu navegador. Algunas funciones se conectan a servicios externos. La mayoría no requiere una cuenta. Consulta el aviso de cada herramienta antes de introducir información confidencial.
+            </p>
+        </div>
+        
+        <div id="toolsGrid" role="region" aria-labelledby="gridHeader" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3.5 sm:gap-4 mb-10">
+            
+            <!-- Juegos -->
+            <a href="/typing-test.html" data-cat="everyday" data-keywords="typing speed test wpm game keyboard accuracy typing tutor" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">⌨️</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #6D28D9;">Juego</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Prueba de velocidad de escritura</div><div class="text-xs muted">Velocidad y precisión de escritura</div></div>
+            </a>
+
+            <a href="/reaction-time-test.html" data-cat="everyday" data-keywords="reaction time test reflexes speed ms human benchmark click green" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">🎯</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #6D28D9;">Juego</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">⭐ Reaction Time Test</div><div class="text-xs muted">Mide tus reflejos</div></div>
+            </a>
+
+            <a href="/word-scramble.html" data-cat="everyday" data-keywords="word scramble word game 60 second anagram letters puzzle" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">🔤</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #6D28D9;">Juego</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">⭐ Palabras desordenadas</div><div class="text-xs muted">Desafío de palabras de 60 segundos</div></div>
+            </a>
+
+            <a href="/love-calculator.html" data-cat="everyday" data-keywords="love calculator compatibility match numerology relationship love birds marriage test fun" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start">
+                    <span class="text-2xl">❤️</span>
+                    <span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #6D28D9;">Fun</span>
+                </div>
+                <div>
+                    <div class="font-bold text-sm" style="color: var(--text);">Calculadora del amor</div>
+                    <div class="text-xs muted">Compatibilidad de pareja</div>
+                </div>
+            </a>
+
+            <a href="/math-sprint.html" data-cat="everyday" data-keywords="math sprint mental math game percentages discounts quiz kbc 30 second 60 second 90 second rapid fire brain training arithmetic" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start">
+                    <span class="text-2xl">🧠</span>
+                    <span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #6D28D9;">Juego</span>
+                </div>
+                <div>
+                    <div class="font-bold text-sm" style="color: var(--text);">⭐ Math Sprint</div>
+                    <div class="text-xs muted">Cálculo mental de 30 segundos</div>
+                </div>
+            </a>
+
+            <a href="/wordstorm.html" data-cat="everyday" data-keywords="wordstorm falling words typing game typing practice keyboard speed 5 worlds ocean sky mountain space night city combo multiplier arcade" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start">
+                    <span class="text-2xl">🌪️</span>
+                    <span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #6D28D9;">Juego</span>
+                </div>
+                <div>
+                    <div class="font-bold text-sm" style="color: var(--text);">⭐ WordStorm</div>
+                    <div class="text-xs muted">Juego de escritura y secuencias</div>
+                </div>
+            </a>
+
+            <a href="/image-compressor.html" data-cat="everyday" data-keywords="image compressor resize jpg png webp reduce file size private" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">🖼️</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #6D28D9;">Utilidad</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Compresor de imágenes</div><div class="text-xs muted">Cambiar tamaño y comprimir</div></div>
+            </a>
+
+            <!-- Escritura -->
+            <a href="/text-suite.html" data-cat="writer" data-keywords="text word suite counter case converter character read time uppercase lowercase titlecase" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">✍️</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #1D4ED8;">Escritura</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Text & Word Suite</div><div class="text-xs muted">Contador y conversor de mayúsculas</div></div>
+            </a>
+
+            <a href="/cv-maker.html" data-cat="writer" data-keywords="cv builder live cv maker pdf resume builder ats resume jobs curriculum vitae" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">📄</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #1D4ED8;">Creador de CV</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Free ATS Creador de currículums</div><div class="text-xs muted">Crea y descarga tu CV</div></div>
+            </a>
+
+            <a href="/grammar-checker.html" data-cat="writer" data-keywords="grammar check spelling proofreader tense punctuation fix typo corrector language engine" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">📝</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #1D4ED8;">Escritura</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Corrector gramatical</div><div class="text-xs muted">Corrección instantánea de errores</div></div>
+            </a>
+
+            <!-- AI -->
+            <a href="/prompt-studio.html" data-cat="ai" data-keywords="ai prompt studio chatgpt gemini midjourney github copilot claude prompt generator humanize text" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">🤖</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #7F1D1D;">AI Suite</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Estudio de prompts de IA</div><div class="text-xs muted">Prompts y humanizador</div></div>
+            </a>
+
+            <a href="/ai-bio-generator.html" data-cat="ai" data-keywords="ai bio generator linkedin twitter upwork instagram headline portfolio bio" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">✨</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #7F1D1D;">AI Suite</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Generador de biografías con IA</div><div class="text-xs muted">Biografías para LinkedIn y redes sociales</div></div>
+            </a>
+
+            <a href="/article-outline.html" data-cat="ai" data-keywords="article outline generator research essay outline blog structure research paper" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">📑</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #7F1D1D;">AI Suite</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Esquema de artículos Gen</div><div class="text-xs muted">Esquemas para investigaciones</div></div>
+            </a>
+
+            <a href="/text-summarizer.html" data-cat="ai" data-keywords="ai summarizer summary text summarizer summarize essay document tldr summary" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start">
+                    <span class="text-2xl">📰</span>
+                    <span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #7F1D1D;">AI Suite</span>
+                </div>
+                <div>
+                    <div class="font-bold text-sm" style="color: var(--text);">AI Text Summarizer</div>
+                    <div class="text-xs muted">Resume textos largos</div>
+                </div>
+            </a>
+
+            <!-- Finance -->
+            <a href="/fee-calculator.html" data-cat="finance" data-keywords="freelance fee calculator stripe fee calculator paypal fee calculator payment processing fees net payout invoice amount gross up freelance hourly rate" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">💳</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #047857;">Finance</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Calculadora de comisiones y tarifas freelance</div><div class="text-xs muted">Comisiones de Stripe y PayPal y tarifa por hora</div></div>
+            </a>
+
+            <a href="/sip-calculator.html" data-cat="finance" data-keywords="sip calculator mutual fund wealth return investment growth corpus maturity" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">📈</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #047857;">Finance</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Calculadora SIP</div><div class="text-xs muted">Rendimiento de fondos de inversión</div></div>
+            </a>
+
+            <a href="/loan-emi.html" data-cat="finance" data-keywords="loan emi calculator mortgage installment interest principal bank loan" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">🏦</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #047857;">Finance</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Calculadora de cuotas de préstamoulator</div><div class="text-xs muted">Cuotas mensuales e intereses</div></div>
+            </a>
+
+            <!-- Utilidad -->
+            <a href="/qr-code-generator.html" data-cat="everyday" data-keywords="qr code generator download qr share qr link to qr image qr" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">📱</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #6D28D9;">Utilidad</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Free Generador de códigos QRerator</div><div class="text-xs muted">Crea códigos QR para enlaces y texto</div></div>
+            </a>
+
+            <a href="/password-generator.html" data-cat="everyday" data-keywords="password generator secure password random key length generator copy password" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">🔑</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #6D28D9;">Utilidad</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Generador de contraseñas</div><div class="text-xs muted">Claves aleatorias seguras</div></div>
+            </a>
+
+            <a href="/unit-converter.html" data-cat="everyday" data-keywords="unit converter distance weight temperature kilometers miles feet meters inches cm kg lbs celsius fahrenheit" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">⚖️</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #6D28D9;">Utilidad</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Conversor de unidades</div><div class="text-xs muted">Conversor múltiple y flexible</div></div>
+            </a>
+
+            <!-- Dev -->
+            <a href="/json-formatter.html" data-cat="dev" data-keywords="json formatter json minifier json beautify developer code json syntax" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">⚡</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #B45309;">Developer</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Formateador JSON</div><div class="text-xs muted">Embellecer y minimizar código</div></div>
+            </a>
+
+            <a href="/base64-tool.html" data-cat="dev" data-keywords="base64 tool base64 encode base64 decode developer text encoding" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">🔤</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #B45309;">Developer</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Herramienta Base64</div><div class="text-xs muted">Codificar y decodificar</div></div>
+            </a>
+
+            <a href="/color-converter.html" data-cat="dev" data-keywords="color converter hex code rgb code color picker developer design" class="card-3d-btn p-3.5 rounded-2xl text-left h-32 flex flex-col justify-between">
+                <div class="flex justify-between items-start"><span class="text-2xl">🎨</span><span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md" style="background: var(--chip-bg); color: #B45309;">Developer</span></div>
+                <div><div class="font-bold text-sm" style="color: var(--text);">Conversor de colores</div><div class="text-xs muted">HEX, RGB y nombres</div></div>
+            </a>
+        </div>
+
+        <!-- PRIVACY / ABOUT SECTION -->
+        <div class="max-w-3xl mx-auto mt-16 mb-8 p-6 sm:p-8 rounded-3xl text-center" style="background: var(--chip-bg); border: 1px solid var(--card-border);">
+            <h2 class="text-lg font-bold mb-3" style="color: var(--text);">🔒 Por qué creamos MyToolX</h2>
+            <p class="text-sm sm:text-base leading-relaxed muted">
+                Many MyToolX tools process your text, images, and files directly in your browser, helping you keep that content on your device. A small number of features use external services to provide their functionality, and website analytics and community feedback may transmit limited information to their providers. No account is required for most tools. Please review the notice on each tool and our Política de privacidad before submitting information.
+            </p>
+        </div>
+
+        <!-- PREMIUM STORE TEASER -->
+        <section class="mt-16 mb-8" aria-labelledby="premium-teaser-heading">
+            <div class="relative max-w-4xl mx-auto rounded-3xl overflow-hidden p-6 sm:p-10 text-center shadow-xl border-2" 
+                 style="background: var(--card); border-color: var(--card-border);">
+                
+                <div class="absolute top-0 inset-x-0 h-40 opacity-20 pointer-events-none" style="background: radial-gradient(ellipse at top, #F59E0B 0%, transparent 70%);"></div>
+
+                <span class="relative inline-block text-xs font-black uppercase tracking-wider text-amber-500 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/30 mb-4 shadow-sm">
+                    ⭐ Tienda prémium
+                </span>
+
+                <h2 id="premium-teaser-heading" class="relative text-2xl sm:text-3xl font-black mb-3" style="color: var(--text);">
+                    Impulsa tu carrera y tu negocio freelance
+                </h2>
+                <p class="relative text-sm sm:text-base muted max-w-lg mx-auto mb-8">
+                    Plantillas profesionales, herramientas de Excel, paquetes de contratos y guías de IA diseñados para ahorrarte horas y ayudarte a generar más ingresos.
+                </p>
+
+                <div class="relative grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-8 text-left">
+                    
+                    <a href="/premium.html" class="group block surface rounded-xl overflow-hidden border-2 border-transparent hover:!border-indigo-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-500/20 active:scale-95" style="border-color: var(--card-border);">
+                        <div class="h-16 sm:h-24 w-full bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
+                            <img src="/cv-bundle-cover.webp" alt="Paquete de currículums ATS" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-2.5">
+                            <div class="text-[10px] sm:text-[11px] font-bold leading-tight group-hover:text-indigo-500 transition-colors" style="color: var(--text);">Paquete de currículums ATS</div>
+                            <div class="text-[10px] text-amber-500 font-black mt-1">$2.99</div>
+                        </div>
+                    </a>
+
+                    <a href="/premium.html" class="group block surface rounded-xl overflow-hidden border-2 border-transparent hover:!border-indigo-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-500/20 active:scale-95" style="border-color: var(--card-border);">
+                        <div class="h-16 sm:h-24 w-full bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
+                            <img src="/excel-bundle-cover.webp" alt="Paquete de Excel" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-2.5">
+                            <div class="text-[10px] sm:text-[11px] font-bold leading-tight group-hover:text-indigo-500 transition-colors" style="color: var(--text);">Paquete de Excel</div>
+                            <div class="text-[10px] text-emerald-500 font-black mt-1">$4.99</div>
+                        </div>
+                    </a>
+
+                    <a href="/premium.html" class="group block surface rounded-xl overflow-hidden border-2 border-transparent hover:!border-indigo-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-500/20 active:scale-95" style="border-color: var(--card-border);">
+                        <div class="h-16 sm:h-24 w-full bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
+                            <img src="/freelancer-kit-thumbnail.webp" alt="Kit de contratos" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-2.5">
+                            <div class="text-[10px] sm:text-[11px] font-bold leading-tight group-hover:text-indigo-500 transition-colors" style="color: var(--text);">Kit de contratos</div>
+                            <div class="text-[10px] text-indigo-500 font-black mt-1">$2.99</div>
+                        </div>
+                    </a>
+
+                    <a href="/premium.html" class="group block surface rounded-xl overflow-hidden border-2 border-transparent hover:!border-indigo-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-500/20 active:scale-95" style="border-color: var(--card-border);">
+                        <div class="h-16 sm:h-24 w-full bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
+                            <img src="/ai-vault-cover.webp" alt="Colección de prompts de IA" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-2.5">
+                            <div class="text-[10px] sm:text-[11px] font-bold leading-tight group-hover:text-indigo-500 transition-colors" style="color: var(--text);">Colección de prompts de IA</div>
+                            <div class="text-[10px] text-purple-500 font-black mt-1">$1.99</div>
+                        </div>
+                    </a>
+
+                </div>
+
+                <a href="/premium.html"
+                   class="relative btn-3d inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-8 py-3.5 rounded-2xl text-sm font-black shadow-lg shadow-amber-500/30 w-full sm:w-auto transition-transform hover:-translate-y-0.5"
+                   aria-label="Browse all premium digital bundles">
+                    🛍️ Ver todos los paquetes
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                </a>
+
+                <p class="relative text-[11px] muted mt-5">Descarga digital inmediata · Pago seguro mediante transferencia bancaria</p>
+            </div>
+        </section>
+
+        <!-- COMMUNITY FEEDBACK CARD -->
+        <section class="max-w-3xl mx-auto my-10 px-4">
+            <div class="surface rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+                <div class="text-center sm:text-left">
+                    <h3 class="text-base font-black" style="color: var(--text);">¿Esta herramienta te ahorró tiempo?</h3>
+                    <p class="text-xs muted mt-0.5">Leave a quick rating or suggest an improvement on our Comunidad board.</p>
+                </div>
+                <div class="flex items-center gap-2 shrink-0">
+                    <button type="button" onclick="openFeedbackModal('review')" class="btn-3d btn-primary px-4 py-2.5 rounded-xl text-xs font-black whitespace-nowrap">
+    ✍️ Dejar comentarios
+</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+                
+                <div class="lg:col-span-5">
+                    <a href="/index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 pr-4">
+MyToolX is a free collection of browser-based tools for writers, freelancers, developers, and everyday users. No account is required for most tools. Some features use external services, and the website uses analytics and advertising technologies.
+                    </p>
+                    <div class="social-links-row" aria-label="MyToolX social media links">
+                        <a href="https://www.facebook.com/profile.php?id=61596813242660" target="_blank" rel="noopener noreferrer" aria-label="MyToolX on Facebook" title="Facebook" class="social-btn fb-btn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/mytoolx0?fqnt=dm05bDBzazZ6Nmpp" target="_blank" rel="noopener noreferrer" aria-label="MyToolX on Instagram" title="Instagram" class="social-btn ig-btn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                    
+                <div class="lg:col-span-4">
+                    <h3>Herramientas populares</h3>
+                    
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <a href="/typing-test.html">Prueba de velocidad de escritura</a>
+                        
+                        <div class="flex items-start mt-0.5"> 
+                            <a href="/premium.html" class="link-premium-gold" aria-label="Visit the Premium Store">
+                                <span class="star-icon">⭐</span> Premium
+                            </a>
+                        </div>
+
+                        <a href="/prompt-studio.html">Estudio de prompts de IA</a>
+                        <a href="/image-compressor.html">Compresor de imágenes</a>
+                        
+                        <a href="/text-suite.html">Herramientas de texto y palabras</a>
+                        <a href="/grammar-checker.html">Corrector gramatical</a>
+                        
+                        <a href="/sip-calculator.html">Calculadora SIP</a>
+                        <a href="/fee-calculator.html">Calculadora de comisiones</a>
+                        
+                        <a href="/json-formatter.html">Formateador JSON</a>
+                        <a href="/loan-emi.html">Calculadora de cuotas de préstamo</a>
+                        
+                        <a href="/qr-code-generator.html">Generador de códigos QR</a>
+                        <a href="/base64-tool.html">Herramienta Base64</a>
+                        
+                        <a href="/unit-converter.html">Conversor de unidades</a>
+                        <a href="/password-generator.html">Generador de contraseñas</a>
+                        
+                        <a href="/article-outline.html">Esquema de artículos</a>
+                        <a href="/ai-bio-generator.html">Generador de biografías con IA</a>
+                        
+                        <a href="/love-calculator.html">Calculadora del amor</a>
+                        <a href="/cv-maker.html">Creador de currículums</a> 
+                         
+                        <a href="/text-summarizer.html">Resumidor con IA</a>
+                        <a href="/color-converter.html">Conversor de colores</a>
+                        <a href="/reaction-time-test.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Prueba de reflejos</a>
+                        <a href="/word-scramble.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Palabras desordenadas</a>
+                        <a href="/math-sprint.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Juego Math Sprint</a>
+                        <a href="/wordstorm.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Juego WordStorm</a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Company</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="/index.html">Inicio</a></li>
+                                <li><a href="/about.html">Acerca de nosotros</a></li>
+                                <li><a href="/contact.html">Contacto</a></li>
+				                <li><a href="/community.html">Comunidad</a></li>
+
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Legal</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="/blog.html">Blog y guías</a></li>
+                                <li><a href="/privacy.html">Política de privacidad</a></li>
+                                <li><a href="/terms.html">Términos del servicio</a></li>
+                                <li><a href="/index.html">Mapa del sitio</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. All rights reserved.</p>
+                <p>Many tools process data in your browser; some features use external services. See our Política de privacidad for details.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function initTheme() {
+            var saved = null;
+            try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = saved || (prefersDark ? 'dark' : 'light');
+            applyTheme(theme);
+        })();
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            var icon = document.getElementById('themeIcon');
+            var text = document.getElementById('themeText');
+            
+            if (icon && text) {
+                if (theme === 'dark') {
+                    icon.textContent = '🌙';
+                    text.textContent = 'Modo oscuro';
+                } else {
+                    icon.textContent = '☀️';
+                    text.textContent = 'Light Mode';
+                }
+            }
+            
+            var btn = document.getElementById('themeToggle');
+            if (btn) {
+                btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+                btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+            }
+        }
+        
+        function toggleTheme() {
+            var cur = document.documentElement.getAttribute('data-theme') || 'light';
+            var next = cur === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('mtx-theme', next); } catch (e) {}
+        }
+        window.toggleTheme = toggleTheme;
+
+        function filterCategory(cat, btnElement) {
+            const catButtons = document.querySelectorAll('#categoryTabsContainer button');
+            catButtons.forEach(btn => {
+                btn.className = "btn-3d btn-chip px-5 py-2.5 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors";
+            });
+
+            if (btnElement) {
+                btnElement.className = "btn-3d btn-primary px-5 py-2.5 rounded-full shadow-sm";
+            }
+
+            document.getElementById('globalSearchInput').value = '';
+            document.getElementById('searchClearBtn').classList.add('hidden');
+            document.getElementById('noSearchResultsMsg').classList.add('hidden');
+            document.getElementById('gridHeader').classList.remove('hidden');
+            document.getElementById('gridHeader').textContent = cat === 'all' ? 'Todas las herramientas online gratuitas' : btnElement.innerText;
+
+            const elements = document.querySelectorAll('#toolsGrid a[data-cat]');
+            elements.forEach(el => {
+                if (cat === 'all' || el.getAttribute('data-cat') === cat) {
+                    el.classList.remove('hidden');
+                } else {
+                    el.classList.add('hidden');
+                }
+            });
+        }
+
+        function handleGlobalSearch() {
+            const query = document.getElementById('globalSearchInput').value.trim().toLowerCase();
+            const clearBtn = document.getElementById('searchClearBtn');
+            const alertBox = document.getElementById('noSearchResultsMsg');
+            const toolCards = document.querySelectorAll('#toolsGrid a');
+            const gridHeader = document.getElementById('gridHeader');
+
+            const catButtons = document.querySelectorAll('#categoryTabsContainer button');
+            catButtons.forEach(btn => { btn.className = "btn-3d btn-chip px-5 py-2.5 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"; });
+
+            if (query.length > 0) {
+                clearBtn.classList.remove('hidden');
+                gridHeader.classList.add('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+                gridHeader.classList.remove('hidden');
+                gridHeader.textContent = 'Todas las herramientas online gratuitas';
+            }
+
+            let visibleCount = 0;
+            toolCards.forEach(card => {
+                const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
+                const title = card.innerText.toLowerCase();
+
+                if (keywords.includes(query) || title.includes(query)) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            if (visibleCount === 0 && query.length > 0) {
+                alertBox.classList.remove('hidden');
+            } else {
+                alertBox.classList.add('hidden');
+            }
+        }
+
+        function clearGlobalSearch() {
+            document.getElementById('globalSearchInput').value = '';
+            document.getElementById('searchClearBtn').classList.add('hidden');
+            document.getElementById('noSearchResultsMsg').classList.add('hidden');
+            filterCategory('all', document.querySelector('#categoryTabsContainer button'));
+        }
+
+        // --- BANNER COUNTDOWN LOGIC ---
+        function updateBannerCountdown() {
+            const targetDate = new Date("2027-01-05T23:59:59Z").getTime();
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById("bnDays").innerHTML = "00<span class='text-[9px] text-white/60'>d</span>";
+                document.getElementById("bnHours").innerHTML = "00<span class='text-[9px] text-white/60'>h</span>";
+                document.getElementById("bnMins").innerHTML = "00<span class='text-[9px] text-white/60'>m</span>";
+                document.getElementById("bnSecs").innerHTML = "00<span class='text-[9px] text-white/60'>s</span>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("bnDays").innerHTML = String(days).padStart(2, "0") + "<span class='text-[9px] text-white/60'>d</span>";
+            document.getElementById("bnHours").innerHTML = String(hours).padStart(2, "0") + "<span class='text-[9px] text-white/60'>h</span>";
+            document.getElementById("bnMins").innerHTML = String(minutes).padStart(2, "0") + "<span class='text-[9px] text-white/60'>m</span>";
+            document.getElementById("bnSecs").innerHTML = String(seconds).padStart(2, "0") + "<span class='text-[9px] text-white/60'>s</span>";
+        }
+
+        updateBannerCountdown();
+        setInterval(updateBannerCountdown, 1000);
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
+    <script>
+      window.addEventListener('load', function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W8KM3G3BYL');
+      });
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
+ 
+   <!-- FEEDBACK MODAL (IN-PAGE) -->
+    <div id="feedbackModal" class="mtx-modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="handleBackdropClick(event)">
+        <div class="mtx-modal-dialog" onclick="event.stopPropagation()">
+            <div class="flex items-start justify-between gap-3 mb-4">
+                <div>
+                    <h3 id="modalTitle" class="text-lg sm:text-xl font-black" style="color: var(--text);">Comparte tu opinión</h3>
+                    <p class="text-xs muted mt-0.5">Solo 20 segundos • No necesitas registrarte</p>
+                </div>
+                <button type="button" onclick="closeFeedbackModal()" aria-label="Close popup" title="Close" class="mtx-modal-close">✕</button>
+            </div>
+
+            <form id="communityForm" onsubmit="submitComunidadFeedback(event)" class="space-y-4">
+                <div>
+                    <label for="formType" class="block text-xs font-bold uppercase tracking-wider muted mb-1">1. ¿Qué te gustaría compartir ? *</label>
+                    <select id="formType" name="formType" required onchange="toggleFormFields()" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                        <option value="review">⭐ Valorar y reseñar una herramienta o juego</option>
+                        <option value="suggestion">💡 Sugerir una herramienta o función</option>
+                    </select>
+                </div>
+
+                <div id="targetPageGroup" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label for="targetPageId" class="block text-xs font-bold uppercase tracking-wider muted mb-1">2. Select Tool or Juego *</label>
+                        <select id="targetPageId" name="targetPageId" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                            <optgroup label="🎮 Browser Juegos">
+                                <option value="wordstorm">Juego WordStorm (Juegos)</option>
+                                <option value="typing-test">Prueba de velocidad de escritura (Juegos)</option>
+                                <option value="reaction-time-test">Reaction Time Test (Juegos)</option>
+                                <option value="word-scramble">Palabras desordenadas (Juegos)</option>
+                                <option value="math-sprint">Math Sprint (Juegos)</option>
+                            </optgroup>
+                            <optgroup label="🧰 Free Utilities &amp; AI">
+                                <option value="cv-maker">Live CV Maker (Free Tools)</option>
+                                <option value="image-compressor">Compresor de imágenes (Free Tools)</option>
+                                <option value="grammar-checker">Corrector gramatical (Free Tools)</option>
+                                <option value="text-suite">Herramientas de texto y palabras (Free Tools)</option>
+                                <option value="prompt-studio">Estudio de prompts de IA (Free Tools)</option>
+                                <option value="ai-bio-generator">Generador de biografías con IA (Free Tools)</option>
+                                <option value="article-outline">Esquema de artículos Gen (Free Tools)</option>
+                                <option value="text-summarizer">AI Text Summarizer (Free Tools)</option>
+                                <option value="json-formatter">Formateador JSON (Free Tools)</option>
+                                <option value="base64-tool">Herramienta Base64 (Free Tools)</option>
+                                <option value="color-converter">Conversor de colores (Free Tools)</option>
+                                <option value="qr-code-generator">Generador de códigos QR (Free Tools)</option>
+                                <option value="password-generator">Generador de contraseñas (Free Tools)</option>
+                                <option value="unit-converter">Conversor de unidades (Free Tools)</option>
+                                <option value="sip-calculator">Calculadora SIP (Free Tools)</option>
+                                <option value="loan-emi">Calculadora de cuotas de préstamo (Free Tools)</option>
+                                <option value="fee-calculator">Calculadora de comisioness (Free Tools)</option>
+                            </optgroup>
+                            <optgroup label="⭐ Premium Bundles">
+                                <option value="ats-resume-pack">Paquete de currículums ATS (Premium Products)</option>
+                                <option value="excel-bundle">Paquete de Excel (Premium Products)</option>
+                                <option value="freelance-contract-kit">Kit de contratos (Premium Products)</option>
+                                <option value="ai-prompt-vault">Colección de prompts de IA (Premium Products)</option>
+				<option value="monthly-budget-tracker">Monthly Household Budget Tracker (Premium Products)</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div id="ratingGroup">
+                        <label class="block text-xs font-bold uppercase tracking-wider muted mb-1">Rating *</label>
+                        <div id="starRatingContainer" class="flex items-center gap-1 mt-1">
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <input type="hidden" id="starRating" name="starRating" value="5">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="suggestionCategoryGroup" class="hidden space-y-3">
+                    <div>
+                        <label for="suggestionCategory" class="block text-xs font-bold uppercase tracking-wider muted mb-1">2. Categoría de la idea *</label>
+                        <select id="suggestionCategory" name="suggestionCategory" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                            <option value="Nueva herramientas">Nueva herramienta</option>
+                            <option value="Nuevo juegos">Nuevo juego</option>
+                            <option value="Existing Tool Improvements">Mejorar una herramienta existente</option>
+                            <option value="Mejora del sitio webs">Mejora del sitio web</option>
+                            <option value="Premium Product Ideas">Nueva idea de paquete prémium</option>
+                        </select>
+                    </div>
+                    <div id="titleGroup">
+                        <label for="suggestionTitle" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Título breve de la idea *</label>
+                        <input type="text" id="suggestionTitle" name="suggestionTitle" maxlength="80" placeholder="e.g. PDF Merger or Invoice Generator" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label for="authorName" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Nombre (opcional)</label>
+                        <input type="text" id="authorName" name="authorName" maxlength="40" placeholder="Anonymous" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                    </div>
+                    <div>
+                        <label for="country" class="block text-xs font-bold uppercase tracking-wider muted mb-1">País (opcional)</label>
+                        <input type="text" id="country" name="country" maxlength="40" placeholder="e.g. US, UK, PK" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="commentText" id="commentLabel" class="block text-xs font-bold uppercase tracking-wider muted mb-1">3. Tu comentario *</label>
+                    <textarea id="commentText" name="commentText" required rows="3" maxlength="400" placeholder="Write a quick note about your experience..." class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-medium"></textarea>
+                </div>
+
+                <p class="text-[11px] muted leading-relaxed">
+                    🔒 Envío voluntario. Las publicaciones aprobadas se muestran públicamente sin datos personales.
+                </p>
+
+                <div id="formError" class="hidden p-3 rounded-xl text-xs font-bold text-red-500 bg-red-500/10 border border-red-500/30"></div>
+                <div id="formSuccess" class="hidden p-3 rounded-xl text-xs font-bold text-emerald-500 bg-emerald-500/10 border border-emerald-500/30"></div>
+
+                <div class="flex items-center gap-2.5 pt-1">
+                    <button type="button" onclick="closeFeedbackModal()" class="btn-3d btn-chip px-4 py-3 rounded-xl text-xs sm:text-sm font-bold">
+                        Cancelar
+                    </button>
+                    <button type="submit" id="submitModalBtn" class="btn-3d btn-primary flex-1 py-3 rounded-xl text-xs sm:text-sm font-black">
+                        🚀 Enviar opinión
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- FEEDBACK MODAL CSS & JS -->
+    <style>
+        .mtx-modal-backdrop {
+            position: fixed; inset: 0; z-index: 9999;
+            background: rgba(15, 23, 42, 0.68);
+            backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+            display: flex; align-items: center; justify-content: center; padding: 12px;
+        }
+        .mtx-modal-backdrop.hidden { display: none !important; }
+        .mtx-modal-dialog {
+            background: var(--card); border: 1px solid var(--card-border); color: var(--text);
+            width: 100%; max-width: 480px; max-height: 88dvh; overflow-y: auto;
+            border-radius: 22px; padding: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35); position: relative;
+        }
+        @media (min-width: 640px) { .mtx-modal-dialog { padding: 28px; } }
+        .mtx-modal-close {
+            width: 34px; height: 34px; border-radius: 10px;
+            background: var(--chip-bg); color: var(--text); border: none;
+            font-size: 16px; font-weight: 800; cursor: pointer;
+            display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .mtx-modal-close:hover { background: #EF4444; color: #FFFFFF; }
+        .star-click { cursor: pointer; transition: transform 0.1s; }
+        .star-click:hover { transform: scale(1.15); }
+        .star-click svg { width: 32px; height: 32px; fill: currentColor; }
+    </style>
+
+    <script>
+        // 1. THE AUTO-OPEN LOGIC (Listens for ?tool=general)
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const toolId = urlParams.get('tool');
+            
+            if (toolId) {
+                openFeedbackModal('review');
+                const pageSelect = document.getElementById("targetPageId");
+                if (pageSelect) pageSelect.value = toolId;
+                
+                // Hide the dropdown since the tool is pre-selected
+                const dropdownContainer = document.getElementById("targetPageId").parentElement;
+                if (dropdownContainer) dropdownContainer.style.display = 'none'; 
+                
+                const ratingContainer = document.getElementById("ratingGroup");
+                if (ratingContainer) ratingContainer.className = "col-span-1 sm:col-span-2";
+            }
+        });
+
+        // 2. MODAL CONTROLS
+        function openFeedbackModal(type = "review") {
+            document.getElementById("formType").value = type;
+            toggleFormFields();
+            document.getElementById("feedbackModal").classList.remove("hidden");
+        }
+
+        function closeFeedbackModal() {
+            document.getElementById("feedbackModal").classList.add("hidden");
+            document.getElementById("communityForm").reset();
+            document.getElementById("formError").classList.add("hidden");
+            document.getElementById("formSuccess").classList.add("hidden");
+        }
+
+        function handleBackdropClick(e) {
+            if (e.target && e.target.id === 'feedbackModal') closeFeedbackModal();
+        }
+
+        function toggleFormFields() {
+            const type = document.getElementById("formType").value;
+            const targetPageGroup = document.getElementById("targetPageGroup");
+            const suggestionCategoryGroup = document.getElementById("suggestionCategoryGroup");
+            const ratingGroup = document.getElementById("ratingGroup");
+            const titleGroup = document.getElementById("titleGroup");
+            const commentLabel = document.getElementById("commentLabel");
+            const modalTitle = document.getElementById("modalTitle");
+
+            if (type === "suggestion") {
+                targetPageGroup.classList.add("hidden");
+                suggestionCategoryGroup.classList.remove("hidden");
+                ratingGroup.classList.add("hidden");
+                titleGroup.classList.remove("hidden");
+                commentLabel.textContent = "Detailed Suggestion Description *";
+                modalTitle.textContent = "Suggest a New Tool or Feature";
+            } else {
+                targetPageGroup.classList.remove("hidden");
+                suggestionCategoryGroup.classList.add("hidden");
+                ratingGroup.classList.remove("hidden");
+                titleGroup.classList.add("hidden");
+                commentLabel.textContent = "Written Comment *";
+                modalTitle.textContent = "Share Your Feedback";
+            }
+        }
+
+        // 3. STAR RATING LOGIC
+        document.addEventListener("DOMContentLoaded", function() {
+            const container = document.getElementById("starRatingContainer");
+            const input = document.getElementById("starRating");
+            if (!container || !input) return;
+
+            const stars = container.querySelectorAll(".star-click");
+            let currentRating = 5;
+
+            function updateStars(rating) {
+                stars.forEach((star, index) => {
+                    if (index < rating) {
+                        star.classList.add("text-amber-500");
+                        star.classList.remove("text-gray-300", "dark:text-gray-600");
+                    } else {
+                        star.classList.remove("text-amber-500");
+                        star.classList.add("text-gray-300", "dark:text-gray-600");
+                    }
+                });
+            }
+
+            stars.forEach((star, index) => {
+                star.addEventListener("mouseenter", () => updateStars(index + 1));
+                star.addEventListener("mouseleave", () => updateStars(currentRating));
+                star.addEventListener("click", () => {
+                    currentRating = index + 1;
+                    input.value = currentRating;
+                    updateStars(currentRating);
+                });
+                star.addEventListener("touchstart", (e) => {
+                    e.preventDefault();
+                    currentRating = index + 1;
+                    input.value = currentRating;
+                    updateStars(currentRating);
+                });
+            });
+            updateStars(currentRating);
+        });
+
+        // 4. FORM SUBMISSION
+        async function submitComunidadFeedback(event) {
+            event.preventDefault();
+            const errorBox = document.getElementById("formError");
+            const successBox = document.getElementById("formSuccess");
+            const submitBtn = document.getElementById("submitModalBtn");
+            const API_URL = "https://script.google.com/macros/s/AKfycbxMZGHXUkzX04Z3slFH5F3GveBOIrj-XiKPl04aPOTHjBur8uSg57kb-PRr781vcStd5w/exec";
+
+            errorBox.classList.add("hidden");
+            successBox.classList.add("hidden");
+
+            const formType = document.getElementById("formType").value;
+            const commentText = document.getElementById("commentText").value.trim();
+            const authorName = document.getElementById("authorName") ? document.getElementById("authorName").value.trim() : "";
+            const country = document.getElementById("country") ? document.getElementById("country").value.trim() : "";
+
+            let payload = {
+                formType: formType,
+                commentText: commentText,
+                authorName: authorName,
+                country: country,
+                recommendation: "",
+                language: "en"
+            };
+
+            if (formType === "suggestion") {
+                payload.suggestionCategory = document.getElementById("suggestionCategory").value;
+                payload.suggestionTitle = document.getElementById("suggestionTitle").value.trim();
+                if (!payload.suggestionTitle || !commentText) {
+                    errorBox.textContent = "Please fill out all required suggestion fields.";
+                    errorBox.classList.remove("hidden");
+                    return;
+                }
+            } else {
+                const pageSelect = document.getElementById("targetPageId");
+                payload.targetPageId = pageSelect.value;
+                payload.starRating = document.getElementById("starRating").value;
+                payload.pageUrl = pageSelect.value + ".html";
+                if (!commentText) {
+                    errorBox.textContent = "Please enter your written review.";
+                    errorBox.classList.remove("hidden");
+                    return;
+                }
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = "⏳...";
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "text/plain;charset=utf-8" },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+
+                if (result.status === "success") {
+                    successBox.textContent = "🎉 Thank you! Your submission is pending moderation.";
+                    successBox.classList.remove("hidden");
+                    document.getElementById("communityForm").reset();
+                    setTimeout(() => { 
+                        closeFeedbackModal(); 
+                        submitBtn.disabled = false; 
+                        submitBtn.textContent = "🚀 Enviar opinión"; 
+                    }, 3000);
+                } else {
+                    errorBox.textContent = result.message || "No se pudo enviar.";
+                    errorBox.classList.remove("hidden");
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "🚀 Enviar opinión";
+                }
+            } catch (err) {
+                errorBox.textContent = "Error de conexión. Inténtalo de nuevo.";
+                errorBox.classList.remove("hidden");
+                submitBtn.disabled = false;
+                submitBtn.textContent = "🚀 Enviar opinión";
+            }
+        }
+    </script>
+
+</body>
+</html>
