@@ -32,14 +32,14 @@
 Read `MYTOOLX-MULTILINGUAL-HANDOVER.md` first for the authoritative resume point, completed commit list, QA ledger and next actions.
 
 - Development branch: `multilingual-expansion`; production branch remains `safe-maintenance-audit`.
-- The 56 English sitemap page paths have all 56 Spanish and all 56 French counterpart files present (112 localized files). File presence is not translation/runtime certification.
+- The 56 English sitemap page paths have all 56 Spanish and all 56 French counterpart files present (112 localized files). A structural metadata check was completed across all 168 files. File presence and metadata checks are not translation/runtime certification.
 - Active language switcher uses explicit hreflang declarations only; do not introduce URL probing or fetching.
 - Sampled translated home, About, Grammar Checker and Community pages have expected language attributes and shared switcher assets.
-- Corrected reciprocal hreflang on French Privacy Policy, Spanish/French Terms, and English/Spanish/French Contact pages.
+- Corrected reciprocal hreflang on French Privacy Policy, Spanish/French Terms, English/Spanish/French Contact pages, all three Blog Typing Speed pages, French Blog SIP Investing, all three Blog Unit Conversion pages, all three Blog Text Suite pages, all three Blog Text Summarizer pages, all three Blog WordStorm pages, and all three Blog Word Scramble pages.
 - Sitemap expanded to 168 URLs (56 per language) and 672 xhtml alternate links. Treat as candidate only until every localized URL passes content, canonical, HTTP 200, indexability and reciprocal-hreflang QA.
 - No deployment or merge has been performed. Do not modify `main` or change GitHub Pages source without explicit approval.
 - Latest batch commit: `56e64c27f600174544d163253d3005dc7bc27ca9`.
-- Full translation proofreading, full application behavior testing, mobile/theme/accessibility regression, complete metadata/internal-link audit and deployment workflow validation remain outstanding.
+- Structural metadata audit across 168 HTML files completed. Linguistic review is ongoing: Math Sprint, WordStorm, Word Scramble and Reaction Time article copy had substantial untranslated/mixed-language content and were corrected in the latest development commits. Full native-level proofreading, application behavior testing, mobile/theme/accessibility regression, complete internal-link audit and deployment workflow validation remain outstanding.
 
 ## Next milestone
 1. Audit all 56 page triplets (English/Spanish/French) in batches and update the persistent handover after each batch.
