@@ -578,7 +578,7 @@
                 </div>
 
                 <div id="stateResult" class="hidden">
-                    <div class="reaction-score" id="resultResultado">245</div>
+                    <div class="reaction-score" id="resultScore">245</div>
                     <div class="reaction-ms">milisegundos</div>
                     <div class="reaction-sub mt-4" id="resultMessage">¡Por encima de la media!</div>
                 </div>
@@ -593,7 +593,7 @@
             <div class="game-stats">
                 <div class="stat-box">
                     <div class="stat-label">Tu mejor resultado</div>
-                    <div class="stat-val" id="bestResultadoDisplay">--<span>ms</span></div>
+                    <div class="stat-val" id="bestScoreDisplay">--<span>ms</span></div>
                 </div>
                 <div class="stat-box">
                     <div class="stat-label">Intentos</div>
@@ -848,7 +848,7 @@
                 <button type="button" onclick="closeFeedbackModal()" aria-label="Close popup" title="Close" class="mtx-modal-close">✕</button>
             </div>
 
-            <form id="communityForm" onsubmit="submitComunidadFeedback(event)" class="space-y-4">
+            <form id="communityForm" onsubmit="submitCommunityFeedback(event)" class="space-y-4">
                 <div>
                     <label for="formType" class="block text-xs font-bold uppercase tracking-wider muted mb-1">1. ¿Qué te gustaría compartir? *</label>
                     <select id="formType" name="formType" required onchange="toggleFormFields()" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
@@ -868,13 +868,13 @@
 
                     <div id="ratingGroup">
                         <label class="block text-xs font-bold uppercase tracking-wider muted mb-1">Your Valoración *</label>
-                        <div id="starValoraciónContainer" class="flex items-center gap-1 mt-1">
+                        <div id="starRatingContainer" class="flex items-center gap-1 mt-1">
                             <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
                             <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
                             <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
                             <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
                             <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
-                            <input type="hidden" id="starValoración" name="starValoración" value="5">
+                            <input type="hidden" id="starRating" name="starRating" value="5">
                         </div>
                     </div>
                 </div>
@@ -983,9 +983,9 @@
             stateReady: document.getElementById('stateReady'),
             stateResult: document.getElementById('stateResult'),
             stateTooSoon: document.getElementById('stateTooSoon'),
-            resultResultado: document.getElementById('resultResultado'),
+            resultScore: document.getElementById('resultScore'),
             resultMessage: document.getElementById('resultMessage'),
-            bestResultadoDisplay: document.getElementById('bestResultadoDisplay'),
+            bestScoreDisplay: document.getElementById('bestScoreDisplay'),
             attemptsDisplay: document.getElementById('attemptsDisplay'),
             actionBar: document.getElementById('actionBar'),
             tryAgainBtn: document.getElementById('tryAgainBtn'),
@@ -1017,9 +1017,9 @@
 
         function updateStatsUI() {
             if (state.best > 0) {
-                el.bestResultadoDisplay.innerHTML = state.best + '<span>ms</span>';
+                el.bestScoreDisplay.innerHTML = state.best + '<span>ms</span>';
             } else {
-                el.bestResultadoDisplay.innerHTML = '--<span>ms</span>';
+                el.bestScoreDisplay.innerHTML = '--<span>ms</span>';
             }
             el.attemptsDisplay.textContent = state.attempts;
         }
@@ -1119,7 +1119,7 @@
         }
 
         function displayResult(ms) {
-            el.resultResultado.textContent = ms;
+            el.resultScore.textContent = ms;
             
             var msg = "";
             if (ms < 200) msg = "Elite reflexes! 🏆";
@@ -1131,7 +1131,7 @@
             showState('result');
         }
 
-        function shareResultado() {
+        function shareScore() {
             if (!Number.isFinite(state.lastResult) || state.lastResult <= 0) return;
             var score = state.lastResult;
             var text = "I scored " + score + " ms on the Prueba de tiempo de reacción at MyToolX. Can you beat me?\\nhttps://mytoolx.org/es/reaction-time-test.html?challenge=" + score;
@@ -1182,7 +1182,7 @@
 
         el.shareBtn.addEventListener('click', function(e) {
             e.stopPropagation();
-            shareResultado();
+            shareScore();
         });
 
     })();
@@ -1234,8 +1234,8 @@
         }
 
         document.addEventListener("DOMContentLoaded", function() {
-            const container = document.getElementById("starValoraciónContainer");
-            const input = document.getElementById("starValoración");
+            const container = document.getElementById("starRatingContainer");
+            const input = document.getElementById("starRating");
             if (!container || !input) return;
 
             const stars = container.querySelectorAll(".star-click");
@@ -1271,7 +1271,7 @@
             updateStars(currentValoración);
         });
 
-        async function submitComunidadFeedback(event) {
+        async function submitCommunityFeedback(event) {
             event.preventDefault();
             const errorBox = document.getElementById("formError");
             const successBox = document.getElementById("formSuccess");
@@ -1305,7 +1305,7 @@
                 }
             } else {
                 payload.targetPageId = "reaction-time-test";
-                payload.starValoración = document.getElementById("starValoración").value;
+                payload.starRating = document.getElementById("starRating").value;
                 payload.pageUrl = "reaction-time-test.html";
                 if (!commentText) {
                     errorBox.textContent = "Please enter your written review.";
