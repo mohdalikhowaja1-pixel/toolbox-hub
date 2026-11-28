@@ -58,13 +58,13 @@ No hardcoded English form-language payload was identified in these inspected scr
 
 A second, deeper inspection found that the shared language-switcher assets existed but were not consistently included by the page HTML. The earlier audit checked asset existence, not page-level loading, and its initial conclusion that no switcher change was required was incorrect.
 
-The final maintenance pass updated all 168 public HTML pages (56 English, 56 Spanish, 56 French):
-- Added the root-relative `/lang-switcher.css` stylesheet reference.
-- Added the deferred `/lang-switcher.js` script reference.
+The final maintenance pass audited all 168 public HTML pages (56 English, 56 Spanish, 56 French) and verified that every page includes both shared switcher assets. Missing references were added where needed:
+- Root-relative `/lang-switcher.css` stylesheet reference.
+- Deferred `/lang-switcher.js` script reference.
 - Replaced hardcoded English feedback payload language values with the page's actual `document.documentElement.lang` value where found.
 - For all 24 blog articles in each language (72 article pages), added localized BreadcrumbList JSON-LD and ensured the Article JSON-LD includes the page's canonical `url` and correct `inLanguage`.
 
-The five noindex confirmation pages and the Google verification HTML remain excluded from the public-page switcher pass.
+A post-commit static verification checked all 168 public HTML files and found both switcher references, an HTML language attribute, and a canonical URL on every page. The five noindex confirmation pages and the Google verification HTML remain excluded from this public-page check.
 
 ## 6. Remaining items requiring follow-up
 
