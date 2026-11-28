@@ -159,3 +159,16 @@ Read `MYTOOLX-MULTILINGUAL-HANDOVER.md` first for the authoritative resume point
 - Latest handover commit: `445cfdd51989a855da7bdf5a5778031a80c0d37b`. See `MYTOOLX-MULTILINGUAL-HANDOVER.md` for the detailed per-batch commit ledger and QA limits.
 - Article milestone is complete at source-review level only. Native-speaker certification, browser/runtime and game interaction tests, responsive/theme/accessibility, console/network and live HTTP/indexability checks remain outstanding.
 - Next major phase: begin editorial and functional review of the 56 tool/application page families. Keep the development branch isolated; no merge, deployment or publishing-source change without explicit approval.
+
+
+## Tool/application page QA checkpoint 1 — Homepage, Premium Store and CV Maker — 2026-11-28
+
+- Began review of the 32 non-article site/tool page families.
+- Completed direct English-source comparison for Homepage, Premium Store and CV Maker in Spanish and French (six localized pages).
+- Homepage corrections include mixed giveaway/category/tool labels, malformed calculator/generator names, privacy explanation, feedback selector, footer copy, localized image alt text and ItemList structured data. All 23 tool names in the localized ItemList are translated.
+- Premium Store corrections include the remaining badge, footer privacy copy, localized social image alt text, and Open Graph/Twitter titles and descriptions.
+- CV Maker corrections include duplicated/malformed copy, privacy wording, English ATS guidance and examples, PDF FAQ, related-guide descriptions, footer navigation, WebApplication description and FAQPage answers. App logic and identifiers were preserved.
+- Revalidated JSON-LD: Homepage 2 blocks per locale; Premium Store 2 per locale; CV Maker 3 per locale. All parse successfully. Targeted residual scans for the addressed English/mixed-language strings are clear.
+- Latest handover commit: `04d8243abeae8609a02093a297baf9f130a725c8`. Exact content commits and validation limits are recorded in `MYTOOLX-MULTILINGUAL-HANDOVER.md`.
+- Source-level checks only. Browser/runtime, form and CV print tests, payment checkout, responsive/theme/accessibility, console/network and live HTTP/indexability checks remain outstanding.
+- Next: review Blog index, Community, About, Contact, Privacy, Terms and Giveaway pages, then continue with remaining tool interfaces. No merge or deployment without explicit approval.
