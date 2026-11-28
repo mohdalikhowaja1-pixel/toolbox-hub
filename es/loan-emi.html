@@ -666,13 +666,13 @@
             text.textContent = 'Modo oscuro';
         } else {
             icon.textContent = '☀️';
-            text.textContent = 'Light Mode';
+            text.textContent = 'Modo claro';
         }
     }
     
     var btn = document.getElementById('themeToggle');
     if (btn) {
-        btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+        btn.setAttribute('aria-label', theme === 'dark' ? 'Cambiar al modo claro' : 'Cambiar al modo oscuro');
         btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
     }
 }
@@ -713,16 +713,16 @@
 
         var lastValues = { emi: null, interest: null, total: null };
 
-        function getMoneda() { return document.getElementById('loanCurr').value || '$'; }
+        function getCurrency() { return document.getElementById('loanCurr').value || '$'; }
 
-        function onMonedaChange() {
+        function onCurrencyChange() {
             lastValues = { emi: null, interest: null, total: null };
             calculateEMI();
         }
-        window.onMonedaChange = onMonedaChange;
+        window.onCurrencyChange = onCurrencyChange;
 
         function calculateEMI() {
-            var sym = getMoneda();
+            var sym = getCurrency();
             var P = num('loanAmount');
             var annualRate = num('loanRate');
             var tenureType = document.getElementById('loanTenureType').value;
@@ -851,7 +851,7 @@
             updateStars(currentRating);
         });
 
-        async function submitComunidadFeedback(event) {
+        async function submitCommunityFeedback(event) {
             event.preventDefault();
             const errorBox = document.getElementById("formError");
             const successBox = document.getElementById("formSuccess");
@@ -879,7 +879,7 @@
                 payload.suggestionCategory = document.getElementById("suggestionCategory").value;
                 payload.suggestionTitle = document.getElementById("suggestionTitle").value.trim();
                 if (!payload.suggestionTitle || !commentText) {
-                    errorBox.textContent = "Please fill out all required suggestion fields.";
+                    errorBox.textContent = "Completa todos los campos obligatorios de la sugerencia.";
                     errorBox.classList.remove("hidden");
                     return;
                 }
@@ -888,7 +888,7 @@
                 payload.starRating = document.getElementById("starRating").value;
                 payload.pageUrl = "loan-emi.html";
                 if (!commentText) {
-                    errorBox.textContent = "Please enter your written review.";
+                    errorBox.textContent = "Escribe tu reseña, por favor.";
                     errorBox.classList.remove("hidden");
                     return;
                 }
@@ -906,25 +906,25 @@
                 const result = await response.json();
 
                 if (result.status === "success") {
-                    successBox.textContent = "🎉 Thank you! Your submission is pending moderation.";
+                    successBox.textContent = "🎉 ¡Gracias! Tu envío está pendiente de revisión.";
                     successBox.classList.remove("hidden");
                     document.getElementById("communityForm").reset();
                     setTimeout(() => { 
                         closeFeedbackModal(); 
                         submitBtn.disabled = false; 
-                        submitBtn.textContent = "🚀 Enviar opinión"; 
+                        submitBtn.textContent = "🚀 Submit Feedback"; 
                     }, 3000);
                 } else {
                     errorBox.textContent = result.message || "No se pudo enviar.";
                     errorBox.classList.remove("hidden");
                     submitBtn.disabled = false;
-                    submitBtn.textContent = "🚀 Enviar opinión";
+                    submitBtn.textContent = "🚀 Submit Feedback";
                 }
             } catch (err) {
                 errorBox.textContent = "Error de conexión. Inténtalo de nuevo.";
                 errorBox.classList.remove("hidden");
                 submitBtn.disabled = false;
-                submitBtn.textContent = "🚀 Enviar opinión";
+                submitBtn.textContent = "🚀 Submit Feedback";
             }
         }
     </script>
