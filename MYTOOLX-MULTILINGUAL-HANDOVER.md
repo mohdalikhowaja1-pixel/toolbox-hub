@@ -48,6 +48,27 @@ Latest known commit from this batch: `56e64c27f600174544d163253d3005dc7bc27ca9` 
 
 ## QA status
 
+### Batch audit progress — 2026-11-28
+- Source-level metadata audit completed for 48 of 56 English page families and their 96 localized counterparts (144 files total), checking language attribute, title, description presence, canonical, H1 count, hreflang presence and language-switcher script.
+- The sampled tool pages and several guides showed correct `lang`, unique canonical, title/description presence, one H1 and four hreflang values.
+- Defects discovered and corrected:
+  - Missing reciprocal hreflang on all three `blog-typing-speed.html` variants.
+  - Missing reciprocal hreflang on French `blog-sip-investing.html`.
+  - Missing reciprocal hreflang on all three `blog-unit-conversion.html` variants.
+  - Missing reciprocal hreflang on all three `blog-text-suite.html` variants.
+  - Missing reciprocal hreflang on all three `blog-text-summarizer.html` variants.
+- Significant translation defects discovered:
+  - `es/blog-math-sprint.html` and `fr/blog-math-sprint.html` have mixed-language titles/headings and substantial English article body copy.
+  - All three `blog-wordstorm.html` variants retain English title, headings and article body; Spanish/French pages are not fully translated.
+- Corrected hreflang commits:
+  - `2079b2f1252b13016527d629cf56c028283fb386`, `c116583288bfcc69ab381001c0bf99e2b724e222`, `135f275298cfc498ba45b46bfc5fb92eb14b0cff` — typing-speed guide.
+  - `8fe2912012e50a50aba51bea38ee1917378b0fda` — French SIP guide.
+  - `82f5fa7bc2432a4ceb931e697aac394d44e92489`, `8dabd794fe6f45af9743d363880554211e39b53a`, `98961475eccb70d916ab4fe7242a0c46decbc01d` — unit-conversion guide.
+  - `d5427ff3d0244ca438c58358424ed1a017960f83`, `c4d2ecd9014f176f3f120280e81a7bba5d7ba28f`, `cfff189cff0a9026cae55ae6e9e3b436caf4ad82` — text-suite guide.
+  - `2fb6a4364b8924efe4f10619d83b81dc9de8444e`, `4b510b800bd7476d22db480b17d14448ec97e62a`, `1c9f1364724abac1ae8a86675d1e2fe8ecbf9dc9` — text-summarizer guide.
+- This audit is source inspection only; no browser runtime test or native-speaker linguistic certification has been completed.
+
+
 ### Completed checks
 - Confirmed branch exists and is accessible.
 - Confirmed 56 English sitemap URLs and presence of all 112 corresponding translated files.
@@ -75,6 +96,7 @@ The sitemap now advertises localized URLs for all 56 page families. This must be
 ## Next work — resume here
 
 1. Fetch the current branch head and re-read this handover and `MULTILINGUAL-SEO-PLAN.md`.
+2. Fix the known mixed-language/English body defects in the Math Sprint and WordStorm guides before continuing the remaining 8 page families.
 2. Audit the 56 English/Spanish/French page triplets in batches. Compare page structure, visible copy, title/description, H1-H3, canonical, hreflang, language attribute, internal links, images/alt text, structured data, forms and navigation.
 3. Prioritize application/game behavior: inspect scripts and event wiring against English originals; fix translation-only defects without changing functional logic.
 4. Add a QA ledger to this file after each batch, including exact paths checked, defects found, fixes and commit SHAs.
