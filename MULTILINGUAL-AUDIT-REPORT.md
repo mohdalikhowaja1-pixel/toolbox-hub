@@ -80,3 +80,16 @@ A post-commit static verification checked all 168 public HTML files and found bo
 - Community form language handling: **dynamic**
 - Targeted metadata and structured-data fixes: **committed to the audit branch**
 - Blog article schema: **72/72 localized article pages updated with BreadcrumbList, canonical URL, and inLanguage**
+
+
+## 8. Complete language-switcher reference audit and English cleanup — 2026-11-28
+
+A complete follow-up audit checked all 112 localized pages and all 56 English public pages.
+
+- Spanish: 56/56 pages have exactly one root-absolute switcher CSS reference, exactly one deferred root-absolute switcher JavaScript reference, the expected `lang="es"`, and four hreflang declarations.
+- French: 56/56 pages have exactly one root-absolute switcher CSS reference, exactly one deferred root-absolute switcher JavaScript reference, the expected `lang="fr"`, and four hreflang declarations.
+- English: an initial full audit found duplicate CSS and JavaScript references on all 56 public pages. The redundant relative references and duplicate script tags were removed, retaining one root-absolute CSS and one deferred root-absolute JavaScript reference per page.
+- Post-cleanup verification: English 56/56 pages now have exactly one of each shared asset and zero legacy relative-path references.
+- Sitemap recheck: 168 unique URLs and 672 alternate declarations, split evenly across English, Spanish, and French (56 each).
+
+These checks verify repository source structure only. They do not establish that the current production branch contains the files, that the URLs return HTTP 200, that the language menu renders correctly in browsers, or that application behavior has passed runtime regression testing. The production publishing branch remains a release blocker and must not be changed without explicit approval.
