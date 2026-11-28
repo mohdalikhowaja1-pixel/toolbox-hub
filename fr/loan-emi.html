@@ -15,7 +15,7 @@
     
     <!-- PRIMARY SEO -->
     <title>Calculateur gratuit de mensualités de prêt | MyToolX</title>
-    <meta name="description" content="Calculez les mensualités, les intérêts totaux et le coût de remboursement d’un prêt. Estimez les échéances de prêts personnels, automobiles et immobiliers avec ce calculateur gratuit.">
+    <meta name="description" content="Calculez les mensualités, les intérêts et le coût total des prêts personnels, auto et immobiliers.">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://mytoolx.org/fr/loan-emi.html">
 
@@ -292,7 +292,7 @@
             <div class="flex items-center justify-between gap-3 flex-wrap mb-4 pb-4 border-b" style="border-color: var(--card-border);">
                 <div class="flex items-center gap-2">
                     <label for="loanCurr" class="text-xs font-bold uppercase tracking-wider muted">Devise</label>
-                    <select id="loanCurr" onchange="onDeviseChange()" class="input-field px-3 py-2 rounded-xl text-xs font-semibold" aria-label="Devise for calculator">
+                    <select id="loanCurr" onchange="onCurrencyChange()" class="input-field px-3 py-2 rounded-xl text-xs font-semibold" aria-label="Devise for calculator">
                         <option value="$">USD ($)</option>
                         <option value="€">EUR (€)</option>
                         <option value="£">GBP (£)</option>
@@ -563,7 +563,7 @@
                 <button type="button" onclick="closeFeedbackModal()" aria-label="Close popup" title="Close" class="mtx-modal-close">✕</button>
             </div>
 
-            <form id="communityForm" onsubmit="submitCommunautéFeedback(event)" class="space-y-4">
+            <form id="communityForm" onsubmit="submitCommunityFeedback(event)" class="space-y-4">
                 <div>
                     <label for="formType" class="block text-xs font-bold uppercase tracking-wider muted mb-1">1. Que souhaitez-vous partager ? *</label>
                     <select id="formType" name="formType" required onchange="toggleFormFields()" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
