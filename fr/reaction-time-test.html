@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<script>
+    (function() {
+        var saved = null;
+        try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+    })();
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- PRIMARY SEO -->
+    <title>Test gratuit de temps de réaction en ligne | MyToolX</title>
+    <meta name="description" content="Mesurez votre vitesse de réaction en millisecondes avec ce test de réflexes gratuit. Répondez rapidement, suivez vos résultats et défiez vos amis.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://mytoolx.org/fr/reaction-time-test.html">
+
+    <!-- PWA MANIFEST & MOBILE -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#4F46E5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+
+    <!-- HREFLANG -->
+    <link rel="alternate" hreflang="en" href="https://mytoolx.org/reaction-time-test.html">
+    <link rel="alternate" hreflang="es" href="https://mytoolx.org/es/reaction-time-test.html">
+    <link rel="alternate" hreflang="fr" href="https://mytoolx.org/fr/reaction-time-test.html">
+    <link rel="alternate" hreflang="x-default" href="https://mytoolx.org/reaction-time-test.html">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+
+    <!-- ADSENSE -->
+    <meta name="google-adsense-account" content="ca-pub-3410254230554312">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:url" content="https://mytoolx.org/fr/reaction-time-test.html">
+    <meta property="og:title" content="Test de temps de réaction: Measure Your Speed Free | MyToolX">
+    <meta property="og:description" content="How fast are your reflexes? Take the free reaction time test in millisecondes and see where you rank against the average human.">
+    <meta property="og:image" content="https://mytoolx.org/og-image-v2.png">
+    <meta property="og:image:alt" content="Test de temps de réaction by MyToolX">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mytoolx.org/fr/reaction-time-test.html">
+    <meta name="twitter:title" content="Test de temps de réaction: Measure Your Speed Free | MyToolX">
+    <meta name="twitter:description" content="How fast are your reflexes? Take the free reaction time test in millisecondes and see where you rank.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
+    <meta name="twitter:image:alt" content="Test de temps de réaction by MyToolX">
+
+    <link rel="stylesheet" href="/styles.css">
+
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//refer.micro1.ai">
+
+    <!-- STRUCTURED DATA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "Test de temps de réaction",
+          "url": "https://mytoolx.org/fr/reaction-time-test.html",
+          "applicationCategory": "GameApplication",
+          "operatingSystem": "Any",
+          "description": "A free reaction time test. Measure how fast your brain responds to a visual signal. No sign up. Runs entirely in your browser.",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to Take the Test de temps de réaction",
+          "description": "Measure your visual reaction time by clicking when the screen turns green.",
+          "step": [
+            {"@type": "HowToStep", "position": 1, "name": "Start the test", "text": "Click the start button to begin. The screen will turn red."},
+            {"@type": "HowToStep", "position": 2, "name": "Wait for green", "text": "Watch the screen carefully. Ne cliquez pas encore."},
+            {"@type": "HowToStep", "position": 3, "name": "React instantly", "text": "The moment the screen turns green, click or tap as fast as you can."},
+            {"@type": "HowToStep", "position": 4, "name": "Read your score", "text": "Your reaction time will appear in millisecondes."},
+            {"@type": "HowToStep", "position": 5, "name": "Play again", "text": "Repeat the test to get an average score and challenge your friends."}
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {"@type": "Question", "name": "What is the average human reaction time?", "acceptedAnswer": {"@type": "Answer", "text": "The average visual reaction time for humans is about 250 millisecondes."}},
+            {"@type": "Question", "name": "Is clicking too early bad?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. If you click before the screen turns green, the test resets. You must wait for the green signal."}},
+            {"@type": "Question", "name": "Does this test work on mobile phones?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It is designed to work perfectly on touch screens. You can tap instead of click. Mobile scores might be slightly slower due to screen touch latency."}},
+            {"@type": "Question", "name": "What is a good reaction time score?", "acceptedAnswer": {"@type": "Answer", "text": "Anything under 200 millisecondes is excellent. Between 200 and 250 is above average. Over 300 millisecondes means you might be tired or distracted."}},
+            {"@type": "Question", "name": "Is my data saved?", "acceptedAnswer": {"@type": "Answer", "text": "No. The test runs entirely in your browser. Your scores are not sent to any server."}}
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://mytoolx.org/"},
+            {"@type": "ListItem", "position": 2, "name": "Games", "item": "https://mytoolx.org/#games"},
+            {"@type": "ListItem", "position": 3, "name": "Test de temps de réaction", "item": "https://mytoolx.org/fr/reaction-time-test.html"}
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
+            --danger: #EF4444; --warn: #F59E0B;
+            
+            /* Game Specific */
+            --game-bg: #1E1E2E;
+            --game-text: #FFFFFF;
+            --reaction-red: #EF4444;
+            --reaction-green: #10B981;
+            --reaction-blue: #3B82F6;
+        }
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
+            --danger: #F87171; --warn: #FBBF24;
+            
+            /* Game Specific */
+            --game-bg: #0F172A;
+            --game-text: #FFFFFF;
+            --reaction-red: #DC2626;
+            --reaction-green: #059669;
+            --reaction-blue: #2563EB;
+        }
+        html, body { overflow-x: clip; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+
+        .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform 0.2s ease; }
+        .group:hover .logo-mark { transform: scale(1.05); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); font-size: 1.25rem; }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.06); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -2px 0 rgba(0,0,0,0.12) inset, 0 8px 12px -2px rgba(0,0,0,0.12), 0 4px 6px -2px rgba(0,0,0,0.08); }
+        .btn-3d:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.12) inset, 0 1px 2px rgba(0,0,0,0.10); }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-accent { background: var(--accent); color: #fff; } .btn-accent:hover { background: var(--accent-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+
+        .input-field { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
+        .input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); outline: none; }
+
+        .card-3d-btn { transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; background: var(--card); border: 1px solid var(--card-border); }
+        .card-3d-btn:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(79,70,229,0.15), 0 8px 10px -6px rgba(79,70,229,0.1); border-color: var(--primary); background: var(--card); }
+
+        /* --- MEGA FOOTER --- */
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a { transition: color 0.15s ease; }
+        .mega-footer a:hover { color: var(--primary); }
+
+        /* --- FOOTER SOCIAL ICONS --- */
+        .social-links-row { display: flex; align-items: center; gap: 12px; margin-top: 4px; }
+        .social-btn {
+            width: 42px; height: 42px; border-radius: 12px;
+            display: inline-flex; align-items: center; justify-content: center;
+            color: #FFFFFF !important; text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+            box-shadow: 0 6px 14px -3px rgba(0, 0, 0, 0.28);
+        }
+        .social-btn svg { width: 20px; height: 20px; fill: currentColor; }
+        .social-btn.fb-btn {
+            background: linear-gradient(135deg, #1877F2 0%, #0D5BD6 100%);
+        }
+        .social-btn.ig-btn {
+            background: radial-gradient(circle at 30% 107%, #FDF497 0%, #FDF497 5%, #FD5949 45%, #D6249F 60%, #285AEB 90%);
+        }
+        .social-btn:hover {
+            transform: translateY(-2px) scale(1.06);
+            box-shadow: 0 10px 20px -4px rgba(79, 70, 229, 0.35);
+            filter: brightness(1.05);
+        }
+
+        #themeToggle { transition: transform 0.2s ease; } #themeToggle:hover { transform: scale(1.08); }
+        :focus-visible { outline: none; }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        ::selection { background: rgba(79,70,229,0.25); }
+
+        @media (max-width: 360px) { .logo-wordmark { font-size: 1rem !important; } }
+        @media (prefers-reduced-motion: reduce) { * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; } }
+
+        /* ============================================= */
+        /* REACTION TIME TEST — GAME STYLES              */
+        /* ============================================= */
+
+        .game-shell {
+            max-width: 640px;
+            margin: 0 auto;
+            background: var(--game-bg);
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            min-height: 420px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        /* Challenge Notification Banner */
+        .challenge-banner {
+            background: linear-gradient(90deg, #4F46E5, #7E22CE);
+            color: #fff;
+            padding: 10px 16px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 700;
+            display: none;
+            box-shadow: inset 0 -2px 0 rgba(0,0,0,0.2);
+            animation: fadeIn 0.4s ease;
+        }
+        .challenge-banner.visible { display: block; }
+
+        /* The clickable reaction zone */
+        .reaction-zone {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            cursor: pointer;
+            transition: background-color 0.1s ease;
+            background-color: var(--reaction-blue);
+            color: var(--game-text);
+        }
+        
+        .reaction-zone.state-red { background-color: var(--reaction-red); }
+        .reaction-zone.state-green { background-color: var(--reaction-green); }
+        
+        .reaction-zone.state-fail { background-color: var(--danger); }
+
+        .reaction-title {
+            font-size: clamp(24px, 6vw, 36px);
+            font-weight: 900;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: -0.02em;
+        }
+
+        .reaction-sub {
+            font-size: clamp(14px, 4vw, 18px);
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 320px;
+            line-height: 1.5;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .reaction-score {
+            font-size: clamp(48px, 15vw, 80px);
+            font-weight: 900;
+            font-variant-numeric: tabular-nums;
+            line-height: 1;
+            margin-bottom: 8px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            letter-spacing: -0.03em;
+        }
+        .reaction-ms {
+            font-size: clamp(18px, 5vw, 24px);
+            font-weight: 700;
+            opacity: 0.9;
+        }
+
+        /* Stats Bar (bottom of game) */
+        .game-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .stat-box {
+            background: var(--game-bg);
+            padding: 16px 12px;
+            text-align: center;
+        }
+        .stat-label {
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 4px;
+        }
+        .stat-val {
+            font-size: 20px;
+            font-weight: 900;
+            color: var(--game-text);
+            font-variant-numeric: tabular-nums;
+        }
+        .stat-val span { font-size: 12px; font-weight: 700; opacity: 0.7; margin-left: 2px; }
+
+        /* Action bar (bottom) */
+        .game-actions {
+            display: flex;
+            gap: 10px;
+            padding: 14px;
+            background: var(--game-bg);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-action {
+            padding: 12px 20px;
+            font-size: 14px;
+            border-radius: 12px;
+            font-weight: 800;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.1s ease, opacity 0.2s ease;
+            touch-action: manipulation;
+            flex: 1;
+            min-width: 120px;
+            max-width: 200px;
+        }
+        .btn-action:active { transform: scale(0.96); }
+        .btn-action:disabled { opacity: 0.5; cursor: not-allowed; }
+        
+        .btn-share {
+            background: #FDE047;
+            color: #4F46E5;
+            box-shadow: 0 4px 0 #CA8A04;
+        }
+        .btn-share:active { box-shadow: 0 2px 0 #CA8A04; transform: translateY(2px); }
+        
+        .btn-restart {
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hidden { display: none !important; }
+
+        /* Content sections */
+        .content-section {
+            max-width: 720px; margin: 0 auto; padding: 0 4px;
+        }
+        .content-section h2 {
+            font-size: 1.3rem; font-weight: 800; color: var(--text);
+            margin-bottom: 10px; margin-top: 34px;
+            letter-spacing: -0.02em; line-height: 1.25;
+        }
+        .content-section h3 {
+            font-size: 1.02rem; font-weight: 700; color: var(--text);
+            margin-bottom: 6px; margin-top: 20px;
+        }
+        .content-section p {
+            font-size: 0.9375rem; line-height: 1.7;
+            color: var(--text-muted); margin-bottom: 12px;
+        }
+        .content-section ol, .content-section ul {
+            padding-left: 22px; margin-bottom: 16px;
+        }
+        .content-section ol li, .content-section ul li {
+            font-size: 0.9375rem; line-height: 1.7;
+            color: var(--text-muted); margin-bottom: 8px;
+        }
+        .content-section ol li strong, .content-section ul li strong {
+            color: var(--text);
+        }
+
+        .faq-item {
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            margin-bottom: 8px;
+            overflow: hidden;
+            background: var(--card);
+        }
+        .faq-item summary {
+            padding: 13px 16px;
+            font-weight: 700;
+            font-size: 0.9375rem;
+            color: var(--text);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            touch-action: manipulation;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after {
+            content: "+";
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--text-muted);
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
+        }
+        .faq-item[open] summary::after { transform: rotate(45deg); }
+        .faq-item summary:hover { background: var(--chip-bg); }
+        .faq-item .faq-answer {
+            padding: 0 16px 14px;
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        /* Add the responsive All Tools CSS right here */
+        .top-all-tools {
+            display: inline-flex;
+        }
+        @media (max-width: 639px) {
+            .top-all-tools {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 639px) {
+            .mobile-hide-cv {
+                display: none !important;
+            }
+        }
+
+        /* FEEDBACK MODAL STYLES */
+        .mtx-modal-backdrop {
+            position: fixed; inset: 0; z-index: 9999;
+            background: rgba(15, 23, 42, 0.68);
+            backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+            display: flex; align-items: center; justify-content: center; padding: 12px;
+        }
+        .mtx-modal-backdrop.hidden { display: none !important; }
+        .mtx-modal-dialog {
+            background: var(--card); border: 1px solid var(--card-border); color: var(--text);
+            width: 100%; max-width: 480px; max-height: 88dvh; overflow-y: auto;
+            border-radius: 22px; padding: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35); position: relative;
+        }
+        @media (min-width: 640px) { .mtx-modal-dialog { padding: 28px; } }
+        .mtx-modal-close {
+            width: 34px; height: 34px; border-radius: 10px;
+            background: var(--chip-bg); color: var(--text); border: none;
+            font-size: 16px; font-weight: 800; cursor: pointer;
+            display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .mtx-modal-close:hover { background: #EF4444; color: #FFFFFF; }
+        .star-click { cursor: pointer; transition: transform 0.1s; }
+        .star-click:hover { transform: scale(1.15); }
+        .star-click svg { width: 32px; height: 32px; fill: currentColor; }
+        select option, select optgroup {
+            background-color: var(--card) !important;
+            color: var(--text) !important;
+        }
+    </style>
+<!-- GLOBAL LANGUAGE SWITCHER -->
+    <link rel="stylesheet" href="/lang-switcher.css">
+    <script src="/lang-switcher.js" defer></script>
+</head>
+ <body class="font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- HEADER -->
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2">
+            <div class="flex items-center justify-between gap-2 sm:gap-4">
+                <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+                    <a href="/index.html" class="top-all-tools btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold items-center gap-1 whitespace-nowrap">← Tous les outils</a>
+                    <a href="/index.html" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
+                        <div class="logo-mark w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base flex items-center justify-center">M<span class="x">X</span></div>
+                        <span class="logo-wordmark text-base sm:text-xl block">MyTool<span class="x">X</span></span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                    <button id="themeToggle" type="button" onclick="toggleTheme()" aria-label="Switch theme" title="Toggle Light/Mode sombre" class="h-8 sm:h-10 px-2 sm:px-3 rounded-xl flex items-center justify-center gap-1.5 text-[10px] sm:text-xs font-bold transition-all hover:opacity-80" style="background: var(--chip-bg); color: var(--chip-text);">
+                        <span id="themeIcon" aria-hidden="true">🌙</span>
+                        <span id="themeText" class="hidden sm:block">Mode sombre</span>
+                    </button>
+
+                    <!-- Communauté Link -->
+                    <a href="/community.html" class="inline-flex items-center text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap" style="background: var(--chip-bg); color: var(--text);">
+                        💬 Communauté
+                    </a>
+
+                    <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
+                        💼 Emplois à distance ↗
+                    </a>
+
+                    <a href="/cv-maker.html" class="mobile-hide-cv inline-flex items-center text-[10px] sm:text-xs font-bold text-white px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
+    📄 Créateur de CV
+</a>
+                </div>
+            </div>
+            <div class="mt-2 sm:hidden">
+                <a href="/index.html" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">← Retour à tous les outils</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-3 sm:px-4 py-5 sm:py-7 w-full flex-grow">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="max-w-2xl mx-auto mb-3 text-xs muted">
+            <a href="/index.html" class="hover:underline">Accueil</a>
+            <span class="mx-1.5">/</span>
+            <span style="color: var(--text); font-weight: 600;">Test de temps de réaction</span>
+        </nav>
+
+        <!-- H1 -->
+        <div class="text-center max-w-2xl mx-auto mb-4">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight leading-tight mb-1.5" style="color: var(--text);">
+                Test de temps de réaction : quelle est votre rapidité ?
+            </h1>
+            <p class="text-sm sm:text-base muted font-medium">
+                Mesurez vos réflexes visuels en millisecondes. Attendez que l’écran devienne vert, puis cliquez.
+            </p>
+        </div>
+
+        <!-- TOP CROSS-LINKS -->
+        <div class="max-w-2xl mx-auto mb-6">
+            <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest text-center mb-3" style="color: var(--text-muted);">Plus de jeux sur MyToolX</div>
+            <div class="flex flex-wrap justify-center gap-2">
+                <a href="/word-scramble.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition hover:opacity-80" style="background: var(--chip-bg); color: var(--text); border: 1px solid var(--card-border);">
+                    🔤 Mots mélangés
+                </a>
+                <a href="/typing-test.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition hover:opacity-80" style="background: var(--chip-bg); color: var(--text); border: 1px solid var(--card-border);">
+                    ⌨️ Typing Test
+                </a>
+                <a href="/wordstorm.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition hover:opacity-80" style="background: var(--chip-bg); color: var(--text); border: 1px solid var(--card-border);">
+                    🌪️ WordStorm
+                </a>
+                <a href="/math-sprint.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition hover:opacity-80" style="background: var(--chip-bg); color: var(--text); border: 1px solid var(--card-border);">
+                    🧠 Math Sprint
+                </a>
+            </div>
+        </div>
+
+        <!-- ============================================= -->
+        <!-- GAME SHELL                                    -->
+        <!-- ============================================= -->
+        <div class="game-shell" id="gameShell">
+            <div id="challengeBanner" class="challenge-banner">🔥 Votre ami vous a défié de battre <span id="challengeTarget">--</span> ms!</div>
+            
+            <!-- The Clickable Area -->
+            <div class="reaction-zone" id="reactionZone">
+                <div id="stateStart">
+                    <div class="reaction-title">Test de temps de réaction</div>
+                    <div class="reaction-sub mb-6">Cliquez sur la zone pour commencer. Lorsque l’écran devient vert, cliquez aussi vite que possible.</div>
+                    <button type="button" class="btn-3d btn-primary" id="startBtn" style="padding: 14px 32px; font-size: 16px; border-radius: 12px; background: #fff; color: #3B82F6; pointer-events: none;">
+                        Cliquez n’importe où pour commencer
+                    </button>
+                </div>
+
+                <div id="stateWaiting" class="hidden">
+                    <div class="reaction-title">Attendez le vert...</div>
+                    <div class="reaction-sub">Ne cliquez pas encore.</div>
+                </div>
+
+                <div id="stateReady" class="hidden">
+                    <div class="reaction-title" style="font-size: clamp(36px, 10vw, 54px);">CLIQUEZ !</div>
+                </div>
+
+                <div id="stateResult" class="hidden">
+                    <div class="reaction-score" id="resultScore">245</div>
+                    <div class="reaction-ms">millisecondes</div>
+                    <div class="reaction-sub mt-4" id="resultMessage">Au-dessus de la moyenne !</div>
+                </div>
+
+                <div id="stateTooSoon" class="hidden">
+                    <div class="reaction-title">Trop tôt !</div>
+                    <div class="reaction-sub mb-4">Vous avez cliqué avant que l’écran ne devienne vert. Cliquez pour réessayer.</div>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="game-stats">
+                <div class="stat-box">
+                    <div class="stat-label">Votre meilleur résultat</div>
+                    <div class="stat-val" id="bestScoreDisplay">--<span>ms</span></div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Essais</div>
+                    <div class="stat-val" id="attemptsDisplay">0</div>
+                </div>
+            </div>
+
+            <!-- Actions (Visible only on result) -->
+            <div class="game-actions hidden" id="actionBar">
+                <button type="button" class="btn-action btn-share" id="shareBtn">📣 Défier un ami</button>
+                <button type="button" class="btn-action btn-restart" id="tryAgainBtn">Réessayer</button>
+            </div>
+
+        </div>
+
+        <!-- ============================================= -->
+        <!-- ON PAGE CONTENT                              -->
+        <!-- ============================================= -->
+        <div class="content-section">
+
+            <h2>Qu’est-ce que le test de temps de réaction ?</h2>
+            <p>Le test de temps de réaction mesure la vitesse à laquelle votre cerveau traite un signal visuel et commande à votre main de bouger. Il est parfois appelé Human Benchmark. Lorsque l’écran passe du rouge au vert, cliquez ou touchez aussi vite que possible. Votre temps de réaction est enregistré en millisecondes.</p>
+            <p>Il est entièrement gratuit, ne nécessite aucune inscription et fonctionne entièrement dans votre navigateur. Vos données ne quittent jamais votre appareil.</p>
+
+            <h3>Quel est un bon temps de réaction ?</h3>
+            <p>Le temps de réaction visuel moyen chez l’humain est d’environ 250 millisecondes. Voici comment interpréter votre score :</p>
+            <table style="width:100%; border-collapse:collapse; margin: 12px 0 18px; font-size: 0.875rem; border-radius: 12px; overflow: hidden; border: 1px solid var(--card-border);">
+                <thead>
+                    <tr>
+                        <th style="padding: 10px 14px; text-align:left; background: var(--chip-bg); color: var(--text); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; border-bottom: 1px solid var(--card-border);">Score</th>
+                        <th style="padding: 10px 14px; text-align:left; background: var(--chip-bg); color: var(--text); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; border-bottom: 1px solid var(--card-border);">Évaluation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td style="padding: 10px 14px; color: var(--text-muted); border-bottom: 1px solid var(--card-border);">Moins de 200 ms</td><td style="padding: 10px 14px; color: var(--text-muted); border-bottom: 1px solid var(--card-border);">Niveau joueur professionnel d’élite</td></tr>
+                    <tr><td style="padding: 10px 14px; color: var(--text-muted); border-bottom: 1px solid var(--card-border);">De 200 à 250 ms</td><td style="padding: 10px 14px; color: var(--text-muted); border-bottom: 1px solid var(--card-border);">Vitesse supérieure à la moyenne</td></tr>
+                    <tr><td style="padding: 10px 14px; color: var(--text-muted); border-bottom: 1px solid var(--card-border);">De 250 à 300 ms</td><td style="padding: 10px 14px; color: var(--text-muted); border-bottom: 1px solid var(--card-border);">Réflexes humains moyens</td></tr>
+                    <tr><td style="padding: 10px 14px; color: var(--text-muted);">Plus de 300 ms</td><td style="padding: 10px 14px; color: var(--text-muted);">Marge de progression de la concentration</td></tr>
+                </tbody>
+            </table>
+
+            <h2>Comment effectuer le test correctement</h2>
+            <ol>
+                <li><strong>Cliquez pour commencer.</strong> La zone devient rouge pour préparer votre attention.</li>
+                <li><strong>Attendez patiemment.</strong> Ne cliquez pas tant que la zone est rouge, sinon un avertissement de pénalité s’affichera.</li>
+                <li><strong>Réagissez au vert.</strong> Dès que la zone devient verte, touchez ou cliquez aussi vite que possible.</li>
+                <li><strong>Consultez votre score.</strong> Votre temps de réaction exact s’affiche instantanément en millisecondes.</li>
+                <li><strong>Répétez le test.</strong> Les réflexes varient ; essayez plusieurs fois pour calculer votre véritable moyenne.</li>
+            </ol>
+
+            <h3>Questions fréquentes</h3>
+
+            <details class="faq-item">
+                <summary>What is the average human reaction time?</summary>
+                <div class="faq-answer">The average visual reaction time for humans is about 250 millisecondes. This means it takes a quarter of a second for your brain to process what you see and command your hand to move.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Why does the screen turn red first?</summary>
+                <div class="faq-answer">The red screen serves as a warning barrier. It forces you to wait actively, preventing random guessing. If you click on red, the test resets immediately.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Can I play on mobile devices?</summary>
+                <div class="faq-answer">Yes. The test is fully optimized for mobile touch screens. You tap instead of click with full support for silent haptic vibrations on supported phones.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Comment améliorer ma vitesse de réaction ?</summary>
+                <div class="faq-answer">Un sommeil suffisant, une bonne hydratation et la concentration sont des facteurs essentiels. Une pratique régulière avec cet outil peut également entraîner vos réponses au fil du temps.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Mes données personnelles sont-elles enregistrées ?</summary>
+                <div class="faq-answer">Non. Le test fonctionne entièrement dans votre navigateur. Vos scores ne sont jamais envoyés à des serveurs distants.</div>
+            </details>
+
+        </div>
+
+        <!-- BOTTOM CROSS-LINKS -->
+        <div class="mt-16 mb-8 max-w-4xl mx-auto">
+            <h2 class="text-xl font-bold mb-6 text-center" style="color: var(--text);">Découvrez d’autres jeux gratuits</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                
+                <a href="/word-scramble.html" class="card-3d-btn p-4 rounded-2xl flex items-center gap-4 text-left">
+                    <div class="text-3xl bg-purple-50 dark:bg-purple-900/30 w-12 h-12 flex items-center justify-center rounded-xl shrink-0">🔤</div>
+                    <div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Mots mélangés</div>
+                        <div class="text-xs muted mt-0.5">Puzzle de mots de 60 secondes</div>
+                    </div>
+                </a>
+
+                <a href="/typing-test.html" class="card-3d-btn p-4 rounded-2xl flex items-center gap-4 text-left">
+                    <div class="text-3xl bg-blue-50 dark:bg-blue-900/30 w-12 h-12 flex items-center justify-center rounded-xl shrink-0">⌨️</div>
+                    <div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Test de vitesse de frappe</div>
+                        <div class="text-xs muted mt-0.5">Mesurez votre WPM et votre précision</div>
+                    </div>
+                </a>
+
+                <a href="/wordstorm.html" class="card-3d-btn p-4 rounded-2xl flex items-center gap-4 text-left">
+                    <div class="text-3xl bg-emerald-50 dark:bg-emerald-900/30 w-12 h-12 flex items-center justify-center rounded-xl shrink-0">🌪️</div>
+                    <div>
+                        <div class="font-bold text-sm" style="color: var(--text);">WordStorm</div>
+                        <div class="text-xs muted mt-0.5">Jeu de frappe avec des mots qui tombent</div>
+                    </div>
+                </a>
+
+                <a href="/math-sprint.html" class="card-3d-btn p-4 rounded-2xl flex items-center gap-4 text-left">
+                    <div class="text-3xl bg-indigo-50 dark:bg-indigo-900/30 w-12 h-12 flex items-center justify-center rounded-xl shrink-0">🧠</div>
+                    <div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Math Sprint</div>
+                        <div class="text-xs muted mt-0.5">Défi de calcul mental de 30 secondes</div>
+                    </div>
+                </a>
+
+                <a href="/love-calculator.html" class="card-3d-btn p-4 rounded-2xl flex items-center gap-4 text-left">
+                    <div class="text-3xl bg-red-50 dark:bg-red-900/30 w-12 h-12 flex items-center justify-center rounded-xl shrink-0">❤️</div>
+                    <div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Calculateur d’affinité</div>
+                        <div class="text-xs muted mt-0.5">Outil ludique de compatibilité</div>
+                    </div>
+                </a>
+
+                <a href="/cv-maker.html" class="card-3d-btn p-4 rounded-2xl flex items-center gap-4 text-left">
+                    <div class="text-3xl bg-indigo-50 dark:bg-indigo-900/30 w-12 h-12 flex items-center justify-center rounded-xl shrink-0">📄</div>
+                    <div>
+                        <div class="font-bold text-sm" style="color: var(--text);">Live CV Maker</div>
+                        <div class="text-xs muted mt-0.5">Créateur de CV PDF haute qualité</div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+
+    <!-- COMMUNITY FEEDBACK CARD FOR FREE TOOLS -->
+<section class="max-w-3xl mx-auto my-10 px-4">
+    <div class="surface rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+        <div class="text-center sm:text-left">
+            <h3 class="text-base font-black" style="color: var(--text);">Cet outil vous a-t-il fait gagner du temps ?</h3>
+            <p class="text-xs muted mt-0.5">Laissez une évaluation rapide ou proposez une amélioration sur notre espace communautaire.</p>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+            <button type="button" onclick="openFeedbackModal('review')" class="btn-3d btn-primary px-4 py-2.5 rounded-xl text-xs font-black whitespace-nowrap">
+                ✍️ Donner votre avis
+            </button>
+        </div>
+    </div>
+</section>
+
+</main>
+<br>
+    <!-- FOOTER -->
+    <footer class="mega-footer py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+
+                <div class="lg:col-span-5">
+                    <a href="/index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-4 pr-4">
+                        MyToolX propose des outils web gratuits exécutés dans le navigateur pour les rédacteurs, freelances et développeurs. La plupart ne nécessitent aucun compte. De nombreux outils traitent le contenu localement, tandis que certaines fonctionnalités et statistiques utilisent des services externes. Consultez notre Politique de confidentialité.
+                    </p>
+                    <div class="social-links-row" aria-label="MyToolX social media links">
+                        <a href="https://www.facebook.com/profile.php?id=61596813242660" target="_blank" rel="noopener noreferrer" aria-label="MyToolX on Facebook" title="Facebook" class="social-btn fb-btn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/mytoolx0?fqnt=dm05bDBzazZ6Nmpp" target="_blank" rel="noopener noreferrer" aria-label="MyToolX on Instagram" title="Instagram" class="social-btn ig-btn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-4">
+                    <h3>Outils populaires</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <a href="/typing-test.html">Test de vitesse de frappe</a>
+                        <div class="flex items-start mt-0.5">
+                            <a href="/premium.html" class="link-premium-gold" aria-label="Visit the Premium Store">
+                                <span class="star-icon">⭐</span> Premium
+                            </a>
+                        </div>
+                        <a href="/prompt-studio.html">Studio de prompts IA</a>
+                        <a href="/image-compressor.html">Compresseur d’images</a>
+                        <a href="/text-suite.html">Outils de texte et de mots</a>
+                        <a href="/grammar-checker.html">Correcteur grammatical</a>
+                        <a href="/sip-calculator.html">Calculateur SIP</a>
+                        <a href="/fee-calculator.html">Calculateur de frais</a>
+                        <a href="/json-formatter.html">Formateur JSON</a>
+                        <a href="/loan-emi.html">Calculateur de mensualités de prêt</a>
+                        <a href="/qr-code-generator.html">Générateur de QR codes</a>
+                        <a href="/base64-tool.html">Outil Base64</a>
+                        <a href="/unit-converter.html">Convertisseur d’unités</a>
+                        <a href="/password-generator.html">Générateur de mots de passe</a>
+                        <a href="/article-outline.html">Plan d’article</a>
+                        <a href="/ai-bio-generator.html">Générateur de bio avec IA</a>
+                        <a href="/love-calculator.html">Calculateur d’affinité</a>
+                        <a href="/cv-maker.html">Créateur de CV</a>
+                        <a href="/text-summarizer.html">Outil de résumé IA</a>
+                        <a href="/color-converter.html">Convertisseur de couleurs</a>
+                        <a href="/word-scramble.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Mots mélangés</a>
+                        <a href="/reaction-time-test.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Test de réflexes</a>
+                        <a href="/math-sprint.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Jeu Math Sprint</a>
+                        <a href="/wordstorm.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Jeu WordStorm</a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3>Entreprise</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="/index.html">Accueil</a></li>
+                                <li><a href="/about.html">À propos</a></li>
+                                <li><a href="/contact.html">Contact</a></li>
+				<li><a href="/community.html">Communauté</a></li>
+
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Informations légales</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><a href="/blog.html">Blog et guides</a></li>
+                                <li><a href="/privacy.html">Politique de confidentialité</a></li>
+                                <li><a href="/terms.html">Conditions d’utilisation</a></li>
+                                <li><a href="/index.html">Plan du site</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. Tous droits réservés.</p>
+                <p>Many tools process your content in your browser; selected features use external services. See our Politique de confidentialité for details.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FEEDBACK MODAL HTML (LOCKED TO REACTION TIME TEST) -->
+    <div id="feedbackModal" class="mtx-modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="handleBackdropClick(event)">
+        <div class="mtx-modal-dialog" onclick="event.stopPropagation()">
+            <div class="flex items-start justify-between gap-3 mb-4">
+                <div>
+                    <h3 id="modalTitle" class="text-lg sm:text-xl font-black" style="color: var(--text);">Share Quick Feedback</h3>
+                    <p class="text-xs muted mt-0.5">Takes 20 seconds • No sign-up required</p>
+                </div>
+                <button type="button" onclick="closeFeedbackModal()" aria-label="Close popup" title="Close" class="mtx-modal-close">✕</button>
+            </div>
+
+            <form id="communityForm" onsubmit="submitCommunautéFeedback(event)" class="space-y-4">
+                <div>
+                    <label for="formType" class="block text-xs font-bold uppercase tracking-wider muted mb-1">1. What would you like to share? *</label>
+                    <select id="formType" name="formType" required onchange="toggleFormFields()" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                        <option value="review">⭐ Rate &amp; Review a Tool / Game</option>
+                        <option value="suggestion">💡 Suggest a New Tool or Feature</option>
+                    </select>
+                </div>
+
+                <div id="targetPageGroup" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider muted mb-1">Évaluation for:</label>
+                        <div class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-black flex items-center gap-2" style="background: var(--chip-bg); color: var(--primary);">
+                            🎯 Test de temps de réaction
+                        </div>
+                        <input type="hidden" id="targetPageId" value="reaction-time-test">
+                    </div>
+
+                    <div id="ratingGroup">
+                        <label class="block text-xs font-bold uppercase tracking-wider muted mb-1">Your Évaluation *</label>
+                        <div id="starÉvaluationContainer" class="flex items-center gap-1 mt-1">
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <input type="hidden" id="starÉvaluation" name="starÉvaluation" value="5">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="suggestionCategoryGroup" class="hidden space-y-3">
+                    <div>
+                        <label for="suggestionCategory" class="block text-xs font-bold uppercase tracking-wider muted mb-1">2. Idea Category *</label>
+                        <select id="suggestionCategory" name="suggestionCategory" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                            <option value="New Tool Ideas">New Tool Idea</option>
+                            <option value="New Game Ideas">New Game Idea</option>
+                            <option value="Existing Tool Improvements">Improve Existing Tool</option>
+                            <option value="Website Improvements">Website Improvement</option>
+                            <option value="Premium Product Ideas">New Premium Bundle Idea</option>
+                        </select>
+                    </div>
+                    <div id="titleGroup">
+                        <label for="suggestionTitle" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Short Idea Title *</label>
+                        <input type="text" id="suggestionTitle" name="suggestionTitle" maxlength="80" placeholder="e.g. PDF Merger or Invoice Generator" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label for="authorName" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Name (Optional)</label>
+                        <input type="text" id="authorName" name="authorName" maxlength="40" placeholder="Anonymous" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                    </div>
+                    <div>
+                        <label for="country" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Country (Optional)</label>
+                        <input type="text" id="country" name="country" maxlength="40" placeholder="e.g. US, UK, PK" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="commentText" id="commentLabel" class="block text-xs font-bold uppercase tracking-wider muted mb-1">3. Your Comment *</label>
+                    <textarea id="commentText" name="commentText" required rows="3" maxlength="400" placeholder="Write a quick note about your experience..." class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-medium"></textarea>
+                </div>
+
+                <p class="text-[11px] muted leading-relaxed">
+                    🔒 Voluntary submission. Approved posts appear publicly without personal data.
+                </p>
+
+                <div id="formError" class="hidden p-3 rounded-xl text-xs font-bold text-red-500 bg-red-500/10 border border-red-500/30"></div>
+                <div id="formSuccess" class="hidden p-3 rounded-xl text-xs font-bold text-emerald-500 bg-emerald-500/10 border border-emerald-500/30"></div>
+
+                <div class="flex items-center gap-2.5 pt-1">
+                    <button type="button" onclick="closeFeedbackModal()" class="btn-3d btn-chip px-4 py-3 rounded-xl text-xs sm:text-sm font-bold">Cancel</button>
+                    <button type="submit" id="submitModalBtn" class="btn-3d btn-primary flex-1 py-3 rounded-xl text-xs sm:text-sm font-black">🚀 Submit Feedback</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- SCRIPTS                                       -->
+    <!-- ============================================= -->
+    <script>
+    // ================= THEME =================
+    (function initTheme() {
+        var saved = null;
+        try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+    })();
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        var icon = document.getElementById('themeIcon');
+        var text = document.getElementById('themeText');
+        if (icon && text) {
+            if (theme === 'dark') { icon.textContent = '🌙'; text.textContent = 'Mode sombre'; }
+            else { icon.textContent = '☀️'; text.textContent = 'Light Mode'; }
+        }
+        var btn = document.getElementById('themeToggle');
+        if (btn) {
+            btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+            btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+        }
+    }
+    function toggleTheme() {
+        var cur = document.documentElement.getAttribute('data-theme') || 'light';
+        var next = cur === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+        try { localStorage.setItem('mtx-theme', next); } catch (e) {}
+    }
+    window.toggleTheme = toggleTheme;
+
+    // ================= REACTION TIME TEST =================
+    (function() {
+        'use strict';
+
+        var state = {
+            isPlaying: false,
+            isReady: false,
+            startTime: 0,
+            timeoutId: null,
+            best: 0,
+            attempts: 0,
+            lastResult: null
+        };
+
+        var el = {
+            zone: document.getElementById('reactionZone'),
+            stateStart: document.getElementById('stateStart'),
+            stateWaiting: document.getElementById('stateWaiting'),
+            stateReady: document.getElementById('stateReady'),
+            stateResult: document.getElementById('stateResult'),
+            stateTooSoon: document.getElementById('stateTooSoon'),
+            resultScore: document.getElementById('resultScore'),
+            resultMessage: document.getElementById('resultMessage'),
+            bestScoreDisplay: document.getElementById('bestScoreDisplay'),
+            attemptsDisplay: document.getElementById('attemptsDisplay'),
+            actionBar: document.getElementById('actionBar'),
+            tryAgainBtn: document.getElementById('tryAgainBtn'),
+            shareBtn: document.getElementById('shareBtn'),
+            challengeBanner: document.getElementById('challengeBanner'),
+            challengeTarget: document.getElementById('challengeTarget')
+        };
+
+        // Check URL for challenge parameter
+        try {
+            var params = new URLSearchParams(window.location.search);
+            var challengeVal = params.get('challenge');
+            if (challengeVal) {
+                el.challengeTarget.textContent = challengeVal;
+                el.challengeBanner.classList.add('visible');
+            }
+        } catch (e) {}
+
+        // Load best from local storage
+        function loadBest() {
+            try {
+                var v = parseInt(localStorage.getItem('mtx-reaction-best') || '0', 10);
+                return isNaN(v) ? 0 : v;
+            } catch (e) { return 0; }
+        }
+        function saveBest(v) {
+            try { localStorage.setItem('mtx-reaction-best', String(v)); } catch (e) {}
+        }
+
+        function updateStatsUI() {
+            if (state.best > 0) {
+                el.bestScoreDisplay.innerHTML = state.best + '<span>ms</span>';
+            } else {
+                el.bestScoreDisplay.innerHTML = '--<span>ms</span>';
+            }
+            el.attemptsDisplay.textContent = state.attempts;
+        }
+
+        function showState(name) {
+            el.stateStart.classList.add('hidden');
+            el.stateWaiting.classList.add('hidden');
+            el.stateReady.classList.add('hidden');
+            el.stateResult.classList.add('hidden');
+            el.stateTooSoon.classList.add('hidden');
+            el.actionBar.classList.add('hidden');
+
+            el.zone.classList.remove('state-red', 'state-green', 'state-fail');
+
+            if (name === 'start') {
+                el.stateStart.classList.remove('hidden');
+            }
+            else if (name === 'waiting') {
+                el.stateWaiting.classList.remove('hidden');
+                el.zone.classList.add('state-red');
+            }
+            else if (name === 'ready') {
+                el.stateReady.classList.remove('hidden');
+                el.zone.classList.add('state-green');
+                if (navigator.vibrate && typeof navigator.vibrate === 'function') {
+                    navigator.vibrate(30);
+                }
+            }
+            else if (name === 'result') {
+                el.stateResult.classList.remove('hidden');
+                el.actionBar.classList.remove('hidden');
+                if (navigator.vibrate) navigator.vibrate(50);
+            }
+            else if (name === 'tooSoon') {
+                el.stateTooSoon.classList.remove('hidden');
+                el.zone.classList.add('state-fail');
+                if (navigator.vibrate) navigator.vibrate([40, 30, 40]);
+                setTimeout(function() {
+                    if (!state.isPlaying) showState('start');
+                }, 1000);
+            }
+        }
+
+        function startWait() {
+            if (state.isPlaying) return;
+            state.isPlaying = true;
+            state.isReady = false;
+            
+            showState('waiting');
+
+            var delay = Math.floor(Math.random() * 2500) + 1500;
+
+            state.timeoutId = setTimeout(function() {
+                state.isReady = true;
+                showState('ready');
+                state.startTime = Date.now();
+            }, delay);
+        }
+
+        function handleZoneClick() {
+            if (!state.isPlaying) {
+                if (!el.stateTooSoon.classList.contains('hidden')) {
+                    showState('start');
+                    return;
+                }
+                startWait();
+                return;
+            }
+
+            if (state.isPlaying && !state.isReady) {
+                clearTimeout(state.timeoutId);
+                state.isPlaying = false;
+                state.isReady = false;
+                showState('tooSoon');
+                return;
+            }
+
+            if (state.isPlaying && state.isReady) {
+                var endTime = Date.now();
+                var reactionTime = endTime - state.startTime;
+                
+                reactionTime = Math.round(reactionTime);
+                
+                state.isPlaying = false;
+                state.isReady = false;
+                state.attempts++;
+                state.lastResult = reactionTime;
+                
+                if (state.best === 0 || reactionTime < state.best) {
+                    state.best = reactionTime;
+                    saveBest(state.best);
+                }
+                
+                updateStatsUI();
+                displayResult(reactionTime);
+            }
+        }
+
+        function displayResult(ms) {
+            el.resultScore.textContent = ms;
+            
+            var msg = "";
+            if (ms < 200) msg = "Elite reflexes! 🏆";
+            else if (ms <= 250) msg = "Au-dessus de la moyenne ! 🎯";
+            else if (ms <= 300) msg = "Average human speed. 😐";
+            else msg = "A bit slow. Are you tired? ☕";
+            
+            el.resultMessage.textContent = msg;
+            showState('result');
+        }
+
+        function shareScore() {
+            if (!Number.isFinite(state.lastResult) || state.lastResult <= 0) return;
+            var score = state.lastResult;
+            var text = "I scored " + score + " ms on the Test de temps de réaction at MyToolX. Can you beat me?\\nhttps://mytoolx.org/fr/reaction-time-test.html?challenge=" + score;
+            var url = 'https://mytoolx.org/fr/reaction-time-test.html?challenge=' + score;
+
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Test de temps de réaction by MyToolX',
+                    text: text,
+                    url: url
+                }).catch(function(error) {
+                    if (error && error.name === 'AbortError') return;
+                    copyFallback(text);
+                });
+            } else {
+                copyFallback(text);
+            }
+        }
+
+        function copyFallback(text) {
+            var done = function() {
+                var old = el.shareBtn.textContent;
+                el.shareBtn.textContent = '✓ Copied!';
+                setTimeout(function() { el.shareBtn.textContent = old; }, 2000);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(done).catch(function() {
+                    window.prompt('Copy your score:', text);
+                });
+            } else {
+                window.prompt('Copy your score:', text);
+            }
+        }
+
+        // ---------- INIT ----------
+        state.best = loadBest();
+        updateStatsUI();
+        showState('start');
+
+        // ---------- WIRING ----------
+        el.zone.addEventListener('click', handleZoneClick);
+        
+        el.tryAgainBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            showState('start');
+            setTimeout(startWait, 100);
+        });
+
+        el.shareBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            shareScore();
+        });
+
+    })();
+    </script>
+
+    <!-- FEEDBACK MODAL LOGIC (LOCKED TO REACTION TIME TEST) -->
+    <script>
+        function openFeedbackModal(type = "review") {
+            document.getElementById("formType").value = type;
+            toggleFormFields();
+            document.getElementById("feedbackModal").classList.remove("hidden");
+        }
+
+        function closeFeedbackModal() {
+            document.getElementById("feedbackModal").classList.add("hidden");
+            document.getElementById("communityForm").reset();
+            document.getElementById("formError").classList.add("hidden");
+            document.getElementById("formSuccess").classList.add("hidden");
+        }
+
+        function handleBackdropClick(e) {
+            if (e.target && e.target.id === 'feedbackModal') closeFeedbackModal();
+        }
+
+        function toggleFormFields() {
+            const type = document.getElementById("formType").value;
+            const targetPageGroup = document.getElementById("targetPageGroup");
+            const suggestionCategoryGroup = document.getElementById("suggestionCategoryGroup");
+            const ratingGroup = document.getElementById("ratingGroup");
+            const titleGroup = document.getElementById("titleGroup");
+            const commentLabel = document.getElementById("commentLabel");
+            const modalTitle = document.getElementById("modalTitle");
+
+            if (type === "suggestion") {
+                targetPageGroup.classList.add("hidden");
+                suggestionCategoryGroup.classList.remove("hidden");
+                ratingGroup.classList.add("hidden");
+                titleGroup.classList.remove("hidden");
+                commentLabel.textContent = "Detailed Suggestion Description *";
+                modalTitle.textContent = "Suggest a New Tool or Feature";
+            } else {
+                targetPageGroup.classList.remove("hidden");
+                suggestionCategoryGroup.classList.add("hidden");
+                ratingGroup.classList.remove("hidden");
+                titleGroup.classList.add("hidden");
+                commentLabel.textContent = "Written Comment *";
+                modalTitle.textContent = "Share Your Feedback";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const container = document.getElementById("starÉvaluationContainer");
+            const input = document.getElementById("starÉvaluation");
+            if (!container || !input) return;
+
+            const stars = container.querySelectorAll(".star-click");
+            let currentÉvaluation = 5;
+
+            function updateStars(rating) {
+                stars.forEach((star, index) => {
+                    if (index < rating) {
+                        star.classList.add("text-amber-500");
+                        star.classList.remove("text-gray-300", "dark:text-gray-600");
+                    } else {
+                        star.classList.remove("text-amber-500");
+                        star.classList.add("text-gray-300", "dark:text-gray-600");
+                    }
+                });
+            }
+
+            stars.forEach((star, index) => {
+                star.addEventListener("mouseenter", () => updateStars(index + 1));
+                star.addEventListener("mouseleave", () => updateStars(currentÉvaluation));
+                star.addEventListener("click", () => {
+                    currentÉvaluation = index + 1;
+                    input.value = currentÉvaluation;
+                    updateStars(currentÉvaluation);
+                });
+                star.addEventListener("touchstart", (e) => {
+                    e.preventDefault();
+                    currentÉvaluation = index + 1;
+                    input.value = currentÉvaluation;
+                    updateStars(currentÉvaluation);
+                });
+            });
+            updateStars(currentÉvaluation);
+        });
+
+        async function submitCommunautéFeedback(event) {
+            event.preventDefault();
+            const errorBox = document.getElementById("formError");
+            const successBox = document.getElementById("formSuccess");
+            const submitBtn = document.getElementById("submitModalBtn");
+            const API_URL = "https://script.google.com/macros/s/AKfycbxMZGHXUkzX04Z3slFH5F3GveBOIrj-XiKPl04aPOTHjBur8uSg57kb-PRr781vcStd5w/exec";
+
+            errorBox.classList.add("hidden");
+            successBox.classList.add("hidden");
+
+            const formType = document.getElementById("formType").value;
+            const commentText = document.getElementById("commentText").value.trim();
+            const authorName = document.getElementById("authorName") ? document.getElementById("authorName").value.trim() : "";
+            const country = document.getElementById("country") ? document.getElementById("country").value.trim() : "";
+
+            let payload = {
+                formType: formType,
+                commentText: commentText,
+                authorName: authorName,
+                country: country,
+                recommendation: "",
+                language: document.documentElement.lang
+            };
+
+            if (formType === "suggestion") {
+                payload.suggestionCategory = document.getElementById("suggestionCategory").value;
+                payload.suggestionTitle = document.getElementById("suggestionTitle").value.trim();
+                if (!payload.suggestionTitle || !commentText) {
+                    errorBox.textContent = "Please fill out all required suggestion fields.";
+                    errorBox.classList.remove("hidden");
+                    return;
+                }
+            } else {
+                payload.targetPageId = "reaction-time-test";
+                payload.starÉvaluation = document.getElementById("starÉvaluation").value;
+                payload.pageUrl = "reaction-time-test.html";
+                if (!commentText) {
+                    errorBox.textContent = "Please enter your written review.";
+                    errorBox.classList.remove("hidden");
+                    return;
+                }
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = "⏳...";
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "text/plain;charset=utf-8" },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+
+                if (result.status === "success") {
+                    successBox.textContent = "🎉 Thank you! Your submission is pending moderation.";
+                    successBox.classList.remove("hidden");
+                    document.getElementById("communityForm").reset();
+                    setTimeout(() => { 
+                        closeFeedbackModal(); 
+                        submitBtn.disabled = false; 
+                        submitBtn.textContent = "🚀 Submit Feedback"; 
+                    }, 3000);
+                } else {
+                    errorBox.textContent = result.message || "Submission failed.";
+                    errorBox.classList.remove("hidden");
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "🚀 Submit Feedback";
+                }
+            } catch (err) {
+                errorBox.textContent = "Network error. Please try again.";
+                errorBox.classList.remove("hidden");
+                submitBtn.disabled = false;
+                submitBtn.textContent = "🚀 Submit Feedback";
+            }
+        }
+    </script>
+
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
+    <script>
+      window.addEventListener('load', function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W8KM3G3BYL');
+      });
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+
+</body>
+</html>
