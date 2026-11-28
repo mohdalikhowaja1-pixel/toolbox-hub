@@ -97,3 +97,17 @@ Read `MYTOOLX-MULTILINGUAL-HANDOVER.md` first for the authoritative resume point
 - Latest detailed handover: `8c3fb815ccaa83facf530f0592d7029b765d1fba`. Read `MYTOOLX-MULTILINGUAL-HANDOVER.md` for exact file/commit ledger.
 - Source-level QA only; full-page translation certification, native-speaker review, browser/runtime, live HTTP and indexability checks remain outstanding.
 - Next: continue source-comparison editorial review on the remaining 18 article families, then begin the 56 tool/application page families. Keep production branch and GitHub Pages settings untouched pending explicit release approval.
+
+
+## Editorial QA checkpoint — four more article families — 2026-11-28
+
+- Direct English-source review and corrections completed for CV Guide, Grammar Guide, Typing Speed and Image Compression in Spanish and French (eight localized pages).
+- Corrected untranslated CV achievement examples, incomplete client-side wording, mixed French/Spanish Grammar Guide copy, inaccurate blanket privacy wording, untranslated keyboard shortcut descriptions, related-guide card titles, social image alt text, shared footer remnants and the Spanish “Cancelarar” typo.
+- Privacy wording now distinguishes local basic processing from online Grammar Checker processing through LanguageTool and optional external AI processing.
+- Revalidated 16 JSON-LD blocks across the eight pages; all parsed, and each Article headline matches the visible H1 after ignoring decorative emoji.
+- Targeted residual scans for the specific defects addressed returned no matches.
+- Latest detailed handover commit: `6124fd3b3540d7e57f68756088c2c9c05712d912`. See `MYTOOLX-MULTILINGUAL-HANDOVER.md` for exact content commits and limitations.
+- Latest content commit before this documentation update: `e4ae9dec1214b847e16e7a6739ca59c36dd627d3`.
+- Branch comparison before this documentation update: 198 commits ahead, 0 behind the starting baseline. CI status/workflow lookup returned no records; do not report a passing CI result.
+- Source-level checks only. Full-page translation review, native-speaker certification, browser/runtime, form submission, responsive/theme/accessibility, console/network and live HTTP/indexability checks remain outstanding.
+- Next: continue the remaining 14 article families, then review all 56 tool/application page families. Do not merge, deploy or change the publishing branch without explicit approval.
