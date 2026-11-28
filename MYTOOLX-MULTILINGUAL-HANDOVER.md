@@ -306,3 +306,5 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 - After the local server is running, test About language menu and CSS first, then check representative apps in both languages. If they still render raw over `http://127.0.0.1:8000/`, investigate missing CSS/script requests and browser console before editing app files.
 - Production branch and deployment settings unchanged. No merge or deployment performed.
 - Next action: continue QA in batches; check all localized pages for missing/duplicate theme controls, switcher assets, stylesheets, and page-specific CSS/script path defects; record browser results separately from static source checks.
+
+- Launcher follow-up: corrected `preview-multilingual.bat` to start the HTTP server in a separate command window, wait briefly, then open the preview URL. Commit: `40b0af7a6c2fade93d6e5502ff8058e9fd52e159`.
