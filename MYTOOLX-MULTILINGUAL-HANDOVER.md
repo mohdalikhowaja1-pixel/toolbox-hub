@@ -399,3 +399,39 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 2. Complete Spanish/French Word Scramble body, headings, table labels, calls to action and Article schema using English source comparison.
 3. Run/inspect the latest CI validation on the new branch head and record the exact result.
 4. Continue page-family editorial QA in small batches and update this ledger after each batch.
+
+
+## Editorial QA batch — Math Sprint and Word Scramble articles — 2026-11-28
+
+### Files reviewed and corrections committed
+- Compared English source pages with both localized versions for `blog-math-sprint.html` and `blog-word-scramble.html`.
+- Math Sprint corrections:
+  - Localized Spanish/French meta descriptions, Open Graph/Twitter descriptions and the visible "Play Math Sprint Now" call to action.
+  - Commits: `ca194d5f52db107ea5b8cabe908f4abf5a0a7f3a` (Spanish), `b22646bc7286595463828bb76aa4d156969b1daa` (French).
+- Word Scramble corrections:
+  - Localized Spanish/French meta descriptions, Open Graph/Twitter titles and descriptions, mixed-language H2 headings, the autocorrect/spelling paragraph, play CTA, initial game instruction, related article links and cross-tool recommendation paragraph where exact source fragments matched.
+  - Commits: `ddb0a97309a8455dba168c1f6e383fb6fd9558c0` (Spanish), `f509852fe25011b3f89e4537d567739eab9b267b` (French).
+
+### QA findings still open
+- Some Word Scramble English remnants were not matched because HTML markup splits the text nodes. Re-fetch current content and translate the remaining spelling paragraph, game-start instruction, cross-tool paragraph and related article labels at the DOM text-node level.
+- Review Math Sprint related-article link labels and JSON-LD description after the metadata replacements; do not assume all structured data or link text is fixed merely because visible headings are translated.
+- WordStorm world descriptions and related article links still require exact markup-aware corrections.
+- Reaction Time still needs a second pass for any remaining mixed-language procedural text, Article schema content and related links.
+- The current four article families have been source-reviewed but are not fully certified. Preserve the distinction between translation QA and runtime QA.
+
+### Commits in the preceding editorial batch
+- `575c0ef34a16104d172c8c1fdbae4fb196e26cf5` — Spanish Reaction Time.
+- `664780a3846f3334bed11f7ac27d16eca0d47db2` — French Reaction Time.
+- `f8b0ceb9a72c3fe054764e902d21be5b47ebc40e` — Spanish WordStorm.
+- `b580e93ee7c1bbeb368fd5ca43c5a949adfb365e` — French WordStorm.
+
+### Validation and release status
+- Each changed HTML file was re-fetched immediately before its update and committed with the current blob SHA.
+- CI status for the new commits has not yet been confirmed. Static content inspection is not browser/runtime validation.
+- No merge, deployment, change to GitHub Pages publishing settings, or modification to `main`/ `safe-maintenance-audit` was made.
+
+### Next action
+1. Finish markup-aware English-remnant QA for Math Sprint, WordStorm, Word Scramble and Reaction Time.
+2. Check all 24 Article JSON-LD objects for localized headline/description parity with the visible page title and content.
+3. Inspect the latest branch-head CI run and record its result.
+4. Continue with the next article/tool page family batch.
