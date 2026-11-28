@@ -814,7 +814,7 @@
                     </div>
                     <span class="text-2xl" aria-hidden="true">🏆</span>
                 </div>
-                <button id="shareBtn" onclick="sharePuntuación()" class="btn-3d btn-accent px-6 py-3 text-sm font-bold flex items-center justify-center gap-2">
+                <button id="shareBtn" onclick="shareScore()" class="btn-3d btn-accent px-6 py-3 text-sm font-bold flex items-center justify-center gap-2">
                     🔗 Compartir puntuación
                 </button>
             </div>
@@ -1053,7 +1053,7 @@
             <button type="button" onclick="closeFeedbackModal()" aria-label="Close popup" title="Close" class="mtx-modal-close">✕</button>
         </div>
 
-        <form id="communityForm" onsubmit="submitComunidadFeedback(event)" class="space-y-4">
+        <form id="communityForm" onsubmit="submitCommunityFeedback(event)" class="space-y-4">
             <div>
                 <label for="formType" class="block text-xs font-bold uppercase tracking-wider muted mb-1">1. ¿Qué te gustaría compartir? *</label>
                 <select id="formType" name="formType" required onchange="toggleFormFields()" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
@@ -1156,7 +1156,7 @@
 
             <div class="grid grid-cols-2 gap-3 mb-6">
                 <div class="tile-indigo rounded-2xl p-3 text-center">
-                    <span id="finalPuntuación" class="num text-3xl font-black block">0</span>
+                    <span id="finalScore" class="num text-3xl font-black block">0</span>
                     <span class="text-[10px] font-bold uppercase muted">Puntuación</span>
                 </div>
                 <div class="tile-green rounded-2xl p-3 text-center">
@@ -1175,7 +1175,7 @@
 
             <div class="flex gap-3">
                 <button onclick="closeResults()" class="btn-3d btn-primary flex-1 py-3 text-sm">Jugar de nuevo</button>
-                <button id="modalShareBtn" onclick="sharePuntuación()" class="btn-3d btn-chip flex-1 py-3 text-sm">🔗 Compartir</button>
+                <button id="modalShareBtn" onclick="shareScore()" class="btn-3d btn-chip flex-1 py-3 text-sm">🔗 Compartir</button>
             </div>
 
             <p class="share-cta-line">🔥 Challenge your friends and colleagues to beat this score.</p>
@@ -1294,7 +1294,7 @@
         var goFlash          = el('goFlash');
         var resultsModal     = el('resultsModal');
         var resultMsg        = el('resultMsg');
-        var finalPuntuaciónEl     = el('finalPuntuación');
+        var finalScoreEl     = el('finalScore');
         var finalAccEl       = el('finalAcc');
         var finalMultEl      = el('finalMult');
         var finalWorldEl     = el('finalWorld');
@@ -1588,7 +1588,7 @@
 
             // Visual: burst
             burst(p.left + p.dom.offsetWidth / 2, p.top + p.dom.offsetHeight / 2);
-            popupPuntuación(p.left + p.dom.offsetWidth / 2, p.top, points);
+            popupScore(p.left + p.dom.offsetWidth / 2, p.top, points);
 
             // React pulse at top
             reactPulse();
@@ -1617,7 +1617,7 @@
 
             if (state.hearts === 3 && state.worldIndex < WORLDS.length - 1) {
                 state.score += 50;
-                popupPuntuación(stage.clientWidth / 2, stage.clientHeight / 2, 50, '+50 PERFECT');
+                popupScore(stage.clientWidth / 2, stage.clientHeight / 2, 50, '+50 PERFECT');
             }
 
             if (state.worldIndex < WORLDS.length - 1) {
@@ -1769,7 +1769,7 @@
             }
         }
 
-        function popupPuntuación(x, y, points, label) {
+        function popupScore(x, y, points, label) {
             var p = document.createElement('div');
             p.className = 'popup-score';
             p.textContent = (label || ('+' + points));
@@ -2020,7 +2020,7 @@
             else if (state.phrasesSuperadas >= 3) stars = 1;
             if (won && stars < 3) stars = Math.max(stars, 2);
 
-            finalPuntuaciónEl.textContent = state.score.toLocaleString();
+            finalScoreEl.textContent = state.score.toLocaleString();
             finalAccEl.textContent = accuracy + '%';
             finalMultEl.textContent = state.peakMultiplicador.toFixed(1) + 'x';
             finalWorldEl.textContent = WORLDS[state.worldIndex].name;
@@ -2082,7 +2082,7 @@
         /* =========================================================
            SHARE (UPDATED TO WORK BEFORE AND AFTER GAME)
            ========================================================= */
-        function sharePuntuación() {
+        function shareScore() {
             var baseUrl = 'https://mytoolx.org/es/wordstorm.html';
             var text = '';
 
@@ -2103,7 +2103,7 @@
                 copyFallback(text, shareBtn);
             }
         }
-        window.sharePuntuación = sharePuntuación;
+        window.shareScore = shareScore;
 
         function copyChallengeLink() {
             var url = 'https://mytoolx.org/es/wordstorm.html?challenge=' + state.score;
@@ -2288,7 +2288,7 @@
             updateStars(currentRating);
         });
 
-        async function submitComunidadFeedback(event) {
+        async function submitCommunityFeedback(event) {
             event.preventDefault();
             const errorBox = document.getElementById("formError");
             const successBox = document.getElementById("formSuccess");

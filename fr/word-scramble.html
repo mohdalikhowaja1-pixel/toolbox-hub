@@ -859,7 +859,7 @@
                         <div class="result-rank" id="rankBadge">Sharp</div>
                         <div class="new-best-badge hidden" id="newBestBadge">🏆 Nouveau record</div>
                         <div class="result-stats" id="resultStats">
-                            Mots : <strong id="statWords">0</strong> · Meilleure série : <strong id="statSérie">0</strong> · Indices : <strong id="statHints">0</strong>
+                            Mots : <strong id="statWords">0</strong> · Meilleure série : <strong id="statStreak">0</strong> · Indices : <strong id="statHints">0</strong>
                         </div>
                         <div class="end-sub" id="endSub">Voulez-vous réessayer ?</div>
                         <div class="end-actions">
@@ -1168,7 +1168,7 @@
                 <button type="button" onclick="closeFeedbackModal()" aria-label="Close popup" title="Close" class="mtx-modal-close">✕</button>
             </div>
 
-            <form id="communityForm" onsubmit="submitCommunautéFeedback(event)" class="space-y-4">
+            <form id="communityForm" onsubmit="submitCommunityFeedback(event)" class="space-y-4">
                 <div>
                     <label for="formType" class="block text-xs font-bold uppercase tracking-wider muted mb-1">1. Que souhaitez-vous partager ? *</label>
                     <select id="formType" name="formType" required onchange="toggleFormFields()" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
@@ -1424,7 +1424,7 @@
             levelNum: document.getElementById('levelNum'),
             lenBadge: document.getElementById('lenBadge'),
             statMots : document.getElementById('statWords'),
-            statSérie: document.getElementById('statSérie'),
+            statStreak: document.getElementById('statStreak'),
             statHints: document.getElementById('statHints'),
             challengeBanner: document.getElementById('challengeBanner'),
             challengeTarget: document.getElementById('challengeTarget')
@@ -1507,7 +1507,7 @@
 
             renderTiles();
             renderAnswer();
-            updateNiveauBadge(chosen.length);
+            updateLevelBadge(chosen.length);
         }
 
         function scrambleWord(word) {
@@ -1564,13 +1564,13 @@
             el.answerSlots.appendChild(frag);
         }
 
-        function updateNiveauBadge(len) {
+        function updateLevelBadge(len) {
             var level = Math.min(state.wordsSolved + 1, 99);
             el.levelNum.textContent = String(level);
             el.lenBadge.textContent = len + ' LETTERS';
         }
 
-        function updateSérieDots() {
+        function updateStreakDots() {
             var dots = el.streakDots.querySelectorAll('.sdot');
             var on = Math.min(state.streak, 5);
             for (var i = 0; i < dots.length; i++) {
@@ -1584,7 +1584,7 @@
             el.streakDisplay.textContent = String(state.streak);
             if (state.streak >= 3) el.streakDisplay.classList.add('streak-hot');
             else el.streakDisplay.classList.remove('streak-hot');
-            updateSérieDots();
+            updateStreakDots();
         }
 
         function updateRing(seconds) {
@@ -1819,7 +1819,7 @@
             el.rankBadge.className = 'result-rank ' + rank.cls;
             el.newBestBadge.classList.toggle('hidden', !isNewBest);
             el.statWords.textContent = String(state.wordsSolved);
-            el.statSérie.textContent = String(state.bestSérie);
+            el.statStreak.textContent = String(state.bestSérie);
             el.statHints.textContent = String(state.hintsUsed);
 
             if (isNewBest) {
@@ -2001,7 +2001,7 @@
             updateStars(currentRating);
         });
 
-        async function submitCommunautéFeedback(event) {
+        async function submitCommunityFeedback(event) {
             event.preventDefault();
             const errorBox = document.getElementById("formError");
             const successBox = document.getElementById("formSuccess");

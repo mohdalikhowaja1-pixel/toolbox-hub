@@ -848,18 +848,18 @@
                         <div class="overlay-title">¿Listo para ordenar las letras?</div>
                         <div class="overlay-sub">Tienes 60 segundos. Las palabras más largas dan más puntos. Toca o escribe las letras en el orden correcto.</div>
                         <button class="btn-3d btn-primary" id="startBtn" style="padding: 14px 32px; font-size: 16px; border-radius: 12px; touch-action: manipulation; background: #FDE047; color: #4F46E5; box-shadow: 0 4px 0 #CA8A04;">Empezar juego</button>
-                        <div class="overlay-best">Tu récord: <strong id="bestPuntuaciónStart">0</strong></div>
+                        <div class="overlay-best">Tu récord: <strong id="bestScoreStart">0</strong></div>
                     </div>
 
                     <!-- End overlay -->
                     <div class="stage-overlay hidden" id="endOverlay">
                         <div style="display:flex; align-items:center; gap:6px; justify-content:center;">
-                            <div class="result-score" id="finalPuntuación">0</div>
+                            <div class="result-score" id="finalScore">0</div>
                         </div>
                         <div class="result-rank" id="rankBadge">Sharp</div>
                         <div class="new-best-badge hidden" id="newBestBadge">🏆 Nuevo récord</div>
                         <div class="result-stats" id="resultStats">
-                            Palabras: <strong id="statWords">0</strong> · Mejor racha: <strong id="statRacha">0</strong> · Pistas: <strong id="statHints">0</strong>
+                            Palabras: <strong id="statWords">0</strong> · Mejor racha: <strong id="statStreak">0</strong> · Pistas: <strong id="statHints">0</strong>
                         </div>
                         <div class="end-sub" id="endSub">¿Quieres volver a intentarlo?</div>
                         <div class="end-actions">
@@ -1168,7 +1168,7 @@
                 <button type="button" onclick="closeFeedbackModal()" aria-label="Close popup" title="Close" class="mtx-modal-close">✕</button>
             </div>
 
-            <form id="communityForm" onsubmit="submitComunidadFeedback(event)" class="space-y-4">
+            <form id="communityForm" onsubmit="submitCommunityFeedback(event)" class="space-y-4">
                 <div>
                     <label for="formType" class="block text-xs font-bold uppercase tracking-wider muted mb-1">1. ¿Qué te gustaría compartir? *</label>
                     <select id="formType" name="formType" required onchange="toggleFormFields()" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
@@ -1414,17 +1414,17 @@
             startBtn: document.getElementById('startBtn'),
             playAgainBtn: document.getElementById('playAgainBtn'),
             shareBtn: document.getElementById('shareBtn'),
-            finalPuntuación: document.getElementById('finalPuntuación'),
+            finalScore: document.getElementById('finalScore'),
             rankBadge: document.getElementById('rankBadge'),
             newBestBadge: document.getElementById('newBestBadge'),
             endSub: document.getElementById('endSub'),
-            bestPuntuaciónStart: document.getElementById('bestPuntuaciónStart'),
+            bestScoreStart: document.getElementById('bestScoreStart'),
             hiddenInput: document.getElementById('hiddenInput'),
             crossLinkStrip: document.getElementById('crossLinkStrip'),
             levelNum: document.getElementById('levelNum'),
             lenBadge: document.getElementById('lenBadge'),
             statPalabras: document.getElementById('statWords'),
-            statRacha: document.getElementById('statRacha'),
+            statStreak: document.getElementById('statStreak'),
             statHints: document.getElementById('statHints'),
             challengeBanner: document.getElementById('challengeBanner'),
             challengeTarget: document.getElementById('challengeTarget')
@@ -1507,7 +1507,7 @@
 
             renderTiles();
             renderAnswer();
-            updateNivelBadge(chosen.length);
+            updateLevelBadge(chosen.length);
         }
 
         function scrambleWord(word) {
@@ -1564,13 +1564,13 @@
             el.answerSlots.appendChild(frag);
         }
 
-        function updateNivelBadge(len) {
+        function updateLevelBadge(len) {
             var level = Math.min(state.wordsSolved + 1, 99);
             el.levelNum.textContent = String(level);
             el.lenBadge.textContent = len + ' LETTERS';
         }
 
-        function updateRachaDots() {
+        function updateStreakDots() {
             var dots = el.streakDots.querySelectorAll('.sdot');
             var on = Math.min(state.streak, 5);
             for (var i = 0; i < dots.length; i++) {
@@ -1584,7 +1584,7 @@
             el.streakDisplay.textContent = String(state.streak);
             if (state.streak >= 3) el.streakDisplay.classList.add('streak-hot');
             else el.streakDisplay.classList.remove('streak-hot');
-            updateRachaDots();
+            updateStreakDots();
         }
 
         function updateRing(seconds) {
@@ -1814,12 +1814,12 @@
             savePlayed(state.playedCount);
 
             var rank = rankFor(state.score);
-            el.finalPuntuación.textContent = String(state.score);
+            el.finalScore.textContent = String(state.score);
             el.rankBadge.textContent = rank.label;
             el.rankBadge.className = 'result-rank ' + rank.cls;
             el.newBestBadge.classList.toggle('hidden', !isNewBest);
             el.statWords.textContent = String(state.wordsSolved);
-            el.statRacha.textContent = String(state.bestRacha);
+            el.statStreak.textContent = String(state.bestRacha);
             el.statHints.textContent = String(state.hintsUsed);
 
             if (isNewBest) {
@@ -1832,13 +1832,13 @@
 
             el.activeGame.style.display = 'none';
             el.endOverlay.classList.remove('hidden');
-            el.bestPuntuaciónStart.textContent = String(state.best);
+            el.bestScoreStart.textContent = String(state.best);
             el.crossLinkStrip.classList.add('visible');
 
             try { el.hiddenInput.blur(); } catch (e) {}
         }
 
-        function sharePuntuación() {
+        function shareScore() {
             var rank = rankFor(state.score).label;
             var text = STRINGS.shareText(state.score, rank);
             var url = 'https://mytoolx.org/es/word-scramble.html?challenge=' + state.score;
@@ -1904,14 +1904,14 @@
 
         el.startBtn.addEventListener('click', startGame);
         el.playAgainBtn.addEventListener('click', startGame);
-        el.shareBtn.addEventListener('click', sharePuntuación);
+        el.shareBtn.addEventListener('click', shareScore);
         el.hintBtn.addEventListener('click', useHint);
         el.skipBtn.addEventListener('click', skipWord);
         el.clearBtn.addEventListener('click', clearAttempt);
 
         state.best = loadBest();
         state.playedCount = loadPlayed();
-        el.bestPuntuaciónStart.textContent = String(state.best);
+        el.bestScoreStart.textContent = String(state.best);
         updateRing(60);
         updateHUD();
 
@@ -2001,7 +2001,7 @@
             updateStars(currentRating);
         });
 
-        async function submitComunidadFeedback(event) {
+        async function submitCommunityFeedback(event) {
             event.preventDefault();
             const errorBox = document.getElementById("formError");
             const successBox = document.getElementById("formSuccess");
