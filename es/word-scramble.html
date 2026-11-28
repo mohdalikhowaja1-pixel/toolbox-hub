@@ -1162,15 +1162,15 @@
         <div class="mtx-modal-dialog" onclick="event.stopPropagation()">
             <div class="flex items-start justify-between gap-3 mb-4">
                 <div>
-                    <h3 id="modalTitle" class="text-lg sm:text-xl font-black" style="color: var(--text);">Share Quick Feedback</h3>
-                    <p class="text-xs muted mt-0.5">Takes 20 seconds • No sign-up required</p>
+                    <h3 id="modalTitle" class="text-lg sm:text-xl font-black" style="color: var(--text);">Comparte tus comentarios</h3>
+                    <p class="text-xs muted mt-0.5">Solo te llevará 20 segundos • No necesitas registrarte</p>
                 </div>
                 <button type="button" onclick="closeFeedbackModal()" aria-label="Close popup" title="Close" class="mtx-modal-close">✕</button>
             </div>
 
             <form id="communityForm" onsubmit="submitComunidadFeedback(event)" class="space-y-4">
                 <div>
-                    <label for="formType" class="block text-xs font-bold uppercase tracking-wider muted mb-1">1. What would you like to share? *</label>
+                    <label for="formType" class="block text-xs font-bold uppercase tracking-wider muted mb-1">1. ¿Qué te gustaría compartir? *</label>
                     <select id="formType" name="formType" required onchange="toggleFormFields()" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
                         <option value="review">⭐ Rate &amp; Review a Tool / Game</option>
                         <option value="suggestion">💡 Suggest a New Tool or Feature</option>
@@ -1180,7 +1180,7 @@
                 <!-- LOCKED TO THIS SPECIFIC APP -->
                 <div id="targetPageGroup" class="space-y-4">
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider muted mb-1">Rating for:</label>
+                        <label class="block text-xs font-bold uppercase tracking-wider muted mb-1">Valoración de:</label>
                         <div class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-black flex items-center gap-2" style="background: var(--chip-bg); color: var(--primary);">
                             🔤 Palabras desordenadas
                         </div>
@@ -1188,7 +1188,7 @@
                     </div>
 
                     <div id="ratingGroup">
-                        <label class="block text-xs font-bold uppercase tracking-wider muted mb-1">Your Rating *</label>
+                        <label class="block text-xs font-bold uppercase tracking-wider muted mb-1">Tu valoración *</label>
                         <div id="starRatingContainer" class="flex items-center gap-1 mt-1">
                             <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
                             <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
@@ -1202,7 +1202,7 @@
 
                 <div id="suggestionCategoryGroup" class="hidden space-y-3">
                     <div>
-                        <label for="suggestionCategory" class="block text-xs font-bold uppercase tracking-wider muted mb-1">2. Idea Category *</label>
+                        <label for="suggestionCategory" class="block text-xs font-bold uppercase tracking-wider muted mb-1">2. Categoría de la idea *</label>
                         <select id="suggestionCategory" name="suggestionCategory" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
                             <option value="New Tool Ideas">New Tool Idea</option>
                             <option value="New Game Ideas">New Game Idea</option>
@@ -1212,37 +1212,37 @@
                         </select>
                     </div>
                     <div id="titleGroup">
-                        <label for="suggestionTitle" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Short Idea Title *</label>
+                        <label for="suggestionTitle" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Título breve de la idea *</label>
                         <input type="text" id="suggestionTitle" name="suggestionTitle" maxlength="80" placeholder="e.g. PDF Merger or Invoice Generator" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                        <label for="authorName" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Name (Optional)</label>
+                        <label for="authorName" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Nombre (opcional)</label>
                         <input type="text" id="authorName" name="authorName" maxlength="40" placeholder="Anonymous" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
                     </div>
                     <div>
-                        <label for="country" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Country (Optional)</label>
+                        <label for="country" class="block text-xs font-bold uppercase tracking-wider muted mb-1">País (opcional)</label>
                         <input type="text" id="country" name="country" maxlength="40" placeholder="e.g. US, UK, PK" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
                     </div>
                 </div>
 
                 <div>
-                    <label for="commentText" id="commentLabel" class="block text-xs font-bold uppercase tracking-wider muted mb-1">3. Your Comment *</label>
+                    <label for="commentText" id="commentLabel" class="block text-xs font-bold uppercase tracking-wider muted mb-1">3. Tu comentario *</label>
                     <textarea id="commentText" name="commentText" required rows="3" maxlength="400" placeholder="Write a quick note about your experience..." class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-medium"></textarea>
                 </div>
 
                 <p class="text-[11px] muted leading-relaxed">
-                    🔒 Voluntary submission. Approved posts appear publicly without personal data.
+                    🔒 Envío voluntario. Las publicaciones aprobadas se muestran públicamente sin datos personales.
                 </p>
 
                 <div id="formError" class="hidden p-3 rounded-xl text-xs font-bold text-red-500 bg-red-500/10 border border-red-500/30"></div>
                 <div id="formSuccess" class="hidden p-3 rounded-xl text-xs font-bold text-emerald-500 bg-emerald-500/10 border border-emerald-500/30"></div>
 
                 <div class="flex items-center gap-2.5 pt-1">
-                    <button type="button" onclick="closeFeedbackModal()" class="btn-3d btn-chip px-4 py-3 rounded-xl text-xs sm:text-sm font-bold">Cancel</button>
-                    <button type="submit" id="submitModalBtn" class="btn-3d btn-primary flex-1 py-3 rounded-xl text-xs sm:text-sm font-black">🚀 Submit Feedback</button>
+                    <button type="button" onclick="closeFeedbackModal()" class="btn-3d btn-chip px-4 py-3 rounded-xl text-xs sm:text-sm font-bold">Cancelar</button>
+                    <button type="submit" id="submitModalBtn" class="btn-3d btn-primary flex-1 py-3 rounded-xl text-xs sm:text-sm font-black">🚀 Enviar comentario</button>
                 </div>
             </form>
         </div>
@@ -2062,19 +2062,19 @@
                     setTimeout(() => {
                         closeFeedbackModal();
                         submitBtn.disabled = false;
-                        submitBtn.textContent = "🚀 Submit Feedback";
+                        submitBtn.textContent = "🚀 Enviar comentario";
                     }, 3000);
                 } else {
                     errorBox.textContent = result.message || "Submission failed.";
                     errorBox.classList.remove("hidden");
                     submitBtn.disabled = false;
-                    submitBtn.textContent = "🚀 Submit Feedback";
+                    submitBtn.textContent = "🚀 Enviar comentario";
                 }
             } catch (err) {
                 errorBox.textContent = "Network error. Please try again.";
                 errorBox.classList.remove("hidden");
                 submitBtn.disabled = false;
-                submitBtn.textContent = "🚀 Submit Feedback";
+                submitBtn.textContent = "🚀 Enviar comentario";
             }
         }
     </script>
