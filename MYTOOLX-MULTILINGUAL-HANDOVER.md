@@ -234,3 +234,11 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 - Latest workflow run: `46151847826` — **PASSED**.
 - Combined CI coverage now includes sitemap URL inventory, canonical and reciprocal hreflang targets, language attributes, switcher asset counts, local href/src targets, all 72 blog Article/BreadcrumbList JSON-LD blocks, code identifier parity across all 56 language triplets, and JavaScript syntax parsing for inline and referenced local scripts.
 - Browser-based interaction and visual testing remains outstanding.
+
+
+## Sitemap XML well-formedness check — 2026-11-28
+
+- Added Python's standard-library XML parser check to the GitHub Actions workflow.
+- Latest run: `46151901562` — **PASSED**.
+- The workflow confirmed `sitemap.xml` is well-formed XML, then passed the full multilingual static validation: 168 URLs (56 per language), 24 blog articles, 56 code identifier triplets, canonical/hreflang checks, local href/src target checks, and JavaScript syntax checks.
+- This is the latest verified CI run for the current development branch. No deployment or merge was performed.
