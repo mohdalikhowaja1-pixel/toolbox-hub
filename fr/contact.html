@@ -41,9 +41,9 @@
     <meta property="og:site_name" content="MyToolX">
     <meta property="og:url" content="https://mytoolx.org/fr/contact.html">
     <meta property="og:title" content="📬 Contacter MyToolX | Assistance et commentaires">
-    <meta property="og:description" content="Send us your feedback, bug reports, or custom template requests. A real person reads every message.">
+    <meta property="og:description" content="Envoyez-nous vos commentaires, signalements de bugs ou demandes de modèles personnalisés. Chaque message est lu par une personne réelle.">
     <meta property="og:image" content="https://mytoolx.org/og-image.png">
-    <meta property="og:image:alt" content="Contact MyToolX">
+    <meta property="og:image:alt" content="Formulaire de contact MyToolX">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/png">
@@ -53,9 +53,9 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://mytoolx.org/fr/contact.html">
     <meta name="twitter:title" content="📬 Contacter MyToolX | Assistance et commentaires">
-    <meta name="twitter:description" content="Send us your feedback, bug reports, or custom template requests. A real person reads every message.">
+    <meta name="twitter:description" content="Envoyez-nous vos commentaires, signalements de bugs ou demandes de modèles personnalisés. Chaque message est lu par une personne réelle.">
     <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
-    <meta name="twitter:image:alt" content="Contact MyToolX">
+    <meta name="twitter:image:alt" content="Formulaire de contact MyToolX">
 
     <link rel="stylesheet" href="/styles.css">
    
@@ -246,7 +246,7 @@
                         <span class="logo-wordmark">MyTool<span class="x">X</span></span>
                     </a>
                     <p class="text-sm leading-relaxed mb-6 pr-4">
-                        MyToolX is a free collection of browser-based tools for writers, freelancers and developers. No account is required for most tools. De nombreux outils traitent le contenu localement, tandis que certaines fonctionnalités et les statistiques du site utilisent des services externes. Consultez notre Politique de confidentialité pour plus de détails.
+                        MyToolX propose des outils web gratuits exécutés dans le navigateur pour les rédacteurs, freelances et développeurs. La plupart ne nécessitent aucun compte. De nombreux outils traitent le contenu localement, tandis que certaines fonctionnalités et les statistiques du site utilisent des services externes. Consultez notre politique de confidentialité.
                     </p>
                     <div class="social-links-row" aria-label="MyToolX social media links">
                         <a href="https://www.facebook.com/profile.php?id=61596813242660" target="_blank" rel="noopener noreferrer" aria-label="MyToolX on Facebook" title="Facebook" class="social-btn fb-btn">
@@ -325,7 +325,7 @@
 
             <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
                 <p>&copy; 2026 MyToolX. Tous droits réservés.</p>
-                <p>Many tools process your content in your browser; selected features use external services. See our Politique de confidentialité for details.</p>
+                <p>De nombreux outils traitent le contenu dans votre navigateur, tandis que certaines fonctionnalités utilisent des services externes. Consultez notre politique de confidentialité pour en savoir plus.</p>
             </div>
         </div>
     </footer>
@@ -341,7 +341,7 @@
                 <button type="button" onclick="closeFeedbackModal()" aria-label="Close popup" title="Close" class="mtx-modal-close">✕</button>
             </div>
 
-            <form id="communityForm" onsubmit="submitCommunityFeedback(event)" class="space-y-4">
+            <form id="communityForm" onsubmit="submitCommunautéFeedback(event)" class="space-y-4">
                 <div>
                     <label for="formType" class="block text-xs font-bold uppercase tracking-wider muted mb-1">1. Que souhaitez-vous partager ? *</label>
                     <select id="formType" name="formType" required onchange="toggleFormFields()" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
@@ -573,7 +573,7 @@
         });
 
         // 3. FORM SUBMISSION
-        async function submitCommunityFeedback(event) {
+        async function submitCommunautéFeedback(event) {
             event.preventDefault();
             const errorBox = document.getElementById("formError");
             const successBox = document.getElementById("formSuccess");
