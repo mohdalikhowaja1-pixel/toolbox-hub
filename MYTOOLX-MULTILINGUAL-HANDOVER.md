@@ -270,3 +270,16 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 - `es/index.html`, `fr/index.html`, and `lang-switcher.js` are still absent from that branch (GitHub returned 404 for each path).
 - `lang-switcher.css` exists on the publishing branch, but that alone is insufficient: the translated landing pages and switcher script are missing.
 - This confirms the deployment gap is not explained by the CSS rules in the development branch. The publishing branch still needs a deliberate, reviewed release plan. Do not merge the full development branch or change the Pages source automatically.
+
+
+## Article schema headline QA correction — 2026-11-28
+
+- Rechecked the AI Prompts article's Spanish and French Article JSON-LD against each page's localized title and H1.
+- Found and corrected two confirmed mixed-language schema headlines:
+  - `es/blog-ai-prompts.html`: changed `Mastering Prompts de IA for ChatGPT` to `Domina los prompts de IA para ChatGPT`.
+  - `fr/blog-ai-prompts.html`: changed `Mastering Prompts IA for ChatGPT` to `Maîtriser les prompts IA pour ChatGPT`.
+- Preserved the existing localized descriptions, Article URL, `inLanguage`, author/publisher, dates, and BreadcrumbList.
+- Commits: `07a96bd936bb004cd20fcbeb8030b6e65acbfd54` (Spanish); `c20fb52b262166157a4fb617a873fa2de3607bfa` (French).
+- Tests: fetched both current source files and verified the previous Article headline exactly, compared the corrected headline with each page's localized title/H1, and committed using the fetched blob SHA. Automated validation is pending for the new head at this checkpoint.
+- Remaining: complete broader editorial QA of Article headline and breadcrumb labels across all 72 blog schemas; static CI does not detect mixed-language schema text. Browser/runtime and production HTTP checks remain outstanding.
+- Next action: confirm CI passes on the new head, then continue the localized schema/content QA without merging or deploying.
