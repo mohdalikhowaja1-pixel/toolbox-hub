@@ -206,3 +206,13 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 - Automated repository validation now passes on the development branch.
 - This is static validation only. Browser rendering, real application interactions, form submissions, mobile/dark-mode checks, and live HTTP/production verification remain outstanding.
 - `safe-maintenance-audit` remains the publishing branch and still does not contain the translated pages or shared switcher JavaScript. No merge, deployment, or publishing-source change has been performed.
+
+
+## Expanded CI coverage — 2026-11-28
+
+- Extended the automated code-identifier comparison from the 24 blog article triplets to all 56 English/Spanish/French public-page triplets.
+- Latest GitHub Actions run: `46151625702`.
+- Result: **PASSED**.
+- Verified output: 56 English, 56 Spanish, 56 French sitemap URLs; 24 blog articles; 56 code-identifier triplets.
+- Tested commit: `d0d270b15614a2b183af3c036db6d5c6c31a8a42`.
+- This remains a static source validator. No browser or live production tests are implied.
