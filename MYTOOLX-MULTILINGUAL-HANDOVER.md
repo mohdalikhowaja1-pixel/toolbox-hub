@@ -358,3 +358,44 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 ### Next action for the next chat
 - Re-resolve the exact head SHA of `multilingual-expansion` and inspect the 11 commits after `5ad68dec96b1adaccfc1def4c7e68b718705d035` to determine whether they contain any unrecorded QA or code changes.
 - Then resume systematic automated linguistic QA. Start with the remaining blog/article structured data and visible heading/body copy, then move through tool/application page families in batches. Do not ask Ali to identify translation mistakes; use source comparison and report only when human input or an approval is genuinely required.
+
+
+## Editorial QA batch — reaction-time and WordStorm articles — 2026-11-28
+
+### Branch checkpoint
+- Confirmed the user's handover commit `5b1df099dcc77f8428c9834b34c280a2dc631bb1` is the exact current head of `multilingual-expansion` (compare result: identical, 0 ahead / 0 behind).
+- Re-read this handover and `MULTILINGUAL-SEO-PLAN.md` before continuing.
+- No changes to `main`, `safe-maintenance-audit`, GitHub Pages publishing settings, or production were made.
+
+### Files reviewed and corrections committed
+- Reviewed English, Spanish and French versions of `blog-math-sprint.html`, `blog-wordstorm.html`, `blog-word-scramble.html`, and `blog-reaction-time.html`.
+- Corrected clear mixed-language SEO metadata, social descriptions/titles, headings, Article schema headline/description, performance table labels, call-to-action text, article navigation labels and feedback button labels in:
+  - `es/blog-reaction-time.html`
+  - `fr/blog-reaction-time.html`
+  - `es/blog-wordstorm.html`
+  - `fr/blog-wordstorm.html`
+- Commits:
+  - `575c0ef34a16104d172c8c1fdbae4fb196e26cf5` — Spanish Reaction Time editorial corrections.
+  - `664780a3846f3334bed11f7ac27d16eca0d47db2` — French Reaction Time editorial corrections.
+  - `f8b0ceb9a72c3fe054764e902d21be5b47ebc40e` — Spanish WordStorm editorial corrections.
+  - `b580e93ee7c1bbeb368fd5ca43c5a949adfb365e` — French WordStorm editorial corrections.
+
+### QA findings still open
+- The first comparison exposed further English remnants not fully corrected in this batch, including some list/table cell text, procedural instructions, CTA/navigation strings and feedback/privacy text. Continue exact source-level review before marking these pages complete.
+- `es/blog-math-sprint.html` and `fr/blog-math-sprint.html` still have English meta description, Open Graph/Twitter descriptions and Article schema description, plus the English CTA label "Play Math Sprint Now".
+- Both localized WordStorm pages still need a second pass over the five world-description list items and related-article link text; the first replacement pass did not match those HTML fragments because the source wraps parts of the text in markup.
+- Both localized Reaction Time pages need a second pass for any procedural list items, Article schema text and related-link labels that remain English. Verify exact current content before editing.
+- Both localized Word Scramble pages still contain substantial English text in the body, headings, table/instruction labels, schema headline/description, and calls to action. This is a high-priority unfinished translation batch.
+- The four reviewed page triplets were source-inspected, not browser-tested. No linguistic native-speaker certification is claimed.
+
+### Tests and release status
+- Each edited file was fetched immediately before its update and committed using its current blob SHA.
+- Automated CI has not yet been confirmed for the four new editorial commits. Check the latest validation workflow result after the current batch.
+- Static multilingual validator, browser interaction, local runtime, accessibility, mobile/theme, console/network and live HTTP/indexability checks remain separate outstanding work.
+- Do not merge, deploy, or change publishing settings without Ali's explicit approval.
+
+### Next action
+1. Re-fetch and finish the English-remnant pass on the four reviewed triplets, starting with Math Sprint metadata/CTA and the remaining Reaction Time/WordStorm fragments.
+2. Complete Spanish/French Word Scramble body, headings, table labels, calls to action and Article schema using English source comparison.
+3. Run/inspect the latest CI validation on the new branch head and record the exact result.
+4. Continue page-family editorial QA in small batches and update this ledger after each batch.
