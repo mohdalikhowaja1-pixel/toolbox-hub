@@ -283,3 +283,5 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 - Tests: fetched both current source files and verified the previous Article headline exactly, compared the corrected headline with each page's localized title/H1, and committed using the fetched blob SHA. Automated validation is pending for the new head at this checkpoint.
 - Remaining: complete broader editorial QA of Article headline and breadcrumb labels across all 72 blog schemas; static CI does not detect mixed-language schema text. Browser/runtime and production HTTP checks remain outstanding.
 - Next action: confirm CI passes on the new head, then continue the localized schema/content QA without merging or deploying.
+
+- CI confirmation: [run 46163350548](https://github.com/mohdalikhowaja1-pixel/toolbox-hub/actions/runs/46163350548) completed successfully on the French headline-fix commit `c20fb52b262166157a4fb617a873fa2de3607bfa`. The Spanish fix also passed in [run 46163345416](https://github.com/mohdalikhowaja1-pixel/toolbox-hub/actions/runs/46163345416). These runs validate structure and schema consistency; they do not perform linguistic review.
