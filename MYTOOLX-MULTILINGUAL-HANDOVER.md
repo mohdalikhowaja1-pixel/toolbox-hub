@@ -490,3 +490,31 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 3. Validate all internal links, reciprocal hreflang, sitemap URLs, browser behavior, responsive layout, theme, accessibility, console/network and live HTTP/indexability before release.
 4. Check CI/Actions independently; empty combined status and no returned workflow runs do not constitute a pass.
 5. Keep branch isolated. No merge, deployment, Pages source change, or modification to `main` without explicit approval.
+
+
+## Editorial QA batch — WordStorm, Reaction Time and Math Sprint follow-up — 2026-11-28
+
+### Corrections committed
+- WordStorm Spanish/French: translated all five remaining world-description sentences. The actual in-game world names and example target phrases remain in English where they are game labels/content, avoiding a mismatch with the unchanged game UI.
+  - `86f2c89d54f504074f00ab1702b5973b2d5a6438` — Spanish WordStorm.
+  - `4b340183a13a532a2de097047f229474cad99d74` — French WordStorm.
+- Reaction Time Spanish/French: translated the remaining English test-start instruction, reflex/mental-agility recommendation, and concluding paragraph. Corrected the mixed-language MyToolX test link label.
+  - `f250f0b30a92b9616c786b0af032d658c7dbbb75` — Spanish Reaction Time.
+  - `a9b0475e591a6c632c452695ec20f099d53b515d` — French Reaction Time.
+- WordStorm and Reaction Time Spanish pages: localized the remaining English footer heading “Legal” to “Información legal” (French pages already used a localized heading).
+  - `931ee8b81b96455e2a3a0d4316702489485eb8f7` — Spanish WordStorm footer.
+  - `f25dbf3709ad421834f123f6649e224c950e7382` — Spanish Reaction Time footer.
+  - `1756bcc954c2b0a3e2b65a4080b67bf2ea25f3b5` — Spanish Math Sprint footer.
+- Math Sprint body copy was re-inspected in Spanish and French. No comparable English procedural paragraphs remained in the sampled main article body; branded game name and product/UI labels were retained.
+
+### QA limitations and next work
+- This is a markup-aware editorial pass on the three named article families, not a complete page certification. Recheck footer/form labels and related-article cards across all 24 article families.
+- English phrases shown as actual WordStorm in-game target text were intentionally retained as examples of unchanged game content.
+- Continue through the remaining article families and then the application/tool pages. Keep checking functional UI labels separately from editorial copy.
+- No application/game logic, identifiers, calculations, API payloads, or event handlers were changed.
+- No merge, deployment, GitHub Pages publishing change, or modification to `main` was made.
+
+### Immediate next action
+1. Audit all Spanish/French article footers and feedback forms for English remnants (especially “Legal”, “Rate & Review”, “Suggest a New Tool”, and category labels).
+2. Continue source-vs-translation QA for the remaining article families, then begin the 56 tool/application page families.
+3. Re-run JSON-LD consistency and internal-link checks after editorial work; then perform browser/runtime, responsive, accessibility, console/network and live HTTP/indexability validation.
