@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+    (function() {
+        var saved = null;
+        try { saved = localStorage.getItem('mtx-theme'); } catch (e) {}
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+    })();
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- PRIMARY SEO -->
+    <title>Comunidad MyToolX: reseñas, valoraciones e ideas</title>
+    <meta name="description" content="Lee reseñas y valoraciones de las herramientas gratuitas, juegos de mecanografía y utilidades de productividad de MyToolX. Comparte tus comentarios e ideas.">
+    <link rel="canonical" href="https://mytoolx.org/es/community.html">
+    <link rel="alternate" hreflang="en" href="https://mytoolx.org/es/community.html">
+    
+
+    <!-- OPEN GRAPH & TWITTER -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyToolX">
+    <meta property="og:url" content="https://mytoolx.org/es/community.html">
+    <meta property="og:title" content="MyToolX Comunidad — Reviews, Ratings &amp; Suggestions">
+    <meta property="og:description" content="Explore real user feedback on MyToolX free tools and games, or suggest the next utility we should build.">
+    <meta property="og:image" content="https://mytoolx.org/og-image-v2.png">
+    <meta property="og:image:alt" content="MyToolX Comunidad Hub — reviews, ratings and feature ideas">
+    <meta property="og:locale" content="es_ES">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mytoolx.org/es/community.html">
+    <meta name="twitter:title" content="MyToolX Comunidad — Reviews, Ratings &amp; Suggestions">
+    <meta name="twitter:description" content="Explore real user feedback on MyToolX free tools and games, or suggest the next utility we should build.">
+    <meta name="twitter:image" content="https://mytoolx.org/og-image-v2.png">
+    <meta name="twitter:image:alt" content="MyToolX Comunidad Hub">
+
+    <!-- HREFLANG -->
+    <link rel="alternate" hreflang="en" href="https://mytoolx.org/community.html">
+    <link rel="alternate" hreflang="es" href="https://mytoolx.org/es/community.html">
+    <link rel="alternate" hreflang="fr" href="https://mytoolx.org/fr/community.html">
+    <link rel="alternate" hreflang="x-default" href="https://mytoolx.org/community.html">
+
+    <!-- FAVICON & PWA -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#4F46E5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="/icon-192.png">
+
+    <!-- SHARED STYLESHEET -->
+    <link rel="stylesheet" href="/styles.css">
+
+    <style>
+        :root {
+            --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0; --text: #0F172A; --text-muted: #475569;
+            --primary: #4F46E5; --primary-hover: #4338CA; --accent: #10B981; --accent-hover: #059669;
+            --input-bg: #F8FAFC; --input-border: #E2E8F0; --chip-bg: #F1F5F9; --chip-text: #334155;
+            --footer-bg: #FFFFFF; --footer-border: #E2E8F0; --footer-heading: #0F172A; --footer-link: #475569;
+        }
+        html[data-theme="dark"] {
+            --bg: #0B1220; --card: #111827; --card-border: #1F2937; --text: #F1F5F9; --text-muted: #94A3B8;
+            --primary: #6366F1; --primary-hover: #818CF8; --accent: #34D399; --accent-hover: #6EE7B7;
+            --input-bg: #0F172A; --input-border: #1F2937; --chip-bg: #1F2937; --chip-text: #CBD5E1;
+            --footer-bg: #0B1220; --footer-border: #1F2937; --footer-heading: #F1F5F9; --footer-link: #94A3B8;
+        }
+        html, body { overflow-x: clip; max-width: 100vw; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.25s ease, color 0.25s ease; }
+        header { padding-top: env(safe-area-inset-top, 0); }
+        .surface { background: var(--card); border: 1px solid var(--card-border); }
+        .muted { color: var(--text-muted); }
+
+        .logo-mark { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #6366F1); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 16px; letter-spacing: -1px; box-shadow: 0 4px 12px rgba(79,70,229,0.25); }
+        .logo-mark .x { color: var(--accent); margin-left: 1px; }
+        .logo-wordmark { font-weight: 900; letter-spacing: -0.03em; color: var(--text); }
+        .logo-wordmark .x { color: var(--accent); }
+
+        .btn-3d { position: relative; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.10); }
+        .btn-3d:hover { transform: translateY(-1px); box-shadow: 0 8px 12px -2px rgba(0,0,0,0.12); }
+        .btn-3d:active { transform: translateY(1px); }
+        .btn-3d:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
+        .btn-primary { background: var(--primary); color: #fff; } .btn-primary:hover { background: var(--primary-hover); }
+        .btn-accent { background: var(--accent); color: #fff; } .btn-accent:hover { background: var(--accent-hover); }
+        .btn-chip { background: var(--chip-bg); color: var(--chip-text); }
+
+        .input-field { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text); }
+        .input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.15); outline: none; }
+
+        .mtx-modal-backdrop {
+            position: fixed; inset: 0; z-index: 9999;
+            background: rgba(15, 23, 42, 0.68);
+            backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+            display: flex; align-items: center; justify-content: center; padding: 12px;
+        }
+        .mtx-modal-backdrop.hidden { display: none !important; }
+        .mtx-modal-dialog {
+            background: var(--card); border: 1px solid var(--card-border); color: var(--text);
+            width: 100%; max-width: 480px; max-height: 88dvh; overflow-y: auto;
+            border-radius: 22px; padding: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35); position: relative;
+        }
+        @media (min-width: 640px) { .mtx-modal-dialog { padding: 28px; } }
+        .mtx-modal-close {
+            width: 34px; height: 34px; border-radius: 10px;
+            background: var(--chip-bg); color: var(--text); border: none;
+            font-size: 16px; font-weight: 800; cursor: pointer;
+            display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .mtx-modal-close:hover { background: #EF4444; color: #FFFFFF; }
+
+        .mega-footer { background: var(--footer-bg); border-top: 1px solid var(--footer-border); color: var(--footer-link); }
+        .mega-footer h3 { color: var(--footer-heading); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-footer a:hover { color: var(--primary); }
+
+/* --- FOOTER SOCIAL ICONS --- */
+        .social-links-row { display: flex; align-items: center; gap: 12px; margin-top: 4px; }
+        .social-btn {
+            width: 42px; height: 42px; border-radius: 12px;
+            display: inline-flex; align-items: center; justify-content: center;
+            color: #FFFFFF !important; text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+            box-shadow: 0 6px 14px -3px rgba(0, 0, 0, 0.28);
+        }
+        .social-btn svg { width: 20px; height: 20px; fill: currentColor; }
+        .social-btn.fb-btn {
+            background: linear-gradient(135deg, #1877F2 0%, #0D5BD6 100%);
+        }
+        .social-btn.ig-btn {
+            background: radial-gradient(circle at 30% 107%, #FDF497 0%, #FDF497 5%, #FD5949 45%, #D6249F 60%, #285AEB 90%);
+        }
+        .social-btn:hover {
+            transform: translateY(-2px) scale(1.06);
+            box-shadow: 0 10px 20px -4px rgba(79, 70, 229, 0.35);
+            filter: brightness(1.05);
+        }
+
+
+
+        .hero-badge { background: rgba(79,70,229,0.10); border: 1px solid rgba(79,70,229,0.30); }
+        details summary::-webkit-details-marker { display: none; }
+        details summary { list-style: none; }
+        details[open] summary .chev { transform: rotate(180deg); }
+        .chev { transition: transform 0.2s ease; }
+
+        /* Custom Star Rating Styles */
+        .star-click { cursor: pointer; transition: transform 0.1s; }
+        .star-click:hover { transform: scale(1.15); }
+        .star-click svg { width: 32px; height: 32px; fill: currentColor; }
+    </style>
+
+    <!-- GLOBAL LANGUAGE SWITCHER -->
+    <link rel="stylesheet" href="/lang-switcher.css">
+    <script src="/lang-switcher.js" defer></script>
+
+    <!-- STRUCTURED DATA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "name": "MyToolX Comunidad Hub",
+          "url": "https://mytoolx.org/es/community.html",
+          "description": "Approved community reviews, ratings and feature ideas for MyToolX free browser tools and games.",
+          "isPartOf": { "@type": "WebSite", "name": "MyToolX", "url": "https://mytoolx.org/" },
+          "inLanguage": "es"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://mytoolx.org/" },
+            { "@type": "ListItem", "position": 2, "name": "Comunidad", "item": "https://mytoolx.org/es/community.html" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "¿Necesito una cuenta para dejar una reseña?", "acceptedAnswer": { "@type": "Answer", "text": "No. Puedes enviar una valoración, reseña o idea en menos de 30 segundos, sin registrarte ni facilitar datos personales." } },
+            { "@type": "Question", "name": "¿Cuándo aparecerá mi reseña en esta página?", "acceptedAnswer": { "@type": "Answer", "text": "Todas las publicaciones pasan primero por una cola de moderación. Una vez verificadas, la reseña se publica y actualiza las estadísticas de la comunidad." } },
+            { "@type": "Question", "name": "¿El uso habitual de las herramientas MyToolX sube mis archivos?", "acceptedAnswer": { "@type": "Answer", "text": "No. Tus imágenes, archivos PDF, currículums y textos permanecen en tu dispositivo. Solo se envían al espacio de moderación los comentarios que decides compartir voluntariamente mediante este formulario." } }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- HEADER -->
+    <header class="surface sticky top-0 z-50 shadow-sm" style="background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2">
+            <div class="flex items-center justify-between gap-2 sm:gap-4">
+                
+                <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+                    <a href="/index.html" class="hidden sm:flex btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold items-center gap-1">← Todas las herramientas</a>
+                    <a href="/index.html" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
+                        <div class="logo-mark w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base flex items-center justify-center">M<span class="x">X</span></div>
+                        <span class="logo-wordmark text-base sm:text-xl block">MyTool<span class="x">X</span></span>
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                    <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch theme" title="Toggle Light/Modo oscuro" class="h-8 sm:h-10 px-2 sm:px-3 rounded-xl flex items-center justify-center gap-1.5 text-[10px] sm:text-xs font-bold transition-all hover:opacity-80" style="background: var(--chip-bg); color: var(--chip-text);">
+                        <span id="themeIcon" aria-hidden="true">🌙</span>
+                        <span id="themeText" class="hidden sm:block">Modo oscuro</span>
+                    </button>
+                    
+                    <button onclick="openFeedbackModal('review')" class="inline-flex items-center text-[10px] sm:text-xs font-bold btn-3d btn-accent px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
+                        ✍️ Compartir comentarios
+                    </button>
+                </div>
+            </div>
+            
+            <div class="mt-2 sm:hidden">
+                <a href="/index.html" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">
+                    ← Volver a todas las herramientas
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-3.5 sm:px-4 py-8 sm:py-10 w-full flex-grow">
+
+        <!-- A. HERO -->
+        <section class="text-center mb-8 sm:mb-10 max-w-3xl mx-auto" aria-labelledby="community-title">
+            <span class="hero-badge inline-block text-[11px] font-black uppercase tracking-wider text-indigo-500 px-3.5 py-1 rounded-full mb-3">
+                💬 Centro comunitario de MyToolX
+            </span>
+            <h1 id="community-title" class="text-2xl sm:text-4xl md:text-5xl font-black mb-3 tracking-tight leading-tight" style="color: var(--text);">
+                Te damos la bienvenida a la comunidad MyToolX
+            </h1>
+            <p class="text-sm sm:text-base md:text-lg muted font-medium mb-6 leading-relaxed">
+                Comparte tu experiencia, valora nuestras herramientas y juegos que priorizan la privacidad y sugiere nuevas utilidades para mejorar MyToolX entre todos.
+            </p>
+            <div class="flex flex-wrap justify-center gap-2.5 sm:gap-3">
+                <button onclick="openFeedbackModal('review')" class="btn-3d btn-primary px-5 sm:px-6 py-3 rounded-2xl text-xs sm:text-sm font-black">
+                    ✍️ Escribir una reseña
+                </button>
+                <button onclick="openFeedbackModal('suggestion')" class="btn-3d btn-chip px-5 sm:px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold">
+                    💡 Sugerir una idea
+                </button>
+                <a href="#reviewsSection" class="btn-3d btn-chip px-5 sm:px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold">
+                    📖 Ver reseñas
+                </a>
+            </div>
+        </section>
+
+        <!-- B. STATS + DISTRIBUTION -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10" aria-label="Comunidad statistics">
+            <!-- Number Stats -->
+            <div class="lg:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+                <div class="surface p-4 sm:p-5 rounded-2xl text-center shadow-sm flex flex-col justify-center">
+                    <div id="statTotalReviews" class="text-xl sm:text-3xl font-black text-indigo-500">--</div>
+                    <div class="text-[11px] sm:text-xs font-bold uppercase muted mt-1">Reseñas aprobadas</div>
+                </div>
+                <div class="surface p-4 sm:p-5 rounded-2xl text-center shadow-sm flex flex-col justify-center">
+                    <div id="statAvgRating" class="text-xl sm:text-3xl font-black text-amber-500">--</div>
+                    <div class="text-[11px] sm:text-xs font-bold uppercase muted mt-1">Valoración media</div>
+                </div>
+                <div class="surface p-4 sm:p-5 rounded-2xl text-center shadow-sm flex flex-col justify-center">
+                    <div id="statTotalSuggestions" class="text-xl sm:text-3xl font-black text-emerald-500">--</div>
+                    <div class="text-[11px] sm:text-xs font-bold uppercase muted mt-1">Ideas propuestas</div>
+                </div>
+                <div class="surface p-4 sm:p-5 rounded-2xl text-center shadow-sm flex flex-col justify-center">
+                    <div id="statReviewedTools" class="text-xl sm:text-3xl font-black text-purple-500">--</div>
+                    <div class="text-[11px] sm:text-xs font-bold uppercase muted mt-1">Herramientas valoradas</div>
+                </div>
+            </div>
+            
+            <!-- Distribution Chart -->
+            <div class="surface p-4 sm:p-5 rounded-2xl shadow-sm flex flex-col justify-center">
+                <h3 class="text-xs font-bold uppercase tracking-wider muted mb-3">Distribución de valoraciones</h3>
+                <div class="space-y-1.5">
+                    <div class="flex items-center gap-2 text-xs font-bold">
+                        <span class="w-3">5</span> <span class="text-amber-500">★</span>
+                        <div class="flex-1 h-2 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                            <div id="distBar5" class="h-full bg-amber-500 rounded-full transition-all duration-500" style="width: 0%"></div>
+                        </div>
+                        <span id="distPct5" class="w-8 text-right muted">0%</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs font-bold">
+                        <span class="w-3">4</span> <span class="text-amber-500">★</span>
+                        <div class="flex-1 h-2 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                            <div id="distBar4" class="h-full bg-amber-500 rounded-full transition-all duration-500" style="width: 0%"></div>
+                        </div>
+                        <span id="distPct4" class="w-8 text-right muted">0%</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs font-bold">
+                        <span class="w-3">3</span> <span class="text-amber-500">★</span>
+                        <div class="flex-1 h-2 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                            <div id="distBar3" class="h-full bg-amber-500 rounded-full transition-all duration-500" style="width: 0%"></div>
+                        </div>
+                        <span id="distPct3" class="w-8 text-right muted">0%</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs font-bold">
+                        <span class="w-3">2</span> <span class="text-amber-500">★</span>
+                        <div class="flex-1 h-2 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                            <div id="distBar2" class="h-full bg-amber-500 rounded-full transition-all duration-500" style="width: 0%"></div>
+                        </div>
+                        <span id="distPct2" class="w-8 text-right muted">0%</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs font-bold">
+                        <span class="w-3">1</span> <span class="text-amber-500">★</span>
+                        <div class="flex-1 h-2 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                            <div id="distBar1" class="h-full bg-amber-500 rounded-full transition-all duration-500" style="width: 0%"></div>
+                        </div>
+                        <span id="distPct1" class="w-8 text-right muted">0%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- C. FILTERS + GRID -->
+        <section id="reviewsSection" aria-labelledby="reviews-heading">
+            <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 mb-6">
+                <h2 id="reviews-heading" class="text-lg sm:text-2xl font-black shrink-0" style="color: var(--text);">
+                    Opiniones de la comunidad
+                </h2>
+                
+                <!-- Search & Sort Bar -->
+                <div class="flex flex-col sm:flex-row w-full xl:w-auto items-center gap-2.5">
+                    <div class="relative w-full sm:w-64">
+                        <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        <input type="text" id="searchInput" placeholder="Search reviews..." class="input-field w-full pl-9 pr-3 py-2 rounded-xl text-sm font-semibold">
+                    </div>
+                    <select onchange="sortReviews(this.value)" class="input-field w-full sm:w-auto px-3 py-2 rounded-xl text-sm font-semibold cursor-pointer">
+                        <option value="newest">Ordenar: más recientes</option>
+                        <option value="oldest">Ordenar: más antiguos</option>
+                        <option value="highest">Ordenar: mejor valorados</option>
+                        <option value="lowest">Ordenar: peor valorados</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Filter Buttons -->
+            <div id="filterButtons" class="flex flex-wrap gap-1.5 sm:gap-2 text-xs font-bold mb-8">
+                <button onclick="filterCategory('all', this)" class="btn-3d btn-primary px-3.5 sm:px-4 py-2 rounded-full">All</button>
+                <button onclick="filterCategory('Free Tools', this)" class="btn-3d btn-chip px-3.5 sm:px-4 py-2 rounded-full">🧰 Herramientas</button>
+                <button onclick="filterCategory('Games', this)" class="btn-3d btn-chip px-3.5 sm:px-4 py-2 rounded-full">🎮 Juegos</button>
+                <button onclick="filterCategory('Premium Products', this)" class="btn-3d btn-chip px-3.5 sm:px-4 py-2 rounded-full">⭐ Premium</button>
+                <button onclick="filterCategory('Suggestions', this)" class="btn-3d btn-chip px-3.5 sm:px-4 py-2 rounded-full">💡 Ideas</button>
+            </div>
+
+            <div id="loadingState" class="text-center py-12">
+                <div class="text-2xl mb-2">⏳</div>
+                <div class="text-xs sm:text-sm font-bold muted">Cargando publicaciones de la comunidad...</div>
+            </div>
+
+            <div id="emptyState" class="hidden surface rounded-3xl p-8 sm:p-10 text-center max-w-lg mx-auto mb-10 shadow-sm">
+                <div class="text-4xl mb-3">📭</div>
+                <h3 class="text-base font-extrabold mb-1" style="color: var(--text);">Todavía no hay publicaciones aprobadas</h3>
+                <p class="text-xs sm:text-sm muted mb-4">¡Sé la primera persona en compartir tu experiencia o sugerir una nueva función para MyToolX!</p>
+                <button onclick="openFeedbackModal('review')" class="btn-3d btn-primary px-5 py-2.5 rounded-xl text-xs font-bold">
+                    ✍️ Comparte tus comentarios
+                </button>
+            </div>
+
+            <!-- Reviews Grid -->
+            <div id="reviewsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6"></div>
+            
+            <!-- Load More Button -->
+            <div class="text-center mb-12">
+                <button id="loadMoreBtn" onclick="loadMoreReviews()" class="hidden btn-3d btn-chip px-6 py-3 rounded-xl text-sm font-bold">
+                    Cargar más reseñas
+                </button>
+            </div>
+        </section>
+
+        <!-- D. TOP FEATURES -->
+        <section class="mb-12" aria-labelledby="leaderboard-heading">
+            <h2 id="leaderboard-heading" class="text-lg sm:text-xl font-black mb-4" style="color: var(--text);">⭐ Herramientas y juegos mejor valorados de MyToolX</h2>
+            <div id="topFeaturesGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"></div>
+        </section>
+
+        <!-- E. HOW IT WORKS + FAQ -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10" aria-label="Comunidad information and guidelines">
+            <article class="surface rounded-3xl p-6 sm:p-8">
+                <h2 class="text-lg font-black mb-3" style="color: var(--text);">🤝 Cómo funciona la comunidad MyToolX</h2>
+                <p class="text-xs sm:text-sm muted leading-relaxed mb-3">
+                    MyToolX ofrece herramientas en el navegador que, para su uso habitual, no requieren cuenta. Muchas procesan archivos localmente; algunas funciones envían determinados textos o datos a servicios externos para procesarlos. Consulta el aviso de privacidad de cada herramienta antes de enviar información confidencial.
+                </p>
+                <p class="text-xs sm:text-sm muted leading-relaxed mb-4">
+                    Este espacio ofrece a escritores, profesionales independientes, estudiantes y desarrolladores un lugar para valorar herramientas, informar de problemas y votar por las próximas utilidades. Una persona moderadora revisa cada reseña antes de publicarla para mantener un espacio útil y libre de spam.
+                </p>
+                <h3 class="text-sm font-extrabold mb-2" style="color: var(--text);">📜 Normas de la comunidad</h3>
+                <ul class="space-y-1.5 text-xs sm:text-sm muted list-disc pl-5 leading-relaxed">
+                    <li>Partage experiencias sinceras y constructivas basadas en un uso real.</li>
+                    <li>No incluyas correos electrónicos personales, números de teléfono ni datos confidenciales.</li>
+                    <li>Los enlaces promocionales y el spam automatizado se rechazan automáticamente.</li>
+                </ul>
+            </article>
+
+            <article class="surface rounded-3xl p-6 sm:p-8">
+                <h2 class="text-lg font-black mb-3" style="color: var(--text);">✍️ Preguntas frecuentes de la comunidad</h2>
+                <div class="space-y-3">
+                    <details class="p-3.5 rounded-2xl" style="background: var(--chip-bg);">
+                        <summary class="font-bold text-xs sm:text-sm cursor-pointer flex items-center justify-between gap-2" style="color: var(--text);">
+                            <span>¿Necesito una cuenta para dejar una reseña?</span>
+                            <span class="chev" aria-hidden="true">▾</span>
+                        </summary>
+                        <p class="text-xs muted mt-2 leading-relaxed">No. Puedes enviar una valoración, reseña o idea en menos de 30 segundos, sin registrarte ni facilitar datos personales.</p>
+                    </details>
+                    <details class="p-3.5 rounded-2xl" style="background: var(--chip-bg);">
+                        <summary class="font-bold text-xs sm:text-sm cursor-pointer flex items-center justify-between gap-2" style="color: var(--text);">
+                            <span>¿Cuándo aparecerá mi reseña en esta página?</span>
+                            <span class="chev" aria-hidden="true">▾</span>
+                        </summary>
+                        <p class="text-xs muted mt-2 leading-relaxed">Todas las publicaciones pasan primero por una cola de moderación. Una vez verificadas, la reseña se publica y actualiza las estadísticas de la comunidad.</p>
+                    </details>
+                    <details class="p-3.5 rounded-2xl" style="background: var(--chip-bg);">
+                        <summary class="font-bold text-xs sm:text-sm cursor-pointer flex items-center justify-between gap-2" style="color: var(--text);">
+                            <span>¿El uso habitual de las herramientas MyToolX sube mis archivos?</span>
+                            <span class="chev" aria-hidden="true">▾</span>
+                        </summary>
+                        <p class="text-xs muted mt-2 leading-relaxed">No. Tus imágenes, archivos PDF, currículums y textos permanecen en tu dispositivo. Solo se envían al espacio de moderación los comentarios que decides compartir voluntariamente mediante este formulario.</p>
+                    </details>
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- FEEDBACK MODAL -->
+    <div id="feedbackModal" class="mtx-modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="handleBackdropClick(event)">
+        <div class="mtx-modal-dialog" onclick="event.stopPropagation()">
+            <div class="flex items-start justify-between gap-3 mb-4">
+                <div>
+                    <h3 id="modalTitle" class="text-lg sm:text-xl font-black" style="color: var(--text);">Comparte tu opinión</h3>
+                    <p class="text-xs muted mt-0.5">Solo 20 segundos • No necesitas registrarte</p>
+                </div>
+                <button type="button" onclick="closeFeedbackModal()" aria-label="Close popup" title="Close" class="mtx-modal-close">✕</button>
+            </div>
+
+            <form id="communityForm" onsubmit="submitComunidadFeedback(event)" class="space-y-4">
+                <div>
+                    <label for="formType" class="block text-xs font-bold uppercase tracking-wider muted mb-1">1. ¿Qué te gustaría compartir? *</label>
+                    <select id="formType" name="formType" required onchange="toggleFormFields()" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                        <option value="review">⭐ Valorar y reseñar una herramienta o juego</option>
+                        <option value="suggestion">💡 Sugerir una herramienta o función</option>
+                    </select>
+                </div>
+
+                <div id="targetPageGroup" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label for="targetPageId" class="block text-xs font-bold uppercase tracking-wider muted mb-1">2. Select Tool or Game *</label>
+                        <select id="targetPageId" name="targetPageId" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                            <optgroup label="🎮 Browser Games">
+                                <option value="wordstorm">Juego WordStorm (Games)</option>
+                                <option value="typing-test">Prueba de velocidad de escritura (Games)</option>
+                                <option value="reaction-time-test">Reaction Time Test (Games)</option>
+                                <option value="word-scramble">Palabras desordenadas (Games)</option>
+                                <option value="math-sprint">Math Sprint (Games)</option>
+                            </optgroup>
+                            <optgroup label="🧰 Free Utilities &amp; AI">
+                                <option value="cv-maker">Live CV Maker (Free Tools)</option>
+                                <option value="image-compressor">Compresor de imágenes (Free Tools)</option>
+                                <option value="grammar-checker">Corrector gramatical (Free Tools)</option>
+                                <option value="text-suite">Herramientas de texto y palabras (Free Tools)</option>
+                                <option value="prompt-studio">Estudio de prompts de IA (Free Tools)</option>
+                                <option value="ai-bio-generator">Generador de biografías con IA (Free Tools)</option>
+                                <option value="article-outline">Esquema de artículos Gen (Free Tools)</option>
+                                <option value="text-summarizer">AI Text Summarizer (Free Tools)</option>
+                                <option value="json-formatter">Formateador JSON (Free Tools)</option>
+                                <option value="base64-tool">Herramienta Base64 (Free Tools)</option>
+                                <option value="color-converter">Conversor de colores (Free Tools)</option>
+                                <option value="qr-code-generator">Generador de códigos QR (Free Tools)</option>
+                                <option value="password-generator">Generador de contraseñas (Free Tools)</option>
+                                <option value="unit-converter">Conversor de unidades (Free Tools)</option>
+                                <option value="sip-calculator">Calculadora SIP (Free Tools)</option>
+                                <option value="loan-emi">Calculadora de cuotas de préstamo (Free Tools)</option>
+                                <option value="fee-calculator">Calculadora de comisioness (Free Tools)</option>
+                            </optgroup>
+                            <optgroup label="⭐ Premium Bundles">
+                                <option value="ats-resume-pack">ATS Resume Pack (Premium Products)</option>
+                                <option value="excel-bundle">Excel Bundle (Premium Products)</option>
+                                <option value="freelance-contract-kit">Contract Kit (Premium Products)</option>
+                                <option value="ai-prompt-vault">AI Prompt Vault (Premium Products)</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <!-- New Clickable Stars -->
+                    <div id="ratingGroup">
+                        <label class="block text-xs font-bold uppercase tracking-wider muted mb-1">Rating *</label>
+                        <div id="starRatingContainer" class="flex items-center gap-1 mt-1">
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <span class="star-click text-amber-500"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>
+                            <input type="hidden" id="starRating" name="starRating" value="5">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="suggestionCategoryGroup" class="hidden space-y-3">
+                    <div>
+                        <label for="suggestionCategory" class="block text-xs font-bold uppercase tracking-wider muted mb-1">2. Categoría de la idea *</label>
+                        <select id="suggestionCategory" name="suggestionCategory" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                            <option value="Nueva herramientas">Nueva herramienta</option>
+                            <option value="Nuevo juegos">Nuevo juego</option>
+                            <option value="Existing Tool Improvements">Mejorar una herramienta existente</option>
+                            <option value="Mejora del sitio webs">Mejora del sitio web</option>
+                            <option value="Premium Product Ideas">Nueva idea de paquete prémium</option>
+                        </select>
+                    </div>
+                    <div id="titleGroup">
+                        <label for="suggestionTitle" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Título breve de la idea *</label>
+                        <input type="text" id="suggestionTitle" name="suggestionTitle" maxlength="80" placeholder="e.g. PDF Merger or Invoice Generator" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label for="authorName" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Nombre (opcional)</label>
+                        <input type="text" id="authorName" name="authorName" maxlength="40" placeholder="Anonymous" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                    </div>
+                    <div>
+                        <label for="country" class="block text-xs font-bold uppercase tracking-wider muted mb-1">País (opcional)</label>
+                        <input type="text" id="country" name="country" maxlength="40" placeholder="e.g. US, UK, PK" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="commentText" id="commentLabel" class="block text-xs font-bold uppercase tracking-wider muted mb-1">3. Tu comentario *</label>
+                    <textarea id="commentText" name="commentText" required rows="3" maxlength="400" placeholder="Write a quick note about your experience..." class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-medium"></textarea>
+                </div>
+
+                <p class="text-[11px] muted leading-relaxed">
+                    🔒 Envío voluntario. Las publicaciones aprobadas se muestran públicamente sin datos personales.
+                </p>
+
+                <div id="formError" class="hidden p-3 rounded-xl text-xs font-bold text-red-500 bg-red-500/10 border border-red-500/30"></div>
+                <div id="formSuccess" class="hidden p-3 rounded-xl text-xs font-bold text-emerald-500 bg-emerald-500/10 border border-emerald-500/30"></div>
+
+                <div class="flex items-center gap-2.5 pt-1">
+                    <button type="button" onclick="closeFeedbackModal()" class="btn-3d btn-chip px-4 py-3 rounded-xl text-xs sm:text-sm font-bold">
+                        Cancelar
+                    </button>
+                    <button type="submit" id="submitModalBtn" class="btn-3d btn-primary flex-1 py-3 rounded-xl text-xs sm:text-sm font-black">
+                        🚀 Enviar opinión
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="mega-footer py-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
+                <div class="lg:col-span-5">
+                    <a href="/index.html" class="flex items-center gap-2 mb-3">
+                        <div class="logo-mark">M<span class="x">X</span></div>
+                        <span class="logo-wordmark text-lg">MyTool<span class="x">X</span></span>
+                    </a>
+                    <p class="text-xs sm:text-sm leading-relaxed pr-4">
+MyToolX provides free browser-based tools for writers, freelancers and developers. Most tools require no sign-up. Some features use external services, and analytics or advertising technologies may be loaded.
+                    </p><br>
+                    <div class="social-links-row" aria-label="MyToolX social media links">
+                        <a href="https://www.facebook.com/profile.php?id=61596813242660" target="_blank" rel="noopener noreferrer" aria-label="MyToolX on Facebook" title="Facebook" class="social-btn fb-btn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/mytoolx0?fqnt=dm05bDBzazZ6Nmpp" target="_blank" rel="noopener noreferrer" aria-label="MyToolX on Instagram" title="Instagram" class="social-btn ig-btn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                    
+                <div class="lg:col-span-4">
+                    <h3>Explore</h3>
+                    <div class="grid grid-cols-2 gap-2.5 text-xs sm:text-sm">
+                        <a href="/index.html">All Free Tools</a>
+                        <a href="/community.html">Comunidad Hub</a>
+                        <a href="/premium.html">⭐ Premium Store</a>
+                        <a href="/blog.html">Blog y guías</a>
+                    </div>
+                </div>
+                <div class="lg:col-span-3">
+                    <h3>Empresa &amp; Legal</h3>
+                    <ul class="space-y-2.5 text-xs sm:text-sm">
+                        <li><a href="/about.html">Acerca de nosotros</a></li>
+                        <li><a href="/privacy.html">Política de privacidad</a></li>
+                        <li><a href="/terms.html">Términos del servicio</a></li>
+                        <li><a href="/contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs" style="border-color: var(--footer-border);">
+                <p>&copy; 2026 MyToolX. Todos los derechos reservados.</p>
+                <p>Many tools run locally in your browser. Some features use external services for processing.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- COMMUNITY CLIENT SCRIPT -->
+    <script src="/community.js"></script>
+    <script>
+        // Theme logic is kept here to ensure it runs immediately
+        (function initThemeUI() {
+            var cur = document.documentElement.getAttribute('data-theme') || 'light';
+            applyTheme(cur);
+        })();
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            var icon = document.getElementById('themeIcon');
+            var text = document.getElementById('themeText');
+            if (icon && text) {
+                icon.textContent = theme === 'dark' ? '🌙' : '☀️';
+                text.textContent = theme === 'dark' ? 'Modo oscuro' : 'Light Mode';
+            }
+        }
+
+        function toggleTheme() {
+            var cur = document.documentElement.getAttribute('data-theme') || 'light';
+            var next = cur === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('mtx-theme', next); } catch (e) {}
+        }
+    </script>
+
+    <!-- Google Analytics + AdSense -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8KM3G3BYL"></script>
+    <script>
+      window.addEventListener('load', function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W8KM3G3BYL');
+      });
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3410254230554312" crossorigin="anonymous"></script>
+</body>
+</html>
