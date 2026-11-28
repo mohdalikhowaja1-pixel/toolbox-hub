@@ -820,8 +820,8 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
             </div>
 
             <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
-                <p>&copy; 2026 MyToolX. All rights reserved.</p>
-                <p>Many tools run locally in your browser. Some features use external services for processing.</p>
+                <p>&copy; 2026 MyToolX. Todos los derechos reservados.</p>
+                <p>Muchas herramientas funcionan localmente en tu navegador. Algunas funciones utilizan servicios externos para procesar datos.</p>
             </div>
         </div>
     </footer>
@@ -852,7 +852,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
             var text = document.getElementById('themeText');
             if (icon && text) {
                 icon.textContent = theme === 'dark' ? '🌙' : '☀️';
-                text.textContent = theme === 'dark' ? 'Modo oscuro' : 'Light Mode';
+                text.textContent = theme === 'dark' ? 'Modo oscuro' : 'Modo claro';
             }
         }
 
@@ -879,21 +879,21 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
 
             if (now < openMs) {
                 targetMs = openMs;
-                statusBadge.textContent = "🎄 Campaign Opens In:";
+                statusBadge.textContent = "🎄 El sorteo comienza en:";
                 closedBanner.classList.remove("hidden");
-                closedTitle.textContent = "Giveaway Opens 5 dic 2026 (00:00 UTC)";
-                closedText.textContent = "You can explore the games and tools now entries open when the countdown hits zero.";
+                closedTitle.textContent = "El sorteo comienza el 5 de diciembre de 2026 (00:00 UTC)";
+                closedText.textContent = "Puedes explorar los juegos y herramientas desde ahora. Las inscripciones se abrirán cuando la cuenta regresiva llegue a cero.";
                 submitBtn.disabled = true;
             } else if (now > closeMs) {
-                statusBadge.textContent = "🔒 Campaign Closed";
+                statusBadge.textContent = "🔒 Sorteo cerrado";
                 closedBanner.classList.remove("hidden");
-                closedTitle.textContent = "Submissions Closed on Jan 5, 2027";
-                closedText.textContent = "Winners will be announced on 10 ene 2027.";
+                closedTitle.textContent = "Participaciones cerradas el 5 de enero de 2027";
+                closedText.textContent = "Los ganadores se anunciarán el 10 de enero de 2027.";
                 submitBtn.disabled = true;
                 setClockDigits(0);
                 return;
             } else {
-                statusBadge.textContent = "🟢 Live Now — Closes In:";
+                statusBadge.textContent = "🟢 En curso — Cierra en:";
                 closedBanner.classList.add("hidden");
                 submitBtn.disabled = false;
             }
@@ -934,14 +934,14 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                 gameWrapper.classList.remove("hidden");
                 gameName.required = true;
                 gameScore.required = true;
-                noteLabel.textContent = "Juego Experience / Notes *";
+                noteLabel.textContent = "Experiencia en el juego / Notas *";
             } else {
                 gameWrapper.classList.add("hidden");
                 gameName.required = false;
                 gameScore.required = false;
                 noteLabel.textContent = cat === "Premium Product Feedback"
-                    ? "Honest Feedback on the Premium Bundle *"
-                    : "Honest Recommendation of the Herramienta gratuita *";
+                    ? "Opinión sincera sobre el paquete prémium *"
+                    : "Recomendación sincera sobre la herramienta gratuita *";
             }
         }
 
@@ -970,12 +970,12 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
         function processImageFile(file) {
             hideError();
             if (!CAMPAIGN_CONFIG.ALLOWED_MIME_TYPES.includes(file.type)) {
-                showError("Invalid file type. Please upload a PNG, JPG, or WebP screenshot.");
+                showError("Tipo de archivo no válido. Sube una captura en formato PNG, JPG o WebP.");
                 clearSelectedFile();
                 return;
             }
             if (file.size > CAMPAIGN_CONFIG.MAX_FILE_BYTES) {
-                showError("Screenshot exceeds the 5 MB limit. Please compress it and try again.");
+                showError("La captura supera el límite de 5 MB. Comprímela e inténtalo de nuevo.");
                 clearSelectedFile();
                 return;
             }
@@ -1024,7 +1024,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
             hideError();
 
             if (CAMPAIGN_CONFIG.APPS_SCRIPT_WEB_APP_URL.includes("YOUR_APPS_SCRIPT_URL_HERE")) {
-                showError("Campaign backend endpoint is not configured yet. Please add your Google Apps Script URL.");
+                showError("El punto de conexión del sistema de registro aún no está configurado. Añade la URL de tu aplicación web de Google Apps Script.");
                 return;
             }
 
@@ -1043,25 +1043,25 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
             const websiteUrlHp = document.getElementById("websiteUrlHp").value;
 
             if (!displayName || !email || !country || !prizeCategory || !participationCategory || !participantNote) {
-                showError("Please fill out all required fields marked with *.");
+                showError("Completa todos los campos obligatorios marcados con *.");
                 return;
             }
             if (participationCategory === "Juego Score Screenshot" && (!gameName || !gameScore)) {
-                showError("Please select the game you played and enter your score.");
+                showError("Selecciona el juego que has jugado e introduce tu puntuación.");
                 return;
             }
             if (!selectedFilePayload) {
-                showError("Please attach a verification screenshot.");
+                showError("Adjunta una captura de pantalla para verificar tu participación.");
                 return;
             }
             if (!privacyConsent) {
-                showError("You must agree to the Normas de la campaña and Aviso de privacidad.");
+                showError("Debes aceptar las reglas de la campaña y el aviso de privacidad.");
                 return;
             }
 
             const submitBtn = document.getElementById("submitBtn");
             submitBtn.disabled = true;
-            submitBtn.textContent = "⏳ Uploading & Submitting...";
+            submitBtn.textContent = "⏳ Subiendo y enviando...";
 
             const payload = {
                 websiteUrlHp: websiteUrlHp,
@@ -1095,12 +1095,12 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                     document.getElementById("confirmationCard").classList.remove("hidden");
                     document.getElementById("confirmationCard").scrollIntoView({ behavior: "smooth", block: "center" });
                 } else {
-                    showError(result.message || "Submission could not be accepted. Please try again.");
+                    showError(result.message || "No se pudo aceptar tu participación. Inténtalo de nuevo.");
                     submitBtn.disabled = false;
                     submitBtn.textContent = "🎟️ Enviar participación";
                 }
             } catch (err) {
-                showError("Network error while uploading. Please check your connection.");
+                showError("Se produjo un error de red durante la carga. Comprueba tu conexión.");
                 submitBtn.disabled = false;
                 submitBtn.textContent = "🎟️ Enviar participación";
             }

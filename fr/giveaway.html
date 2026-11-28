@@ -820,8 +820,8 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
             </div>
 
             <div class="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--footer-border);">
-                <p>&copy; 2026 MyToolX. All rights reserved.</p>
-                <p>Many tools run locally in your browser. Some features use external services for processing.</p>
+                <p>&copy; 2026 MyToolX. Tous droits réservés.</p>
+                <p>De nombreux outils fonctionnent localement dans votre navigateur. Certaines fonctionnalités utilisent des services externes pour le traitement.</p>
             </div>
         </div>
     </footer>
@@ -852,7 +852,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
             var text = document.getElementById('themeText');
             if (icon && text) {
                 icon.textContent = theme === 'dark' ? '🌙' : '☀️';
-                text.textContent = theme === 'dark' ? 'Mode sombre' : 'Light Mode';
+                text.textContent = theme === 'dark' ? 'Mode sombre' : 'Mode clair';
             }
         }
 
@@ -879,21 +879,21 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
 
             if (now < openMs) {
                 targetMs = openMs;
-                statusBadge.textContent = "🎄 Campaign Opens In:";
+                statusBadge.textContent = "🎄 Le concours commence dans :";
                 closedBanner.classList.remove("hidden");
-                closedTitle.textContent = "Giveaway Opens 5 déc. 2026 (00:00 UTC)";
-                closedText.textContent = "You can explore the games and tools now entries open when the countdown hits zero.";
+                closedTitle.textContent = "Le concours ouvre le 5 décembre 2026 à 00:00 UTC";
+                closedText.textContent = "Vous pouvez découvrir les jeux et les outils dès maintenant. Les participations seront ouvertes lorsque le compte à rebours atteindra zéro.";
                 submitBtn.disabled = true;
             } else if (now > closeMs) {
-                statusBadge.textContent = "🔒 Campaign Closed";
+                statusBadge.textContent = "🔒 Concours terminé";
                 closedBanner.classList.remove("hidden");
-                closedTitle.textContent = "Submissions Closed on Jan 5, 2027";
-                closedText.textContent = "Winners will be announced on 10 janv. 2027.";
+                closedTitle.textContent = "Les participations sont closes le 5 janvier 2027";
+                closedText.textContent = "Les gagnants seront annoncés le 10 janvier 2027.";
                 submitBtn.disabled = true;
                 setClockDigits(0);
                 return;
             } else {
-                statusBadge.textContent = "🟢 Live Now — Closes In:";
+                statusBadge.textContent = "🟢 En cours — Clôture dans :";
                 closedBanner.classList.add("hidden");
                 submitBtn.disabled = false;
             }
@@ -934,14 +934,14 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
                 gameWrapper.classList.remove("hidden");
                 gameName.required = true;
                 gameScore.required = true;
-                noteLabel.textContent = "Jeu Experience / Notes *";
+                noteLabel.textContent = "Expérience de jeu / Remarques *";
             } else {
                 gameWrapper.classList.add("hidden");
                 gameName.required = false;
                 gameScore.required = false;
                 noteLabel.textContent = cat === "Premium Product Feedback"
-                    ? "Honest Feedback on the Premium Bundle *"
-                    : "Honest Recommendation of the Outil gratuit *";
+                    ? "Avis sincère sur le pack premium *"
+                    : "Recommandation sincère sur l’outil gratuit *";
             }
         }
 
@@ -970,12 +970,12 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
         function processImageFile(file) {
             hideError();
             if (!CAMPAIGN_CONFIG.ALLOWED_MIME_TYPES.includes(file.type)) {
-                showError("Invalid file type. Please upload a PNG, JPG, or WebP screenshot.");
+                showError("Type de fichier non valide. Veuillez téléverser une capture d’écran au format PNG, JPG ou WebP.");
                 clearSelectedFile();
                 return;
             }
             if (file.size > CAMPAIGN_CONFIG.MAX_FILE_BYTES) {
-                showError("Screenshot exceeds the 5 MB limit. Please compress it and try again.");
+                showError("La capture d’écran dépasse la limite de 5 Mo. Veuillez la compresser puis réessayer.");
                 clearSelectedFile();
                 return;
             }
@@ -1024,7 +1024,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
             hideError();
 
             if (CAMPAIGN_CONFIG.APPS_SCRIPT_WEB_APP_URL.includes("YOUR_APPS_SCRIPT_URL_HERE")) {
-                showError("Campaign backend endpoint is not configured yet. Please add your Google Apps Script URL.");
+                showError("Le point de terminaison du système de participation n’est pas encore configuré. Veuillez ajouter l’URL de votre application Web Google Apps Script.");
                 return;
             }
 
@@ -1043,25 +1043,25 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
             const websiteUrlHp = document.getElementById("websiteUrlHp").value;
 
             if (!displayName || !email || !country || !prizeCategory || !participationCategory || !participantNote) {
-                showError("Please fill out all required fields marked with *.");
+                showError("Veuillez remplir tous les champs obligatoires marqués d’un astérisque (*).");
                 return;
             }
             if (participationCategory === "Jeu Score Screenshot" && (!gameName || !gameScore)) {
-                showError("Please select the game you played and enter your score.");
+                showError("Veuillez sélectionner le jeu auquel vous avez joué et saisir votre score.");
                 return;
             }
             if (!selectedFilePayload) {
-                showError("Please attach a verification screenshot.");
+                showError("Veuillez joindre une capture d’écran pour vérifier votre participation.");
                 return;
             }
             if (!privacyConsent) {
-                showError("You must agree to the Règles de la campagne and Avis de confidentialité.");
+                showError("Vous devez accepter le règlement du concours et l’avis de confidentialité.");
                 return;
             }
 
             const submitBtn = document.getElementById("submitBtn");
             submitBtn.disabled = true;
-            submitBtn.textContent = "⏳ Uploading & Submitting...";
+            submitBtn.textContent = "⏳ Téléversement et envoi en cours...";
 
             const payload = {
                 websiteUrlHp: websiteUrlHp,
@@ -1095,12 +1095,12 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
                     document.getElementById("confirmationCard").classList.remove("hidden");
                     document.getElementById("confirmationCard").scrollIntoView({ behavior: "smooth", block: "center" });
                 } else {
-                    showError(result.message || "Submission could not be accepted. Please try again.");
+                    showError(result.message || "Votre participation n’a pas pu être acceptée. Veuillez réessayer.");
                     submitBtn.disabled = false;
                     submitBtn.textContent = "🎟️ Envoyer ma participation";
                 }
             } catch (err) {
-                showError("Network error while uploading. Please check your connection.");
+                showError("Une erreur réseau est survenue pendant le téléversement. Veuillez vérifier votre connexion.");
                 submitBtn.disabled = false;
                 submitBtn.textContent = "🎟️ Envoyer ma participation";
             }

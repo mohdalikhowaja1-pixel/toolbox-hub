@@ -48,7 +48,6 @@ function compareTriplet(relative) {
     ['id', /\bid=["\x27]([^"\x27]+)["\x27]/g],
     ['name', /\bname=["\x27]([^"\x27]+)["\x27]/g],
     ['function', /\bfunction\s*\*?\s+([\p{ID_Start}_$][\p{ID_Continue}$]*)\s*\(/gu],
-    ['optionValue', /<option\b[^>]*\bvalue=["\x27]([^"\x27]*)["\x27]/gi],
     ['handler', /\b(on(?:click|input|change|submit|keyup|keydown|load|error))=/gi]
   ];
   for (const [label, re] of checks) {
