@@ -115,3 +115,26 @@ The sitemap now advertises localized URLs for all 56 page families. This must be
 ## Previous SEO maintenance context
 
 Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, including privacy disclosures, keyword ownership, contextual guide links, thank-you page noindex rules, OpenSEO project references, and Search Console baseline. Do not repeat paid/credit-consuming SEO work without a clear need.
+
+
+## Runtime issue investigation — 2026-11-28
+
+### Language switcher / CSS diagnosis
+- Inspected the current development-branch source for `es/index.html`, `fr/index.html`, `es/grammar-checker.html` and `fr/grammar-checker.html`.
+- All four inspected localized pages load the shared assets with root-absolute paths: `/lang-switcher.css` and `/lang-switcher.js` (the correct path form for nested `/es/` and `/fr/` URLs).
+- All four inspected pages contain the theme button with ID `themeToggle`; the switcher script inserts its control immediately after that button.
+- The four pages contain reciprocal hreflang declarations, so the script has language destinations to build the menu from.
+- Reviewed the shared JavaScript and CSS source. The script waits for DOMContentLoaded when needed, reads explicit hreflang links, creates the accessible menu, and does not fetch/probe URLs. The stylesheet defines the button and dropdown states and responsive label behavior. No source-level defect explaining the reported failure was confirmed in these inspected samples.
+- Critical publishing finding: the live publishing branch `safe-maintenance-audit` does NOT contain `es/index.html`, `fr/index.html`, or `lang-switcher.js` (GitHub returned 404 for those paths). It does contain `lang-switcher.css`. Therefore the multilingual branch's localized pages and JavaScript switcher have not been published to the live branch. If the reported issue is on the production domain, this branch mismatch is the primary confirmed cause: the live branch is missing the translated pages and switcher script, not merely suffering from a CSS styling defect.
+- The development branch is still `multilingual-expansion`; do not merge or deploy without explicit owner approval. A live-site browser test could not be completed because the production URLs were not accessible through the available web inspection route.
+- A duplicate pair of relative and root-absolute switcher asset references was observed in the sampled English `blog-ai-prompts.html`. This is redundant but does not explain the localized production pages being absent; defer cleanup until the full reference audit confirms scope.
+
+### Verification performed
+- Source inspected: `es/index.html`, `fr/index.html`, `es/grammar-checker.html`, `fr/grammar-checker.html`, `lang-switcher.js`, `lang-switcher.css`.
+- Publishing branch existence check: `safe-maintenance-audit` returned 404 for `es/index.html`, `fr/index.html`, and `lang-switcher.js`; CSS file exists.
+- Not performed: real browser interaction, visual layout, mobile viewport, theme toggle, console/network, HTTP production checks. Do not mark these as passed.
+
+### Next action
+1. Continue a complete reference and structural audit across all 168 development-branch pages, including duplicate/missing asset references and pages without the expected header/theme button.
+2. Continue the translation and app-behavior QA ledger.
+3. Keep production unchanged until all release blockers are cleared and Ali explicitly approves deployment.
