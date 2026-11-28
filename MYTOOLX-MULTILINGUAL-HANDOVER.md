@@ -518,3 +518,29 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 1. Audit all Spanish/French article footers and feedback forms for English remnants (especially “Legal”, “Rate & Review”, “Suggest a New Tool”, and category labels).
 2. Continue source-vs-translation QA for the remaining article families, then begin the 56 tool/application page families.
 3. Re-run JSON-LD consistency and internal-link checks after editorial work; then perform browser/runtime, responsive, accessibility, console/network and live HTTP/indexability validation.
+
+
+## Editorial QA batch — all 24 localized article feedback forms and footers — 2026-11-28
+
+### Scope and corrections
+- Completed a targeted footer, community-feedback card, feedback-modal and accessibility-label localization pass across all 24 Spanish and all 24 French article pages (48 localized HTML files total).
+- Localized the visible review/suggestion choices, tool/game selector labels, optgroup names, rating label, five suggestion categories, name/country/comment labels, example placeholders, submit/cancel controls, privacy note and the shared footer privacy sentence.
+- Localized the remaining Spanish footer heading “Legal” to “Información legal”; French pages use “Informations légales”.
+- Localized category suffixes such as “(Games)”, “(Free Tools)” and “(Premium Products)” inside selector options.
+- Localized the feedback-modal close control and MyToolX footer/home/social accessibility labels, including the Premium Store link label.
+- Preserved option `value` attributes, form `name` attributes, IDs, event-handler names, submit handler, and feedback submission payload structure. Changes were limited to user-facing labels, placeholders, footer copy and accessibility text.
+
+### Verification performed
+- Re-fetched all 48 localized article files after the edits.
+- Ran a targeted exact-string scan over all 48 files for the English footer/form labels and accessibility phrases addressed in this batch. No targeted English strings remained in the checked set.
+- All 24 Spanish/French article pairs were included in the scan: CV Guide, Typing Speed, Image Compression, Grammar Guide, Freelance Finance, SIP Investing, Loan EMI, QR Codes, Password Security, Unit Conversion, JSON Tools, Base64, Color Tools, AI Prompts, LinkedIn Bio, Content Outline, Text Suite, Text Summarizer, Love Calculator, Premium Bundles, Math Sprint, WordStorm, Word Scramble and Reaction Time.
+- This was a targeted source-text check, not a complete translation proofread, whole-page English-remnant scan, browser test, or form-submission runtime test.
+- Latest development-branch content commit in this batch: `97a5dcc7bc7e27e2ef10f1d211e7e15cb2737a5d` (French Reaction Time footer/accessibility labels).
+- Branch comparison against baseline `5b1df099dcc77f8428c9834b34c280a2dc631bb1`: 109 commits ahead, 0 behind at the time of check.
+- Combined status and the workflow-run lookup returned no status records and no workflow runs for the latest content commit. Do not describe this as a passing CI run.
+
+### Remaining work and next action
+1. Continue editorial QA of the remaining article body copy, related-article cards, FAQ content, metadata and structured data against each English source. Do not assume a clean footer/form scan certifies the entire page.
+2. After article copy review, begin the remaining 56 tool/application page families, comparing visible UI text and SEO metadata against English while preserving functional logic and identifiers.
+3. Re-run the repository's static multilingual validator after the next cohesive batch and record an actual workflow result if one is returned.
+4. Continue internal-link, hreflang, sitemap, responsive/theme/accessibility and browser/runtime validation. No merge, deployment, Pages source change or production-branch edit has been performed.
