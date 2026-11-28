@@ -242,3 +242,13 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 - Latest run: `46151901562` — **PASSED**.
 - The workflow confirmed `sitemap.xml` is well-formed XML, then passed the full multilingual static validation: 168 URLs (56 per language), 24 blog articles, 56 code identifier triplets, canonical/hreflang checks, local href/src target checks, and JavaScript syntax checks.
 - This is the latest verified CI run for the current development branch. No deployment or merge was performed.
+
+
+## Full localized-page switcher structure audit — 2026-11-28
+
+- Completed a source-level structural inspection of all 112 localized HTML pages: 56 Spanish pages under `/es/` and 56 French pages under `/fr/`.
+- Every inspected page has the correct root `html lang` value, exactly one root-absolute `/lang-switcher.css` reference, exactly one root-absolute `/lang-switcher.js` reference, exactly one `#themeToggle` element, and four alternate hreflang declarations.
+- No missing or duplicate language-switcher asset references were found in the 112 localized pages.
+- Four pages have two semantic `<header>` elements: `es/cv-maker.html`, `fr/cv-maker.html`, `es/premium.html`, and `fr/premium.html`. Inspection confirms the additional header is an inner page-content heading section, not a duplicate site-navigation header.
+- This audit verifies source structure only. It does not prove browser loading, CSS rendering, JavaScript execution, switcher interaction, or live HTTP status.
+- The previously recorded publishing-branch mismatch remains unresolved: `safe-maintenance-audit` lacks the localized HTML pages and shared `lang-switcher.js`. The development branch must not be merged wholesale because it is substantially ahead and contains unrelated changes. No publishing branch, merge, or deployment was changed.
