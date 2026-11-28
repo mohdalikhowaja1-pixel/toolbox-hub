@@ -216,3 +216,12 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 - Verified output: 56 English, 56 Spanish, 56 French sitemap URLs; 24 blog articles; 56 code-identifier triplets.
 - Tested commit: `d0d270b15614a2b183af3c036db6d5c6c31a8a42`.
 - This remains a static source validator. No browser or live production tests are implied.
+
+
+## JavaScript syntax validation added — 2026-11-28
+
+- Extended the GitHub Actions validator to parse inline JavaScript blocks and local JavaScript files referenced by the 168 public HTML pages using Node's syntax parser.
+- JSON-LD and non-JavaScript script blocks are excluded from JavaScript parsing; JSON-LD is validated separately for all blog article pages.
+- Latest run: `46151767968` — **PASSED**.
+- Verified output: 56 English, 56 Spanish, 56 French pages; 24 blog articles; 56 identifier triplets.
+- The passing run includes the source-level JavaScript syntax check. It still does not execute browser DOM interactions, game flows, network requests, or form submissions.
