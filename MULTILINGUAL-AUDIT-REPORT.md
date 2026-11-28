@@ -93,3 +93,14 @@ A complete follow-up audit checked all 112 localized pages and all 56 English pu
 - Sitemap recheck: 168 unique URLs and 672 alternate declarations, split evenly across English, Spanish, and French (56 each).
 
 These checks verify repository source structure only. They do not establish that the current production branch contains the files, that the URLs return HTTP 200, that the language menu renders correctly in browsers, or that application behavior has passed runtime regression testing. The production publishing branch remains a release blocker and must not be changed without explicit approval.
+
+
+## 9. Code-identifier integrity audit — 2026-11-28
+
+A source-level comparison was completed across all 56 English public pages and their 112 Spanish/French counterparts. The comparison covered ordered DOM IDs, form names, named JavaScript function declarations (including Unicode identifiers), and inline event-handler attribute types.
+
+The audit found several translated code identifiers in localized pages, including feedback submission handlers, countdown IDs, score display IDs, and game helper function names. These were restored to the English source identifiers with their corresponding references. The CV maker's malformed translated backdrop-handler identifier and toast undo ID were also corrected.
+
+Post-fix verification found no differences in the compared identifier/handler sequences across the 56 English/Spanish/French page triplets.
+
+This is structural source verification only. Browser execution, JavaScript runtime behavior, form submissions, app/game regression tests, mobile and dark-mode rendering, and complete native-language proofreading remain outstanding.
