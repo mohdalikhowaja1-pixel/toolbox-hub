@@ -1154,7 +1154,7 @@
         function copyFallback(text) {
             var done = function() {
                 var old = el.shareBtn.textContent;
-                el.shareBtn.textContent = '✓ Copied!';
+                el.shareBtn.textContent = '✓ ¡Copiado!';
                 setTimeout(function() { el.shareBtn.textContent = old; }, 2000);
             };
             if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -1229,7 +1229,7 @@
                 ratingGroup.classList.remove("hidden");
                 titleGroup.classList.add("hidden");
                 commentLabel.textContent = "Written Comment *";
-                modalTitle.textContent = "Share Your Feedback";
+                modalTitle.textContent = "Comparte tus comentarios";
             }
         }
 
@@ -1299,7 +1299,7 @@
                 payload.suggestionCategory = document.getElementById("suggestionCategory").value;
                 payload.suggestionTitle = document.getElementById("suggestionTitle").value.trim();
                 if (!payload.suggestionTitle || !commentText) {
-                    errorBox.textContent = "Please fill out all required suggestion fields.";
+                    errorBox.textContent = "Completa todos los campos obligatorios de la sugerencia.";
                     errorBox.classList.remove("hidden");
                     return;
                 }
@@ -1308,7 +1308,7 @@
                 payload.starRating = document.getElementById("starRating").value;
                 payload.pageUrl = "reaction-time-test.html";
                 if (!commentText) {
-                    errorBox.textContent = "Please enter your written review.";
+                    errorBox.textContent = "Escribe tu reseña.";
                     errorBox.classList.remove("hidden");
                     return;
                 }
@@ -1326,7 +1326,7 @@
                 const result = await response.json();
 
                 if (result.status === "success") {
-                    successBox.textContent = "🎉 Thank you! Your submission is pending moderation.";
+                    successBox.textContent = "🎉 ¡Gracias! Tu envío está pendiente de moderación.";
                     successBox.classList.remove("hidden");
                     document.getElementById("communityForm").reset();
                     setTimeout(() => { 
@@ -1341,7 +1341,7 @@
                     submitBtn.textContent = "🚀 Enviar comentario";
                 }
             } catch (err) {
-                errorBox.textContent = "Network error. Please try again.";
+                errorBox.textContent = "Error de red. Inténtalo de nuevo.";
                 errorBox.classList.remove("hidden");
                 submitBtn.disabled = false;
                 submitBtn.textContent = "🚀 Enviar comentario";

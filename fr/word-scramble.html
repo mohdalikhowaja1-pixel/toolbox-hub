@@ -1825,9 +1825,9 @@
             if (isNewBest) {
                 el.endSub.textContent = STRINGS.newBest;
             } else if (state.best - state.score > 0 && state.best - state.score <= 60) {
-                el.endSub.textContent = 'You were just ' + (state.best - state.score) + ' points from your best. One more try?';
+                el.endSub.textContent = 'Il ne vous manquait que ' + (state.best - state.score) + ' points pour égaler votre record. Un nouvel essai ?';
             } else {
-                el.endSub.textContent = 'Your best is ' + state.best + '. ' + STRINGS.sameScore;
+                el.endSub.textContent = 'Votre meilleur score est ' + state.best + '. ' + STRINGS.sameScore;
             }
 
             el.activeGame.style.display = 'none';
@@ -1857,7 +1857,7 @@
         function copyFallback(text) {
             var done = function() {
                 var old = el.shareBtn.textContent;
-                el.shareBtn.textContent = '✓ Copied. Paste to share.';
+                el.shareBtn.textContent = '✓ Copié. Collez pour partager.';
                 setTimeout(function() { el.shareBtn.textContent = old; }, 2200);
             };
             if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -1959,7 +1959,7 @@
                 ratingGroup.classList.remove("hidden");
                 titleGroup.classList.add("hidden");
                 commentLabel.textContent = "Written Comment *";
-                modalTitle.textContent = "Share Your Feedback";
+                modalTitle.textContent = "Partagez votre avis";
             }
         }
 
@@ -2029,7 +2029,7 @@
                 payload.suggestionCategory = document.getElementById("suggestionCategory").value;
                 payload.suggestionTitle = document.getElementById("suggestionTitle").value.trim();
                 if (!payload.suggestionTitle || !commentText) {
-                    errorBox.textContent = "Please fill out all required suggestion fields.";
+                    errorBox.textContent = "Veuillez remplir tous les champs obligatoires de la suggestion.";
                     errorBox.classList.remove("hidden");
                     return;
                 }
@@ -2038,7 +2038,7 @@
                 payload.starRating = document.getElementById("starRating").value;
                 payload.pageUrl = "word-scramble.html";
                 if (!commentText) {
-                    errorBox.textContent = "Please enter your written review.";
+                    errorBox.textContent = "Veuillez saisir votre avis écrit.";
                     errorBox.classList.remove("hidden");
                     return;
                 }
@@ -2056,7 +2056,7 @@
                 const result = await response.json();
 
                 if (result.status === "success") {
-                    successBox.textContent = "🎉 Thank you! Your submission is pending moderation.";
+                    successBox.textContent = "🎉 Merci ! Votre contribution est en attente de modération.";
                     successBox.classList.remove("hidden");
                     document.getElementById("communityForm").reset();
                     setTimeout(() => {
@@ -2071,7 +2071,7 @@
                     submitBtn.textContent = "🚀 Envoyer le commentaire";
                 }
             } catch (err) {
-                errorBox.textContent = "Network error. Please try again.";
+                errorBox.textContent = "Erreur réseau. Veuillez réessayer.";
                 errorBox.classList.remove("hidden");
                 submitBtn.disabled = false;
                 submitBtn.textContent = "🚀 Envoyer le commentaire";
