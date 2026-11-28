@@ -279,7 +279,7 @@
 
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
                     <div class="tile-indigo rounded-2xl p-4 text-center">
-                        <span id="statMots" class="num text-2xl font-black block">0</span>
+                        <span id="statWords" class="num text-2xl font-black block">0</span>
                         <span class="text-xs font-bold uppercase muted">Mots</span>
                     </div>
                     <div class="tile-green rounded-2xl p-4 text-center">
@@ -287,7 +287,7 @@
                         <span class="text-xs font-bold uppercase muted">Caractères</span>
                     </div>
                     <div class="tile-indigo rounded-2xl p-4 text-center">
-                        <span id="statPhrases" class="num text-2xl font-black block">0</span>
+                        <span id="statSentences" class="num text-2xl font-black block">0</span>
                         <span class="text-xs font-bold uppercase muted">Phrases</span>
                     </div>
                     <div class="tile-red rounded-2xl p-4 text-center">
@@ -680,9 +680,9 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
             var seconds = Math.ceil((words / 200) * 60);
             var timeStr = seconds < 60 ? seconds + 's' : (seconds / 60).toFixed(1) + 'm';
 
-            document.getElementById('statMots').textContent = words.toLocaleString();
+            document.getElementById('statWords').textContent = words.toLocaleString();
             document.getElementById('statChars').textContent = chars.toLocaleString();
-            document.getElementById('statPhrases').textContent = sentences.toLocaleString();
+            document.getElementById('statSentences').textContent = sentences.toLocaleString();
             document.getElementById('statReadTime').textContent = timeStr;
         }
         window.updateStats = updateStats;
