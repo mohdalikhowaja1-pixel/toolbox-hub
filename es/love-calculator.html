@@ -582,7 +582,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                 <button type="button" onclick="closeFeedbackModal()" aria-label="Close popup" title="Close" class="mtx-modal-close">✕</button>
             </div>
 
-            <form id="communityForm" onsubmit="submitComunidadFeedback(event)" class="space-y-4">
+            <form id="communityForm" onsubmit="submitCommunityFeedback(event)" class="space-y-4">
                 <div>
                     <label for="formType" class="block text-xs font-bold uppercase tracking-wider muted mb-1">1. ¿Qué te gustaría compartir? *</label>
                     <select id="formType" name="formType" required onchange="toggleFormFields()" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
@@ -1025,7 +1025,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
             updateStars(currentRating);
         });
 
-        async function submitComunidadFeedback(event) {
+        async function submitCommunityFeedback(event) {
             event.preventDefault();
             const errorBox = document.getElementById("formError");
             const successBox = document.getElementById("formSuccess");

@@ -658,7 +658,7 @@
                 <div class="hud-tile tile-indigo">
                     <span id="scoreDisplay" class="num">0</span>
                     <span class="label">Score</span>
-                    <span id="newRecordBadge" class="hud-newbest hidden">🏆 NEW BEST</span>
+                    <span id="newBestBadge" class="hud-newbest hidden">🏆 NEW BEST</span>
                 </div>
                 <div class="hud-tile tile-red">
                     <span id="timerDisplay" class="num">30</span>
@@ -1007,7 +1007,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
                 <button type="button" onclick="closeFeedbackModal()" aria-label="Close popup" title="Close" class="mtx-modal-close">✕</button>
             </div>
 
-            <form id="communityForm" onsubmit="submitCommunautéFeedback(event)" class="space-y-4">
+            <form id="communityForm" onsubmit="submitCommunityFeedback(event)" class="space-y-4">
                 <div>
                     <label for="formType" class="block text-xs font-bold uppercase tracking-wider muted mb-1">1. Que souhaitez-vous partager ? *</label>
                     <select id="formType" name="formType" required onchange="toggleFormFields()" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
@@ -1156,7 +1156,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
         var bestDisplay   = el('bestDisplay');
         var streakDisplay = el('streakDisplay');
         var tierChip      = el('tierChip');
-        var newRecordBadge  = el('newRecordBadge');
+        var newBestBadge  = el('newBestBadge');
         var questionText  = el('questionText');
         var optionsGrid   = el('optionsGrid');
         var stage         = el('stage');
@@ -1213,7 +1213,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
         /* =========================================================
            5. LOCALSTORAGE
            ========================================================= */
-        function loadRecord() {
+        function loadBest() {
             try {
                 var s = parseInt(localStorage.getItem(KEY_SCORE), 10);
                 var k = parseInt(localStorage.getItem(KEY_STREAK), 10);
@@ -1235,7 +1235,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
             state.timeLeft = state.duration;
             timerDisplay.textContent = state.duration;
         }
-        function saveRecord() {
+        function saveBest() {
             try {
                 if (state.score > state.bestScore) {
                     state.bestScore = state.score;
@@ -1530,7 +1530,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
         /* =========================================================
            11. RENDER
            ========================================================= */
-        function updatePrécisionDisplay() {
+        function updateAccuracyDisplay() {
             if (state.attempted === 0) {
                 accDisplay.textContent = '—';
             } else {
@@ -1618,12 +1618,12 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
             }
 
             if (state.score > state.bestScore && state.bestScore > 0) {
-                newRecordBadge.classList.remove('hidden');
+                newBestBadge.classList.remove('hidden');
             }
 
             scoreDisplay.textContent  = state.score;
             streakDisplay.textContent = state.streak;
-            updatePrécisionDisplay();
+            updateAccuracyDisplay();
 
             setTimeout(function () {
                 if (state.running) {
@@ -1768,9 +1768,9 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
             streakDisplay.textContent = '0';
             timerDisplay.textContent  = state.duration;
             roundLabel.textContent    = 'Round ' + state.roundNumber;
-            updatePrécisionDisplay();
+            updateAccuracyDisplay();
             refreshTier();
-            newRecordBadge.classList.add('hidden');
+            newBestBadge.classList.add('hidden');
             updateTimingBar();
 
             showCountdown();
@@ -1800,7 +1800,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
             timerDisplay.textContent = '0';
             timingBar.style.width = '0%';
 
-            saveRecord();
+            saveBest();
 
             var accPct = state.attempted > 0 ? Math.round((state.correct / state.attempted) * 100) : 0;
 
@@ -1856,14 +1856,14 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
             timerDisplay.textContent = state.duration;
             scoreDisplay.textContent  = '0';
             streakDisplay.textContent = '0';
-            updatePrécisionDisplay();
+            updateAccuracyDisplay();
             questionText.textContent  = 'Appuyez sur Démarrer pour jouer';
             familyLabel.textContent   = 'Prêt';
             roundLabel.textContent    = 'Round ' + state.roundNumber;
             optionsGrid.innerHTML     = '';
             timingBar.style.width     = '100%';
             shareBtn.disabled = true;
-            newRecordBadge.classList.add('hidden');
+            newBestBadge.classList.add('hidden');
 
             refreshTier();
             startOverlay.classList.remove('hidden');
@@ -2065,10 +2065,10 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
         /* =========================================================
            19. INIT
            ========================================================= */
-        loadRecord();
+        loadBest();
         applyHashTierOverride();
         refreshTier();
-        updatePrécisionDisplay();
+        updateAccuracyDisplay();
         updateTimingBar();
 
     })();
@@ -2157,7 +2157,7 @@ MyToolX propose des outils gratuits dans le navigateur pour les rédacteurs, les
             updateStars(currentRating);
         });
 
-        async function submitCommunautéFeedback(event) {
+        async function submitCommunityFeedback(event) {
             event.preventDefault();
             const errorBox = document.getElementById("formError");
             const successBox = document.getElementById("formSuccess");

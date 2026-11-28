@@ -658,7 +658,7 @@
                 <div class="hud-tile tile-indigo">
                     <span id="scoreDisplay" class="num">0</span>
                     <span class="label">Puntuación</span>
-                    <span id="newRécordBadge" class="hud-newbest hidden">🏆 NEW BEST</span>
+                    <span id="newBestBadge" class="hud-newbest hidden">🏆 NEW BEST</span>
                 </div>
                 <div class="hud-tile tile-red">
                     <span id="timerDisplay" class="num">30</span>
@@ -732,7 +732,7 @@
                     </div>
                     <span class="text-2xl" aria-hidden="true">⏱️</span>
                 </div>
-                <button id="shareBtn" onclick="sharePuntuación()" class="btn-3d btn-accent px-6 py-3 text-sm font-bold flex items-center justify-center gap-2" disabled>
+                <button id="shareBtn" onclick="shareScore()" class="btn-3d btn-accent px-6 py-3 text-sm font-bold flex items-center justify-center gap-2" disabled>
                     🔗 Compartir puntuación
                 </button>
             </div>
@@ -969,7 +969,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
 
             <div class="grid grid-cols-2 gap-3 mb-6">
                 <div class="tile-indigo rounded-2xl p-3 text-center">
-                    <span id="finalPuntuación" class="num text-3xl font-black block">0</span>
+                    <span id="finalScore" class="num text-3xl font-black block">0</span>
                     <span class="text-[10px] font-bold uppercase muted">Puntuación</span>
                 </div>
                 <div class="tile-green rounded-2xl p-3 text-center">
@@ -988,7 +988,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
 
             <div class="flex gap-3">
                 <button onclick="closeResults()" class="btn-3d btn-primary flex-1 py-3 text-sm">Jugar de nuevo</button>
-                <button id="modalShareBtn" onclick="sharePuntuación()" class="btn-3d btn-chip flex-1 py-3 text-sm">🔗 Compartir</button>
+                <button id="modalShareBtn" onclick="shareScore()" class="btn-3d btn-chip flex-1 py-3 text-sm">🔗 Compartir</button>
             </div>
 
             <p class="share-cta-line">🔥 Challenge your friends and colleagues to beat this score.</p>
@@ -1007,7 +1007,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                 <button type="button" onclick="closeFeedbackModal()" aria-label="Close popup" title="Close" class="mtx-modal-close">✕</button>
             </div>
 
-            <form id="communityForm" onsubmit="submitComunidadFeedback(event)" class="space-y-4">
+            <form id="communityForm" onsubmit="submitCommunityFeedback(event)" class="space-y-4">
                 <div>
                     <label for="formType" class="block text-xs font-bold uppercase tracking-wider muted mb-1">1. ¿Qué te gustaría compartir? *</label>
                     <select id="formType" name="formType" required onchange="toggleFormFields()" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
@@ -1156,7 +1156,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
         var bestDisplay   = el('bestDisplay');
         var streakDisplay = el('streakDisplay');
         var tierChip      = el('tierChip');
-        var newRécordBadge  = el('newRécordBadge');
+        var newBestBadge  = el('newBestBadge');
         var questionText  = el('questionText');
         var optionsGrid   = el('optionsGrid');
         var stage         = el('stage');
@@ -1168,7 +1168,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
         var familyLabel   = el('familyLabel');
         var resultsModal  = el('resultsModal');
         var resultMsg     = el('resultMsg');
-        var finalPuntuaciónEl  = el('finalPuntuación');
+        var finalScoreEl  = el('finalScore');
         var finalAccEl    = el('finalAcc');
         var finalStreakEl = el('finalStreak');
         var finalTierEl   = el('finalTier');
@@ -1213,7 +1213,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
         /* =========================================================
            5. LOCALSTORAGE
            ========================================================= */
-        function loadRécord() {
+        function loadBest() {
             try {
                 var s = parseInt(localStorage.getItem(KEY_SCORE), 10);
                 var k = parseInt(localStorage.getItem(KEY_STREAK), 10);
@@ -1235,7 +1235,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
             state.timeLeft = state.duration;
             timerDisplay.textContent = state.duration;
         }
-        function saveRécord() {
+        function saveBest() {
             try {
                 if (state.score > state.bestPuntuación) {
                     state.bestPuntuación = state.score;
@@ -1530,7 +1530,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
         /* =========================================================
            11. RENDER
            ========================================================= */
-        function updatePrecisiónDisplay() {
+        function updateAccuracyDisplay() {
             if (state.attempted === 0) {
                 accDisplay.textContent = '—';
             } else {
@@ -1618,12 +1618,12 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
             }
 
             if (state.score > state.bestPuntuación && state.bestPuntuación > 0) {
-                newRécordBadge.classList.remove('hidden');
+                newBestBadge.classList.remove('hidden');
             }
 
             scoreDisplay.textContent  = state.score;
             streakDisplay.textContent = state.streak;
-            updatePrecisiónDisplay();
+            updateAccuracyDisplay();
 
             setTimeout(function () {
                 if (state.running) {
@@ -1768,9 +1768,9 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
             streakDisplay.textContent = '0';
             timerDisplay.textContent  = state.duration;
             roundLabel.textContent    = 'Round ' + state.roundNumber;
-            updatePrecisiónDisplay();
+            updateAccuracyDisplay();
             refreshTier();
-            newRécordBadge.classList.add('hidden');
+            newBestBadge.classList.add('hidden');
             updateTimingBar();
 
             showCountdown();
@@ -1800,11 +1800,11 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
             timerDisplay.textContent = '0';
             timingBar.style.width = '0%';
 
-            saveRécord();
+            saveBest();
 
             var accPct = state.attempted > 0 ? Math.round((state.correct / state.attempted) * 100) : 0;
 
-            finalPuntuaciónEl.textContent  = state.score;
+            finalScoreEl.textContent  = state.score;
             finalAccEl.textContent    = accPct + '%';
             finalStreakEl.textContent = state.bestStreak;
             finalTierEl.textContent   = state.topTier;
@@ -1856,14 +1856,14 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
             timerDisplay.textContent = state.duration;
             scoreDisplay.textContent  = '0';
             streakDisplay.textContent = '0';
-            updatePrecisiónDisplay();
+            updateAccuracyDisplay();
             questionText.textContent  = 'Pulsa Iniciar para jugar';
             familyLabel.textContent   = 'Listo';
             roundLabel.textContent    = 'Round ' + state.roundNumber;
             optionsGrid.innerHTML     = '';
             timingBar.style.width     = '100%';
             shareBtn.disabled = true;
-            newRécordBadge.classList.add('hidden');
+            newBestBadge.classList.add('hidden');
 
             refreshTier();
             startOverlay.classList.remove('hidden');
@@ -1965,7 +1965,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
             return 'I scored ' + state.score + ' points in the Mental Math Sprint 🧠⚡ with ' + accPct + '% accuracy and a best streak of ' + state.bestStreak + '. Think you can beat me?';
         }
 
-        function sharePuntuación() {
+        function shareScore() {
             var text = buildShareText();
             if (navigator.share) {
                 navigator.share({ title: 'My Math Sprint Puntuación', text: text, url: SITE_URL })
@@ -1983,7 +1983,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                 setTimeout(function () { shareBtn.innerHTML = '🔗 Compartir puntuación'; }, 1600);
             }
         }
-        window.sharePuntuación = sharePuntuación;
+        window.shareScore = shareScore;
 
         function copyChallengeLink() {
             var text = buildShareText() + ' Play here: ' + SITE_URL;
@@ -2065,10 +2065,10 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
         /* =========================================================
            19. INIT
            ========================================================= */
-        loadRécord();
+        loadBest();
         applyHashTierOverride();
         refreshTier();
-        updatePrecisiónDisplay();
+        updateAccuracyDisplay();
         updateTimingBar();
 
     })();
@@ -2157,7 +2157,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
             updateStars(currentRating);
         });
 
-        async function submitComunidadFeedback(event) {
+        async function submitCommunityFeedback(event) {
             event.preventDefault();
             const errorBox = document.getElementById("formError");
             const successBox = document.getElementById("formSuccess");
