@@ -687,3 +687,47 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 2. Re-run article-wide structured-data, localized related-card and internal-link validation after editorial review.
 3. Then begin the 56 tool/application page families, protecting all functional logic and identifiers.
 4. Keep the development branch isolated; no merge, deployment or publishing-source change is authorized.
+
+
+## Editorial QA batch — QR Codes, Password Security and Unit Conversion — 2026-11-28
+
+### Pages reviewed and corrected
+- Completed direct English-source comparison for three more article families (six localized HTML pages):
+  - QR Codes
+  - Password Security
+  - Unit Conversion
+- QR Codes:
+  - Repaired malformed Spanish/French generator link text and the mixed-language “Our” sentence.
+  - Translated the remaining English “Free” benefit label.
+  - Localized social image alt text, the related Password Security guide card, shared footer copy and the Spanish feedback-modal typo.
+- Password Security:
+  - Repaired malformed Spanish/French password-generator link text and the mixed-language “Our” sentence.
+  - Translated the English SEO descriptions in both locales (meta description, Open Graph description and Twitter description).
+  - Localized social image alt text and shared footer copy; corrected the Spanish feedback-modal typo.
+- Unit Conversion:
+  - Replaced paragraphs accidentally left in the opposite language (French inside Spanish and Spanish inside French).
+  - Repaired the mixed-language “More importantly, our” sentence and corrected grammatical agreement around the localized converter link.
+  - Localized social image alt text and shared footer copy; corrected the Spanish feedback-modal typo.
+- Preserved technical terms, unit names, formulas, QR/password generation logic, localized tool URLs, IDs, event handlers and form payloads.
+
+### Verification performed
+- Re-fetched all six localized files after edits.
+- Parsed both JSON-LD blocks on each page successfully (12 blocks total).
+- Confirmed each Article JSON-LD headline matches its visible H1 after ignoring the leading decorative emoji.
+- Checked targeted mixed-language and malformed generator strings; no addressed defects remain.
+- Confirmed localized social image alt text on all six pages and translated Password Security SEO descriptions.
+- This is source-level editorial and JSON-LD syntax validation. It is not a full-page language certification, native-speaker review, browser/runtime test, end-to-end tool test, or live HTTP/indexability verification.
+
+### Key latest content commits in this batch
+- Spanish QR Codes: `ca9f96bc3964c4f98a2aaa5acfa1f00e9866cb51`
+- French QR Codes: `76ea04bcec290892aa270bc328bacaaaa0fa42b4`
+- Spanish Password Security: `e00d9cd8ccb7e7b85b57b8d5ed7514ab7c879bcb`
+- French Password Security: `34bec882e142f5cf4eede62b14ff523003305504`
+- Spanish Unit Conversion: `3732439279be421678a47729488606e6b47d4425`
+- French Unit Conversion: `83d1022fe6fee6d5ccf8b65f32e7a691f7d33b93`
+
+### Next action
+1. Continue direct source comparison on the remaining eight article families.
+2. Re-run article-wide structured-data, metadata, related-card and internal-link checks after the editorial pass.
+3. Then begin the 56 tool/application page families, preserving all functional logic and identifiers.
+4. Keep the development branch isolated; no merge, deployment or publishing-source change is authorized.
