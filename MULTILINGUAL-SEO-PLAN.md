@@ -135,3 +135,15 @@ Read `MYTOOLX-MULTILINGUAL-HANDOVER.md` first for the authoritative resume point
 - Latest handover commit: `bc2b976c889db5372570abababd53bc5ce0b9066`. Exact content commits and limitations are recorded in `MYTOOLX-MULTILINGUAL-HANDOVER.md`.
 - Source-level validation only. Full-page linguistic review, native-speaker certification, browser/runtime, application interaction, responsive/theme/accessibility, console/network and live HTTP/indexability checks remain outstanding.
 - Next: complete the remaining eight article families, then review the 56 tool/application page families. Do not merge or deploy without explicit approval.
+
+
+## Editorial QA checkpoint — JSON Tools, Text Summarizer and Love Calculator — 2026-11-28
+
+- Completed English-source comparison and corrections for JSON Tools, Text Summarizer and Love Calculator in Spanish and French (six localized pages).
+- Fixed mixed-language “At MyToolX, our” paragraphs, the mixed-language Premium Bundles related card, social image alt text, shared footer copy and Spanish feedback-modal typos.
+- Preserved JSON examples, NLP terminology, tool links, identifiers and application behavior. The Love Calculator translation retains the caveat that numerology scores are for entertainment, not scientific relationship assessment.
+- Revalidated 12 JSON-LD blocks; all parsed, and Article headlines match visible H1 headings after decorative emoji normalization.
+- Targeted residual scans for the specific defects addressed returned no matches; all six pages have localized social image alt text.
+- Latest handover commit: `2c7d355dfbb7710112892f1d003b6b6e9e96ad18`. Exact content commits and limitations are recorded in `MYTOOLX-MULTILINGUAL-HANDOVER.md`.
+- Source-level checks only. Full-page language certification, native-speaker review, browser/runtime, application interaction, responsive/theme/accessibility, console/network and live HTTP/indexability checks remain outstanding.
+- Next: review the remaining five article families, then begin the 56 tool/application page families. Do not merge or deploy without explicit approval.
