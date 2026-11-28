@@ -92,8 +92,8 @@ for (const relative of blogPages) {
     if (!article) fail(file + ': Article schema url/inLanguage mismatch');
     if (!breadcrumb) fail(file + ': BreadcrumbList missing');
   }
-  compareTriplet(relative);
 }
+for (const row of pageRows) if (row.lang === 'en') compareTriplet(row.relative || 'index.html');
 if (errors.length) {
   console.error('FAILED: ' + errors.length + ' issue(s)');
   errors.forEach(x => console.error(' - ' + x));
