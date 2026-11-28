@@ -68,56 +68,173 @@
 
     <!-- STRUCTURED DATA -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "WebSite",
+      "name": "MyToolX",
+      "url": "https://mytoolx.org/",
+      "description": "A free suite of client-side web tools for writers, freelancers and developers.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://mytoolx.org/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "name": "Free Online Tools by MyToolX",
+      "description": "A curated collection of 23 free online tools for writers, developers, freelancers, and everyday users. Many tools process data in your browser, while selected features connect to external services.",
+      "url": "https://mytoolx.org/",
+      "numberOfItems": 23,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
         {
-          "@type": "WebSite",
-          "name": "MyToolX",
-          "url": "https://mytoolx.org/",
-          "description": "A free suite of client-side web tools for writers, freelancers and developers.",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://mytoolx.org/?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Free ATS Créateur de CV",
+          "url": "https://mytoolx.org/cv-maker.html"
         },
         {
-          "@type": "ItemList",
-          "name": "Free Online Tools by MyToolX",
-          "description": "A curated collection of 23 free online tools for writers, developers, freelancers, and everyday users. Many tools process data in your browser, while selected features connect to external services.",
-          "url": "https://mytoolx.org/",
-          "numberOfItems": 23,
-          "itemListOrder": "https://schema.org/ItemListOrderAscending",
-          "itemListElement": [
-            {"@type":"ListItem","position":1,"name":"Free ATS Créateur de CV","url":"https://mytoolx.org/cv-maker.html"},
-            {"@type":"ListItem","position":2,"name":"Test de vitesse de frappe","url":"https://mytoolx.org/typing-test.html"},
-            {"@type":"ListItem","position":3,"name":"Reaction Time Test","url":"https://mytoolx.org/reaction-time-test.html"},
-            {"@type":"ListItem","position":4,"name":"Mots mélangés Jeu","url":"https://mytoolx.org/word-scramble.html"},
-            {"@type":"ListItem","position":5,"name":"JPG PNG WebP Compresseur d’images","url":"https://mytoolx.org/image-compressor.html"},
-            {"@type":"ListItem","position":6,"name":"Correcteur grammatical","url":"https://mytoolx.org/grammar-checker.html"},
-            {"@type":"ListItem","position":7,"name":"Studio de prompts IA","url":"https://mytoolx.org/prompt-studio.html"},
-            {"@type":"ListItem","position":8,"name":"Générateur de bio avec IA","url":"https://mytoolx.org/ai-bio-generator.html"},
-            {"@type":"ListItem","position":9,"name":"Plan d’article Generator","url":"https://mytoolx.org/article-outline.html"},
-            {"@type":"ListItem","position":10,"name":"Text & Word Counter","url":"https://mytoolx.org/text-suite.html"},
-            {"@type":"ListItem","position":11,"name":"Calculateur d’affinité","url":"https://mytoolx.org/love-calculator.html"},
-            {"@type":"ListItem","position":12,"name":"Jeu Math Sprint","url":"https://mytoolx.org/math-sprint.html"},
-            {"@type":"ListItem","position":13,"name":"WordStorm Typing Jeu","url":"https://mytoolx.org/wordstorm.html"},
-            {"@type":"ListItem","position":14,"name":"Freelance Fee and Rate Calculator","url":"https://mytoolx.org/fee-calculator.html"},
-            {"@type":"ListItem","position":15,"name":"Calculateur SIP","url":"https://mytoolx.org/sip-calculator.html"},
-            {"@type":"ListItem","position":16,"name":"Loan EMI and Monthly Payment Calculator","url":"https://mytoolx.org/loan-emi.html"},
-            {"@type":"ListItem","position":17,"name":"Formateur JSON","url":"https://mytoolx.org/json-formatter.html"},
-            {"@type":"ListItem","position":18,"name":"Base64 Encoder","url":"https://mytoolx.org/base64-tool.html"},
-            {"@type":"ListItem","position":19,"name":"Convertisseur de couleurs","url":"https://mytoolx.org/color-converter.html"},
-            {"@type":"ListItem","position":20,"name":"Free Générateur de QR codeserator","url":"https://mytoolx.org/qr-code-generator.html"},
-            {"@type":"ListItem","position":21,"name":"Générateur de mots de passeerator","url":"https://mytoolx.org/password-generator.html"},
-            {"@type":"ListItem","position":22,"name":"Convertisseur d’unités","url":"https://mytoolx.org/unit-converter.html"},
-            {"@type":"ListItem","position":23,"name":"AI Text Summarizer","url":"https://mytoolx.org/text-summarizer.html"}
-          ]
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Test de vitesse de frappe",
+          "url": "https://mytoolx.org/typing-test.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Reaction Time Test",
+          "url": "https://mytoolx.org/reaction-time-test.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Mots mélangés Jeu",
+          "url": "https://mytoolx.org/word-scramble.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "JPG PNG WebP Compresseur d’images",
+          "url": "https://mytoolx.org/image-compressor.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Correcteur grammatical",
+          "url": "https://mytoolx.org/grammar-checker.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Studio de prompts IA",
+          "url": "https://mytoolx.org/prompt-studio.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Générateur de bio avec IA",
+          "url": "https://mytoolx.org/ai-bio-generator.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Plan d’article Generator",
+          "url": "https://mytoolx.org/article-outline.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Text & Word Counter",
+          "url": "https://mytoolx.org/text-suite.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "Calculateur d’affinité",
+          "url": "https://mytoolx.org/love-calculator.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "name": "Jeu Math Sprint",
+          "url": "https://mytoolx.org/math-sprint.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "name": "WordStorm Typing Jeu",
+          "url": "https://mytoolx.org/wordstorm.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "name": "Freelance Fee and Rate Calculator",
+          "url": "https://mytoolx.org/fee-calculator.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "name": "Calculateur SIP",
+          "url": "https://mytoolx.org/sip-calculator.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "name": "Loan EMI and Monthly Payment Calculator",
+          "url": "https://mytoolx.org/loan-emi.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "name": "Formateur JSON",
+          "url": "https://mytoolx.org/json-formatter.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "name": "Base64 Encoder",
+          "url": "https://mytoolx.org/base64-tool.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "name": "Convertisseur de couleurs",
+          "url": "https://mytoolx.org/color-converter.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "name": "Free Générateur de QR codeserator",
+          "url": "https://mytoolx.org/qr-code-generator.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "name": "Générateur de mots de passeerator",
+          "url": "https://mytoolx.org/password-generator.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 22,
+          "name": "Convertisseur d’unités",
+          "url": "https://mytoolx.org/unit-converter.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 23,
+          "name": "AI Text Summarizer",
+          "url": "https://mytoolx.org/text-summarizer.html"
         }
       ]
     }
-    </script>
+  ],
+  "url": "https://mytoolx.org/fr/",
+  "inLanguage": "fr"
+}
+</script>
 
     <style>
         :root {
@@ -1266,5 +1383,16 @@ MyToolX is a free collection of browser-based tools for writers, freelancers, de
         }
     </script>
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"MyToolX","item":"https://mytoolx.org/"},
+    {"@type":"ListItem","position":2,"name":"Accueil","item":"https://mytoolx.org/fr/"}
+  ]
+}
+</script>
 </body>
 </html>
