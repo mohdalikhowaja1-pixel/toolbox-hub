@@ -435,3 +435,26 @@ Preserve the prior audit findings recorded in `MULTILINGUAL-SEO-PLAN.md`, includ
 2. Check all 24 Article JSON-LD objects for localized headline/description parity with the visible page title and content.
 3. Inspect the latest branch-head CI run and record its result.
 4. Continue with the next article/tool page family batch.
+
+
+## Editorial QA batch — Word Scramble residual cleanup — 2026-11-28
+
+### Corrections committed
+- Completed a markup-aware second pass on the Spanish and French Word Scramble article pages.
+- Corrected the remaining English body paragraph about autocorrect and spelling, the game-start instruction, the related-tools paragraph, mixed-language Article JSON-LD headlines, and visible feedback-form select labels/category labels.
+- Preserved option values, form field names, API payload structure, URLs, game mechanics, and JavaScript behavior; edits were limited to user-facing text and schema headline text.
+- Commits:
+  - `fcaf73bda0eba8956f37bc91fa2e31a0419309ca` — `es/blog-word-scramble.html`
+  - `5f68be3af5e5d39c16029753400c8d80f6229ceb` — `fr/blog-word-scramble.html`
+
+### Remaining QA notes
+- These edits are a targeted editorial cleanup, not a complete certification of either page. Continue checking the full feedback modal, every option label, Article and Breadcrumb JSON-LD, related links, and page-wide language consistency.
+- The French fee-calculator footer label typo was corrected from “fraiss” to “frais”. Spanish “comisioness” was corrected to “comisiones”.
+- Other reviewed article families (WordStorm, Reaction Time, Math Sprint) still require the second-pass checks recorded above. No browser/runtime or native-speaker certification is claimed.
+- No merge, deployment, GitHub Pages publishing change, or modification to `main` was performed.
+
+### Next action
+1. Run a complete structured-data audit on all 24 article variants (8 English sources plus 8 Spanish and 8 French translations): verify Article headline/description/date/language and BreadcrumbList names/URLs match the actual localized page.
+2. Finish the remaining WordStorm, Reaction Time, and Math Sprint markup-aware copy corrections.
+3. Continue page-family linguistic QA and validate all internal localized links and form labels without changing application logic.
+4. Inspect CI/Actions results separately; an empty combined status response is not a passing test.
