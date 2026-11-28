@@ -15,7 +15,7 @@
     
     <!-- PRIMARY SEO -->
     <title>Conversor de colores HEX a RGB online | MyToolX</title>
-    <meta name="description" content="Convierte HEX a RGB, RGB a HEX y valores de color CSS online. Previsualiza los colores al instante y consulta nombres de colores CSS estándar con este conversor gratuito.">
+    <meta name="description" content="Convierte HEX a RGB, RGB a HEX y valores CSS. Previsualiza colores al instante y consulta nombres CSS gratis.">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://mytoolx.org/es/color-converter.html">
 
@@ -24,7 +24,6 @@
     <link rel="alternate" hreflang="es" href="https://mytoolx.org/es/color-converter.html">
     <link rel="alternate" hreflang="fr" href="https://mytoolx.org/fr/color-converter.html">
     <link rel="alternate" hreflang="x-default" href="https://mytoolx.org/color-converter.html">
-
     <!-- FAVICON (inline SVG emoji — zero HTTP request) -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
 
@@ -36,10 +35,10 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="MyToolX">
     <meta property="og:url" content="https://mytoolx.org/es/color-converter.html">
-    <meta property="og:title" content="Free Conversor de colores: HEX, RGB & CSS Names 🎨 | MyToolX">
-    <meta property="og:description" content="Convert HEX, RGB, and CSS color names with a live visual preview. Free, in your browser.">
+    <meta property="og:title" content="Conversor de colores gratis: HEX, RGB y nombres CSS | MyToolX">
+    <meta property="og:description" content="Convierte códigos HEX, RGB y nombres CSS con una vista previa visual en directo. Gratis en tu navegador.">
     <meta property="og:image" content="https://mytoolx.org/og-image.png">
-    <meta property="og:image:alt" content="MyToolX Universal Conversor de colores">
+    <meta property="og:image:alt" content="MyToolX Universal Color Converter">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/png">
@@ -48,10 +47,10 @@
     <!-- TWITTER / X CARD -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://mytoolx.org/es/color-converter.html">
-    <meta name="twitter:title" content="Free Conversor de colores: HEX, RGB & CSS Names 🎨 | MyToolX">
-    <meta name="twitter:description" content="Convert HEX, RGB, and CSS color names with a live visual preview. Free, in your browser.">
+    <meta name="twitter:title" content="Conversor de colores gratis: HEX, RGB y nombres CSS | MyToolX">
+    <meta name="twitter:description" content="Convierte códigos HEX, RGB y nombres CSS con una vista previa visual en directo. Gratis en tu navegador.">
     <meta name="twitter:image" content="https://mytoolx.org/og-image.png">
-    <meta name="twitter:image:alt" content="MyToolX Universal Conversor de colores">
+    <meta name="twitter:image:alt" content="MyToolX Universal Color Converter">
 
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="/styles.css">
@@ -67,9 +66,9 @@
       "@graph": [
         {
           "@type": "WebApplication",
-          "name": "MyToolX Universal Conversor de colores",
+          "name": "MyToolX: conversor universal de colores",
           "url": "https://mytoolx.org/es/color-converter.html",
-          "description": "Convert between HEX, RGB, and CSS named colors instantly in your browser.",
+          "description": "Convierte entre HEX, RGB y nombres de colores CSS al instante en tu navegador.",
           "applicationCategory": "DesignApplication",
           "operatingSystem": "Any",
           "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
@@ -84,7 +83,7 @@
         {
           "@type": "FAQPage",
           "mainEntity": [
-            { "@type": "Question", "name": "How to convert color formats?", "acceptedAnswer": { "@type": "Answer", "text": "Select a color from the dropdown or type any HEX code, RGB value, or standard CSS color name to get live conversion." } }
+            { "@type": "Question", "name": "¿Cómo convierto entre distintos formatos de color?", "acceptedAnswer": { "@type": "Answer", "text": "Selecciona un color del menú desplegable o introduce un código HEX, un valor RGB o un nombre CSS estándar para convertirlo al instante." } }
           ]
         }
       ]
@@ -194,7 +193,7 @@
         .star-click { cursor: pointer; transition: transform 0.1s; }
         .star-click:hover { transform: scale(1.15); }
         .star-click svg { width: 32px; height: 32px; fill: currentColor; }
-        /* Fix for the dropdown text color in Modo oscuro */
+        /* Fix for the dropdown text color in Dark Mode */
         select option, select optgroup {
             background-color: var(--card) !important;
             color: var(--text) !important;
@@ -210,31 +209,31 @@
         <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2">
             <div class="flex items-center justify-between gap-2 sm:gap-4">
                 <div class="flex items-center gap-2 sm:gap-4 shrink-0">
-                    <a href="/es/" class="hidden sm:flex btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold items-center gap-1">← Todas las herramientas</a>
-                    <a href="/es/" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
+                    <a href="/index.html" class="hidden sm:flex btn-3d btn-chip px-2.5 py-1.5 text-xs font-bold items-center gap-1">← Todas las herramientas</a>
+                    <a href="/index.html" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer select-none" aria-label="MyToolX home">
                         <div class="logo-mark w-7 h-7 sm:w-9 sm:h-9 text-sm sm:text-base flex items-center justify-center">M<span class="x">X</span></div>
                         <span class="logo-wordmark text-base sm:text-xl block">MyTool<span class="x">X</span></span>
                     </a>
                 </div>
                 <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
-                    <button id="themeToggle" onclick="toggleTheme()" aria-label="Switch theme" title="Toggle Light/Modo oscuro" class="h-8 sm:h-10 px-2 sm:px-3 rounded-xl flex items-center justify-center gap-1.5 text-[10px] sm:text-xs font-bold transition-all hover:opacity-80" style="background: var(--chip-bg); color: var(--chip-text);">
+                    <button id="themeToggle" onclick="toggleTheme()" aria-label="Cambiar tema" title="Alternar modo claro/oscuro" class="h-8 sm:h-10 px-2 sm:px-3 rounded-xl flex items-center justify-center gap-1.5 text-[10px] sm:text-xs font-bold transition-all hover:opacity-80" style="background: var(--chip-bg); color: var(--chip-text);">
     <span id="themeIcon" aria-hidden="true">🌙</span>
     <span id="themeText" class="hidden sm:block">Modo oscuro</span>
 </button>
 
-<!-- Comunidad Link -->
-<a href="/es/community.html" class="inline-flex items-center text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap" style="background: var(--chip-bg); color: var(--text);">
+<!-- Community Link -->
+<a href="/community.html" class="inline-flex items-center text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap" style="background: var(--chip-bg); color: var(--text);">
     💬 Comunidad
 </a>                    <a href="https://refer.micro1.ai/referral/jobs?referralCode=87002b6a-1b45-4d6a-beae-54f934f0fe50&utm_source=referral&utm_medium=share&utm_campaign=job_referral" target="_blank" rel="sponsored noopener" class="inline-flex items-center text-[10px] sm:text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm transition whitespace-nowrap">
                         💼 Empleos remotos ↗
                     </a>
-                    <a href="/es/cv-maker.html" class="hidden md:inline-flex text-xs font-bold text-white px-3 py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
+                    <a href="/cv-maker.html" class="hidden md:inline-flex text-xs font-bold text-white px-3 py-2 rounded-xl shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: linear-gradient(90deg, #6366F1, #9333EA);">
     📄 Creador de CV
 </a>
                 </div>
             </div>
             <div class="mt-2 sm:hidden">
-                <a href="/es/" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">
+                <a href="/index.html" class="btn-3d btn-chip w-full py-2 flex items-center justify-center gap-2 text-xs font-bold">
                     ← Volver a todas las herramientas
                 </a>
             </div>
@@ -244,7 +243,7 @@
     <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow">
 
         <nav class="text-xs font-semibold mb-4 flex items-center gap-1 muted" aria-label="Breadcrumb">
-            <a href="/es/" class="hover:text-indigo-500">Inicio</a>
+            <a href="/index.html" class="hover:text-indigo-500">Inicio</a>
             <span>/</span>
             <span style="color: var(--text); font-weight: 700;">Conversor de colores</span>
         </nav>
@@ -253,7 +252,7 @@
             
             <div class="flex items-center justify-between gap-3 flex-wrap mb-4 pb-4 border-b" style="border-color: var(--card-border);">
                 <h1 class="text-xl sm:text-2xl font-black flex items-center gap-2" style="color: var(--text);">
-                    🎨 Conversor universal de colores gratuito
+                    🎨 Free Universal Conversor de colores
                 </h1>
                 <button onclick="clearColor()" class="btn-3d btn-chip px-3.5 py-2 text-xs font-bold">Borrar</button>
             </div>
@@ -261,8 +260,8 @@
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                 <div class="sm:col-span-2 space-y-4">
                     <div>
-                        <label for="colorInput" class="block text-xs font-bold uppercase tracking-wider mb-1.5 muted">Introduce HEX, RGB o un nombre</label>
-                        <input type="text" id="colorInput" value="#3b82f6" placeholder="e.g. coral, blue, rebeccapurple, #ff7f50" class="input-field w-full p-4 rounded-xl text-sm font-medium">
+                        <label for="colorInput" class="block text-xs font-bold uppercase tracking-wider mb-1.5 muted">Introduce HEX, RGB o nombre</label>
+                        <input type="text" id="colorInput" value="#3b82f6" placeholder="Ej.: coral, blue, rebeccapurple, #ff7f50" class="input-field w-full p-4 rounded-xl text-sm font-medium">
                     </div>
                     <div>
                         <label for="colorDropdown" class="block text-xs font-bold uppercase tracking-wider mb-1.5 muted">O selecciona un color estándar</label>
@@ -299,45 +298,45 @@
 
         <article class="surface rounded-3xl shadow-md p-6 sm:p-8 mb-10 space-y-6">
             <div class="pb-4 border-b" style="border-color: var(--card-border);">
-                <h2 class="text-xl font-bold">Conversión instantánea de colores CSS y web</h2>
+                <h2 class="text-xl font-bold">Instant CSS & Web Color Space Conversion</h2>
                 <p class="text-sm leading-relaxed mt-2 muted">
-                    En el desarrollo web y el diseño UI/UX, representar colores con precisión en distintas pantallas requiere cambiar entre formatos como hexadecimal (HEX), rojo-verde-azul (RGB) y nombres de colores CSS estándar. El conversor de colores MyToolX transforma estos formatos al instante y muestra una vista previa en tiempo real directamente en tu navegador.
+                    In modern web development and UI/UX design, representing colors accurately across digital displays requires switching between various color notations—such as Hexadecimal (HEX), Red-Green-Blue (RGB), and standardized CSS color names. The MyToolX Conversor de colores provides instant, real-time color space translation with live visual previews directly inside your browser.
                 </p>
             </div>
 
-            <h2 class="text-xl font-bold">¿Por qué utilizar nuestro conversor de colores?</h2>
+            <h2 class="text-xl font-bold">Why Use Our Conversor de colores?</h2>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
                 <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
-                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">🎨 Formato HEX</h3>
-                    <p class="text-xs muted">Convierte códigos web hexadecimales de 6 dígitos (por ejemplo, <code class="bg-black/10 px-1 py-0.5 rounded font-mono text-xs">#3B82F6</code>) en valores RGB.</p>
+                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">🎨 Formatos HEX</h3>
+                    <p class="text-xs muted">Convierte códigos web hexadecimales de seis dígitos (e.g., <code class="bg-black/10 px-1 py-0.5 rounded font-mono text-xs">#3B82F6</code>) en valores RGB.</p>
                 </div>
                 <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
-                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">🖥️ Formato RGB</h3>
-                    <p class="text-xs muted">Convierte los valores estándar de los canales RGB (0-255) en código CSS limpio.</p>
+                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">🖥️ Espacio RGB</h3>
+                    <p class="text-xs muted">Convierte los parámetros de los canales RGB (0-255) en valores CSS claros.</p>
                 </div>
                 <div class="p-4 rounded-2xl" style="background: var(--chip-bg);">
-                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">👁️ Vista previa visual en directo</h3>
-                    <p class="text-xs muted">Muestra el tono seleccionado en un bloque de vista previa mientras escribes.</p>
+                    <h3 class="font-bold text-sm mb-1" style="color: var(--text);">👁️ Vista previa visual en tiempo real</h3>
+                    <p class="text-xs muted">Muestra al instante el tono seleccionado en un bloque visual que se actualiza mientras escribes.</p>
                 </div>
             </div>
 
             <div class="border-t pt-6" style="border-color: var(--card-border);">
                 <h3 class="text-lg font-bold mb-3">Herramientas relacionadas</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                    <a href="/es/base64-tool.html" class="related-card block rounded-2xl p-4">
+                    <a href="/base64-tool.html" class="related-card block rounded-2xl p-4">
                         <div class="text-2xl mb-1">🔤</div>
                         <div class="font-bold text-sm" style="color: var(--text);">Herramienta Base64</div>
-                        <div class="text-xs muted">Encode &amp; Decode</div>
+                        <div class="text-xs muted">Codificar y decodificar</div>
                     </a>
-                    <a href="/es/json-formatter.html" class="related-card block rounded-2xl p-4">
+                    <a href="/json-formatter.html" class="related-card block rounded-2xl p-4">
                         <div class="text-2xl mb-1">⚡</div>
                         <div class="font-bold text-sm" style="color: var(--text);">Formateador JSON</div>
-                        <div class="text-xs muted">Beautify &amp; Minify</div>
+                        <div class="text-xs muted">Embellecer y minificar</div>
                     </a>
-                    <a href="/es/qr-code-generator.html" class="related-card block rounded-2xl p-4">
+                    <a href="/qr-code-generator.html" class="related-card block rounded-2xl p-4">
                         <div class="text-2xl mb-1">📱</div>
                         <div class="font-bold text-sm" style="color: var(--text);">Generador de códigos QR</div>
-                        <div class="text-xs muted">Create QR Images</div>
+                        <div class="text-xs muted">Crear imágenes QR</div>
                     </a>
                 </div>
             </div>
@@ -351,16 +350,16 @@
                     <p class="text-xs sm:text-sm muted leading-relaxed">Puedes escribir un nombre de color CSS estándar (como «coral» o «blue»), seleccionarlo en el menú desplegable o pegar un código HEX/RGB. La herramienta lo convierte al instante.</p>
                 </div>
                 <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
-                    <h3 class="text-sm font-bold mb-1">¿Este conversor de colores es gratuito?</h3>
-                    <p class="text-xs sm:text-sm muted leading-relaxed">Sí. Es 100 % gratuito, no requiere registro ni tiene límites de uso. Todos los cálculos se realizan localmente en tu navegador.</p>
+                    <h3 class="text-sm font-bold mb-1">Is this Conversor de colores free to use?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">Sí, es 100 % gratuito, no requiere registro ni tiene límites de uso. Todos los cálculos de conversión se realizan localmente en tu navegador.</p>
                 </div>
                 <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
-                    <h3 class="text-sm font-bold mb-1">¿Cuál es la diferencia entre los formatos HEX y RGB?</h3>
-                    <p class="text-xs sm:text-sm muted leading-relaxed">HEX utiliza números en base 16 (0-9, A-F) para representar los valores de luz roja, verde y azul en una cadena compacta. RGB utiliza valores decimales de 0 a 255 para cada canal de color.</p>
+                    <h3 class="text-sm font-bold mb-1">¿Cuál es la diferencia entre los formatos de color HEX y RGB?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">HEX utiliza números en base 16 (0-9, A-F) para representar los valores de luz roja, verde y azul en una cadena compacta, mientras que RGB utiliza valores decimales de 0 a 255 para cada canal de color.</p>
                 </div>
                 <div class="rounded-2xl p-4" style="background: var(--chip-bg);">
-                    <h3 class="text-sm font-bold mb-1">¿Se guardan o rastrean mis códigos de color personalizados?</h3>
-                    <p class="text-xs sm:text-sm muted leading-relaxed">No. Toda la representación y conversión de cadenas se realiza en tu dispositivo mediante JavaScript, sin transmitir ni registrar datos.</p>
+                    <h3 class="text-sm font-bold mb-1">¿Se guardan o se rastrean mis códigos de color personalizados?</h3>
+                    <p class="text-xs sm:text-sm muted leading-relaxed">No. Todas las representaciones y conversiones de cadenas se realizan en tu dispositivo mediante JavaScript, sin transmitir ni registrar datos.</p>
                 </div>
             </div>
         </section>
@@ -388,12 +387,12 @@
                 
                 <!-- COLUMN 1: Logo & Description -->
                 <div class="lg:col-span-5">
-                    <a href="/es/" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
+                    <a href="/index.html" class="flex items-center gap-2 mb-4 group" aria-label="MyToolX home">
                         <div class="logo-mark">M<span class="x">X</span></div>
                         <span class="logo-wordmark">MyTool<span class="x">X</span></span>
                     </a>
                     <p class="text-sm leading-relaxed mb-6 pr-4">
-MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesionales independientes y desarrolladores. La mayoría no requiere una cuenta. Muchas procesan el contenido localmente, mientras que algunas funciones y las estadísticas del sitio utilizan servicios externos. Consulta nuestra Política de privacidad para más información.
+MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesionales independientes y desarrolladores. La mayoría no requiere cuenta. Muchas procesan el contenido localmente, mientras que algunas funciones y las estadísticas del sitio utilizan servicios externos. Consulta nuestra Política de privacidad para más información.
                     </p>
                     
 <div class="social-links-row" aria-label="MyToolX social media links">
@@ -411,84 +410,84 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
 </div>
 
                                  
-		<!-- COLUMN 2: Herramientas populares & Premium Link -->
+		<!-- COLUMN 2: Popular Tools & Premium Link -->
                 <div class="lg:col-span-4">
                     <h3>Herramientas populares</h3>
                     
                     <div class="grid grid-cols-2 gap-3 text-sm">
                         <!-- Row 1 -->
-                        <a href="/es/typing-test.html">Prueba de velocidad de escritura</a>
+                        <a href="/typing-test.html">Prueba de velocidad de escritura</a>
                         
-                        <!-- THE PREMIUM BUTTON (Replaces Compresor de imágenes) -->
+                        <!-- THE PREMIUM BUTTON (Replaces Image Compressor) -->
                         <div class="flex items-start mt-0.5"> 
-                            <a href="/es/premium.html" class="link-premium-gold" aria-label="Visit the Premium Store">
+                            <a href="/premium.html" class="link-premium-gold" aria-label="Visit the Premium Store">
                                 <span class="star-icon">⭐</span> Premium
                             </a>
                         </div>
 
                         <!-- Row 2 -->
-                        <a href="/es/prompt-studio.html">Estudio de prompts de IA</a>
-                        <a href="/es/image-compressor.html">Compresor de imágenes</a>
+                        <a href="/prompt-studio.html">Estudio de prompts de IA</a>
+                        <a href="/image-compressor.html">Compresor de imágenes</a>
                         
                         <!-- Row 3 -->
-                        <a href="/es/text-suite.html">Herramientas de texto y palabras</a>
-                        <a href="/es/grammar-checker.html">Corrector gramatical</a>
+                        <a href="/text-suite.html">Herramientas de texto y palabras</a>
+                        <a href="/grammar-checker.html">Grammar Checker</a>
                         
                         <!-- Row 4 -->
-                        <a href="/es/sip-calculator.html">Calculadora SIP</a>
-                        <a href="/es/fee-calculator.html">Calculadora de comisiones</a>
+                        <a href="/sip-calculator.html">Calculadora SIP</a>
+                        <a href="/fee-calculator.html">Calculadora de comisiones</a>
                         
                         <!-- Row 5 -->
-                        <a href="/es/json-formatter.html">Formateador JSON</a>
-                        <a href="/es/loan-emi.html">Calculadora de cuotas de préstamo</a>
+                        <a href="/json-formatter.html">Formateador JSON</a>
+                        <a href="/loan-emi.html">Calculadora de cuotas de préstamo</a>
                         
                         <!-- Row 6 -->
-                        <a href="/es/qr-code-generator.html">Generador de códigos QR</a>
-                        <a href="/es/base64-tool.html">Herramienta Base64</a>
+                        <a href="/qr-code-generator.html">Generador de códigos QR</a>
+                        <a href="/base64-tool.html">Herramienta Base64</a>
                         
                         <!-- Row 7 -->
-                        <a href="/es/unit-converter.html">Conversor de unidades</a>
-                        <a href="/es/password-generator.html">Generador de contraseñas</a>
+                        <a href="/unit-converter.html">Conversor de unidades</a>
+                        <a href="/password-generator.html">Generador de contraseñas</a>
                         
                         <!-- Row 8 -->
-                        <a href="/es/article-outline.html">Esquema de artículos</a>
-                        <a href="/es/ai-bio-generator.html">Generador de biografías con IA</a>
+                        <a href="/article-outline.html">Esquema de artículos</a>
+                        <a href="/ai-bio-generator.html">Generador de biografías con IA</a>
                         
                         <!-- Row 9 -->
-                        <a href="/es/love-calculator.html">Calculadora del amor</a>
-                         <a href="/es/cv-maker.html">Creador de currículums</a> 
+                        <a href="/love-calculator.html">Calculadora del amor</a>
+                         <a href="/cv-maker.html">Creador de currículums</a> 
  
                         
                         <!-- Row 10 (Extra space filled) -->
-                         <a href="/es/text-summarizer.html">Resumidor con IA</a>
-                        <a href="/es/color-converter.html">Conversor de colores</a>
-			<a href="/es/math-sprint.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Juego Math Sprint</a>
-                        <a href="/es/wordstorm.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Juego WordStorm</a>
-			<a href="/es/reaction-time-test.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Prueba de reflejos</a>
-			<a href="/es/word-scramble.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Palabras desordenadas</a>
+                         <a href="/text-summarizer.html">Resumidor con IA</a>
+                        <a href="/color-converter.html">Conversor de colores</a>
+			<a href="/math-sprint.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Juego Math Sprint</a>
+                        <a href="/wordstorm.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Juego WordStorm</a>
+			<a href="/reaction-time-test.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Prueba de reflejos</a>
+			<a href="/word-scramble.html" class="footer-game-link"><span aria-hidden="true">⭐</span> Palabras desordenadas</a>
                     </div>
                 </div>
 
-                <!-- COLUMN 3: Empresa & Legal Links -->
+                <!-- COLUMN 3: Company & Legal Links -->
                 <div class="lg:col-span-3">
                     <div class="grid grid-cols-2 gap-8">
                         <div>
                             <h3>Empresa</h3>
                             <ul class="space-y-3 text-sm">
-                                <li><a href="/es/">Inicio</a></li>
-                                <li><a href="/es/about.html">Acerca de nosotros</a></li>
-                                <li><a href="/es/contact.html">Contacto</a></li>
-				<li><a href="/es/community.html">Comunidad</a></li>
+                                <li><a href="/index.html">Inicio</a></li>
+                                <li><a href="/about.html">Acerca de nosotros</a></li>
+                                <li><a href="/contact.html">Contacto</a></li>
+				<li><a href="/community.html">Community</a></li>
 
                             </ul>
                         </div>
                         <div>
-                            <h3>Legal</h3>
+                            <h3>Información legal</h3>
                             <ul class="space-y-3 text-sm">
-                                <li><a href="/es/blog.html">Blog y guías</a></li>
-                                <li><a href="/es/privacy.html">Política de privacidad</a></li>
-                                <li><a href="/es/terms.html">Términos del servicio</a></li>
-                                <li><a href="/es/">Mapa del sitio</a></li>
+                                <li><a href="/blog.html">Blog y guías</a></li>
+                                <li><a href="/privacy.html">Política de privacidad</a></li>
+                                <li><a href="/terms.html">Términos del servicio</a></li>
+                                <li><a href="/index.html">Sitemap</a></li>
                             </ul>
                         </div>
                     </div>
@@ -510,12 +509,12 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
             <div class="flex items-start justify-between gap-3 mb-4">
                 <div>
                     <h3 id="modalTitle" class="text-lg sm:text-xl font-black" style="color: var(--text);">Comparte tu opinión</h3>
-                    <p class="text-xs muted mt-0.5">Solo 20 segundos • No necesitas registrarte</p>
+                    <p class="text-xs muted mt-0.5">Solo 20 segundos • Sin registro</p>
                 </div>
-                <button type="button" onclick="closeFeedbackModal()" aria-label="Close popup" title="Close" class="mtx-modal-close">✕</button>
+                <button type="button" onclick="closeFeedbackModal()" aria-label="Cerrar ventana" title="Close" class="mtx-modal-close">✕</button>
             </div>
 
-            <form id="communityForm" onsubmit="submitComunidadFeedback(event)" class="space-y-4">
+            <form id="communityForm" onsubmit="submitCommunityFeedback(event)" class="space-y-4">
                 <div>
                     <label for="formType" class="block text-xs font-bold uppercase tracking-wider muted mb-1">1. ¿Qué te gustaría compartir? *</label>
                     <select id="formType" name="formType" required onchange="toggleFormFields()" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
@@ -551,33 +550,33 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                     <div>
                         <label for="suggestionCategory" class="block text-xs font-bold uppercase tracking-wider muted mb-1">2. Categoría de la idea *</label>
                         <select id="suggestionCategory" name="suggestionCategory" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
-                            <option value="Nueva herramientas">Nueva herramienta</option>
-                            <option value="Nuevo juegos">Nuevo juego</option>
+                            <option value="New Tool Ideas">Nueva herramienta</option>
+                            <option value="New Game Ideas">Nuevo juego</option>
                             <option value="Existing Tool Improvements">Mejorar una herramienta existente</option>
-                            <option value="Mejora del sitio webs">Mejora del sitio web</option>
-                            <option value="Premium Product Ideas">Nueva idea de paquete prémium</option>
+                            <option value="Website Improvements">Mejora del sitio web</option>
+                            <option value="Premium Product Ideas">Nueva idea de paquete premium</option>
                         </select>
                     </div>
                     <div id="titleGroup">
                         <label for="suggestionTitle" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Título breve de la idea *</label>
-                        <input type="text" id="suggestionTitle" name="suggestionTitle" maxlength="80" placeholder="e.g. PDF Merger or Invoice Generator" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                        <input type="text" id="suggestionTitle" name="suggestionTitle" maxlength="80" placeholder="Ej.: combinar PDF o generar facturas" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
                         <label for="authorName" class="block text-xs font-bold uppercase tracking-wider muted mb-1">Nombre (opcional)</label>
-                        <input type="text" id="authorName" name="authorName" maxlength="40" placeholder="Anonymous" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                        <input type="text" id="authorName" name="authorName" maxlength="40" placeholder="Anónimo" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
                     </div>
                     <div>
                         <label for="country" class="block text-xs font-bold uppercase tracking-wider muted mb-1">País (opcional)</label>
-                        <input type="text" id="country" name="country" maxlength="40" placeholder="e.g. US, UK, PK" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
+                        <input type="text" id="country" name="country" maxlength="40" placeholder="Ej.: ES, MX, AR" class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold">
                     </div>
                 </div>
 
                 <div>
                     <label for="commentText" id="commentLabel" class="block text-xs font-bold uppercase tracking-wider muted mb-1">3. Tu comentario *</label>
-                    <textarea id="commentText" name="commentText" required rows="3" maxlength="400" placeholder="Write a quick note about your experience..." class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-medium"></textarea>
+                    <textarea id="commentText" name="commentText" required rows="3" maxlength="400" placeholder="Cuéntanos brevemente tu experiencia..." class="input-field w-full px-3.5 py-2.5 rounded-xl text-sm font-medium"></textarea>
                 </div>
 
                 <p class="text-[11px] muted leading-relaxed">
@@ -615,7 +614,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
     if (icon && text) {
         if (theme === 'dark') {
             icon.textContent = '🌙';
-            text.textContent = 'Modo oscuro';
+            text.textContent = 'Dark Mode';
         } else {
             icon.textContent = '☀️';
             text.textContent = 'Light Mode';
@@ -846,7 +845,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
             updateStars(currentRating);
         });
 
-        async function submitComunidadFeedback(event) {
+        async function submitCommunityFeedback(event) {
             event.preventDefault();
             const errorBox = document.getElementById("formError");
             const successBox = document.getElementById("formSuccess");
@@ -874,7 +873,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                 payload.suggestionCategory = document.getElementById("suggestionCategory").value;
                 payload.suggestionTitle = document.getElementById("suggestionTitle").value.trim();
                 if (!payload.suggestionTitle || !commentText) {
-                    errorBox.textContent = "Please fill out all required suggestion fields.";
+                    errorBox.textContent = "Completa todos los campos obligatorios de la sugerencia.";
                     errorBox.classList.remove("hidden");
                     return;
                 }
@@ -883,7 +882,7 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                 payload.starRating = document.getElementById("starRating").value;
                 payload.pageUrl = "color-converter.html";
                 if (!commentText) {
-                    errorBox.textContent = "Please enter your written review.";
+                    errorBox.textContent = "Escribe tu reseña, por favor.";
                     errorBox.classList.remove("hidden");
                     return;
                 }
@@ -901,25 +900,25 @@ MyToolX ofrece herramientas gratuitas en el navegador para escritores, profesion
                 const result = await response.json();
 
                 if (result.status === "success") {
-                    successBox.textContent = "🎉 Thank you! Your submission is pending moderation.";
+                    successBox.textContent = "🎉 ¡Gracias! Tu envío está pendiente de revisión.";
                     successBox.classList.remove("hidden");
                     document.getElementById("communityForm").reset();
                     setTimeout(() => { 
                         closeFeedbackModal(); 
                         submitBtn.disabled = false; 
-                        submitBtn.textContent = "🚀 Enviar opinión"; 
+                        submitBtn.textContent = "🚀 Submit Feedback"; 
                     }, 3000);
                 } else {
                     errorBox.textContent = result.message || "No se pudo enviar.";
                     errorBox.classList.remove("hidden");
                     submitBtn.disabled = false;
-                    submitBtn.textContent = "🚀 Enviar opinión";
+                    submitBtn.textContent = "🚀 Submit Feedback";
                 }
             } catch (err) {
                 errorBox.textContent = "Error de conexión. Inténtalo de nuevo.";
                 errorBox.classList.remove("hidden");
                 submitBtn.disabled = false;
-                submitBtn.textContent = "🚀 Enviar opinión";
+                submitBtn.textContent = "🚀 Submit Feedback";
             }
         }
     </script>
